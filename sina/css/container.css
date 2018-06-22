@@ -396,6 +396,8 @@ h2.title {
         width: 412px;
         height: 319px;
         background: url("../images/bg-ty-info-r.jpg") no-repeat left top; }
+  .ct-column-experience .img-04 {
+    opacity: 0; }
 
 .ct-column-summarize {
   clear: both;
@@ -627,7 +629,9 @@ h2.title {
 .page-content .column-experience-in .introduction dd {
   animation: right-in .5s forwards .5s; }
 .page-content .column-experience-in .list.cur {
-  animation: opacity-in 2s forwards; }
+  animation: opacity-in 1s forwards; }
+.page-content .column-experience-in .img-04.cur {
+  animation: opacity-in 1s forwards; }
 
 .page-content .column-summarize-in {
   animation: opacity-in 2s forwards; }
