@@ -616,9 +616,9 @@ h2.title {
 
 .page-content .column-attitude-in .attitude-kj,
 .page-content .column-attitude-in .attitude-lb {
-  animation: attitude-in .8s forwards ease; }
+  animation: attitude-in .5s forwards; }
 .page-content .column-attitude-in .attitude-ys {
-  animation: attitude-in-01 .8s forwards ease; }
+  animation: attitude-in-01 .5s forwards; }
 
 .page-content .column-life-in .main.cur {
   animation: opacity-in 1s forwards ease;
