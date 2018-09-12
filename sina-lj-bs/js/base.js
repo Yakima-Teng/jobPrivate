@@ -50,20 +50,50 @@ $(function(){
       $(this).parent().addClass('cur').siblings().removeClass('cur');
     });
 
-    $('.icon-close').bind('click',function(){
-        $('.layrer-bg').fadeOut();
-        $( this ).parent().fadeOut();
-    });
     $('.ct-column-rush').find('.video-img').bind('click',function(){
         $('.layrer-bg,.video-rush').fadeIn();
+        var ifSrc = $(this).attr('videoSrc');
+        $('.video-rush').find('iframe').attr('src',ifSrc);
     });
     $('.ct-column-expert').find('.main-img').bind('click',function(){
         $('.layrer-bg,.video-expert').fadeIn();
+        var ifSrc = $(this).attr('videoSrc');
+        $('.video-expert').find('iframe').attr('src',ifSrc);
     });
     $('.ct-column-everyone').find('.main-img').bind('click',function(){
         $('.layrer-bg,.video-everyone').fadeIn();
+        var ifSrc = $(this).attr('videoSrc');
+        $('.video-everyone').find('iframe').attr('src',ifSrc);
     });
+    
     $('.ct-column-recommend').find('.video-img').bind('click',function(){
         $('.layrer-bg,.video-recommend').fadeIn();
+        var ifSrc = $(this).attr('videoSrc');
+        $('.video-recommend').find('iframe').attr('src',ifSrc);
     });
+
+
+    $('.video-rush').find('.icon-close').bind('click',function(){  
+        var srcNew = $(this).parent().find('iframe').attr('src');
+        $('.ct-column-rush').find('.video-img').attr({videoSrc:srcNew});
+    });
+    
+    $('.video-expert').find('.icon-close').bind('click',function(){  
+        var srcNew = $(this).parent().find('iframe').attr('src');
+        $('.ct-column-expert').find('.main-img').attr({videoSrc:srcNew});
+    });
+    $('.video-everyone').find('.icon-close').bind('click',function(){  
+        var srcNew = $(this).parent().find('iframe').attr('src');
+        $('.ct-column-everyone').find('.main-img').attr({videoSrc:srcNew});
+    });
+    $('.video-recommend').find('.icon-close').bind('click',function(){  
+        var srcNew = $(this).parent().find('iframe').attr('src');
+        $('.ct-column-recommend').find('.video-img').attr({videoSrc:srcNew});
+    });
+    $('.icon-close').bind('click',function(){    
+        $('.layrer-bg').fadeOut();
+        $( this ).parent().fadeOut();
+        $( this ).parent().find('iframe').attr('src','');
+    });
+
 });
