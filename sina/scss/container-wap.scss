@@ -1,0 +1,206 @@
+@charset "UTF-8";
+//---------------------------------------
+//导入页面集合样式
+//---------------------------------------
+//mixin
+@import "hourglass/scss/mixins";
+//基础内容
+@import 'common/sass/reset_mobile';
+
+//size
+$_550:13.75rem;
+$_600:14.75rem;;
+$_497:12.425rem;
+$_475:11.875rem;
+$_599:14.975rem;
+$_530:13.25rem;
+$_480:12rem;
+$_920:23rem;
+$_507:12.675rem;
+$_446:11.15rem;
+$_406:10.15rem;
+$_515:12.875rem;
+$_412:10.3rem;
+
+$_650:16.25rem;
+$_549:13.725rem;
+$_430:10.75rem;
+
+//color
+$main-font:#000;
+$main-color:#6aa672;
+$main-border:#ccc;
+
+//default
+*>img{ width: 100%;}
+.clear{ clear: both; height: 0!important; width: 0!important;}
+.page-index{ font-size: $_14; color: $main-font; line-height: 2em; overflow: hidden;}
+.page-header,
+.page-content,
+.footer-main{ width: 100%; margin: auto;}
+h2.title{margin: $_20 $_30; font-size: $_36; height: $_78; line-height: $_66; color: #4c3f42; letter-spacing:.3em; background: url('../images/bg-title.png') no-repeat center; background-size: 100%; text-align: center;
+    >img{ width:$_155 ; height: $_25;}
+}
+
+
+
+//header
+.page-index{ background: url('../images/bg-banner.jpg') no-repeat center top; background-size: 100%;}
+.page-header{ height: $_600; position: relative;
+    p{ position: absolute; bottom: 0; padding: 0 $_30 }
+    .animation-paint{ background: url('../images/img-banner-yun.png') no-repeat center bottom; background-size: 100%; width: 100%; height: $_550; position: absolute; bottom: $_96; z-index: 10;}
+    .animation-slogan{ display: block; background: url('../images/img-banner-pople.png') no-repeat center; background-size: 100%; width: $_300; height:$_300; position: absolute; bottom: $_245; right: $_60; }
+    .animation-text{position: relative; width: 100%; margin: auto;
+        span{ position: absolute;
+            img{ width: 100%;}
+            .sep{ width: $_1; height: $_100; background-color: #fff; position: absolute; }
+        }
+        .bai{ width: $_66; height: $_69; top: $_104; z-index: 8;
+            .sep{ left: $_76; top: -$_104; height: $_110;}
+        }
+        .tuo{ width: $_54; height: $_60; top: $_124; left: $_107; z-index: 3;
+            .sep{ left: $_68; top: -$_125; height: $_134;}
+        }
+        .kun{ width: $_101; height: $_107; top: $_74; left: $_212; z-index: 10;
+            .sep{ left: $_91; top: -$_74; height: $_80;}
+        }
+        .jing{ width: $_50; height: $_65; top: $_59; left: $_368; z-index: 5;
+            .sep{ left: $_33; top: -$_60; height: $_66;}
+        }
+    }
+}
+//footer
+.page-footer{text-align: center;  background-color: darken($color: $main-border, $amount: 50%); padding: $_40 0 $_30; color: lighten($color: $main-font, $amount: 100%); margin-top: $_54; display: flex;
+    .footer-logo,
+    h3,
+    p{ @include inline-block; }
+    h3{ margin: 0 $_55 0 $_66;}
+    p{ text-align: left; margin-left: $_30;
+        span{ @include inline-block; margin-right: $_20;}
+    }
+}
+
+
+//page-content
+.ct-column-video{  
+    .video-img{padding: 0 $_30; text-align: center; cursor: pointer; overflow: hidden;}
+}
+
+
+.ct-column-attitude{ position: relative;
+   .main{ background-color: #6288a3; margin-top: $_100;
+        .liat-box{ overflow: hidden; position: relative; z-index: 10;
+            .yun{ background:url('../images/wap-bg-td-yun.png') no-repeat right center; background-size: 100%; width: $_314; height: $_208; position: absolute; right:0; top:50%; margin-top: -$_104;z-index: -1;}
+            &:nth-child(2){
+                .yun{ left: -$_32;}
+            }
+            &.kj{transform:translate(0, -$_58);}
+            &.lb{transform:translate(0, $_58); }
+        }
+    
+        .list{ background-color: #fff; border: $_1 solid #000;box-shadow: 0 $_10 $_10 hsla(0, 0%, 0%, .1); padding: $_24 $_20 $_20 $_15;  @include clearfix;
+            h3{ font-size: $_14; color: lighten($color: $main-font, $amount: 37%); margin: 0 0 $_15; line-height: 1.5em;
+                >img{ width: $_92;}
+                span{ @include inline-block;}
+            }
+            p{ text-align: left; color: lighten($color: $main-font, $amount: 37%); font-size: $_14;}
+            dt{ float: right ; width: $_330;}
+            dd{ width: $_185; height: $_185;}
+            
+            &.attitude-kj{ margin-right: $_58;  border-left: 0;}
+            &.attitude-ys{ margin-left: $_58; border-right:0; }
+            &.attitude-lb{ margin-right: $_58; border-left: 0;}
+        }
+    }
+   
+}
+.ct-column-life{ position: relative;  padding-top: $_80; background-color: #eee; overflow: hidden; margin-top: $_120;
+    .btn-life{ @include inline-block; width: $_210; height: $_132; overflow: hidden; background: no-repeat left bottom; background-size: 100%; margin-right: $_64;
+        &.kj{ background-image: url('../images/wap-btn-sh-01.png');}
+        &.ys{ background-image: url('../images/wap-btn-sh-02.png');}
+        &.lb{ background-image: url('../images/wap-btn-sh-03.png');}
+    }
+    
+    .main{ box-sizing: border-box; margin-bottom: $_25;
+        .txt-info{ margin-bottom: $_23; margin-left:$_45;
+            >img{ width: $_200; background-color: #daebf7; padding:$_5; margin-top: $_86;}
+        }
+        h3{ width: $_250; height: $_66; background-color: #daebf7; line-height: $_66; padding-left: $_10; margin:$_33 0 $_10;}
+        .jiao{ position: absolute; background: url('../images/bg-sh-info-01.png') no-repeat center; background-size: 100%; width: $_32; height: $_22; top:-$_20; left: $_60; }
+        p{  font-size: $_14; line-height: 1.7em; padding-right:$_120; margin-bottom: $_20; }
+        .info{ background: url('../images/wap-bg-sh-info.png') no-repeat center; background-size: 100%; padding: $_25 $_57 0 $_37; margin: 0 $_20; position: relative; height: $_650; box-sizing: border-box;}
+        .icon-box{ background: no-repeat right top;}
+        &.main-kj{
+          
+            .icon-box{ background-image: url('../images/wap-icon-01.png');}
+        }
+        &.main-ys{
+            p{  margin-bottom: $_40; }
+            .icon-box{ background-image: url('../images/wap-icon-02.png');}
+        }
+        &.main-lb{
+            
+            .icon-box{ background-image: url('../images/wap-icon-03.png');}
+        }
+    }
+}
+
+.ct-column-experience{ width: 100%; margin: auto;
+    .introduction{ position: relative; margin: $_20 $_84 $_30; overflow: hidden; 
+        dt{ width: $_355; margin:0 auto $_50;}
+        h3{ margin-bottom: $_20; width: $_306;}
+        p{ letter-spacing:.2em; font-size: $_16; }
+    }
+    .list{ clear: both; position: relative; margin-bottom: $_106;
+        .sun-title{ margin-bottom: $_42; color: lighten($color: $main-font, $amount: 26.2%); text-align: center; font-size: $_36; letter-spacing:-.05em;  line-height: $_108; overflow: hidden;
+            .icon-num{ width: $_108; height: $_108; margin-right: $_12; vertical-align: middle;  color: lighten($color: $main-font, $amount: 80%); border: $_5 solid $main-border; display: inline-block; text-align: center; font-family:Impact; font-size: $_72; border-radius: 50%;  }
+        }
+        .main{ overflow: hidden;}
+        .txt{ clear:both; padding: $_50 $_30 0 $_38; margin: 0 $_30; box-sizing: border-box; height: $_316; background: url('../images/wap-bg-ty-info-t.png') no-repeat left top; background-size: 100%; font-weight: bold; font-size: $_18;
+            span{ display: block; font-size: $_18;  text-indent: 1.5em; margin-bottom: $_15; }
+        }
+        .img-right,
+        .img-left{ background: url('../images/wap-bg-ty-l.png') no-repeat 100% top;  background-size: 100%; width: $_549; height: $_325; margin-bottom: $_5; padding-top: $_25; box-sizing: border-box;}
+
+        .img-box{ display: block; overflow: hidden; margin: auto; width: $_430;}
+        &.list-1{ 
+            .img-right{  float: right;}
+        }
+        &.list-2{ 
+            .img-left{ background-image:  url('../images/wap-bg-ty-r.png'); }
+            .txt{ padding-top: $_80;}
+        }
+        &.list-3{ @extend .list-1;
+            .txt{ padding-top: $_70;}
+        }
+    }
+    .img-04{ padding:0 $_30;}
+}
+.ct-column-summarize{ clear: both; width: 100%; margin: auto; 
+    .summary{ overflow: hidden; margin-bottom: $_28; 
+        dd{ overflow: hidden;  _display:inline; border-top: $_1 solid $main-border; padding-top: $_25; margin: $_25 $_30 0 $_30;
+            h3{ margin-bottom: $_30;}
+            p{ font-size: $_14;
+                &.info{ display: flex; justify-content:space-between;align-items: center; font-size: $_20;
+                    img{ width: $_174; height:$_54; vertical-align: middle;}
+                    span{ @include inline-block; height: $_34; color: #fff; line-height: $_34;background-color: darken($color: $main-border, $amount: 50%); padding: 0 $_5; }
+                }
+            }
+        }
+        .editor-info{ padding: 0 $_30;
+            >header{ text-align: center;}
+            .user-img{ width: $_74; height: $_79; @include inline-block; }
+            h4{ @include inline-block;
+                .name{@extend .user-img; width: $_71; height: $_24; margin: 0 $_40;
+                    >img{ vertical-align: top;}
+                }
+                .synopsis{ @include inline-block; letter-spacing:.2em; font-size: $_18;}
+            }
+            p{ letter-spacing:.1em; font-size: $_16; margin-top: $_20; } 
+        }
+    }
+    .essay-info{ border: $_1 solid darken($color: $main-border, $amount: 20%); padding: $_29 $_27; margin: 0 $_30; margin-bottom: $_50; overflow: hidden; font-size: $_20; line-height: 1.5;
+        h3{  font-weight: bold; }
+         p{ margin: $_10 0;}
+    }
+}
