@@ -46,31 +46,35 @@ h4.sum-title{ margin: 54px 0 30px; font-size: 32px; color: #8f9199; letter-spaci
     }
 }
 //content
-.ct-column-rush{ 
+.ct-column-rush{ position: relative;
+    &:after{ content:''; display:block; background:url('../images/img-03.png') no-repeat center; position:absolute; right:0; width:130px; height:139px; top: 220px; }
+    &:before{ content:''; display:block; background:url('../images/img-04.png') no-repeat center; position:absolute; left: 0; width:131px; height:216px; top: 40%; }
     .rush-main{ background-color: $main-bg; width: $main-size; margin: auto; height: 446px;
-       .main-info{ @extend .img-right; width: 300px; margin:55px 44px 0 0;
-            h4{ font-size: 36px; margin-bottom: 30px; text-align: center;}
+       .main-info{ @extend .img-right; width: 345px; margin:55px 20px 0 0; position: relative;
+            h4{ font-size: 36px; margin-bottom: 30px; text-align: center; padding: 0 20px;}
             p{ font-size: 20px; line-height: 1.5; overflow: hidden;}
         }
-       .main-img{ position: absolute; margin-top: -10px;}
+       .main-img{ position: absolute; margin-top: 37px;}
     }
     .list-challenge{ overflow: hidden; width: 906px; margin:17px auto 0;
-        .info-list-main{ @extend .img-left; width: 212px; background-color: $main-bg; margin-right: 19px; text-align: center;
+        .info-list-main{ @extend .img-left; width: 212px; margin-right: 19px; text-align: center; position: relative; padding-top: 20px;
+            &:before{ content:''; display:block; background:url('../images/bg-01.png') repeat center; position:absolute; left:0; width:100%; height:100%; top: 0; z-index: -1; }
             &:last-child{ margin-right: 0;}
-            .name{ background-color: darken($color: $main-bg, $amount: 16.5%); line-height: 50px; height: 50px; font-size: 24px;}
+            .name{ background-color: hsla(28, 84%, 22%, .2); line-height: 50px; height: 50px; font-size: 24px;}
             .main-img{ overflow: hidden; position: relative;
-                .num{ font-size: 120px; font-family: 'Arial'; position: absolute; right: -6px; top: 0; color: lighten($color: $main-font, $amount: 100%); line-height: 0.76; }
                 >img{ width: 100%; height: 100%; position: relative; z-index: 2;}
             }
         }
     }
 }
-.ct-column-expert{ position: relative;
-    &:before{ content:''; display:block; background:url('../images/img-01.png') no-repeat center; position:absolute; left:0; width:223px; height:226px; top: 580px; }
-    &:after{ content:''; display:block; background:url('../images/img-04.png') no-repeat center; position:absolute; right: 0; width:209px; height:210px; bottom: -110px; }
+.ct-column-expert{
     .expert-main{ position: relative; width: $main-size; margin: auto; background-color: $main-bg; padding: 37px 0 47px 21px; box-sizing: border-box; 
         .main-img{ width: 489px; height: 362px; overflow: hidden; text-align: center; background-color: darken($color: $main-bg, $amount: 20%); cursor: pointer; }
-        .main-info{ position: absolute; margin-right: -24px; top: -55px; background: url('../images/img-09.png') no-repeat center; width: 393px; height: 501px;}
+        .main-info{ width: 350px; @extend .img-right; margin-right: 20px; font-size: 20px; line-height: 1.5; overflow: hidden;
+            .name{ font-size: 36px; margin-left: 30px; margin-top: 20px;}
+            .description{ font-size: 18px; margin-bottom: 40px; margin-left: 30px;}
+            .user-img{ position: absolute; display: inline-block; top: -20px; right: -20px;}
+        }
     }
     .expert-info{ width: $main-size; margin: auto; overflow: hidden;
         article{ @extend .img-left; width: 50%; box-sizing: border-box; border-right: 1px solid darken($color: $main-bg, $amount: 10%); margin-top:30px; padding:30px 45px;
@@ -80,35 +84,34 @@ h4.sum-title{ margin: 54px 0 30px; font-size: 32px; color: #8f9199; letter-spaci
         }
     }
 }
-.ct-column-everyone{ 
+.ct-column-everyone{  position: relative;
+    &:before{ content:''; display:block; background:url('../images/img-01.png') no-repeat center; position:absolute; right:0; width:212px; height:153px; top: -77px; }
     .everyone-main{ width: $main-size; margin: auto; background-color: $main-bg; padding: 37px 0 47px 21px; box-sizing: border-box; overflow: hidden;
-        .main-img{ width: 489px; height: 362px; overflow: hidden; text-align: center; background-color: darken($color: $main-bg, $amount: 20%); cursor: pointer; @extend .img-left;}
-        .main-info{ width: 300px; margin:55px 44px 0 0;
+        .main-img{ width: 489px; height: 362px; overflow: hidden; text-align: center; @extend .img-left; position: relative;
+            .btn-box{ position: absolute; left: 50%; margin-left: -130px; bottom: 10px;
+                .btn{ width: 40px; @include inline-block; height: 4px; background-color:$main-border; margin-right: 10px; cursor: pointer; 
+                    &:hover,
+                    &.cur{ background-color: #009943;}
+                }
+            }
+            .info{ display: none;}
+        }
+        .main-info{ width: 350px; margin:55px 20px 0 0;
             h4{ font-size: 36px; margin-bottom: 30px; text-align: center;}
             p{ font-size: 20px; line-height: 1.5; overflow: hidden;}
         }
     }
 }
 .ct-column-recommend{position: relative;
-    &:before{ content:''; display:block; background:url('../images/img-12.png') no-repeat center; position:absolute; left:0; width:165px; height:336px; top:-90px; }
-    &:after{ content:''; display:block; background:url('../images/img-03.png') no-repeat center; position:absolute; right:0; width:159px; height:185px; bottom:490px; }
+    &:before{ content:''; display:block; background:url('../images/img-16.png') no-repeat center; position:absolute; left:0; width:198px; height:172px; top:-84px; }
     .recommend-main{ width: $main-size; margin: auto; background-color: $main-bg; overflow: hidden;
         .tab-info{ display: none; width: 645px ; @extend .img-left; 
             >img{ width: 100%;}
         }
-        .tab-title{ margin:30px 0 0 36px; @extend .img-left; width: 219px;
-            >span{ cursor: pointer; 
-                    &.cur{
-                    // .sep{ display: inline-block;}
-                }
+        .tab-title{ margin:10px 0 0 36px; @extend .img-left; width: 219px;
+            .btn-tab{ display: inline-block; width: 211px; height: 61px; font-size: 16px; line-height: 61px; text-align: center; margin-bottom: 10px; background-color: #fff; cursor: pointer; 
+                &:hover{ background-color: #009a45; color: #fff;}
             }
-            .btn-tab{ display: inline-block; width: 140px; height: 80px; line-height: 80px; text-align: center; margin-bottom: 22px;
-                &.bai{ background-color: #fff;}
-                &.zong{ background-color: #4f2620; color: #fff;}
-                &.jin{background-color: #bfafb0; }
-                &.hei{background-color: #000; color: #fff;}
-            }
-            // .sep{ display:none; background:url('../images/sep.png') no-repeat center; width:59px;height: 6px; vertical-align: middle; }
         }
     }
 }
@@ -143,7 +146,6 @@ h4.sum-title{ margin: 54px 0 30px; font-size: 32px; color: #8f9199; letter-spaci
 .layrer-video { display:none; position:fixed; left:50%; top:50%; width:876px; height:488px; margin-left:-438px; margin-top:-244px; z-index:99; background:no-repeat center; background-size:100%;
     &.video-rush { background-image:url("../images/img-video.jpg") }
     &.video-expert { background-image:url("../images/img-video.jpg") }
-    &.video-everyone { background-image:url("../images/img-video.jpg") }
     &.video-recommend { background-image:url("../images/img-video.jpg") }
 }
 .icon-close { display:inline-block; vertical-align:middle; *vertical-align:auto; zoom:1; *display:inline; background:url("../images/icon-close.png") no-repeat center; background-size:100%; width:40px; height:40px; position:absolute; right:-15px; margin-top:-15px; cursor:pointer; z-index:10;}

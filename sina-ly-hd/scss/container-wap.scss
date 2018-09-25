@@ -28,26 +28,23 @@ $_446:11.15rem;
 .page-header,
 .page-content,
 .footer-main{ width: 100%; margin: auto;}
-h2.title{ margin: $_65 0 $_38; height: $_78; line-height: $_66; background: url('../images/bg-title.png') no-repeat center; background-size: 100%; text-align: center;}
-h3.title{ margin: $_50 0 $_52; height: $_114; line-height: $_114; background: url('../images/wap-bg-title-01.png') no-repeat center bottom;  background-size: 100%; text-align: center;
+h2.title{ margin: $_25 0 $_38; height: $_78; line-height: $_66; background: url('../images/bg-title.png') no-repeat center; background-size: 100%; text-align: center;}
+h3.title{ margin: $_50 0 $_42; height: $_114; line-height: $_114; background: url('../images/wap-bg-title-01.png') no-repeat center bottom;  background-size: 100%; text-align: center;
     >img{ width: $_220;}
 }
-h4.sum-title{ margin: $_54 0 $_30; font-size: $_32; color: #8f9199; letter-spacing:.3em; text-align: center;}
+h4.sum-title{ margin: $_34 0 $_30; font-size: $_32; color: #8f9199; letter-spacing:.3em; text-align: center;}
 .icon-video{ display: inline-block; width: $_52; height: $_36; vertical-align: middle; margin-left: $_10; background: url('../images/icon-video.png') no-repeat center; background-size: 100%; }
-.video-img{ margin: auto; width: 100%; cursor: pointer; padding: 0 $_20; box-sizing: border-box;
+.video-img{ margin: auto; width: 100%; height: $_392; cursor: pointer; padding: 0 $_20; box-sizing: border-box;
     >img{ width:100%;}
 }
-.img-left{ float: left;}
-.img-right{ float: right;}
 
 //header
 .page-header{ position:relative;
-    &:before{ display:none; }
-    .info-main{background:url('../images/wap-banner.jpg') no-repeat center top ; background-size: 100%; height:$_1069; }
+    .info-main{background:url('../images/wap-banner.jpg') no-repeat center top ; background-size: 100%; height:3*$_400 - $_60; }
 }
 
 //footer
-.page-footer{ margin-top: 0; padding: $_40 0 $_30;
+.page-footer{text-align: center;  background-color: darken($color: $main-border, $amount: 50%); color: lighten($color: $main-font, $amount: 100%); margin-top: 0; padding: $_40 0 $_30;
     .footer-logo{ width: $_95;  margin: auto; display: block;
         >img{ width: 100%;}
     }
@@ -59,36 +56,37 @@ h4.sum-title{ margin: $_54 0 $_30; font-size: $_32; color: #8f9199; letter-spaci
 
 //content
 .ct-column-rush{ margin-top:0px;
-    .rush-main{ background-color: $main-bg; width: $main-size; margin: auto; height: auto; position: relative;
-        &:before{ content:''; display:block; background-color: #fff; height: $_20; width: 100%; position: absolute; top: 0; left: 0; }
-       .main-info{ float: none; width: $main-size; margin:0; padding:$_20 $_30 $_50; box-sizing: border-box; position: static;
-            h4{ font-size: $_40; margin-bottom: $_25;}
+    .rush-main{ background-color: $main-bg; width: $main-size; position: relative; padding-top: $_20;
+       .main-info{  width: $main-size; margin:0; padding:$_20 $_30 $_30; box-sizing: border-box; position: static;
+            h4{ font-size: $_40; margin-bottom: $_25; text-align: center;}
             p{ font-size: $_24; }
         }
        .main-img{ position: relative; z-index: 2;
             >img{ width:100%;}
         }
     }
-    .list-challenge{ width: 100%; box-sizing: border-box; margin-top:$_10; display:flex; flex-wrap:wrap; padding: 0 $_10; 
-        .info-list-main{ float: none; width: 50%; display:inline-block; box-sizing: border-box; background-color: #fff; padding: $_10; margin-right: 0; 
-            .name{ line-height: $_80; height: $_80; font-size: $_36;}
-            .main-img{ background-color:$main-bg;
-                .num{ font-size: $_192; right: -$_6; }
-            }
-        }
+    .list-challenge{ width: 100%; box-sizing: border-box; padding: $_20; 
+        >img{ width: 100%;}
     }
 }
 .ct-column-expert{ position: relative;
-    &:before{ display:none; }
-    &:after{ display:none; }
-    .expert-main{ position: relative; width: $main-size; margin: auto; background-color: $main-bg; padding:0; padding-top:$_424;
-        .main-img{ width: 100%; height: auto; background-color:transparent; padding:0 $_20; box-sizing: border-box;
+    .title{ margin-top: $_10;}
+    .expert-main{ position: relative; width: $main-size; margin: auto; background-color: $main-bg; padding:0;
+        .main-img{ width: 100%; height: $_365; background-color:transparent; padding:0 $_20; box-sizing: border-box;
             >img{width: 100%;}
         }
-        .main-info{ margin: 0; top: -$_22; width: $_424; height:$_446; left: 50%; margin-left: -$_212; background-image: url('../images/wap-img-09.png'); background-size: 100%; }
+        >.info{ font-size: $_24; padding:$_40;}
+        .main-info{ display: flex; justify-content: center; padding: $_30 0;;
+            .user-img{ width: $_173; height: $_173;
+                >img{ width: 100%;}
+            }
+            .user-name{ font-size: $_36; margin-top: $_60; margin-left: $_25;
+                >.sun{ font-size: $_18; display: block;}
+            }
+        }
     }
-    .expert-info{ width: $main-size; background-color: $main-bg; padding: $_10 0 $_20;
-        article{ float: none; width: auto; border-right: none; border-bottom: 1px solid darken($color: $main-bg, $amount: 10%); margin:$_30 $_20 0; padding:$_10 $_17 $_30;
+    .expert-info{ width: $main-size; background-color: $main-bg; padding: $_10 0 $_20; 
+        article{   border-bottom: 1px solid darken($color: $main-bg, $amount: 10%); margin:$_30 $_20 0; padding:$_10 $_17 $_30;
             &:last-child{ border: none 0;}
             h4{ font-size: $_40; margin-bottom: $_20; }
             p{ font-size: $_24; line-height: 2;}
@@ -96,58 +94,58 @@ h4.sum-title{ margin: $_54 0 $_30; font-size: $_32; color: #8f9199; letter-spaci
     }
 }
 .ct-column-everyone{ 
-    h3.title{ margin-top: $_20;}
-    .everyone-main{ width: $main-size; padding:$_24 $_20 0; float: none;
-        .main-img{ width: auto; height: auto; margin-bottom: $_50;
-            >img{ width: 100%;}
+    h3.title{ margin: $_20 0;}
+    .everyone-main{ width: $main-size; padding:$_24 $_20 $_20; box-sizing: border-box; background-color: $main-bg;
+        .main-img{ position: relative;
+            .btn-box{ position: absolute; left: 50%; margin-left: -$_100; bottom: 10px;
+                .btn{ width: $_20; @include inline-block; height: $_20; background-color:$main-border; margin-right: $_20; border-radius: 50%;
+                    &:hover,
+                    &.cur{ background-color: #009943;}
+                }
+            }
+            .info{ display: none; border: $_1 solid #009a45; box-sizing: border-box; height:  $_400 + $_30; 
+                >img{ width: 100%; height: 100%;}
+            }
         }
-        .main-info{float: none; width: auto; margin:0; margin-top: $_30; position: static;  margin-bottom: $_50; clear: both;
-            h4{ font-size: $_40; margin-bottom: $_20; }
-            p{ font-size: $_24; line-height: 2;}
+        .main-info{ margin:0; margin-top: $_30; position: static; clear: both;
+            h4{ font-size: $_40; margin-bottom: $_20; text-align: center; }
+            p{ font-size: $_24; line-height: 2; margin: 0 $_20;}
         }
     }
 }
-.ct-column-recommend{
-    &:before{ display: none;}
-    &:after{ display: none; }
-    .recommend-main{ width: $main-size; background-color: #fff; padding-top: $_80; position: relative;
-        .tab-info{ float: none; display: none; width: $main-size;
+.ct-column-recommend{ 
+    .recommend-main{ background-color: $main-bg; padding-bottom: $_20;
+        .tab-info{
             >img{ width: 100%;}
         }
-        .tab-title{ margin:0; position: absolute; width: $main-size; top: 0; float: none;
-            >span{ 
-                    &.cur{
-                    .sep{ display:none;}
-                }
-            }
-            .btn-tab{ display: inline-block; width: 25%; height: $_80; line-height: $_80; margin-bottom: 0;
-                &.bai{ background-color: #fff; box-sizing: border-box; border:$_1 solid $main-border; }
-                &.zong{ background-color: #4f2620; color: #fff;}
-                &.jin{background-color: #bfafb0; }
-                &.hei{background-color: #000; color: #fff;}
-            }
-            .sep{ display:none; background:url('../images/sep.png') no-repeat center; width:59px;height: 6px; vertical-align: middle; }
+        .tab-title{ margin-top: $_20;
+            .cur{ width: 50%; display: inline-block; box-sizing: border-box; font-size: $_24; line-height: 1.5; margin-bottom: $_30;}
+            .sep{ background-color: #009943; width: $_14; height: $_14; display: inline-block; margin-right: $_10; margin-left: $_35;}
         }
     }
     .sum-title{margin:$_20 0;}
 }
 
 
-.ct-column-summarize{ width: auto; padding: $_20; 
+.ct-column-summarize{ padding: $_20; 
     .title>img{height: $_30; width: $_181; }
     .summary{ margin-bottom: $_28;
-        .editor-info{ float: none; width: auto; border-left: none; padding-left: 0; margin-left: 0;  position: relative; float: none; margin-top: $_30;
-            h3{ margin-bottom: $_30;}
+        .editor-info{ border-left: none; padding-left: 0; margin-left: 0;  position: relative;  margin-top: $_30;
+            h3{ margin-bottom: $_30; text-align: center;}
             .info{ text-align: right; position: absolute; top: $_15; right: 0;
                 img{ margin: 0 $_14 0 $_6;}
                 span{ @include inline-block; color: #fff; line-height: 24px;background-color: darken($color: $main-border, $amount: 50%); padding: 0 $_5; }
             }
             >p{font-size: $_16; margin-bottom: $_20;}
         }
-        dt{ border-bottom: $_1 solid $main-border; text-align: center; padding-bottom: $_25; width: auto; float: none;
-            .user-img{ width: $_95; height: $_95; }
+        dt{ border-bottom: $_1 solid $main-border; text-align: center; padding-bottom: $_25; 
+            .user-img{ @include inline-block; width: $_95; height: $_95; 
+                >img{ width: 100%;}
+            }
             h4{ @include inline-block;
-                .name{@extend .user-img; width: $_71; height: $_24; line-height: $_24; margin: 0 $_40; vertical-align: middle;}
+                .name{ @include inline-block; width: $_71; height: $_24; line-height: $_24; margin: 0 $_40; vertical-align: middle;
+                    >img{ width: 100%;}
+                }
                 .synopsis{ @include inline-block; margin-top: 0;letter-spacing:.2em; font-size: $_18;}
             }
             p{ font-size: $_16; margin-top: $_20; text-align: left; } 
@@ -160,85 +158,3 @@ h4.sum-title{ margin: $_54 0 $_30; font-size: $_32; color: #8f9199; letter-spaci
 }
 
 //end
-
-//animation
-.ct-column-rush{
-    .rush-main{ 
-        .main-img,
-        .main-info{ opacity: 1; }
-    }
-    .video-img,
-    .list-challenge{ opacity: 1; }
-}
-.ct-column-expert{
-    .expert-main{
-        .main-img,
-        .main-info{ opacity: 1; }
-    }
-    .expert-info{ opacity: 1; }
-}
-.ct-column-everyone{
-    .everyone-main{ 
-        .main-img{ opacity:1; }
-        .main-info{ opacity: 1; }
-    }
-}
-.ct-column-recommend{
-    .recommend-main,
-    .video-img{ opacity: 1; }
-}
-.ct-column-summarize,
-.page-footer{ opacity: 1;}
-
-//keyframes
-@keyframes opacity-in{
-    0%{ opacity: 0;}
-    100%{ opacity: 1; }
-}
-@keyframes bottom-in{
-    0%{ bottom: -500px;}
-    75%{ opacity: 0;}
-    100%{ bottom: 0; opacity: 1;}
-}
-
-@keyframes left-in{
-    0%{ left: -500px;}
-    75%{ opacity: 0;}
-    100%{ left: 0; opacity: 1;}
-}
-@keyframes right-in{
-    0%{ right: -500px;}
-    75%{ opacity: 0;}
-    100%{ right: 0; opacity: 1;}
-}
-
-
-//animation-in
-.page-footer-in{ position:relative; animation: none;}
-
-.ct-column-rush-in{
-    .rush-main{ position: relative;
-        .main-img{ animation: none; }
-        .main-info{ animation: none; }
-    }
-    .video-img,
-    .list-challenge{ animation: none; }
-}
-.ct-column-expert-in{
-    .expert-main{position: relative;
-        .main-img{ animation: none; }
-        .main-info{ animation: none; }
-    }
-    .expert-info{animation: none; }
-}
-.ct-column-everyone-in{
-    .everyone-main{position: relative;
-        .main-img{ animation: none; }
-        .main-info{  position: static; animation: none; }
-    }
-}
-.ct-column-recommend-in{
-    .recommend-main{animation: none;}
-    .video-img{ animation: none; }
-}
-.ct-column-summarize-in{ animation: none;}
