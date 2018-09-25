@@ -1,0 +1,238 @@
+@charset "UTF-8";
+//---------------------------------------
+//导入页面集合样式
+//---------------------------------------
+//mixin
+@import "hourglass/scss/mixins";
+//基础内容
+@import 'common/sass/reset';
+
+//组件
+//@import 'common/sass/config';
+//@import 'hourglass/scss/components/btn';
+//color
+$main-font:#161717;
+$main-color:#6aa672;
+$main-bg:#f3f3f6;
+$main-border:#ccc;
+$main-size: 900px;
+
+//default
+.page-index{ font-size: 14px; color: $main-font; line-height: 2em; overflow: hidden;}
+.page-header,
+.page-content,
+.footer-main{ width: 100%; margin: auto;}
+h2.title{ margin: 65px 0 38px; height: 78px; line-height: 66px; background: url('../images/bg-title.png') no-repeat center; text-align: center;}
+h3.title{ margin: 60px 0 52px; height: 114px; line-height: 114px; background: url('../images/bg-title-01.png') no-repeat center bottom; text-align: center;}
+h4.sum-title{ margin: 54px 0 30px; font-size: 32px; color: #8f9199; letter-spacing:.3em; text-align: center;}
+.icon-video{ display: inline-block; width: 52px; height: 36px; vertical-align: middle; margin-left: 10px; background: url('../images/icon-video.png') no-repeat center; }
+.video-img{ margin: auto; width: 906px; cursor: pointer;}
+.img-left{ float: left;}
+.img-right{ float: right;}
+.main-info>p{ font-weight: 200;}
+//header
+.page-header{ position:relative;
+    &:before{ content:''; display:block; background-color:$main-bg; position:absolute; top:0; left:0; width:100%; height:524px; z-index:-1; }
+    .info-main{background:url('../images/banner.png') no-repeat center top ; height:672px; }
+}
+//footer
+.page-footer{ text-align: center;  background-color: darken($color: $main-border, $amount: 50%); padding: 40px 0 30px; color: lighten($color: $main-font, $amount: 100%); margin-top: 54px;
+    .footer-logo,
+    h3,
+    p{ @include inline-block; }
+    h3{ margin: 0 55px 0 66px;}
+    p{
+        span{ @include inline-block; margin-right: 20px;}
+    }
+}
+//content
+.ct-column-rush{ margin-top:-80px;
+    .rush-main{ background-color: $main-bg; width: $main-size; margin: auto; height: 446px;
+       .main-info{ @extend .img-right; width: 300px; margin:55px 20px 0 0; width: 340px;;
+            h4{ font-size: 30px; margin-bottom: 30px; text-align: center; padding: 0 30px;}
+            p{ font-size: 20px; line-height: 1.5; overflow: hidden;}
+        }
+       .main-img{ position: absolute; margin-top: -10px;}
+    }
+    .list-challenge{ overflow: hidden; width: 906px; margin:17px auto 0;
+        .info-list-main{ @extend .img-left; width: 212px; background-color: $main-bg; margin-right: 19px; text-align: center;
+            &:last-child{ margin-right: 0;}
+            .name{ background-color: darken($color: $main-bg, $amount: 16.5%); line-height: 50px; height: 50px; font-size: 24px;}
+            .main-img{ overflow: hidden; position: relative;
+                .num{ font-size: 120px; font-family: 'Arial'; position: absolute; right: -6px; top: 0; color: lighten($color: $main-font, $amount: 100%); line-height: 0.76; }
+                >img{ width: 100%; height: 100%; position: relative; z-index: 2;}
+            }
+        }
+    }
+}
+.ct-column-expert{ position: relative;
+    &:before{ content:''; display:block; background:url('../images/img.jpg') no-repeat center; position:absolute; left:0; width:223px; height:226px; top: 580px; }
+    &:after{ content:''; display:block; background:url('../images/img-11.jpg') no-repeat center; position:absolute; right: 0; width:209px; height:210px; bottom: -110px; }
+    .expert-main{ position: relative; width: $main-size; margin: auto; background-color: $main-bg; padding: 37px 0 47px 21px; box-sizing: border-box; 
+        .main-img{ width: 489px; height: 362px; overflow: hidden; text-align: center; background-color: darken($color: $main-bg, $amount: 20%); cursor: pointer; }
+        .main-info{ position: absolute; margin-right: -24px; top: -55px; background: url('../images/img-09.png') no-repeat center; width: 393px; height: 501px;}
+    }
+    .expert-info{ width: $main-size; margin: auto; overflow: hidden;
+        article{ @extend .img-left; width: 50%; box-sizing: border-box; border-right: 1px solid darken($color: $main-bg, $amount: 10%); margin-top:30px; padding:30px 20px;
+            &:last-child{ border-right: none 0;}
+            h4{ text-align: center; font-size: 30px; margin-bottom: 30px; line-height: 1; padding: 0 20px;}
+            p{ font-size: 20px; line-height: 1.5; font-weight: 200;}
+        }
+    }
+}
+.ct-column-everyone{ 
+    .everyone-main{ width: $main-size; margin: auto; background-color: $main-bg; padding: 37px 0 47px 21px; box-sizing: border-box; overflow: hidden;
+        .main-img{ width: 489px; height: 362px; overflow: hidden; text-align: center; background-color: darken($color: $main-bg, $amount: 20%); cursor: pointer; @extend .img-left;}
+        .main-info{ width: 300px; margin:30px 44px 0 0;
+            h4{ font-size: 30px; margin-bottom: 30px; text-align: center;}
+            p{ font-size: 20px; line-height: 1.5; overflow: hidden;}
+        }
+    }
+}
+.ct-column-recommend{position: relative;
+    &:before{ content:''; display:block; background:url('../images/img-12.png') no-repeat center; position:absolute; left:0; width:165px; height:336px; top:-90px; }
+    &:after{ content:''; display:block; background:url('../images/img-15.png') no-repeat center; position:absolute; right:0; width:159px; height:185px; bottom:490px; }
+    .recommend-main{ width: $main-size; margin: auto; background-color: $main-bg; overflow: hidden;
+        .tab-info{ display: none; width: 645px ; @extend .img-left; 
+            >img{ width: 100%;}
+        }
+        .tab-title{ margin:30px 0 0 30px; @extend .img-left; width: 219px;
+            >span{ cursor: pointer; 
+                    &.cur{
+                    .sep{ display: inline-block;}
+                }
+            }
+            .btn-tab{ display: inline-block; width: 140px; height: 80px; line-height: 80px; text-align: center; margin-bottom: 22px;
+                &.bai{ background-color: #fff;}
+                &.zong{ background-color: #4f2620; color: #fff;}
+                &.jin{background-color: #bfafb0; }
+                &.hei{background-color: #000; color: #fff;}
+            }
+            .sep{ display:none; background:url('../images/sep.png') no-repeat center; width:59px;height: 6px; vertical-align: middle; }
+        }
+    }
+}
+.ct-column-summarize{ clear: both; width: 950px; margin: auto;
+    .summary{ overflow: hidden; margin-bottom: 28px; 
+        .editor-info{ @extend .img-left; overflow: hidden; _display:inline; width: 357px; border-left: 1px solid $main-border; padding-left: 45px; margin-left: 35px;
+            h3{ margin-bottom: 30px;}
+            .info{ text-align: right;
+                img{ margin: 0 14px 0 6px;}
+                span{ @include inline-block; color: #fff; line-height: 24px;background-color: darken($color: $main-border, $amount: 50%); padding: 0 5px; }
+            }
+        }
+        dt{ @extend .img-left; width: 510px;
+            .user-img{ width: 74px; height: 79px; @include inline-block;
+                img{ width: 100%;}
+            }
+            h4{ @include inline-block;
+                .name{ @extend .user-img; width: 71px; height: 24px; margin: 0 40px;}
+                .synopsis{ line-height: 24px; @include inline-block; margin-top: 7px;letter-spacing:.2em; font-size: 18px;}
+            }
+            p{ letter-spacing:.1em; font-size: 16px; margin-top: 20px; } 
+        }
+    }
+    .essay-info{ border: 1px solid darken($color: $main-border, $amount: 0%); padding: 22px 62px; margin-bottom: 50px; overflow: hidden; font-size: 20px; line-height: 1.5;
+        h3{  font-weight: bold; }
+         p{ margin: 10px 0;}
+    }
+}
+
+//layrer
+.layrer-bg{ display: none;  @include layer-bg( .5 );}
+.layrer-video{ display: none; @include layer-box(876px , 488px); background: no-repeat center; background-size: 100%;
+    &.video-rush { background-image: url('../images/img3-video.jpg'); }
+    &.video-expert { background-image: url('../images/img2-video.jpg'); }
+    &.video-everyone { background-image: url('../images/img1-video.jpg'); }
+    &.video-recommend { background-image: url('../images/img4-video.jpg'); }
+}
+.icon-close{ @include inline-block; background: url('../images/icon-close.png') no-repeat center; background-size:100%;  width: 40px; height: 40px; position: absolute; right: -15px; margin-top: -15px; cursor: pointer;  z-index: 10;}
+
+
+//animation
+.ct-column-rush{
+    .rush-main{ 
+        .main-img,
+        .main-info{ opacity: 0; }
+    }
+    .video-img,
+    .list-challenge{ opacity: 0; }
+}
+.ct-column-expert{
+    .expert-main{
+        .main-img,
+        .main-info{ opacity: 0; }
+    }
+    .expert-info{ opacity: 0; }
+}
+.ct-column-everyone{
+    .everyone-main{ 
+        .main-img{ opacity: 0; }
+        .main-info{ opacity: 0; }
+    }
+}
+.ct-column-recommend{
+    .recommend-main,
+    .video-img{ opacity: 0; }
+}
+.ct-column-summarize,
+.page-footer{ opacity: 0;}
+
+//keyframes
+@keyframes close-rotating{
+    0%{ transform: rotate(0deg); }
+    100%{ transform: rotate(180deg); }
+}
+@keyframes opacity-in{
+    0%{ opacity: 0;}
+    100%{ opacity: 1; }
+}
+@keyframes bottom-in{
+    0%{ bottom: -500px;}
+    75%{ opacity: 0;}
+    100%{ bottom: 0; opacity: 1;}
+}
+
+@keyframes left-in{
+    0%{ left: -500px;}
+    75%{ opacity: 0;}
+    100%{ left: 0; opacity: 1;}
+}
+@keyframes right-in{
+    0%{ right: -500px;}
+    75%{ opacity: 0;}
+    100%{ right: 0; opacity: 1;}
+}
+
+
+//animation-in
+.icon-close:hover{ animation: close-rotating .3s forwards; }
+
+.page-footer-in{ position:relative; animation: bottom-in .8s ease forwards;}
+
+.ct-column-rush-in{
+    .rush-main{ position: relative;
+        .main-img{ animation: left-in .5s ease forwards; }
+        .main-info{ position: absolute; animation: right-in .5s ease forwards; }
+    }
+    .video-img,
+    .list-challenge{ animation: opacity-in .8s ease forwards 1s; }
+}
+.ct-column-expert-in{
+    .expert-main{position: relative;
+        .main-img{ animation: left-in .5s ease forwards; }
+        .main-info{ animation: right-in .5s ease forwards; }
+    }
+    .expert-info{animation: opacity-in .8s ease forwards 1s; }
+}
+.ct-column-everyone-in{
+    .everyone-main{position: relative;
+        .main-img{ animation: left-in .5s ease forwards; }
+        .main-info{  position: absolute; animation: right-in .5s ease forwards; }
+    }
+}
+.ct-column-recommend-in{
+    .recommend-main{animation: opacity-in .8s ease forwards;}
+    .video-img{ animation: opacity-in .8s ease forwards 1s; }
+}
+.ct-column-summarize-in{ animation: opacity-in .8s ease forwards;}
