@@ -59,7 +59,7 @@ h4.sum-title{ margin: $_34 0 $_30; font-size: $_32; color: #8f9199; letter-spaci
     .rush-main{ background-color: $main-bg; width: $main-size; position: relative; padding-top: $_20;
        .main-info{  width: $main-size; margin:0; padding:$_20 $_30 $_30; box-sizing: border-box; position: static;
             h4{ font-size: $_40; margin-bottom: $_25; text-align: center;}
-            p{ font-size: $_24; }
+            p{ font-size: $_24; line-height: 1.5; }
         }
        .main-img{ position: relative; z-index: 2;
             >img{ width:100%;}
@@ -75,7 +75,7 @@ h4.sum-title{ margin: $_34 0 $_30; font-size: $_32; color: #8f9199; letter-spaci
         .main-img{ width: 100%; height: $_365; background-color:transparent; padding:0 $_20; box-sizing: border-box;
             >img{width: 100%;}
         }
-        >.info{ font-size: $_24; padding:$_40;}
+        >.info{ font-size: $_24; padding:$_40; line-height: 1.5;}
         .main-info{ display: flex; justify-content: center; padding: $_30 0;;
             .user-img{ width: $_173; height: $_173;
                 >img{ width: 100%;}
