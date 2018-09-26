@@ -95,19 +95,13 @@ h4.sum-title{ margin: $_34 0 $_30; font-size: $_32; color: #8f9199; letter-spaci
 }
 .ct-column-everyone{ 
     h3.title{ margin: $_20 0;}
-    .everyone-main{ width: $main-size; padding:$_24 $_20 $_20; box-sizing: border-box; background-color: $main-bg;
-        .main-img{ position: relative;
-            .btn-box{ position: absolute; left: 50%; margin-left: -$_100; bottom: 10px;
-                .btn{ width: $_20; @include inline-block; height: $_20; background-color:$main-border; margin-right: $_20; border-radius: 50%;
-                    &:hover,
-                    &.cur{ background-color: #009943;}
-                }
-            }
-            .info{ display: none; border: $_1 solid #009a45; box-sizing: border-box; height:  $_400 + $_30; 
-                >img{ width: 100%; height: 100%;}
+    .everyone-main{ width: $main-size; padding:$_24 0 $_20; box-sizing: border-box; background-color: $main-bg; 
+        .main-img{ position: relative; overflow: hidden; text-align: center; 
+            .info{ padding: 0 $_20; box-sizing: border-box; 
+                >img{border: $_2 solid #009a45;}
             }
         }
-        .main-info{ margin:0; margin-top: $_30; position: static; clear: both;
+        .main-info{ margin:0; margin-top: $_30; position: static; clear: both; padding: 0 $_20;
             h4{ font-size: $_40; margin-bottom: $_20; text-align: center; }
             p{ font-size: $_24; line-height: 2; margin: 0 $_20;}
         }

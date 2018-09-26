@@ -9,7 +9,6 @@
 <meta name="Keywords" content="" />
 <link rel="stylesheet" type="text/css" href="css/container-wap.css">
 <script src="js/resize.js"></script>
-<script src="js/jquery-1.9.1.min.js"></script>
 <title>舌尖上的新鲜 博世维他鲜动力多门冰箱 保鲜大挑战 </title>
 <script src="http://m.leju.com/resources/scripts/wx_share.js"></script>
 <script> 
@@ -22,6 +21,8 @@
          }); 
    } 
  </script> 
+ <link rel="stylesheet" href="library/css/banner.css">
+ <script type="text/javascript" src="library/js/banner.js"></script>
 </head>
 <body>
 <!--page-index-->
@@ -72,19 +73,14 @@ scrolling="no" width="100%" height="100%" frameborder="0">
     <div class="ct-column-everyone content-list">
       <h3 class="title"><img src="images/title-03.png" alt="好物大家说"/></h3>
       <dl class="everyone-main">
-          <dt class="main-img">
-            <div class="btn-box">
-              <em class="btn cur"></em>
-              <em class="btn"></em>
-              <em class="btn"></em>
-              <em class="btn"></em>
-              <em class="btn"></em>
-            </div>
-            <section class="info" style="display:block;"><img src="images/img-15.jpg" alt=""></section>
-            <section class="info"><img src="images/img-15.jpg" alt=""></section>
-            <section class="info"><img src="images/img-15.jpg" alt=""></section>
-            <section class="info"><img src="images/img-15.jpg" alt=""></section>
-            <section class="info"><img src="images/img-15.jpg" alt=""></section>
+          <dt class="main-img" id="banner-wrap">
+            <ul id="banner-list">
+              <li class="info"><img src="images/img-15.jpg" alt=""></li>
+              <li class="info"><img src="images/img-15.jpg" alt=""></li>
+              <li class="info"><img src="images/img-15.jpg" alt=""></li>
+              <li class="info"><img src="images/img-15.jpg" alt=""></li>
+              <li class="info"><img src="images/img-15.jpg" alt=""></li>
+            </ul>
           </dt>
           <dd class="main-info">
             <h4>选冰箱你最关心什么</h4>
@@ -145,14 +141,5 @@ scrolling="no" width="100%" height="100%" frameborder="0">
   <!--/page-footer-->
 </div>
 <!--/page-index-->
-
-
-<script>
-$('.everyone-main').find('.btn').bind('mouseover',function(){
-    var newIndex = $(this).index();
-    $('.everyone-main .main-img').find('.info').eq(newIndex).show().siblings('.info').hide();
-    $( this ).addClass('cur').siblings().removeClass('cur');
-});
-</script>
 </body>
 </html>

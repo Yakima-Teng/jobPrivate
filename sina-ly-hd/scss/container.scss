@@ -88,7 +88,7 @@ h4.sum-title{ margin: 54px 0 30px; font-size: 32px; color: #8f9199; letter-spaci
     &:before{ content:''; display:block; background:url('../images/img-01.png') no-repeat center; position:absolute; right:0; width:212px; height:153px; top: -77px; }
     .everyone-main{ width: $main-size; margin: auto; background-color: $main-bg; padding: 37px 0 47px 21px; box-sizing: border-box; overflow: hidden;
         .main-img{ width: 489px; height: 362px; overflow: hidden; text-align: center; @extend .img-left; position: relative;
-            .btn-box{ position: absolute; left: 50%; margin-left: -130px; bottom: 10px;
+            .everyone-btn-box{ position: absolute; left: 50%; margin-left: -130px; bottom: 10px;
                 .btn{ width: 40px; @include inline-block; height: 4px; background-color:$main-border; margin-right: 10px; cursor: pointer; 
                     &:hover,
                     &.cur{ background-color: #009943;}
@@ -105,12 +105,13 @@ h4.sum-title{ margin: 54px 0 30px; font-size: 32px; color: #8f9199; letter-spaci
 .ct-column-recommend{position: relative;
     &:before{ content:''; display:block; background:url('../images/img-16.png') no-repeat center; position:absolute; left:0; width:198px; height:172px; top:-84px; }
     .recommend-main{ width: $main-size; margin: auto; background-color: $main-bg; overflow: hidden;
-        .tab-info{ display: none; width: 645px ; @extend .img-left; 
+        .tab-info{ display: none; width: 645px ; @extend .img-left; margin-top: 13px;
             >img{ width: 100%;}
         }
         .tab-title{ margin:10px 0 0 36px; @extend .img-left; width: 219px;
             .btn-tab{ display: inline-block; width: 211px; height: 61px; font-size: 16px; line-height: 61px; text-align: center; margin-bottom: 10px; background-color: #fff; cursor: pointer; 
-                &:hover{ background-color: #009a45; color: #fff;}
+                &:hover,
+                &.cur{ background-color: #009a45; color: #fff;}
             }
         }
     }

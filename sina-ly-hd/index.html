@@ -72,18 +72,20 @@
       <h3 class="title"><img src="images/title-03.png" alt="好物大调查"/></h3>
       <dl class="everyone-main">
         <dt class="main-img">
-          <div class="btn-box">
+          <div class="everyone-btn-box">
             <em class="btn cur"></em>
             <em class="btn"></em>
             <em class="btn"></em>
             <em class="btn"></em>
             <em class="btn"></em>
           </div>
-          <section class="info" style="display:inline;"><img src="images/img-15.jpg" alt=""></section>
-          <section class="info"><img src="images/img-15.jpg" alt=""></section>
-          <section class="info"><img src="images/img-15.jpg" alt=""></section>
-          <section class="info"><img src="images/img-15.jpg" alt=""></section>
-          <section class="info"><img src="images/img-15.jpg" alt=""></section>
+          <div class="everyone-info-box">
+            <section class="info" style="display:inline;"><img src="images/img-15.jpg" alt=""></section>
+            <section class="info"><img src="images/img-15.jpg" alt=""></section>
+            <section class="info"><img src="images/img-15.jpg" alt=""></section>
+            <section class="info"><img src="images/img-15.jpg" alt=""></section>
+            <section class="info"><img src="images/img-15.jpg" alt=""></section>
+          </div>
         </dt>
         <dd class="main-info">
           <h4>选冰箱你最关心什么</h4>
@@ -98,14 +100,14 @@
       <h3 class="title"><img src="images/title-04.png" alt="好物推荐"/></h3>
       <div class="recommend-main">
         <header class="tab-title">
-          <span class="cur"><em class="btn-tab ">文蒸武烤，一机双全</em></span><span><em class="btn-tab">蒸烤智能三合一</em></span><span><em class="btn-tab">3D精控蒸汽嫩烤</em></span><span><em class="btn-tab">外置抽拉式水盒</em></span><span><em class="btn-tab">3.5” TFT彩色液晶屏显示</em></span><span><em class="btn-tab">50L黄金大容积</em></span>
+          <span><em class="btn-tab cur">文蒸武烤，一机双全</em></span><span><em class="btn-tab">蒸烤智能三合一</em></span><span><em class="btn-tab">3D精控蒸汽嫩烤</em></span><span><em class="btn-tab">外置抽拉式水盒</em></span><span><em class="btn-tab">3.5” TFT彩色液晶屏显示</em></span><span><em class="btn-tab">50L黄金大容积</em></span>
         </header>
-        <section class="tab-info" style="display:block;"><img src="images/img-17.jpg" alt=""></section>
-        <section class="tab-info"><img src="images/img-17.jpg" alt=""></section>
-        <section class="tab-info"><img src="images/img-17.jpg" alt=""></section>
-        <section class="tab-info"><img src="images/img-17.jpg" alt=""></section>
-        <section class="tab-info"><img src="images/img-17.jpg" alt=""></section>
-        <section class="tab-info"><img src="images/img-17.jpg" alt=""></section>
+        <section class="tab-info" style="display:block;"><img src="images/img-17-2.jpg" alt=""></section>
+        <section class="tab-info"><img src="images/img-17-0.jpg" alt=""></section>
+        <section class="tab-info"><img src="images/img-17-3.jpg" alt=""></section>
+        <section class="tab-info"><img src="images/img-17-5.jpg" alt=""></section>
+        <section class="tab-info"><img src="images/img-17-4.jpg" alt=""></section>
+        <section class="tab-info"><img src="images/img-17-1.jpg" alt=""></section>
       </div>
       <h4 class="sum-title">好物视频<i class="icon icon-video"></i></h4>
       <div class="video-img"><img src="images/img-video.jpg" alt=""></div>
@@ -128,7 +130,7 @@
               
           <p>博世家电自创立以来，始终以现代家居生活的实际需求<br>为导向，通过创新的技术和令人惊喜、操作简便的解决<br>方案，实现出色的结果，为消费者打造健康轻松的家居<br>生活。</p>
               <p>高端的产品品质、精湛的工艺、经典的设计成就了博世<br>家电的高品质与可持续性的业务发展。优质服务获得了<br>消费者的信赖，印证了其“科技成就生活之美”的品牌理念。</p>
-              <p class="info"><span>感谢BOSCH对本次体验大力支持</span></p>
+              <!-- <p class="info"><span>感谢BOSCH对本次体验大力支持</span></p> -->
             </dd>
         </dl>
     </div>
@@ -173,5 +175,24 @@ scrolling="no" width="100%" height="100%" frameborder="0">
 </div>
 <!--/layrer-->
 <script src="js/base.js"></script>
+<script>
+
+// $('.everyone-main').find('.btn').bind('mouseover',function(){
+//   var newIndex = $(this).index();
+//   $('.everyone-main .main-img').find('.info').eq(newIndex).show().siblings('.info').hide();
+//   $( this ).addClass('cur').siblings().removeClass('cur');
+// });
+
+var time = "";
+var index = 1;
+showimg(index);
+function showimg(num) {
+  index = num;
+  $('.everyone-btn-box').find('.btn').removeClass("cur").eq(index-1).addClass("cur");
+  $(".everyone-info-box .info").hide().stop(true,true).eq(index-1).show();
+  index = index + 1 > 5 ? 1 : index + 1;
+  time = setTimeout("showimg(" + index + ")", 3000);
+}
+</script>
 </body>
 </html>

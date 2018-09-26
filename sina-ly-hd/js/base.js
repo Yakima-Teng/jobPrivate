@@ -44,15 +44,15 @@ if( thisTop>4400 ){
 $('.btn-tab').bind('mouseover',function(){
     var newIndex = $(this).parent().index();
     $('.tab-info').eq(newIndex).show().siblings('.tab-info').hide();
-    $(this).parent().addClass('cur').siblings().removeClass('cur');
+    $(this).addClass('cur').parent().siblings().find('.btn-tab').removeClass('cur');
 });
 
 
-$('.everyone-main').find('.btn').bind('mouseover',function(){
-    var newIndex = $(this).index();
-    $('.everyone-main .main-img').find('.info').eq(newIndex).show().siblings('.info').hide();
-    $( this ).addClass('cur').siblings().removeClass('cur');
-});
+// $('.everyone-main').find('.btn').bind('mouseover',function(){
+//     var newIndex = $(this).index();
+//     $('.everyone-main .main-img').find('.info').eq(newIndex).show().siblings('.info').hide();
+//     $( this ).addClass('cur').siblings().removeClass('cur');
+// });
 
 $('.video-rush').find('.icon-close').bind('click',function(){  
     var srcNew = $(this).parent().find('iframe').attr('src');
