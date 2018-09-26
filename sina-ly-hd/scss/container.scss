@@ -89,8 +89,7 @@ h4.sum-title{ margin: 54px 0 30px; font-size: 32px; color: #8f9199; letter-spaci
     .everyone-main{ width: $main-size; margin: auto; background-color: $main-bg; padding: 37px 0 47px 21px; box-sizing: border-box; overflow: hidden;
         .main-img{ width: 489px; height: 362px; overflow: hidden; text-align: center; @extend .img-left; position: relative;
             .everyone-btn-box{ position: absolute; left: 50%; margin-left: -130px; bottom: 10px;
-                .btn{ width: 40px; @include inline-block; height: 4px; background-color:$main-border; margin-right: 10px; cursor: pointer; 
-                    &:hover,
+                >em{ width: 40px; @include inline-block; height: 4px; background-color:$main-border; margin-right: 10px; cursor: pointer; 
                     &.cur{ background-color: #009943;}
                 }
             }

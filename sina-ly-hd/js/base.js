@@ -47,13 +47,6 @@ $('.btn-tab').bind('mouseover',function(){
     $(this).addClass('cur').parent().siblings().find('.btn-tab').removeClass('cur');
 });
 
-
-// $('.everyone-main').find('.btn').bind('mouseover',function(){
-//     var newIndex = $(this).index();
-//     $('.everyone-main .main-img').find('.info').eq(newIndex).show().siblings('.info').hide();
-//     $( this ).addClass('cur').siblings().removeClass('cur');
-// });
-
 $('.video-rush').find('.icon-close').bind('click',function(){  
     var srcNew = $(this).parent().find('iframe').attr('src');
     $('.ct-column-rush').find('.video-img').attr({videoSrc:srcNew});

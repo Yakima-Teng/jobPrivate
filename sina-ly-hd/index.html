@@ -73,11 +73,11 @@
       <dl class="everyone-main">
         <dt class="main-img">
           <div class="everyone-btn-box">
-            <em class="btn cur"></em>
-            <em class="btn"></em>
-            <em class="btn"></em>
-            <em class="btn"></em>
-            <em class="btn"></em>
+            <em class="cur"></em>
+            <em></em>
+            <em></em>
+            <em></em>
+            <em></em>
           </div>
           <div class="everyone-info-box">
             <section class="info" style="display:inline;"><img src="images/img-15.jpg" alt=""></section>
@@ -176,19 +176,18 @@ scrolling="no" width="100%" height="100%" frameborder="0">
 <!--/layrer-->
 <script src="js/base.js"></script>
 <script>
-
-// $('.everyone-main').find('.btn').bind('mouseover',function(){
-//   var newIndex = $(this).index();
-//   $('.everyone-main .main-img').find('.info').eq(newIndex).show().siblings('.info').hide();
-//   $( this ).addClass('cur').siblings().removeClass('cur');
-// });
-
+$('.everyone-btn-box').find('em').bind('mouseover',function(){
+    var newIndex = $(this).index();
+    $('.everyone-info-box').find('.info').eq(newIndex).show().siblings().hide();
+    $( this ).addClass('cur').siblings().removeClass('cur');
+});
+  
 var time = "";
 var index = 1;
 showimg(index);
 function showimg(num) {
   index = num;
-  $('.everyone-btn-box').find('.btn').removeClass("cur").eq(index-1).addClass("cur");
+  $('.everyone-btn-box').find('em').removeClass("cur").eq(index-1).addClass("cur");
   $(".everyone-info-box .info").hide().stop(true,true).eq(index-1).show();
   index = index + 1 > 5 ? 1 : index + 1;
   time = setTimeout("showimg(" + index + ")", 3000);
