@@ -47,31 +47,31 @@ $('.btn-tab').bind('mouseover',function(){
     $(this).addClass('cur').parent().siblings().find('.btn-tab').removeClass('cur');
 });
 
-$('.video-rush').find('.icon-close').bind('click',function(){  
-    var srcNew = $(this).parent().find('iframe').attr('src');
-    $('.ct-column-rush').find('.video-img').attr({videoSrc:srcNew});
-});
-$('.video-expert').find('.icon-close').bind('click',function(){  
-    var srcNew = $(this).parent().find('iframe').attr('src');
-    $('.ct-column-expert').find('.main-img').attr({videoSrc:srcNew});
-});
+// $('.video-rush').find('.icon-close').bind('click',function(){  
+//     var srcNew = $(this).parent().find('iframe').attr('src');
+//     $('.ct-column-rush').find('.video-img').attr({videoSrc:srcNew});
+// });
+// $('.video-expert').find('.icon-close').bind('click',function(){  
+//     var srcNew = $(this).parent().find('iframe').attr('src');
+//     $('.ct-column-expert').find('.main-img').attr({videoSrc:srcNew});
+// });
 
-$('.video-recommend').find('.icon-close').bind('click',function(){  
-    var srcNew = $(this).parent().find('iframe').attr('src');
-    $('.ct-column-recommend').find('.video-img').attr({videoSrc:srcNew});
-});
+// $('.video-recommend').find('.icon-close').bind('click',function(){  
+//     var srcNew = $(this).parent().find('iframe').attr('src');
+//     $('.ct-column-recommend').find('.video-img').attr({videoSrc:srcNew});
+// });
 
-$('.ct-column-rush').find('.video-img').bind('click',function(){
-    $('.layrer-bg,.video-rush').fadeIn();
-});
-$('.ct-column-expert').find('.main-img').bind('click',function(){
-    $('.layrer-bg,.video-expert').fadeIn();
-    var ifSrc = $(this).attr('videoSrc');
-    $('.video-expert').find('iframe').attr('src',ifSrc);
-});
-$('.ct-column-recommend').find('.video-img').bind('click',function(){
-    $('.layrer-bg,.video-recommend').fadeIn();
-});
+// $('.ct-column-rush').find('.video-img').bind('click',function(){
+//     $('.layrer-bg,.video-rush').fadeIn();
+// });
+// $('.ct-column-expert').find('.main-img').bind('click',function(){
+//     $('.layrer-bg,.video-expert').fadeIn();
+//     var ifSrc = $(this).attr('videoSrc');
+//     $('.video-expert').find('iframe').attr('src',ifSrc);
+// });
+// $('.ct-column-recommend').find('.video-img').bind('click',function(){
+//     $('.layrer-bg,.video-recommend').fadeIn();
+// });
 
 $('.icon-close').bind('click',function(){    
     $('.layrer-bg').fadeOut();
