@@ -72,19 +72,10 @@
       <h3 class="title"><img src="images/title-03.png" alt="好物大调查"/></h3>
       <dl class="everyone-main">
         <dt class="main-img">
-          <div class="everyone-btn-box">
-            <em class="cur"></em>
-            <em></em>
-            <em></em>
-            <em></em>
-            <em></em>
-          </div>
+          
           <div class="everyone-info-box">
             <section class="info" style="display:inline;"><img src="images/img-15.jpg" alt=""></section>
-            <section class="info"><img src="images/img-15.jpg" alt=""></section>
-            <section class="info"><img src="images/img-15.jpg" alt=""></section>
-            <section class="info"><img src="images/img-15.jpg" alt=""></section>
-            <section class="info"><img src="images/img-15.jpg" alt=""></section>
+           
           </div>
         </dt>
         <dd class="main-info">
@@ -153,23 +144,6 @@
 
 <!--/layrer-->
 <script src="js/base.js"></script>
-<script>
-$('.everyone-btn-box').find('em').bind('mouseover',function(){
-    var newIndex = $(this).index();
-    $('.everyone-info-box').find('.info').eq(newIndex).show().siblings().hide();
-    $( this ).addClass('cur').siblings().removeClass('cur');
-});
-  
-var time = "";
-var index = 1;
-showimg(index);
-function showimg(num) {
-  index = num;
-  $('.everyone-btn-box').find('em').removeClass("cur").eq(index-1).addClass("cur");
-  $(".everyone-info-box .info").hide().stop(true,true).eq(index-1).show();
-  index = index + 1 > 5 ? 1 : index + 1;
-  time = setTimeout("showimg(" + index + ")", 3000);
-}
-</script>
+
 </body>
 </html>
