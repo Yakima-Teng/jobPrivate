@@ -1,0 +1,136 @@
+@charset "UTF-8";
+//---------------------------------------
+//导入页面集合样式
+//---------------------------------------
+//mixin
+@import "../../scss/hourglass/scss/mixins";
+//基础内容
+@import '../../scss/common/sass/reset_mobile';
+
+//组件
+//@import 'common/sass/config';
+//@import 'hourglass/scss/components/btn';
+//color
+$main-font:#666;
+$main-color:#6aa672;
+$main-bg:#f3f3f6;
+$main-border:#b9b8b8;
+$main-size: 100%;
+
+//size
+
+
+//default
+.page-index{ font-size: $_14; color: $main-font; line-height: 2em; overflow: hidden;}
+.page-header,
+.page-content,
+.footer-main{ width: 100%; margin: auto;}
+h2.title{ margin: $_25 0 $_38; height: $_78; line-height: $_66; background: url('../images/bg-title.png') no-repeat center; background-size: 100%; text-align: center;}
+h3.title{ margin: $_80 $_48 $_50; height: $_55; line-height: $_55; background: url('../images/bg-title-01.png') no-repeat center bottom;  background-size: 100%; text-align: center;
+    >img{ width: $_220;}
+}
+h4.sum-title{ margin: $_34 0 $_30; font-size: $_32; color: #8f9199; letter-spacing:.3em; text-align: center;}
+.icon-video{ display: inline-block; width: $_52; height: $_36; vertical-align: middle; margin-left: $_10; background: url('../images/icon-video.png') no-repeat center; background-size: 100%; }
+.video-img{ margin: auto; width: 100%; height: $_392; cursor: pointer; padding: 0 $_20; box-sizing: border-box;
+    >img{ width:100%;}
+}
+
+//header
+.page-header{ position:relative;
+    .info-main{background:url('../images/wap-banner.jpg') no-repeat center top ; background-size: 100%; height:2*$_400 + $_120; }
+    .info{ border: $_1 solid $main-border; padding: $_28 $_20; box-sizing: border-box; font-size: $_24; line-height: 2; font-weight: 100; text-indent: 2em; margin: $_20;}
+}
+
+//footer
+.page-footer{text-align: center;  background-color: darken($color: $main-border, $amount: 50%); color: lighten($color: $main-font, $amount: 100%); margin-top: 0; padding: $_40 0 $_30;
+    .footer-logo{ width: $_95;  margin: auto; display: block;
+        >img{ width: 100%;}
+    }
+    h3{ margin:0; margin-top:$_20;}
+    p{ margin-top:$_20;
+        span{ margin-right: $_20;}
+    }
+}
+
+//content
+.ct-column-rush{ margin-top:0px;}
+.ct-column-expert{
+    .pople-name{padding: $_30; margin:0 $_20; border:$_1 solid lighten($main-border, 10%);  box-sizing: border-box; display: flex; margin-bottom: $_28;
+        .intr-box{ color: darken($color: $main-font, $amount: 25%); line-height: 1; width: $_186; text-align: center; margin-right: $_48;
+            .avatar{ margin-bottom: $_30; width: 100%;}
+            .name{ font-size: $_45; margin-bottom: $_20;}
+            .intr{ font-size: $_24; margin-bottom: $_40;}
+        }
+        .info-box{ text-align: left; text-indent: 2em; font-size: $_22; width: 60%; }
+    }
+}
+.ct-column-everyone{ 
+    h3.title{ margin-bottom: $_20; }
+    .btn-list{ position: relative; left: 50%; transform:translateX(-50%);
+        .txt{ width: $_250; height: $_60; padding-right: $_18; border: $_1 solid lighten($main-border, 10%); background-color: #fefcfb; text-align: right; line-height: $_60; font-size: $_30; color: darken($color: $main-font, $amount: 25%); position: absolute; bottom: 0; right: 0px;}
+        >img{ position: relative; z-index: 2; }
+        &.btn-woman{ width: $_280;
+            >img{ width:$_100; }
+        }
+        &.btn-man{ width: $_282;
+            >img{ width:$_123; }
+        }
+        &.btn-he{ width: $_324;
+            >img{ width:$_162; }
+        }
+    }
+    .info-box{ position: relative; padding:0 $_20 $_40;
+        .info-list{ border: $_1 solid $main-border; margin-top: $_50; padding: $_20; color: darken($color: $main-font, $amount: 25%); position: relative;
+            &:before{content:''; display:block; background:url('../images/btn-top.jpg') no-repeat center; background-size: 100%; position:absolute; width:$_55; height:$_28; top: -$_27; left:50%; transform:translateX(-50%);}
+            .txt{ font-size: $_24; text-indent: 2em; line-height: 1.5; margin-bottom: $_20;}
+            .info-img>img{ width: 100%; padding-bottom: $_20;}
+        }
+    }
+}
+.ct-column-recommend{ 
+    h3.title{ margin-top: $_40; }
+    .recommend-list{ border: $_1 solid $main-border; padding:$_20; box-sizing: border-box; margin:0 $_20 $_30; overflow: hidden; 
+        .info{ margin: $_34 $_30 $_10;
+            .title{ border-bottom: $_5 solid lighten($main-border, 10%); padding-bottom:$_28; margin-bottom: $_20;
+                >img{width: 100%;}
+            }
+            .txt{ font-size: $_24; line-height: 1.5; color: darken($color: $main-font, $amount: 25%); text-indent: 2em;}
+        } 
+        .img{ border: $_1 solid lighten($main-border, 10%);
+            >img{width: 100%;}
+        }
+    }
+}
+
+
+.ct-column-summarize{ padding: $_20; 
+    .title>img{height: $_30; width: $_181; }
+    .summary{ margin-bottom: $_28;
+        .editor-info{ border-left: none; padding-left: 0; margin-left: 0;  position: relative;  margin-top: $_30;
+            h3{ margin-bottom: $_30; text-align: center;}
+            .info{ text-align: right; position: absolute; top: $_15; right: 0;
+                img{ margin: 0 $_14 0 $_6;}
+                span{ @include inline-block; color: #fff; line-height: 24px;background-color: darken($color: $main-border, $amount: 50%); padding: 0 $_5; }
+            }
+            >p{font-size: $_16; margin-bottom: $_20;}
+        }
+        dt{ border-bottom: $_1 solid $main-border; text-align: center; padding-bottom: $_25; 
+            .user-img{ @include inline-block; width: $_95; height: $_95; 
+                >img{ width: 100%;}
+            }
+            h4{ @include inline-block;
+                .name{ @include inline-block; width: $_71; height: $_24; line-height: $_24; margin: 0 $_40; vertical-align: middle;
+                    >img{ width: 100%;}
+                }
+                .synopsis{ @include inline-block; margin-top: 0;letter-spacing:.2em; font-size: $_18;}
+            }
+            p{ font-size: $_16; margin-top: $_20; text-align: left; } 
+        }
+    }
+    .essay-info{ border: 1px solid darken($color: $main-border, $amount: 0%); padding: 22px 62px; margin-bottom: 50px; overflow: hidden; font-size: 20px; line-height: 1.5;
+        h3{  font-weight: bold; }
+         p{ margin: 10px 0;}
+    }
+}
+
+//end
