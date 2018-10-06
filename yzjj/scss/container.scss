@@ -117,7 +117,7 @@ h4.sum-title{ margin: 54px 0 30px; font-size: 32px; color: #8f9199; letter-spaci
                 img{ width: 100%;}
             }
             h4{ @include inline-block;
-                .name{@extend .user-img; font-size: 24px; font-weight: bold; margin: 0 40px; line-height: 79px;}
+                .name{@extend .user-img; font-size: 24px; margin: 0 40px; line-height: 79px;}
                 .synopsis{  @include inline-block; margin-top: 3px; letter-spacing:.2em; font-size: 18px;}
             }
             p{ letter-spacing:.1em; font-size: 16px; margin-top: 20px; padding:0 32px;} 

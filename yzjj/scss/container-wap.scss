@@ -56,12 +56,12 @@ h4.sum-title{ margin: $_34 0 $_30; font-size: $_32; color: #8f9199; letter-spaci
 .ct-column-rush{ margin-top:0px;}
 .ct-column-expert{
     .pople-name{padding: $_30; margin:0 $_20; border:$_1 solid lighten($main-border, 10%);  box-sizing: border-box; display: flex; margin-bottom: $_28;
-        .intr-box{ color: darken($color: $main-font, $amount: 25%); width: $_186; text-align: center; margin-right: $_48; line-height: 2;
+        .intr-box{ color: darken($color: $main-font, $amount: 25%); width: $_186; text-align: center; margin-right: $_48;
             .avatar{ margin-bottom: $_30; width: 100%;}
             .name{ font-size: $_45; margin-bottom: $_20;}
             .intr{ font-size: $_24; margin-bottom: $_40;}
         }
-        .info-box{ text-align: left; text-indent: 2em; font-size: $_22; width: 60%; }
+        .info-box{ text-align: left; text-indent: 2em; font-size: $_22; width: 60%; line-height: 2; }
     }
 }
 .ct-column-everyone{ 
