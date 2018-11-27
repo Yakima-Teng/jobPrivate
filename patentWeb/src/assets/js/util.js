@@ -19,11 +19,14 @@ export function openzx() {
 
 export const api = () => {
     // 区分 生产环境 还是 开发环境
-    let baseurl = process.env.NODE_ENV === 'development' ? '/api' : 'http://patent.d.gbicom.cn';
+    let baseurl = process.env.NODE_ENV === 'development' ? '/api' : 'http://kong.api.iprun.com:8000/patent';
     return {
         api: axios.create({
             baseURL: baseurl,
             timeout: 10000,
+            headers: {
+                'apikey': 'jDBWofJ11vuwquR8y2xQ0cvjv8bwwFZZ'
+            }
             // responseType: 'json'
         }),
         post(url, data) {
@@ -32,7 +35,7 @@ export const api = () => {
                 url,
                 data: qs.stringify(data),
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
                 }
             })
         },
