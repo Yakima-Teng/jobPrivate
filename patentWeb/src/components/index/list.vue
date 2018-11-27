@@ -5,7 +5,7 @@
         <div v-else-if="item._source.type == 107" class="box_bg outward">外观</div>
         <div v-else class="box_bg invent">发明</div>
         <div class="slzl-box">
-            <p class="p1">{{ item._source.name }}</p>
+            <p class="p1"><router-link tag="a" target="_blank" :to="'/pDetail/'+item._source.p_id">{{ item._source.name }}</router-link></p>
             <p class="p2">申请号：{{ item._source.reg_id }}</p>
         </div>
         <span class="span1">{{ item._source.attrs.status_str }}</span>
@@ -36,8 +36,8 @@
     </li>
 </ul>
 <div class="need-list" v-else>
-  <div class="item" v-for="(item, index) in list.list" :key="index">
-    <div class="img-box"><img src="../../assets/images/u26.jpg" /></div>
+  <div class="item" v-for="(item, index) in list.list" :key="index" @click="sendPatent(item)">
+    <div class="img-box"><img v-if="item.head_img != null && item.head_img != ''" :src="item.head_img" /><img v-else src="../../assets/images/u26.jpg" /></div>
     <div class="main">
       <p class="title"><span>{{ item.nick }}</span><em>{{ item.ago }}</em></p>
       <div class="vip">
@@ -64,6 +64,9 @@ export default {
     },
     careHandle: function(type, item){
       this.$emit('careHandle', type, item);
+    },
+    sendPatent: function(info){
+      this.$emit('sendPatent', info);
     }
   }
 }
@@ -86,7 +89,7 @@ $border02: #ddd;
       &.invent{background-color: $bg-red;}
     }
     .slzl-box{ float: left; margin-left: 20px; width: 340px; overflow: hidden;
-      p{width:100%;color: $main; line-height: 20px;
+      p{width:100%;color: $main; line-height: 20px; overflow: hidden;
         &:last-child{ color: lighten($main, 40%); margin-top: 10px;}
       }
     }
@@ -101,6 +104,7 @@ $border02: #ddd;
   }
   &.patent{
     li{position: relative;
+      .a1,.a2,.a3{ position: relative; z-index: 1;}
       .a2{padding-left: 36px;background: url(../../assets/images/zixun.png) no-repeat 10px 7px;text-align: left;
         &.yijia{ border: 0 none;}
       }
@@ -112,7 +116,7 @@ $border02: #ddd;
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(255,255,255,0)
+        background-color: rgba(255,255,255,0);
       }
       &:hover .cloud{ display: block;}
     }
@@ -126,7 +130,7 @@ $border02: #ddd;
     .main{margin-left:10px;flex: 1;
       .title{display: flex; justify-content: space-between;
         span, em{display: block; font-size: 12px; line-height: 20px;}
-        span{ color: $green; max-width: 120px; overflow: hidden; text-overflow: ellipsis;}
+        span{ color: #099; max-width: 120px; overflow: hidden; text-overflow: ellipsis;}
         em{ color: lighten($main, 40%);}
       }
       .vip{margin-top: 10px;

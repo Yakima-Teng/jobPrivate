@@ -20,10 +20,10 @@
           </select>
           <input type="text" @keyup.enter="searchFn" v-model="ruleForm.search" >
           <a @click="searchFn" href="javascript:void(0);" class="find"></a>
-          <div @click="downFn" class="daochu">到处专利Excel</div>
+          <a class="daochu" target="_blank" :href="'http://patent.d.gbicom.cn/user/patent/download?token='+token">导出专利Excel</a>
       </div>
       <div class="list-box">
-        <patent-table ref="tableBox" @emitEdit="patentEditFn" :tableData="tableData" :edit="edit" @emitMoneyStatus="moneyStatusFn" @emitYear="getYearFn" @emitSale="saleTypeFn" ></patent-table>
+        <patent-table :r="1" ref="tableBox" @emitEdit="patentEditFn" :tableData="tableData" :edit="edit" @emitMoneyStatus="moneyStatusFn" @emitYear="getYearFn" @emitSale="saleTypeFn" ></patent-table>
         <div class="list-bottom">
           <div class="btm-f-l">
             <input @change="checkboxFn"  type="checkbox" name="" id="">
@@ -84,10 +84,9 @@ export default {
       rcmdLayer: false,
       patentList: [],
       patentId: '',
-
-      token: '',
+      token: cookies.get('token'),
       ruleForm: {
-        token:　'',
+        token:　cookies.get('token'),
         type: '',
         searchType: 'keywords',
         search: '',
@@ -124,8 +123,8 @@ export default {
     },
     // 搜索
     searchFn () {
+      // this.ruleForm.token = '4940a8406b76f8111808819abe8f041f';
       let e = Qs.stringify(this.ruleForm);
-      console.log(e)
       let url = `/user/patent/index?${e}`;
       Api.get(url).then (res => {
         // console.log(res.data);
@@ -156,8 +155,8 @@ export default {
     },
     // 获取
     getDataFn () {
-      this.ruleForm.token = cookies.get('token');
-      this.ruleForm.token = '4940a8406b76f8111808819abe8f041f'
+      // this.ruleForm.token = cookies.get('token');
+      // this.ruleForm.token = '4940a8406b76f8111808819abe8f041f'
       // console.log(this.token)
       this.searchFn();
 
@@ -183,7 +182,7 @@ export default {
       window.open(routeData.href, '_blank');
     },
     downFn () {
-      window.open(`/user/patent/download?token=${this.$store.state.token}`)
+      window.open(`/user/patent/download?token=${this.token}`)
       
     }
   },

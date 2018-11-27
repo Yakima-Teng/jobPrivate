@@ -11,7 +11,7 @@
           <div class="dashed"></div>
           <em :class="{cur: step > 2}" >3</em>
       </div>
-      <div　v-show="step==1" class="form-box">
+      <div v-show="step == 1" class="form-box">
         <table>
           <tbody>
             <tr>
@@ -45,7 +45,7 @@
           </tbody>
         </table>
       </div>
-      <div　v-show="step==2" class="form-box">
+      <div v-show="step == 2" class="form-box">
         <table>
           <tbody>
             <tr>
@@ -75,7 +75,7 @@
           </tbody>
         </table>
       </div>
-      <div　v-show="step==3" class="form-box">
+      <div v-show="step == 3" class="form-box">
         <div class="forget-ok">修改成功</div>
         <button class="form-btn">直接登录</button>
       </div>
@@ -86,8 +86,8 @@
 
 <script>
 
-import aloneHeader from '@/components/aloneHeader';
-import FootModel from '@/components/footer'
+import aloneHeader from '@/components/aloneHeader.vue';
+import FootModel from '@/components/footer.vue'
 
 import { api } from '@/assets/js/util.js'
 const Api = api();
@@ -96,6 +96,11 @@ export default {
   components: {
     aloneHeader,
     FootModel
+  },
+  metaInfo () {
+    return {
+      title: '找回密码-中细软专利超市'
+    }
   },
   data () {
     return {
@@ -125,7 +130,6 @@ export default {
     getCodeFn () {
       let that = this;
       if (this.phoneFn() == false) {
-        console.log(this.stepOneForm.mobile);
         this.errText = '请输入正确的手机号码';
         return false
       } else {
@@ -134,10 +138,8 @@ export default {
       let data = {
         mobile: this.stepOneForm.mobile
       }
-      let url = '/login/mcode'
-      console.log(data);
+      let url = '/login/mcode';
       Api.post(url, data).then( res => {
-        console.log(res.data);
         if (res.data.code == 200) {
           this.getCode = false;
           let timer = setInterval(function () {
@@ -166,7 +168,6 @@ export default {
     },
     stepOneFn () {
       if (this.phoneFn() == false) {
-        console.log(this.stepOneForm.mobile);
         this.errText = '请输入正确的手机号码';
         return false
       } else {
@@ -175,7 +176,6 @@ export default {
 
       let url = '/login/forget';
       Api.post(url, this.stepOneForm).then( res => {
-        console.log(res.data);
         if (res.data.code == 200) {
           this.errText = '';
           this.step = 2;
@@ -195,9 +195,7 @@ export default {
         return false;
       }
       let url = '/login/repasswd';
-      console.log(this.stepTwoForm)
       Api.post(url, this.stepTwoForm).then( res => {
-        console.log(res.data);
         if (res.data.code == 200) {
           this.errText = '';
           this.step = 3;

@@ -42,6 +42,7 @@ export default {
     return {
       navbox: 'member',
       imgSrc: '',
+      token: cookies.get('token')
     }
   },
   methods: {
@@ -69,12 +70,12 @@ export default {
       let formdata = new FormData();
       formdata.append('head_img', f)
       Api.postFile(url, formdata).then( res => {
-        console.log(res.data);
+        // console.log(res.data);
+        this.$router.go(0);
       })
     },
     getDataFn () {
-      let token = cookies.get('token');
-      this.token = token;
+      let token = this.token;
       let url = `/user/index/index?token=${token}`;
       // console.log(url);
       Api.get(url).then( res => {

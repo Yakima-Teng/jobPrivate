@@ -7,7 +7,7 @@
         </div>
         <div class="right_bottom">
             <div class="box" v-for="(item, index) in list.list" :key="index">
-                <img src="../../assets/images/u26.jpg" alt="">
+                <img v-if="item.head_img != null && item.head_img != ''" :src="item.head_img" alt=""><img v-else src="../../assets/images/u26.jpg" alt="">
                 <p><i>{{ item.nick }}</i> 发布需求</p>
                 <em>{{ item.ago }}</em>
             </div>

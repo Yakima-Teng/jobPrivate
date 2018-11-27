@@ -19,7 +19,7 @@
       <div class="suc-img"></div>
       <div class="suc-title">
           <p>操作成功</p>
-          <p>成功修改专利5件</p>
+          <p>成功修改专利{{listSize}}件</p>
       </div>
       <a href="javascript:void(0);" @click="layerCloseFn" class="close icon-cuohao"></a>
   </div>
@@ -31,11 +31,12 @@
 <script>
 
 import { api } from '@/assets/js/util.js'
+import cookies from 'js-cookie'
 const Api = api();
 
 
 export default {
-  props: ['patentList', , 'patentId'],
+  props: ['patentList' , 'patentId'],
   data () {
     return {
       showType: 0,
@@ -59,11 +60,9 @@ export default {
       this.patentList.forEach( el => {
         el.sale_status = that.patentType
       })
-      console.log(this.patentList)
 
-      const url = `/user/patent/edit?token=${this.$store.state.token}`
+      const url = `/user/patent/edit?token=${cookies.get('token')}`
       Api.post(url, {'ids':this.patentList}).then( res => {
-        console.log(res.data);
         if (res.data.code == 200) {
           this.showType = 0;
         }

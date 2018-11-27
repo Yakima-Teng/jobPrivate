@@ -40,7 +40,7 @@
         <p class="fasong-title">{{patentInfo.content}}</p>
         <div class="excel">
             <label for="file">选择excel文件</label><input id="file" type="file" accept="application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" @change="fileUpload" />
-            <p>上传文件请按照模板规范填写，<a target="_blank" :href="'http://patent.d.patent.local/user/patent/tpl?token='+$store.state.token">下载excel模板</a></p>
+            <p>上传文件请按照模板规范填写，<a target="_blank" :href="'http://patent.d.gbicom.cn/user/patent/tpl?token='+token">下载excel模板</a></p>
         </div>
         <div class="qrfs-wrap">
             <p v-if="file && file.name.length">{{file.name}} 文件上传成功!</p>
@@ -64,6 +64,8 @@
 import patentNav from '@/components/member/memberNav'
 import pageModule from '@/components/pagination'
 import needsList from '@/components/member/needsList'
+
+import cookies from 'js-cookie'
 
 import { api } from '@/assets/js/util.js'
 
@@ -93,7 +95,7 @@ export default {
           subTitle: '等待买家确认',
           desc: '如果符合买家要求，将第一时间与您联系'
       },
-      token: this.$store.state.token
+      token: cookies.get('token')
     }
   },
   created(){
@@ -156,7 +158,7 @@ export default {
     submitSend: function(id){
         var _this = this;
         var Api = api();
-        var token = this.$store.state.token;
+        var token = this.token;
         var formdata = new FormData();
         formdata.append('id', id);
         formdata.append('file', this.file);
@@ -189,6 +191,7 @@ export default {
             _this.promoteInfo = promoteInfo;
             _this.isSend = false;
             _this.isSuc = true;
+            _this.file = null;
         });
     },
     closeLayer: function(){

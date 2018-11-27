@@ -2,7 +2,7 @@
 <div class="card-code">
     <div class="left-top">
         <p class="title">{{cardInfo.call}}<br>的专利名片</p>
-        <div class="ll-wrap">
+        <!-- <div class="ll-wrap">
             <div class="liuliang">
                 <h3>{{cardInfo.today}}</h3>
                 <span>今日流量</span>
@@ -11,22 +11,23 @@
                 <h3>{{cardInfo.near30}}</h3>
                 <span>近30天流量</span>
             </div>
-        </div>
+        </div> -->
         <a href="javascript:void(0);" class="btn1" @click="openEditHandle">编辑</a>
-        <a v-if="cardInfo.status == 1" href="javascript:void(0);" class="btn2" @click="useHandle(2)">停用</a>
-        <a v-else href="javascript:void(0);" class="btn2" @click="useHandle(1)">启用</a>
+        <!-- <a v-if="cardInfo.status == 1" href="javascript:void(0);" class="btn2" @click="useHandle(2)">停用</a>
+        <a v-else href="javascript:void(0);" class="btn2" @click="useHandle(1)">启用</a> -->
     </div>
     <div class="left-bottom">
         <p class="saoma">扫码直接分享</p>
         <div><img :src="cardInfo.qrcode" alt=""><i></i></div>
         <p class="lianjie">{{cardInfo.url}}</p>
         <a href="javascript:void(0);" class="btn3" v-clipboard:copy="cardInfo.url" v-clipboard:success="onCopyFn" v-clipboard:error="onErrorFn">复制链接</a>
-        <a target="_blank" :href="'http://patent.d.patent.local/card/download?uid='+cardInfo.uid" class="btn4">下载名片</a>
+        <a target="_blank" :href="'http://patent.d.gbicom.cn/card/download?uid='+cardInfo.uid" class="btn4">下载名片</a>
     </div>
 </div>
 </template>
 
 <script>
+import cookies from 'js-cookie'
 import { api } from '@/assets/js/util.js'
 export default {
   props: ['cardInfo'],
@@ -42,7 +43,8 @@ export default {
     },
     useHandle: function(status){ // 停/启用 
       var Api = api();
-      Api.post('/user/card/edit?token='+this.$store.state.token,{status: status}).then(function(res){
+      var _this = this;
+      Api.post('/user/card/edit?token='+cookies.get('token'),{status: status}).then(function(res){
           if(res.data.code == 200 ){
               _this.$router.go(0);
           }
@@ -55,7 +57,7 @@ export default {
 
 
 <style lang="scss" scoped>
-.card-code{float: left;width: 210px;height: 660px;background-color: #fff; box-sizing: border-box;padding:30px 20px 0;
+.card-code{float: left;width: 210px;background-color: #fff; box-sizing: border-box;padding:30px 20px;
   .left-top{width: 100%;overflow: hidden;
     .title{width: 100%;height: 60px;font-size: 18px;color: #333333;text-align: center; line-height: 30px;}
     .ll-wrap{width: 100%; overflow: hidden;margin-top: 20px; }

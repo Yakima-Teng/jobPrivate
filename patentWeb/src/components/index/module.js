@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { api } from '@/assets/js/util.js'
+import Cookie from 'js-cookie';
 
 export const GET_INDEX = 'GET_INDEX'
 export const GET_INDEX_NEEDS_LIST = 'GET_INDEX_NEEDS_LIST'
@@ -42,8 +43,8 @@ const index = {
     actions: {
         [GET_INDEX]({ commit }) {
             let token = '';
-            if (this.state.token !== undefined) {
-                token = this.state.token;
+            if (Cookie.get('token') !== undefined) {
+                token = Cookie.get('token');
             }
             return new Promise((resolve, project) => {
                 axios.all([Api.get('/needs?page_size=5&p=1&token=' + token), Api.get('/patent?page_size=10&p=1&token=' + token), Api.get('/index/user_static?token=' + token), Api.get('/news/type'), Api.get('/news?page_size=4&p=1')]).then(axios.spread(function(needs, patent, userStatic, sortList, newsList) {
@@ -88,8 +89,8 @@ const index = {
         },
         [GET_INDEX_NEEDS_LIST]({ commit }, payload) {
             let token = '';
-            if (this.state.token !== undefined) {
-                token = this.state.token;
+            if (Cookie.get('token') !== undefined) {
+                token = Cookie.get('token');
             }
             return new Promise((resolve, project) => {
                 Api.get(payload.url + '&p=' + payload.page + '&token=' + token).then(function(res) {

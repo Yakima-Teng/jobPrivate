@@ -93,6 +93,8 @@ import List from '@/components/index/list.vue';
 import Need from '@/components/patent/need.vue';
 import Fixed from '@/components/patent/fixed.vue';
 
+import cookies from 'js-cookie'
+
 import { GET_PATENT, GET_PATENT_LIST } from '@/components/patent/module'
 
 import { api,openzx } from '@/assets/js/util.js'
@@ -131,6 +133,18 @@ export default {
     Need,
     Fixed
   },
+  metaInfo () {
+    return {
+      title: '专利资源_专利转让_专利交易-中细软专利超市',
+      meta: [{
+          name: 'description',
+          content: '中细软专利超市拥有大量发明专利,外观专利,实用新型专利资源,中细软专业顾问为您提供一对一贴心服务,办理专利转让,专利交易就到中细软专利超市.'
+      },{
+          name: 'keywords',
+          content: '专利资源,专利转让,专利交易,中细软专利超市'
+      }]
+    }
+  },
   data () {
     return {
       searchType: '',
@@ -144,7 +158,7 @@ export default {
       isSuc: false,
       mobileA: '',
       isMAErr: false,
-      token: this.$store.state.token,
+      token: cookies.get('token'),
       curPatentInfo: null,
       footLink: false
     }

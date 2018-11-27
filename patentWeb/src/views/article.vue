@@ -35,7 +35,8 @@
                 <div class="right_middle" v-if="news">
                     <div class="middle_title">
                         <span>相关政策</span>
-                        <router-link target="_blank" :to="'/policy?id='+type">更多</router-link>
+                        <!-- <router-link target="_blank" :to="'/policy?id='+type">更多</router-link> -->
+                        <router-link target="_blank" :to="{path: '/policy', query: {'id': type}}">更多</router-link>
                     </div>
                     <router-link target="_blank" class="middle_box" v-for="(item, index) in news.list" :key="index" :to="'/article/'+item.arc_type_id+'/'+item.arc_id">
                         <p>{{item.title}}</p>
@@ -77,20 +78,36 @@ export default {
   asyncData({ store, route }){
       return store.dispatch(GET_NEWS_DETAIL, {'type':route.params.type, 'id':route.params.id});
   },
-  // beforeCreate(){
-  //   window._bd_share_main ='';
-  // },
   mounted(){ // 此处数据不会被ssr读取到
     var _this = this;
-    this.$store.dispatch(GET_NEWS_DETAIL,{'type':this.type, 'id':this.id});
+    // this.$store.dispatch(GET_NEWS_DETAIL,{'type':this.type, 'id':this.id});
+    $('.nav .nav_right').find('a').last().addClass('cur');
     setTimeout(function(){
       _this.setShare();
-    },1000);
+    },500);
   },
   components: {
     Top,
     HeadModel,
     FootModel
+  },
+  metaInfo () {
+    var title = '';
+    var desc = '';
+    if(this.info){
+      title = this.info.detail.title;
+      desc = this.info.detail.desc;
+    }
+    return {
+      title: title+'-中细软专利超市',
+      meta: [{
+          name: 'description',
+          content: desc
+      },{
+          name: 'keywords',
+          content: title+',中细软,中细软专利超市'
+      }]
+    }
   },
   computed: {
     info(){

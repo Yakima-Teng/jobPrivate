@@ -17,7 +17,7 @@
             <td>{{key.update_time}}</td>
             <td class="edit">
               <a target="_blank" :href="'http://patent.d.gbicom.cn/rcmd/download?id=' + key.rcmd_id">下载excel版</a>
-              <router-link target="_blank" :to="'/groom' + key.url" >分享</router-link>
+              <router-link target="_blank" :to="key.url" >分享</router-link>
               <router-link target="_blank" tag="a" :to="{path: '/member/groom/edit', query:{'id': key.rcmd_id, 'p': ''}}" >编辑</router-link>
               <a @click="delFn(key.rcmd_id)" href="javascript:void(0);">删除</a>
             </td>
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-
+import cookies from 'js-cookie'
 import pages from '@/components/pagination';
 
 import { api } from '@/assets/js/util.js'
@@ -56,9 +56,8 @@ export default {
   methods: {
     searchFn () {
       let query = qs.stringify(this.ruleForm);
-      const url = `http://patent.d.patent.local/user/rcmd/index?token=${this.$store.state.token}&${query}`;
+      const url = `http://patent.d.gbicom.cn/user/rcmd/index?token=${cookies.get('token')}&${query}`;
       Api.get(url).then( res => {
-        console.log(res.data)
         if (res.data.code == 200) {
           this.tableData = res.data.rcmd.list
           this.$store.commit('jumpHandle', res.data.rcmd.page);
@@ -73,7 +72,7 @@ export default {
     },
     // 删除
     delFn (data) {
-      const url = `/user/rcmd/delete?token=${this.$store.state.token}`
+      const url = `/user/rcmd/delete?token=${cookies.get('token')}`
       let d = {
         id: data
       }
@@ -89,7 +88,7 @@ export default {
         id: d
       }
       // console.log(d);
-      const url = `http://patent.d.gbicom.cn/user/rcmd/download?token=${this.$store.state.token}&id=${d}`;
+      const url = `http://patent.d.gbicom.cn/user/rcmd/download?token=${cookies.get('token')}&id=${d}`;
       window.open(url);
       // Api.get(url).then( res => {
       //   console.log(res.data);

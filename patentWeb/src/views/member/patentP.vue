@@ -41,6 +41,7 @@
 import { api } from '@/assets/js/util.js'
 const Api = api();
 
+import cookies from 'js-cookie'
 
 import patentNav from '@/components/member/memberNav'
 import pagentHead from '@/components/member/patentHead'
@@ -73,7 +74,7 @@ export default {
   },
   methods: {
     getTemFn () {
-      window.open(`http://patent.d.patent.local/user/patent/tpl?token=${this.$store.state.token}`)
+      window.open(`http://patent.d.gbicom.cn/user/patent/tpl?token=${cookies.get('token')}`)
     },
     myFn (el) {
       if (el.target.checked){
@@ -102,7 +103,7 @@ export default {
     },
     submitFn () {
       let that = this;
-      const url = `/user/patent/sale?token=${this.$store.state.token}`;
+      const url = `/user/patent/sale?token=${cookies.get('token')}`;
       Api.post(url, this.ruleLeftForm).then( res => {
         console.log(res.data)
         if (res.data.code != 200) {
@@ -116,7 +117,7 @@ export default {
       })
     },
     pSubmitFn () {
-      const url = `/user/patent/sale_import?token=${this.$store.state.token}`;
+      const url = `/user/patent/sale_import?token=${cookies.get('token')}`;
       let f = document.querySelector('.xq-excel').querySelector('input').files[0];
       let formdata = new FormData();
       formdata.append('xls', f);
@@ -204,6 +205,7 @@ $border02: #ddd;
           height: 30px;
           background-color: #009999;
           text-align: center;
+          font-size: 14px;
           line-height: 30px;
           color: #fff;
           border-radius: 5px;
@@ -215,7 +217,7 @@ $border02: #ddd;
         background-color: #fff4f4;  color: #ff0000;   border: 1px solid #f1b8b8;
       }
       em { 
-        text-align: right; display: inline-block; vertical-align: top;
+        text-align: right; display: inline-block; vertical-align: top; color: #666;
         width: 100px;  margin-right: 10px;  line-height: 40px; font-size: 14px;;
       }
       input.text-list, textarea{

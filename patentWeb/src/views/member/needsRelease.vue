@@ -50,6 +50,8 @@ import { GET_NEEDS_LIST } from '@/components/patent/module'
 
 import { api } from '@/assets/js/util.js'
 
+import cookies from 'js-cookie'
+
 export default {
   components:　{
     memberNav
@@ -57,7 +59,7 @@ export default {
   data () {
     return {
       navbox: "needs",
-      token: this.$store.state.token,
+      token: cookies.get('token'),
       ask: '',
       isErr: false,
       error: '',

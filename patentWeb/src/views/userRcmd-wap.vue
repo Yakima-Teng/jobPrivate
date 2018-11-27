@@ -42,6 +42,9 @@
 
 <script>
 import { api } from '@/assets/js/util.js'
+
+import cookies from 'js-cookie'
+
 const Api = api();
 
 import { GET_RCMD_DATA } from '@/components/rcmd/rcmd'
@@ -105,8 +108,7 @@ export default {
       let data = {
         id: d
       }
-      console.log(d);
-      const url = `http://patent.d.gbicom.cn/user/rcmd/download?token=${this.$store.state.token}&id=${d}`;
+      const url = `http://patent.d.gbicom.cn/user/rcmd/download?token=${cookies.get('token')}&id=${d}`;
       window.open(url);
       // Api.get(url).then( res => {
       //   console.log(res.data);

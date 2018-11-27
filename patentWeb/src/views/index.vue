@@ -75,7 +75,7 @@
                 <div class="qiehuan" v-show="tabIndex == 2">
                         <div class="ipt">
                             <input type="text" placeholder="相关政策关键词" v-model="policyInp">
-                            <router-link tag="a" target="_blank" :to="{path: '/policy',query: {'search':policyInp}}"><span>政策搜索</span></router-link>
+                            <router-link tag="a" target="_blank" :to="'/policy?search='+policyInp"><span>政策搜索</span></router-link>
                         </div>
                         <div class="hot" v-if="sortsList">
                             <router-link tag="a" class="em" target="_blank" :to="'/policy?search='+sort.name" v-for="(sort, index) in sortsList.list" :key="index">{{sort.name}}</router-link>
@@ -84,11 +84,12 @@
             </div>
             <div class="banner_right">
                 <div class="ban-r-top">
-                    <img src="../assets/images/u26.jpg" alt="">
+                    <img v-if="isLogin && user != null" :src="user.user.head_img" alt=""><img v-else src="../assets/images/u26.jpg" alt="">
                     <div class="denglu">
-                        <p>Hi！您好</p>
+                        <p v-if="!isLogin">Hi！您好</p>
+                        <p v-if="isLogin && user != null">{{user.user.nick != '' ? user.user.nick : user.user.mobile}},欢迎回来！</p>
                         <p class="p2" v-if="!isLogin || user== null">还未登录，<a href="/login?goback=/">请登录</a></p>
-                        <p class="p2" v-else>{{user.user.nick}}</p>
+                        <p class="p2" v-else><router-link target="_blank" to="/member/patent">会员中心</router-link>&nbsp;&nbsp;<a href="javascript:void(0)" @click="logout">退出</a></p>
                     </div>
                     <router-link tag="a" target="_blank" class="btn1" to="/member/patent/P">出售专利</router-link><router-link tag="a" target="_blank" class="btn2" to="/member/needs/release">发布需求</router-link>
                 </div>
@@ -96,18 +97,22 @@
                     <div class="r_ctt1">
                         <h3>{{ isLogin && user && user.pub.salePatent ? user.pub.salePatent : 0}}</h3>
                         <p>出售的专利</p>
+                        <router-link tag="a" target="_blank" class="cloud" to="/member/patent"></router-link>
                     </div>
                     <div class="r_ctt2">
                         <h3>{{ isLogin && user && user.pub.collectPatent ? user.pub.collectPatent : 0}}</h3>
                         <p>收藏的专利</p>
+                        <router-link tag="a" target="_blank" class="cloud" to="/member/patent/collect"></router-link>
                     </div>
                     <div class="r_ctt3">
                         <h3>{{ isLogin && user && user.pub.publishNeeds ? user.pub.publishNeeds : 0}}</h3>
                         <p>发布的需求</p>
+                        <router-link tag="a" target="_blank" class="cloud" to="/member/needs"></router-link>
                     </div>
                     <div class="r_ctt4">
                         <h3>{{ isLogin && user && user.pub.collectNeeds ? user.pub.collectNeeds : 0}}</h3>
                         <p>收藏的需求</p>
+                        <router-link tag="a" target="_blank" class="cloud" to="/member/needs/collect"></router-link>
                     </div>
                 </div>
             </div>
@@ -132,7 +137,7 @@
                 </div>
             </div>
             <div class="ctt_box">
-                <img src="../assets/images/index/content.png" alt="">
+                <img src="../assets/images/index/content_01.png" alt="">
                 <i class="mask2"></i>
                 <div class="ctt_title">
                     <p class="p1">专利管家</p>
@@ -146,7 +151,7 @@
                 </div>
             </div>
             <div class="ctt_box">
-                <img src="../assets/images/index/content.png" alt="">
+                <img src="../assets/images/index/content_02.png" alt="">
                 <i class="mask3"></i>
                 <div class="ctt_title">
                     <p class="p1">专利名片</p>
@@ -160,7 +165,7 @@
                 </div>
             </div>
             <div class="last ctt_box">
-                <img src="../assets/images/index/content.png" alt="">
+                <img src="../assets/images/index/content_03.png" alt="">
                 <i class="mask4"></i>
                 <div class="ctt_title">
                     <p class="p1">专利推荐函</p>
@@ -179,12 +184,12 @@
       <div class="w1190 content2_ctt">
         <div class="content2_left">
           <h3 class="news-sl"><router-link class="p-sl" tag="a" target="_blank" to="/patent">更多专利</router-link>最新收录专利</h3>
-          <List v-if="patent != null" type="index" :list="patent" :collect="collect"  @careHandle="careHandle"></List>
+          <List v-if="patent != null" type="index" :list="patent" :collect="collect" @careHandle="careHandle"></List>
           <router-link tag="a" target="_blank" to="/patent" class="btn">更多专利</router-link>
         </div>
         <div class="content2_right">
           <h3 class="xq"><a class="a-change" href="javascript:void(0);" @click="changeNeeds">换一组</a>最新需求</h3>
-          <List v-if="needs != null" type="needs" :list="needs"></List>
+          <List v-if="needs != null" type="needs" :list="needs" @sendPatent="sendPatent"></List>
           <router-link tag="a" target="_blank" to="/hall" class="btn">更多需求</router-link>
         </div>
       </div>
@@ -205,6 +210,37 @@
     </div>
     <!-- 最新政策结束 -->
     <FootModel :linkList="linkList"></FootModel>
+    <Fixed></Fixed>
+    <div class="mask" v-show="isSend || isSuc"></div>
+    <!-- 给TA发专利 -->
+    <div class="fasong" v-if="patentInfo != null" v-show="isSend">
+        <h3>给TA发专利</h3>
+        <div class="box">
+            <img v-if="patentInfo.head_img != ''" :src="patentInfo.head_img" alt="">
+            <img v-else src="../assets/images/u26.jpg" alt="">
+            <em>要求：</em>
+            <span v-for="(tag, j) in patentInfo.tags" :key="j">{{tag}}</span>
+            <p>已有<i>{{patentInfo.offer}}人</i>发专利</p>
+        </div>
+        <p class="fasong-title">{{patentInfo.content}}</p>
+        <div class="excel">
+            <label for="file">选择excel文件</label><input id="file" type="file" accept="application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" @change="fileUpload" />
+            <p>上传文件请按照模板规范填写，<a target="_blank" :href="'http://patent.d.gbicom.cn/user/patent/tpl?token='+token">下载excel模板</a></p>
+        </div>
+        <div class="qrfs-wrap">
+            <p v-if="file && file.name.length">{{file.name}} 文件上传成功!</p>
+            <a href="javascript:void(0);" class="btn" @click="submitSend(patentInfo.needs_id)">确认发送</a>
+        </div>
+        <a href="javascript:void(0);" class="close" @click="closeLayer"></a>
+    </div>
+    <!-- 发送成功 -->
+    <div class="yes-no" :class="{'shibai':!isMatchSuc}" v-show="isSuc">
+        <div class="suc-img"></div>
+        <h3>{{promoteInfo.title}}</h3>
+        <p class="p1">{{isMatchSuc ? promoteInfo.subTitle : promoteInfo.desc}}</p>
+        <p v-if="isMatchSuc">{{promoteInfo.desc}}</p>
+        <a href="javascript:void(0);" class="close" @click="closeLayer"></a> 
+    </div>
   </div>
     
 </template>
@@ -213,8 +249,11 @@
 import Top from '@/components/top.vue';
 import HeadModel from '@/components/header.vue';
 import FootModel from '@/components/footer.vue';
+import Fixed from '@/components/patent/fixed.vue';
 
 import List from '@/components/index/list.vue';
+
+import cookies from 'js-cookie'
 
 import { GET_NEEDS_LIST } from '@/components/index/module'
 import { GET_INDEX,GET_LINK,GET_INDEX_NEEDS_LIST } from '@/components/index/module'
@@ -239,10 +278,32 @@ export default {
             patentInp: '',
             needsInp: '',
             policyInp: '',
-            token: this.$store.state.token,
-            isLogin: this.$store.state.token != undefined && this.$store.state.token.length
+            patentInfo: null,
+            isSend: false,
+            isSuc: false,
+            file: null,
+            isMatchSuc: true,
+            promoteInfo: {
+                title: '发送成功',
+                subTitle: '等待买家确认',
+                desc: '如果符合买家要求，将第一时间与您联系'
+            },
+            token: cookies.get('token'),
+            isLogin: cookies.get('token') != undefined && cookies.get('token').length
 		}
-	},
+    },
+    metaInfo () {
+        return {
+        title: '中细软专利超市',
+        meta: [{
+            name: 'description',
+            content: ''
+        },{
+            name: 'keywords',
+            content: '中细软专利超市'
+        }]
+        }
+    },
    mounted(){ // 此处数据不会被ssr读取到
     this.$store.dispatch(GET_INDEX);
     this.$store.dispatch(GET_LINK);
@@ -251,7 +312,8 @@ export default {
     Top,
     HeadModel,
     FootModel,
-    List
+    List,
+    Fixed
   },
   computed: {
     patent(){
@@ -315,6 +377,67 @@ export default {
     changeNeeds: function(){
         var p = parseInt(this.$store.state.current_page) + 1;
         this.$store.dispatch(GET_INDEX_NEEDS_LIST, {url: '/needs?page_size=5', page: p});
+    },
+    logout: function(){
+        var Api = api();
+        Api.get('/user/index/logout?token='+ cookies.get('token')).then(function(res){
+            if(res.data.code == 200){
+                cookies.remove('token', { path: '' });
+                cookies.remove('nick', { path: '' });
+                cookies.remove('uid', { path: '' });
+                cookies.remove('mobile', { path: '' });
+                location.href="/";
+            }
+        });
+    },
+    sendPatent: function(info){
+        if(this.token == undefined){
+            location.href = '/login?goback='+ this.$route.fullPath;
+        }else if(info.is_offer == 0){
+            this.patentInfo = info;
+            this.isSend = true;
+        }
+    },
+    submitSend: function(id){
+        var _this = this;
+        var Api = api();
+        var token = this.token;
+        var formdata = new FormData();
+        formdata.append('id', id);
+        formdata.append('file', this.file);
+        Api.postFile('/user/needs/offer?token='+token, formdata).then(function(res){
+            if(res.data.code == 200){
+                var promoteInfo = {
+                    title: '发送成功',
+                    subTitle: '等待买家确认',
+                    desc: '如果符合买家要求，将第一时间与您联系'
+                }
+                _this.isMatchSuc = true;
+                var payload = {
+                    page: _this.curPage,
+                    url: '/needs?page_size=5'
+                }
+                _this.$store.dispatch(GET_INDEX_NEEDS_LIST, payload);
+            }else{
+                var promoteInfo = {
+                    title: '发送失败',
+                    desc: res.data.msg
+                }
+                _this.isMatchSuc = false;
+            }
+            _this.promoteInfo = promoteInfo;
+            _this.isSend = false;
+            _this.isSuc = true;
+            _this.file = null;
+        });
+    },
+    closeLayer: function(){
+        this.isSend = false;
+        this.isSuc = false;
+    },
+    fileUpload: function(e){
+        var file = e.target.files[0];
+        this.file = file;
     }
   }
 }
@@ -393,9 +516,10 @@ $border02: #ddd;
             .ban-r-top .btn1{margin-left: 20px;}
             .ban-r-top .btn2{margin-left: 10px;}
             .ban-r-bottom{width: 260px;height: 150px;padding: 20px;}
-            .ban-r-bottom div{float: left; width: 125px;height: 70px;background-color: #f2f3f4;}
+            .ban-r-bottom div{position: relative;float: left; width: 125px;height: 70px;background-color: #f2f3f4;}
             .ban-r-bottom div h3{font-size: 16px;color: $main;text-align: center;margin-top: 15px;}
             .ban-r-bottom div p{ font-size: 12px;color: lighten($main, 40%);text-align: center;padding-top: 10px;}
+            .ban-r-bottom div a{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;}
             .ban-r-bottom .r_ctt1{margin-right: 10px;margin-bottom: 10px;}
             .ban-r-bottom .r_ctt2{margin-bottom: 10px;}
             .ban-r-bottom .r_ctt3{margin-right: 10px;}
@@ -441,7 +565,7 @@ $border02: #ddd;
         .content2_right{
             .xq{font-size: 18px;color: $green;line-height: 80px;}
             .a-change{float: right;font-size: 14px;color: $green;line-height: 80px;width: 64px; text-align: right;background: url("../assets/images/index/gengxin.png") no-repeat left center;}
-            .btn{display: block;width: 160px;height: 40px;text-align: center;line-height: 40px;margin: 20px auto 0;border:1px solid $green;color: $green;font-size: 14px;border-radius: 5px;}
+            .btn{display: block;width: 160px;height: 40px;text-align: center;line-height: 40px;margin: 20px auto 0;border:1px solid #099;color: #099;font-size: 14px;border-radius: 5px;}
         }
         }
 
@@ -461,5 +585,58 @@ $border02: #ddd;
             &:hover{box-shadow:  0 0 10px #d7d8d9;}
         }
     }
+    input[type=file]{ position: absolute; opacity: 0; top: 0; left: 0; }
+    .fasong,.yes-no{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        background-color: #fff;
+        transform: translate(-50%, -50%);
+        border: 1px solid #d7d7d7;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px #d7d7d7;
+        padding-left: 20px;
+        padding-top: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+        z-index: 9;
+    }
+    .fasong{width: 550px;height: 420px;}
+    .fasong h3{font-size: 18px;color: #333;line-height: 30px;}
+    .fasong .box{width: 100%;margin-top: 20px;overflow: hidden;}
+    .fasong .box img{float: left;margin-right: 10px;width: 40px; height: 40px; border-radius: 50%;}
+    .fasong .box em{float: left; font-size: 12px;color: #999;line-height: 24px;margin-top: 8px;}
+    .fasong .box span{float: left;padding-left:5px; padding-right:5px;height: 24px;box-sizing: border-box;border: 1px solid #ddd;font-size:12px;text-align: center;line-height: 22px;color: #999;border-radius: 5px;margin-right: 10px;margin-top: 8px;}
+    .fasong .box p{float:right;font-size: 14px;color: #333;line-height: 24px;margin-top: 8px;}
+    .fasong .box p i{color: #cc0000;}
+    .fasong .fasong-title{clear: both; margin-top: 10px;padding: 20px;background-color: #f2f3f4;border-radius: 5px;font-size: 14px;line-height: 20px;color: #333;}
+    .fasong .excel{width: 100%;margin-top: 20px;overflow: hidden;margin-bottom: 20px;}
+    .fasong .excel label{float: left;box-sizing: border-box;border: 1px solid #ddd;border-radius: 5px;text-align: center;line-height: 40px;width: 160px;height: 40px;font-size: 14px;color: #666;margin-right: 10px; }
+    .fasong .excel p{font-size: 14px;color: #666;float: left;line-height: 40px;}
+    .fasong .excel p a{color: #cc0000;}
+    .fasong .qrfs-wrap{width: 100%;padding-top: 20px;border-top: 1px solid #ddd;}
+    .fasong .qrfs-wrap p{float: left; font-size: 14px;color: #999;line-height: 40px;}
+    .fasong .qrfs-wrap .btn{float: right;width: 140px;height: 40px;line-height: 40px;text-align: center;border-radius: 5px;font-size: 14px;color: #fff;background-color: #cc0000;}
+    /* 发送成功 发送失败 */
+    .yes-no{width: 360px;height: 210px;}
+    .yes-no .suc-img{
+        margin: 10px auto 0;
+        width: 50px;
+        height: 50px;
+        background: url(../assets/images/suc.png) no-repeat 0 0 #cccccc;
+        border-radius: 50%;}
+    .yes-no h3{font-size: 18px;color: #333;line-height: 30px;text-align: center;margin-top: 20px;}
+    .yes-no p{width:260px; margin:auto; font-size: 14px; line-height: 20px; color: #666;text-align: center;}
+    .yes-no p.p1{margin-top: 10px;}
+    .close {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 16px;
+        height: 16px;
+        background: url(../assets/images/close.png) no-repeat 0 0;
+        background-size: 16px 16px;
+    }
+    .shibai .suc-img{background-image: url("../assets/images/err.png");}
 }
 </style>

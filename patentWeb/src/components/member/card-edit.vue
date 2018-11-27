@@ -55,11 +55,13 @@
             <a href="javascript:void(0);" class="bc" @click="savePublish">保存发布</a>
         </div>
     </div>
+    <a href="javascript:void(0);" class="close" @click="closeLayer"></a>
 </div>
 </template>
 
 <script>
 import { api } from '@/assets/js/util.js'
+import cookies from 'js-cookie'
 export default {
   props: ['isEdit', 'cardInfo'],
   data(){
@@ -79,7 +81,7 @@ export default {
   },
   created(){
       this.call = this.cardInfo.call;
-      this.agen = this.cardInfo.agen;
+      this.agen = this.cardInfo.agent;
       this.desc = this.cardInfo.desc;
       this.show = this.cardInfo.show_column == null ? [] : this.cardInfo.show_column;
       this.tel = this.cardInfo.mobile;
@@ -93,6 +95,7 @@ export default {
           this.curIndex = index;
       },
       savePublish: function(){
+        var _this = this;
         var Api = api();
         var card = {
             'banner': this.curIndex.toString()
@@ -113,7 +116,7 @@ export default {
         }else{
             this.isErr = false;
             this.error = '';
-            card['agen'] = this.agen;
+            card['agent'] = this.agen;
         }
         if(this.desc == ''){
             this.isErr = true;
@@ -124,15 +127,15 @@ export default {
             this.error = '';
             card['desc'] = this.desc;
         }
-        if(!this.show.length){
-            this.isErr = true;
-            this.error = '请选择专利信息显示内容';
-            return false;
-        }else{
-            this.isErr = false;
-            this.error = '';
-            card['show_column'] = this.show;
-        }
+        // if(!this.show.length){
+        //     this.isErr = true;
+        //     this.error = '请选择专利信息显示内容';
+        //     return false;
+        // }else{
+        //     this.isErr = false;
+        //     this.error = '';
+        //     card['show_column'] = this.show;
+        // }
         if(this.tel){
             card['mobile'] = this.tel;
         }
@@ -145,11 +148,14 @@ export default {
         if(this.email){
             card['email'] = this.email;
         }
-        Api.post('/user/card/edit?token='+this.$store.state.token,card).then(function(res){
+        Api.post('/user/card/edit?token='+cookies.get('token'),card).then(function(res){
             if(res.data.code == 200 ){
                 _this.$router.go(0);
             }
         });
+      },
+      closeLayer: function(){
+          this.$emit('closeLayer');
       }
   }
 }
@@ -172,9 +178,9 @@ export default {
 }
 .bianji-left .p3{width: 400px;margin-top: 10px;overflow: hidden;margin-left: 50px;}
 .bianji-left .p3 .s1{width: 90px;height: 30px; float: left;font-size: 14px;line-height: 30px;color:#666;margin-right: 10px; }
-.bianji-left .p3 label{float: left;overflow: hidden;}
+.bianji-left .p3 label{float: left;overflow: hidden;font-size: 14px;}
 .bianji-left .p3 label input{ margin-top: 8px;vertical-align: top;}
-.bianji-left .p3 label span{margin-left: 10px;line-height: 30px;color: #666;font-size: 14px;}
+.bianji-left .p3 label span{margin-left: 10px;line-height: 30px;color: #666;font-size: 14px;vertical-align: top;}
 .bianji-left .p3 label:nth-child(3){margin-left: 22px;}
 .bianji-left h4{font-size: 14px;color: #000;margin-top: 20px; margin-left: 50px;width: 121px;height: 30px;line-height: 30px;}
 
@@ -201,4 +207,5 @@ export default {
 .bianji-bottom p{float: left;width: 250px;padding-left: 20px;font-size: 14px;color: #FF0000;line-height: 30px;margin-left: 20px;margin-top: 25px;background: url("../../assets/images/member/err.png")no-repeat 0 8px;background-size: 15px 15px;}
 .bianji-bottom a{float: left;margin-left: 20px;width: 100px;height: 40px;box-sizing: border-box;border: 1px solid #ddd;border-radius: 5px;text-align: center;line-height: 40px;font-size: 14px;color: #666;margin-top: 20px;}
 .bianji-bottom a.bc{float: right;width: 150px;color: #fff;background-color: #cc0000;margin-right: 20px;border: none;}
+.bianji .close{ position: absolute; right: 20px; top: 20px; width: 16px; height: 16px; background: url(../../assets/images/close.png) no-repeat 0 0; background-size: 16px 16px;}
 </style>

@@ -21,15 +21,15 @@
             <div class="lianxi-fs">
                 <div class="tel">
                     <p>电话</p>
-                    <h4>{{tableData.mobile}}</h4>
+                    <h4>{{userData.mobile}}</h4>
                 </div>
                 <div class="weixin">
                     <p>微信</p>
-                    <h4>{{tableData.weixin}}</h4>
+                    <h4>{{userData.weixin}}</h4>
                 </div>
                 <div class="weixin">
                     <p>QQ</p>
-                    <h4>{{tableData.qq}}</h4>
+                    <h4>{{userData.qq}}</h4>
                 </div>
             </div>
             <p v-show="tableData.desc && tableData.desc != ''" class="mingpian-title">{{tableData.desc}}</p>
@@ -67,6 +67,8 @@
 </template>
 
 <script>
+import cookies from 'js-cookie'
+
 import { api } from '@/assets/js/util.js'
 const Api = api();
 
@@ -82,6 +84,7 @@ export default {
     }
   },
   asyncData({ store, route }){
+      let url = route.params;
       return Promise.all([store.dispatch(GET_RCMD_DATA, `/r/${url.id}`)])
   },
   computed: {
@@ -124,8 +127,7 @@ export default {
       let data = {
         id: d
       }
-      console.log(d);
-      const url = `http://patent.d.gbicom.cn/user/rcmd/download?token=${this.$store.state.token}&id=${d}`;
+      const url = `http://patent.d.gbicom.cn/user/rcmd/download?token=${cookies.get('token')}&id=${d}`;
       window.open(url);
       // Api.get(url).then( res => {
       //   console.log(res.data);

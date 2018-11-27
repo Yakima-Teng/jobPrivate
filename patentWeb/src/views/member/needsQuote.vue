@@ -32,6 +32,8 @@ import needsList from '@/components/member/needsList'
 
 import { api } from '@/assets/js/util.js'
 
+import cookies from 'js-cookie'
+
 export default {
   name: 'Needs',
   components: {
@@ -47,7 +49,7 @@ export default {
       newsList: [],
       sort: '',
       status: '',
-      token: this.$store.state.token
+      token: cookies.get('token')
     }
   },
   created(){

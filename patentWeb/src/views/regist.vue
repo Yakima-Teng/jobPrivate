@@ -1,5 +1,7 @@
 <template>
-  <div class="login-box">
+  <div class="page-login">
+    <alone-header :name="pageName"></alone-header>
+    <div class="login-box">
       <div class="login-ctt">
           <div class="login-left">
               <span><img src="../assets/images/login/login.png" alt=""></span>
@@ -7,7 +9,7 @@
           <div class="reg">
               <div class="reg-top">
                   <a href="javascript:void(0);">账号注册</a>
-                  <a href="javascript:void(0);">已有账号？<em>立即登录</em></a>
+                  <a href="javascript:void(0);">已有账号？<router-link tag="em" to="/login">立即登录</router-link></a>
               </div>
               <span class="err" id="err-style"  v-show="err != ''" >{{err}}</span>
               <div class="zc-ctt">
@@ -19,21 +21,36 @@
                   <a href="javascript:void(0);" class="btn" @click="submitForm">确认注册</a>
                 </form>
               </div>
-              <p class="tyxy">注册视为同意<a>《专利超市服务协议》</a></p>
+              <p class="tyxy">注册视为同意<router-link target="_blank" to="/pact">《专利超市服务协议》</router-link></p>
           </div>
       </div>
+    </div>
+    <foot-model :isLink="footLink"></foot-model>
   </div>
 </template>
 
 <script>
+import FootModel from '@/components/footer.vue'
+import aloneHeader from '@/components/aloneHeader.vue'
+
 import { api } from '@/assets/js/util.js'
 const Api = api();
 
-
 export default {
   name: 'Regist',
+  components: {
+    aloneHeader,
+    FootModel
+  },
+  metaInfo () {
+    return {
+      title: '注册-中细软专利超市'
+    }
+  },
   data () {
     return {
+      footLink: false,
+      pageName: '会员注册',
       // 验证码变量
       getCode: true,
       getTime: 60,
@@ -55,7 +72,6 @@ export default {
       let that = this;
       this.phoneFn();
       if (this.phoneFn() == false) {
-        console.log(this.ruleForm.mobile);
         return false
       }
       let data = {
@@ -89,7 +105,6 @@ export default {
       }
       const url = `/login/register`;
       Api.post(url, this.ruleForm).then( res => {
-        console.log(res.data)
         if (res.data.code == 200) {
           this.$router.push({
             path: '/login'
@@ -102,10 +117,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.page-login{ min-height: 100vh;}
 .err{display: block;width: 280px;height: 30px;text-align: center;line-height: 30px;background-color: #fff4f4;color: #ff0000;font-size: 12px;}
 .login-box{width: 100%;height: 580px;background: url("../assets/images/login/banner.jpg") no-repeat 0 0;overflow: hidden;}
-.login-box .login-ctt{width: 852px;height: 460px;background-color: #fff;margin: 90px auto 0;}
+.login-box .login-ctt{width: 852px;background-color: #fff;margin: 90px auto 0;overflow: hidden;}
 .login-ctt .login-left{float: left; width: 492px;height: 100%;box-sizing: border-box;border-right: 1px solid #eeeeee;}
 .login-ctt .login-left span{display: block;width: 385px;height: 210px;box-shadow: 5px 5px 10px #8992a2;margin-top: 75px;margin-left: 60px;border-radius: 5px;}
 
@@ -120,7 +135,7 @@ export default {
 .reg .zc-ctt .dx .cf{background-color: rgba(242, 243, 244, 1);}
 .reg .zc-ctt .btn{clear: both;display:block;overflow: hidden; font-size: 14px;color: #fff;width: 280px;height: 40px;line-height: 40px;text-align: center;background-color: #cc0000;border-radius: 4px;margin-top: 20px;}
 /* 注册 */
-.reg{float: right; width: 360px;height: 460px;box-sizing: border-box; margin: 0 auto;padding: 10px 40px 40px;}
+.reg{float: right; width: 360px;box-sizing: border-box; margin: 0 auto;padding: 10px 40px 40px;}
 .reg .reg-top{width: 100%;height: 50px;box-sizing: border-box;border-bottom: 2px solid #cc0000;}
 .reg .reg-top a:nth-child(1){float: left; font-size: 14px;color: #cc0000;line-height: 50px;}
 .reg .reg-top a:nth-child(2){float: right; font-size: 12px;color: #666666;line-height: 50px;}

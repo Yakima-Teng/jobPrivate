@@ -7,7 +7,7 @@
                 <div class="fenge"></div>
                 <div class="zlcs">
                     <p class="zlcs_title">专利超市</p>
-                    <p class="zlcs_wz">www.ciprun.cn</p>
+                    <p class="zlcs_wz">patent.gbicom.cn</p>
                 </div>
                 <router-link target="_blank" class="cloud" to="/"></router-link>
             </h1>
@@ -15,7 +15,7 @@
                 <router-link target="_blank" exact to="/">首页</router-link>
                 <router-link target="_blank" to="/patent">专利资源</router-link>
                 <router-link target="_blank" to="/hall">需求大厅</router-link>
-                <router-link target="_blank" to="/member/patent/index">专利管家</router-link>
+                <router-link target="_blank" to="/member/patent">专利管家</router-link>
                 <router-link target="_blank" to="/policy">地区政策</router-link>
             </div>
         </div>

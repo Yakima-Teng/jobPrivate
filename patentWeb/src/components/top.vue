@@ -28,7 +28,7 @@
         <div class="header_left">
             <p>
                 <span v-if="isLogin">欢迎来到中细软旗下专利转让服务平台！</span>
-                <span v-else>欢迎回来！{{nick}}</span><a v-if="!isLogin" href="javascript:void(0)" @click="logout">退出</a>
+                <span v-else>欢迎回来！{{nick}}</span>&nbsp;&nbsp;<a v-if="!isLogin" href="javascript:void(0)" @click="logout">退出</a>
                 <a v-if="isLogin" tag="a" target="_blank" href="javascript:void(0);" @click="loginFun">请登录&nbsp;</a>
                 <a v-if="isLogin" tag="a" target="_blank" href="javascript:void(0);" @click="registFun">免费注册</a>
             </p>
@@ -46,7 +46,7 @@ export default {
   data () {
     return {
       isLogin: cookies.get('token') == undefined, // 未登录
-      nick: cookies.get('nick')
+      nick: (cookies.get('nick') != undefined && cookies.get('nick') == '') ? cookies.get('mobile') : cookies.get('nick')
     }
   },
   methods: {
@@ -66,6 +66,7 @@ export default {
                 cookies.remove('token', { path: '' });
                 cookies.remove('nick', { path: '' });
                 cookies.remove('uid', { path: '' });
+                cookies.remove('mobile', { path: '' });
                 location.href="/";
             }
         });

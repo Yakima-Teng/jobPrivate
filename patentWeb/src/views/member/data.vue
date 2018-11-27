@@ -53,7 +53,7 @@ export default {
   data () {
     return {
       navbox: 'member',
-      token: '',
+      token: cookies.get('token'),
       editOk: false,
       ruleForm: {
         nick: '',
@@ -80,12 +80,10 @@ export default {
       })
     },
     getDataFn () {
-      let token = cookies.get('token');
-      this.token = token;
+      let token = this.token;
       let url = `/user/index/index?token=${token}`;
       // console.log(url);
       Api.get(url).then( res => {
-        console.log(res.data);
         this.ruleForm.nick = res.data.user.nick;
         this.ruleForm.qq = res.data.user.qq;
         this.ruleForm.weixin = res.data.user.weixin;

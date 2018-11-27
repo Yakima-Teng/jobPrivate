@@ -4,7 +4,7 @@
       <h3 class="title">推荐函编辑</h3>
       <div class="form-box">
         <div class="tjh-mc">
-            <span>推荐函名称 *</span>
+            <span>推荐函名称 <em>*</em></span>
             <span class="err" v-show="err" >{{errText}}</span>
             <input v-model="ruleForm.title" type="text">
         </div>
@@ -119,7 +119,7 @@
         </div>
       </div>
     </div>
-    <a href="javascript:;"  @click="submitFn" class="form-btn">保存预览</a>
+    <a href="javascript:void(0);" @click="submitFn" class="form-btn">保存预览</a>
   </div>
 </template>
 
@@ -137,7 +137,7 @@ export default {
   },
   data () {
     return {
-      token: '',
+      token: cookies.get('token'),
       err: false,
       errText: '',
       ruleForm: {
@@ -168,7 +168,6 @@ export default {
     // 显示内容修改
     showColumnFn(data) {
       let i = this.ruleForm.show_column.indexOf(data);
-      console.log(i, data);
       if (i >= 0) {
         this.ruleForm.show_column.splice(i, 1)
       } else {
@@ -216,42 +215,41 @@ export default {
       this.ruleForm.content = list
     },
     // 提交
-    submitFn () {
+    submitFn (e) {
       let u = this.$route.query;
       let url;
-      if (u.id && u.id != '') {
-        url = `/user/rcmd/edit?token=${this.token}&id=${u.id}`;
-      } else {
-        url = `/user/rcmd/add?token=${this.token}`;
-      }
-      console.log(url)
-      console.log(this.ruleForm);
-      Api.post(url, this.ruleForm).then( res => {
-        console.log(res.data);
-        if (res.data.code != 200) {
-          this.err = true;
-          this.errText = res.data.msg
+      if(this.ruleForm.title == ''){
+        this.err = true;
+        this.errText = '请输入推荐函名称';
+      }else{
+        this.err = false;
+        if (u.id && u.id != '') {
+          url = `/user/rcmd/edit?token=${this.token}&id=${u.id}`;
         } else {
-          window.open(`/groom${res.data.url}`)
+          url = `/user/rcmd/add?token=${this.token}`;
         }
-      })
+        Api.post(url, this.ruleForm).then( res => {
+          if (res.data.code != 200) {
+            this.err = true;
+            this.errText = res.data.msg
+          } else {
+            location.href = res.data.url;
+          }
+        });
+      }
     },
     // 获取数据
     getDataFn () {
-      this.ruleForm.uid = cookies.get('uid');
-      this.token = cookies.get('token')
-      let url
+      this.ruleForm['uid'] = cookies.get('uid');
+      let url;
     
       let u = this.$route.query;
-      console.log(u);
       if (u.id && u.id != '') {
         url = `/user/rcmd/edit?token=${this.token}&id=${u.id}&pid=${u.p ? u.p : ''}`;
       } else {
-        url = `/user/rcmd/add?token=${this.token}&id=${u.id}&pid=${u.p ? u.p : ''}`;
+        url = `/user/rcmd/add?token=${this.token}&pid=${u.p ? u.p : ''}`;
       }
-      console.log(url);
       Api.get(url).then( res => {
-        console.log( res.data )
         if (res.data.code == 200) {
           this.ruleForm = res.data.rcmd;
           this.ruleForm.show_column = res.data.rcmd.show_column ? res.data.rcmd.show_column : [];
@@ -263,7 +261,6 @@ export default {
           this.rules.qq = res.data.rcmd.qq
           this.rules.email = res.data.rcmd.email
         }
-        console.log(this.ruleForm.content)
       })
       const listUrl = `/user/rcmd/index${this.token}`;
     },
@@ -301,7 +298,9 @@ export default {
   .form-box{
     float: left;width: 311px; height: 720px;  background-color: #fff;box-sizing: border-box;border-right: 1px solid #dddddd; padding: 20px 20px 0;margin-top: 25px;overflow: hidden;}
     .tjh-mc{width: 100%;height: 60px; overflow: hidden; }
-    .tjh-mc span:nth-child(1){float: left;font-size: 14px;color: #999;width: 100px;height: 30px;line-height: 30px; }
+    .tjh-mc span:nth-child(1){float: left;font-size: 14px;color: #999;width: 100px;height: 30px;line-height: 30px;
+      em{ color: #cc0000;}
+    }
     .tjh-mc span.err{float: left;width: 170px;height: 30px;box-sizing: border-box;border: 1px solid #f1b8b8;background-color: #fff4f4;text-align: center;line-height: 30px;color: #ff0000;font-size: 12px; }
     .tjh-mc input{width: 270px;height: 30px;box-sizing: border-box;border: 1px solid #ddd;clear: both; }
     .kcb{width: 100%;height: 110px; overflow: hidden;margin-top: 20px;}

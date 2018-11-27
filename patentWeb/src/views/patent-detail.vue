@@ -42,7 +42,7 @@
                             <span>价格</span>
                             <i v-if="isLogin">￥{{info.low.price}}</i> 
                             <div v-if="isLogin && info.low.is_kan == 1" class="kanjia"><em>砍</em>该专利卖家接受<a href="javascript:void(0);">砍价</a>，最多可砍<a href="javascript:void(0);">15%</a></div>
-                            <p v-if="!isLogin">登录后可见，<router-link target="_blank" to="/login">立即登录</router-link></p>
+                            <p v-if="!isLogin">登录后可见，<router-link target="_blank" :to="'/login?goback=/pDetail/'+info.p_id">立即登录</router-link></p>
                         </div>
                         <div class="box2-left-bottom" v-if="isLogin">
                             <p>该专利有{{info.attrs.length}}个卖家报价，<span>显示所有价格</span></p>
@@ -77,7 +77,7 @@
                         <i></i><h3>专利详情</h3>
                     </div>
                     <p class="sqrq">
-                        <span>申请日期</span><em>{{info.reg_date}}</em>
+                        <span>申请日期</span><em>{{info.reg_date_str}}</em>
                     </p>
                     <p class="sqr">
                         <span>申请人</span>
@@ -207,12 +207,30 @@ import Fixed from '@/components/patent/fixed.vue';
 
 import { GET_PATENT_DETAIL } from '@/components/patent/module'
 
+import cookies from 'js-cookie'
+
 import { api,openzx } from '@/assets/js/util.js'
 
 export default {
   name: 'PatentDetail',
   asyncData({ store, route }){
       return store.dispatch(GET_PATENT_DETAIL, route.params.id);
+  },
+  metaInfo () {
+    var name = '';
+    if(this.info){
+      name = this.info.name;
+    }
+    return {
+      title: name+'-中细软专利超市',
+      meta: [{
+          name: 'description',
+          content: '中细软专利超市为您提供'+name+'专利信息,'+name+'专利价格,专业顾问为您提供一对一贴心服务,办理专利转让,专利交易就到中细软专利超市.'
+      },{
+          name: 'keywords',
+          content: name+',中细软专利超市'
+      }]
+    }
   },
   data () {
     return {
@@ -226,8 +244,8 @@ export default {
       price: '',
       isMBErr: false,
       isPBErr: false,
-      token: this.$store.state.token,
-      isLogin: this.$store.state.token != undefined && this.$store.state.token.length,
+      token: cookies.get('token'),
+      isLogin: cookies.get('token') != undefined && cookies.get('token').length,
       footLink: false
     }
   },
@@ -236,7 +254,8 @@ export default {
     this.id = id;
   },
   mounted(){ // 此处数据不会被ssr读取到
-    this.$store.dispatch(GET_PATENT_DETAIL, this.id);
+    $('.nav .nav_right').find('a').eq(1).addClass('cur');
+    // this.$store.dispatch(GET_PATENT_DETAIL, this.id);
   },
   components: {
     Top,

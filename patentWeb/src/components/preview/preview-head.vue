@@ -1,14 +1,14 @@
 <template>
   <div class="vip-info">
       <div class="img">
-        <img v-if="cardInfo.banner" :src="'../../assets/images/preview/pc_b_'+cardInfo.banner+'.jpg'" alt="">
+        <img v-if="cardInfo.banner" :src="require('../../assets/images/preview/pc_b_'+cardInfo.banner+'.jpg')" alt="">
         <img v-else src="../../assets/images/preview/pc_b_1.jpg" alt="">
       </div>
       <div class="mingpian">
           <img v-if="cardInfo.head_img" :src="cardInfo.head_img" alt=""><img v-else src="../../assets/images/u26.jpg" alt="">
           <h4>{{cardInfo.call}}</h4>
-          <div class="geren">
-              <em v-if="cardInfo.agent">{{cardInfo.agent}}</em>
+          <div v-if="cardInfo.agent" class="geren">
+              <em>{{cardInfo.agent}}</em>
           </div>
           <p>{{cardInfo.url}}</p>
       </div>
@@ -42,10 +42,10 @@ export default {
   .img {width: 100%;height: 180px;}
   .mingpian{float: left; position: relative;width: 100%;height: 100px;clear: both;background-color: #fff; 
     img{float: left;position: absolute;left: 40px;bottom: 20px; width: 120px; height: 120px; border-radius: 50%; }
-    h4{position: absolute; left: 190px;top: -60px; line-height: 30px;font-size: 20px;color: #fff; }
+    h4{position: absolute; left: 190px;top: -40px; line-height: 30px;font-size: 20px;color: #fff; }
     .geren{width: 343px;overflow: hidden;margin-left: 190px;margin-top: 20px; 
       span{float: left;line-height: 30px;font-size: 14px;color: #333;overflow: hidden; }
-      em{float: left;width: 240px;height: 30px;line-height: 30px;font-size: 14px;color: #fff;background-color: #333333;border-radius: 5px;margin-left: 13px;text-align: center; }
+      em{float: left;height: 30px;padding: 0 10px;line-height: 30px;font-size: 14px;color: #fff;background-color: #333333;border-radius: 5px; }
     }
     p{width: 300px;height: 20px;margin-top: 10px;font-size: 12px;color: #999;margin-left: 190px; }
   }

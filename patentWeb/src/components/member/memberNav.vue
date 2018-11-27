@@ -2,7 +2,7 @@
 <!--导航组件使用absolute定位，父级组件请使用 margin-left 给出相应空间 // 至少150px  -->
   <div class="member-nav">
     <dl v-if="navbox=='member'">
-      <router-link exact class="link" tag="dt" to="/member/data" >会员资料</router-link>
+      <router-link exact class="link" tag="dd" to="/member/data" >会员资料</router-link>
       <router-link tag="dd" to="/member/head">我的头像</router-link>
     </dl>
     <dl v-else-if="navbox=='patent'">
@@ -59,15 +59,16 @@ $border02: #ddd;
     text-align: center;
     font-size: 14px;
     color: #fff;
+    cursor: pointer;
     &:hover{
       color:#fff;
       background-color: #c40000;
     }
   }
-  dd,
-  dt{
+  dd{
     cursor: pointer;
-    padding-left: 20px;  line-height: 40px;
+    padding-left: 20px;  
+    line-height: 40px;
     border-bottom: 1px solid #dddddd;
     &:last-of-type{
       border:none;

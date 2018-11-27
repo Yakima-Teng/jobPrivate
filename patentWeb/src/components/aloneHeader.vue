@@ -8,6 +8,7 @@
                   <p class="zlcs_title">专利超市</p>
                   <p class="zlcs_wz">www.ciprun.cn</p>
               </div>
+              <router-link class="cloud" target="_blank" to="/"></router-link>
           </div>
           <h2 class="title">{{name}}</h2>
       </div>
@@ -24,7 +25,7 @@ export default {
 $main: #333;
 $red: #cc0000;
 $border02: #ddd;
-.header{width: 100%;margin: 0 auto;clear: both;
+.header{width: 100%;margin: 0 auto;clear: both; background-color: #fff;
     .w1190{height: 84px; vertical-align: top; }
     .logo{ display: inline-block; position: relative;
       .logo{ float: left; width: 119px;height: 50px;line-height: 84px;margin-top: 17px;}
@@ -33,7 +34,7 @@ $border02: #ddd;
         .zlcs_title{height: 30px;font-size: 20px;color: $main;margin-top: 17px;margin-left: 26px;}
         .zlcs_wz{height: 20px;color: lighten($main, 40%);font-size: 12px;margin-left: 26px;}
       }
-      .cloud{ position: absolute; top: 0; left: 0; right: 0; bottom: 0}
+      .cloud{ position: absolute; width: 100%; height: 100%;; top: 0; left: 0;}
     }
     .title{
       display: inline-block; vertical-align: top; 

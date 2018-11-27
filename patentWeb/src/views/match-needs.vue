@@ -24,7 +24,7 @@
         <p class="fasong-title">{{patentInfo.content}}</p>
         <div class="excel">
             <label for="file">选择excel文件</label><input id="file" type="file" accept="application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" @change="fileUpload" />
-            <p>上传文件请按照模板规范填写，<a target="_blank" :href="'http://patent.d.patent.local/user/patent/tpl?token='+$store.state.token">下载excel模板</a></p>
+            <p>上传文件请按照模板规范填写，<a target="_blank" :href="'http://patent.d.gbicom.cn/user/patent/tpl?token='+token">下载excel模板</a></p>
         </div>
         <div class="qrfs-wrap">
             <p v-if="file && file.name.length">{{file.name}} 文件上传成功!</p>
@@ -52,6 +52,8 @@ import FootModel from '@/components/footer.vue';
 import Match from '@/components/match/match.vue';
 import Matching from '@/components/match/matching.vue';
 
+import cookies from 'js-cookie'
+
 import {GET_MORE_NEEDS_LIST } from '@/components/patent/module'
 
 import { api } from '@/assets/js/util.js'
@@ -74,7 +76,7 @@ export default {
         patentInfo: null,
         isSend: false,
         isSuc: false,
-        token: this.$store.state.token,
+        token: cookies.get('token'),
         file: null,
         isMatchSuc: true,
         promoteInfo: {
@@ -82,6 +84,18 @@ export default {
             subTitle: '等待买家确认',
             desc: '如果符合买家要求，将第一时间与您联系'
         }
+    }
+  },
+  metaInfo () {
+    return {
+      title: '找需求_卖专利_专利转让_专利交易-中细软专利超市',
+      meta: [{
+          name: 'description',
+          content: '中细软专利超市拥有大量的专利买家资源,能够迅速根据您的专利为您匹配买家,找需求,卖专利,专利转让,专利交易就到中细软专利超市,大品牌值得信赖.'
+      },{
+          name: 'keywords',
+          content: '找需求,卖专利,专利转让,专利交易,中细软专利超市'
+      }]
     }
   },
   methods: {
@@ -100,13 +114,17 @@ export default {
       this.$store.dispatch(GET_MORE_NEEDS_LIST, {'page_size': size, 'url': this.url});
     },
     sendPatent: function(info){
-        this.patentInfo = info;
-        this.isSend = true;
+        if(this.token == undefined){
+            location.href = '/login?goback='+ this.$route.fullPath;
+        }else{
+            this.patentInfo = info;
+            this.isSend = true;
+        }
     },
     submitSend: function(id){
         var _this = this;
         var Api = api();
-        var token = this.$store.state.token;
+        var token = this.token;
         var formdata = new FormData();
         formdata.append('id', id);
         formdata.append('file', this.file);

@@ -43,9 +43,9 @@
         <a href="javascript:void(0);" class="commit">提交</a>
     </div>
     <div class="meau-gotop-box">
-        <a class="gotop-box-head">
+        <!-- <a class="gotop-box-head">
             <span>0</span>
-        </a>
+        </a> -->
         <a @click="contactFun" class="gotop-box-ctt"></a>
         <a @click="backTopFn" class="gotop-box-footer"></a>
     </div>
@@ -68,7 +68,6 @@ export default {
         openzx();
     },
     backTopFn() {
-      console.log(123);
       $('html').animate({ scrollTop: 0 }, 300);
     }
   }
@@ -110,8 +109,8 @@ $red: #cc0000;
             span{display: block; width: 20px;height: 20px;border-radius: 50%;background-color: #cc0000;text-align: center;line-height: 20px;color: #fff;margin-left: 10px;}
         }
         .gotop-box-ctt, .gotop-box-footer{display:block; width: 40px;height: 40px;box-sizing: border-box;border: 1px solid #dddddd;border-top-left-radius: 5px;border-bottom-left-radius: 5px;margin-top: 5px;}
-        .gotop-box-ctt{background: url("../../assets/images/patent/on-line2.png") no-repeat 6px 7px;background-size: 28px 28px;}
-        .gotop-box-footer{background: url("../../assets/images/patent/to-top.png") no-repeat 10px 10px;}
+        .gotop-box-ctt{background: url("../../assets/images/patent/on-line2.png") no-repeat 6px 7px #fff;background-size: 28px 28px;}
+        .gotop-box-footer{background: url("../../assets/images/patent/to-top.png") no-repeat 10px 10px #fff;}
     }
     &.active{ transform: translateX(0);}
 }

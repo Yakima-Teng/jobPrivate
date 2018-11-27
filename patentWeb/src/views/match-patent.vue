@@ -40,6 +40,18 @@ export default {
       isLink: false
     }
   },
+  metaInfo () {
+    return {
+      title: '找专利_买专利_专利转让_专利交易-中细软专利超市',
+      meta: [{
+          name: 'description',
+          content: '中细软专利超市拥有丰富的专利资源,能够迅速根据您的需求为您匹配专利,买专利,找专利,专利交易,专利转让就到中细软专利超市,大品牌值得信赖.'
+      },{
+          name: 'keywords',
+          content: '找专利,买专利,专利转让,专利交易,中细软专利超市'
+      }]
+    }
+  },
   methods: {
     patentList: function(url){
       this.process = 'processing';

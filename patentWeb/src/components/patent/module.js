@@ -2,6 +2,8 @@ import axios from 'axios'
 
 import { api } from '@/assets/js/util.js'
 
+import Cookie from 'js-cookie';
+
 export const GET_PATENT = 'GET_PATENT'
 export const GET_PATENT_LIST = 'GET_PATENT_LIST'
 export const GET_NEEDS_LIST = 'GET_NEEDS_LIST'
@@ -56,8 +58,8 @@ const patent = {
     actions: {
         [GET_PATENT]({ commit }, url) {
             let token = '';
-            if (this.state.token !== undefined) {
-                token = this.state.token;
+            if (Cookie.get('token') !== undefined) {
+                token = Cookie.get('token');
             }
             return new Promise((resolve, project) => {
                 axios.all([Api.get('/needs?page_size=5&token=' + token), Api.get(url + '&token=' + token)]).then(axios.spread(function(needs, patent) {
@@ -78,8 +80,8 @@ const patent = {
         },
         [GET_PATENT_LIST]({ commit }, payload) {
             let token = '';
-            if (this.state.token !== undefined) {
-                token = this.state.token;
+            if (Cookie.get('token') !== undefined) {
+                token = Cookie.get('token');
             }
             return new Promise((resolve, project) => {
                 Api.get(payload.url + '&p=' + payload.page + '&token=' + token).then(function(res) {
@@ -95,8 +97,8 @@ const patent = {
         },
         [GET_NEEDS_LIST]({ commit }, payload) {
             let token = '';
-            if (this.state.token !== undefined) {
-                token = this.state.token;
+            if (Cookie.get('token') !== undefined) {
+                token = Cookie.get('token');
             }
             return new Promise((resolve, project) => {
                 Api.get(payload.url + '&token=' + token).then(function(res) {
@@ -112,8 +114,8 @@ const patent = {
         },
         [GET_PATENT_DETAIL]({ commit }, id) {
             let token = '';
-            if (this.state.token !== undefined) {
-                token = this.state.token;
+            if (Cookie.get('token') !== undefined) {
+                token = Cookie.get('token');
             }
             return new Promise((resolve, project) => {
                 Api.get('/patent/detail?id=' + id + '&token=' + token).then(function(res) {
@@ -127,8 +129,8 @@ const patent = {
         },
         [GET_MORE_PATENT_LIST]({ commit }, payload) {
             let token = '';
-            if (this.state.token !== undefined) {
-                token = this.state.token;
+            if (Cookie.get('token') !== undefined) {
+                token = Cookie.get('token');
             }
             return new Promise((resolve, project) => {
                 Api.get(payload.url + '&p=' + payload.page + '&token=' + token).then(function(res) {
@@ -143,8 +145,8 @@ const patent = {
         },
         [GET_MORE_NEEDS_LIST]({ commit }, payload) {
             let token = '';
-            if (this.state.token !== undefined) {
-                token = this.state.token;
+            if (Cookie.get('token') !== undefined) {
+                token = Cookie.get('token');
             }
             return new Promise((resolve, project) => {
                 Api.get(payload.url + '&page_size=' + payload.page_size + '&p=1&token=' + token).then(function(res) {

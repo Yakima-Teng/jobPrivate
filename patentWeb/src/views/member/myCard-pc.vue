@@ -13,7 +13,7 @@
     </div>
   </div>
   <div class="mask" v-if="isEdit"></div>
-  <card-edit v-if="cardInfo" :isEdit="isEdit" :cardInfo="cardInfo"></card-edit>
+  <card-edit v-if="cardInfo" :isEdit="isEdit" :cardInfo="cardInfo" @closeLayer="closeLayer"></card-edit>
 </div>
 </template>
 
@@ -40,6 +40,9 @@ export default {
     },
     openEdit: function(isEdit){
       this.isEdit = isEdit;
+    },
+    closeLayer: function(){
+      this.isEdit = false;
     }
   }
 }

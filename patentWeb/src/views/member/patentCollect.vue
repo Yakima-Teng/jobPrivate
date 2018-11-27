@@ -12,21 +12,21 @@
               <div><a href="javascript:void(0);">全部</a></div>
           </div>
       </div> -->
-      <patent-header :navType="false" title="我的专利库" @patentTypeEmit="patentTypeFn" ></patent-header>
+      <patent-header :navType="false" title="收藏的专利" @patentTypeEmit="patentTypeFn" ></patent-header>
       <div class="input-wrap">
           <select  class="gjc" v-model="ruleForm.searchType" >
             <option value="keywords">关键词</option>
             <option value="reg_id">专利申请号</option>
           </select>
-          <input @keyup.enter="searchFn" type="text">
+          <input @keyup.enter="searchFn" type="text" v-model="ruleForm.search">
           <a @click="searchFn" href="javascript:void(0);" class="find"></a>
       </div>
       <div class="list-box">
-        <patent-table ref="tableBox" @emitDel="patentDelFn" :tableData="tableData" :edit="edit" @emitMoneyStatus="moneyStatusFn" @emitYear="getYearFn" @emitSale="saleTypeFn" ></patent-table>
+        <patent-table :r="2" ref="tableBox" @emitDel="patentDelFn" :tableData="tableData" :edit="edit" @emitMoneyStatus="moneyStatusFn" @emitYear="getYearFn" @emitSale="saleTypeFn" ></patent-table>
         <div class="list-bottom">
           <div class="btm-f-l">
             <input @change="checkboxFn" type="checkbox" name="" id="">
-            <a href="javascript:void(0);" @click="delFn(selectList.join(','))" class="pl">批量删除</a>
+            <a href="javascript:void(0);" @click="delFn(selectList)" class="pl">批量删除</a>
             <span>已勾选<em>{{selectSize}}</em></span>
           </div>
           <div class="page-box">
@@ -47,6 +47,8 @@ import pageModule from '@/components/pagination'
 import patentTable from '@/components/member/patentTable'
 import layerBox from '@/components/member/patentLayer';
 import patentHeader from '@/components/member/patentHead'
+
+import { SELECT_LIST, SELECT_SIZE } from '@/components/member/patent'
 
 import { api } from '@/assets/js/util.js'
 const Api = api();
@@ -70,9 +72,9 @@ export default {
       patentList: [],
       patentId: '',
 
-      token: '',
+      token: cookies.get('token'),
       ruleForm: {
-        token:　'',
+        token:　cookies.get('token'),
         type: '',
         searchType: 'keywords',
         search: '',
@@ -87,9 +89,10 @@ export default {
   methods: {
     // 获取搜索相关数据
     patentTypeFn(data) {
-      console.log(data);
       this.ruleForm.type = data;
       this.searchFn();
+      this.$store.dispatch(SELECT_SIZE, 0);
+      this.$store.dispatch(SELECT_LIST, 0);
     },
     moneyStatusFn(size) {
       this.ruleForm.status = size;
@@ -110,10 +113,8 @@ export default {
     // 搜索
     searchFn () {
       let e = Qs.stringify(this.ruleForm);
-      console.log(e)
       let url = `/user/patent/collect?${e}`;
       Api.get(url).then (res => {
-        console.log(res.data);
         res.data.patent.list.forEach( function (el) {
           el.edit = true
         })
@@ -128,12 +129,21 @@ export default {
       this.$refs.tableBox.checkboxFn(el);
     },
     delFn(data) {
-      let url = `/user/index/care?token=${this.$store.state.token}&type=cp&action=uncare&id=${data}`
-      console.log(url);
+      var pidArr = [];
+      let url = '/user/index/care?token='+this.token + '&type=cp&action=uncare&id=';
+      if(data instanceof Array){
+        data.forEach(function(el){
+          pidArr.push(el.p_id);
+        });
+        url += pidArr.toString();
+      }else{
+        url += data;
+      }
       Api.get(url).then( res => {
-        console.log(res.data);
         if (res.data.code == 200) {
           this.searchFn();
+          this.$store.dispatch(SELECT_SIZE, 0);
+          this.$store.dispatch(SELECT_LIST, 0);
         }
       })
     },
@@ -142,9 +152,9 @@ export default {
     },
     // 获取
     getDataFn () {
-      this.ruleForm.token = cookies.get('token');
-      this.ruleForm.token = '4940a8406b76f8111808819abe8f041f'
-      console.log(this.token)
+      // this.ruleForm.token = cookies.get('token');
+      // this.ruleForm.token = '4940a8406b76f8111808819abe8f041f'
+      // console.log(this.token)
       this.searchFn();
     },
     
@@ -216,7 +226,7 @@ $border02: #ddd;
         float: left;
         width: 50%;
         input[type=checkbox]{float: left;margin-top: 27px;}
-        a{float: left;width: 97px;height: 30px;text-align: center;line-height: 30px;margin-left: 14px;border: 1px solid #cccccc;border-radius: 5px;margin-top: 20px;color: #666666;}
+        a{float: left;width: 97px;height: 30px;font-size:14px;text-align: center;line-height: 30px;margin-left: 14px;border: 1px solid #cccccc;border-radius: 5px;margin-top: 20px;color: #666666;}
         .cj{width: 139px;margin-left: 10px;}
         span{float: left;margin-top: 20px;color: #666666;font-size: 14px;line-height: 30px;margin-left: 10px;}
         em{padding-left: 4px;}

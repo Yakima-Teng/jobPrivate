@@ -158,7 +158,7 @@
                     </div>
                     <a href="javascript:void(0);" class="a1" v-if="collect.indexOf(item.needs_id) == -1" @click="careHandle('care', item)">收藏</a>
                     <a href="javascript:void(0);" class="a3" v-else @click="careHandle('uncare', item)">已收藏</a>
-                    <a href="javascript:void(0);" class="a2" @click="sendPatent(item)" v-if="item.is_offer">给TA发专利</a>
+                    <a href="javascript:void(0);" class="a2" @click="sendPatent(item)" v-if="!item.is_offer">给TA发专利</a>
                     <a href="javascript:void(0);" class="a4" v-else>已发过专利</a>
                 </li>
             </ul>
@@ -354,7 +354,7 @@ export default {
                     clearInterval(t);
                     _this.$emit('processChange', 'end');
                 }
-            }, 1000);
+            }, 500);
         }else{
             this.curIndex = 0;
             setTimeout(function(){

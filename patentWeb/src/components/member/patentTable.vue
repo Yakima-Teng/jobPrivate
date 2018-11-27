@@ -46,7 +46,7 @@
       </tr>
       <tr v-for="(key, index) in tableData" :key="index" class="list">
         <td>
-          <input @change="checkAloneFn" :data-pid='key._source.attrs.p_id' :data-paid='key._source.attrs.pa_id' type="checkbox" name="" id="">
+          <input @change="checkAloneFn" :data-pid='key._source.p_id' :data-paid='key._source.attrs.pa_id' type="checkbox" name="" id="">
         </td>
         <td>
           <div class="box_bg" :class="{'fm':key._source.type == 105, 'wg':key._source.type == 107,}" >{{key._source.type_str ? key._source.type_str.substr(0, 2) : ''}}</div>
@@ -56,7 +56,7 @@
           </div>
         </td>
         <td>
-          <span >{{key._source.attrs.status_str}}</span>
+          <span >{{key._source.attrs.status_str ? key._source.attrs.status_str : '不限'}}</span>
         </td>
         <td>
           <span >{{key._source.reg_date_str}}</span>
@@ -65,18 +65,18 @@
           <span >{{key._source.attrs.sale_status_str}}</span>
         </td>
         <td>
-          <span class="money">{{key._source.attrs.price}}</span>
+          <span class="money" v-if="parseInt(key._source.attrs.price) > 0">￥{{key._source.attrs.price}}</span><span v-else class="money">面议</span>
         </td>
         <td>
-          <a v-if="key._source.attrs.is_show == 1 &&　edit == true" :data-id='key._source.p_id' @click="editFn(index)" href="javascript:void(0);" class="edit-btn">修改</a>
-          <a v-if="key._source.attrs.is_show == 1  &&　edit == false" :data-id='key._source.p_id' @click="delFn" href="javascript:void(0);" class="edit-btn">删除</a>
-          <div  v-if="key._source.attrs.is_show == 2"  class="none">
+          <a v-if="key._source.attrs.is_show == 1 && r == 1" :data-id='key._source.p_id' @click="editFn(index)" href="javascript:void(0);" class="edit-btn">修改</a>
+          <div v-else-if="key._source.attrs.is_show == 2 && r == 1"  class="none">
               已无效<em class="icon"></em>
               <div class="xl1">
                 <h3>【此专利已无效，无法再出售】</h3>
                 <p>如信息有误，请立即联系<a href="javascript:void(0);">在线客服</a></p>
               </div>
           </div>
+          <a v-else :data-id='key._source.p_id' @click="delFn" href="javascript:void(0);" class="edit-btn">删除</a>
         </td>
       </tr>
     </tbody>
@@ -90,13 +90,7 @@
 import { SELECT_LIST, SELECT_SIZE } from '@/components/member/patent'
 
 export default {
-  props: {
-    tableData: {
-      type: Array,
-      default: []
-    },
-    edit: true,
-  },
+  props: ['tableData', 'r'],
   data () {
     return {
       startTime: '',
@@ -116,17 +110,27 @@ export default {
   methods: {
     checkAloneFn (el) {
       let that = this;
-      // console.log(el.target)
       let pid = el.target.getAttribute('data-pid');
       let paid = el.target.getAttribute('data-paid');
-      let obj = {'pid': pid, 'paid': paid}
+      let obj = {'p_id': pid, 'pa_id': paid}
       if (el.target.checked && pid && paid) {
         this.selectList.push(obj)
       } else {
         this.selectList.splice(this.selectList.indexOf(obj), 1);
       }
-      
-      this.$store.dispatch(SELECT_SIZE, this.size);
+      let checkbox = document.querySelector('.list-box').querySelectorAll('input');
+      if(this.selectList.length < (checkbox.length - 2)){
+        checkbox.forEach(function(el, index){
+          if(index == 0 || index == (checkbox.length - 1)){
+            el.checked = false;
+          }
+        });
+      }else{
+        [].forEach.call(checkbox, function (el) {
+          el.checked = true;
+        })
+      }
+      this.$store.dispatch(SELECT_SIZE, this.selectList.length);
       this.$store.dispatch(SELECT_LIST, this.selectList);
     },
     checkboxFn (el) {
@@ -146,7 +150,7 @@ export default {
       } else {
         this.selectList = []
       }
-      this.$store.dispatch(SELECT_SIZE, this.size);
+      this.$store.dispatch(SELECT_SIZE, this.selectList.length);
       this.$store.dispatch(SELECT_LIST, this.selectList);
     },
     getYearListFn () {
@@ -231,8 +235,10 @@ export default {
         }
       }
       .slzl-box{float: left; width: 292px; padding-left: 20px;}
-      .p1{ font-size: 13px;color: #333333;}
-      .p2{ font-size: 13px;color: #999999;margin-top: 10px;}
+      p{ font-size: 14px; line-height: 20px;
+        &.p1{color: #333333;}
+        &.p2{color: #999999;margin-top: 10px;}
+      }
       .money{
         color:#cc0000;
       }

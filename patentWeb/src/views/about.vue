@@ -49,6 +49,18 @@ export default {
       type: ''
     }
   },
+  metaInfo () {
+    return {
+      title: '关于专利超市-中细软专利超市',
+      meta: [{
+          name: 'description',
+          content: '中细软集团有限公司拥有专业知识产权服务1200余人,作为中国专业的大型综合性知识产权服务机构,其定位是为中国创新提供系统的解决方案与信息服务,中细软集团致力于通过网络科技等手段,为政府知识产权行政管理、为企业、为个人智慧财产创造、运用、保护和管理提供高质量的解决方案.'
+      },{
+          name: 'keywords',
+          content: '关于专利超市,中细软,中细软专利超市'
+      }]
+    }
+  },
   created(){
     var path = this.$route.path;
     var type = path.substring(1,path.length);

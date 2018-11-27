@@ -33,12 +33,13 @@
         <!--content-->
         <router-view></router-view>
         <!--/content-->
-        <footer class="footer">&copy; 2018 北京中细软网络科技有限公司 版权所有 京ICP备11017069号 </footer>
+        <footer class="footer">&copy; 2018 北京中细软网络科技有限公司 版权所有 <a target="_blank" href="http://www.miibeian.gov.cn">京ICP备11017069号-5</a> </footer>
     </div>
 </template>
 
 <script>
 import { openzx, api } from '@/assets/js/util'
+
 const Api = api();
 
 import cookies from 'js-cookie'
@@ -56,20 +57,21 @@ export default {
         openzx();
     },
     logoutFn() {
-      let url = `/user/index/logout?token=${this.$store.state.token}`
+      let url = `/user/index/logout?token=${cookies.get('token')}`
       Api.get(url).then( res => {
         if (res.data.code == 200) {
-          cookies.remove('token');
-          cookies.remove('nick');
-          cookies.remove('uid');
-          this.$route.push({
+          cookies.remove('token', { path: '' });
+          cookies.remove('nick', { path: '' });
+          cookies.remove('uid', { path: '' });
+          cookies.remove('mobile', { path: '' });
+          this.$router.push({
             path: '/'
           })
         }
       })
     },
     getDataFn () {
-      let url = `/user/index/index?token=${this.$store.state.token}`;
+      let url = `/user/index/index?token=${cookies.get('token')}`;
       Api.get(url).then( res => {
         if (res.data.user.head_img && res.data.user.head_img != '') {
           this.headerImg = res.data.user.head_img;
@@ -289,5 +291,6 @@ $border02: #ddd;
     color: $main;
     line-height: 80px;
     text-align: center;
+    a{ color: $main; &:hover{ color: $red;}}
 }
 </style>

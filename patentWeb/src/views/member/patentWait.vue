@@ -4,17 +4,6 @@
     <patent-nav  :navbox="navbox" ></patent-nav>
     <div class="show-main">
       <pagent-head :navType="true" title="待发布专利" @patentTypeEmit="patentTypeFn" ></pagent-head>
-      <div class="input-wrap">
-          <div class="gjc">
-            <select v-model="keySelect">
-              <option value="1">关键词</option>
-              <option value="2">专利申请号</option>
-            </select>
-            
-          </div>
-          <input type="text" @keyup.enter="searchFn" v-model="keyText" >
-          <a @click="searchFn" href="javascript:void(0);" class="find"></a>
-      </div>
       <div class="list-box">
         <table>
           <tbody>
@@ -25,13 +14,13 @@
               <th >
                 <span>专利信息</span>
               </th>
-              <th>
-                <select v-model="ruleForm.status" @change="searchFn" >
+              <!-- <th>
+                <select v-model="ruleForm.money_status" @change="searchFn" >
                   <option value="">不限</option>
                   <option value="98" >已下证</option>
                   <option value="99">未缴费</option>
                 </select>
-              </th>
+              </th> -->
               <th >
                 <span href="" >价格</span>
               </th>
@@ -52,11 +41,11 @@
               <td>
                 <span >{{key.reg_id}}</span>
               </td>
+              <!-- <td>
+                <span >{{key.money_status ? key.money_status : '不限'}}</span>
+              </td> -->
               <td>
-                <span >{{key.money_status}}</span>
-              </td>
-              <td>
-                 <span class="money">{{key.price}}.00</span>
+                 <span class="money" v-if="parseInt(key.price)">{{key.price}}</span><span class="money" v-else>面议</span>
               </td>
               <td>
                <span>{{key.create_time}}</span>
@@ -95,6 +84,7 @@ import pagentHead from '@/components/member/patentHead'
 import pageModule from '@/components/pagination'
 import layerBox from '@/components/member/patentLayer';
 
+import cookies from 'js-cookie'
 
 import { api } from '@/assets/js/util.js'
 const Api = api();
@@ -111,17 +101,13 @@ export default {
   data () {
     return {
       navbox: 'patent',
-      keySelect: 1,
-      keyText: '',
       tableData: [],
       patentList: [],
       patentId: '',
 
       ruleForm: {
         p: 1,
-        searchType: 'keywords',
-        search: '',
-        money_status: '',
+        // money_status: '',
         status: ''
       }
     }
@@ -129,11 +115,9 @@ export default {
   methods: {
     searchFn () {
       let e = Qs.stringify(this.ruleForm);
-      // const url = `/user/patent/sales?token=${this.$store.state.token}&${e}`;
-      const url = `/user/patent/sales?token=4940a8406b76f8111808819abe8f041f&${e}`;
-      console.log(e);
+      const url = `/user/patent/sales?token=${cookies.get('token')}&${e}`;
+      // const url = `/user/patent/sales?token=4940a8406b76f8111808819abe8f041f&${e}`;
       Api.get(url).then( res => {
-        console.log(res.data);
         this.tableData = res.data.list
         this.$store.commit('jumpHandle', res.data.page);
         this.$store.commit('changeLastPage', res.data.totalPage);
@@ -141,6 +125,7 @@ export default {
     },
     patentTypeFn(data) {
       this.ruleForm.status = data;
+      this.ruleForm.money_status = '';
       this.searchFn();
     },
     pageChangeFn (type, num) {
@@ -254,7 +239,7 @@ $border02: #ddd;
         float: left;
         width: 50%;
         input[type=checkbox]{float: left;margin-top: 27px;}
-        a{float: left;width: 97px;height: 30px;text-align: center;line-height: 30px;margin-left: 14px;border: 1px solid #cccccc;border-radius: 5px;margin-top: 20px;color: #666666;}
+        a{float: left;width: 97px;height: 30px;font-size:14px;text-align: center;line-height: 30px;margin-left: 14px;border: 1px solid #cccccc;border-radius: 5px;margin-top: 20px;color: #666666;}
         .cj{width: 139px;margin-left: 10px;}
         span{float: left;margin-top: 20px;color: #666666;font-size: 14px;line-height: 30px;margin-left: 10px;}
         em{padding-left: 4px;}

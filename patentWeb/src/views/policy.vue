@@ -18,8 +18,8 @@
                     </div>
                     <p>省份筛选</p>
                     <dl v-if="sortsList">
-                        <dd :class="{'cur': curIndex == -1}" @click="filterNews(6, -1)">全部<em>{{sortsList.total}}</em></dd>
-                        <dd :class="{'cur': curIndex == index}" v-for="(sort, index) in sortsList.list" :key="index" @click="filterNews(sort.arc_type_id, index)">{{sort.name}}<em>{{sort.count}}</em></dd>
+                        <dd :class="{'cur': curIndex == -1 && id == 6}" @click="filterNews(6, -1)">全部<em>{{sortsList.total}}</em></dd>
+                        <dd :class="{'cur': curIndex == index || id == sort.arc_type_id}" v-for="(sort, index) in sortsList.list" :key="index" @click="filterNews(sort.arc_type_id, index)">{{sort.name}}<em>{{sort.count}}</em></dd>
                     </dl>
                 </div>
             </div>
@@ -33,6 +33,7 @@
         </div>
     </div>
     <FootModel :isLink="footLink"></FootModel>
+    <Fixed></Fixed>
   </div>
 </template>
 
@@ -41,6 +42,7 @@ import Top from '@/components/top.vue';
 import HeadModel from '@/components/header.vue';
 import FootModel from '@/components/footer.vue';
 import Pagination from '@/components/pagination.vue';
+import Fixed from '@/components/patent/fixed.vue';
 
 import Item from '@/components/policy/List.vue';
 
@@ -68,12 +70,24 @@ export default {
       footLink: false
     }
   },
+  metaInfo () {
+    return {
+      title: '地区政策_专利政策_政策新闻-中细软专利超市',
+      meta: [{
+          name: 'description',
+          content: '中细软专利超市政策新闻频道为您提供全面的专利政策,地区政策,想要了解有关专利的相关政策就到中细软专利超市.'
+      },{
+          name: 'keywords',
+          content: '地区政策,专利政策,政策新闻,中细软,中细软专利超市'
+      }]
+    }
+  },
   created(){
     var query = this.$route.query;
-    if(query.search != undefined){
+    if(query.search != undefined && query.search.length){
       this.search = query.search;
     }else if(query.id != undefined){
-      this.id = id;
+      this.id = query.id;
     }
   },
   mounted(){ // 此处数据不会被ssr读取到
@@ -90,7 +104,8 @@ export default {
     HeadModel,
     FootModel,
     Pagination,
-    Item
+    Item,
+    Fixed
   },
   computed: {
     sortsList(){

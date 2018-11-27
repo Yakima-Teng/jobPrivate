@@ -66,7 +66,7 @@
                   <div class="r-box-right">
                       <a href="javascript:void(0);" class="coll" v-if="collect.indexOf(item.needs_id) == -1" @click="careHandle('care', item)">收藏</a>
                       <a href="javascript:void(0);" class="coll not" v-else @click="careHandle('uncare', item)">已收藏</a>
-                      <a href="javascript:void(0);" class="give" @click="sendPatent(item)" v-if="item.is_offer">给TA发专利</a>
+                      <a href="javascript:void(0);" class="give" @click="sendPatent(item)" v-if="!item.is_offer">给TA发专利</a>
                       <a href="javascript:void(0);" class="give cur" v-else>已发过专利</a>
                       <p>有{{item.offer}}人发专利</p>
                   </div>
@@ -92,7 +92,7 @@
         <p class="fasong-title">{{patentInfo.content}}</p>
         <div class="excel">
             <label for="file">选择excel文件</label><input id="file" type="file" accept="application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" @change="fileUpload" />
-            <p>上传文件请按照模板规范填写，<a target="_blank" :href="'http://patent.d.patent.local/user/patent/tpl?token='+$store.state.token">下载excel模板</a></p>
+            <p>上传文件请按照模板规范填写，<a target="_blank" :href="'http://patent.d.gbicom.cn/user/patent/tpl?token='+token">下载excel模板</a></p>
         </div>
         <div class="qrfs-wrap">
             <p v-if="file && file.name.length">{{file.name}} 文件上传成功!</p>
@@ -108,7 +108,7 @@
         <p v-if="isMatchSuc">{{promoteInfo.desc}}</p>
         <a href="javascript:void(0);" class="close" @click="closeLayer"></a> 
     </div>
-
+    <Fixed></Fixed>
   </article>
 </template>
 
@@ -116,8 +116,11 @@
 import Top from '@/components/top.vue'
 import HeadModel from '@/components/header.vue'
 import FootModel from '@/components/footer.vue'
+import Fixed from '@/components/patent/fixed.vue';
 
 import page from '@/components/pagination'
+
+import cookies from 'js-cookie'
 
 import { GET_NEEDS_LIST } from '@/components/patent/module'
 
@@ -142,6 +145,18 @@ export default {
         }
         return Promise.all([store.dispatch(GET_NEEDS_LIST, {page:1, url:url})])
     },
+    metaInfo () {
+        return {
+        title: '需求大厅-中细软专利超市',
+        meta: [{
+            name: 'description',
+            content: '中细软专利超市需求大厅有大量的买家在发布专利需求,能够为您快速的将专利转让,卖专利,办理专利交易就到中细软专利超市,大品牌值得信赖.'
+        },{
+            name: 'keywords',
+            content: '需求大厅,中细软专利超市'
+        }]
+        }
+    },
     mounted(){ // 此处数据不会被ssr读取到
         var _this = this;
         this.$store.dispatch(GET_NEEDS_LIST,{page: 1, url: _this.urlFun(_this,1)});
@@ -150,7 +165,8 @@ export default {
         Top,
         HeadModel,
         FootModel,
-        page
+        page,
+        Fixed
     },
     data () {
         return {
@@ -164,7 +180,7 @@ export default {
             file: null,
             isMatchSuc: true,
             footLink: false,
-            token: this.$store.state.token,
+            token: cookies.get('token'),
             promoteInfo: {
                 title: '发送成功',
                 subTitle: '等待买家确认',
@@ -233,13 +249,17 @@ export default {
             this.$store.dispatch(GET_NEEDS_LIST, payload);
         },
         sendPatent: function(info){
-            this.patentInfo = info;
-            this.isSend = true;
+            if(this.token == undefined){
+                location.href = '/login?goback='+ this.$route.fullPath;
+            }else{
+                this.patentInfo = info;
+                this.isSend = true;
+            }
         },
         submitSend: function(id){
             var _this = this;
             var Api = api();
-            var token = this.$store.state.token;
+            var token = this.token;
             var formdata = new FormData();
             formdata.append('id', id);
             formdata.append('file', this.file);
@@ -266,6 +286,7 @@ export default {
                 _this.promoteInfo = promoteInfo;
                 _this.isSend = false;
                 _this.isSuc = true;
+                _this.file = null;
             });
         },
         closeLayer: function(){

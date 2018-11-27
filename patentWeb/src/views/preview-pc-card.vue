@@ -191,6 +191,8 @@
 import previewHead from '@/components/preview/preview-head'
 import Pagination from '@/components/pagination.vue';
 
+import cookies from 'js-cookie'
+
 import { GET_CARD_INFO,GET_CARD_PATENT_LIST } from '@/components/preview/module'
 
 export default {
@@ -223,8 +225,8 @@ export default {
     this.short = short;
     var url = '';
     if(short == undefined){
-        // url = '/user/card/index?token='+this.$store.state.token;
-        url = '/user/card/index?token=4940a8406b76f8111808819abe8f041f';
+        url = '/user/card/index?token='+cookies.get('token');
+        // url = '/user/card/index?token=4940a8406b76f8111808819abe8f041f';
     }else{
         url = '/c/'+short;
     }

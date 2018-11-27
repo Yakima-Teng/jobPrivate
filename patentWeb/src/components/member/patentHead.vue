@@ -2,16 +2,16 @@
   <div class="top-list">
     <h2>{{title}}</h2>
     <div v-if="navType" class="list-wrap">
-        <div :class="{cur: cur == ''}" @click="curFn('')" ><a href="javascript:void(0);">全部</a></div>
-        <div :class="{cur: cur == 108}" @click="curFn(108)"><a href="javascript:void(0);">审核中</a></div>
-        <div :class="{cur: cur == 109}" @click="curFn(109)"><a href="javascript:void(0);">已发布</a></div>
-        <div :class="{cur: cur == 110}" @click="curFn(110)"><a href="javascript:void(0);">驳回</a></div>
+        <div :class="{'cur': cur == ''}" @click="curFn('')" ><a href="javascript:void(0);">全部</a></div>
+        <div :class="{'cur': cur == 108}" @click="curFn(108)"><a href="javascript:void(0);">审核中</a></div>
+        <div :class="{'cur': cur == 109}" @click="curFn(109)"><a href="javascript:void(0);">已发布</a></div>
+        <div :class="{'cur': cur == 110}" @click="curFn(110)"><a href="javascript:void(0);">驳回</a></div>
     </div>
     <div v-else class="list-wrap">
-        <div :class="{cur: cur == ''}" @click="curFn('')" ><a href="javascript:void(0);">全部</a></div>
-        <div :class="{cur: cur == 105}" @click="curFn(105)"><a href="javascript:void(0);">发明专利</a></div>
-        <div :class="{cur: cur == 106}" @click="curFn(106)"><a href="javascript:void(0);">实用新型</a></div>
-        <div :class="{cur: cur == 107}" @click="curFn(107)"><a href="javascript:void(0);">外观专利</a></div>
+        <div :class="{'cur': cur == ''}" @click="curFn('')" ><a href="javascript:void(0);">全部</a></div>
+        <div :class="{'cur': cur == 105}" @click="curFn(105)"><a href="javascript:void(0);">发明专利</a></div>
+        <div :class="{'cur': cur == 106}" @click="curFn(106)"><a href="javascript:void(0);">实用新型</a></div>
+        <div :class="{'cur': cur == 107}" @click="curFn(107)"><a href="javascript:void(0);">外观专利</a></div>
     </div>
   </div>
 </template>
