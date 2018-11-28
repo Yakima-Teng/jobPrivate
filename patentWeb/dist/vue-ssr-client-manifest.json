@@ -88,7 +88,7 @@
     "static/js/30.9d2f6388d99d4ee7ef33.js",
     "static/js/31.be6e918ad4621ce0dadb.js",
     "static/js/vendor.0a42226e59a3549f9163.js",
-    "static/js/app.1f45a1e5cc3e1843ea62.js",
+    "static/js/app.737fd5769ce83d32ae39.js",
     "static/js/manifest.09a88d11cc23f5f2aea6.js",
     "static/css/app.3ccd2ab6b8daa9b648346dcf975cefeb.css",
     "static/css/app.3ccd2ab6b8daa9b648346dcf975cefeb.css.map",
@@ -125,13 +125,13 @@
     "static/js/30.9d2f6388d99d4ee7ef33.js.map",
     "static/js/31.be6e918ad4621ce0dadb.js.map",
     "static/js/vendor.0a42226e59a3549f9163.js.map",
-    "static/js/app.1f45a1e5cc3e1843ea62.js.map",
+    "static/js/app.737fd5769ce83d32ae39.js.map",
     "static/js/manifest.09a88d11cc23f5f2aea6.js.map"
   ],
   "initial": [
     "static/js/manifest.09a88d11cc23f5f2aea6.js",
     "static/js/vendor.0a42226e59a3549f9163.js",
-    "static/js/app.1f45a1e5cc3e1843ea62.js"
+    "static/js/app.737fd5769ce83d32ae39.js"
   ],
   "async": [
     "static/js/9.f11cdc9062cbe1603eb7.js",

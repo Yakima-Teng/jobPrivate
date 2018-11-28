@@ -13,7 +13,7 @@ module.exports = {
         // proxyTable: {},
         proxyTable: {
             '/api': {
-                target: 'http://kong.gbicom.com:8000/patent',
+                target: 'https://kong.gbicom.com:8443/patent',
                 changeOrigin: true,
                 pathRewrite: {
                     '^/api': ''

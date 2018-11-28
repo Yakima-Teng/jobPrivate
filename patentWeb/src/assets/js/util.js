@@ -16,7 +16,7 @@ export function openzx() {
     var iLeft = (window.screen.availWidth - 10 - 800) / 2;
     window.open(swt_talk, 'newwindow', 'height=515, width=700,toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no,top=' + iTop + ',left=' + iLeft);
 }
-let baseUrl = 'http://kong.gbicom.com:8000/patent';
+let baseUrl = 'https://kong.gbicom.com:8443/patent';
 
 export const API_HOST = baseUrl;
 

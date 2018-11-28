@@ -52,6 +52,6 @@ server.get('*', (req, res) => {
 });
 
 server.on('error', err => console.log(err));
-server.listen(8908, () => {
-    console.log(`vue ssr started at localhost:8908`)
+server.listen(8909, () => {
+    console.log(`vue ssr started at localhost:8909`)
 });
