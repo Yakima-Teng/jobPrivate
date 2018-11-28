@@ -7,7 +7,7 @@
         <div class="img-box"><img :src="tableData.qrcode" alt=""><i></i></div>
         <p class="lianjie">{{link}}</p>
         <a href="javascript:void(0);" v-clipboard:copy="link" v-clipboard:success="onCopyFn" v-clipboard:error="onErrorFn" class="btn3">复制链接分享</a>
-        <a   :href="'http://patent.d.gbicom.cn/rcmd/download?id=' + tableData.rcmd_id" target="_blank" class="btn4">下载excel版</a>
+        <a :href="baseUrl+'/rcmd/download?id=' + tableData.rcmd_id" target="_blank" class="btn4">下载excel版</a>
       </aside>
       <section class="show-content">
         <header class="cmder-header">
@@ -69,7 +69,7 @@
 <script>
 import cookies from 'js-cookie'
 
-import { api } from '@/assets/js/util.js'
+import { api,API_HOST } from '@/assets/js/util.js'
 const Api = api();
 
 import { GET_RCMD_DATA } from '@/components/rcmd/rcmd'
@@ -80,7 +80,8 @@ export default {
   name: 'rcmdPc',
   data () {
     return {
-      link: ''
+      link: '',
+      baseUrl: API_HOST
     }
   },
   asyncData({ store, route }){

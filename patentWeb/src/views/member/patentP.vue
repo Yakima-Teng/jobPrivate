@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { api } from '@/assets/js/util.js'
+import { api,API_HOST } from '@/assets/js/util.js'
 const Api = api();
 
 import cookies from 'js-cookie'
@@ -63,6 +63,7 @@ export default {
       rightKan: 2,
       my: false,
       editOk: false,
+      baseUrl: API_HOST,
       
       ruleLeftForm: {
         area: '',
@@ -74,7 +75,7 @@ export default {
   },
   methods: {
     getTemFn () {
-      window.open(`http://patent.d.gbicom.cn/user/patent/tpl?token=${cookies.get('token')}`)
+      window.open(`${this.baseUrl}/user/patent/tpl?token=${cookies.get('token')}`)
     },
     myFn (el) {
       if (el.target.checked){

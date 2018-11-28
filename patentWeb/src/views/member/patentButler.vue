@@ -20,7 +20,7 @@
           </select>
           <input type="text" @keyup.enter="searchFn" v-model="ruleForm.search" >
           <a @click="searchFn" href="javascript:void(0);" class="find"></a>
-          <a class="daochu" target="_blank" :href="'http://patent.d.gbicom.cn/user/patent/download?token='+token">导出专利Excel</a>
+          <a class="daochu" target="_blank" :href="baseUrl+'/user/patent/download?token='+token">导出专利Excel</a>
       </div>
       <div class="list-box">
         <patent-table :r="1" ref="tableBox" @emitEdit="patentEditFn" :tableData="tableData" :edit="edit" @emitMoneyStatus="moneyStatusFn" @emitYear="getYearFn" @emitSale="saleTypeFn" ></patent-table>
@@ -62,7 +62,7 @@ import patentTable from '@/components/member/patentTable'
 import layerBox from '@/components/member/patentLayer';
 import patentHeader from '@/components/member/patentHead'
 
-import { api } from '@/assets/js/util.js'
+import { api,API_HOST } from '@/assets/js/util.js'
 const Api = api();
 
 import cookies from 'js-cookie'
@@ -85,6 +85,7 @@ export default {
       patentList: [],
       patentId: '',
       token: cookies.get('token'),
+      baseUrl: API_HOST,
       ruleForm: {
         token:　cookies.get('token'),
         type: '',

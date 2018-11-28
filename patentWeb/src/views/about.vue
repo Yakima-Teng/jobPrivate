@@ -28,13 +28,13 @@ export default {
     var type = path.substring(1,path.length);
     var id = 0;
     if(type == 'about'){
-      id = 123;
+      id = 191;
     }else if(type == 'contact'){
-      id = 124;
+      id = 189;
     }else if(type == 'pact'){
-      id = 125;
+      id = 190;
     }else if(type == 'declare'){
-      id = 126;
+      id = 192;
     }
     return store.dispatch(GET_DETAIL, id);
   },
@@ -69,13 +69,13 @@ export default {
   mounted(){ // 此处数据不会被ssr读取到
     var id = 0;
     if(this.type == 'about'){
-      id = 123;
+      id = 191;
     }else if(this.type == 'contact'){
-      id = 124;
+      id = 189;
     }else if(this.type == 'pact'){
-      id = 125;
+      id = 190;
     }else if(this.type == 'declare'){
-      id = 126;
+      id = 192;
     }
     return this.$store.dispatch(GET_DETAIL,id);
   },

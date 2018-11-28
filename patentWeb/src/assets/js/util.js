@@ -16,27 +16,27 @@ export function openzx() {
     var iLeft = (window.screen.availWidth - 10 - 800) / 2;
     window.open(swt_talk, 'newwindow', 'height=515, width=700,toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no,top=' + iTop + ',left=' + iLeft);
 }
+let baseUrl = 'http://kong.gbicom.com:8000/patent';
+
+export const API_HOST = baseUrl;
 
 export const api = () => {
     // 区分 生产环境 还是 开发环境
-    let baseurl = process.env.NODE_ENV === 'development' ? '/api' : 'http://kong.api.iprun.com:8000/patent';
+    let baseurl = process.env.NODE_ENV === 'development' ? '/api' : baseUrl;
     return {
         api: axios.create({
             baseURL: baseurl,
             timeout: 10000,
             headers: {
-                'apikey': 'jDBWofJ11vuwquR8y2xQ0cvjv8bwwFZZ'
+                'apikey': "ZlEqSzeQo1xEo0W3Rqh7t3x8d77UwR3O",
+                'Content-Type': 'application/x-www-form-urlencoded'
             }
-            // responseType: 'json'
         }),
         post(url, data) {
             return this.api({
                 method: 'post',
                 url,
-                data: qs.stringify(data),
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-                }
+                data: qs.stringify(data)
             })
         },
         get(url) {
@@ -48,6 +48,7 @@ export const api = () => {
         postFile(url, formdata) {
             let config = {
                 headers: {
+                    'apikey': "ZlEqSzeQo1xEo0W3Rqh7t3x8d77UwR3O",
                     'Content-Type': 'multipart/form-data'
                 }
             };

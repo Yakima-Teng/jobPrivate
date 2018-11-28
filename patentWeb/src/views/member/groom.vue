@@ -16,7 +16,7 @@
             <td>{{key.pnum}}</td>
             <td>{{key.update_time}}</td>
             <td class="edit">
-              <a target="_blank" :href="'http://patent.d.gbicom.cn/rcmd/download?id=' + key.rcmd_id">下载excel版</a>
+              <a target="_blank" :href="baseUrl+'/rcmd/download?id=' + key.rcmd_id">下载excel版</a>
               <router-link target="_blank" :to="key.url" >分享</router-link>
               <router-link target="_blank" tag="a" :to="{path: '/member/groom/edit', query:{'id': key.rcmd_id, 'p': ''}}" >编辑</router-link>
               <a @click="delFn(key.rcmd_id)" href="javascript:void(0);">删除</a>
@@ -36,7 +36,7 @@
 import cookies from 'js-cookie'
 import pages from '@/components/pagination';
 
-import { api } from '@/assets/js/util.js'
+import { api,API_HOST } from '@/assets/js/util.js'
 const Api = api();
 
 import qs from 'qs'
@@ -50,13 +50,14 @@ export default {
       ruleForm: {
         p: 1
       },
+      baseUrl: API_HOST,
       tableData: []
     }
   },
   methods: {
     searchFn () {
       let query = qs.stringify(this.ruleForm);
-      const url = `http://patent.d.gbicom.cn/user/rcmd/index?token=${cookies.get('token')}&${query}`;
+      const url = `/user/rcmd/index?token=${cookies.get('token')}&${query}`;
       Api.get(url).then( res => {
         if (res.data.code == 200) {
           this.tableData = res.data.rcmd.list

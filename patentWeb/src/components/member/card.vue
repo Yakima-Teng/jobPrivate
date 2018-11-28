@@ -21,16 +21,21 @@
         <div><img :src="cardInfo.qrcode" alt=""><i></i></div>
         <p class="lianjie">{{cardInfo.url}}</p>
         <a href="javascript:void(0);" class="btn3" v-clipboard:copy="cardInfo.url" v-clipboard:success="onCopyFn" v-clipboard:error="onErrorFn">复制链接</a>
-        <a target="_blank" :href="'http://patent.d.gbicom.cn/card/download?uid='+cardInfo.uid" class="btn4">下载名片</a>
+        <a target="_blank" :href="baseUrl+'/card/download?uid='+cardInfo.uid" class="btn4">下载名片</a>
     </div>
 </div>
 </template>
 
 <script>
 import cookies from 'js-cookie'
-import { api } from '@/assets/js/util.js'
+import { api, API_HOST } from '@/assets/js/util.js'
 export default {
   props: ['cardInfo'],
+  data(){
+    return {
+      baseUrl: API_HOST
+    }
+  },
   methods: {
     openEditHandle: function(){
       this.$emit('openEdit', true);

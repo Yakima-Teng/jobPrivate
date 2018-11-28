@@ -225,7 +225,7 @@
         <p class="fasong-title">{{patentInfo.content}}</p>
         <div class="excel">
             <label for="file">选择excel文件</label><input id="file" type="file" accept="application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" @change="fileUpload" />
-            <p>上传文件请按照模板规范填写，<a target="_blank" :href="'http://patent.d.gbicom.cn/user/patent/tpl?token='+token">下载excel模板</a></p>
+            <p>上传文件请按照模板规范填写，<a target="_blank" :href="baseUrl+'/user/patent/tpl?token='+token">下载excel模板</a></p>
         </div>
         <div class="qrfs-wrap">
             <p v-if="file && file.name.length">{{file.name}} 文件上传成功!</p>
@@ -258,7 +258,7 @@ import cookies from 'js-cookie'
 import { GET_NEEDS_LIST } from '@/components/index/module'
 import { GET_INDEX,GET_LINK,GET_INDEX_NEEDS_LIST } from '@/components/index/module'
 
-import { api } from '@/assets/js/util.js'
+import { api,API_HOST } from '@/assets/js/util.js'
 
 export default {
   name: 'Index',
@@ -283,6 +283,7 @@ export default {
             isSuc: false,
             file: null,
             isMatchSuc: true,
+            baseUrl: API_HOST,
             promoteInfo: {
                 title: '发送成功',
                 subTitle: '等待买家确认',
