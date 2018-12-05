@@ -1,0 +1,122 @@
+@charset "UTF-8";
+//---------------------------------------
+//导入页面集合样式
+//---------------------------------------
+//mixin
+@import "../../scss/hourglass/scss/mixins";
+//基础内容
+@import '../../scss/common/sass/reset_mobile';
+
+//组件
+//@import 'common/sass/config';
+//@import 'hourglass/scss/components/btn';
+//color
+$main-font:#e1d7aa;
+$main-color:#6aa672;
+$main-bg:#f3f3f6;
+$main-border:#fcf7c3;
+$main-size: 100%;
+
+//size
+
+
+//default
+.page-index{ font-size: $_14; color: $main-font; line-height: 2em; overflow: hidden;background-color: #470608;}
+.page-header,
+.page-content,
+.footer-main{ width: 100%; margin: auto;}
+h2.title{ margin: $_25 0 $_38; height: $_78; line-height: $_66; background: url('../images/bg-title.png') no-repeat center; background-size: 100%; text-align: center;}
+h3.title{ margin: $_80 $_48 $_50; height: $_55; line-height: $_55; background: url('../images/bg-title-01.png') no-repeat center bottom;  background-size: 100%; text-align: center;
+    >img{ width: $_220;}
+}
+h4.sum-title{ margin: $_34 0 $_30; font-size: $_32; color: #8f9199; letter-spacing:.3em; text-align: center;}
+.icon-video{ display: inline-block; width: $_52; height: $_36; vertical-align: middle; margin-left: $_10; background: url('../images/icon-video.png') no-repeat center; background-size: 100%; }
+.video-img{ margin: auto; width: 100%; height: $_392; cursor: pointer; padding: 0 $_20; box-sizing: border-box;
+    >img{ width:100%;}
+}
+
+//header
+.page-header{ position:relative;
+    .info-main{background:url('../images/wap-banner.jpg') no-repeat center top ; background-size: 100%; height:2*$_400; }
+    .info{ border: $_1 solid $main-border; padding: $_28 $_20; box-sizing: border-box; font-size: $_24; line-height: 2; text-indent: 2em; margin: $_20;}
+}
+
+//footer
+.page-footer{text-align: center;  background-color: #160203; color: lighten($color: $main-font, $amount: 100%); margin-top: 0; padding: $_40 0 $_30;
+    .footer-logo{ width: $_95;  margin: auto; display: block;
+        >img{ width: 100%;}
+    }
+    h3{ margin:0; margin-top:$_20;}
+    p{ margin-top:$_20;
+        span{ margin-right: $_20;}
+    }
+}
+
+//content
+.ct-column-rush{ margin-top:0px;}
+.ct-column-expert{
+    .pople-name{padding: $_30; margin:0 $_20; border:$_1 solid lighten($main-border, 10%);  box-sizing: border-box; margin-bottom: $_28; position: relative;
+        .intr-box{ color: $main-font; text-align: center; margin-right: $_48;
+            .avatar{ position: absolute; bottom: 0; right: $_5; width: $_180; height: $_360; }
+            .name{ font-size: $_45; }
+            .intr{ font-size: $_24; margin-bottom: $_20;}
+            &:before{ content:''; display:block;  position:absolute; background: no-repeat center; width: $_250; height: $_188; background: url('../images/img-03.png') no-repeat center; background-size: 100%; top: -$_60; left: -$_70;}
+        }
+        .info-box{ text-align: left; text-indent: 2em; font-size: $_22; line-height: 1.25; margin-top: $_10; width: 65%; margin-left: $_30;}
+    }
+}
+.ct-column-everyone{ 
+    h3.title{ margin-bottom: $_20; }
+    .everyone-info{ padding:$_20;
+        >img{width: 100%; margin-bottom: $_15;}
+    }
+}
+.ct-column-recommend{ 
+    h3.title{ margin-top: $_40; }
+    .recommend-list{ border: $_1 solid $main-border; padding:$_20; box-sizing: border-box; margin:0 $_20 $_30; overflow: hidden; 
+        .info{ margin: $_34 $_30 $_10;
+            .title{ border-bottom: $_3 solid $main-border; padding-bottom:$_28; margin-bottom: $_20; font-size: $_45; text-align: center; padding-top: $_20;
+                >img{width: 70%;}
+            }
+            .txt{ font-size: $_24; line-height: 1.5; color: darken($color: $main-font, $amount: 25%); text-indent: 2em;}
+        } 
+        .img{ border: $_1 solid lighten($main-border, 10%);
+            >img{width: 100%;}
+        }
+    }
+}
+
+
+.ct-column-summarize{ padding: $_20; color: #fff;
+    .title>img{height: $_30; width: $_181; }
+    .summary{ margin-bottom: $_28;
+        .editor-info{ border-left: none; padding-left: 0; margin-left: 0;  position: relative;  margin-top: $_30;
+            h3{ margin-bottom: $_30; text-align: center; width: $_119; height: $_54; margin:$_20 auto;
+                >img{ width: 100%;}
+            }
+            .info{ text-align: right; position: absolute; top: $_15; right: 0;
+                img{ margin: 0 $_14 0 $_6;}
+                span{ @include inline-block; color: #fff; line-height: 24px;background-color: darken($color: $main-border, $amount: 50%); padding: 0 $_5; }
+            }
+            >p{font-size: $_16; margin-bottom: $_20; padding: 0 $_30;}
+        }
+        dt{ border-bottom: $_1 solid $main-border; text-align: center; padding-bottom: $_25; 
+            .user-img{ @include inline-block; width: $_95; height: $_95; 
+                >img{ width: 100%;}
+            }
+            h4{ @include inline-block;
+                .name{ @include inline-block; font-size:$_30; font-weight: blod; line-height: 1; margin: 0 $_40; vertical-align: middle; 
+                    >img{ width: 100%;}
+                }
+                .synopsis{ @include inline-block; margin-top: 0;letter-spacing:.2em; font-size: $_18;}
+            }
+            p{ font-size: $_16; margin-top: $_20; text-align: left;  padding: 0 $_30; } 
+        }
+    }
+    .essay-info{ border: 1px solid darken($color: $main-border, $amount: 0%); padding: 22px 62px; margin-bottom: 50px; overflow: hidden; font-size: 20px; line-height: 1.5;
+        h3{  font-weight: bold; }
+         p{ margin: 10px 0;}
+    }
+}
+
+//end
