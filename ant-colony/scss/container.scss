@@ -25,7 +25,7 @@ $main-border:#e8e8e8;
   &.icon-passwd{ background-image: url('../images/icon-passwd.png'); width: 36px; height: 37px;}
 }
 .page-index{ font-size: 24px; color: $main-font; line-height: 30px;}
-.content-box{ width: 1920px; margin: auto; position: relative; overflow: hidden;}
+.content-box{ position: relative; overflow: hidden;}
 .content-title{ text-align: center; margin-top: 68px;
   .title{ border-bottom: 1px solid $main-color; padding-bottom: 8px; margin-bottom: 16px;}
   .sum-title{ color: $color_c;}
@@ -33,11 +33,11 @@ $main-border:#e8e8e8;
 
 //header
 .page-header{ position: absolute; width: 100%; height: 102px; background-color: hsla(0, 0%, 100%, .1); z-index: 10; padding-top: 18px;
-  .login{ float: right; margin-top: 13px;
+  .login{ float: right; margin: 13px 120px 0 0;
     .btn-registered,
-    .btn-login{ @include inline-block; font-size: 30px; border:1px solid #fff; border-radius: 27px; padding: 0 38px; line-height: 55px; height: 55px; color: #fff; margin-right: 30px;}
+    .btn-login{ @include inline-block; font-size: 30px; border:1px solid #fff; border-radius: 27px; padding: 0 38px; line-height: 55px; height: 55px; color: #fff; margin-left: 30px;}
   }
-  .logo{ background: url('../images/logo.png') no-repeat left top; width: 160px; height: 84px; @include inline-block; margin-right: 52px;
+  .logo{ background: url('../images/logo.png') no-repeat left top; width: 160px; height: 84px; @include inline-block; margin-right: 52px; margin-left: 90px;
     >a{ display: block; text-indent: -999em;}
   }
   .nav{ overflow: hidden; @include inline-block;
@@ -47,16 +47,15 @@ $main-border:#e8e8e8;
       }
     }
     .sep{ @include inline-block; margin: -5px 32px 0;}
-  }
+  } 
 }
 
 //banner
 .page-banner{ background-color: $main-color; height: 944px; box-sizing: border-box; padding-top: 90px;
-  .content-box{ padding-left: 90px;}
   .bg-star{ background:url('../images/bg-banner.png') no-repeat center top; position: absolute; top: -90px; left: 0; width: 100%; height: 944px; z-index: 0;}
-  .title{ padding-top: 385px;}
+  .title{ padding: 385px 0 0 90px; }
   .animation-banner{ float: right; background: url('../images/img-banner.png') no-repeat center top; width: 830px; height: 830px;}
-  .sum-title{ font-size: 50px; color: hsla(0, 0%, 100%, .5); margin-top: 35px;}
+  .sum-title{ font-size: 50px; color: hsla(0, 0%, 100%, .5); margin-top: 35px; padding-left: 90px;}
 }
 
 //content
@@ -70,7 +69,7 @@ $main-border:#e8e8e8;
 }
 .module-customized{@extend .module-business; background-color: #f3f3f3;
   .intr-customized{ overflow: hidden; padding: 0 68px;
-    .main{ float: left; text-align: center; margin:86px 32px 102px; width: 466px; border-radius: 10px; background-color: #fff; overflow: hidden; cursor: pointer;
+    .main{ float: left; text-align: center; margin:8 6px 28px 102px; width: 466px; border-radius: 10px; background-color: #fff; overflow: hidden; cursor: pointer;
       >dt{ background-color: #1167c5; padding: 88px 0 36px;
         .title{ margin-top: 72px; color: #fff; font-weight: bold; font-size: 30px;}
       }
@@ -79,7 +78,7 @@ $main-border:#e8e8e8;
         .link-a{ display: block; font-size: 30px; width: 142px; padding-top: 20px; line-height: 36px; margin: auto; color: lighten($color: $main-color, $amount: 7.8%); border-bottom: 2px solid lighten($color: $main-color, $amount: 7.8%); }
       }
       &.cur{ position: relative; transform:scale(1.3, 1.1); box-shadow: 0 0 25px hsla(0, 0%, 0%, .1);
-        >dt{ background-color: lighten($color: $main-color, $amount: 7.8%); }
+        >dt{ background-color: #2389f9; }
         .info{ padding: 50px 0; font-size: 26px;}
       }
     }
