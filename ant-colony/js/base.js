@@ -1,4 +1,30 @@
 $(function(){
+$(window).scroll(function(){
+    var thisTop=$(this).scrollTop();
+    console.log(thisTop);
+    if( thisTop>994 ){
+        $('.page-header').css({'backgroundColor':'#0c33dc'});
+    }else{
+        $('.page-header').css({'backgroundColor':'rgba(255,255,255,0.1)'});
+    };
+    if( thisTop<200 ){
+        $('.page-header').css({'backgroundColor':'rgba(255,255,255,0.1)'});
+    }else{
+        $('.page-header').css({'backgroundColor':'#0c33dc'});
+    };
+});
+
+var thisTop=$(this).scrollTop();
+if( thisTop>994 ){
+    $('.page-header').css({'backgroundColor':'#0c33dc'});
+}else{
+    $('.page-header').css({'backgroundColor':'rgba(255,255,255,0.1)'});
+};
+if( thisTop<200 ){
+    $('.page-header').css({'backgroundColor':'rgba(255,255,255,0.1)'});
+}else{
+    $('.page-header').css({'backgroundColor':'#0c33dc'});
+};
 
 $('.intr-customized').find('.main').bind('mouseover', function(){
     $(this).addClass('cur').siblings().removeClass('cur');
