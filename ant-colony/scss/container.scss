@@ -120,30 +120,30 @@ $main-border:#e8e8e8;
       }
       &:hover{
         .icon-sj{ 
-          .animation-i{  animation: opacity-in 2s linear infinite;}
+          .animation-i{  animation: opacity-in-1 2s linear;}
         }
         .icon-wap{ 
-          .animation-i{ animation: height-rise 3s linear infinite;}
+          .animation-i{ animation: height-rise 3s linear;}
         }
         .icon-data{ 
-          .animation-i{ animation: top-down 3s linear infinite;}
+          .animation-i{ animation: top-down 3s linear;}
         }
         .icon-gx{ 
-          .animation-i{ animation: opacity-in 2s linear infinite;}
+          .animation-i{ animation: opacity-in-1 2s linear;}
         }
         .icon-sc{ 
-          .animation-i{ animation: narrow 3s linear infinite;}
+          .animation-i{ animation: narrow 3s linear;}
         }
         .icon-fz{ 
           .animation-i{ 
-            &:nth-child(1){ animation: top-down-1 1s linear infinite;}
-            &:nth-child(2){ animation: top-down-2 2s linear infinite;}
+            &:nth-child(1){ animation: top-down-1 1s linear;}
+            &:nth-child(2){ animation: top-down-2 2s linear;}
           }
         }
         .icon-zj{ 
-          .animation-i{ animation: opacity-in 3s linear infinite;}
+          .animation-i{ animation: opacity-in-1 3s linear;}
         }
-        .icon-fx{ animation:rotate-zhuan-1 5s linear infinite; }
+        .icon-fx{ animation:rotate-zhuan-1 5s linear; }
       }
     }
   }
@@ -298,6 +298,10 @@ $main-border:#e8e8e8;
   0%{ opacity: 0;}
   50%{ opacity: 1; }
   100%{ opacity: 0;}
+}
+@keyframes opacity-in-1{
+  0%{ opacity: 0;}
+  100%{ opacity: 1; }
 }
 @keyframes height-rise{
   0%{ height: 0;}
