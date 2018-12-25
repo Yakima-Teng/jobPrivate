@@ -19,10 +19,10 @@ $main-border:#e8e8e8;
 
 //default
 .icon{ @include inline-block; background: none no-repeat center; background-size: 100%;
-  &.icon-email{ background-image: url('../images/icon-email.png'); width: 28px; height: 28px;}
-  &.icon-phone{ background-image: url('../images/icon-phone.png'); width: 28px; height: 28px;}
-  &.icon-user{ background-image: url('../images/icon-user.png'); width: 36px; height: 36px;}
-  &.icon-passwd{ background-image: url('../images/icon-passwd.png'); width: 36px; height: 37px;}
+  &.icon-email{ background-image: url('../images/icon-email.png'); width: 18px; height: 18px;}
+  &.icon-phone{ background-image: url('../images/icon-phone.png'); width: 18px; height: 18px;}
+  &.icon-user{ background-image: url('../images/icon-user.png'); width: 24px; height: 24px;}
+  &.icon-passwd{ background-image: url('../images/icon-passwd.png'); width: 24px; height: 22px;}
   &.icon-star{ background-image: url('../images/icon-star.png'); background-size: 100%; width: 60px; height: 60px;}
 }
 .page-index{ font-size: 16px; color: $main-font; line-height: 1.5;}
@@ -183,9 +183,10 @@ $main-border:#e8e8e8;
     .sum-title{ color: #fff;}
   }
   .intr-dynamic{ background: url('../images/bg-dynamic-info.png') no-repeat center top; background-size: 100%; width:866px; height: 304px; padding: 9px; margin: auto;
-    .main{ background-color:hsla(233, 78%, 39%,.3); border:1px solid hsla(185, 100%, 50%, .3); height: 100%; box-sizing: border-box; overflow: hidden; padding: 40px 0; padding-left: 5%;
-      .info{ padding-left:5%; box-sizing: border-box; color: #fff; float: left; width: 48%; font-size: 22px; margin-bottom: 24px;
+    .main{ background-color:hsla(233, 78%, 39%,.3); border:1px solid hsla(185, 100%, 50%, .3); height: 100%; box-sizing: border-box; overflow: hidden; padding-top: 53px; padding-left: 5%;
+      .info{ padding-left:30px; box-sizing: border-box; color: #fff; float: left; width: 50%; font-size: 22px; margin-bottom: 24px; 
         .sep{ @include inline-block; background: url('../images/icon-dynamic.png') no-repeat left top; width: 28px; height: 28px; margin-top: -5px; margin-right: 10px;}
+        &:nth-child(even){ padding-left: 60px;}
       }
     }
   }
@@ -224,50 +225,54 @@ $main-border:#e8e8e8;
 
 //layrer-bg
 .layrer-bg { display:none; position:fixed; left:0; top:0; width:100%; height:100%; z-index:98; background:rgba(0, 0, 0, 0.5);}
-.layrer-box { display:none; position:fixed; left:50%; top:50%; z-index:99; background-color: #fff; box-shadow: 0 0 25px hsla(0, 0%, 0%, .35); border-radius: 15px; box-sizing: border-box; padding-top: 130px;
-  .logo-layrer{ position: absolute; left: 50%; margin:-240px 0 0 -110px;}
+.layrer-box { display:none; position:fixed; left:50%; top:50%; z-index:99; background-color: #fff; box-shadow: 0 0 25px hsla(0, 0%, 0%, .35); border-radius: 15px; box-sizing: border-box; padding-top: 80px;
+  .logo-layrer{ position: absolute; left: 50%; margin:-153px 0 0 -72px; width: 145px;
+    >img{ width: 100%;}
+  }
   .title,
-  .sub-center{ text-align: center; margin-top: 5px; overflow: hidden;}
+  .sub-center{ text-align: center; margin-top: 5px; overflow: hidden;
+    >img{ width: 525px;}
+  }
   .inp-list{ border: 2px solid $main-border; border-radius: 3px; overflow: hidden;
-    .inp-txt{ border:0 none; font-size:22px; line-height: 36px; vertical-align: middle;
+    .inp-txt{ border:0 none; font-size:14px; line-height: 36px; vertical-align: middle;
       &::placeholder{ color:#d0d0d0;}
     }
-    .sep{@include inline-block; width: 2px; height: 36px; background-color: #e8e8e8; font-size: 36px; margin-right: 20px;}
+    .sep{@include inline-block; width: 2px; height: 25px; background-color: #e8e8e8; font-size: 25px; margin-right: 20px;}
   }
 }
-.icon-close { display:inline-block; vertical-align:middle; *vertical-align:auto; zoom:1; *display:inline; background:url("../images/icon-close.png") no-repeat center; width:26px; height:26px; position:absolute; right:30px; margin-top:-100px; cursor:pointer; z-index:10;}
+.icon-close { display:inline-block; vertical-align:middle; *vertical-align:auto; zoom:1; *display:inline; background:url("../images/icon-close.png") no-repeat center; width:26px; height:26px; position:absolute; right:20px; margin-top:-60px; cursor:pointer; z-index:10;}
 
-.layrer-registered{ width:980px; height:692px; margin-left:-490px; margin-top:-346px; 
-  .registered-form{ width: 800px; margin:30px auto 0;
-    .icon{ margin:0 26px;
-      &.icon-user{ width: 28px; height: 28px;}
+.layrer-registered{ width:640px; height:452px; margin-left:-226px; margin-top:-320px; 
+  .registered-form{ width: 500px; margin:30px auto 0;
+    .icon{ margin:0 17px;
+      &.icon-user{ width: 18px; height: 18px;}
     }
-    .inp-list{ margin: 22px 35px; height: 64px; line-height: 64px; 
-      .inp-txt{ width: 600px;}
+    .inp-list{ margin: 7px 20px; height: 42px; line-height: 42px; 
+      .inp-txt{ width: 300px;}
     }
-    .btn-submit{ margin-top: 20px; border:none 0; background-color:$main-color; color: #fff; font-size: 38px; line-height: 77px; width: 424px; height: 77px; border-radius: 40px; letter-spacing:10px; cursor: pointer;}
-    .notes{ font-size: 20px; color: $color_d; }
+    .btn-submit{ margin-top: 20px; border:none 0; background-color:$main-color; color: #fff; font-size: 18px; line-height: 50px; width: 287px; height: 50px; border-radius: 40px; letter-spacing:10px; cursor: pointer;}
+    .notes{ font-size: 12px; color: $color_d; }
   }
 }
 
-.layrer-login{ width:772px; height:662px; margin-left:-386px; margin-top:-331px; 
-  .title{ letter-spacing:10px; color: $main-border; margin-bottom: 70px;
-    .sep{ @include inline-block; margin: 0 20px;}
-    .btn-password{ font-size: 30px; color: #3d3d3d; @include inline-block;
+.layrer-login{ width:506px; height:434px; margin-left:-253px; margin-top:-217px; 
+  .title{ letter-spacing:5px; color: $main-border; margin-bottom: 43px;
+    .sep{ @include inline-block; margin: 0 10px;}
+    .btn-password{ font-size: 18px; color: #3d3d3d; @include inline-block;
       &.cur{ color: lighten($color: $main-color, $amount: 8%);}
     }
     .btn-password-rendom{ @extend .btn-password;}
   }
-  .login-form{ width: 604px; margin: auto;
-    .icon{ margin:0 22px; }
-    .inp-list{ margin: 20px 0; height: 76px; line-height: 76px; }
+  .login-form{ width: 395px; margin: auto;
+    .icon{ margin:0 13px; }
+    .inp-list{ margin: 7px 0; height: 50px; line-height: 50px; }
   }
-  .rendom-pw{ font-size:25px; margin-left: 25px; @include inline-block; display: none; 
-    .a-link{@include inline-block; color: $main-color; letter-spacing:10px;}
+  .rendom-pw{ font-size:16px; margin-left: 20px; @include inline-block; display: none; 
+    .a-link{@include inline-block; color: $main-color; letter-spacing:5px;}
   }
-  .sub-center{ margin-top: 50px;
-    .btn-submit{ background: url('../images/bg-ly.png') no-repeat center; width: 604px; height: 96px; color: #fff; letter-spacing:15px; font-size: 38px; line-height: 96px; text-align: center; border: none 0; cursor: pointer;}
-    .btn-forget-pw{ float: right; margin-top: 10px; letter-spacing: 5px; color: #3d3d3d; font-size: 24px;}
+  .sub-center{ margin-top: 27px;
+    .btn-submit{ background: url('../images/bg-ly.png') no-repeat center; width: 100%; height: 64px; color: #fff; letter-spacing:15px; font-size: 24px; line-height: 64pxv; text-align: center; border: none 0; cursor: pointer;}
+    .btn-forget-pw{ float: right; margin-top: 5px; letter-spacing: 5px; color: #3d3d3d; font-size: 14px;}
   }
   
 }
