@@ -1,7 +1,7 @@
 $(function(){
 $(window).scroll(function(){
     var thisTop=$(this).scrollTop();
-    console.log(thisTop);
+    // console.log(thisTop);
     if( thisTop>994 ){
         $('.page-header').css({'backgroundColor':'#0c33dc'});
     }else{
