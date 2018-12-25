@@ -13,7 +13,7 @@
 
 //color
 $main-font:#929292;
-$main-color:#0054ff;
+$main-color:#2389f9;
 $main-border:#e8e8e8;
 
 
@@ -27,24 +27,24 @@ $main-border:#e8e8e8;
 }
 .page-index{ font-size: 18px; color: $main-font; line-height: 1.5;}
 .content-box{ position: relative; overflow: hidden; width: 1200px; box-sizing: border-box; margin: auto;}
-.content-title{ text-align: center; margin-top: 68px;
-  .title{ border-bottom: 1px solid $main-color; padding-bottom: 8px; margin-bottom: 16px;}
-  .sum-title{ color: $color_c;}
+.content-title{ text-align: center; margin-top: 40px;
+  .title{ border-bottom: 1px solid $main-color; padding-bottom: 5px; margin-bottom: 11px;}
+  .sum-title{ color: $color_c; font-size: 16px;}
 }
 
 //header
-.page-header{ position:fixed; top: 0; width: 100%; height: 94px; background-color: hsla(0, 0%, 100%, .1); z-index: 10; padding: 20px 0; box-sizing: border-box;
+.page-header{ position:fixed; top: 0; width: 100%; height: 90px; background-color: hsla(0, 0%, 100%, .1); z-index: 10; padding-top:16px; box-sizing: border-box;
   .login{ float: right; margin-right:10px;
     .btn-registered,
-    .btn-login{ @include inline-block; font-size: 20px; border:1px solid #fff; border-radius: 27px; padding: 0 38px; line-height: 42px; height: 42px; color: #fff; margin-left: 10px;}
+    .btn-login{ @include inline-block; font-size: 22px; border:1px solid #fff; border-radius: 27px; padding: 0 26px; line-height: 40px; height: 40px; color: #fff; margin-left: 22px;}
   }
-  .logo{ background: url('../images/logo.png') no-repeat left top; background-size: 100%; width: 104px; height: 56px; @include inline-block; margin-right:40px; margin-left: 3%;
+  .logo{ background: url('../images/logo.png') no-repeat left top; background-size: 100%; width: 111; height: 58px; @include inline-block; margin-right:40px; margin-left: 3%;
     >a{ display: block; text-indent: -999em;}
   }
   .nav{ overflow: hidden; @include inline-block;
-    .btn-nav{ float: left; font-size: 24px; color: #fff;
-      >a{ color: #fff; @include inline-block; font-weight: bold; padding-bottom: 5px;
-        &.cur{ color: #89c1ff; border-bottom: 1px solid #89c1ff;}
+    .btn-nav{ float: left; font-size: 20px; color: #fff;
+      >a{ color: #fff; @include inline-block; font-weight: bold;
+        &.cur{ color: #89c1ff; border-bottom: 2px solid #89c1ff;}
       }
     }
     .sep{ @include inline-block; margin: -5px 10px 0;}
@@ -52,26 +52,26 @@ $main-border:#e8e8e8;
 }
 
 //banner
-.page-banner{ background-color: $main-color; box-sizing: border-box; overflow: hidden; position: relative; 
-  .content-box{ height: 700px;}
-  .bg-star{ background:url('../images/bg-banner.png') no-repeat center top; position: absolute; top: -90px; left: 0; width: 100%; height: 944px; z-index: 0; }
+.page-banner{ background-color: #0054ff; box-sizing: border-box; overflow: hidden; position: relative; 
+  .content-box{ height: 689px; overflow: visible; }
+  .bg-star{ background:url('../images/bg-banner.png') no-repeat center top; position: absolute; top: -90px; left: 0; width: 100%; height: 689px; z-index: 0; }
   .icon-star{ position: absolute; left: 50%; top: 50%; opacity: .8;
     &:nth-child(1){ width: 45px; height: 45px; margin-left: -100px; margin-top: -160px; animation: opacity-in 3s linear infinite; }
     &:nth-child(2){ width: 20px; height: 20px; margin: 100px 0 0 -300px; animation: opacity-in 5s linear infinite;}
     &:nth-child(3){ width: 10px; height: 10px; margin-top: 60px; animation: opacity-in 10s linear infinite;}
     &:nth-child(4){ width: 30px; height: 30px; margin-left: -600px; top: 55%; animation: opacity-in 8s linear infinite;}
   }
-  .title{ position: absolute; margin: -100px 0 0 0; top: 50%; left: 0; width:550PX;
+  .title{ position: absolute; margin: -100px 0 0 2px; top: 50%; left: 0; width:555px;
     >img{ width: 100%;}
   }
-  .animation-banner{ float: right; background: url('../images/bg-banner-yuan.png') no-repeat center top; background-size: 100%; width: 500px; height: 500px; position: relative; margin: 90px 40px 0 0;
+  .animation-banner{ float: right; background: url('../images/bg-banner-yuan.png') no-repeat center top; background-size: 100%; width: 540px; height: 540px; position: relative; margin-top: 90px;
     .huan{ background: none no-repeat center top; background-size: 100%; width: 100%; height: 100%; position: absolute; left: 0; top: 0;
       &.huan-1{ background-image: url('../images/bg-nei-01.png'); animation:rotate-zhuan 20s linear infinite;}
       &.huan-2{ background-image: url('../images/bg-nei-02.png'); animation:rotate-zhuan 15s linear infinite;}
       &.huan-3{ background-image: url('../images/bg-nei-03.png'); animation:rotate-zhuan 8s linear infinite;}
     }
   }
-  .sum-title{ font-size: 50px; color: hsla(0, 0%, 100%, .5); margin: -35px 0 0 0;position: absolute; top: 50%;}
+  .sum-title{ font-size: 34px; color: #fff; margin: -30px 0 0 2px; position: absolute; top: 50%;}
   .anination-wave{ position: relative; width: 200px; height: 200px; background-color: rgb(118, 218, 255); border-radius: 50%;
     &::before,
     &::after{ content: ""; position: absolute; width: 400px; height: 400px; top: 0; left: 50%; background-color: rgba(255, 255, 255, .4); border-radius: 45%; transform: translate(-50%, -70%) rotate(0); animation: rotate 6s linear infinite; z-index: 10; }
@@ -81,19 +81,21 @@ $main-border:#e8e8e8;
 }
 
 //content
-.module-business{ background-color: #fff;
-  .content-box{padding:0 64px; box-sizing: border-box;}
+.module-business{ background-color: #fff; margin-top: -20px;
+  .content-box{padding:0 64px; box-sizing: border-box;
+    
+  }
   .intr-business{ overflow: hidden; padding: 30px 0 50px;
     .main{ float: left; text-align: center; margin: 45px 0; width: 25%; font-size: 18px;
-      .title{ margin-top: 40px; color:darken($color: $main-font, $amount: 11%) ; font-weight: bold; font-size: 28px; margin-bottom: 20px;}
-      .icon{ width: 116px; height: 111px; position: relative; overflow: hidden;
-        .animation-i{@extend .icon;}
+      .title{ margin: 35px 0 15px; color:darken($color: $main-font, $amount: 11%) ; font-weight: bold; font-size: 23px; line-height: 1;}
+      .icon{ width: 91px; height: 89px; background-size: 100%; position: relative; overflow: hidden;
+        .animation-i{@extend .icon; }
       }
       .icon-sj{ background-image: url('../images/bg-icon-business-01.png');
         .animation-i{ background-image: url('../images/animation-icon-business-01.png'); animation: opacity-in 2s linear infinite;}
       }
       .icon-wap{ background-image: url('../images/bg-icon-business-02.png');
-        .animation-i{ background-image: url('../images/animation-icon-business-02.png'); width: 25px; height: 43px; position: absolute; left: 47px; bottom: 29px; animation: height-rise 3s linear infinite;}
+        .animation-i{ background-image: url('../images/animation-icon-business-02.png'); width: 20px; height: 34px; position: absolute; left: 36px; bottom: 25px; animation: height-rise 3s linear infinite;}
       }
       .icon-data{ background-image: url('../images/bg-icon-business-03.png');
         .animation-i{ background-image: url('../images/animation-icon-business-03.png'); position: absolute; left: 0; top: 0; animation: top-down 3s linear infinite;}
@@ -102,12 +104,12 @@ $main-border:#e8e8e8;
         .animation-i{ background-image: url('../images/animation-icon-business-04.png'); animation: opacity-in 2s linear infinite;}
       }
       .icon-sc{ background-image: url('../images/bg-icon-business-05.png');
-        .animation-i{ background-image: url('../images/animation-icon-business-05.png'); width: 45px; height: 45px; position: absolute; right: 23px; top: 31px; animation: narrow 3s linear infinite;}
+        .animation-i{ background-image: url('../images/animation-icon-business-05.png'); width: 37px; height: 37px; position: absolute; right: 18px; top: 24px; animation: narrow 3s linear infinite;}
       }
       .icon-fz{ background-image: url('../images/bg-icon-business-06.png');
-        .animation-i{ width: 25px; height: 25px; position: absolute;
-          &:nth-child(1){background-image: url('../images/animation-icon-business-06-a.png'); top: 0; right: 17px; animation: top-down-1 3s linear infinite 1s;}
-          &:nth-child(2){background-image: url('../images/animation-icon-business-06-a.png'); top: 0; right: 42px; animation: top-down-2 2s linear infinite 1.3s;}
+        .animation-i{ width: 20px; height: 20px; position: absolute;
+          &:nth-child(1){background-image: url('../images/animation-icon-business-06-a.png'); top: -20px; right: 17px; animation: top-down-1 3s linear infinite;}
+          &:nth-child(2){background-image: url('../images/animation-icon-business-06-a.png'); top: -20px; right: 42px; animation: top-down-2 2s linear infinite .3s;}
         }
       }
       .icon-zj{ background-image: url('../images/bg-icon-business-07.png');
@@ -120,14 +122,15 @@ $main-border:#e8e8e8;
   }
 }
 .module-customized{@extend .module-business; background-color: #f3f3f3;
-  .intr-customized{ height: 640px; position: relative;
-    .main{ float: left; text-align: center; margin-top:60px; width: 340px; border-radius: 10px; background-color: #fff; overflow: hidden; cursor: pointer; position: absolute;
-      >dt{ background-color: #1167c5; padding:56px 0 26px;
-        .title{ margin-top: 42px; color: #fff; font-weight: bold; font-size: 30px;}
+  .intr-customized{ height: 610px; position: relative;
+    .main{ float: left; text-align: center; margin-top:65px; width: 340px; border-radius: 10px; background-color: #fff; overflow: hidden; cursor: pointer; position: absolute;
+      >dt{ background-color: #1167c5; padding:66px 0 26px;
+        .title{ margin-top: 52px; color: #fff; font-weight: bold; font-size: 22px; line-height: 1; }
+        >img{ width: 137px; }
       }
-      .info{ padding: 28px 0;box-sizing: border-box;
+      .info{ padding: 31px 0 32px;box-sizing: border-box; line-height: 34px;
         >em{ display: none; }
-        .link-a{ display: block; font-size: 22px; width: 118px; padding-top: 20px; line-height: 36px; margin: auto; color: lighten($color: $main-color, $amount: 7.8%); border-bottom: 2px solid lighten($color: $main-color, $amount: 7.8%); }
+        .link-a{ display: block; font-size: 22px; font-weight: bold; width: 110px; padding-top: 26px; line-height: 1; margin: auto; color: $main-color; border-bottom: 1px solid $main-color; }
       }
       &:nth-child(3){ right: 0;
         &.cur{ margin-right:-53px; }
@@ -136,54 +139,60 @@ $main-border:#e8e8e8;
         &.cur{ margin-left: -213px; }
       }
       &:nth-child(1).cur{ left: 0; margin-left: -53px; }
-      &.cur{ box-shadow: 0 0 25px hsla(0, 0%, 0%, .1); width: 426px; margin-top: 54px; z-index: 1; cursor: pointer;
-        >dt{ background-color: #2389f9; 
-          >img{ transform:scale(1.1); }
-          .title{font-size: 36px; }
+      &.cur{ box-shadow: 0 0 25px hsla(0, 0%, 0%, .1); width: 431px; margin-top: 44px; z-index: 1; cursor: pointer;
+        >dt{ background-color: #2389f9; padding:58px 0 34px;
+          >img{ width: 178px; }
+          .title{ font-size: 36px; margin-top: 46px; font-size: 29px; }
         }
-        .info{ padding: 30px 0; font-size: 22px;}
+        .info{ padding: 30px 0 36px; font-size: 20px; line-height: 32px;}
       }
     }
   }
 }
-.module-dynamic{@extend .module-business; background:url('../images/bg-dynamic.png') no-repeat center top #0056f6; height: 942px; position: relative;
+.module-dynamic{@extend .module-business; background:url('../images/bg-dynamic.jpg') no-repeat center top #0056f6; height: 660px; position: relative;
   .content-box{ height: 100%; }
-  .content-title{ margin-bottom: 40px;
+  .content-title{ margin-bottom: 25px;
     .title{ border-color:#fff; }
     .sum-title{ color: #fff;}
   }
-  .intr-dynamic{ background: url('../images/bg-dynamic-info.png') no-repeat center top; background-size: 100%; width:950px; height: 320px; padding: 12px; margin: auto;
+  .intr-dynamic{ background: url('../images/bg-dynamic-info.png') no-repeat center top; background-size: 100%; width:866px; height: 304px; padding: 9px; margin: auto;
     .main{ background-color:hsla(233, 78%, 39%,.3); border:1px solid hsla(185, 100%, 50%, .3); height: 100%; box-sizing: border-box; overflow: hidden; padding: 40px 0; padding-left: 5%;
-      .info{ padding-left:5%; box-sizing: border-box; color: #fff; float: left; width: 48%; font-size: 24px; margin-bottom: 36px;
+      .info{ padding-left:5%; box-sizing: border-box; color: #fff; float: left; width: 48%; font-size: 24px; margin-bottom: 24px;
         .sep{ @include inline-block; background: url('../images/icon-dynamic.png') no-repeat left top; width: 28px; height: 28px; margin-top: -5px; margin-right: 10px;}
       }
     }
   }
-  .animation-dynamic-signal{ @include inline-block; background: url('../images/icon-dynamic-01.png') no-repeat left center; width: 127px; height: 126px; position: absolute; z-index: 5; left: 50%; top: 50%;
-    &:nth-child(2){ margin:282px 0 0 -840px; animation: rotate-zhuan 10s linear infinite 5s; }
-    &:nth-child(3){ margin:242px 0 0 -602px; animation: rotate-zhuan 13s linear infinite 2s;}
-    &:nth-child(4){ margin:250px 0 0 -454px; animation: rotate-zhuan 5s linear infinite 3s;}
-    &:nth-child(5){ margin:124px 0 0 -120px; animation: rotate-zhuan 12s linear infinite 5s;}
-    &:nth-child(6){ margin:216px 0 0 138px; animation: rotate-zhuan 7s linear infinite 3s;}
-    &:nth-child(7){ margin:212px 0 0 472px; animation: rotate-zhuan 18s linear infinite 8s;}
-    &:nth-child(8){ margin:300px 0 0 706px; animation: rotate-zhuan 6s linear infinite 4s;}
+  .animation-dynamic-signal{ @include inline-block; background: url('../images/icon-dynamic-01.png') no-repeat left center; background-size: 100%; width: 88px; height: 88px; position: absolute; z-index: 5; left: 50%; top: 50%;
+    &:nth-child(2){ margin:206px 0 0 -586px; animation: rotate-zhuan 10s linear infinite 5s; }
+    &:nth-child(3){ margin:178px 0 0 -422px; animation: rotate-zhuan 13s linear infinite 2s;}
+    &:nth-child(4){ margin:185px 0 0 -318px; animation: rotate-zhuan 5s linear infinite 3s;}
+    &:nth-child(5){ margin:96px 0 0 -88px; animation: rotate-zhuan 12s linear infinite 5s;}
+    &:nth-child(6){ margin:163px 0 0 92px; animation: rotate-zhuan 7s linear infinite 3s;}
+    &:nth-child(7){ margin:160px 0 0 316px; animation: rotate-zhuan 18s linear infinite 8s;}
+    &:nth-child(8){ margin:218px 0 0 486px; animation: rotate-zhuan 6s linear infinite 4s;}
   }
 }
 
-.module-core{ @extend .module-dynamic; background: url('../images/bg-core.png') no-repeat center top #1628b2; height: 983px;
-  .intr-core{ overflow: hidden; 
-    .main{ float: left; text-align: center; width: 33.33%; color: #fff; margin:20px 0 30px; cursor: pointer;
-      .title{ font-size: 28px; margin: 35px 0 18px; font-weight: bold;}
+.module-core{ background: url('../images/bg-core.png') no-repeat center top #1628b2; 
+  .content-box{ height: 100%; }
+  .content-title{ margin: 63px 0 69px;
+    .title{ border-color:#fff; }
+    .sum-title{ color: #fff;}
+  }
+  .intr-core{ padding-bottom: 34px;
+    .main{ float: left; text-align: center; width: 33.33%; color: #fff; margin-bottom:46px; cursor: pointer;
+      >dt>img{ width: 116px;}
+      .title{ font-size: 22px; margin-top: 18px; margin-bottom: 1px; font-weight: bold;}
       &:hover{ animation: amplification .5s forwards; }
     }
   }
 }
 
 //footer
-.page-footer{ background-color: #454545; text-align: center; padding: 56px 0 60px; color: #93969b;
-  .link-a{ color:#93969b;}
-  .sep{@include inline-block; margin: -3px 10px 0;}
-  .copyright{font-size: 20px; margin-top: 15px;}
+.page-footer{ background-color: #454545; text-align: center; padding: 32px 0 27px; color: #93969b;
+  .link-a{ color:#93969b; font-size: 14px;}
+  .sep{@include inline-block; margin: -3px 6px 0;}
+  .copyright{font-size: 12px; margin-top: 4px;}
 }
 
 //layrer-bg
@@ -209,7 +218,7 @@ $main-border:#e8e8e8;
     .inp-list{ margin: 22px 35px; height: 64px; line-height: 64px; 
       .inp-txt{ width: 600px;}
     }
-    .btn-submit{ margin-top: 20px; border:none 0; background-color: lighten($color: $main-color, $amount: 7.8%); color: #fff; font-size: 38px; line-height: 77px; width: 424px; height: 77px; border-radius: 40px; letter-spacing:10px; cursor: pointer;}
+    .btn-submit{ margin-top: 20px; border:none 0; background-color:$main-color; color: #fff; font-size: 38px; line-height: 77px; width: 424px; height: 77px; border-radius: 40px; letter-spacing:10px; cursor: pointer;}
     .notes{ font-size: 20px; color: $color_d; }
   }
 }
@@ -227,7 +236,7 @@ $main-border:#e8e8e8;
     .inp-list{ margin: 20px 0; height: 76px; line-height: 76px; }
   }
   .rendom-pw{ font-size:25px; margin-left: 25px; @include inline-block; display: none; 
-    .a-link{@include inline-block; color: lighten($color: $main-color, $amount: 7.8%); letter-spacing:10px;}
+    .a-link{@include inline-block; color: $main-color; letter-spacing:10px;}
   }
   .sub-center{ margin-top: 50px;
     .btn-submit{ background: url('../images/bg-ly.png') no-repeat center; width: 604px; height: 96px; color: #fff; letter-spacing:15px; font-size: 38px; line-height: 96px; text-align: center; border: none 0; cursor: pointer;}
@@ -265,7 +274,7 @@ $main-border:#e8e8e8;
 }
 @keyframes height-rise{
   0%{ height: 0;}
-  100%{ height:43px; }
+  100%{ height:34px; }
 }
 @keyframes top-down{
   0%{ top: -111px;}
