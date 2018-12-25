@@ -23,6 +23,7 @@ $main-border:#e8e8e8;
   &.icon-phone{ background-image: url('../images/icon-phone.png'); width: 28px; height: 28px;}
   &.icon-user{ background-image: url('../images/icon-user.png'); width: 36px; height: 36px;}
   &.icon-passwd{ background-image: url('../images/icon-passwd.png'); width: 36px; height: 37px;}
+  &.icon-star{ background-image: url('../images/icon-star.png'); background-size: 100%; width: 60px; height: 60px;}
 }
 .page-index{ font-size: 24px; color: $main-font; line-height: 30px;}
 .content-box{ position: relative; overflow: hidden;}
@@ -52,7 +53,15 @@ $main-border:#e8e8e8;
 
 //banner
 .page-banner{ background-color: $main-color; height: 944px; box-sizing: border-box; padding: 90px 0 90px; overflow: hidden; position: relative; 
-  .bg-star{ background:url('../images/bg-banner.png') no-repeat center top; position: absolute; top: -90px; left: 0; width: 100%; height: 944px; z-index: 0;}
+  .bg-star{ background:url('../images/bg-banner.png') no-repeat center top; position: absolute; top: -90px; left: 0; width: 100%; height: 944px; z-index: 0;
+    //  animation:opacity-in 10s linear infinite;
+    .icon-star{ position: absolute; left: 50%; top: 50%; opacity: .8;
+      &:nth-child(1){ margin-left: -100px; animation: opacity-in 3s linear infinite;}
+      &:nth-child(2){ width: 40px; height: 40px; margin: 200px 0 0 -300px; animation: opacity-in 5s linear infinite;}
+      &:nth-child(3){ width: 30px; height: 30px; margin-top: 300px; animation: opacity-in 10s linear infinite;}
+      &:nth-child(4){ width: 35px; height: 35px; margin-left: -850px; top: 80%; animation: opacity-in 8s linear infinite;}
+    }
+  }
   .title{ padding: 385px 0 0 90px; }
   .animation-banner{ float: right; background: url('../images/bg-banner-yuan.png') no-repeat center top; width: 830px; height: 830px; position: relative;
     .huan{ background: none no-repeat center top; width: 100%; height: 100%; position: absolute; left: 0; top: 0;
