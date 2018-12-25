@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link href="./css/css" rel="stylesheet">
+  <link href="css/impress-demo.css" rel="stylesheet" />
+  <title>Document</title>
+  <style>
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    font-family: '\5FAE\8F6F\96C5\9ED1';
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    font-family: 'Crimson Text', georgia, times, serif;
+    font-size: 2em;
+    line-height: 1.3;
+
+    background: rgb(215, 215, 215);
+    background: radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+b, strong { font-weight: bold }
+
+i, em { font-style: italic}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    padding: 0 0.1em;
+    background: rgba(255,255,255,0.3);
+    text-shadow: -1px -1px 2px rgba(100,100,100,0.9);
+    border-radius: 0.2em;
+    
+    transition: 0.5s;
+}
+
+a:hover {
+    background: rgba(255,255,255,1);
+    text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
+}
+
+a.cognifide {
+    display: block;
+    width: 200px;
+    background: none;
+    margin: 20px auto 0;
+}
+
+.step {
+    width: 800px;
+    padding: 0px;
+    border-radius: 20px;
+    
+    transition: 1s;
+}
+
+.step h2 {
+    font-size: 3.5em;
+    text-transform: lowercase;
+    color: transparent;
+    text-shadow: 2px 2px 10px rgba(50,50,50,.8);
+    
+    position: absolute;
+
+    transform-origin: 100% 100%;
+    transform: translate(-110%, -120%) rotate(-90deg);
+}
+
+.step h3 {
+    font-size: 2.5em;
+    text-transform: lowercase;
+    margin-bottom: 0.2em;
+}
+
+.step ul {
+    font-size: 1.2em;
+}
+
+.step ul li { margin-bottom: 0.1em }
+
+.step ul li:before {
+    content: "★";
+    text-shadow: 0 0 5px rgba(50,50,50,0.7);
+    color: transparent;
+    margin-right: 0.5em;
+}
+
+.step ul b { font-size: 1.1em }
+
+
+
+/*
+ * TITLE STEP
+ * =============================================================================
+ */
+    
+#impress.step-title .step { opacity: 0.1; }
+
+#impress.step-title .active { opacity: 1; }
+
+@keyframes rotate-h1 {
+    0%   { transform: perspective(1000px) rotateY(-10deg); }
+    100% { transform: perspective(1000px) rotateY(10deg); }
+}
+@keyframes rotate-wh {
+  0%{
+      transform: rotate(10deg);
+      transform-origin: bottom  center;
+  }
+  50%{
+      transform: rotate(-10deg);
+      transform-origin: bottom  center;
+  }
+  100%{
+      transform: rotate(10deg);
+      transform-origin: bottom  center;
+  }
+}
+@keyframes scale {
+    0%   { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+@keyframes flipInX {
+    0% {
+        transform: perspective(100px) rotateX(-90deg);
+    }
+    100% {
+        transform: perspective(100px) rotateX(0deg);
+    }
+}
+
+#title h1 {
+    font-weight: bold;
+    text-align: center;
+    font-size: 2em;
+    line-height: 1;
+    transform-style: preserve-3d;
+    animation: rotate-h1 2s infinite alternate ease-in-out;
+    transform: perspective(1000px) rotateY(0deg);
+    transition: all 2s ease-in-out;
+}
+
+#title h1 .short {
+    text-transform: lowercase;
+    display: inline-block;
+    font-weight: normal;
+    font-size: 0.27em;
+    display: block;
+    margin-bottom: 20px;
+    transform: translateZ(-50px);
+}
+
+#title h1 .d3 {
+    display: inline-block;
+    transform: translateZ(20px);
+}
+#title h1 .css{
+  display: block;
+  margin-bottom: 20px;
+}
+#title h1 .transforms {
+    display: inline-block;
+    font-weight: normal;
+    font-size: 0.6em;
+    transform: translateY(-0.6em) translateZ(50px);
+}
+
+#title .author {
+    display: block;
+    width: 400px;
+    margin: 70px auto 0;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1.5;
+    font-size: .5em;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#title.active .author {
+    opacity: 1;
+}
+/*
+ * SUPPORT STEP
+ * =============================================================================
+ */
+
+.text-pages { width: 760px }
+
+.text-pages h2 { font-size: 2.5em; }
+.text-pages h4{ font-size: 1.2em; margin-bottom: 20px;}
+.text-pages h4 span{ font-size: .7em; color: #f00;}
+.text-pages li{ font-size: .3em; margin-bottom: 40px;}
+.text-pages .sep{ display: block; text-align: right;}
+
+.text-pages .version  {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.text-pages .disabled {
+    opacity: 0.2;
+    cursor: pointer;
+}
+
+.text-pages .disabled .version,
+.text-pages .disabled .prefix { opacity: 0 }
+.text-pages .page-zz{ display: flex;}
+.text-pages ol{ list-style: decimal;}
+.text-pages li span{ font-size: 1.2em; font-weight: 500; }
+
+#transforms2d h4 span{ font-size: .6em; color: #026600;}
+#transforms2d .info{ font-size: .4em; margin: 20px 0 40px;}
+
+#transforms3d .tu{ width: 30em; position: relative; margin-left: 40px; 
+}
+
+#transforms3d .tu>span{ display: inline-block; border-radius: 50%; background-color: #777; font-size: .5em; text-align: center; position: absolute; }
+#transforms3d .tu .fe{ background-color: hsla(2, 43%, 72%, .5); width: 8em; height: 8em; line-height: 8em; left: 50%; top:50%; margin: -4em 0 0 -4em;}
+#transforms3d .tu .yy{ background-color: hsla(79, 42%, 74%, .5); width: 6em; height: 6em; line-height: 6em; left: 50%; top:-10%; margin-left: -3em;}
+#transforms3d .tu .pm{  background-color: hsla(28, 67%, 74%, .5); width: 6em; height: 6em; line-height: 6em; left: -10%; top:50%; margin-top: -3em;}
+#transforms3d .tu .ui{ background-color: hsla(266, 23%, 71%, .5); width: 6em; height: 6em; line-height: 6em; right: -10%; top:50%; margin-top: -3em;}
+#transforms3d .tu .kf{ background-color: hsla(193, 45%, 71%, .5); width: 6em; height: 6em; line-height: 6em; left: 50%; bottom:-10%; margin-left: -3em;}
+
+
+
+#perspective .daotu{ background-color: #fff; width: 940px;}
+
+
+
+#transforms3d-cube h5{ text-align: center; margin: 40px 0; }
+
+.text-3d {  
+  text-shadow: 0 1px 0 #ccc,
+            0 2px 0 #c9c9c9,
+            0 3px 0 #bbb,
+            0 4px 0 #b9b9b9,
+            0 5px 0 #aaa,
+            0 6px 1px rgba(0,0,0,.1),
+            0 0 5px rgba(0,0,0,.1),
+            0 1px 3px rgba(0,0,0,.3),
+            0 3px 5px rgba(0,0,0,.2),
+            0 5px 10px rgba(0,0,0,.25),
+            0 10px 10px rgba(0,0,0,.2),
+            0 20px 20px rgba(0,0,0,.15);
+    color: #fff;
+    font-weight: bold;
+    font-size: 5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    transform: rotate(15deg);
+    position: absolute;
+    right: 10px;
+    top:100px;
+    transform-style: preserve-3d;
+    animation: rotate-wh 10s infinite alternate ease-in-out;;
+   
+}
+
+
+
+
+#remember{ width: 840px;}
+#remember h2{ font-size: 1.5em;}
+
+#remember .liucheng{ width:400px; font-size: .5em; margin-left: 40px; text-align: center;}
+#remember .row{ border-radius: 5px; border:1px solid #000; margin-bottom: 15px; cursor: pointer; animation: flipInX .3s ease-out forwards; }
+#remember .row:hover,
+#remember .sun:hover{ animation: scale .3s ease-in-out forwards;}
+#remember .row-1{display: flex; justify-content: space-between;}
+#remember .sun{ border-radius: 5px; border:1px solid #000; margin-bottom: 15px; display: inline-block; width: 48%; cursor: pointer; animation: flipInX .3s ease-out forwards;}
+#remember .row:nth-child(1){  background-color: hsla(47, 100%, 50%, .5)}
+#remember .row:nth-child(2){  background-color: hsla(93, 92%, 60%, .5)}
+#remember .sun:nth-child(1){ background-color: hsla(25, 86%, 56%, .5)}
+#remember .sun:nth-child(2){ background-color: hsla(59, 100%, 50%, .5)}
+#remember .sun.fe{ background-color: rgba(255, 255, 255,.5)}
+#remember .sun.hd{ background-color: hsla(206, 100%, 56%,.5)}
+#remember .row:nth-last-child(4){  background-color: hsla(188, 100%, 51%, .5)}
+#remember .row:nth-last-child(3){  background-color: hsla(212, 100%, 77%, .5)}
+#remember .row:nth-last-child(2){  background-color: hsla(9, 100%, 50%, .5)}
+#remember .row:nth-last-child(1){  background-color: hsla(29, 100%, 50%, .5)}
+#remember li{ font-size: .4em;}
+
+.demos{ width: 960px;} 
+.img-box{ display:flex; align-items:center; }
+.uisdc-img{ background: none no-repeat left top;  background-size: 100%; overflow: hidden; width: 460px; height: 330px;}
+#future h2{ font-size: 1.5em;}
+
+#end{ text-align: center; width: 760px;}
+#end span{ display: block;}
+#end .css {
+  text-shadow: 0 1px 0 #ccc,
+            0 2px 0 #c9c9c9,
+            0 3px 0 #bbb,
+            0 4px 0 #b9b9b9,
+            0 5px 0 #aaa,
+            0 6px 1px rgba(0,0,0,.1),
+            0 0 5px rgba(0,0,0,.1),
+            0 1px 3px rgba(0,0,0,.3),
+            0 3px 5px rgba(0,0,0,.2),
+            0 5px 10px rgba(0,0,0,.25),
+            0 10px 10px rgba(0,0,0,.2),
+            0 20px 20px rgba(0,0,0,.15);
+    color: #fff;
+    font-weight: bold;
+    font-size: 2em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    }
+  </style>
+</head>
+<body>
+<!-- <div class="impress-not-supported">
+  您好，您的浏览器不支持改页面，请更换高版面浏览器！
+</div> -->
+<div id="impress">
+
+
+<div id="title" class="step active" >
+    <h1>
+        <span class="short">脚踏实地的完成每一行代码</span>
+        <span class="css">互联网<span class="d3">产品部</span></span>
+        <span class="transforms">制作组</span>
+    </h1>
+    <span class="author">
+        <i>by</i><br>
+        <span class="name">周 翔</span> <a href="https://weibo.com/vincentxc" target="_block">@VinceZhou</a>
+    </span>
+</div>
+
+
+<div id="support" class="step text-pages" data-x="-640" data-y="0" data-rotate="30" data-scale="0.4" >
+    <h2>发展历程</h2>
+    <div class="page-1 version"><img src="images/fazhan.png" alt="" width="100%"></div>
+    <div class="page-2 version">
+      <h4>web1.0时代：<span>table布局时代</span></h4>
+      <ul>
+        <li>美术工程师(Art Engineer)：特指网页美工，指精通CSS/HTML/JAVASCRIPT等网页设计语言，并且熟悉各种平面设计软件，如PHOTOSHOP、FLASH、Illustrator等软件。</li>
+        <li>网页制作(webpage maker)：指网站策划师、网络程序员、网页设计师等岗位，应用各种网络程序开发技术和网页设计技术，为企事业单位、公司或个人在全球互联网上建设站点，并包含域名注册和主机托管等服务的总称。</li>
+      </ul>
+      <span class="sep version"><img src="images/img_01.png" alt="" width="20%"></span>
+    </div>
+</div>
+
+<div id="transforms2d" class="step text-pages" data-x="-620" data-y="500" data-rotate="90" data-scale="0.5" >
+    <h2>发展历程</h2>
+    <div class="page-2 version">
+        <h4>web2.0时代：<span>(x)html+css布局时代</span></h4>
+        <ul>
+          <li>web前端工程师：主要职责是利用(X)HTML/CSS/JavaScript/DOM/Flash等各种Web技术进行产品的界面开发。制作标准优化的代码，并增加交互动态功能，开发JavaScript以及Flash模块，同时结合后台开发技术模拟整体效果，进行丰富互联网的Web开发，致力于通过技术改善用户体验。</li>
+        </ul>
+        <p class="info">职位分类：“前端开发工程师”、“资深前端开发工程师”、“前端架构师”</p>
+        <span class="sep version"><img src="images/img_02.png" alt="" width="40%"></span>
+      </div>
+</div>
+
+
+<div id="transforms3d" class="step text-pages" data-x="-30" data-y="540" data-rotate="190" data-scale="0.6" >
+
+    <h2>职责范围</h2>
+    <div class="page-zz version">
+      <ol>
+        <li><span>前端开发工程师：</span>职责是根据设计图用HTML和CSS完成页面制作，并对完成的页面进行维护和对网站前端性能做相应的优化。</li>
+        <li><span>资深前端开发工程师：</span>职责是使用JS或者AS来编写和封装具有良好性能的前端交互组件，对Web项目的前端实现方案提供专业指导和监督，对新人进行培训，还要跟踪研究前端技术，设计并实施全网前端优化。</li>
+        <li><span>前端架构师：</span>职责是带领组员实现全网的前端框架和优化，创建前端的相应标准和规范，还要站在全局的角色为整个网站的信息架构和技术选型提供专业意见和方案。</li>
+      </ol>
+      <div class="tu">
+        <span class="fe">前端架构</span>
+        <span class="yy">运营</span>
+        <span class="pm">产品经理</span>
+        <span class="ui">设计</span>
+        <span class="kf">后台</span>
+      </div>
+    </div> 
+   
+</div>
+
+<div id="perspective" class="step" data-x="450" data-y="250" data-rotate="100" data-scale="0.25" >
+    <h2>应备技能</h2>
+    <div id="JN_daotu" class="daotu version"><img src="images/img_03.png" alt="" width="100%"></div>
+</div>
+
+
+<div id="transforms3d-cube" class="step text-pages" data-x="670" data-y="700" data-rotate="10" data-scale="0.6" >
+    <h2>职责范围</h2>
+    <div class="page-2 version">
+        <h4>web3.0时代：<span>移动互联网app时代</span></h4>
+        <h5>前端开发工程师职责</h5>
+        <span class="text-3d">?</span>
+    </div>
+</div>
+
+<div id="remember" class="step text-pages" data-x="750" data-y="70" data-rotate="30" data-scale="0.4">
+    <h2>职责范围总结</h2>
+    <div class="page-zz version">
+      <ol>
+          <li>参与项目需求和交互设计的讨论，并给出前端角度的意见，尽可能用html+css+js实现项目的用户体验；</li>
+          <li>拿到视觉设计师的效果图（ps文件），切图布局制作出html（demo）；</li>
+          <li>与后端开发工程师沟通，制定数据传输格式，在demo上增加js支持的交互效果及简单业务逻辑；</li>
+          <li>把demo交付给后端开发工程师，协助他们整合页面；</li>
+          <li>项目测试阶段，协助测试工程师修复各种浏览器下的bug与不一致性。</li>
+        </ol>
+      <div class="liucheng">
+        <div class="row">产品需求</div>
+        <div class="row">产品需求说明会</div>
+        <div class="row-1"><span class="sun">交互设计</span><span class="sun">视觉设计</span></div>
+        <div class="row-1"><span class="sun fe">前端开发</span><span class="sun hd">后端开发</span></div>
+        <div class="row">前后端整合</div>
+        <div class="row">测试联调</div>
+        <div class="row">上线会议</div>
+        <div class="row">产品发布</div>
+      </div>
+    </div> 
+</div>
+
+<div id="demos" class="step demos" data-x="950" data-y="300" data-rotate="-60" data-scale="0.2">
+    <h2>demos</h2>
+    <img class="version" src="images/1D121A3D-9AC5-49A8-B06B-C935FA1E5ADB.png" alt="" width="100%">
+    
+</div>
+<div id="demos1" class="step demos" data-x="1090" data-y="450" data-rotate="-60" data-scale="0.2">
+    <h2>demos</h2>
+    <img class="version" src="images/3B5152EB-0930-4C7A-B2AB-BB0174B71683.png" alt="" width="100%">
+</div>
+
+<div id="demos-2" class="step demos" data-x="1300" data-y="500" data-rotate="-90" data-scale="0.2" >
+    <h2>demos</h2>
+    <img class="version" src="images/20161126120945_50685.gif" alt="" width="100%">
+</div>
+<div id="demos-3" class="step demos" data-x="1350" data-y="230" data-rotate="-20" data-scale="0.2" >
+    <h2>demos</h2>
+    <div class="img-box">
+      <img class="version" src="images/168441083-5a91066182fc7_articlex.gif" alt="" > 
+      <div class="uisdc-img version" style="background-image: url('images/uisdc-dh-20180313-2.gif'); width:640px;  height: 455px; margin-left:20px;"></div>
+    </div>
+</div>
+<div id="demos-4" class="step demos" data-x="1150" data-y="100" data-rotate="-20" data-scale="0.2" >
+    <h2>demos</h2>
+    <div class="img-box">
+      <div class="uisdc-img version" style="background-image: url('images/uisdc-dh-20180313-3.gif')"></div>
+      <div class="uisdc-img version" style="background-image: url('images/uisdc-dh-20180313-4.gif'); margin-left:20px;"></div>
+    </div>
+</div>
+<div id="demos-5" class="step demos" data-x="1700" data-y="100" data-rotate="-30" data-scale="0.3" >
+    <h2>demos</h2>
+    <div class="img-box">
+      <div class="uisdc-img version" style="background-image: url('images/uisdc-dh-20180313-5.gif')"></div>
+      <div class="uisdc-img version" style="background-image: url('images/uisdc-dh-20180313-6.gif'); margin-left:20px;"></div>
+    </div>
+</div>
+
+<div id="future" class="step" data-x="1090" data-y="450" data-z="50" data-rotate-x="-90" data-rotate-y="60" data-rotate-z="0" data-scale="0.2">
+    <h2>发展方向</h2>
+    <span class="author">
+        <img class="version" src="images/40dfde6fgy1fpka5o5filg208c04oqv5.gif" alt="" width="100%" > 
+    </span>
+</div>
+
+<div id="end" class="step" data-x="0" data-y="300" data-rotate="0"  data-rotate-x="-90" data-rotate-y="180" data-scale="0.2" >
+    <h1>
+        <span class="css">Thank You !</span>
+        <!-- <span class="transforms">周翔</span> -->
+    </h1>
+</div>
+
+</div>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+</body>
+</html>
