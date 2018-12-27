@@ -18,7 +18,8 @@ $main-border:#e8e8e8;
 
 
 //default
-input::-webkit-input-placeholder{
+input::-webkit-input-placeholder,
+input.placeholder{
   color:#d0d0d0;
 }
 input::-moz-placeholder{   /* Mozilla Firefox 19+ */
