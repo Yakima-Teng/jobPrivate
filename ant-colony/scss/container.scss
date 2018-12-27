@@ -234,7 +234,7 @@ $main-border:#e8e8e8;
     >img{ width: 525px;}
   }
   .inp-list{ border: 2px solid $main-border; border-radius: 3px; overflow: hidden;
-    .inp-txt{ border:0 none; font-size:14px; line-height: 36px; vertical-align: middle;
+    .inp-txt{ border:0 none; font-size:14px; line-height: 36px; height: 36px; vertical-align: middle;
       &::placeholder{ color:#d0d0d0;}
     }
     .sep{@include inline-block; width: 2px; height: 25px; background-color: #e8e8e8; font-size: 25px; margin-right: 20px;}
