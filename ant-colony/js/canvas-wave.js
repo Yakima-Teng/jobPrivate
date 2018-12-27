@@ -26,9 +26,9 @@ function loop(){
     for(var j = lines.length - 1; j >= 0; j--) {  
         ctx.fillStyle = lines[j];  
         //每个矩形的角度都不同，每个之间相差45度  
-        var angle = (step+j*20)*Math.PI/140;  
-        var deltaHeight   = Math.sin(angle) * 30;  
-        var deltaHeightRight   = Math.cos(angle) * 20;  
+        var angle = (step+j*25)*Math.PI/180;  
+        var deltaHeight = Math.sin(angle) * 30;  
+        var deltaHeightRight = Math.cos(angle) * 30;  
         ctx.beginPath();  
         ctx.moveTo(0, canvas.height/2+deltaHeight);  
         ctx.bezierCurveTo(canvas.width /2, canvas.height/2+deltaHeight-50, canvas.width / 2, canvas.height/2+deltaHeightRight-50, canvas.width, canvas.height/2+deltaHeightRight);  
