@@ -59,7 +59,7 @@ $('.layrer-login .btn-password-rendom').bind('click',function(){
     $('.rendom-pw').show();
 });
 
-$('.content-introd-no2 .main img').hover(function () {
+$('.content-introd-no2 .main img,.content-advisory-contact .info-list').hover(function () {
     $(this).stop().animate({'top':-10},500);
 },function () {
     $(this).stop().animate({'top':0},500);
