@@ -59,6 +59,16 @@ $('.layrer-login .btn-password-rendom').bind('click',function(){
     $('.rendom-pw').show();
 });
 
+$('.content-introd-no2 .main img').hover(function () {
+    $(this).stop().animate({'top':-10},500);
+},function () {
+    $(this).stop().animate({'top':0},500);
+});
+$('.content-introd-no3 .main img').hover(function () {
+    $(this).stop().animate({'right':-10},500);
+},function () {
+    $(this).stop().animate({'right':0},500);
+});
 });
 $('[placeholder]').focus(function() {
 var input = $(this);
@@ -78,5 +88,5 @@ $(this).find('[placeholder]').each(function() {
     if (input.val() == input.attr('placeholder')) {
     input.val('');
     }
-})
+}) 
 });
