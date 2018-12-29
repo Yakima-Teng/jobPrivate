@@ -47,6 +47,7 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
 }
 .intr-title .info{ border-top: 2px solid $main-border; font-size: 22px; color: darken($color: $main-font, $amount: 24.2%); padding-top: 15px; margin-top: 15px; line-height: 1; }
 .else-page-title .info{ border-top: 2px solid $main-border; margin-top: 28px; padding-top: 22px; line-height: 1;}
+.canvas{ height: 160px; position:fixed; bottom: -80px; width: 100%; z-index: 999;}
 //header
 .page-header{ position:fixed; top: 0; width: 100%; height: 70px; background-color: hsla(0, 0%, 100%, .1); z-index: 10; padding-top:11px; box-sizing: border-box;
   .login{ float: right; margin-right:10px; margin-top: 3px;
@@ -59,7 +60,8 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
   .nav{ overflow: hidden; @include inline-block;
     .btn-nav{ float: left; font-size: 18px; color: #fff;
       >a{ color: #fff; @include inline-block; font-weight: bold;
-        &.cur{ color: #89c1ff; border-bottom: 2px solid #89c1ff;}
+        &.cur,
+        &:hover{ color: #89c1ff; border-bottom: 2px solid #89c1ff;}
       }
     }
     .sep{ @include inline-block; margin: -5px 10px 0;}
@@ -81,8 +83,8 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
   }
   .animation-banner{ float: right; background: url('../images/bg-banner-yuan.png') no-repeat center top; background-size: 100%; width: 540px; height: 540px; position: relative; margin-top: 90px;
     .huan{ background: none no-repeat center top; background-size: 100%; width: 100%; height: 100%; position: absolute; left: 0; top: 0;
-      &.huan-1{ background-image: url('../images/bg-nei-01.png'); animation:rotate-zhuan 22s linear infinite;}
-      &.huan-2{ background-image: url('../images/bg-nei-02.png'); animation:rotate-zhuan 18s linear infinite;}
+      &.huan-1{ background-image: url('../images/bg-nei-01.png'); animation:rotate-zhuan 13s linear infinite;}
+      &.huan-2{ background-image: url('../images/bg-nei-02.png'); animation:rotate-zhuan 13s linear infinite;}
       &.huan-3{ background-image: url('../images/bg-nei-03.png'); animation:rotate-zhuan 13s linear infinite;}
     }
   }
@@ -92,7 +94,7 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
     &::after{ content: ""; position: absolute; width: 400px; height: 400px; top: 0; left: 50%; background-color: rgba(255, 255, 255, .4); border-radius: 45%; transform: translate(-50%, -70%) rotate(0); animation: rotate 6s linear infinite; z-index: 10; }
     &::after { border-radius: 47%; background-color: rgba(255, 255, 255, .9); transform: translate(-50%, -70%) rotate(0); animation: rotate 10s linear -5s infinite; z-index: 20; }
   }
-  .canvas{ height: 160px; position: absolute; bottom: 0; width: 100%;}
+  
 }
 
 //content

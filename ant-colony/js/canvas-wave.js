@@ -10,15 +10,13 @@ return  window.requestAnimationFrame       ||
         window.webkitRequestAnimationFrame ||  
         window.mozRequestAnimationFrame    ||  
         function( callback ){  
-          window.setTimeout(callback, 1000 / 60);  
+          window.setTimeout(callback, 1000 / 30);  
         };  
 })();  
 //初始角度为0  
 var step = 0;  
 //定义三条不同波浪的颜色  
-var lines = ["rgba(255,255,255, 1)",  
-                "rgba(255,255,255, 0.5)",  
-                "rgba(255,255,255, 0.2)"];  
+var lines = ["rgba(255,255,255, 1)", "rgba(255,255,255, 0.5)", "rgba(255,255,255, 0.2)"];  
 function loop(){  
     ctx.clearRect(0,0,canvas.width,canvas.height);  
     step++;  
@@ -26,8 +24,8 @@ function loop(){
     for(var j = lines.length - 1; j >= 0; j--) {  
         ctx.fillStyle = lines[j];  
         //每个矩形的角度都不同，每个之间相差45度  
-        var angle = (step+j*25)*Math.PI/180;  
-        var deltaHeight = Math.sin(angle) * 30;  
+        var angle = (step+j*60)*Math.PI/180;  
+        var deltaHeight = Math.sin(angle) * 20;  
         var deltaHeightRight = Math.cos(angle) * 30;  
         ctx.beginPath();  
         ctx.moveTo(0, canvas.height/2+deltaHeight);  
