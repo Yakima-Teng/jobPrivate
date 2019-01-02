@@ -38,7 +38,7 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
   &.icon-passwd{ background-image: url('../images/icon-passwd.png'); width: 24px; height: 25px;}
   &.icon-star{ background-image: url('../images/icon-star.png'); background-size: 100%; width: 60px; height: 60px;}
 }
-.btn-submit{ display: block; margin: 20px auto 0; border:none 0; background-color:$main-color; color: #fff; font-size: 26px; line-height: 50px; width: 287px; height: 50px; border-radius: 40px; letter-spacing:10px; cursor: pointer;}
+.btn-submit{ display: block; margin: 20px auto 0; border:none 0; background-color:$main-color; color: #fff; font-size: 24px; line-height: 41px; width: 278px; height: 41px; border-radius: 40px; letter-spacing:10px; cursor: pointer;}
 .page-index{ font-size: 16px; color: $main-font; line-height: 1.5;}
 .content-box{ position: relative; overflow: hidden; width: 1200px; box-sizing: border-box; margin: auto;}
 .content-title{ text-align: center; margin-top: 40px;
