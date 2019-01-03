@@ -87,6 +87,11 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
       &.huan-1{ background-image: url('../images/bg-nei-01.png'); @include animation(rotate-zhuan 13s linear infinite );}
       &.huan-2{ background-image: url('../images/bg-nei-02.png'); @include animation(rotate-zhuan 13s linear infinite );}
       &.huan-3{ background-image: url('../images/bg-nei-03.png'); @include animation(rotate-zhuan 13s linear infinite );}
+      &:hover{
+        &.huan-1{ @include animation(rotate-zhuan 13s linear infinite );}
+        &.huan-2{ @include animation(rotate-zhuan 13s linear infinite );}
+        &.huan-3{ @include animation(rotate-zhuan 13s linear infinite );}
+      }
     }
   }
   .sum-title{ font-size: 32px; color: #fff; margin: -30px 0 0 2px; position: absolute; top: 50%;}
