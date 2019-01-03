@@ -106,3 +106,19 @@ $(this).find('[placeholder]').each(function() {
     }
 }) 
 });
+var countdown=60;
+function settime(val) {
+    // console.log(111)
+    if (countdown == 0) {
+        val.removeAttribute("disabled");
+        val.value="获取随机码";
+        countdown = 60;
+    } else {
+        val.setAttribute("disabled", true);
+        val.value="重新发送(" + countdown + "S)";
+        countdown--;
+        setTimeout(function() {
+            settime(val)
+        },1000)
+    }
+}
