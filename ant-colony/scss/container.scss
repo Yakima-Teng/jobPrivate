@@ -87,11 +87,6 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
       &.huan-1{ background-image: url('../images/bg-nei-01.png'); @include animation(rotate-zhuan 13s linear infinite );}
       &.huan-2{ background-image: url('../images/bg-nei-02.png'); @include animation(rotate-zhuan 13s linear infinite );}
       &.huan-3{ background-image: url('../images/bg-nei-03.png'); @include animation(rotate-zhuan 13s linear infinite );}
-      &:hover{
-        &.huan-1{ @include animation(rotate-zhuan 13s linear infinite );}
-        &.huan-2{ @include animation(rotate-zhuan 13s linear infinite );}
-        &.huan-3{ @include animation(rotate-zhuan 13s linear infinite );}
-      }
     }
   }
   .sum-title{ font-size: 32px; color: #fff; margin: -30px 0 0 2px; position: absolute; top: 50%;}
@@ -307,11 +302,11 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
 }
 
 @keyframes rotate-zhuan{
-  0%{-webkit-transform:rotate(0deg);}
-	25%{-webkit-transform:rotate(90deg);}
-  50%{-webkit-transform:rotate(180deg);}
-  75%{-webkit-transform:rotate(270deg);}
-  100%{-webkit-transform:rotate(360deg);}
+  0%{transform:rotate(0deg);}
+	25%{transform:rotate(90deg);}
+  50%{transform:rotate(180deg);}
+  75%{transform:rotate(270deg);}
+  100%{transform:rotate(360deg);}
 }
 @keyframes rotate-zhuan-1{
   0%{ transform:rotate(0deg);}
