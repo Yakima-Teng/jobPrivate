@@ -1,4 +1,7 @@
 @mixin keyframes($name){
+    @keyframes #{$name} {
+      @content;
+    }
     @-webkit-keyframes #{$name} {
       @content;
     }
@@ -11,11 +14,9 @@
     @-ms-keyframes #{$name} {
       @content;
     }
-    @keyframes #{$name} {
-      @content;
-    }
+    
 }
 
 @mixin animation($attribute...) {
-    @include prefixer(animation, $attribute, webkit moz o ms spec);
+    @include prefixer(animation, $attribute, spec webkit moz o ms );
 }
