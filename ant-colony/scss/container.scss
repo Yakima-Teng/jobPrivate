@@ -233,11 +233,16 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
     .title{ border-color:#fff; }
     .sum-title{ color: #fff;}
   }
-  .intr-core{ padding-bottom: 34px;
-    .main{ float: left; text-align: center; width: 33.33%; color: #fff; margin-bottom:46px; cursor: pointer;
-      >dt>img{ width: 116px;}
-      .title{ font-size: 20px; margin-top: 18px; margin-bottom: 1px; font-weight: bold;}
-      &:hover{ @include animation(amplification .5s forwards); }
+  .intr-core{ padding-bottom: 34px; 
+    .main{ float: left; text-align: center; width: 33.33%; color: #fff; margin-bottom:46px; cursor: pointer; height: 230px;
+      >dt>img{ width: 116px; }
+      .title{ margin-top: 18px; margin-bottom: 1px; font-weight: bold; font-size: 20px; line-height: 26px;}
+      .info{ font-size: 16px; line-height: 22px;}
+      &:hover{ 
+        >dt>img{ @include animation(amplification-img .5s forwards); }
+        .title{ @include animation(amplification-title .5s forwards); }
+        .info{ @include animation(amplification-info .5s forwards); }
+      }
     }
   }
 }
@@ -313,9 +318,17 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
   100%{ transform:rotate(360deg);}
 }
 
-@keyframes amplification{
-  0%{ transform:scale(1);}
-  100%{ transform:scale(1.05); }
+@keyframes amplification-img{
+  0%{ width: 116px;}
+  100%{ width: 121px; }
+}
+@keyframes amplification-title{
+  0%{ font-size: 20px; line-height: 26px;}
+  100%{ font-size: 22px; line-height: 28px;}
+}
+@keyframes amplification-info{
+  0%{ font-size: 16px; line-height: 22px;}
+  100%{ font-size: 17px; line-height: 26px;}
 }
 @keyframes narrow{
   0%{ transform:scale(1.5);}
