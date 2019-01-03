@@ -14,11 +14,6 @@ $(window).scroll(function(){
         $('.page-header').css({'backgroundColor':'#0c33dc'});
     };
 
-    if( thisTop>1 ){
-        $('.canvas').hide();
-    }else{
-        $('.canvas').show();
-    };
 });
 
 var thisTop=$(this).scrollTop();
@@ -33,11 +28,6 @@ if( thisTop<200 ){
     $('.page-header').css({'backgroundColor':'#0c33dc'});
 };
 
-if( thisTop>1 ){
-    $('.canvas').hide();
-}else{
-    $('.canvas').show();
-};
 
 $('.intr-customized').find('.main').bind('mouseover', function(){
     $(this).addClass('cur').siblings().removeClass('cur');
