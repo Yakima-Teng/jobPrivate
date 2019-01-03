@@ -57,7 +57,7 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
   .logo{ background: url('../images/logo.png') no-repeat left top; background-size: 100%; width: 111; height: 48px; @include inline-block; margin-right:40px; margin-left: 3%;
     >a{ display: block; text-indent: -999em;}
   }
-  .nav{ overflow: hidden; @include inline-block; width: 340px;
+  .nav{ overflow: hidden; @include inline-block; width: 360px;
     .btn-nav{ float: left; font-size: 18px; color: #fff;
       >a{ color: #e4e7ef; @include inline-block; font-weight: 100;
         &.cur,
