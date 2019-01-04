@@ -299,7 +299,7 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
   }
   .rendom-pw{ font-size:16px; margin-left: 10px; @include inline-block; display: none; 
     .sep{ margin-right: 10px;}
-    .a-link{@include inline-block; color: $main-color; border: 0 none; font-size: 16px; width: 105px; text-align: center;}
+    .a-link{@include inline-block; color: $main-color; border: 0 none; font-size: 16px; width: 105px; text-align: center; background-color: #fff;}
   }
   .sub-center{ 
     .btn-forget-pw{ float: right; margin-top: 25px; letter-spacing: 5px; color: #3d3d3d; font-size: 16px;}
