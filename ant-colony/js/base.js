@@ -55,11 +55,15 @@ $('.icon-close,.registered-form .btn-submit,.login-form .btn-submit ').bind('cli
 $('.layrer-login .btn-password').bind('click',function(){ 
     $(this).addClass('cur').siblings('.btn-password-rendom').removeClass('cur');
     $('.rendom-pw').hide();
+    $('.inp-pw').attr({'placeholder':'服务密码'});
+    $('.inp-phone').attr({'placeholder':'手机号码/登录名/邮箱'});
 });
 
 $('.layrer-login .btn-password-rendom').bind('click',function(){ 
     $(this).addClass('cur').siblings('.btn-password').removeClass('cur');
     $('.rendom-pw').show();
+    $('.inp-pw').attr({'placeholder':'验证码'});
+    $('.inp-phone').attr({'placeholder':'手机号码'});
 });
 
 $('.content-introd-no2 .main img,.content-advisory-contact .info-list').hover(function () {
@@ -76,26 +80,26 @@ $('.content-introd-no3 .main img').hover(function () {
 
 
 });
-$('[placeholder]').focus(function() {
-var input = $(this);
-if (input.val() == input.attr('placeholder')) {
-    input.val('');
-    input.removeClass('placeholder');
-}
-}).blur(function() {
-var input = $(this);
-if (input.val() == '' || input.val() == input.attr('placeholder')) {
-    input.addClass('placeholder');
-    input.val(input.attr('placeholder'));
-}
-}).blur().parents('form').submit(function() {
-$(this).find('[placeholder]').each(function() {
-    var input = $(this);
-    if (input.val() == input.attr('placeholder')) {
-    input.val('');
-    }
-}) 
-});
+// $('[placeholder]').focus(function() {
+// var input = $(this);
+// if (input.val() == input.attr('placeholder')) {
+//     input.val('');
+//     input.removeClass('placeholder');
+// }
+// }).blur(function() {
+// var input = $(this);
+// if (input.val() == '' || input.val() == input.attr('placeholder')) {
+//     input.addClass('placeholder');
+//     input.val(input.attr('placeholder'));
+// }
+// }).blur().parents('form').submit(function() {
+// $(this).find('[placeholder]').each(function() {
+//     var input = $(this);
+//     if (input.val() == input.attr('placeholder')) {
+//     input.val('');
+//     }
+// }) 
+// });
 var countdown=60;
 function settime(val) {
     // console.log(111)
