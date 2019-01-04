@@ -57,7 +57,7 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
   .logo{ background: url('../images/logo.png') no-repeat left top; background-size: 100%; width: 100px; height: 52px; @include inline-block; margin-right:40px; margin-left: 3%;
     >a{ display: block; text-indent: -999em;}
   }
-  .nav{ overflow: hidden; @include inline-block; width: 420px;
+  .nav{ overflow: hidden; @include inline-block; width: 450px;
     .btn-nav{ float: left; font-size: 18px; color: #fff;
       >a{ color: #fff; @include inline-block; line-height: 1;
         &.cur,
@@ -66,7 +66,7 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
     }
     .sep{ @include inline-block; margin:2px 10px 0;  width: 1px; height: 18px; background-color: #fff; }
   } 
-  .tel-400{ @include inline-block; margin-left: 102px; width: 190px;
+  .tel-400{ @include inline-block; margin-left: 82px; width: 190px;
     >img{width: 100%;}
   }
 }
