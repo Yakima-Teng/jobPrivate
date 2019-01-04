@@ -49,24 +49,26 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
 .else-page-title .info{ border-top: 2px solid $main-border; margin-top: 10px; padding-top: 10px; line-height: 1;}
 .canvas{ height: 160px; position: absolute; bottom: -50px; width: 100%; z-index: 999;}
 //header
-.page-header{ position:fixed; top: 0; width: 100%; height: 70px; background-color: hsla(0, 0%, 100%, .1); z-index: 10; padding-top:11px; box-sizing: border-box;
-  .login{ float: right; margin-right:10px; margin-top: 6px;
+.page-header{ position:fixed; top: 0; width: 100%; height:80px; background-color: hsla(0, 0%, 100%, .1); z-index: 10; padding-top:14px; box-sizing: border-box;
+  .login{ float: right; margin-right:10px; margin-top: 11px;
     .btn-registered,
-    .btn-login{ @include inline-block; font-size: 18px; border:1px solid #fff; border-radius: 27px; text-align: center; width: 115px; line-height: 34px; height: 34px; color: #fff; margin-left: 10px;}
+    .btn-login{ @include inline-block; font-size: 14px; border:1px solid #fff; border-radius: 27px; text-align: center; width: 83px; line-height: 30px; height: 30px; color: #fff; margin-left: 10px; box-sizing: border-box;}
   }
-  .logo{ background: url('../images/logo.png') no-repeat left top; background-size: 100%; width: 111; height: 48px; @include inline-block; margin-right:40px; margin-left: 3%;
+  .logo{ background: url('../images/logo.png') no-repeat left top; background-size: 100%; width: 100px; height: 52px; @include inline-block; margin-right:40px; margin-left: 3%;
     >a{ display: block; text-indent: -999em;}
   }
   .nav{ overflow: hidden; @include inline-block; width: 360px;
-    .btn-nav{ float: left; font-size: 18px; color: #fff;
-      >a{ color: #e4e7ef; @include inline-block; font-weight: 100;
+    .btn-nav{ float: left; font-size: 16px; color: #fff;
+      >a{ color: #fff; @include inline-block; line-height: 1;
         &.cur,
-        &:hover{ color: #fff; font-weight: normal; font-size: 20px;}
+        &:hover{ font-weight: bold; font-size: 18px;}
       }
     }
-    .sep{ @include inline-block; margin: -5px 10px 0;}
+    .sep{ @include inline-block; margin:2px 10px 0;  width: 1px; height: 18px; background-color: #fff; }
   } 
-  .tel-400{ @include inline-block; margin-left: 95px;}
+  .tel-400{ @include inline-block; margin-left: 82px; width: 190px;
+    >img{width: 100%;}
+  }
 }
 
 //banner
@@ -84,12 +86,11 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
   }
   .animation-banner{ float: right; background: url('../images/bg-banner-yuan.png') no-repeat center top; background-size: 100%; width: 540px; height: 540px; position: relative; margin-top: 90px;
     .huan{ background: none no-repeat center top; background-size: 100%; width: 100%; height: 100%; position: absolute; left: 0; top: 0;
-      &.huan-1{ background-image: url('../images/bg-nei-01.png'); @include animation(rotate-zhuan 13s linear infinite );}
       &.huan-2{ background-image: url('../images/bg-nei-02.png'); @include animation(rotate-zhuan 13s linear infinite );}
       &.huan-3{ background-image: url('../images/bg-nei-03.png'); @include animation(rotate-zhuan 13s linear infinite );}
     }
   }
-  .sum-title{ font-size: 32px; color: #fff; margin: -30px 0 0 2px; position: absolute; top: 50%;}
+  .sum-title{ font-size: 33px; color: #fff; margin: -30px 0 0 2px; position: absolute; top: 50%;}
   .anination-wave{ position: relative; width: 200px; height: 200px; background-color: rgb(118, 218, 255); border-radius: 50%;
     &::before,
     &::after{ content: ""; position: absolute; width: 400px; height: 400px; top: 0; left: 50%; background-color: rgba(255, 255, 255, .4); border-radius: 45%; transform: translate(-50%, -70%) rotate(0); @include animation( rotate 6s linear infinite ); z-index: 10; }
