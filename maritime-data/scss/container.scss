@@ -1,0 +1,22 @@
+@charset "UTF-8";
+//---------------------------------------
+//导入页面集合样式
+//---------------------------------------
+//mixin
+@import "../../scss/hourglass/scss/mixins";
+//基础内容
+@import '../../scss/common/sass/reset';
+
+//组件
+//@import '../../scss/common/sass/config';
+//@import '../../scss/hourglass/scss/components/btn';
+
+//color
+$main-font:#ffffff;
+$main-color:#ffd200;
+$main-white:$color_f;
+
+
+.page-index{ background: url('../images/bg-page.jpg') no-repeat left top; width: 6528px; height: 1360px; display: flex; box-sizing: border-box; padding: 26px 45px 40px;
+  .module-title{ margin-bottom: 19px;}
+}
