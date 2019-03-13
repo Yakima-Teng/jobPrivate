@@ -66,7 +66,7 @@ $main-white:$color_f;
     }
   }
 }
-.data-overview{ background: url('../images/bg-left-02.png') no-repeat center top; margin-bottom: 31px;
+.data-overview{ background: url('../images/bg-left-02.png') no-repeat center top; padding-bottom: 44px; margin-bottom: 31px;
   .module-title-son{ margin-bottom: 57px;}
   .data-info{  overflow: hidden;
     .zhu-box{ float: right; overflow: hidden;font-size: 24px;
@@ -117,7 +117,7 @@ $main-white:$color_f;
   .data-title-son{ text-align: right; padding:6px 67px 0 0; margin-bottom: 67px;}
   .module-info{ display: flex; justify-content: center;justify-content: center;
     .soujiu{ width: 33.33%; text-align: center; line-height: 1.8;
-      .huan{display: block; background: url('../images/bg-static-num-01.png') repeat-x center 120px; margin: auto; width: 112px; height: 112px; border-radius: 50%; line-height: 112px; position: relative; margin-bottom: 30px; font-size: 24px;
+      .huan{display: block; background: url('../images/bg-static-num-01.png') repeat-x center bottom; margin: auto; width: 112px; height: 112px; border-radius: 50%; line-height: 112px; position: relative; margin-bottom: 30px; font-size: 24px;
         &:after{content:''; display: block; position: absolute; border:2px solid $main-white; width: 122px; height: 122px; border-radius: 50%; left: 0; top: 0; margin: -7px 0 0 -7px; }
       }
     }
@@ -150,23 +150,42 @@ $main-white:$color_f;
     &:nth-child(5){ top: 50%; left: 37px; margin-top: 60px; }
     &:nth-child(6){ top: 50%; left: 22px; margin-top: -114px; }
   }
-  .radar-img{display: block; position: absolute; width:292px; height: 292px; left: 50%; top: 50%; margin: -146px 0 0 -146px;}
+  .radar-img{display: block; position: absolute; /*background: url('../images/img-radar.png') no-repeat center; */width:292px; height: 292px; left: 50%; top: 50%; margin: -146px 0 0 -146px;}
 }
 .goods-box{ display: flex; justify-content: center; align-items: flex-end; position: relative; width: 670px; margin: auto;  font-size: 18px;
   &:after{content:''; display: block; position: absolute; background: url('../images/bg-goods.png') repeat-y center bottom; opacity: .4; height: 65px; bottom: 0; left: 0; width: 100%;}
   .info{ position: relative; z-index: 2; width: 25%; text-align: center; padding: 24px 0 6px;
     dd{  margin-top:180px; }
-    .num{ position: absolute; bottom: 0; margin-left: 45px;}
-    .icon-yuan{ margin-left: 25px; width: 24px; bottom: 0; position: relative;
-      // &:before{content:''; display: block; position: absolute; background-color: #2877f9;  width: 14px; height: 2px; top:-250px; margin-left: 11px;}
+    .num>span{ position: relative; left: 56px;}
+    .icon-yuan{ margin-left: 25px; width: 24px; position: absolute; bottom: 0;
+      &:before{content:''; display: block; position: absolute; background-color: #2877f9;  width: 14px; height: 2px; top:-250px; margin-left: 11px;}
       &:after{content:''; display: block; position: absolute; left: 50%; margin-left: -8px; bottom: 58px; background-color: #2877f9; width: 16px; height: 16px; border-radius: 50%;}
-      .sep{ @include inline-block; position: absolute; background-color: #2877f9; width: 2px; height: 20px; bottom: 58px;}
-      .icon{@include inline-block; background: url('../images/sep.png') no-repeat left center; width: 100px; padding-left: 20px; bottom: 65px; position: absolute;}
+      .sep{ @include inline-block; position: absolute; background-color: #2877f9; width: 2px; height: 190px; margin-left: -1px; bottom: 58px;}
     }
-
+    &:nth-child(2) {
+      .num>span{ top: 110px;}
+      .icon-yuan{
+        &:before{ top:-140px; }
+        .sep{ height: 80px; }
+      }
+    }
+    &:nth-child(3) {
+      .num>span{ top: 150px;}
+      .icon-yuan{
+        &:before{ top:-100px; }
+        .sep{ height: 40px; }
+      }
+    }
+    &:nth-child(4) {
+      .num>span{ top: 165px;}
+      .icon-yuan{
+        &:before{ top:-85px; }
+        .sep{ height: 25px; }
+      }
+    }
   }
 }
-.people-box{ width: 100%; height: 200px; margin-top: -30px;
+.people-box{ margin-top: 35px; display: flex; justify-content: center; align-items: flex-end; 
   .txt{ text-align: right; font-size: 18px; margin-right: 21px;
     li{ margin-bottom: 10px;}
   }
@@ -176,13 +195,8 @@ $main-white:$color_f;
     }
   }
 }
-.quantity-box{ line-height:80px; font-size: 32px; margin: 20px 0 15px;
-  .info{ @include inline-block;  width: 33%; line-height: 80px; height: 80px;
-    &:last-child{ 
-      .num-info{ width: 150px;}
-    }
-  }
-  .num-info{ @include inline-block; position: relative; width: 219px; margin-top: -15px;}
+.quantity-box{ line-height:80px;  display: flex; justify-content: space-around; font-size: 32px; margin: 20px 0 15px;
+  .num{ @include inline-block; width: 50px; height: 80px; line-height: 72px; box-sizing: border-box; text-align: center; background:url('../images/ba-dynamic-num.png') repeat-x center bottom; border:2px solid hsla(192, 96%, 68%,.61); margin: 0 2px; font-size: 60px; font-weight: 200;} 
 }
 .region-box{ background: url('../images/bg-region.png') no-repeat center 128px; width: 100%; height: 510px; position: relative;
   .region{ position: absolute;
@@ -267,21 +281,4 @@ $main-white:$color_f;
   50%{transform:rotate(180deg);}
   75%{transform:rotate(270deg);}
   100%{transform:rotate(360deg);}
-}
-
-#container-syaq{ width: 559px; height: 286px; background-color: #fff;}
-#container-gk{ width: 100%; height: 400px; margin-top: -50px;}
-#container-ttl{ width: 750px; height: 570px; margin-top: -80px;}
-
-.inrow{ font-size:0;font-size:12px;*font-size:0;font-family:arial;letter-spacing:-3px;*letter-spacing:normal;*word-spacing:-1px;
-  >li,
-  span{display:inline-block;*display:inline;*zoom:1;font-size:14px;letter-spacing:normal;word-spacing:normal; }
-}
-.dataNums,
-.dataNums02,
-.dataNums03{ position: absolute; top:50%; display: block; width:100%; height:75px; margin-top: -37px; text-align:center;
-  .dataOne{ @include inline-block; width: 50px; height: 80px; line-height: 72px; box-sizing: border-box; text-align: center; background:url('../images/ba-dynamic-num.png') repeat-x center bottom; border:2px solid hsla(192, 96%, 68%,.61); margin: 0 2px; font-size: 60px; font-weight: 200;}
-  .dataBoc {position: relative; width: 100%; height: 100%; overflow: hidden;}
-  .dataBoc .tt {position: absolute; top: 0;  left: 0; width: 100%;  height: 100%;}
-  .tt span{width:100%;height:100%; font:bold 54px/75px "Arial";color:#ddf0ff;}
 }

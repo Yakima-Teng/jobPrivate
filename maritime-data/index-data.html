@@ -30,41 +30,41 @@
           <p class="txt"><span>948艘次</span>国际航行船舶数量</p>
           <p class="txt"><span>9845艘次</span>穿越航道数量</p>
           <p class="txt"><span>3000艘次</span>最大断面流量</p>
-          <span class="radar-img"></span>
+          <span class="radar-img" id="radar-img"></span>
         </div>
       </div>
       <div class="number-list num-goods">
         <h3 class="title">货物</h3>
         <div class="goods-box">
           <dl class="info">
-            <dt class="num"><i class="icon-yuan"><em class="sep"></em></i><span>231.1万吨</span></dt>
+            <dt class="num"><p class="icon-yuan"><em class="sep"></em><span class="icon"><em class="timer count-number" data-to="231.1" data-speed="1500">231.1</em>万吨</span></p></dt>
             <dd>进出港船舶<br>货运总量</dd>
           </dl>
           <dl class="info">
-            <dt class="num"><i class="icon-yuan"><em class="sep"></em></i><span>47.12万吨</span></dt>
+            <dt class="num"><p class="icon-yuan"><em class="sep"></em><span class="icon"><em class="timer count-number" data-to="47.12" data-speed="1500">47.12</em>万吨</span></p></dt>
             <dd>危险货物<br>运输量</dd>
           </dl>
           <dl class="info">
-            <dt class="num"><i class="icon-yuan"><em class="sep"></em></i><span>22.36万吨</span></dt>
+            <dt class="num"><p class="icon-yuan"><em class="sep"></em><span class="icon"><em class="timer count-number" data-to="22.36" data-speed="1500">22.36</em>万吨</span></p></dt>
             <dd>散装化学品<br>运输量</dd>
           </dl>
           <dl class="info">
-            <dt class="num"><i class="icon-yuan"><em class="sep"></em></i><span>2.82万吨</span></dt>
+            <dt class="num"><p class="icon-yuan"><em class="sep"></em><span class="icon"><em class="timer count-number" data-to="2.82" data-speed="1500">2.82</em>万吨</span></p></dt>
             <dd>集装箱<br>货物数量</dd>
           </dl>
         </div>
       </div>
       <div class="number-list num-passenger">
         <h3 class="title">旅客</h3>
-        <div class="people-box">
-          <ul class="txt">
+        <div class="people-box" id="containerLK">
+          <!-- <ul class="txt">
             <li>12.33万人<br>日渡运旅客数量</li>
             <li>47.12万人<br>累计渡运旅客数量</li>
           </ul>
           <ul class="biao">
             <li></li>
             <li></li>
-          </ul>
+          </ul> -->
         </div>
       </div>
     </div>
@@ -97,25 +97,7 @@
               <p>危险货物<br>年运输量<span>1.72亿吨</span></p>
               <p>散装化学<br>品运输量<span>796万吨</span></p>
             </header>
-            <dl class="zhu-tu yangtze">
-              <dt class="info">
-                <div class="img-zhu">
-                  <span><em class="t"></em><em class="c"></em><em class="b"></em></span>
-                </div>
-                <span class="num">80%</span>
-              </dt>
-              <dd>长江沿线年运输量</dd>
-            </dl>
-            <dl class="zhu-tu country">
-              <dt class="info">
-                <div class="img-zhu">
-                  <span><em class="t"></em><em class="c"></em><em class="b"></em></span>
-                </div>
-                <span class="num">26.4%</span>
-                <p>居全国首位</p>
-              </dt>
-              <dd>全国运输量</dd>
-            </dl>
+            <div id="container-gk"></div>
           </div>
           <div class="num-box">
               <dl>
@@ -155,15 +137,15 @@
           <dt class="data-title-son">应急搜救</dt>
           <dd class="module-info">
             <div class="soujiu">
-              <span class="huan">7701人</span>
+              <span class="huan"><em class="timer count-number" data-to="7701" data-speed="1500">7701</em>人</span>
               成功救助<br>遇险船舶
             </div>
             <div class="soujiu">
-              <span class="huan">1032只</span>
+              <span class="huan"><em class="timer count-number" data-to="1032" data-speed="1500">1032</em>只</span>
               成功救助<br>遇险人员
             </div>
             <div class="soujiu">
-              <span class="huan">96.2%</span>
+              <span class="huan"><em class="timer count-number" data-to="96.2" data-speed="1500">96.2</em>%</span>
               人命救助<br>成功率
             </div>
           </dd>
@@ -172,19 +154,19 @@
             <dt class="module-title-son">水上安全形势</dt>
             <dd class="module-info">
               <div class="num">
-                <span class="huan" style="background-image:url('images/img-huan-01.png')">35.71%</span>
+                <span class="huan" id="container-huan01"></span>
                 等级事故<br>18起
               </div>
               <div class="num">
-                <span class="huan" style="background-image:url('images/img-huan-01.png')">11.76%</span>
+                <span class="huan" id="container-huan02"></span>
                 死亡失踪<br>30人
               </div>
               <div class="num">
-                <span class="huan" style="background-image:url('images/img-huan-01.png')">38.89%</span>
+                <span class="huan" id="container-huan03"></span>
                 沉船<br>11艘
               </div>
               <div class="num">
-                <span class="huan" style="background-image:url('images/img-huan-01.png')">28.05%</span>
+                <span class="huan" id="container-huan04"></span>
                 直接经济损失<br>4847万元
               </div>
             </dd>
@@ -199,21 +181,18 @@
   <header class="module-title"><img src="images/title-01.png" alt=""></header>
   <h3 class="module-title-son">江苏辖区2019年度实时数据<span>（截止：2019-01-25 16:26:38）</span></h3>
   <div class="quantity-box">
-    <p class="info">进出港船舶
-      <span class="num-info">
-        <i class="num">6</i><i class="num">7</i><i class="num">1</i><i class="num">2</i>
-      </span>艘次
-    </p>
-    <p class="info">进出港船舶货运量
-      <span class="num-info">
-        <i class="num">2</i><i class="num">6</i><i class="num">1</i> 
-      </span>万吨
-    </p>
-    <p class="info">今日渡运旅客数量
-      <span class="num-info">
-        <i class="num">1</i><i class="num">2</i><i class="num">.</i><i class="num">3</i><i class="num">3</i>
-      </span>万人
-    </p>
+    <div class="info">进出港船舶
+      <div class="num-info" id="dataNums-01"></div>
+      艘次
+    </div>
+    <div class="info">进出港船舶货运量
+      <div class="num-info" id="dataNums-02"></div>
+      万吨
+    </div>
+    <div class="info">今日渡运旅客数量
+        <div class="num-info" id="dataNums-03"></div>
+        万人
+    </div>
   </div>
   <div class="region-box">
     <p class="region"><i class="xing"></i><em>宿迁</em></p>
@@ -238,7 +217,7 @@
   <div class="area-chart-box">
     <dl class="chart-list">
       <dt class="title">辖区水域安全态势</dt>
-      <dd class="img"><img src="images/img-01.jpg" alt=""></dd>
+      <dd class="img"><div id="container-syaq"></div></dd>
     </dl>
     <dl class="chart-list">
       <dt class="title">辖区内船舶分布热力图</dt>
@@ -307,30 +286,7 @@
     </div>
     <div class="supervise-module supervise-throughput">
       <header class="module-title-son">主要港口吞吐量</header>
-      <dl class="city">
-        <dt>南京</dt>
-        <dd class="info"><span class="jindu"></span>3.2亿吨</dd>
-      </dl>
-      <dl class="city">
-        <dt>泰州</dt>
-        <dd class="info"><span class="jindu" style="width:150px;"></span>2.4亿吨</dd>
-      </dl>
-      <dl class="city">
-        <dt>江阴</dt>
-        <dd class="info"><span class="jindu" style="width:240px;"></span>2.8亿吨</dd>
-      </dl>
-      <dl class="city">
-        <dt>张家港</dt>
-        <dd class="info"><span class="jindu" style="width:200px;"></span>2.6亿吨</dd>
-      </dl>
-      <dl class="city">
-        <dt>南通</dt>
-        <dd class="info"><span class="jindu" style="width:280px;"></span>3亿吨</dd>
-      </dl>
-      <dl class="city">
-        <dt>太仓</dt>
-        <dd class="info"><span class="jindu" style="width:80px;"></span>2.1亿吨</dd>
-      </dl>
+      <div id="container-ttl"></div>
     </div>
   </div>
 </section>
@@ -338,6 +294,524 @@
 </div>
 <!--/page-index-->
 <script src="js/num.js"></script>
+<script src="js/num-gun.js"></script>
 <script src="js/base.js"></script>
+<script src="js/echarts.js"></script>
+<!--船舶-->
+<script>
+var domRadar = document.getElementById("radar-img");
+var myChartRadar = echarts.init(domRadar);
+var appRadar = {};
+option = null;
+option = {
+    radar: [
+        {
+            indicator: [
+                {max:25000 },
+                { max:12000  },
+                {max:25000  },
+                {max:12000  },
+                { max:9000  },
+                { max:22000  }
+            ],
+            center: ['50%', '50%'],
+            radius: 145,
+            startAngle: 90,
+            splitNumber: 4,
+            shape: 'circle',
+
+            
+            splitArea: {
+                areaStyle: {
+                    color: ['rgba(114, 172, 209, 0)',
+                    'rgba(114, 172, 209, 0)', 'rgba(114, 172, 209, 0)',
+                    'rgba(114, 172, 209, 0)', 'rgba(114, 172, 209, 0)'],
+                    shadowColor: 'rgba(0, 0, 0, 1)',
+                    shadowBlur: 10
+                }
+            },
+            axisLine: {
+                lineStyle: {
+                    color: 'rgba(0, 144, 255, 0.3)'
+                }
+            },
+            splitLine: {
+                lineStyle: {
+                    color: 'rgba(0, 144, 255, 0.3)'
+                }
+            }
+        }
+    ],
+    series: [
+        {
+            name: '雷达图',
+            type: 'radar',
+            itemStyle: {
+                emphasis: {
+                    // color: 各异,
+                    lineStyle: {
+                        width: 4
+                    }
+                }
+            },
+            data: [
+                {
+                    value: [24700, 3000, 9845, 948, 2487,11524],
+                    symbol: 'rect',
+                    symbolSize: 6,
+                    areaStyle: {
+                        normal: {
+                            color: 'rgba(255, 255, 255, 0.3)',
+                             type: 'dashed'
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+};
+if (option && typeof option === "object") {
+    myChartRadar.setOption(option, true);
+}
+</script>
+<!--/船舶-->
+<!--旅客-->
+<script type="text/javascript">
+var domLK = document.getElementById("containerLK");
+var myChartLK = echarts.init(domLK);
+var appLK = {};
+option = null;
+appLK.title = '世界人口总量 - 条形图';
+
+option = {
+
+  color:['hsla(217, 95%, 57%, 0.5)','hsla(210, 100%, 55%, 0.8)'],
+
+  tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+          type: 'shadow'
+      }
+  },
+
+  grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '3%',
+      containLabel: true
+  },
+  xAxis: {
+      type: 'value',
+      boundaryGap: [0, 0.01],
+      splitLine:{show: false},
+      axisLine:{
+        lineStyle:{
+            color:'rgba(255,255,255,0)',
+            width:2
+        }
+    }
+  },
+  yAxis: {
+      type: 'category',
+      axisLine:{
+        lineStyle:{
+            color:'#2f6190',
+            width:2
+        }
+    },
+    axisTick:{show: false},
+      data: ['渡运旅客数量'],
+      
+  },
+  series: [
+      {
+          name: '日渡运旅客数量',
+          type: 'bar',
+          data: [123300]
+      },
+      {
+          name: '累计渡运旅客数量',
+          type: 'bar',
+          data: [471200]
+      }
+  ]
+};
+;
+if (option && typeof option === "object") {
+  myChartLK.setOption(option, true);
+}
+</script>
+<!--/旅客-->
+<!--水上安全形势-->
+<script type="text/javascript">
+var domH01 = document.getElementById("container-huan01");
+var myChartH01 = echarts.init(domH01);
+var appH01 = {};
+option = null;
+appH01.title = '环形图';
+
+option = {
+  color:['#178aff','#073271'],
+  series: [
+    {
+      type:'pie',
+      radius: ['82%', '100%'],
+      hoverAnimation:false,
+      avoidLabelOverlap: false,
+      label: {
+          normal: {
+              show: false,
+              position: 'center'
+          },
+          emphasis: {
+              show: true,
+              textStyle: {
+                  fontSize: '18',
+                  fontWeight: 'bold',
+                  color:'hsl(49, 100%, 50%)'
+              }
+          }
+      },
+      labelLine: {
+          normal: {
+              show: false
+          }
+      },
+      data:[
+          {value:35.71, name:'35.71%'},
+          {value:100 - 35.71, name:''}
+      ]
+    }
+  ]
+};
+;
+if (option && typeof option === "object") {
+  myChartH01.setOption(option, true);
+}
+</script>
+<script type="text/javascript">
+var domH02 = document.getElementById("container-huan02");
+var myChartH02 = echarts.init(domH02);
+var appH02 = {};
+option = null;
+appH02.title = '环形图';
+
+option = {
+color:['#178aff','#073271'],
+series: [
+{
+  type:'pie',
+  radius: ['82%', '100%'],
+  hoverAnimation:false,
+  avoidLabelOverlap: false,
+  label: {
+    normal: {
+        show: false,
+        position: 'center'
+    },
+    emphasis: {
+        show: true,
+        textStyle: {
+            fontSize: '18',
+            fontWeight: 'bold',
+            color:'hsl(49, 100%, 50%)'
+        }
+    }
+  },
+  labelLine: {
+      normal: {
+          show: false
+      }
+  },
+  data:[
+      {value:11.76, name:'11.76%'},
+      {value:100 - 11.76, name:''}
+  ]
+}
+]
+};
+;
+if (option && typeof option === "object") {
+myChartH02.setOption(option, true);
+}
+</script>
+<script type="text/javascript">
+var domH03 = document.getElementById("container-huan03");
+var myChartH03 = echarts.init(domH03);
+var appH03 = {};
+option = null;
+appH03.title = '环形图';
+
+option = {
+color:['#178aff','#073271'],
+series: [
+{
+    type:'pie',
+    radius: ['82%', '100%'],
+    hoverAnimation:false,
+    avoidLabelOverlap: false,
+    label: {
+        normal: {
+            show: false,
+            position: 'center'
+        },
+        emphasis: {
+            show: true,
+            textStyle: {
+                fontSize: '18',
+                fontWeight: 'bold',
+                color:'hsl(49, 100%, 50%)'
+            }
+        }
+    },
+    labelLine: {
+        normal: {
+            show: false
+        }
+    },
+    data:[
+        {value:38.89, name:'38.89%'},
+        {value:100 - 38.89, name:''}
+    ]
+}
+]
+};
+;
+if (option && typeof option === "object") {
+myChartH03.setOption(option, true);
+}
+</script>
+<script type="text/javascript">
+var domH04 = document.getElementById("container-huan04");
+var myChartH04 = echarts.init(domH04);
+var appH04 = {};
+option = null;
+appH04.title = '环形图';
+
+option = {
+color:['#178aff','#073271'],
+series: [
+{
+    type:'pie',
+    radius: ['82%', '100%'],
+    hoverAnimation:false,
+    avoidLabelOverlap: false,
+    label: {
+        normal: {
+            show: false,
+            position: 'center'
+        },
+        emphasis: {
+            show: true,
+            textStyle: {
+                fontSize: '18',
+                fontWeight: 'bold',
+                color:'hsl(49, 100%, 50%)'
+            }
+        }
+    },
+    labelLine: {
+        normal: {
+            show: false
+        }
+    },
+    data:[
+        {value:28.05, name:'28.05%'},
+        {value:100 - 28.05, name:''}
+    ]
+}
+]
+};
+;
+if (option && typeof option === "object") {
+myChartH04.setOption(option, true);
+}
+</script>
+<!--/水上安全形势-->
+<!--辖区水域安全态势-->
+<script type="text/javascript">
+var domSyaq = document.getElementById("container-syaq");
+var myChartSyaq = echarts.init(domSyaq);
+var appSyaq = {};
+option = null;
+option = {
+  title: {
+      text: '年度态势'
+  },
+  tooltip: {
+      trigger: 'axis'
+  },
+  legend: {
+      data:['邮件营销','联盟广告','视频广告','直接访问']
+  },
+  grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '3%',
+      containLabel: true
+  },
+  toolbox: {
+      feature: {
+          saveAsImage: {}
+      }
+  },
+  xAxis: {
+      type: 'category',
+      boundaryGap: false,
+      data: ['2008','2009','2010','2011','2012','2013','2014','2015','2016','2017']
+  },
+  yAxis: {
+      type: 'value'
+  },
+  series: [
+      {
+          name:'邮件营销',
+          type:'line',
+          stack: '总量',
+          data:[120, 132, 101, 134, 90, 230, 210,300,311,356]
+      },
+      {
+          name:'联盟广告',
+          type:'line',
+              stack: '总量',
+          data:[220, 182, 191, 234, 290, 330, 310]
+      },
+      {
+          name:'视频广告',
+          type:'line',
+          stack: '总量',
+          data:[150, 232, 201, 154, 190, 330, 410]
+      },
+      {
+          name:'直接访问',
+          type:'line',
+          stack: '总量',
+          data:[320, 332, 301, 334, 390, 330, 320]
+      }
+  ]
+};
+;
+if (option && typeof option === "object") {
+  myChartSyaq.setOption(option, true);
+}
+</script>
+<!--/辖区水域安全态势-->
+<!--辖区概况-->
+<script type="text/javascript">
+var domGk = document.getElementById("container-gk");
+var myChartGk = echarts.init(domGk);
+var appGk = {};
+option = null;
+option = {
+color:['#0158e7'],
+legend: {},
+tooltip: {},
+dataset: {
+source: [
+    ['长江沿线年运输量',1720, 80],
+    ['全国运输量', 796,26.4]
+]
+},
+xAxis: {
+type: 'category',
+axisLine:{
+    lineStyle:{
+        color:'rgba(255,255,255,1)',
+        fontSize:'24'
+    },
+    show: false
+},
+axisTick:{show: false}
+},
+yAxis: {splitLine:{show: false},
+axisLine:{
+    lineStyle:{
+        color:'rgba(255,255,255,0)',
+        width:0
+    }
+}
+},
+// Declare several bar series, each will be mappGked
+// to a column of dataset.source by default.
+series: [
+{type: 'bar'}
+]
+};
+;
+if (option && typeof option === "object") {
+myChartGk.setOption(option, true);
+}
+</script>
+<!--/辖区概况-->
+<!--港口吞吐量-->
+<script type="text/javascript">
+  var domTtl = document.getElementById("container-ttl");
+  var myChartTtl = echarts.init(domTtl);
+  var appTtl = {};
+  option = null;
+  var option = {
+  color: ['hsla(201, 97%, 56%, 0.39)'],
+  dataset: {
+  source: [
+      [ 'amount', 'product'],
+      [ 2.1, '太仓'],
+      [ 3.0, '南通'],
+      [ 2.6, '张家港'],
+      [ 2.8, '江阴'],
+      [ 2.4, '泰州'],
+      [ 3.2, '南京'],
+  
+  ]
+  },
+  
+  xAxis: {
+  show: 'false',
+  type:'value',
+  splitLine:{show: false},
+  axisLine:{
+      lineStyle:{
+          color:'rgba(255,255,255,0)',
+          width:0,
+          fontSize:32
+      }
+  },
+  axisTick:{show: false}
+  },
+  yAxis: {type: 'category',
+  axisLine:{
+      lineStyle:{
+          color:'rgba(255,255,255,1)',
+          width:0,
+          fontSize:32
+      }
+      },
+      axisTick:{show: false}
+  },
+  series: [
+  {
+      type: 'bar',
+      encode: {
+          // Map the "amount" column to X axis.
+          x: 'amount',
+          // Map the "product" column to Y axis
+          y: 'product'
+      },
+      label: {
+          normal: {
+              position: 'right',
+              show: true,
+              fontSize:32,
+              color:'#fff'
+          }
+      }
+  }
+  ]
+  };
+  ;
+  if (option && typeof option === "object") {
+  myChartTtl.setOption(option, true);
+  }
+  </script>
+<!--/港口吞吐量-->
 </body>
 </html>
