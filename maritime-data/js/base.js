@@ -21,7 +21,7 @@ $("#dataNums-03").rollNumDaq({
   className:'dataNums03'
 });
 
-var timejg=30000;//轮播间隔时间
+var timejg=10000;//轮播间隔时间
 var size = $('.ly-ts').size();
 
 $('.ly-ts').eq(0).show();
