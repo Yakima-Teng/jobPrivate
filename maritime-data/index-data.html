@@ -56,16 +56,11 @@
       </div>
       <div class="number-list num-passenger">
         <h3 class="title">旅客</h3>
-        <div class="people-box" id="containerLK">
-          <!-- <ul class="txt">
-            <li>12.33万人<br>日渡运旅客数量</li>
-            <li>47.12万人<br>累计渡运旅客数量</li>
-          </ul>
-          <ul class="biao">
-            <li></li>
-            <li></li>
-          </ul> -->
-        </div>
+        <div class="people-box" id="containerLK"></div>
+        <ul class="people-box-txt">
+          <li>12.33万人<br>日渡运旅客数量</li>
+          <li>47.12万人<br>累计渡运旅客数量</li>
+        </ul>
       </div>
     </div>
     <div class="static-left">
@@ -98,6 +93,9 @@
               <p>散装化学<br>品运输量<span>796万吨</span></p>
             </header>
             <div id="container-gk"></div>
+            <div class="container-gk-txt">
+              <span class="txt">长江沿线年运输量</span><span class="txt">全国运输量</span>
+            </div>
           </div>
           <div class="num-box">
               <dl>
@@ -154,19 +152,19 @@
             <dt class="module-title-son">水上安全形势</dt>
             <dd class="module-info">
               <div class="num">
-                <span class="huan" id="container-huan01"></span>
+                <span class="huan" id="container-huan01"></span><span class="number-txt">35.71%</span>
                 等级事故<br>18起
               </div>
               <div class="num">
-                <span class="huan" id="container-huan02"></span>
+                <span class="huan" id="container-huan02"></span><span class="number-txt">11.76%</span>
                 死亡失踪<br>30人
               </div>
               <div class="num">
-                <span class="huan" id="container-huan03"></span>
+                <span class="huan" id="container-huan03"></span><span class="number-txt">38.89%</span>
                 沉船<br>11艘
               </div>
               <div class="num">
-                <span class="huan" id="container-huan04"></span>
+                <span class="huan" id="container-huan04"></span><span class="number-txt">28.05%</span>
                 直接经济损失<br>4847万元
               </div>
             </dd>
@@ -225,7 +223,7 @@
     </dl>
     <dl class="chart-list">
       <dt class="title">进出港船舶趋势分析</dt>
-      <dd class="img"><img src="images/img-03.jpg" alt=""></dd>
+      <dd class="img"><div id="container-qs"></div></dd>
     </dl>
 </section>
 <!--/dynamic-module-->
@@ -287,6 +285,7 @@
     <div class="supervise-module supervise-throughput">
       <header class="module-title-son">主要港口吞吐量</header>
       <div id="container-ttl"></div>
+      <div class="container-ttl-txt">单位：亿吨</div>
     </div>
   </div>
 </section>
@@ -348,9 +347,8 @@ option = {
             type: 'radar',
             itemStyle: {
                 emphasis: {
-                    // color: 各异,
                     lineStyle: {
-                        width: 4
+                        width: 2
                     }
                 }
             },
@@ -358,7 +356,13 @@ option = {
                 {
                     value: [24700, 3000, 9845, 948, 2487,11524],
                     symbol: 'rect',
-                    symbolSize: 6,
+                    symbolSize: 0,
+                    lineStyle: {
+                        normal: {
+                            type: 'solid',
+                            color:'#0161b4'
+                        }
+                    },
                     areaStyle: {
                         normal: {
                             color: 'rgba(255, 255, 255, 0.3)',
@@ -412,6 +416,7 @@ option = {
     }
   },
   yAxis: {
+    show: false,
       type: 'category',
       axisLine:{
         lineStyle:{
@@ -464,7 +469,7 @@ option = {
               position: 'center'
           },
           emphasis: {
-              show: true,
+              show: false,
               textStyle: {
                   fontSize: '18',
                   fontWeight: 'bold',
@@ -510,7 +515,7 @@ series: [
         position: 'center'
     },
     emphasis: {
-        show: true,
+        show: false,
         textStyle: {
             fontSize: '18',
             fontWeight: 'bold',
@@ -556,7 +561,7 @@ series: [
             position: 'center'
         },
         emphasis: {
-            show: true,
+            show: false,
             textStyle: {
                 fontSize: '18',
                 fontWeight: 'bold',
@@ -602,7 +607,7 @@ series: [
             position: 'center'
         },
         emphasis: {
-            show: true,
+            show: false,
             textStyle: {
                 fontSize: '18',
                 fontWeight: 'bold',
@@ -642,7 +647,7 @@ option = {
       trigger: 'axis'
   },
   legend: {
-      data:['邮件营销','联盟广告','视频广告','直接访问']
+      data:['重大事故','较大事故','一般事故','较小事故']
   },
   grid: {
       left: '3%',
@@ -665,28 +670,28 @@ option = {
   },
   series: [
       {
-          name:'邮件营销',
+          name:'重大事故',
           type:'line',
           stack: '总量',
-          data:[120, 132, 101, 134, 90, 230, 210,300,311,356]
+          data:[120, 132, 101, 134, 90, 230, 210,300,311,356 ]
       },
       {
-          name:'联盟广告',
+          name:'较大事故',
           type:'line',
               stack: '总量',
-          data:[220, 182, 191, 234, 290, 330, 310]
+          data:[220, 182, 191, 234, 290, 330, 310,134, 90, 230 ]
       },
       {
-          name:'视频广告',
+          name:'一般事故',
           type:'line',
           stack: '总量',
-          data:[150, 232, 201, 154, 190, 330, 410]
+          data:[150, 232, 201, 154, 190, 330, 410,191, 234, 290]
       },
       {
-          name:'直接访问',
+          name:'较小事故',
           type:'line',
           stack: '总量',
-          data:[320, 332, 301, 334, 390, 330, 320]
+          data:[320, 332, 301, 334, 390, 330, 320,330, 310,134,]
       }
   ]
 };
@@ -713,6 +718,7 @@ source: [
 ]
 },
 xAxis: {
+  show: false,
 type: 'category',
 axisLine:{
     lineStyle:{
@@ -725,17 +731,18 @@ axisTick:{show: false}
 },
 yAxis: {splitLine:{show: false},
 axisLine:{
-    lineStyle:{
-        color:'rgba(255,255,255,0)',
-        width:0
-    }
+  lineStyle:{
+      color:'rgba(255,255,255,0)',
+      width:0
+  }
 }
 },
 // Declare several bar series, each will be mappGked
 // to a column of dataset.source by default.
-series: [
-{type: 'bar'}
-]
+series: {type: 'bar',
+barCateGoryGap:'80%',
+barWidth: '40%',
+}
 };
 ;
 if (option && typeof option === "object") {
@@ -813,5 +820,82 @@ myChartGk.setOption(option, true);
   }
   </script>
 <!--/港口吞吐量-->
+<!--船舶趋势-->
+<script type="text/javascript">
+  var domQs = document.getElementById("container-qs");
+  var myChartQs = echarts.init(domQs);
+  var appQs = {};
+  option = null;
+  option = {
+  title: {
+  padding: [5,0,0,160],
+  text: '2018江苏辖区进出港船舶趋势'
+  },
+  tooltip: {
+  trigger: 'axis'
+  },
+  legend: {
+  padding: [40, 0,0,0],
+  data:['进港船舶','出港船舶','进出港总量','线性（进出港总量）']
+  },
+  grid: {
+  left: '3%',
+  right: '4%',
+  bottom: '3%',
+  containLabel: true
+  },
+  toolbox: {
+  feature: {
+      saveAsImage: {}
+  }
+  },
+  xAxis: {
+  type: 'category',
+  show:'show',
+  data: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+  },
+  yAxis: {
+  type: 'value',
+  splitLine:{show: false}
+  },
+  series: [
+  {
+      name:'进港船舶',
+      type:'line',
+      stack: '总量',
+      data:[120, 132, 101, 134, 90, 230, 210,120, 132, 101, 134, 90, 230,]
+  },
+  {
+      name:'出港船舶',
+      type:'line',
+      stack: '总量',
+      data:[220, 182, 191, 234, 290, 330, 310, 191, 234, 290, 330, 310,465]
+  },
+  {
+      name:'进出港总量',
+      type:'line',
+      stack: '总量',
+      data:[150, 232, 201, 154, 190, 330, 410, 232, 201, 154, 190, 312,423]
+  },
+  {
+      name:'线性（进出港总量）',
+      type:'line',
+      symbolSize: 0,
+      stack: '总量',
+      data:[320, 332, 301, 334, 390, 330, 320,232, 201, 154, 190, 410, 232],
+      lineStyle: {
+          normal: {
+              type: 'dashed'
+          }
+      }
+  }
+  ]
+  };
+  ;
+  if (option && typeof option === "object") {
+  myChartQs.setOption(option, true);
+  }
+  </script>
+<!--/船舶趋势-->
 </body>
 </html>
