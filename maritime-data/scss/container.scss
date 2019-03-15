@@ -50,9 +50,10 @@ $main-white:$color_f;
 .data-jurisdiction{ background: url('../images/bg-left-01.png') no-repeat center top; overflow: hidden; padding-bottom: 50px; margin-bottom: 27px;
   .module-title-son{ margin-bottom: 50px;}
   .data-info{ float: left; display: flex;align-items: center; margin-left: 32px;
-    .city{ position: relative; width: 160px; height: 157px; text-align: center; justify-content: center; display: flex; align-items: center;
+    .city{ position: relative; width: 160px; height: 157px; text-align: center; justify-content: center; display: flex; align-items: center; font-size: 16px; line-height: 1em;
       &:before{content:''; display: block; position:absolute; left: 0; top: 0; background: url('../images/bg-static-city.png') no-repeat center top; width: 100%; height: 100%; z-index: 1;  @include animation(rotate-zhuan linear infinite 5s); }
-      >span{ position: relative; z-index: 2;}
+      .sep{ display: block;height: 1px; border-bottom: 1px dashed $main-white; margin: 5px;}
+      >span{ position: relative; z-index: 2; font-size: 20px;}
     }
     .info{ background: url('../images/bg-static-info.png') no-repeat center top; width: 433px; height: 136px; box-sizing: border-box; padding:24px 0 0 100px; margin-left: -80px;
       p{ color: $main-white; margin-bottom: 25px;
@@ -61,8 +62,9 @@ $main-white:$color_f;
         }
       }
     }
-    &:last-child{ font-size: 16px; 
+    &:last-child{ font-size: 13px; 
       .info{ display: none;}
+      .city>span{ font-size: 16px;}
     }
   }
 }
@@ -74,7 +76,7 @@ $main-white:$color_f;
         >p{ margin-right: 32px;}
         span{ font-size: 32px; color: $main-color; @include inline-block; margin-top: -35px; margin-left: 18px;}
       }
-      >span.sep{ position: absolute; right: 20px; top: 50%; font-size: 18px; }
+      >span.sep{ position: absolute; right: 20px; top: 50%; font-size: 18px; background: url('../images/bg-zhu-num.png') no-repeat left bottom; padding:0 0 32px 60px;}
       .zhu-tu{ float: left; display: flex; align-items: center; flex-direction: column; width: 40%;
         .info{ position: relative;
           .img-zhu{ background: url('../images/bg-static-zhu.png') no-repeat center top; width: 80px; height: 216px; box-sizing: border-box;  padding: 0 0 0 5px;
@@ -84,7 +86,7 @@ $main-white:$color_f;
             .b{ background-image: url('../images/bg-zhu-b.png'); margin-top: -16px; height: 18px;}
             .c{ background-image: url('../images/bg-zhu-c.png'); background-repeat: repeat-y; }
           }
-          .num{ position: absolute; margin-left: 50px; background: url('../images/bg-zhu-num.png') no-repeat left 20px; color: $main-color; font-size:32px; padding: 0 0 35px 80px;}
+          .num{ position: absolute; margin-left: 50px; background: url('../images/bg-zhu-num.png') no-repeat left 20px; color: $main-color; font-size:32px; padding:0 0 32px 60px;}
         }
         &.yangtze{ margin:0 10px 0 -12px;
           .info{
