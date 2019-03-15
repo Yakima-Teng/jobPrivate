@@ -20,4 +20,38 @@ $("#dataNums-03").rollNumDaq({
   deVal:13,
   className:'dataNums03'
 });
+
+var timejg=30000;//轮播间隔时间
+var size = $('.ly-ts').size();
+
+$('.ly-ts').eq(0).show();
+$('.region').eq(0).addClass('active')
+$('.region').mouseover(function(){
+  $(this).addClass('active').siblings().removeClass('active');
+  var index = $(this).index();
+  i=index;
+  $('.ly-ts').eq(index).stop().show().siblings().stop().hide();
+});
+
+var i = 0;
+var time = setInterval(move,timejg);
+
+function move(){
+  i++;
+  if(i==size){
+    i=0;
+  }
+
+  $('.region .xing').eq(i).addClass('active').siblings().removeClass('active');
+  $('.ly-ts').eq(i).show().siblings().hide();
+}
+
+$('.region').hover(function(){
+  
+  clearInterval(time);
+},function(){
+  time = setInterval(move,timejg);
+});
+
+
 });
