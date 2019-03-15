@@ -292,11 +292,11 @@
 <!--/supervise-module-->
 </div>
 <!--/page-index-->
-<script src="https://api.map.baidu.com/api?v=2.0&ak=PGnbq6ryLvNXwuyW0Bh7ODxI66G88EfV"></script>
 <script src="js/num.js"></script>
 <script src="js/num-gun.js"></script>
 <script src="js/base.js"></script>
 <script src="js/echarts.js"></script>
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=PGnbq6ryLvNXwuyW0Bh7ODxI66G88EfV"></script>
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
 <!--船舶-->
 <script>
@@ -907,50 +907,50 @@ myChartGk.setOption(option, true);
   option = null;
   appMap.title = '热力图与百度地图扩展';
   
-  $.get('https://echarts.baidu.com/examples/data/asset/data/hangzhou-tracks.json', function (data) {
+  $.get('data/tracks.json', function (data) {
   
-  var points = [].concat.appMaply([], data.map(function (track) {
-  return track.map(function (seg) {
-      return seg.coord.concat([1]);
-  });
-  }));
-  myChartMap.setOption(option = {
-  animation: false,
-  bmap: {
-      center: [120.13066322374, 30.240018034923],
-      zoom: 14,
-      roam: true
-  },
-  visualMap: {
-      show: false,
-      top: 'top',
-      min: 0,
-      max: 5,
-      seriesIndex: 0,
-      calculable: true,
-      inRange: {
-          color: ['blue', 'blue', 'green', 'yellow', 'red']
+      var points = [].concat.apply([], data.map(function (track) {
+          return track.map(function (seg) {
+              return seg.coord.concat([1]);
+          });
+      }));
+      myChartMap.setOption(option = {
+          animation: false,
+          bmap: {
+              center: [120.13066322374, 30.240018034923],
+              zoom: 14,
+              roam: true
+          },
+          visualMap: {
+              show: false,
+              top: 'top',
+              min: 0,
+              max: 5,
+              seriesIndex: 0,
+              calculable: true,
+              inRange: {
+                  color: ['blue', 'blue', 'green', 'yellow', 'red']
+              }
+          },
+          series: [{
+              type: 'heatmap',
+              coordinateSystem: 'bmap',
+              data: points,
+              pointSize: 5,
+              blurSize: 6
+          }]
+      });
+      if (!appMap.inNode) {
+          // 添加百度地图插件
+          var bmap = myChartMap.getModel().getComponent('bmap').getBMap();
+          bmap.addControl(new BMap.MapTypeControl());
       }
-  },
-  series: [{
-      type: 'heatmap',
-      coordinateSystem: 'bmap',
-      data: points,
-      pointSize: 5,
-      blurSize: 6
-  }]
-  });
-  if (!appMap.inNode) {
-  // 添加百度地图插件
-  var bmap = myChartMap.getModel().getComponent('bmap').getBMap();
-  bmap.addControl(new BMap.MapTypeControl());
-  }
   });
   ;
   if (option && typeof option === "object") {
-  myChartMap.setOption(option, true);
+      myChartMap.setOption(option, true);
   }
-  </script>
-  <!--/热力图-->
+         </script>
+<!--/-->
 </body>
 </html>
