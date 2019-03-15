@@ -285,4 +285,5 @@ $main-white:$color_f;
 .container-gk-txt{ position: absolute; bottom: 20px; width: 100%; 
   .txt{ @include inline-block; margin-left: 60px;}
 } 
-.container-ttl-txt{ position: absolute; right: 20px; top: 50%; margin-top: 180px;}
+.container-ttl-txt{ position: absolute; left: 50%; top:40px; margin-left: -40px;}
+#container-map{ width: 717px; height: 286px; background-color: #fff;}
