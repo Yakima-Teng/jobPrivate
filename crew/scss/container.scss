@@ -1,0 +1,51 @@
+@charset "UTF-8";
+//---------------------------------------
+//导入页面集合样式
+//---------------------------------------
+//mixin
+@import "../../scss/hourglass/scss/mixins";
+//基础内容
+@import '../../scss/common/sass/reset';
+
+//组件
+//@import '../../scss/common/sass/config';
+//@import '../../scss/hourglass/scss/components/btn';
+
+//color
+$main-font:#808080;
+$main-color:#0092ff;
+$main-border:#eeecec ;
+$main-red:#e50a00 ;
+
+
+//default
+.icon{ @include inline-block; background: none no-repeat center; background-size: 100%;
+  &.icon-coordinate{ background-image: url('../images/icon-map.png'); width: 26px; height: 26px;}
+}
+
+.page-index{ font-size: 18px; color: $main-font; line-height: 1.5;}
+
+//header
+.page-header{ width: 1200px; margin: auto; 
+  .logo{ background: url('../images/logo.png') no-repeat center; width: 142px; height: 39px; text-indent: -999rem; padding: 34px 0 30px;}
+}
+//banner
+.page-banner{ background: url('../images/bg-banner.jpg') no-repeat center; height: 275px; width: 100%;}
+.crew-info-box{ @extend .page-header; padding: 37px 0 25px;
+  .crew-basic-info{ overflow: hidden;
+    .crew-name{ @include inline-block; color: $main-color; font-size: 36px}
+    .crew-coordinate{ @include inline-block; font-size: 14px; margin-top: 20px;
+      .icon-coordinate{ margin: -15px 12px 0 0;}
+    }
+  }
+  .crew-label{ margin-bottom: 22px;
+    .label{ @include inline-block; width: 68px; height: 22px; border:1px solid #e2e2e2; font-size: 14px; line-height: 22px; text-align: center; background-color: $main-border; margin-right: 10px;
+      &.red{ background-color: $main-red; color: #fff;}
+    }
+  }
+  .crew-info-img{ 
+    .img-box{ border: 1px solid; border-image: linear-gradient( #89deff, #0193ff) 30 30; @include inline-block; padding: 2px 3px; background-color: #fff;
+      &:first-child{ padding: 0;}
+    }
+  }
+}
