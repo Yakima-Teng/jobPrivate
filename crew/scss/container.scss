@@ -16,21 +16,28 @@ $main-font:#808080;
 $main-color:#0092ff;
 $main-border:#eeecec ;
 $main-red:#e50a00 ;
+$main-blue:#0e6bd0;
 
 
 //default
-.icon{ @include inline-block; background: none no-repeat center; background-size: 100%;
+.icon{ @include inline-block; background: none no-repeat center;
   &.icon-coordinate{ background-image: url('../images/icon-map.png'); width: 26px; height: 26px;}
+  &.icon-time{ background-image:url('../images/icon-time.png'); width: 27px; height: 27px;}
+  &.icon-adopt{ background-image: url('../images/icon-queding.png'); width: 17px; height: 17px;}
 }
 
 .page-index{ font-size: 18px; color: $main-font; line-height: 1.5;}
-
+.page-content{@extend .page-header; }
+.page-footer{ height: 50px;}
 //header
 .page-header{ width: 1200px; margin: auto; 
   .logo{ background: url('../images/logo.png') no-repeat center; width: 142px; height: 39px; text-indent: -999rem; padding: 34px 0 30px;}
 }
+
 //banner
-.page-banner{ background: url('../images/bg-banner.jpg') no-repeat center; height: 275px; width: 100%;}
+.page-banner{ background: url('../images/bg-banner.jpg') no-repeat center; height: 275px; width: 100%;
+  &.banner-else{ background-image: url('../images/bg-banner-02.jpg');}
+}
 .crew-info-box{ @extend .page-header; padding: 37px 0 25px;
   .crew-basic-info{ overflow: hidden;
     .crew-name{ @include inline-block; color: $main-color; font-size: 36px}
@@ -46,6 +53,87 @@ $main-red:#e50a00 ;
   .crew-info-img{ 
     .img-box{ border: 1px solid; border-image: linear-gradient( #89deff, #0193ff) 30 30; @include inline-block; padding: 2px 3px; background-color: #fff;
       &:first-child{ padding: 0;}
+    }
+  }
+}
+.banner-else .crew-info-box{ overflow: hidden; padding: 34px 0 18px;
+  .crew-basic-info{ float: left; margin-right: 16px; width: 210px;
+    .crew-img{ text-align: center; background-color: #fff; border: 1px solid $main-border; width: 198px; height: 140px; line-height: 140px; margin-bottom: 10px;}
+    .crew-name{ font-size: 30px;
+      .engish{ font-size: 20px;}
+    }
+    .crew-coordinate{ margin-top: 8px; display: block;}
+  }
+  .crew-detailed-info{ float: left; width: calc( 100% - 226px );}
+  .crew-info-img{ background-color: rgba($color: #ffffff, $alpha: 0.75); border: 1px solid #fff; padding: 30px 30px 24px; box-sizing: border-box;
+    .authentication-box,
+    .img-box-authent{ @include inline-block; color: #141414; margin-right: 10px; }
+    .img-box-authent{ margin-right: 0;
+      .txt{@include inline-block; line-height: 1; color: $main-font; font-size: 14px; margin-right: 10px; margin-left:25px;}
+      .img-box{width: 183px; height: 114px; box-sizing: border-box; text-align: center;}
+    }
+  }
+}
+
+//nav
+.page-nav{ @extend .page-header; position: relative; margin: 30px auto 59px;
+  .nav-list{ width: 106px; height: 31px; @include inline-block; line-height: 31px; text-align: center; position: relative; z-index: 1;
+    &.cur{ background-color:#e8f4fd; color: $main-color; }
+  } 
+  &:after{ content:''; display: block; position: absolute; width: 100%; height: 1px; background-color: $main-border; bottom: 0; z-index: 0;}
+}
+.schedule-growup{@extend .page-header; position: relative; margin-bottom: 44px;
+  &:before{ content:''; background-color: $main-color; width: 100%; height: 2px; display: block; position: absolute; top: 51px; left: 0;}
+  .schedule{ @include inline-block; border-radius: 50%; background-color: $main-color; text-align: center; color: #fff; font-size:26px; width: 102px; height: 102px; float: left; margin-right: 44px; line-height: 1.1em; padding-top: 20px; box-sizing: border-box; position: relative; z-index: 1;
+    &:first-child{ background: url('../images/bg-chengzhang.png') no-repeat center #fff; width: 130px; height: 141px; color: $main-color; margin-top: -18px; box-sizing: border-box; padding: 36px 0 0 24px;}
+    &.default{}
+  }
+  &:after{ content: ''; display:block; background: url('../images/icon-more-01.png') no-repeat center; width: 14px; height: 12px; position: absolute; right: -1px; top: 46px;}
+}
+//content
+.content-growup{ position: relative; 
+  &:before{content:''; display: block; width: 1px; height: 100%;  position: absolute; left: 18px; border-right:1px dashed $main-border;  top: 0; z-index: 0;}
+  .growup{ overflow: hidden; margin-bottom: 32px;
+    .position-cur{ float: left; line-height: 39px; width: 113px; color: $main-blue; font-weight: bold; margin-top: 4px;
+      .sequence{ margin-top: -3px; @include inline-block; width: 39px; height: 39px; background-color: $main-blue; border-radius: 50%; text-align: center; color: #fff; margin-right: 20px;  position: relative; z-index: 1;}
+    }
+    .info{ float: left; width: calc( 100% - 113px ); border: 1px solid $main-border; padding:16px 0 15px 13px; position: relative; box-sizing: border-box; border-radius: 3px;
+      &:before{content:''; display: inline-block; background: url('../images/icon-sep-01.png') no-repeat center; width: 8px; height: 10px; position: absolute; left: -8px; top: 19px;}
+      .inp-date{ width: 197px; height: 40px; border: 1px solid $main-border; font-size: 18px; padding-left: 10px; box-sizing: border-box;}
+    }
+    &:first-child{
+      .position-cur{ font-weight: normal; color: $main-font; margin-top: 0;}
+      .info{ border: none; padding: 0; 
+        &:before{ display: none;}
+      }
+    }
+    &.default{
+      .position-cur{ color: $main-font; 
+        .sequence{ background-color: $main-border; color: $main-font; }
+      }
+      .info{ border: none; padding: 0;
+        &:before{ display: none;}
+      }
+    }
+  }
+}
+.content-growup-else{ @extend .content-growup;
+  &:before{ border-right-color: $main-color; border-right-width: 2px;}
+  .growup{ margin-bottom: 37px;
+    .position-cur{ border-radius: 50%; border:1px solid $main-color; width: 14px; height: 14px; padding: 2px; overflow: hidden; box-sizing: border-box; margin-left: 13px; margin-top: 56px;
+      .yuan{ background-color: $main-color; display: block; width: 8px; height: 8px; border-radius: 50%; margin: auto;}
+    }
+    .info{ background-color:#f6f5f5; margin-left: 17px; font-size: 16px; line-height: 2em; border:none;
+      &:before{ background: none;width:0; height:0; border-top:10px solid transparent; border-bottom:10px solid transparent; border-right:9px solid #f6f5f5;}
+    }
+    .time{ margin-left: 45px; color: $main-color; font-size: 20px; margin-bottom: 4px;}
+    &:first-child{
+      .position-cur{ width: 113px; height: 39px; padding: 0; border: none 0; border-radius:0; margin: 0;
+        .sequence{ margin-top: -3px; @include inline-block; width: 39px; height: 39px; background-color: $main-blue; border-radius: 50%; text-align: center; color: #fff; margin-right: 20px;  position: relative; z-index: 1;}
+      }
+      .info{ border: none; padding: 0; background-color: #fff; margin: 0;
+        &:before{ display: none;}
+      }
     }
   }
 }

@@ -10,7 +10,8 @@
 <meta name="Keywords" content="" />
 <link rel="stylesheet" href="css/container.css" />
 <script src="js/jquery-1.7.2.min.js"></script>
-<title>海事-船员-搜索结果页</title>
+<script src="js/laydate/laydate.js"></script>
+<title>海事-船员-1</title>
 </head>
 <body>
 <!--page-index-->
@@ -44,7 +45,7 @@
 <!--/page-banner-->
 <!--page-nav-->
 <div class="page-nav">
-  <a href="javascript:void(0);" class="nav-list">成长轨迹</a>
+  <a href="javascript:void(0);" class="nav-list cur">成长轨迹</a>
   <a href="javascript:void(0);" class="nav-list">行动轨迹</a>
   <a href="javascript:void(0);" class="nav-list">基本信息</a>
   <a href="javascript:void(0);" class="nav-list">证书信息</a>
@@ -57,54 +58,55 @@
 <!--/page-nav-->
 <!--page-content-->
 <div class="page-content content-growup">
- <dl class="growup">
+ <dl class="growup time">
    <dt class="position-cur"><i class="sequence icon icon-time"></i>时间：</dt>
-   <dd class="info"><input type=”date” class="inp-date"/></dd>
+   <dd class="info"><input class="laydate-icon inp-date" onclick="laydate()" value="2019-6-20"></dd>
  </dl>
  <dl class="growup">
    <dt class="position-cur"><i class="sequence">1</i>培训</dt>
    <dd class="info">
-     <p class="info">2013年01月01日 - 01月31日，于山东省船员培训中心开办的第007班进行基础安全业务培训，培训总长：60.5课时；</p>
-     <p class="info">航海资历缺少12500海里，证书缺少B06,B07，B08，B09，预测2025年10月达成船长，预测说明</p>
+     <p>2013年01月01日 - 01月31日，于山东省船员培训中心开办的第007班进行基础安全业务培训，培训总长：60.5课时；</p>
+     <p>航海资历缺少12500海里，证书缺少B06,B07，B08，B09，预测2025年10月达成船长，预测说明</p>
    </dd>
  </dl>
  <dl class="growup">
    <dt class="position-cur"><i class="sequence">2</i>注册</dt>
    <dd class="info">
-      <p class="info">2013年02月01日，于山东海事局注册海员；</p>
+      <p>2013年02月01日，于山东海事局注册海员；</p>
    </dd>
  </dl>
  <dl class="growup">
    <dt class="position-cur"><i class="sequence">3</i>水手</dt>
    <dd class="info">
-      <p class="info">2013年03月31日，取得B02精通救生艇筏和救助艇合格证书；</p>
-      <p class="info">2013年05月08日，取得水手适任证书；</p> 
+      <p>2013年03月31日，取得B02精通救生艇筏和救助艇合格证书；</p>
+      <p>2013年05月08日，取得水手适任证书；</p> 
    </dd>
  </dl>
  <dl class="growup">
    <dt class="position-cur"><i class="sequence">4</i>三副</dt>
    <dd class="info">
-      <p class="info">2013年11月15日-01月15日，报名山东省船员培训中心开办的第011班进行精通快速救助艇培训，培训总长：70.5课时；</p>
-      <p class="info">2014年01月15日，取得B03精通快速救助艇合格证书；</p> 
+      <p>2013年11月15日-01月15日，报名山东省船员培训中心开办的第011班进行精通快速救助艇培训，培训总长：70.5课时；</p>
+      <p>2014年01月15日，取得B03精通快速救助艇合格证书；</p> 
    </dd>
  </dl>
  <dl class="growup">
    <dt class="position-cur"><i class="sequence">5</i>二副</dt>
    <dd class="info">
-      <p class="info">2014年01月15日，取得B03精通快速救助艇合格证书；</p>
-      <p class="info">航海资历缺少2500海里，证书缺少B06,B07，预测2021年5月达成大副，预测说明       查看本年度开班和考试计划；</p>
+      <p>2014年01月15日，取得B03精通快速救助艇合格证书；</p>
+      <p>航海资历缺少2500海里，证书缺少B06,B07，预测2021年5月达成大副，预测说明       查看本年度开班和考试计划；</p>
    </dd>
  </dl>
- <dl class="growup">
+ <dl class="growup default">
    <dt class="position-cur"><i class="sequence">6</i>大副</dt>
    <dd class="info"></dd>
  </dl>
- <dl class="growup">
+ <dl class="growup default">
     <dt class="position-cur"><i class="sequence">7</i>船长</dt>
     <dd class="info"></dd>
   </dl>
 </div>
 <!--/page-content-->
+<div class="page-footer"></div>
 </div>
 <!--/page-index-->
 <script src="js/base.js"></script>
