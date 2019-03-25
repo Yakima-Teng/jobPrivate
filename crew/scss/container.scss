@@ -40,7 +40,7 @@ $main-title:#141414;
   .search-header{ float: right; margin-top: 32px;
     .icon-crew{ color: $main-color; width: 50px; background-position-x: left; padding-left: 29px; line-height: 21px}
     .search-box{ @include inline-block; border: 1px solid $main-color; padding: 8px 20px; width: 580px; box-sizing: border-box;
-      .inp-txt{ border: none; font-size: 18px;}
+      .inp-txt{ border: none; font-size: 18px; width: 500px;}
     }
     .btn-search{ @include inline-block; width: 122px; height:45px; line-height: 45px; background-color: $main-color; text-align: center; color: #fff;}
   }
