@@ -292,7 +292,7 @@ $main-title:#141414;
   .index-header{ position: absolute; left: 50%; top: 50%; margin: -196px 0 0 -171px; text-indent: -999em;
     .logo{ background: url('../images/logo-index.png') no-repeat center; width: 342px; height: 96px;}
   }
-  .index-content{ width: 1278px; height: 75px; left: 50%; top: 50%; margin: -37px 0 0 -639px; position: absolute; border: 1px solid $main-color; border-radius: 50px; background-color: rgba($color: #fff, $alpha: .43);  text-align: left;
+  .index-content{ width: 960px; height: 75px; left: 50%; top: 50%; margin: -37px 0 0 -639px; position: absolute; border: 1px solid $main-color; border-radius: 50px; background-color: rgba($color: #fff, $alpha: .43);  text-align: left;
     .btn-seach{ float: right; border-radius: 0 50px 50px 0; background-color: $main-color; text-align: center; @include inline-block; line-height: 75px; height: 75px; color: #fff; width: 207px; font-size: 30px;}
     .btn-position-tab{ @include inline-block; width: 144px; line-height: 75px; height: 75px;
       select{ background-color: transparent; border: none; line-height: 75px; height: 75px; width: 100%; outline:none; font-size: 24px; text-align: center; text-align-last: center;}
