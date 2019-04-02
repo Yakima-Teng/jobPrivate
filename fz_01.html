@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>放置TMD江湖</title>
+<link rel="stylesheet" href="">
+<style>
+.add-hero{ background-color: #f00; font-size: 14px; height: 25px; width: 200px; display: block; color: #fff; text-align: center; line-height: 25px; cursor: pointer; margin-bottom: 10px;}
+</style>
+<script src="scss/common/js/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+<div class="page">
+<dl class="boss-box">
+    <dt class="name">BOOS</dt>
+    <dd class="state">HP<em class="hp-num">1000000</em></dd>
+    <dd class="money-all">已获得金钱：<em class="money-all-num">100000</em></dd>
+</dl>
+<span class="sep">VS</span>
+</div>
+<div class="hero-box">
+    <dl class="hero-info hero-default">
+        <dt class="name">救世主</dt>
+        <dd class="state">攻击力：<em class="atk-num">5</em></dd>
+        <dd>升级所需金钱：<em class="money-num">100</em></dd>
+        <dd><button class="btn-atk">攻击</button><button class="btn-upatk">升级攻击力</button></dd>
+    </dl>
+    <dl class="hero-info hero">
+        <dt class="name">大剑勇士</dt>
+        <dd class="state">攻击力：<em class="atk-num">30</em></dd>
+        <dd>升级所需金钱：<em class="money-num">500</em></dd>
+        <dd><button class="btn-upatk">升级攻击力</button></dd>
+    </dl>
+    <dl class="hero-info hero">
+        <dt class="name">独眼射手</dt>
+        <dd class="state">攻击力：<em class="atk-num">60</em></dd>
+        <dd>升级所需金钱：<em class="money-num">500</em></dd>
+        <dd><button class="btn-upatk">升级攻击力</button></dd>
+    </dl>
+    <dl class="hero-info hero">
+        <dt class="name">暗夜刺客</dt>
+        <dd class="state">攻击力：<em class="atk-num">120</em></dd>
+        <dd>升级所需金钱：<em class="money-num">2000</em></dd>
+        <dd><button class="btn-upatk">升级攻击力</button></dd>
+    </dl>
+</div>
+<div class="box">
+<div class="add-hero">购买大剑勇士：<em class="num">100</em> 金币</div>
+<div class="add-hero">购买独眼射手：<em class="num">4000</em> 金币</div>
+<div class="add-hero">购买暗夜刺客：<em class="num">10000</em> 金币</div>
+</div>
+
+<div class="tishi"></div>
+<script>
+var addHeroATK = 0;
+$('.hero').hide();
+$('.add-hero').click(function(){
+    var indexH = $(this).index();
+    var coin = $(".money-all-num").text();
+    var buy = $(".add-hero").eq(indexH).find('.num').text();
+    if( coin >= buy) {
+        coin = coin - buy;
+        console.log(indexH);
+        $(".money-all-num").text(coin);
+        $('.hero').eq(indexH).show();
+        $(this).hide();
+        var newHeroATK = $('.hero').eq(indexH).find('.atk-num').text();
+        addHeroATK = newHeroATK;
+        return false;
+    }else{
+        $(".tishi").html('金钱不足') ;
+    }
+
+});
+
+var autoAttack = setInterval(function(){
+    var heroATK = $('.hero-default').find('.atk-num').text();
+    var boosHP = $('.boss-box').find('.hp-num').text();
+    var allMoney = $('.boss-box').find('.money-all-num').text();
+    if(boosHP<=0){
+        clearInterval(autoAttack);
+    }else{
+        var newboosHP = boosHP - heroATK - addHeroATK;
+        var newAllMoney = parseInt(allMoney) + parseInt(heroATK);
+        $('.boss-box').find('.hp-num').text(newboosHP);
+        $('.boss-box').find('.money-all-num').text(newAllMoney);
+        console.log(addHeroATK);
+    }
+}, 1000);
+
+</script>
+
+
+<script>
+$('.btn-atk').on('click',function(){
+    var heroATK = $(this).parents('.hero-info').find('.atk-num').text();
+    var boosHP = $('.boss-box').find('.hp-num').text();
+    var allMoney = $('.boss-box').find('.money-all-num').text();
+    if(boosHP<=0){
+        $(".tishi").text('BOSS已死') ;
+    }else{
+        newMoney = parseInt(allMoney) + parseInt(heroATK);
+        $('.boss-box').find('.hp-num').text(boosHP-heroATK);
+        $('.boss-box').find('.money-all-num').text(newMoney);
+
+        console.log('                                                                              ');
+        console.log('atk-heroATK:'+heroATK);
+        console.log('atk-boosHP:'+boosHP);
+        console.log('atk-allMoney:'+allMoney);
+        console.log('----------------------------------sep-----------------------------------------');
+    }
+});
+
+
+$('.btn-upatk').on('click',function(){
+    var heroATK = $(this).parents('.hero-info').find('.atk-num').text();
+    var allMoney = $('.boss-box').find('.money-all-num').text();
+    var upATKMoney = $(this).parents('.hero-info').find('.money-num').text();
+
+    //console.log('upAtk-upATKMoney:'+ upATKMoney);
+
+    if ( allMoney >= upATKMoney ) {
+        var newHeroATK = parseInt(heroATK) + 10;
+        var newAllMoney = allMoney - upATKMoney; 
+        var newUpATKMoney = parseInt(upATKMoney*1.2);
+        $(".tishi").text('升级成功') ;
+    }else {
+        $(".tishi").text('金钱不足') ;
+    };
+
+    $('.boss-box').find('.money-all-num').text(newAllMoney);
+    $(this).parents('.hero-info').find('.money-num').text(newUpATKMoney);
+    $(this).parents('.hero-info').find('.atk-num').text(newHeroATK);
+    console.log('                                                                              ');
+    console.log('upAtk-newAllMoney:'+ newAllMoney);
+    console.log('upAtk-newUpATKMoney:'+ newUpATKMoney);
+    console.log('upAtk-newHeroATK:'+ newHeroATK);
+    console.log('----------------------------------sep-----------------------------------------');
+
+});
+</script>
+</body>
+</html>
