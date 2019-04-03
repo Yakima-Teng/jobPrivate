@@ -15,9 +15,9 @@
 $main-font:#ffffff;
 $main-color:#ffd200;
 $main-white:$color_f;
-
+body{ height: 1200px;}
 //page
-.page-index{ background: url('../images/bg-page.jpg') no-repeat left top; width: 6528px; height: 1360px; display: flex; box-sizing: border-box; padding: 26px 45px 0; color: $main-white; font-size: 20px; overflow: hidden; 
+.page-index{ background: url('../images/bg-page.jpg') no-repeat left top; width: 6528px; height: 1360px; display: flex; box-sizing: border-box; padding: 26px 45px 0; color: $main-white; font-size: 20px; overflow: hidden; box-sizing: border-box; transform: scale(0.882);  margin: -81px 0 0 -386px;
   .module-title{ margin-bottom: 19px; text-align: center;}
   .static-module{ overflow: hidden; width: 2164px;}
 }
