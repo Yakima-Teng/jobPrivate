@@ -1,0 +1,18 @@
+@charset "UTF-8";
+//---------------------------------------
+//导入页面集合样式
+//---------------------------------------
+//mixin
+@import "../../scss/hourglass/scss/mixins";
+//基础内容
+@import '../../scss/common/sass/reset';
+
+//color
+
+.page-index{ background: url('../images/bg-page.jpg') no-repeat left top; width: 2400px; height: 1500px; position: relative;}
+.route-box{ width: 2400px; height: 1500px; position: absolute; left: 0; top: 0; background: no-repeat center;
+  &.reout-blue{ background-image: url('../images/bg-blue.png');}
+  &.reout-red{ background-image: url('../images/bg-red.png');}
+  &.reout-violet{ background-image: url('../images/bg-violet.png');}
+  &.reout-yellow{ background-image: url('../images/bg-yellow.png');}
+}
