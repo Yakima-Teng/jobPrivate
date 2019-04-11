@@ -13,11 +13,12 @@
 
 //color
 $main-font:#808080;
-$main-color:#0092ff;
+$main-color:#0067f4;
 $main-border:#eeecec ;
 $main-red:#e50a00 ;
-$main-blue:#0e6bd0;
+$main-blue:$main-color;
 $main-title:#141414;
+$main-gray:#aaa9a9;
 
 //default
 .icon{ @include inline-block; background: none no-repeat center;
@@ -25,24 +26,35 @@ $main-title:#141414;
   &.icon-time{ background-image:url('../images/icon-time.png'); width: 27px; height: 27px;}
   &.icon-adopt{ background-image: url('../images/icon-queding.png'); width: 17px; height: 17px;}
   &.icon-ts{ background-image: url('../images/icon-mubiao.png'); width: 25px; height: 25px;}
-  &.icon-more{ background-image: url('../images/icon-more-02.png'); width: 21px; height: 10px;}
+  &.icon-more{ background-image: url('../images/icon-more-02.png'); width: 11px; height: 5px; background-size: 100%;}
   &.icon-crew{ background-image: url('../images/icon-chuanyuan.png'); width: 19px; height: 21px;}
 }
+.btn-query{ background-color: $main-blue; color: #fff; text-align: center; @include inline-block; width: 88px; height: 30px; line-height: 30px; border-radius: 3px; cursor: pointer;}
 
-.page-index{ font-size: 18px; color: $main-font; line-height: 1.5;}
+.page-index{ font-size: 14px; color: $main-font; line-height: 1.5; background-color: #f8f8f8;
+  &.page-search{ background-color: #fff;
+    .page-header-box{ border-bottom: none;}
+  }
+  .crumbs{ margin: 20px auto; width: 1200px; color: #6c6c6c;}
+}
 .page-content{@extend .page-header; 
-  .inp-date{ width: 197px; height: 40px; border: 1px solid $main-border; font-size: 18px; padding-left: 10px; box-sizing: border-box;}
+  .inp-date{ width: 158px; height: 30px; border: 1px solid $main-border; padding-left: 10px; box-sizing: border-box; border-radius: 3px;}
 }
 .page-footer{ height: 50px;}
 //header
+.page-header-box{border-bottom: 1px solid #e5e5e4; background-color: #fff;}
 .page-header{ width: 1200px; margin: auto; 
-  .logo{ background: url('../images/logo.png') no-repeat center; width: 142px; height: 39px; text-indent: -999rem; padding: 34px 0 30px;}
+  .logo{ background: url('../images/logo.png') no-repeat center; width: 106px; height: 28px; text-indent: -999rem; padding: 34px 0 30px;}
   .search-header{ float: right; margin-top: 32px;
-    .icon-crew{ color: $main-color; width: 50px; background-position-x: left; padding-left: 29px; line-height: 21px}
-    .search-box{ @include inline-block; border: 1px solid $main-color; padding: 8px 20px; width: 580px; box-sizing: border-box;
-      .inp-txt{ border: none; font-size: 18px; width: 500px;}
+    .icon-crew{ color: $main-color; width: 50px; background-position-x: left; padding-left: 24px; line-height: 21px}
+    .search-box{ @include inline-block; border: 1px solid $main-color; padding: 5px 20px; width: 472px; box-sizing: border-box;
+      .inp-txt{ border: none; color: $main-title; width: 400px;}
     }
-    .btn-search{ @include inline-block; width: 122px; height:45px; line-height: 45px; background-color: $main-color; text-align: center; color: #fff;}
+    .btn-search{ @include inline-block; width: 81px; height:33px; line-height: 33px; font-size: 16px; background-color: $main-color; text-align: center; color: #fff;}
+  }
+  .menu{ float: right; margin-top: 38px; margin-left: 77px;
+    >a{ color: $main-gray; }
+    .sep{ @include inline-block; width: 1px; height: 14px; margin-top: -2px; background-color: $main-gray; margin: 0 10px;}
   }
 }
 //分页
@@ -58,86 +70,82 @@ $main-title:#141414;
 
 
 //banner
-.page-banner{ background: url('../images/bg-banner.jpg') no-repeat center; height: 275px; width: 100%;
-  &.banner-else{ background-image: url('../images/bg-banner-02.jpg');}
-}
-.crew-info-box{ @extend .page-header; padding: 37px 0 25px;
-  .crew-basic-info{ overflow: hidden;
-    .crew-name{ @include inline-block; color: $main-color; font-size: 36px}
-    .crew-coordinate{ @include inline-block; font-size: 14px; margin-top: 20px;
-      .icon-coordinate{ margin: -15px 12px 0 0;}
-    }
+.crew-info-box{ @extend .page-header; padding: 23px 21px 14px; background-color: #fff; box-sizing: border-box; @include clearfix; padding: 23px 21px;
+  .crew-basic-info{overflow: hidden; float: left;  }
+  .crew-img{ text-align: center; background-color: #fff; border: 1px solid #f6f6f6; border-radius: 5px; width: 99px; height: 99px; line-height: 99px;  margin-right: 20px;
+    >img{ width: 100%;}
   }
-  .crew-label{ margin-bottom: 22px;
-    .label{ @include inline-block; width: 68px; height: 22px; border:1px solid #e2e2e2; font-size: 14px; line-height: 22px; text-align: center; background-color: $main-border; margin-right: 10px;
+  .crew-name{ font-size: 22px; @include inline-block; margin: 20px 0 8px; font-weight: bold; color: $main-color;
+    .engish{ font-size: 18px;}
+  }
+  .crew-coordinate{   @include inline-block; font-size: 14px; margin-top: 20px;
+    .icon-coordinate{ margin: -15px 12px 0 0;}
+  }
+  .crew-label{ margin-bottom: 29px;
+    .label{ @include inline-block; font-size: 12px; border-radius: 3px; width: 61px; height: 22px; line-height: 22px; text-align: center; background-color: #d9e8ff; margin-right: 10px; color: #126cf0;
       &.red{ background-color: $main-red; color: #fff;}
+      &.bule{ background-color: #0383e3; color: #fff; margin-right: 20px;}
+      &.green{ background-color: #14a3d2; color: #fff; margin-right: 20px;}
     }
   }
-  .crew-info-img{ 
-    .img-box{ border: 1px solid; border-image: linear-gradient( #89deff, #0193ff) 30 30; @include inline-block; padding: 2px 3px; background-color: #fff;
+  .crew-info-img{ background-color: #f5f9ff; margin-left: 120px; padding:13px 0 13px 26px;
+    .authentication-box{ font-size: 16px; @include inline-block; margin-right: 20px;
+      .zt{color: $main-blue;}
+    }
+    .img-box-authent{ margin-right: 0; @include inline-block; font-size: 16px;
+      .txt{@include inline-block; line-height: 1; color: $main-font; margin-left: 10px; margin-right:45px;}
+    }
+    .img-box{ border: 1px solid $main-border; background-color: #fff; @include inline-block; 
       &:first-child{ padding: 0;}
     }
   }
-}
-.banner-else .crew-info-box{ @include clearfix; padding: 34px 0 18px;
-  .crew-basic-info{ float: left; margin-right: 16px; width: 210px;
-    .crew-img{ text-align: center; background-color: #fff; border: 1px solid $main-border; width: 198px; height: 140px; line-height: 140px; margin-bottom: 10px;}
-    .crew-name{ font-size: 30px;
-      .engish{ font-size: 20px;}
-    }
-    .crew-coordinate{ margin-top: 8px; display: block;}
-  }
-  .crew-detailed-info{ float: left; width: calc( 100% - 226px );}
-  .crew-info-img{ background-color: rgba($color: #ffffff, $alpha: 0.75); border: 1px solid #fff; padding: 30px 30px 24px; box-sizing: border-box;
-    .authentication-box,
-    .img-box-authent{ @include inline-block; color: $main-title; margin-right: 10px; }
-    .img-box-authent{ margin-right: 0;
-      .txt{@include inline-block; line-height: 1; color: $main-font; font-size: 14px; margin-right: 10px; margin-left:25px;}
-      .img-box{width: 183px; height: 114px; box-sizing: border-box; text-align: center;}
-    }
-  }
-  .crew-info-basis{ color: $main-title;
-    .info-txt{ float: left;  font-size: 18px; line-height: 38px;}
+  .crew-info-basis{ color: $main-title; background-color: #f5f9ff; margin-left: 120px; padding: 11px 30px; box-sizing: border-box;
+    .info-txt{ float: left;  line-height: 24px; margin-right: 20px; margin-top: 20px;}
     .info-chart{ position: relative;
-      .chart-box{ float: left; text-align: center; font-size: 20px;
-        .chart{ background: url('../images/bg-number.png') no-repeat center; width: 122px; height: 126px; line-height: 126px; font-size:34px; color: $main-color; margin-right: 7px;}
-        &:last-child{ position: absolute; right: -30px; bottom: -30px;
-          .chart{ background: none; width: 305px; height: 240px;}
-          .txt{ margin-top: -10px;}
+      .chart-box{ float: left; text-align: center; margin-right: 30px;
+        .chart{ background: url('../images/bg-number.png') no-repeat center; width: 107px; height: 107px; line-height: 107px; font-size:28px; color: #def1ff; margin-bottom: 10px;}
+        &:last-child{ position: absolute; right: -30px; bottom: -14px; background-color: #fff; margin-right: 0;
+          .chart{ background: none; width: 330px; height: 268px;}
+          .txt{ margin-top: -20px; }
         }
       }
     }
   }
 }
-
-//nav
-.page-nav{ @extend .page-header; position: relative; margin: 30px auto;
-  .nav-list{ width: 106px; height: 31px; @include inline-block; line-height: 31px; text-align: center; position: relative; z-index: 1;
-    &.cur{ background-color:#e8f4fd; color: $main-color; }
-  } 
-  &:after{ content:''; display: block; position: absolute; width: 100%; height: 1px; background-color: $main-border; bottom: 0; z-index: 0;}
+.page-content-box{@extend .page-header; background-color: #fff; margin-top: 20px; padding-bottom: 10px;
+  .content-basis-info,
+  .content-train-info{ padding: 0 50px;}
 }
-.schedule-growup{@extend .page-header; position: relative; margin-bottom: 44px;
-  &:before{ content:''; background-color: $main-color; width: 100%; height: 2px; display: block; position: absolute; top: 51px; left: 0;}
-  .schedule{ @include inline-block; border-radius: 50%; background-color: $main-color; text-align: center; color: #fff; font-size:26px; width: 102px; height: 102px; float: left; margin-right: 44px; line-height: 1.1em; padding-top: 20px; box-sizing: border-box; position: relative; z-index: 1;
-    &:first-child{ background: url('../images/bg-chengzhang.png') no-repeat center #fff; width: 130px; height: 141px; color: $main-color; margin-top: -18px; box-sizing: border-box; padding: 36px 0 0 24px;}
-    &.default{}
+//nav
+.page-nav{ @extend .page-header; position: relative; margin: auto; font-size: 16px;  margin-bottom: 38px;
+  .nav-list{ width: 120px; height: 51px; @include inline-block; line-height: 51px; text-align: center; position: relative; z-index: 1; box-sizing: border-box;
+    a{ color: $main-title;}
+    &.cur{ color: $main-color; background-color: #fff; border: 1px solid #9f9e9e; border-bottom: none; font-weight: bold; }
+    &:first-child.cur{ border-left: none;}
+  } 
+  &:after{ content:''; display: block; position: absolute; width: 100%; height: 1px; background-color: #9f9e9e; bottom: 0; z-index: 0;}
+}
+.schedule-growup{@extend .page-header; position: relative; margin: 51px 0; box-sizing: border-box; padding:0 75px;
+  &:before{ content:''; background-color: $main-color; width: 83%; height: 2px; display: block; position: absolute; top: 45px; left: 50%; margin-left: -40%}
+  .schedule{ @include inline-block; border-radius: 50%; background-color: $main-color; text-align: center; color: #fff; font-size:20px; width: 90px; height: 90px; float: left; margin-right: 37px; line-height: 1.1em; padding-top: 20px; box-sizing: border-box; position: relative; z-index: 1;
+    &:first-child{ background: url('../images/bg-chengzhang.png') no-repeat center #fff; width: 111px; height: 123px; color: $main-color; margin-top: -18px; box-sizing: border-box; padding: 36px 0 0 24px;}
+    &.old{ background-color: $main-border; color: $main-font;}
   }
-  &:after{ content: ''; display:block; background: url('../images/icon-more-01.png') no-repeat center; width: 14px; height: 12px; position: absolute; right: -1px; top: 46px;}
+  &:after{ content: ''; display:block; background: url('../images/icon-more-01.png') no-repeat center; width: 14px; height: 12px; position: absolute; right: 75px; top: 40px;}
 }
 //content
 .content-growup{ position: relative; 
-  &:before{content:''; display: block; width: 1px; height: 100%;  position: absolute; left: 18px; border-right:1px dashed $main-border;  top: 0; z-index: 0;}
+  &:before{content:''; display: block; width: 1px; height: 100%;  position: absolute; left: 118px; border-right:1px dashed $main-border;  top: 0; z-index: 0;}
   .growup{ overflow: hidden; margin-bottom: 32px;
     .position-cur{ float: left; line-height: 39px; width: 113px; color: $main-blue; font-weight: bold; margin-top: 4px;
       .sequence{ margin-top: -3px; @include inline-block; width: 39px; height: 39px; background-color: $main-blue; border-radius: 50%; text-align: center; color: #fff; margin-right: 20px;  position: relative; z-index: 1;}
     }
-    .info{ float: left; width: calc( 100% - 113px ); border: 1px solid $main-border; padding:16px 0 15px 13px; position: relative; box-sizing: border-box; border-radius: 3px;
+    .info{ float: left; width: calc( 100% - 45px ); border: 1px solid $main-border; padding:16px 0 15px 13px; position: relative; box-sizing: border-box; border-radius: 3px;
       &:before{content:''; display: inline-block; background: url('../images/icon-sep-01.png') no-repeat center; width: 8px; height: 10px; position: absolute; left: -8px; top: 19px;}
     }
     &:first-child{
       .position-cur{ font-weight: normal; color: $main-font; margin-top: 0;}
-      .info{ border: none; padding: 0; 
+      .info{ border: none; padding: 0;  width: calc( 100% - 113px );
         &:before{ display: none;}
       }
     }
@@ -151,11 +159,11 @@ $main-title:#141414;
     }
   }
 }
-.content-growup-else{ @extend .content-growup;
+.content-growup-else{ @extend .content-growup; padding: 0 100px; box-sizing: border-box;
   &:before{ border-right-color: $main-color; border-right-width: 2px;}
-  .growup{ margin-bottom: 37px;
-    .position-cur{ border-radius: 50%; border:1px solid $main-color; width: 14px; height: 14px; padding: 2px; overflow: hidden; box-sizing: border-box; margin-left: 13px; margin-top: 56px;
-      .yuan{ background-color: $main-color; display: block; width: 8px; height: 8px; border-radius: 50%; margin: auto;}
+  .growup{ margin-bottom: 37px; position: relative; z-index: 5;
+    .position-cur{ border-radius: 50%; border:1px solid $main-color; background-color: #fff; width: 14px; height: 14px; padding: 2px; overflow: hidden; box-sizing: border-box; margin-left: 13px; margin-top: 56px;
+      .yuan{ background-color: $main-color; display: block; width: 8px; height: 8px; border-radius: 50%; margin: auto; }
     }
     .info{ background-color:#f6f5f5; margin-left: 17px; font-size: 16px; line-height: 2em; border:none;
       &:before{ background: none;width:0; height:0; border-top:10px solid transparent; border-bottom:10px solid transparent; border-right:9px solid #f6f5f5;}
@@ -165,7 +173,7 @@ $main-title:#141414;
       .position-cur{ width: 113px; height: 39px; padding: 0; border: none 0; border-radius:0; margin: 0;
         .sequence{ margin-top: -3px; @include inline-block; width: 39px; height: 39px; background-color: $main-blue; border-radius: 50%; text-align: center; color: #fff; margin-right: 20px;  position: relative; z-index: 1;}
       }
-      .info{ border: none; padding: 0; background-color: #fff; margin: 0;
+      .info{ border: none; padding: 0; background-color: #fff; margin-top: 4px; margin-left: 0;
         &:before{ display: none;}
       }
     }
@@ -174,28 +182,29 @@ $main-title:#141414;
 .content-growup-time{ @extend .content-growup-else;
   .info em,
   .info a{ color: $main-color;
-    &.sep{ margin: 0 10px; color: $main-font;}
+    &.sep{ margin: 0 10px; color: $main-border;}
   }
-  .btn-ts{ color: #fff!important; background-color: $main-color; @include inline-block; width: 116px; height: 40px; border-radius: 3px; text-align: center; line-height: 40px; font-size: 18px; margin-top: -4px; margin-left: 20px;
-    .icon-ts{ margin-right: 10px;}
+  .btn-ts{ color: #fff!important; background-color: $main-color; @include inline-block; width: 116px; height: 30px; border-radius: 3px; text-align: center; line-height: 30px; font-size: 18px; margin-top: -4px; margin-left: 20px; 
+    .icon-ts{ margin-right: 10px; margin-top: -3px;}
   }
   .sep{ margin: 0 10px; color: $main-font;}
 }
 .content-basis-info{@extend .content-growup-else;
   &:before{ display: none;}
-  .basis-box{ margin-bottom: 50px; color: $main-title; line-height: 2em; overflow: hidden;
-    p{ width: 50%; float: left;}
+  .basis-box{ margin-bottom: 20px; color: $main-title; line-height: 2em; overflow: hidden;
+    th{ background-color: #f8f8f8; text-align: left; width: 113px; padding-left: 22px;}
+    td{ padding-left: 15px;}
+    td:nth-child(2n){ width: 390px;}
   }
-  .title-info{ background-image: linear-gradient(90deg,$main-border, #fff); line-height: 50px; height: 50px; color: $main-title; margin-bottom: 30px;
-    .icon-more{ margin: -3px 20px 0 30px;}
+  .title-info{ background: url('../images/bg-title.png') no-repeat left center #e1e1e1; font-size: 16px; line-height: 35px; height: 35px; color: $main-title; margin-bottom: 30px; overflow: hidden; padding-left: 30px; font-weight: 300;
+    .icon-more{ float: right; margin: 15px 30px 0 0;}
   }
 }
 .content-certificate-info{ @extend .content-basis-info;
-  .certificate-box{ margin-bottom: 40px; overflow: hidden;
-    .certificate-list{ border:1px solid $main-color; float: left; width: 294px; height: 80px; border-radius: 3px; box-sizing: border-box; margin-right: 8px; overflow: hidden;
-      &:nth-child(4n){ margin-right: 0;}
+  .certificate-box{ margin-bottom: 10px; overflow: hidden;
+    .certificate-list{ border:1px solid $main-color; float: left; width: 294px; height: 80px; border-radius: 3px; box-sizing: border-box; margin:0 28px 10px 0; overflow: hidden; color: $main-color;
       .icon-depar{ border: 1px solid $main-color; border-radius: 50%; width: 51px; height: 51px; box-sizing: border-box; line-height: 49px; text-align: center; color: $main-color; margin: 14px 15px 0 20px; float: left;}
-      .depar-name{ color: $main-color; overflow: hidden; margin: 2px 6px 0 0;
+      .depar-name{ color: $main-color; overflow: hidden; margin: 6px 6px 0 0;
         .time{ float: right; font-size: 12px; @include inline-block; border: 1px solid $main-font; padding: 0 3px; color: $main-font; margin-top: 9px; }
         >em{ @include inline-block;}
       }
@@ -207,7 +216,7 @@ $main-title:#141414;
         }
         &.txt{ margin-top: 9px;}
       }
-      &.overdue{ position: relative; border-color: lighten($color: $main-color, $amount: 33%);
+      &.overdue{ position: relative; border-color: lighten($color: $main-color, $amount: 33%); color: $main-font;
         .icon-depar{ border-color: lighten($color: $main-color, $amount: 33%); color: lighten($color: $main-color, $amount: 33%);}
         .depar-name{  margin: 2px 6px 0 0; font-size: 17px; color: lighten($color: $main-color, $amount: 33%);;
           .time{ border: none; padding: 0; }
@@ -221,46 +230,43 @@ $main-title:#141414;
 .content-train-info{@extend .content-growup-else;
   &:before{ display: none;}
   .title-screen{ overflow: hidden; line-height: 40px; margin-bottom: 15px;
-    .sep-zhi{ margin: 0 10px;}
+    .sep-zhi{ margin: 0 10px; color: $main-border;}
     .tab-btn{ float: right; color: $main-title;
       .cur{ color: $main-color;}
       >em{cursor: pointer;}
-      .sep{ @include inline-block; margin: -8px 5px 0;}
+      .sep{ @include inline-block; margin: -4px 5px 0;}
     }
+    .btn-query{ margin-left: 10px; margin-top: -5px;}
   }
-  .table-main{ background-color: #fff; font-size: 20px;
+  .table-main{ background-color: #fff; font-size: 16px; margin-bottom: 50px;
     tr{
-      th{ padding: 25px 0;}
-      td{ padding: 17px 0;
+      th{ padding: 11px 0; background-color: #f6f5f5!important;}
+      td{ padding: 11px 0;
         &:first-child{ text-align: center;}
       }
-      &:nth-child(odd){ background-color: #f6f5f5;}
+      &:nth-child(odd){ background-color: #fbfbfb;}
     }
   }
 }
 .content-exam-info{@extend .content-train-info;
   .table-main{ margin-bottom: 25px;
     tr{
-      &:nth-child(even){ background-color: #f6f5f5;}
+      &:nth-child(even){ background-color: #fbfbfb;}
       &:nth-child(odd){ background-color: #fff;}
-      th:first-child{ background-color: #f6f5f5; }
+      th:first-child{ background-color: #fbfbfb; }
     }
   }
 }
 .content-seniority-info{@extend .content-train-info;
   .table-main tr{
-    th{ padding: 13px 0;}
+    th{ padding: 0; height: 56px; line-height: 1.1em;}
   }
 }
 .content-agent-info{@extend .content-train-info;}
-.content-illegal-info{ @extend .content-exam-info;
-  .table-main tr{
-    th{ padding: 15px 0;}
-  }
-}
+.content-illegal-info{ @extend .content-exam-info;}
 .content-search-list{ @extend .page-header;
-  .search-list{ border-bottom: 1px solid $main-border; padding-bottom: 40px; overflow: hidden; margin-bottom: 40px;
-    .user-label{ float: right; width: 70px*3 + 30px*2; margin-top: 40px;
+  .search-list{ border-bottom: 1px solid $main-border; padding-bottom: 30px; overflow: hidden; margin-bottom: 40px;
+    .user-label{ float: right; width: 70px*3 + 30px*2; 
       .label{ @include inline-block; margin: 0 30px 19px 0; width: 70px; height: 24px; line-height: 24px; text-align: center; color: $main-title; background-color: $main-border; font-size: 14px;
         &:nth-child(3n){ margin-right: 0;}
         &.red{ background-color: $main-red; color: #fff;}
@@ -271,11 +277,12 @@ $main-title:#141414;
         .level{ position: absolute; left: 0; top: 0; color: #fff; background-color: $main-color; text-align: center; width: 44px; height: 20px; line-height: 20px; }
         .icon-hot{ position: absolute; background-image: url('../images/bg-hot.png'); width: 50px; height: 23px; box-sizing: border-box; line-height: 19px; padding-left: 5px; color: #fff; margin-top: 5px; margin-left: -5px;} 
       }
-      .user-name{ float: left; color: $main-color; font-size: 24px; margin-left: 40px; margin-top: 34px;
-        .user-birthday{ display: block; color: $main-title; font-size: 18px; margin-top: 15px;}
+      .user-name{ float: left; color: $main-color; font-size: 24px; margin-left: 67px;
+        .user-birthday,
+        .user-sex{ display: block; color: $main-title; font-size: 18px; margin-top: 15px;}
       }
     }
-    .else{margin-top: 30px; margin-left: 80px; float: left;
+    .else{ margin-left: 80px; float: left; font-size: 18px;
       .txt{ color: $main-title; margin-top: 12px; }
     }
     &:last-child{ border-bottom: none;}
@@ -288,15 +295,25 @@ $main-title:#141414;
   }
 }
 
-.html-index{ height: 100%; width: 100%; background: url('../images/bg-index.jpg') no-repeat center top #082366; background-size: 100%; 
-  .index-header{ position: absolute; left: 50%; top: 50%; margin: -196px 0 0 -171px; text-indent: -999em;
-    .logo{ background: url('../images/logo-index.png') no-repeat center; width: 342px; height: 96px;}
+.html-index{ height: 100%; width: 100%; background: url('../images/bg-index.jpg') no-repeat center top #082366; background-size: 100%; font-size:16px; 
+  .index-header{ position: absolute; left: 50%; top: 50%; margin: -112px 0 0 -115px; text-indent: -999em;
+    .logo{ background: url('../images/logo-index.png') no-repeat center; width: 230px; height: 60px; background-size: 100%;}
   }
-  .index-content{ width: 960px; height: 75px; left: 50%; top: 50%; margin: -37px 0 0 -639px; position: absolute; border: 1px solid $main-color; border-radius: 50px; background-color: rgba($color: #fff, $alpha: .43);  text-align: left;
-    .btn-seach{ float: right; border-radius: 0 50px 50px 0; background-color: $main-color; text-align: center; @include inline-block; line-height: 75px; height: 75px; color: #fff; width: 207px; font-size: 30px;}
-    .btn-position-tab{ @include inline-block; width: 144px; line-height: 75px; height: 75px;
-      select{ background-color: transparent; border: none; line-height: 75px; height: 75px; width: 100%; outline:none; font-size: 24px; text-align: center; text-align-last: center;}
+  .index-content{ width: 900px; height: 53px; left: 50%; top: 50%; margin: -28px 0 0 -450px; position: absolute; border: 1px solid #fff; border-radius: 28px; background-color: rgba($color: #fff, $alpha: .19);  text-align: left; box-sizing: border-box; z-index: 10;
+    .btn-seach{ float: right; border-radius: 0 28px 28px 0; background-color: #fff; text-align: center; @include inline-block; line-height: 51px; height: 51px; color: #002070; width: 146px; font-size: 20px;}
+    .btn-position-tab{ display: inline-block; width: 94px; color: #fff; position: relative; cursor: pointer; margin-left: 22px; padding-right: 5px; padding-top: 1px;
+      .current{display: block; line-height: 51px; height: 51px; text-align: center; 
+        &:before{content: ''; display: block; position: absolute; right:15px; top:24px; width:0; height:0; border-width:4px 4px 0; border-style:solid; border-color:#fff transparent transparent;}
+        &.cur{background-color: rgba($color: #084a9c, $alpha: .93);}
+      }
+      .select{display: none; padding: 0 5px; background-color: rgba($color: #084a9c, $alpha: .93); text-align: center; height: 98px; overflow: hidden;
+        .xuanze{ border-bottom: 1px dashed rgba($color: #fff, $alpha: .2); display: block; line-height: 32px; height: 32px;}
+      }
+      &:before{ content: ''; display: block; position: absolute; width: 1px; height: 25px; background-color: #fff; right: 0; top: 13px; }
     }
-    .inp-txt{ background-color: transparent; border: none; font-size:24px; width: 800px;  }
+    .inp-txt{ position: absolute; background-color: transparent; border: none; width: 600px; margin-top: 16px; margin-left: 10px; color: #fff; font-size:16px; }
   }
-}
+  .hot-serch{width: 900px; color: #fff; position: absolute; left: 50%; top: 50%; margin: 50px 0 0 -450px; z-index: 5;
+    a{color: #fff;}
+  }
+} 

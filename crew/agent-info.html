@@ -17,23 +17,30 @@
 <!--page-index-->
 <div class="page-index">
 <!--page-header-->
+<div class="page-header-box">
 <div class="page-header">
+<div class="menu"><a href="">VIP服务</a><em class="sep"></em><a href="">登录</a><em class="sep"></em><a href="">免费注册</a></div>
+<div class="search-header"><i class="icon icon-crew">船员</i><span class="search-box"><input type="text" class="inp-txt" placeholder="船员关键词" /></span><a href="javascript:void(0);" class="btn-search">搜 索</a></div>
 <h1 class="logo">海e搜</h1>
 </div>
+</div>
 <!--/page-header-->
+<div class="crumbs"><span>首页</span> &gt; <span>船员搜索</span> &gt; <span>张辉</span></div>
 <!--page-banner-->
 <div class="page-banner banner-else">
 <div class="crew-info-box">
-  <div class="crew-basic-info"><h3 class="crew-img"><img src="images/bg-user.png" alt="" /></h3><h2 class="crew-name">张 辉 <em class="engish">（Zhang Hui）</em></h2><span class="crew-coordinate"><i class="icon icon-coordinate"></i>新加坡：103°E,1°N</span></div>
+  <div class="crew-basic-info"><h3 class="crew-img"><img src="images/bg-user.png" alt="" /></h3></div>
   <div class="crew-detailed-info">
+    <h2 class="crew-name">张 辉 <em class="engish">（Zhang Hui）</em></h2>
+    <span class="crew-coordinate"><i class="icon icon-coordinate"></i>新加坡：103°E,1°N</span>
     <div class="crew-label">
       <span class="label">男</span>
       <span class="label">公安认证</span>
       <span class="label">航海院校</span>
       <span class="label">国际</span>
       <span class="label">二副</span>
-      <span class="label">特免</span>
-      <span class="label">在船</span>
+      <span class="label bule">特免</span>
+      <span class="label green">在船</span>
       <span class="label red">限制出境</span>
     </div>
     <div class="crew-info-basis clearfix">
@@ -66,6 +73,7 @@
 </div>
 </div>
 <!--/page-banner-->
+<div class="page-content-box page-content-info">
 <!--page-nav-->
 <div class="page-nav">
   <a href="grow-up.html" class="nav-list">成长轨迹</a>
@@ -83,7 +91,7 @@
 <div class="page-content content-agent-info">
   <div class="title-screen">
     <span class="tab-btn"><em class="btn-table cur">表格</em><i class="sep">|</i><em class="btn-list">列表</em></span>
-    时间：<input class="laydate-icon inp-date" value="2019-6-20" /><em class="sep-zhi">——</em><input class="laydate-icon inp-date" value="2019-6-20" />
+    时间：<input class="laydate-icon inp-date" value="2019-6-20" /><em class="sep-zhi">——</em><input class="laydate-icon inp-date" value="2019-6-20" /><span class="btn-query">查询</span>
   </div>
   <div class="table-main agent-table">
     <table border="1" cellpadding="0" cellspacing="0" bordercolor="#e2e2e2" width="100%">
@@ -151,6 +159,7 @@
   </div>
 </div>
 <!--/page-content-->
+</div>
 <div class="page-footer"></div>
 </div>
 <!--/page-index-->
@@ -180,14 +189,14 @@ indicator: [
 ],
 splitArea: {
     areaStyle: {
-        color: ['rgba(2, 147, 255, 1)',
-        'rgba(2, 147, 255, 0.77)', 'rgba(2, 147, 255, 0.47)',
-        'rgba(2, 147, 255, 0.32)', 'rgba(2, 147, 255, 0.17)']
+        color: ['rgba(0, 103, 244, 0.95)',
+        'rgba(0, 103, 244, 0.75)', 'rgba(0, 103, 244, 0.45)',
+        'rgba(0, 103, 244, 0.30)', 'rgba(0, 103, 244, 0.15)']
     }
 },
 axisLine: {
     lineStyle: {
-        color: 'rgba(2, 147, 255, 1)'
+        color: 'rgba(0, 103, 244, 0.18)'
     }
 },
 splitLine: {
@@ -204,13 +213,13 @@ data : [
         symbolSize: 0,
         areaStyle: {
             normal: {
-                color: 'rgba(2, 147, 255, 0.74)'
+                color: 'rgba(0, 103, 244, 0.42)'
             }
         },
         lineStyle: {
             normal: {
                 type: 'solid',
-                color:'rgba(2, 147, 255, 1)'
+                color:'rgba(0, 103, 244, 0.80)'
             }
         }
     }
