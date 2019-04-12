@@ -118,7 +118,7 @@ $main-gray:#aaa9a9;
 }
 //nav
 .page-nav{ @extend .page-header; position: relative; margin: auto; font-size: 16px;  margin-bottom: 38px;
-  .nav-list{ width: 120px; height: 51px; @include inline-block; line-height: 51px; text-align: center; position: relative; z-index: 1; box-sizing: border-box;
+  .nav-list{ width: 120px; height: 40px; @include inline-block; line-height: 40px; text-align: center; position: relative; z-index: 1; box-sizing: border-box;
     a{ color: $main-title;}
     &.cur{ color: $main-color; background-color: #fff; border: 1px solid #9f9e9e; border-bottom: none; font-weight: bold; }
     &:first-child.cur{ border-left: none;}
