@@ -11,6 +11,7 @@ lay('.inp-date').each(function(){
 $('.hot-serch').find('a').on('click', function(){
   var aTxt = $(this).text();
   $('.index-content').find('.inp-txt').val(aTxt);
+  
 });
 $('.btn-position-tab').find('.current').on('click',function(){
   $('.current').addClass('cur');
@@ -20,6 +21,7 @@ $('.select').find('.xuanze').on('click',function(){
   var curTxt = $(this).text();
   $('.btn-position-tab').find('.current').text(curTxt).removeClass('cur');
   $('.select').hide();
+  $(this).css('color','#00c6ff').siblings().removeAttr('style');
 });
 
 })();
