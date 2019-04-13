@@ -54,7 +54,9 @@ html{background-color: #f8f8f8;}
     .btn-search{ @include inline-block; width: 80px; height:33px; line-height: 33px; font-size: 16px; background-color: $main-color; text-align: center; color: #fff;}
   }
   .menu{ float: right; margin-top:16px; margin-left: 57px;
-    >a{ color: $main-gray; }
+    >a{ color: $main-gray; 
+      &:hover{ color: $main-hover;}
+    }
     .sep{ @include inline-block; width: 1px; height: 14px; margin-top: -2px; background-color: $main-gray; margin: 0 10px;}
   }
 }
