@@ -1,10 +1,10 @@
 !function(win) {
                 function resize() {
                     var domWidth = domEle.getBoundingClientRect().width;
-                    if(domWidth / v > 640){
-                        domWidth = 640 * v;
+                    if(domWidth / v > 750){
+                        domWidth = 750 * v;
                     }
-                    win.rem = domWidth / 16;
+                    win.rem = domWidth / 18.75;
                     domEle.style.fontSize = win.rem + "px";
                 }
                 var v, initial_scale, timeCode, dom = win.document, domEle = dom.documentElement, viewport = dom.querySelector('meta[name="viewport"]'), flexible = dom.querySelector('meta[name="flexible"]');
