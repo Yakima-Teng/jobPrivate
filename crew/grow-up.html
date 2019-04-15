@@ -10,6 +10,7 @@
 <meta name="Keywords" content="" />
 <link rel="stylesheet" href="css/container.css" />
 <script src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
 <script src="js/laydate/laydate.js"></script>
 <title>海事-船员-成长轨迹</title>
 </head>
@@ -31,16 +32,42 @@
 <div class="crew-info-box">
   <div class="crew-basic-info"><h3 class="crew-img"><img src="images/bg-user.png" alt="" /></h3><div class="div-seat"></div></div>
   <div class="crew-detailed-info">
-    <h2 class="crew-name">张 辉 <em class="engish">（Zhang Hui）</em></h2><span class="crew-coordinate"><i class="icon icon-coordinate"></i>新加坡：103°E,1°N</span>
+    <h2 class="crew-name">张 辉 <em class="engish">（Zhang Hui）</em></h2><span class="crew-coordinate"><i class="icon icon-coordinate"></i><em class="coordinate">新加坡：103°E,1°N</em></span>
     <div class="crew-label">
       <span class="label">男</span>
-      <span class="label">公安认证</span>
+      <span class="label police-confirm">公安认证</span>
       <span class="label">航海院校</span>
       <span class="label">国际</span>
       <span class="label">二副</span>
       <span class="label bule">特免</span>
       <span class="label green">在船</span>
       <span class="label red">限制出境</span>
+    </div>
+    <div class="crew-info-basis clearfix">
+      <div class="info-txt">
+        <p class="txt">身份证号：32010219850526321X</p>
+        <p class="txt">注册机构：山东海事局</p>
+        <p class="txt">注册时间：2013-02-01</p>
+        <p class="txt">居住地址：南京市鼓楼区中央大街3422号</p>
+      </div>
+      <div class="info-chart clearfix">
+        <dl class="chart-box">
+          <dt class="chart"><em class="num"></em>33.8</dt>
+          <dd class="txt">年 龄</dd>
+        </dl>
+        <dl class="chart-box">
+          <dt class="chart"><em class="num"></em>3</dt>
+          <dd class="txt">本年度记分</dd>
+        </dl>
+        <dl class="chart-box">
+          <dt class="chart"><em class="num"></em>33.8</dt>
+          <dd class="txt">综合评分</dd>
+        </dl>
+        <dl class="chart-box">
+          <dt class="chart" id="container-radar"></dt>
+          <dd class="txt">同级人员对比</dd>
+        </dl>
+      </div>
     </div>
     <div class="crew-info-img">
       <div class="authentication-box">

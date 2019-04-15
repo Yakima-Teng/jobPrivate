@@ -84,8 +84,9 @@ html{background-color: #f8f8f8;}
   .crew-name{ font-size: 20px; @include inline-block; margin: 20px 0 0px; font-weight: bold; color: $main-color;
     .engish{ font-size: 18px;}
   }
-  .crew-coordinate{   @include inline-block; font-size: 12px; margin-top: 20px;
-    .icon-coordinate{ margin:-4px 10px 0 7px;}
+  .crew-coordinate{ @include inline-block; font-size: 12px; margin-top: 20px;
+    .icon-coordinate{ margin:-4px 10px 0 7px; cursor: pointer;}
+    
   }
   .crew-label{ margin-bottom: 10px; overflow: hidden;
     .label{ display: block; float: left; font-size: 12px; border-radius: 3px; width: 61px; height: 22px; line-height: 22px; text-align: center; background-color: #d9e8ff; margin-right: 10px; color: $main-hover; cursor: pointer;
@@ -95,7 +96,7 @@ html{background-color: #f8f8f8;}
       &:hover{ background-color: $main-hover; color: #fff;}
     }
   }
-  .crew-info-img{ background-color: #f5f9ff; padding:13px 0 13px 26px;
+  .crew-info-img{ background-color: #f5f9ff; padding:13px 0 13px 26px; display: none;
     .authentication-box{ font-size: 14px; @include inline-block; margin-right: 20px;
       .zt{color: $main-blue;}
     }
@@ -204,9 +205,11 @@ html{background-color: #f8f8f8;}
 }
 .content-growup-time{ @extend .content-growup-else;
   .info em,
-  .info a{ color: $main-color;
+  .info a{ color: $main-color; cursor: pointer;
     &.sep{ margin: 0 10px; color: $main-border;}
+    &:hover{ color: darken($color: $main-hover, $amount: 10%) ;}
   }
+  
   .btn-ts{ color: #fff!important; background-color: $main-color; @include inline-block; width: 116px; height: 30px; border-radius: 3px; text-align: center; line-height: 30px; font-size: 18px; margin-top: -4px; margin-left: 20px; 
     .icon-ts{ margin-right: 10px; margin-top: -3px;}
   }
