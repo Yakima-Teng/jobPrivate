@@ -42,7 +42,7 @@ html{background-color: #f8f8f8;}
 .page-content{@extend .page-header; 
   .inp-date{ width: 158px; height: 30px; border: 1px solid $main-border; padding-left: 10px; box-sizing: border-box; border-radius: 3px;}
 }
-.page-footer{ height: 27px; background-color: #fff; margin-top: 10px; position: fixed; bottom: 0; width: 100%; left: 0;}
+.page-footer{ height: 37px; background-color: #fff; margin-top: 10px; position: fixed; bottom: 0; width: 100%; left: 0; z-index: 10;}
 //header
 .page-header-box{border-bottom: 1px solid #e5e5e4; background-color: #fff;}
 .page-header{ width: 990px; margin: auto; 
