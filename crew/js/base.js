@@ -8,14 +8,17 @@ lay('.inp-date').each(function(){
 })();
 
 !$('.btn-position-tab').length > 0 || (function () {
+
 $('.hot-serch').find('a').on('click', function(){
   var aTxt = $(this).text();
   $('.index-content').find('.inp-txt').val(aTxt);
-  
 });
-$('.btn-position-tab').find('.current').on('click',function(){
+$('.btn-position-tab').hover(function(){
   $('.current').addClass('cur');
   $('.select').show();
+},function(){
+  $('.current').removeClass('cur');
+  $('.select').hide();
 });
 $('.select').find('.xuanze').on('click',function(){
   var curTxt = $(this).text();
@@ -26,15 +29,13 @@ $('.select').find('.xuanze').on('click',function(){
 
 })();
 
+
 !$('.police-confirm').length > 0 || (function () {
-$('.police-confirm').on('click',function(){
+ $('.police-confirm').on('click',function(){
     var allframe = $(this).parents('.crew-detailed-info');
     allframe.find('.crew-info-img').show();
     allframe.find('.crew-info-basis').hide();
-});
-})();
-
-!$('.police-confirm').length > 0 || (function () {
+ });
  $('.title-info').next().hide();
  $('.title-info').toggle(function(){
     $(this).next().show();
@@ -42,6 +43,9 @@ $('.police-confirm').on('click',function(){
  },function(){
     $(this).next().hide();
     $(this).find('.icon-more').removeAttr('style');
+ });
+ $('.crew-coordinate').on('click',function(){
+    $('.mask-box,.layer-box').show();
  });
 })();
 
@@ -52,12 +56,12 @@ var appRadar = {};
 option = null;
 option = {
 radar: {
-radius: 80,
+radius: 70,
 name: {
     textStyle: {
         color: '#141414',
         borderRadius: 3,
-        padding: [-18, -10]
+        padding: [-10, -10]
     }
 },
 indicator: [

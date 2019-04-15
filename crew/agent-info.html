@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="css/container.css" />
 <script src="js/jquery-1.7.2.min.js"></script>
 <script src="js/laydate/laydate.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
 <title>海事-船员-委托代办</title>
 </head>
 <body>
@@ -171,73 +172,9 @@
 </div>
 <div class="page-footer"></div>
 </div>
+<div class="mask-box"></div>
+<div class="layer-box"></div>
 <!--/page-index-->
 <script src="js/base.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
-<script type="text/javascript">
-var domRadar = document.getElementById("container-radar");
-var myChartRadar = echarts.init(domRadar);
-var appRadar = {};
-option = null;
-option = {
-radar: {
-radius: 80,
-name: {
-    textStyle: {
-        color: '#141414',
-        borderRadius: 3,
-        padding: [-12, -10]
-    }
-},
-indicator: [
-    { name: '年龄', max: 6500},
-    { name: '航龄', max: 52000},
-    { name: '航程', max: 38000},
-    { name: '记分', max: 30000},
-    { name: '晋级速率', max: 16000}
-],
-splitArea: {
-    areaStyle: {
-        color: ['rgba(0, 103, 244, 0.95)',
-        'rgba(0, 103, 244, 0.75)', 'rgba(0, 103, 244, 0.45)',
-        'rgba(0, 103, 244, 0.30)', 'rgba(0, 103, 244, 0.15)']
-    }
-},
-axisLine: {
-    lineStyle: {
-        color: 'rgba(0, 103, 244, 0.18)'
-    }
-},
-splitLine: {
-    lineStyle: {
-        color: 'rgba(255, 255, 255, 0)'
-    }
-}
-},
-series: [{
-type: 'radar',
-data : [
-    {
-        value : [4300, 10000, 28000, 3500, 5000],
-        symbolSize: 0,
-        areaStyle: {
-            normal: {
-                color: 'rgba(0, 103, 244, 0.42)'
-            }
-        },
-        lineStyle: {
-            normal: {
-                type: 'solid',
-                color:'rgba(0, 103, 244, 0.80)'
-            }
-        }
-    }
-]
-}]
-};;
-if (option && typeof option === "object") {
-    myChartRadar.setOption(option, true);
-}
-</script>
 </body>
 </html>
