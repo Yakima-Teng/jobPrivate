@@ -32,9 +32,17 @@ $('.police-confirm').on('click',function(){
     allframe.find('.crew-info-img').show();
     allframe.find('.crew-info-basis').hide();
 });
-$('.icon-coordinate').on('click',function(){
-    //$(this).next('.coordinate').show();
-});
+})();
+
+!$('.police-confirm').length > 0 || (function () {
+ $('.title-info').next().hide();
+ $('.title-info').toggle(function(){
+    $(this).next().show();
+    $(this).find('.icon-more').css('transform','rotate(-180deg)');
+ },function(){
+    $(this).next().hide();
+    $(this).find('.icon-more').removeAttr('style');
+ });
 })();
 
 !$('#container-radar').length > 0 || (function () {
@@ -49,7 +57,7 @@ name: {
     textStyle: {
         color: '#141414',
         borderRadius: 3,
-        padding: [-12, -10]
+        padding: [-18, -10]
     }
 },
 indicator: [

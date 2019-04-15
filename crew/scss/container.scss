@@ -24,7 +24,7 @@ html{background-color: #f8f8f8;}
 //default
 .icon{ @include inline-block; background: none no-repeat center;
   &.icon-coordinate{ background-image: url('../images/icon-map.png'); width: 17px; height: 17px; background-size: 100%;}
-  &.icon-time{ background-image:url('../images/icon-time.png'); width: 27px; height: 27px;}
+  &.icon-time{ background-image:url('../images/icon-time.png'); width: 13px; height: 13px;}
   &.icon-adopt{ background-image: url('../images/icon-queding.png'); width: 17px; height: 17px;}
   &.icon-ts{ background-image: url('../images/icon-mubiao.png'); width: 25px; height: 25px;}
   &.icon-more{ background-image: url('../images/icon-more-02.png'); width: 11px; height: 5px; background-size: 100%;}
@@ -41,7 +41,7 @@ html{background-color: #f8f8f8;}
 .page-content{@extend .page-header; 
   .inp-date{ width: 158px; height: 30px; border: 1px solid $main-border; padding-left: 10px; box-sizing: border-box; border-radius: 3px;}
 }
-.page-footer{ height: 50px;}
+.page-footer{ height: 27px; background-color: #fff; margin-top: 10px;}
 //header
 .page-header-box{border-bottom: 1px solid #e5e5e4; background-color: #fff;}
 .page-header{ width: 990px; margin: auto; 
@@ -74,21 +74,21 @@ html{background-color: #f8f8f8;}
 
 //banner
 .crew-detailed-info{ width: 880px; float: right;}
-.crew-info-box{ @extend .page-header; background-color: #fff; box-sizing: border-box; @include clearfix; padding: 10px;
+.crew-info-box{ @extend .page-header; background-color: #fff; box-sizing: border-box; @include clearfix; padding: 10px; overflow: hidden;
   .crew-basic-info{overflow: hidden; float: left; 
     .div-seat{ height:120px;}
   }
   .crew-img{ text-align: center; background-color: #fff; border: 1px solid #f6f6f6; border-radius: 5px; width: 70px; height: 70px;  margin-right: 20px; padding: 2px; box-sizing: border-box;
     >img{ width: 100%;}
   }
-  .crew-name{ font-size: 20px; @include inline-block; margin: 20px 0 0px; font-weight: bold; color: $main-color;
+  .crew-name{ font-size: 20px; @include inline-block; font-weight: bold; color: $main-color; line-height: 1em;
     .engish{ font-size: 18px;}
   }
-  .crew-coordinate{ @include inline-block; font-size: 12px; margin-top: 20px;
+  .crew-coordinate{ @include inline-block; font-size: 12px;
     .icon-coordinate{ margin:-4px 10px 0 7px; cursor: pointer;}
     
   }
-  .crew-label{ margin-bottom: 10px; overflow: hidden;
+  .crew-label{ margin: 10px 0; overflow: hidden; 
     .label{ display: block; float: left; font-size: 12px; border-radius: 3px; width: 61px; height: 22px; line-height: 22px; text-align: center; background-color: #d9e8ff; margin-right: 10px; color: $main-hover; cursor: pointer;
       &.red{ background-color: $main-red; color: #fff;}
       &.bule{ background-color: #0383e3; color: #fff; margin-right: 20px;}
@@ -114,7 +114,7 @@ html{background-color: #f8f8f8;}
       .chart-box{ float: left; text-align: center; margin-right: 30px;
         .chart{ background: url('../images/bg-number.png') no-repeat center; margin: auto; background-size: 100%; width: 62px; height: 62px; line-height: 62px; font-size:16px; color: #def1ff; margin-bottom: 10px;}
         &:last-child{ position: absolute; right: -30px; bottom: -14px; background-color: #fff; margin-right: 0;
-          .chart{ background: none; width: 316px; height: 200px;}
+          .chart{ background: none; width: 316px; height:180px;}
           .txt{ margin-top: -20px; }
         }
       }
@@ -126,7 +126,7 @@ html{background-color: #f8f8f8;}
   .content-train-info{ padding: 0 20px;}
 }
 //nav
-.page-nav{ @extend .page-header; position: relative; margin: auto; font-size: 16px;  margin-bottom: 10px;@include clearfix;
+.page-nav{ @extend .page-header; position: relative; margin: auto; font-size: 15px;  margin-bottom: 10px;@include clearfix;
   .nav-list{ width: 110px; height: 40px; display: block; float: left; line-height: 40px; text-align: center; position: relative; z-index: 1; box-sizing: border-box;color: $main-title;
     &:after{ content: ''; display: block; width: 1px; height: 22px; position: absolute; top: 7px; right: -1px; background-color: #9f9e9e; z-index: 0;}
     &.cur{ color: $main-color; background-color: #fff; border: 1px solid #9f9e9e; border-bottom: none; font-weight: bold; }
@@ -139,7 +139,7 @@ html{background-color: #f8f8f8;}
   } 
   &:before{ content:''; display: block; position: absolute; width: 100%; height: 1px; background-color: #9f9e9e; bottom: 0; z-index: 0;}
 }
-.schedule-growup{@extend .page-header; position: relative; margin: 51px 0; box-sizing: border-box; padding:0 37px;
+.schedule-growup{@extend .page-header; position: relative; margin: 34px 0 25px; box-sizing: border-box; padding:0 37px;
   &:before{ content:''; background-color: $main-color; width: 82%; height: 2px; display: block; position: absolute; top: 32px; left: 50%; margin-left: -40%}
   .schedule{ @include inline-block; text-align: center; color: #fff; font-size:18px; width: 66px; height: 66px; float: left; margin-right: 37px; line-height: 1.1em; padding-top: 14px; box-sizing: border-box; position: relative; z-index: 1; cursor: pointer;
     &:after{ display: none; content: ''; border: 1px solid $main-color; width: 80px; height: 80px; border-radius: 50%; top: 50%; left: 50%; margin: -22px 0 0 -8px; background-color: #fff;}
@@ -147,7 +147,7 @@ html{background-color: #f8f8f8;}
     &:hover{
       &:after{ display: block;}
     }
-    &:first-child{ background: url('../images/bg-chengzhang.png') no-repeat center #fff; width: 97px; height: 107px; color: $main-color; margin-top: -18px; padding: 30px 0 0 24px; cursor: default; 
+    &:first-child{ background: url('../images/bg-chengzhang.png') no-repeat center #fff; background-size: 100%; box-sizing: border-box; width: 82px; height: 91px; color: $main-color; margin-top: -11px; padding: 23px 0 0 17px; cursor: default; 
       &:after{ display: none;}
     }
     &.old{cursor: default;
@@ -186,16 +186,16 @@ html{background-color: #f8f8f8;}
 .content-growup-else{ @extend .content-growup; padding: 0 45px; box-sizing: border-box;
   &:before{ border-right-color: $main-color; border-right-width: 2px;}
   .growup{ margin-bottom: 12px; position: relative; z-index: 5;
-    .position-cur{ border-radius: 50%; border:1px solid $main-color; background-color: #fff; width: 14px; height: 14px; padding: 2px; overflow: hidden; box-sizing: border-box; margin-left: 13px; margin-top: 37px;
+    .position-cur{ border-radius: 50%; border:1px solid $main-color; background-color: #fff; width: 14px; height: 14px; padding: 2px; overflow: hidden; box-sizing: border-box; margin-left: 13px; margin-top: 5px;
       .yuan{ background-color: $main-color; display: block; width: 8px; height: 8px; border-radius: 50%; margin: auto; }
     }
-    .info{ background-color:#f6f5f5; margin-left: 17px; border:none;
+    .info{ background-color:#f6f5f5; margin-left: 44px; border:none;
       &:before{ background: none;width:0; height:0; border-top:10px solid transparent; border-bottom:10px solid transparent; border-right:9px solid #f6f5f5;}
     }
     .time{ margin-left: 45px; color: $main-color; font-size: 16px; margin-bottom: 4px;}
     &:first-child{margin-bottom: 8px;
       .position-cur{ width: 92px; height: 39px; padding: 0; border: none 0; border-radius:0; margin: 0;
-        .sequence{ margin-top: -3px; @include inline-block; width: 39px; height: 39px; background-color: $main-blue; border-radius: 50%; text-align: center; color: #fff; margin-right: 10px;  position: relative; z-index: 1;}
+        .sequence{ margin-top: -3px; @include inline-block;  width: 39px; height: 39px; background-color: $main-blue; border-radius: 50%; text-align: center; color: #fff; margin-right: 10px;  position: relative; z-index: 1;}
       }
       .info{ border: none; padding: 0; background-color: #fff; margin-top: 4px; margin-left: 0;
         &:before{ display: none;}
@@ -265,7 +265,7 @@ html{background-color: #f8f8f8;}
     }
     .btn-query{ margin-left: 10px; margin-top: -5px;}
   }
-  .table-main{ background-color: #fff; font-size: 16px; margin-bottom: 50px;
+  .table-main{ background-color: #fff; margin-bottom: 50px;
     tr{
       th{ padding: 6px 0; background-color: #f6f5f5!important;}
       td{ padding: 6px 0;
@@ -292,7 +292,7 @@ html{background-color: #f8f8f8;}
 .content-agent-info{@extend .content-train-info;}
 .content-illegal-info{ @extend .content-exam-info;}
 .content-search-list{ @extend .page-header;
-  .search-list{ border-bottom: 1px solid $main-border; padding-bottom: 15px; overflow: hidden; margin-bottom: 20px;
+  .search-list{ border-bottom: 1px solid $main-border; padding-bottom: 7px; overflow: hidden; margin-bottom: 10px;
     .user-label{ float: right; width: 70px*3 + 30px*2;  font-size: 12px;
       .label{ @include inline-block; margin: 0 10px 5px 0; width: 70px; height: 24px; line-height: 24px; text-align: center; color: $main-title; background-color: $main-border;
         &:nth-child(3n){ margin-right: 0;}
@@ -305,12 +305,12 @@ html{background-color: #f8f8f8;}
         .icon-hot{ position: absolute; background-image: url('../images/bg-hot.png'); background-size: 100%; width: 38px; height: 17px; box-sizing: border-box; line-height: 15px; padding-left: 5px; color: #fff; margin-top: 5px; margin-left: -5px;} 
         >img{ width: 100%;}
       }
-      .user-name{ float: left; color: $main-color; font-size: 22px; margin-left:103px;
+      .user-name{ float: left; color: $main-color; font-size: 18px; margin-left:103px;
         .user-birthday,
         .user-sex{ display: block; color: $main-title; font-size: 14px;}
       }
     }
-    .else{ margin-left: 40px; float: left; margin-top: 12px;
+    .else{ margin-left: 40px; float: left; margin-top: 4px;
       .txt{ color: $main-title; margin-bottom: 1px;}
     }
     &:last-child{ border-bottom: none;}
