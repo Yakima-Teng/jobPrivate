@@ -10,6 +10,21 @@
 <link rel="stylesheet" href="css/container.css" />
 <script src="js/jquery-1.9.1.min.js"></script>
 <title> </title>
+<script type="text/javascript">
+if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){
+  if(window.location.href.indexOf("?mobile")<0){
+    try{
+      if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){
+        window.location.href="index-wap.html"; //触屏手机版地址
+      }else if(/iPad/i.test(navigator.userAgent)){
+        window.location.href="index-wap.html"  //pad版地址
+      }else{
+        window.location.href="index-wap.html" //普通手机版地址
+      }
+    }catch(e){}
+  }
+}
+</script>
 </head>
 <body>
 <!--page-index-->
