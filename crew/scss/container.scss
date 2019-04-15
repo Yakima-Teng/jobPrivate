@@ -29,6 +29,7 @@ html{background-color: #f8f8f8;}
   &.icon-ts{ background-image: url('../images/icon-mubiao.png'); width: 25px; height: 25px;}
   &.icon-more{ background-image: url('../images/icon-more-02.png'); width: 11px; height: 5px; background-size: 100%;}
   &.icon-crew{ background-image: url('../images/icon-chuanyuan.png'); width: 19px; height: 21px;}
+  &.icon-cross{ background-image: url('../images/icon-cross.png'); width: 16px; height:16px;}
 }
 .btn-query{ background-color: $main-blue; color: #fff; text-align: center; @include inline-block; width: 88px; height: 30px; line-height: 30px; border-radius: 3px; cursor: pointer;}
 
@@ -353,5 +354,8 @@ html{background-color: #f8f8f8;}
   }
 } 
 
-.mask-box{ @include layer-bg( .3); display: none;}
-.layer-box{ @include layer-box(400px, 200px); display: none; background-color: #fff;}
+.mask-box{ @include layer-bg( .23); display: none;}
+.layer-box{ @include layer-box(990px, 471px); border:1px solid #fff; box-sizing: border-box; display: none; background-color: #fff;
+  .title{ height: 40px; line-height: 40px;  padding: 0 30px; width: 100%;box-sizing: border-box; color: #fff; background-color: rgba(0, 0, 0, .26); position: absolute; left: 0; top:0; font-size: 14px;}
+  .icon-cross{ position: absolute; right: 24px; top:12px; z-index: 2; cursor: pointer;}
+}

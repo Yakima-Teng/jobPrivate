@@ -29,6 +29,12 @@ $('.select').find('.xuanze').on('click',function(){
 
 })();
 
+!$('.icon-cross').length > 0 || (function () {
+$('.icon-cross').on('click',function(){
+$(this).parents('.layer-box').hide();
+$('.mask-box').hide();
+});
+})();
 
 !$('.police-confirm').length > 0 || (function () {
  $('.police-confirm').on('click',function(){
