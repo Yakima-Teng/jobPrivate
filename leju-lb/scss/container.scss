@@ -35,10 +35,10 @@ h4.sum-title{ margin: 54px 0 30px; font-size: 32px; color: #8f9199; letter-spaci
 //header
 .page-header{ position:relative;
     .info-main{background:url('../images/banner.jpg') no-repeat center top ; height:1090px; position: relative; }
-    .info{ width: 777px; background-color: rgba($color: #fff, $alpha: .3);  padding: 22px 40px; left: 50%; top: 50%; margin: -10px 0 0 -567px; color: #fff; position: absolute; box-sizing: border-box; font-size: 20px; text-indent: 2em; line-height: 2em;}
+    .info{ width: 777px; background-color: rgba($color: #fff, $alpha: .3);  padding: 10px 40px; left: 50%; top: 50%; margin: 58px 0 0 -567px; color: #fff; position: absolute; box-sizing: border-box; font-size: 20px; text-indent: 2em; line-height: 2em;}
     .banner-title{ position: absolute; left: 50%; margin-left: -468px;
-        &.banner-title-t{ top: 230px;}
-        &.banner-title-b{ top: 370px; margin-left: -460px;}
+        &.banner-title-t{ top: 254px;}
+        &.banner-title-b{ top: 404px; margin-left: -460px;}
     }
 }
 //footer 
