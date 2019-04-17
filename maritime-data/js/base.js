@@ -1,5 +1,5 @@
 $(function(){
-$('.data-rescue .module-info .soujiu .huan').animate({ backgroundPositionY:2},1500);
+$('.data-rescue .module-info .soujiu .huan').animate({ backgroundPositionY:32},1500);
 $('.goods-box .info .icon-yuan .sep').eq(0).animate({ height:190},2000);
 $('.goods-box .info .icon-yuan .sep').eq(1).animate({ height:80},2000);
 $('.goods-box .info .icon-yuan .sep').eq(2).animate({ height:40},2000);
