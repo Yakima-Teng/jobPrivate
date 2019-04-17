@@ -20,46 +20,39 @@ $violet:#e800cf;
 //color
 html{ width: 100%; height: 100%; overflow: hidden; position: relative;}
 .page-index{ background: url('../images/bg-page.jpg') no-repeat left top; width: 1920px; height: 1080px; position: relative;}
-.route-box{ width: 1920px; height: 1080px; position: absolute; left: 0; top: 0; background: no-repeat center;
+.route-box{ width: 1920px; height: 1080px; position: absolute; left: 0; top: 0; background: no-repeat center; display: none;
   &.reout-blue{ background-image: url('../images/bg-blue.png');}
   &.reout-red{ background-image: url('../images/bg-red.png');}
   &.reout-violet{ background-image: url('../images/bg-violet.png');}
   &.reout-yellow{ background-image: url('../images/bg-yellow.png');}
 }
 
-.coordpath{width: 15px; height: 15px; @include inline-block; position: absolute; z-index: 99; border-radius: 50%; left: -953px; top: -532.5px; 
-  &.coordpath-red{background-color: $red;animation-fill-mode: forwards; }
-  &.coordpath-violet{background-color: $violet; animation-fill-mode: forwards;}
-  &.coordpath-blue{background-color: $blue; animation-fill-mode: forwards;}
-  &.coordpath-yellow{background-color: $yellow; animation-fill-mode: forwards;}
+.coordpath{width: 15px; height: 15px; box-shadow: 0 0 10px rgb(219, 242, 255); @include inline-block; position: absolute; z-index: 99; border-radius: 50%; left: -953px; top: -532.5px; overflow: hidden;
+  &:before{ content: ''; display: block;width: 15px; height: 15px; border-radius: 50%; background-color: #fff; position: absolute; top: 0px; left: 0px; animation: in .5s infinite linear } 
+  &.coordpath-red{ animation-fill-mode: forwards; }
+  &.coordpath-violet{ animation-fill-mode: forwards;}
+  &.coordpath-blue{ animation-fill-mode: forwards;}
+  &.coordpath-yellow{  animation-fill-mode: forwards;}
 }
-// .animation-box{ display: block; width: 100%; height: 100%; background-color: transparent; position: absolute; left: 0; top: 0;
-//   &.animation-yellow-01{z-index: 20;}
-//   &.animation-yellow-02{z-index: 19;}
-//   &.animation-yellow-03{z-index: 18;}
-//   &.animation-red-01{z-index: 17;}
-//   &.animation-red-02{z-index: 16;}
-//   &.animation-red-03{z-index: 15;}
-//   &.animation-violet-01{z-index: 14;}
-//   &.animation-blue-01{z-index: 13;}
-//   &.animation-blue-02{z-index: 12;}
-//   &.animation-blue-03{z-index: 11;}
 
-// }
+.coordpath-red-01{ -webkit-animation:coordpath-red-01 2000ms; left: 953px; top: 532.5px; }
+.coordpath-red-02{ -webkit-animation:coordpath-red-02 2000ms; left: 953px; top: 532.5px; }
+.coordpath-red-03{ -webkit-animation:coordpath-red-03 2000ms; left: 953px; top: 532.5px;}
+.coordpath-violet-01{ -webkit-animation:coordpath-violet-01 3000ms; left: 953px; top: 532.5px; }
+.coordpath-blue-01{ -webkit-animation:coordpath-blue-01 500ms; left: 953px; top: 532.5px; }
+.coordpath-blue-02{-webkit-animation:coordpath-blue-02 500ms; left: 953px; top: 532.5px;}
+.coordpath-blue-03{ -webkit-animation:coordpath-blue-03 500ms; left: 953px; top: 532.5px;}
+.coordpath-yellow-01{ -webkit-animation:coordpath-yellow-01 2000ms;  left: 953px; top: 532.5px;}
+.coordpath-yellow-02{ -webkit-animation:coordpath-yellow-02 2000ms; left: 953px; top: 532.5px;}
+.coordpath-yellow-03{ -webkit-animation:coordpath-yellow-03 2000ms; left: 953px; top: 532.5px;}
+.coordpath-yellow-04{ -webkit-animation:coordpath-yellow-04 2000ms; left: 953px; top: 532.5px;}
+.coordpath-yellow-05{ -webkit-animation:coordpath-yellow-05 2000ms; left: 953px; top: 532.5px;}
+.coordpath-yellow-06{ -webkit-animation:coordpath-yellow-06 2000ms; left: 953px; top: 532.5px;}
+.coordpath-yellow-07{ -webkit-animation:coordpath-yellow-07 2000ms; left: 953px; top: 532.5px;}
+.coordpath-yellow-08{ -webkit-animation:coordpath-yellow-08 2000ms; left: 953px; top: 532.5px;}
 
-
-.coordpath-red-01{ -webkit-animation:coordpath-red-01 5000ms; left: 953px; top: 532.5px; }
-.coordpath-red-02{ -webkit-animation:coordpath-red-02 5000ms; left: 953px; top: 532.5px; }
-.coordpath-red-03{ -webkit-animation:coordpath-red-03 5000ms; left: 953px; top: 532.5px;}
-.coordpath-violet-01{ -webkit-animation:coordpath-violet-01 10000ms; left: 953px; top: 532.5px; }
-.coordpath-blue-01{ -webkit-animation:coordpath-blue-01 2000ms; left: 953px; top: 532.5px; }
-.coordpath-blue-02{-webkit-animation:coordpath-blue-02 2000ms;left: 953px; top: 532.5px; }
-.coordpath-blue-03{ -webkit-animation:coordpath-blue-03 2000ms;left: 953px; top: 532.5px; }
-.coordpath-yellow-01{ -webkit-animation:coordpath-yellow-01 4000ms; left: 953px; top: 532.5px; }
-.coordpath-yellow-02{ -webkit-animation:coordpath-yellow-02 4000ms; left: 953px; top: 532.5px; }
-.coordpath-yellow-03{ -webkit-animation:coordpath-yellow-03 4000ms;left: 953px; top: 532.5px; }
-.coordpath-yellow-04{ -webkit-animation:coordpath-yellow-04 4000ms;left: 953px; top: 532.5px; }
-.coordpath-yellow-05{ -webkit-animation:coordpath-yellow-05 4000ms;left: 953px; top: 532.5px; }
-.coordpath-yellow-06{ -webkit-animation:coordpath-yellow-06 4000ms;left: 953px; top: 532.5px; }
-.coordpath-yellow-07{ -webkit-animation:coordpath-yellow-07 5000ms;left: 953px; top: 532.5px; }
-.coordpath-yellow-08{ -webkit-animation:coordpath-yellow-08 5000ms;left: 953px; top: 532.5px; }
+@keyframes in {
+  0%{ opacity: .5;}
+  50%{ opacity: 1;}
+  100%{ opacity: .5;}
+}
