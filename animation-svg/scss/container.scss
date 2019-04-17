@@ -27,7 +27,7 @@ html{ width: 100%; height: 100%; overflow: hidden; position: relative;}
   &.reout-yellow{ background-image: url('../images/bg-yellow.png');}
 }
 
-.coordpath{width: 15px; height: 15px; box-shadow: 0 0 10px rgb(219, 242, 255); @include inline-block; position: absolute; z-index: 99; border-radius: 50%; left: -953px; top: -532.5px; overflow: hidden;
+.coordpath{width: 15px; height: 15px; box-shadow: 0 0 10px rgb(219, 242, 255); @include inline-block; position: absolute; z-index: 99; border-radius: 50%; left: 953px; top: 532.5px; overflow: hidden; z-index: -1;
   &:before{ content: ''; display: block;width: 15px; height: 15px; border-radius: 50%; background-color: #fff; position: absolute; top: 0px; left: 0px; animation: in .5s infinite linear } 
   &.coordpath-red{ animation-fill-mode: forwards; }
   &.coordpath-violet{ animation-fill-mode: forwards;}
@@ -35,21 +35,22 @@ html{ width: 100%; height: 100%; overflow: hidden; position: relative;}
   &.coordpath-yellow{  animation-fill-mode: forwards;}
 }
 
-.coordpath-red-01{ -webkit-animation:coordpath-red-01 2000ms; left: 953px; top: 532.5px; }
-.coordpath-red-02{ -webkit-animation:coordpath-red-02 2000ms; left: 953px; top: 532.5px; }
-.coordpath-red-03{ -webkit-animation:coordpath-red-03 2000ms; left: 953px; top: 532.5px;}
-.coordpath-violet-01{ -webkit-animation:coordpath-violet-01 3000ms; left: 953px; top: 532.5px; }
-.coordpath-blue-01{ -webkit-animation:coordpath-blue-01 500ms; left: 953px; top: 532.5px; }
-.coordpath-blue-02{-webkit-animation:coordpath-blue-02 500ms; left: 953px; top: 532.5px;}
-.coordpath-blue-03{ -webkit-animation:coordpath-blue-03 500ms; left: 953px; top: 532.5px;}
-.coordpath-yellow-01{ -webkit-animation:coordpath-yellow-01 2000ms;  left: 953px; top: 532.5px;}
-.coordpath-yellow-02{ -webkit-animation:coordpath-yellow-02 2000ms; left: 953px; top: 532.5px;}
-.coordpath-yellow-03{ -webkit-animation:coordpath-yellow-03 2000ms; left: 953px; top: 532.5px;}
-.coordpath-yellow-04{ -webkit-animation:coordpath-yellow-04 2000ms; left: 953px; top: 532.5px;}
-.coordpath-yellow-05{ -webkit-animation:coordpath-yellow-05 2000ms; left: 953px; top: 532.5px;}
-.coordpath-yellow-06{ -webkit-animation:coordpath-yellow-06 2000ms; left: 953px; top: 532.5px;}
-.coordpath-yellow-07{ -webkit-animation:coordpath-yellow-07 2000ms; left: 953px; top: 532.5px;}
-.coordpath-yellow-08{ -webkit-animation:coordpath-yellow-08 2000ms; left: 953px; top: 532.5px;}
+.coordpath-red-01{ -webkit-animation:coordpath-red-01 3000ms; z-index: 1; }
+.coordpath-red-02{ -webkit-animation:coordpath-red-02 3000ms; z-index: 1; }
+.coordpath-red-03{ -webkit-animation:coordpath-red-03 3000ms; z-index: 1;}
+.coordpath-violet-01{ -webkit-animation:coordpath-violet-01 4500ms; z-index: 1; }
+.coordpath-blue-01{ -webkit-animation:coordpath-blue-01 750ms; z-index: 1; }
+.coordpath-blue-02{-webkit-animation:coordpath-blue-02 750ms; z-index: 1;}
+.coordpath-blue-03{ -webkit-animation:coordpath-blue-03 750ms; z-index: 1;}
+.coordpath-yellow-01{ -webkit-animation:coordpath-yellow-01 3000ms; z-index: 1;}
+.coordpath-yellow-02{ -webkit-animation:coordpath-yellow-02 3000ms; z-index: 1;}
+.coordpath-yellow-03{ -webkit-animation:coordpath-yellow-03 3000ms; z-index: 1;}
+.coordpath-yellow-04{ -webkit-animation:coordpath-yellow-04 3000ms; z-index: 1;}
+.coordpath-yellow-05{ -webkit-animation:coordpath-yellow-05 3000ms; z-index: 1;}
+.coordpath-yellow-06{ -webkit-animation:coordpath-yellow-06 3000ms; z-index: 1;}
+.coordpath-yellow-07{ -webkit-animation:coordpath-yellow-07 3000ms; z-index: 1;}
+.coordpath-yellow-08{ -webkit-animation:coordpath-yellow-08 3000ms; z-index: 1;}
+.coordpath-yellow-09{ -webkit-animation:coordpath-yellow-00 1000ms; z-index: 1;}
 
 @keyframes in {
   0%{ opacity: .5;}

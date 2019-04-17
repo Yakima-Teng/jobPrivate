@@ -4,10 +4,13 @@ $('.page-index').toggle(function(){
   $('.coordpath-yellow').eq(0).addClass('coordpath-yellow-01');
   $('.coordpath-yellow').eq(1).addClass('coordpath-yellow-02');
 },function(){
-  $('.coordpath-yellow').eq(2).addClass('coordpath-yellow-03');
-  $('.coordpath-yellow').eq(3).addClass('coordpath-yellow-04');
-  $('.coordpath-yellow').eq(4).addClass('coordpath-yellow-05');
-  $('.coordpath-yellow').eq(5).addClass('coordpath-yellow-06');
+  $('.coordpath-yellow').eq(8).addClass('coordpath-yellow-09');
+  setTimeout(function(){
+    $('.coordpath-yellow').eq(2).addClass('coordpath-yellow-03');
+    $('.coordpath-yellow').eq(3).addClass('coordpath-yellow-04');
+    $('.coordpath-yellow').eq(4).addClass('coordpath-yellow-05');
+    $('.coordpath-yellow').eq(5).addClass('coordpath-yellow-06');
+  },1000);
 },function(){
   $('.coordpath-yellow').eq(6).addClass('coordpath-yellow-07');
   $('.coordpath-yellow').eq(7).addClass('coordpath-yellow-08');
