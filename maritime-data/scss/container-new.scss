@@ -341,3 +341,74 @@ body{ height: 1200px;}
   .txt{ @include inline-block; margin-left: 60px;}
 } 
 .container-ttl-txt{ position: absolute; left: 50%; top:40px; margin-left: -40px;}
+
+//page-2
+.deployment-module-box{ background: url('../images/bg-module-l-two.png') no-repeat left top; width: 1567px; box-sizing: border-box; padding: 69px 41px 63px 60px;}
+.jurisdiction-module-box{width: 2162px; box-sizing: border-box; padding: 20px 0 0 20px; position: relative;
+  &:after{content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; background: url('../images/bg-module-c-two.png') no-repeat left bottom; z-index: 5;}
+  .map-box{ position: relative; overflow: hidden; width: 2122px;}
+  .nav{ position: absolute; bottom: 0; left: 0; background-color: rgba($color: #000000, $alpha: .42); width: 100%; text-align: center; padding:36px 0; z-index: 10;
+    .btn{ border-right: #fff solid 1px; font-size: 22px; color: #fff; padding-right: 46px; margin-right: 50px;
+      &:hover,
+      &.cur{ color: #00b3ff;}
+      &:last-child{ border:none; padding-right: 0; margin-right: 0;}
+    }
+  }
+}
+.resumption-module-box{background: url('../images/bg-module-r-two.png') no-repeat left top; width: 1900px; box-sizing: border-box; padding: 50px 28px 40px 42px;
+  header.title{ background: url('../images/bg-title-two.png') no-repeat left top; font-size: 18px; padding: 2px 0 0 52px; height: 46px; box-sizing: border-box;}
+  .details-box{ background-color: rgba($color: #001be9, $alpha: .29);}
+}
+.work-focus-box{
+  .title{ border:1px solid #7ecef4; padding: 5px; background-color: #0a1679; box-sizing: border-box; width: 411px; height: 76px; margin: auto; position: relative; z-index: 1;
+    h2{ background-color:#0158e7; text-align: center; line-height: 65px; font-size: 34px}
+  }
+  .main{ border: 1px solid #7ecef4; padding-top: 56px; margin-top: -38px;font-size: 28px;
+    .tr{ height: 124px; line-height: 124px; 
+      .th{ @include inline-block; width: 208px; border-right: 1px dashed rgba($color: #0158e7, $alpha: .86); text-align: center;}
+      .td{ @include inline-block; padding: 0 20px;  box-sizing: border-box; @include singleline-truncate(); width: calc(100% - 210px)}
+      &:nth-child(odd){ background-color: rgba($color: #0060ff, $alpha: .15); }
+    }
+  }
+}
+.pople-beonduty-box{ @extend .work-focus-box; margin-top: 40px;
+  .tr-1{ height: 124px; text-align: center; line-height: 124px;
+    .th,
+    .td{ @include inline-block; width: 25%; border-right: 1px dashed rgba($color: #0158e7, $alpha: .86); box-sizing: border-box; height: 124px;}
+    .th{ background-color: rgba($color: #0060ff, $alpha: .15); }
+  }
+}
+.inspect-box{ margin-bottom: 18px;
+  .sum-title{ font-size: 16px; margin-bottom: 17px;}
+  .details-box{ padding: 5px 37px 24px 28px;}
+  .details-main{ display: flex; justify-content:space-between; margin-top: 29px;}
+  .txt{ text-align: center; font-size:19px; 
+    >span{ @include inline-block; margin-left: 75px;
+      &:first-child{ margin-left: none;}
+    }
+    .num{ font-size:31px; color: #ffd200;}
+  }
+  .details-chart{ background-color: rgba($color: #062ed1, $alpha: .5); width: 756px; height: 443px; box-sizing: border-box; padding: 20px;}
+  .details-info{ background-color: rgba($color: #062ed1, $alpha: .5); font-size: 14px; width: 984px; box-sizing: border-box; padding: 24px 63px 30px 36px;
+    .txt-info{ margin-left: 26px; height: 50px; line-height: 50px; padding:0 20px 0 59px; @include singleline-truncate(); width: auto; box-sizing: border-box;  
+      span{ color:#ffd200;}
+      &:nth-child(even){ background-color: rgba($color: #c6e0fd, $alpha: .05); }
+    }
+  }
+}
+.punish-box{ font-size: 18px;
+  .details-box{ display: flex; justify-content: space-between;}
+  .details-box{ padding: 19px 27px 29px 34px;}
+  .number-box{ overflow: hidden; width: 416px;
+    .main{ background-color: #042ed5; width: 129px; height: 143px; float: left; margin-right: 14px; text-align: center;
+      >dt{ background: url('../images/bg-mian-title-two.png') no-repeat center bottom; padding: 33px 0 20px; margin-bottom: 20px;}
+      &:first-child{ width: 100%; margin-bottom: 28px; margin-right: 0; box-sizing: border-box; padding-left:200px; position: relative;
+        >dt{ background-image: url('../images/bg-mian-title-two-01.png'); }
+        &:before{ content: ''; display: block; position: absolute; background: url('../images/icon-temperature-two.png') no-repeat left center; width: 146px; height: 50px; top: 50%; margin-top: -25px; left: 35px;}
+      }
+      &:last-child{ margin-right: 0;}
+    }
+  }
+  #container-FS,
+  #container-FB{ width: 654px; background-color: rgba($color: #0340e6, $alpha: .5); height: 314px; box-sizing: border-box; padding:15px 15px 0 15px;}
+}
