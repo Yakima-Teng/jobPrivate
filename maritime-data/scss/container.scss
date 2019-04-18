@@ -17,7 +17,7 @@ $main-color:#ffd200;
 $main-white:$color_f;
 body{ height: 1200px;}
 //page
-.page-index{ background: url('../images/bg-page.jpg') no-repeat left top; width: 6528px; height: 1360px; display: flex; box-sizing: border-box; padding: 26px 45px 0; color: $main-white; font-size: 20px; overflow: hidden; box-sizing: border-box; transform: scale(0.882);  margin: -81px 0 0 -386px;
+.page-index{ background: url('../images-old/bg-page.jpg') no-repeat left top; width: 6528px; height: 1360px; display: flex; box-sizing: border-box; padding: 26px 45px 0; color: $main-white; font-size: 20px; overflow: hidden; box-sizing: border-box; transform: scale(0.882);  margin: -81px 0 0 -386px;
   .module-title{ margin-bottom: 19px; text-align: center;}
   .static-module{ overflow: hidden; width: 2164px;}
 }
@@ -34,7 +34,7 @@ body{ height: 1200px;}
   .module-title-son{ margin-left: 64px; padding-top: 7px; font-weight: normal; font-size: 20px;}
   .static-data{ overflow: hidden;}
 }
-.static-right{@extend .static-left; background: url('../images/bg-center-01.png') no-repeat center top; width: 801px; float: right;
+.static-right{@extend .static-left; background: url('../images-old/bg-center-01.png') no-repeat center top; width: 801px; float: right;
   .module-title-son{ text-align: right; margin-right: 69px; }
   .number-list{ margin: 0 44px 25px; border-bottom: 1px solid #0b4591; padding-bottom: 60px;
     &.num-ship{  margin-top: -15px;}
@@ -42,20 +42,20 @@ body{ height: 1200px;}
   }
   .title{ font-size: 40px; margin-left: 8px; line-height: 1em;}
 }
-.supervise-right{ float: right; width: 1225px; background: url('../images/bg-right-03.png') no-repeat left top; overflow: hidden; box-sizing: border-box; padding:0 0 74px 64px;}
+.supervise-right{ float: right; width: 1225px; background: url('../images-old/bg-right-03.png') no-repeat left top; overflow: hidden; box-sizing: border-box; padding:0 0 74px 64px;}
 .supervise-module{ 
   .module-title-son{ text-align: right; padding:7px 61px 0 0;}
 }
 //main
-.data-jurisdiction{ background: url('../images/bg-left-01.png') no-repeat center top; overflow: hidden; padding-bottom: 50px; margin-bottom: 27px;
+.data-jurisdiction{ background: url('../images-old/bg-left-01.png') no-repeat center top; overflow: hidden; padding-bottom: 50px; margin-bottom: 27px;
   .module-title-son{ margin-bottom: 50px;}
   .data-info{ float: left; display: flex;align-items: center; margin-left: 32px;
     .city{ position: relative; width: 160px; height: 157px; text-align: center; justify-content: center; display: flex; align-items: center; font-size: 16px; line-height: 1em;
-      &:before{content:''; display: block; position:absolute; left: 0; top: 0; background: url('../images/bg-static-city.png') no-repeat center top; width: 100%; height: 100%; z-index: 1;  @include animation(rotate-zhuan linear infinite 5s); }
+      &:before{content:''; display: block; position:absolute; left: 0; top: 0; background: url('../images-old/bg-static-city.png') no-repeat center top; width: 100%; height: 100%; z-index: 1;  @include animation(rotate-zhuan linear infinite 5s); }
       .sep{ display: block;height: 1px; border-bottom: 1px dashed $main-white; margin: 5px;}
       >span{ position: relative; z-index: 2; font-size: 20px;}
     }
-    .info{ background: url('../images/bg-static-info.png') no-repeat center top; width: 433px; height: 136px; box-sizing: border-box; padding:24px 0 0 100px; margin-left: -80px;
+    .info{ background: url('../images-old/bg-static-info.png') no-repeat center top; width: 433px; height: 136px; box-sizing: border-box; padding:24px 0 0 100px; margin-left: -80px;
       p{ color: $main-white; margin-bottom: 25px;
         >span{ color: $main-color; font-size: 22px; @include inline-block;  width: 175px; margin-top: -9px;
           >em{ font-size: 32px; font-weight: 500;}
@@ -68,7 +68,7 @@ body{ height: 1200px;}
     }
   }
 }
-.data-overview{ background: url('../images/bg-left-02.png') no-repeat center top; margin-bottom: 31px; padding-bottom: 10px;
+.data-overview{ background: url('../images-old/bg-left-02.png') no-repeat center top; margin-bottom: 31px; padding-bottom: 10px;
   .module-title-son{ margin-bottom: 57px;}
   .data-info{  overflow: hidden;
     .zhu-box{ float: right; overflow: hidden;font-size: 24px; position: relative;
@@ -76,17 +76,17 @@ body{ height: 1200px;}
         >p{ margin-right: 32px;}
         span{ font-size: 32px; color: $main-color; @include inline-block; margin-top: -35px; margin-left: 18px;}
       }
-      >span.sep{ position: absolute; right: 20px; top: 50%; font-size: 18px; background: url('../images/bg-zhu-num.png') no-repeat left bottom; padding:0 0 32px 60px;}
+      >span.sep{ position: absolute; right: 20px; top: 50%; font-size: 18px; background: url('../images-old/bg-zhu-num.png') no-repeat left bottom; padding:0 0 32px 60px;}
       .zhu-tu{ float: left; display: flex; align-items: center; flex-direction: column; width: 40%;
         .info{ position: relative;
-          .img-zhu{ background: url('../images/bg-static-zhu.png') no-repeat center top; width: 80px; height: 216px; box-sizing: border-box;  padding: 0 0 0 5px;
+          .img-zhu{ background: url('../images-old/bg-static-zhu.png') no-repeat center top; width: 80px; height: 216px; box-sizing: border-box;  padding: 0 0 0 5px;
             >span{ position: absolute; bottom: -7px;}
             em{ @include inline-block; width: 71px; background: no-repeat center top; }
-            .t{ background-image: url('../images/bg-zhu-t.png'); height: 33px;}
-            .b{ background-image: url('../images/bg-zhu-b.png'); margin-top: -16px; height: 18px;}
-            .c{ background-image: url('../images/bg-zhu-c.png'); background-repeat: repeat-y; }
+            .t{ background-image: url('../images-old/bg-zhu-t.png'); height: 33px;}
+            .b{ background-image: url('../images-old/bg-zhu-b.png'); margin-top: -16px; height: 18px;}
+            .c{ background-image: url('../images-old/bg-zhu-c.png'); background-repeat: repeat-y; }
           }
-          .num{ position: absolute; margin-left: 50px; background: url('../images/bg-zhu-num.png') no-repeat left 20px; color: $main-color; font-size:32px; padding:0 0 32px 60px;}
+          .num{ position: absolute; margin-left: 50px; background: url('../images-old/bg-zhu-num.png') no-repeat left 20px; color: $main-color; font-size:32px; padding:0 0 32px 60px;}
         }
         &.yangtze{ margin:0 10px 0 -12px;
           .info{
@@ -116,24 +116,24 @@ body{ height: 1200px;}
     }
   }
 }
-.data-rescue{ float: right; background: url('../images/bg-left-04.png') no-repeat right top; width: 654px; font-size: 22px; padding-bottom: 20px;
+.data-rescue{ float: right; background: url('../images-old/bg-left-04.png') no-repeat right top; width: 654px; font-size: 22px; padding-bottom: 20px;
   .data-title-son{ text-align: right; padding:6px 67px 0 0; margin-bottom: 67px;}
   .module-info{ display: flex; justify-content: center;justify-content: center;
     .soujiu{ width: 33.33%; text-align: center; line-height: 1.8;
-      .huan{display: block; background: url('../images/bg-static-num-01.png') repeat-x center 120px; margin: auto; width: 112px; height: 112px; border-radius: 50%; line-height: 112px; position: relative; margin-bottom: 30px; font-size: 24px;
+      .huan{display: block; background: url('../images-old/bg-static-num-01.png') repeat-x center 120px; margin: auto; width: 112px; height: 112px; border-radius: 50%; line-height: 112px; position: relative; margin-bottom: 30px; font-size: 24px;
         &:after{content:''; display: block; position: absolute; border:2px solid $main-white; width: 122px; height: 122px; border-radius: 50%; left: 0; top: 0; margin: -7px 0 0 -7px; }
       }
     }
   }
 }
-.data-situation{ background: url('../images/bg-left-03.png') no-repeat left top; padding-bottom: 23px;
+.data-situation{ background: url('../images-old/bg-left-03.png') no-repeat left top; padding-bottom: 23px;
   .module-title-son{ margin-bottom: 70px;}
   .module-info{display: flex; justify-content: center;justify-content: center;
     .btn-huan{ display: none;}
     .num{ width: 25%; font-size: 22px; text-align: center; line-height: 1.8; position: relative;
       .huan{ width: 109px; height: 109px; line-height: 109px; color: $main-color; display: block; margin: auto; font-size: 18px; margin-bottom: 30px; position: relative; background: no-repeat left top;}
       .number-txt{  color: $main-color; position: absolute; font-size: 18px; left: 50%; top: 50px; margin: -10px 0 0 -29px; text-align: center;
-        &:after{content:''; display: block; background: url('../images/icon-jian.png') no-repeat center top; width: 7px; height: 17px; margin: auto;}
+        &:after{content:''; display: block; background: url('../images-old/icon-jian.png') no-repeat center top; width: 7px; height: 17px; margin: auto;}
         
       }
     }
@@ -153,7 +153,7 @@ body{ height: 1200px;}
   .radar-img{display: block; position: absolute; width:292px; height: 292px; left: 50%; top: 50%; margin: -146px 0 0 -146px;}
 }
 .goods-box{ display: flex; justify-content: center; align-items: flex-end; position: relative; width: 670px; margin: auto;  font-size: 18px;
-  &:after{content:''; display: block; position: absolute; background: url('../images/bg-goods.png') repeat-y center bottom; opacity: .4; height: 65px; bottom: 0; left: 0; width: 100%;}
+  &:after{content:''; display: block; position: absolute; background: url('../images-old/bg-goods.png') repeat-y center bottom; opacity: .4; height: 65px; bottom: 0; left: 0; width: 100%;}
   .info{ position: relative; z-index: 2; width: 25%; text-align: center; padding: 24px 0 6px;
     dd{  margin-top:180px; }
     .num{ position: absolute; bottom: 0; margin-left: 45px;}
@@ -161,7 +161,7 @@ body{ height: 1200px;}
       // &:before{content:''; display: block; position: absolute; background-color: #2877f9;  width: 14px; height: 2px; top:-250px; margin-left: 11px;}
       &:after{content:''; display: block; position: absolute; left: 50%; margin-left: -8px; bottom: 58px; background-color: #2877f9; width: 16px; height: 16px; border-radius: 50%;}
       .sep{ @include inline-block; position: absolute; background-color: #2877f9; width: 2px; height: 20px; bottom: 58px;}
-      .icon{@include inline-block; background: url('../images/sep.png') no-repeat left center; width: 100px; padding-left: 20px; bottom: 65px; position: absolute;}
+      .icon{@include inline-block; background: url('../images-old/sep.png') no-repeat left center; width: 100px; padding-left: 20px; bottom: 65px; position: absolute;}
     }
 
   }
@@ -180,10 +180,10 @@ body{ height: 1200px;}
   }
   .num-info{ @include inline-block; position: relative; width: 219px; margin-top: -15px;}
 }
-.region-box{ background: url('../images/bg-region.png') no-repeat center 128px; width: 100%; height: 510px; position: relative;
+.region-box{ background: url('../images-old/bg-region.png') no-repeat center 128px; width: 100%; height: 510px; position: relative;
   .ly-ts-box{ position: relative; left: 0; top: 0;  z-index: 5;}
   .region{ position: relative; z-index: 5;}
-  .ly-ts{ position: absolute; width: 206px; height: 137px; box-sizing: border-box; font-size: 16px; padding: 22px 18px 15px; color: #0868d9; line-height: 1.3em; background: url('../images/ly-sep.png') no-repeat center top;  z-index: 10; display:none;
+  .ly-ts{ position: absolute; width: 206px; height: 137px; box-sizing: border-box; font-size: 16px; padding: 22px 18px 15px; color: #0868d9; line-height: 1.3em; background: url('../images-old/ly-sep.png') no-repeat center top;  z-index: 10; display:none;
     &.cur{ opacity: 1;}
     &:nth-child(1){ top: 54px; left: 251px;}
     &:nth-child(2){ top: 181px; left: 363px;}
@@ -198,7 +198,7 @@ body{ height: 1200px;}
     &:nth-child(11){ top: 480px; right: 458px; }
   }
   .region{ position: absolute; cursor: pointer;
-    .xing{ background: url('../images/icon-region.png') no-repeat center; width: 52px; height: 52px; @include inline-block; position: absolute; margin-top: -4px;}
+    .xing{ background: url('../images-old/icon-region.png') no-repeat center; width: 52px; height: 52px; @include inline-block; position: absolute; margin-top: -4px;}
     em{ font-size: 32px; }
     &:nth-child(1){ top: 0; left: 202px;
       .xing{ margin-left: 120px;}
@@ -241,33 +241,33 @@ body{ height: 1200px;}
 }
 .area-chart-box{ display: flex; justify-content: space-between; font-size: 28px;
   .title{ text-align: left; margin-bottom: 37px; padding: 0 14px;}
-  .img{ background: url('../images/bg-area-chart.png') no-repeat center; padding: 14px; 
-    &.hot-amp{ background-image: url('../images/bg-area-chart-01.png');position: relative;
+  .img{ background: url('../images-old/bg-area-chart.png') no-repeat center; padding: 14px; 
+    &.hot-amp{ background-image: url('../images-old/bg-area-chart-01.png');position: relative;
       &:after{ background-color: hsla(255, 255, 255, 0); content:''; display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10;}
     }
   }
 }
 .supervise-list{ float: left; border: 2px solid $main-white; padding: 5px; box-sizing: border-box; width: 260px; height: 260px; margin: 60px; display: flex; justify-content: center; align-items: center; text-align: center; font-size: 64px; line-height: 80px; cursor: pointer;
-  .info{ background: url('../images/bg-supervise-list.png') repeat-x left top; display: block; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;}
+  .info{ background: url('../images-old/bg-supervise-list.png') repeat-x left top; display: block; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;}
   &:hover{animation: proRotate ease-in-out .3s alternate none 1; }
 }
 
-.supervise-temperature{ background: url('../images/bg-right-01.png') no-repeat left top; width: 725px; overflow: hidden; padding-bottom: 8px; margin-bottom: 28px;
+.supervise-temperature{ background: url('../images-old/bg-right-01.png') no-repeat left top; width: 725px; overflow: hidden; padding-bottom: 8px; margin-bottom: 28px;
   .title-son{ padding-left: 38px; font-size: 28px; margin-bottom: 25px;}
   .temperature-list{ float: left; width: 165px; height: 165px; margin: 0 35px 18px; border: 1px solid #008ce1; box-shadow: 0 0 10px hsla(203, 100%, 44%, .56); position: relative; text-align: center;
-    .title{ position: relative; z-index: 2; background: url('../images/bg-temperature.png') repeat-y center top; height:40px; line-height: 40px; font-size: 24px;}
+    .title{ position: relative; z-index: 2; background: url('../images-old/bg-temperature.png') repeat-y center top; height:40px; line-height: 40px; font-size: 24px;}
     .info{ position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: space-between; align-items: center;
       .img{ height: 68px; line-height: 68px; margin: 14px 0 8px; }
     }
     &:before{ content:''; display: block; position: absolute; left: 0; top: 0; background-color: hsla(211, 100%, 50%,.12); width: 100%; height: 100%; z-index: 1; }
   }
 }
-.supervise-throughput{ background: url('../images/bg-right-02.png') no-repeat left top; width: 725px; padding-bottom: 20px; position: relative;
+.supervise-throughput{ background: url('../images-old/bg-right-02.png') no-repeat left top; width: 725px; padding-bottom: 20px; position: relative;
   .module-title-son{ margin-bottom: 53px;}
   .city{ padding: 0 30px; margin-bottom: 28px; display: flex; font-size: 32px;
     dt{width: 127px; }
     .jindu{@include inline-block; height: 25px; background-color: hsla(201, 97%, 56%,.39); position: relative; width: 316px; margin-right: 110px;
-      &:before{ content:''; display: block; position: absolute;background: url('../images/bg-supervise-number.png') no-repeat right center; width: 90px; height: 25px; right: -90px; top: 0;}
+      &:before{ content:''; display: block; position: absolute;background: url('../images-old/bg-supervise-number.png') no-repeat right center; width: 90px; height: 25px; right: -90px; top: 0;}
       &:nth-child(2){ width: 100px;}
       &:nth-child(3){ width: 100px;}
       &:nth-child(4){ width: 100px;}
@@ -302,7 +302,7 @@ body{ height: 1200px;}
 .dataNums,
 .dataNums02,
 .dataNums03{ position: absolute; top:50%; display: block; width:100%; height:75px; margin-top: -37px; text-align:center;
-  .dataOne{ @include inline-block; width: 50px; height: 80px; line-height: 72px; box-sizing: border-box; text-align: center; background:url('../images/ba-dynamic-num.png') repeat-x center bottom; border:2px solid hsla(192, 96%, 68%,.61); margin: 0 2px; font-size: 60px; font-weight: 200;}
+  .dataOne{ @include inline-block; width: 50px; height: 80px; line-height: 72px; box-sizing: border-box; text-align: center; background:url('../images-old/ba-dynamic-num.png') repeat-x center bottom; border:2px solid hsla(192, 96%, 68%,.61); margin: 0 2px; font-size: 60px; font-weight: 200;}
   .dataBoc {position: relative; width: 100%; height: 100%; overflow: hidden;}
   .dataBoc .tt {position: absolute; top: 0;  left: 0; width: 100%;  height: 100%;}
   .tt span{width:100%;height:100%; font:bold 54px/75px "Arial";color:#ddf0ff;}
