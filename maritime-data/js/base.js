@@ -9,15 +9,15 @@ $('.goods-box .info .icon-yuan .icon').eq(1).animate({ bottom:125},2000);
 $('.goods-box .info .icon-yuan .icon').eq(2).animate({ bottom:85},2000);
 $('.goods-box .info .icon-yuan .icon').eq(3).animate({ bottom:70},2000);
 $("#dataNums-01").rollNumDaq({
-  deVal:6712,
+  deVal:671200,
   className:'dataNums'
 });
 $("#dataNums-02").rollNumDaq({
-  deVal:261,
+  deVal:26100,
   className:'dataNums02'
 });
 $("#dataNums-03").rollNumDaq({
-  deVal:13,
+  deVal:1300,
   className:'dataNums03'
 });
 
@@ -54,4 +54,11 @@ $('.region').hover(function(){
 });
 
 
+});
+
+
+$('.jurisdiction-module-box').hover(function(){
+  $('.nav').show();
+},function(){
+  $('.nav').hide();
 });
