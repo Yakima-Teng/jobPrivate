@@ -220,7 +220,7 @@ body{ height: 1200px;}
   }
   .num-info{ @include inline-block; position: relative; width: 276px; margin-top: -15px;}
 }
-.region-box{ background: url('../images/bg-region.png') no-repeat center 65px; width: 100%; height: 425px; position: relative; 
+.region-box{ background: url('../images/bg-region.png') no-repeat center 65px; width: 100%; height: 425px; margin-bottom: 40px; position: relative; 
   .ly-ts-box{ position: relative; left: 0; top: 0;  z-index: 5;}
   .region{ position: relative; z-index: 5;}
   .ly-ts{ position: absolute; width: 206px; height: 137px; box-sizing: border-box; font-size: 16px; padding: 22px 18px 15px; color: #0868d9; line-height: 1.3em; background: url('../images/ly-sep.png') no-repeat center top;  z-index: 10; display:none;
