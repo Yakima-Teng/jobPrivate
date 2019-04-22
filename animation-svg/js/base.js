@@ -1,4 +1,8 @@
-$('.page-index').toggle(/*function(){
+$('.page-index').toggle(function(){
+  $('.route-box,.coordpath').removeAttr('style');
+  $('.reout-yellow').show();
+},
+  /*function(){
   $('.route-box,.coordpath').removeAttr('style');
   $('.reout-yellow').show();
   $('.coordpath-yellow').eq(0).addClass('coordpath-yellow-01');
@@ -15,7 +19,7 @@ $('.page-index').toggle(/*function(){
   $('.coordpath-yellow').eq(6).addClass('coordpath-yellow-07');
   $('.coordpath-yellow').eq(7).addClass('coordpath-yellow-08');
 },*/function(){
-  $('.route-box,.coordpath').removeAttr('style');
+  $('.route-box').removeAttr('style');
   $('.reout-red').show();
   $('.coordpath-yellow').hide();
   $('.coordpath-red').eq(0).addClass('coordpath-red-01');
