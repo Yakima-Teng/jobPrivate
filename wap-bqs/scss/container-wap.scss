@@ -250,8 +250,85 @@ img{ width: 100%; }
   }
 }
 
-@media screen and (min-width: 769px){
+@media screen and (min-width: 768px){
   body{background-color: rgb(231, 232, 235);}
-  .page-index{ width: 500px; margin: auto; box-shadow: 0 0 20px rgba($color: #000000, $alpha: .1)  }
-  .weixin-copy-fixed{width: 500px; left: 50%; margin-left: -(500px/2);}
+  .page-index{ width: 500px; margin: auto; box-shadow: 0 0 20px rgba($color: #000000, $alpha: .1); }
+  .page-header{ transform:scale(1.6); padding-top: 130px;}
+  .content{
+    .title-first,
+    .title-remarks{ transform:scale(1.6); margin-bottom: 10px;}
+    .title-remarks{ margin-bottom: 30px;}
+  }
+  .add-weixin{ transform:scale(1.5); margin-top: 80px; }
+  .module-chat{ padding-top: 240px;
+    .info-list .info{ transform:scale(1.4); padding-left: 40px;}
+    .else-txt{transform:scale(1.4); margin-top: 50px;}
+    .btn-red{transform:scale(1.4); width: 60%; margin-top:60px;}
+    .btn-white{margin-top: 50px}
+    .notes{ font-size: 16px; margin:50px 0 5px;}
+  }
+  .module-teaching{ padding: 30px 12px; 
+    .video-list-box{ transform: scale(1,1.6); margin-bottom: 63px;
+      .info .icon{ transform: scale(1.6,1);}
+      .info .title,
+      .info .notes{ transform: scale(1, 0.7); margin-top: -7px;}
+    }
+  }
+  .module-solve{
+    .title-remarks{ margin-bottom: 40px;}
+    .solve-list{ transform: scale(1.4); padding: 0 100px; margin-bottom: 80px;}
+  }
+  .module-institution{ margin-top: 70px;
+    .title-first{ transform: scale(1.1)}
+    .institution-box{ margin-top: 60px;
+       .institution-list{ transform: scale(1.4); padding: 0 43px; margin-bottom: 90px; }
+    }
+  }
+  .module-course{
+    .course-box{margin-top: 60px;
+      .course-list{ transform: scale(1.4); padding: 0 42px; margin-bottom: 90px;}
+    }
+  }
+  .module-service{ padding: 0;
+    .title-remarks{ margin-bottom: 80px;}
+    .course-list{ transform: scale(1.4); margin: 0 96px; padding: 30px 0 60px;
+      &:last-child{ padding-bottom: 30px;}
+    }
+  }
+  .module-preferred{ padding-bottom: 60px;
+    .img-introduce .describe{ font-size: 16px; padding: 20px 40px;}
+  }
+  .module-master{ padding-bottom: 0px;}
+  .module-authoritative,
+  .module-emotional,
+  .module-quality,
+  .module-feedback{ margin-top: 64px;}
+  .module-authoritative .img-list .img span{ border-width: 1px;}
+  .module-feedback{
+    .btn-red{ transform: scale((1.6)); margin: 20px 101px 40px;}
+  }
+  .txt-box{ transform: scale(1.4); padding:40px 80px 30px; }
+  .module-comment{ margin-top: 100px;}
+  .user-comment-list{ margin-bottom: 30px; padding-bottom: 30px;
+     header{ transform: scale(1.4); padding: 0 70px; margin-bottom: 10px;}
+     .txt{ font-size: 14px; padding-left: 57px;}
+     .reply{ font-size: 16px; padding: 30px 0 0 57px; margin: 30px 0 10px;}
+  }
+  .weixin-copy{ transform:scale(1.4); margin: 50px 80px 0;}
+  .weixin-copy-fixed{ width: 500px; left: 50%; margin-left: -(500px/2); font-size: 18px; height: 40px; line-height: 40px;}
+
+  .page-index-new{
+    .page-header{ transform: scale(1); padding-top: 40px;
+      .logo{ transform: scale(2); margin: 0 110px;}
+      .sep{ margin-top: 30px;}
+      .logo-comment{ transform: scale(1.7); margin: 100px auto 80px;}
+      .notes{ font-size: 14px;}
+      .video-remarks .btn-white{ transform: scale(1.4); margin: 60px 120px 0;}
+      .weixin-copy{ margin-top: 80px;}
+      .title-box{ transform: scale(1.6); padding: 100px 0 120px;}
+    }
+    .module-teaching{ padding-bottom: 0px;}
+    .weixin-copy{ margin-top: 10px; }
+    .module-solve{ margin-top: 70px; }
+  }
 }
