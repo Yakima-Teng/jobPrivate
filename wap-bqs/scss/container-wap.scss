@@ -27,7 +27,7 @@ img{ width: 100%; }
 .weixin-copy{ background-color: $main-title; color: #fff; text-align: center; font-size: $_36; padding: $_14 0; margin: 0 $_20; border-radius: $_10;
   span{ background-color: #fff67f; color: $main-color; @include inline-block; padding: $_5; height: $_47; line-height: $_47; margin-left: $_10;}
 }
-.weixin-copy-fixed{ position: fixed; background-color: #fff; width: 100%; height: $_75; bottom: 0; left: 0; color: $main-title; text-align: center; font-size: $_32;  box-shadow: -$_5 0 $_10 rgba($color: #000000, $alpha: .1);
+.weixin-copy-fixed{ position: fixed; background-color: #fff; width: 100%; height: $_75; bottom: 0; left: 0; color: $main-title; text-align: center; font-size: $_32;  box-shadow: -$_5 0 $_10 rgba($color: #000000, $alpha: .1); z-index: 99;
   span{ color: $main-color; background-color: #fff;}
   em{ font-size: $_24;}
   .btn-green{ width: $_134; height: $_47; line-height: $_47; font-size: $_32; margin: $_14 0 $_14 $_20;}
