@@ -316,7 +316,9 @@ img{ width: 100%; }
   .module-feedback{
     .btn-red{ transform: scale((1.6)); margin: 20px 101px 40px;}
   }
-  .txt-box{ transform: scale(1.4); padding:40px 80px 30px; }
+  .txt-box{ transform: scale(1.4); padding:40px 80px 30px; 
+    .txt:before{ margin-top: 7px;}
+  }
   .module-comment{ margin-top: 100px;}
   .user-comment-list{ margin-bottom: 30px; padding-bottom: 30px;
      header{ transform: scale(1.4); padding: 0 70px; margin-bottom: 10px;}
