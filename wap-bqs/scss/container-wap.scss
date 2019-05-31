@@ -47,7 +47,7 @@ img{ width: 100%; }
   .title-red{ font-size: $_50; color: $main-color; padding: 0 $_20; margin-bottom: $_45; font-weight: bold;}
   .title-founder{ padding-top: $_14;
     .founder-img{ display: inline-block; background: url('../images/img.png') no-repeat center; background-size: 100%; width: $_204; height: $_242; }
-    .remarks{ color: $main-title; font-size: $_28; margin: auto; width: $_310; height: $_42; line-height: $_42; margin-top: $_15; font-weight: bold; border-radius: $_50; box-shadow: 0 $_5 $_15 rgba($color: #000000, $alpha: .2); position: relative; z-index: 2; background-color: #fff;}
+    .remarks{ color: $main-title; font-size: $_30; margin: auto; width: $_310; height: $_42; line-height: $_42; margin-top: 0; font-weight: bold; border-radius: $_50; box-shadow: 0 $_5 $_15 rgba($color: #000000, $alpha: .2); position: relative; z-index: 2; background-color: #fff;}
   }
 }
 .video-remarks{
