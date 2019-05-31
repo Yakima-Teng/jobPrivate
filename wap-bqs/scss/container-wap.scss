@@ -54,17 +54,18 @@ img{ width: 100%; }
   .notes{ text-align: center; font-size: $_22; color: #898989;}
 }
 .video-box{ width: 100%; overflow: hidden; margin-bottom: $_70;}
+.add-weixin{  padding: 0 0 $_50; text-align: center;
+  .title-else{ font-size:$_40; color: $main-title; font-weight: bold; margin-bottom: $_48; text-align: center;}
+  .info{ color: $main-title; margin-bottom: $_15; 
+    &:before{ content: ''; @extend .icon; margin-top: -$_8; background-image: url('../images/icon-11.png'); width: $_37; height: $_29; margin-right: $_10;}
+  }
+}
 .content{
   .title-first{ text-align: center; font-size: $_58; margin-bottom: $_10; color: $main-title; font-weight: bold; 
     .red{ color: $main-color;}
   }
   .title-remarks{ text-align: center; color: $main-title; font-size: $_30; text-transform:uppercase; margin-bottom: $_43;}
-  .add-weixin{  padding: 0 $_133 $_50;
-    .title-else{ font-size:$_40; color: $main-title; font-weight: bold; margin-bottom: $_48; text-align: center;}
-    .info{ color: $main-title; margin-bottom: $_15; 
-      &:before{ content: ''; @extend .icon; margin-top: -$_8; background-image: url('../images/icon-11.png'); width: $_37; height: $_29; margin-right: $_10;}
-    }
-  }
+  
 }
 .module-chat{
   .info-list{display: flex; flex-wrap: wrap;
@@ -86,7 +87,7 @@ img{ width: 100%; }
   .video-list-box{ width: 50%; height: $_217; overflow: hidden; box-sizing: border-box; padding-right: $_22; margin-bottom: $_19; float: left; position: relative; border-radius: $_20; 
     &:nth-child(2n){ padding-right: 0}
   }
-  .video-list{ width: 100%; height: $_217; background-color: #000;
+  .video-list{ width: 100%; height: $_217; background-color: #000; border-radius: $_20; overflow: hidden; 
     .video-box{ opacity: .6;}
     .info{ position: absolute; left: 0; top: 0; width: 100%; height: 100%; text-align: center; box-sizing: border-box; color: #fff;
       .icon{ background-image: url('../images/icon-12.png'); width: $_50; height: $_50; margin: $_79 0 $_15;}
@@ -231,7 +232,7 @@ img{ width: 100%; }
       &:after{ display: none;}
     }
     .video-remarks{ margin-bottom: $_70;
-      .btn-white{ margin: 0 $_74;}
+      .btn-white{ margin: 0 $_74 $_66;}
     }
     .title-first{ margin-top: $_105;}
     .title-founder{ padding-top: $_20;}
