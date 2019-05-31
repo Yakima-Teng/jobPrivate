@@ -36,18 +36,18 @@ img{ width: 100%; }
 .page-index{ font-size: $_26; color: $main-font; line-height: 2em; overflow: hidden; background-color: #fff; }
 .page-index-new{ @extend .page-index;}
 .page-header{ text-align: center; margin-bottom: $_89; border-bottom: $_2 solid $main-border; padding-bottom: $_144;
-  .logo{ background: url('../images/logo.png') no-repeat center; background-size: 100%; width: $_109; height: $_112; margin:$_25 auto 0;}
-  .logo-txt{ background: url('../images/logo-02.png') no-repeat center; background-size: 100%; width: $_152; height: $_70; margin:$_14 auto 0;}
-  .logo-comment{  position: relative; text-align: center; margin-bottom: $_81;
-    >span{display: inline-block; color: $main-color; font-size: $_32; margin: $_34 auto 0; padding:$_22 $_25 $_14; border-radius: $_50; box-shadow: 0 $_20 $_30 rgba($color: #000000, $alpha: .1); position: relative; z-index: 2; background-color: #fff; line-height: 1;} 
-    &:after{ content: ''; display: block; width: 100%; height: $_2; background-color: $main-border; position: absolute; margin-top: -$_28; z-index: 1;}
+  .logo{ background: url('../images/logo.png') no-repeat center; background-size: 100%; width: $_130; height: $_134; margin:$_60 auto 0;}
+  .logo-txt{ background: url('../images/logo-02.png') no-repeat center; background-size: 100%; width: $_181; height: $_86; margin:$_14 auto 0;}
+  .logo-comment{  position: relative; text-align: center; margin-bottom: $_68;
+    >span{display: inline-block; color: $main-color; font-size: $_34; margin: $_40 auto 0; padding:$_30 $_20 $_19; border-radius: $_50; box-shadow: 0 $_20 $_30 rgba($color: #000000, $alpha: .1); position: relative; z-index: 2; background-color: #fff; line-height: 1.5;} 
+    &:after{ content: ''; display: block; width: 100%; height: $_2; background-color: $main-border; position: absolute; margin-top: -$_45; z-index: 1;}
   }
-  .title-first{ font-size: $_58; color: $main-title; font-weight: bold; margin-bottom: $_35;}
-  .title-remarks{ font-size: $_38; color: $main-title; margin-bottom: $_44;}
-  .title-red{ font-size: $_52; color: $main-color; padding: 0 $_20; margin-bottom: $_45; font-weight: bold;}
-  .title-founder{ padding-top: $_34;
+  .title-first{ font-size: $_58; color: $main-title; font-weight: bold; margin-bottom: $_62;}
+  .title-remarks{ font-size: $_38; color: $main-title; margin-bottom: $_32;}
+  .title-red{ font-size: $_54; color: $main-color; margin-bottom: $_38; font-weight: bold;}
+  .title-founder{ padding-top: $_18;
     .founder-img{ display: inline-block; background: url('../images/img.png') no-repeat center; background-size: 100%; width: $_204; height: $_242; }
-    .remarks{ color: $main-title; font-size: $_28; margin: auto; width: $_310; height: $_42; margin-top: $_29; font-weight: bold; border-radius: $_50; box-shadow: 0 $_20 $_30 rgba($color: #000000, $alpha: .1); position: relative; z-index: 2; background-color: #fff; line-height: 1.5;}
+    .remarks{ color: $main-title; font-size: $_32; margin: auto; width: $_369; height: $_52; padding-top: $_15; font-weight: bold; border-radius: $_50; box-shadow: 0 $_20 $_30 rgba($color: #000000, $alpha: .1); position: relative; z-index: 2; background-color: #fff; line-height: 1.5;}
   }
 }
 .video-remarks{
