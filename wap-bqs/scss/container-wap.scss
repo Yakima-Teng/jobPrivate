@@ -208,7 +208,7 @@ img{ width: 100%; }
 .txt-box{ padding: 0 $_22 $_90; margin-bottom: $_52; border-bottom: $_9 solid $main-border; margin-top: $_53; color: $main-title; 
   .title{ font-size: $_24; font-weight: bold;}
   .txt{ font-size: $_20; line-height: 1.5; margin-bottom: $_10; position: relative; padding-left:$_22;
-    &:before{ content: ''; position: absolute; display: block; background-color: $main-title; width: $_12; height: $_12; left: 0; top: $_15; float: left; }
+    &:before{ content: ''; position: absolute; display: block; background-color: $main-title; width: $_12; height: $_12; left: 0; top: 0; margin-top: $_12; float: left; }
     em{ color: $main-color;}
   }
 }
