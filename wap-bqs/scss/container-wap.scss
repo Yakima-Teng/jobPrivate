@@ -93,7 +93,7 @@ img{ width: 100%; }
   }
   .video-list{ width: 100%; height: $_217; background-color: #000; border-radius: $_20; overflow: hidden; 
     .video-box{ opacity: .6;}
-    .info{ position: absolute; left: 0; top: 0; width: 100%; height: 100%; text-align: center; box-sizing: border-box; color: #fff;
+    .info{ position: absolute; left: 0; top: 0; width: 100%; height: 100%; text-align: center; box-sizing: border-box; color: #fff; box-sizing: border-box; padding-right: $_22;
       .icon{ background-image: url('../images/icon-12.png'); width: $_50; height: $_50; margin: $_79 0 $_15;}
       .title{ font-size: $_24; font-weight: bold; line-height: 1.2em; margin-bottom: $_5;}
       .notes{ font-size: $_12; line-height: 1.2em;}
@@ -232,8 +232,8 @@ img{ width: 100%; }
   .add-weixin{ padding: 0;}
   .page-header{ padding-bottom: $_100; margin-bottom: $_110;
     .logo{ background-image: url('../images/logo-l.png'); width: $_393; height: $_54; margin: $_39 0 $_34 $_61; }
-    p.sep{ background-color: $main-border; height: $_9; width: 100%; margin-bottom: $_27;}
-    .logo-comment{ background: url('../images/banner.png') no-repeat center; background-size: 100%; width: $_394; height:$_176;  margin:0 auto $_23;
+    p.sep{ background-color: $main-border; height: $_9; width: 100%; margin-bottom: $_30;}
+    .logo-comment{ background: url('../images/banner.png') no-repeat center; background-size: 100%; width:$_400 + $_94; height:$_221;  margin:0 auto $_10;
       &:after{ display: none;}
     }
     
