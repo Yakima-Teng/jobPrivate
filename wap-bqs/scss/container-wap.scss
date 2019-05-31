@@ -88,6 +88,7 @@ img{ width: 100%; }
 .module-teaching{ margin-top: $_73; overflow: hidden; padding: 0 $_20 $_100; border-bottom: $_2 solid $main-border; margin-bottom: $_103;
   .title-remarks{ margin-bottom: $_75;}
   .video-list-box{ width: 50%; height: $_217; overflow: hidden; box-sizing: border-box; padding-right: $_22; margin-bottom: $_19; float: left; position: relative; border-radius: $_20; 
+    .video-box{ width: 105%;}
     &:nth-child(2n){ padding-right: 0}
   }
   .video-list{ width: 100%; height: $_217; background-color: #000; border-radius: $_20; overflow: hidden; 
@@ -123,8 +124,8 @@ img{ width: 100%; }
   .institution-box{ display: flex; flex-wrap: wrap; padding: $_10;
     .institution-list{ width: 50%; text-align: center; padding: 0 $_16; box-sizing: border-box; color: $main-title; margin-bottom: $_87;
       .info{ 
-        .title{ font-weight: bold; margin-bottom: $_5; font-size: $_26; line-height: 1.5;}
-        .describe{ font-size: $_20; line-height: 1.5em;
+        .title{ font-weight: bold; margin-bottom: $_5; font-size: $_30; line-height: 1.5;}
+        .describe{ font-size: $_26; line-height: 1.5em;
           em{ color: $main-color;}
         }
       }
@@ -139,8 +140,8 @@ img{ width: 100%; }
   .course-box{ display: flex; flex-wrap: wrap; padding: $_10;
     .course-list{ width: 50%; text-align: center; padding: 0 $_16; box-sizing: border-box; color: $main-title; margin-bottom: $_87;
       .info{ 
-        .title{ font-weight: bold; margin-bottom: $_5; font-size: $_26; line-height: 1.5;}
-        .describe{ font-size: $_22; line-height: 1.5em;
+        .title{ font-weight: bold; margin-bottom: $_5; font-size: $_30; line-height: 1.5;}
+        .describe{ font-size: $_26; line-height: 1.5em;
           em{ color: $main-color;}
         }
       }
@@ -154,8 +155,8 @@ img{ width: 100%; }
 .module-service{ padding-bottom: $_40;
   .course-list{ border-top: $_2 solid $main-border; margin: 0 $_53; padding: $_50 0; display: flex; 
     .info{ 
-      .title{ font-size: $_32; margin-bottom: $_15; font-weight: bold; line-height: 1; color: $main-title;}
-      .describe{ font-size: $_24; line-height: 1.5;}
+      .title{ font-size: $_34; margin-bottom: $_15; font-weight: bold; line-height: 1; color: $main-title;}
+      .describe{ font-size: $_28; line-height: 1.5;}
     }
     &:nth-child(3) .icon{ background-image: url('../images/icon-27.png'); width: $_88; height: $_88; margin:0 $_59 0 $_44;}
     &:nth-child(4) .icon{ background-image: url('../images/icon-28.png'); width: $_88; height: $_73; margin:0 $_59 0 $_44;}
@@ -207,23 +208,23 @@ img{ width: 100%; }
 .txt-box{ padding: 0 $_22 $_90; margin-bottom: $_52; border-bottom: $_9 solid $main-border; margin-top: $_53; color: $main-title; 
   .title{ font-size: $_24; font-weight: bold;}
   .txt{ font-size: $_20; line-height: 1.5; margin-bottom: $_10; position: relative; padding-left:$_22;
-    &:before{ content: ''; position: absolute; display: block; background-color: $main-title; width: $_12; height: $_12; left: 0; top: $_14; float: left; }
+    &:before{ content: ''; position: absolute; display: block; background-color: $main-title; width: $_12; height: $_12; left: 0; top: $_15; float: left; }
     em{ color: $main-color;}
   }
 }
 .module-comment{
   .title-first{ margin-bottom: $_62;}
 }
-.user-comment-list{ padding: 0 $_21 $_50; border-bottom: $_9 solid $main-border; margin-bottom: $_40;
+.user-comment-list{ padding: 0 $_21 $_50; border-bottom: $_9 solid $main-border; margin-bottom: $_40; font-size: $_30;
   header{ overflow: hidden;
-    .fabulous{ float: right; color: $main-color;line-height: $_87;
+    .fabulous{ float: right; color: $main-color;line-height: $_87; margin-right: $_10;
       .icon{ background-image: url('../images/icon-55.jpg'); width: $_26; height: $_26; margin-top: -$_8;  margin-right: $_7;}
     }
     .user-img{ @include inline-block; width: $_88; height: $_88; margin-right: $_12;}
     .user-name{ @include inline-block; line-height: $_87; color: #898989;}
   }
-  .reply{ border-top: $_2 solid $main-border; padding:$_30 0 0 $_98; color: #898989; font-weight: bold; margin: $_35 0 $_20;}
-  .txt{ padding-left: $_98; color: $main-title; font-size: $_22; line-height: 1.5;}
+  .reply{ border-top: $_2 solid $main-border;  font-size: $_30;padding:$_30 0 0 $_98; color: #898989; font-weight: bold; margin: $_35 0 $_20;}
+  .txt{ padding-left: $_98; color: $main-title; font-size: $_26; line-height: 1.5;}
   &:last-child{ border:none;}
 }
 
@@ -275,7 +276,9 @@ img{ width: 100%; }
   }
   .module-teaching{ padding: 30px 12px; 
     .video-list-box{ transform: scale(1,1.6); margin-bottom: 63px;
-      .info .icon{ transform: scale(1.6,1);}
+      .info .icon,
+      .video-box{ transform: scale(1.6,1);}
+      .video-box{ width: 80%;}
       .info .title,
       .info .notes{ transform: scale(1, 0.7); margin-top: -7px;}
     }
