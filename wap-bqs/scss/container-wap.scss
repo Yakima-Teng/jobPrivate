@@ -208,9 +208,9 @@ img{ width: 100%; }
   .btn-red{ margin: 0 $_45 $_65;}
 }
 .txt-box{ padding: 0 $_22 $_90; margin-bottom: $_52; border-bottom: $_9 solid $main-border; margin-top: $_53; color: $main-title; 
-  .title{ font-size: $_24; font-weight: bold;}
-  .txt{ font-size: $_20; line-height: 1.5; margin-bottom: $_10; position: relative; padding-left:$_22;
-    &:before{ content: ''; position: absolute; display: block; background-color: $main-title; width: $_12; height: $_12; left: 0; top: 0; margin-top: $_12; float: left; }
+  .title{ font-size: $_32; font-weight: bold;}
+  .txt{ font-size: $_26; line-height: 1.5; margin-bottom: $_10; position: relative; padding-left:$_22;
+    &:before{ content: ''; position: absolute; display: block; background-color: $main-title; width: $_12; height: $_12; left: 0; top: 0; margin-top: $_13; float: left; }
     em{ color: $main-color;}
   }
 }
@@ -222,7 +222,7 @@ img{ width: 100%; }
     .fabulous{ float: right; color: $main-color;line-height: $_87; margin-right: $_10;
       .icon{ background-image: url('../images/icon-55.jpg'); width: $_26; height: $_26; margin-top: -$_8;  margin-right: $_7;}
     }
-    .user-img{ @include inline-block; width: $_88; height: $_88; margin-right: $_12;}
+    .user-img{ @include inline-block; width: $_88; height: $_88; margin-right: $_12; overflow: hidden; border-radius: 100%;}
     .user-name{ @include inline-block; line-height: $_87; color: #898989;}
   }
   .reply{ border-top: $_2 solid $main-border;  font-size: $_30;padding:$_30 0 0 $_98; color: #898989; font-weight: bold; margin: $_35 0 $_20;}
