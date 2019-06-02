@@ -409,10 +409,10 @@ var thisTop=$(this).scrollTop();
 //console.log(thisTop);
 
 //video-1
-if (thisTop >= 1000) {
+if (1000 < thisTop < 1800) {
   videoLen[0].play();
   console.log('play')
-}else if(thisTop >= 1800){
+}else{
   videoLen[0].pause();
   console.log('pause')
 };
