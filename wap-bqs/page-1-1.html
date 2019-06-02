@@ -409,30 +409,32 @@ var thisTop=$(this).scrollTop();
 //console.log(thisTop);
 
 //video-1
-if ( 1000 <=thisTop <= 1200) {
+if ( 1000 < thisTop < 1200) {
   videoLen[0].play();
+  videoLen[0].volume = 0.5
   //console.log('play')
 }; 
-if( 1800 <=thisTop <= 2000){
+if( 1800 < thisTop < 2000){
   videoLen[0].pause();
+  videoLen[0].volume = 0;
   //console.log('pause')
 };
 
-//video-2
-if ( 7700 <= thisTop <= 7900) {
-  videoLen[1].play();
-}; 
-if( 8400 <= thisTop <= 8600){
-  videoLen[1].pause();
-};
+// //video-2
+// if ( 7700 <= thisTop <= 7900) {
+//   videoLen[1].play();
+// }; 
+// if( 8400 <= thisTop <= 8600){
+//   videoLen[1].pause();
+// };
   
-//video-3
-if (9000<= thisTop <= 9200) {
-  videoLen[2].play();
-}; 
-if( 9900 <= thisTop <= 10000){
-  videoLen[2].pause();
-};
+// //video-3
+// if (9000<= thisTop <= 9200) {
+//   videoLen[2].play();
+// }; 
+// if( 9900 <= thisTop <= 10000){
+//   videoLen[2].pause();
+// };
   
 });
 </script>
