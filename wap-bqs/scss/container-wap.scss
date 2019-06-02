@@ -42,11 +42,9 @@ img{ width: 100%; }
     >span{display: inline-block; color: $main-color; font-size: $_32; margin: $_44 auto 0; padding:$_18 $_25 $_18; border-radius: $_50; box-shadow: 0 0 $_15 rgba($color: #000000, $alpha: .2); position: relative; z-index: 2; background-color: #fff; line-height: 1;} 
     &:after{ content: ''; display: block; width: 100%; height: $_2; background-color: $main-border; position: absolute; margin-top: -$_28; z-index: 1;}
   }
-  .title-first{ font-size: $_58; color: $main-title; font-weight: bold; background: url('../images/title-01.png') no-repeat center; background-size: 100%; width: $_254; height: $_55; margin:0 auto $_45;}
+  .title-first{ font-size: $_56; color: $main-title; font-weight: bold; margin-bottom: $_35;}
   .title-remarks{ font-size: $_38; color: $main-title; margin-bottom: $_54;}
-  .title-red{ font-size: $_50; color: $main-color; padding: 0 $_20; margin-bottom: $_55; 
-    >span{ display: block; background: url('../images/title-02.png') no-repeat center; background-size: 100%; box-sizing: border-box; height: $_54;}
-  }
+  .title-red{ font-size: $_50; color: $main-color; padding: 0 $_20; margin-bottom: $_45; font-weight: bold; }
   .title-founder{ padding-top: $_14;
     .founder-img{ display: block; margin: auto; background: url('../images/img.png') no-repeat center; background-size: 100%; width: $_204; height: $_242; }
     .remarks{ color: $main-title; font-size: $_30; margin: auto; width: $_310; height: $_42; padding: $_5; line-height: $_42; margin-top: $_15; font-weight: bold; border-radius: $_50; box-shadow: 0 $_5 $_15 rgba($color: #000000, $alpha: .2); position: relative; z-index: 2; background-color: #fff;}
@@ -263,9 +261,7 @@ img{ width: 100%; }
   body{background-color: rgb(231, 232, 235);}
   .page-index{ width: 500px; margin: auto; box-shadow: 0 0 20px rgba($color: #000000, $alpha: .1); }
   .page-header{ transform:scale(1.6); padding-top: 130px;
-    .title-red{ transform: scale(.6);
-      span{ height: 35px;}
-    }
+   
   }
   .content{
     .title-first,
