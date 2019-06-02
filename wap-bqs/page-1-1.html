@@ -406,13 +406,14 @@ var videoLen = $('.video-box').find('video');
 console.log(videoLen);
 $(window).scroll(function(){		
 var thisTop=$(this).scrollTop();
-console.log(thisTop);
+//console.log(thisTop);
 
 //video-1
-if (1000 <= thisTop <= 1800) {
+if (thisTop >= 1000) {
   videoLen[0].play();
   console.log('play')
-}else{
+}; 
+if(thisTop >= 1800){
   videoLen[0].pause();
   console.log('pause')
 };
