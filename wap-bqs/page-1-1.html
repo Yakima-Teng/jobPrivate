@@ -50,7 +50,7 @@ if(navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)){
     <a href="javascript:void(0);" class="btn-red">不 满 意 全 额 退</a>
     <div class="video-remarks">
       <p class="notes">温馨提示：本视频已高度压缩，使用4G流量仅需20M</p>
-      <div class="video-box"><video poster="" autoplay webkit-playsinline="" controls>
+      <div class="video-box"><video poster=""  webkit-playsinline="" controls>
           <source src="http://cloud.video.taobao.com//play/u/2454088774/p/1/e/6/t/1/50135890341.mp4" type="video/mp4">
           </source></video></div>
       <a href="weixin://" class="btn-white"><em>免费</em>领取<em>398</em>元聊天课</a>
@@ -305,7 +305,7 @@ if(navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)){
     <h2 class="title-first">必牵手受到<br>广东电视台<span class="red">权威采访</span></h2>
     <h3 class="title-remarks">Authoritative interview</h3>
     <div class="video-box">
-        <video poster="" autoplay webkit-playsinline="" controls>
+        <video poster=""  webkit-playsinline="" controls>
           <source src="https://cloud.video.taobao.com//play/u/2818814840/p/1/e/6/t/1/227754103486.mp4" type="video/mp4">
           </source></video></div>
     <ul class="img-list">
@@ -329,7 +329,7 @@ if(navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)){
   <section class="content module-feedback">
     <h2 class="title-first">过往<span class="red">学员反馈</span></h2>
     <h3 class="title-remarks">Student feedback</h3>
-    <div class="video-box"><video poster="" autoplay webkit-playsinline="" controls>
+    <div class="video-box"><video poster=""  webkit-playsinline="" controls>
         <source src="https://cloud.video.taobao.com//play/u/2818814840/p/1/e/6/t/1/227521820025.mp4" type="video/mp4">
         </source></video></div>
     <ul class="img-list">
@@ -401,5 +401,35 @@ if(navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)){
   <div class="weixin-copy-fixed"><i class="icon"></i>微信 <span>bqs066</span> <em>（长按微信号可复制）</em><a href="weixin://" class="btn-green">去微信</a></div>
 </div>
 <!--/page-index-->
+<script>
+var videoLen = $('.video-box').find('video');
+console.log(videoLen);
+$(window).scroll(function(){		
+var thisTop=$(this).scrollTop();
+//console.log(thisTop);
+
+//video-1
+if (thisTop >= 1000) {
+  videoLen[0].play();
+}else if(thisTop >= 1800){
+  videoLen[0].pause();
+};
+
+//video-2
+if (thisTop >= 7700) {
+  videoLen[1].play();
+}else if(thisTop >= 8600){
+  videoLen[1].pause();
+};
+  
+//video-3
+if (thisTop >= 8100) {
+  videoLen[2].play();
+}else if(thisTop >= 10000){
+  videoLen[2].pause();
+};
+  
+});
+</script>
 </body>
 </html>
