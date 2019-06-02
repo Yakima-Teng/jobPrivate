@@ -403,7 +403,7 @@ if(navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)){
 <!--/page-index-->
 <script>
 var videoLen = $('.video-box').find('video');
-console.log(videoLen);
+// console.log(videoLen);
 $(window).scroll(function(){		
 var thisTop=$(this).scrollTop();
 //console.log(thisTop);
@@ -411,26 +411,28 @@ var thisTop=$(this).scrollTop();
 //video-1
 if (thisTop >= 1000) {
   videoLen[0].play();
-  console.log('play')
+  //console.log('play')
 }; 
 if(thisTop >= 1800){
   videoLen[0].pause();
-  console.log('pause')
+  //console.log('pause')
 };
 
-// //video-2
-// if (thisTop >= 7700) {
-//   videoLen[1].play();
-// }else if(thisTop >= 8600){
-//   videoLen[1].pause();
-// };
+//video-2
+if (thisTop >= 7700) {
+  videoLen[1].play();
+}; 
+if(thisTop >= 8600){
+  videoLen[1].pause();
+};
   
-// //video-3
-// if (thisTop >= 8100) {
-//   videoLen[2].play();
-// }else if(thisTop >= 10000){
-//   videoLen[2].pause();
-// };
+//video-3
+if (thisTop >= 8100) {
+  videoLen[2].play();
+}; 
+if(thisTop >= 10000){
+  videoLen[2].pause();
+};
   
 });
 </script>
