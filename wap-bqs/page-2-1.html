@@ -332,5 +332,40 @@ if(navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)){
   <div class="weixin-copy-fixed"><i class="icon"></i>微信 <span>bqs066</span> <em>（长按微信号可复制）</em><a href="weixin://" class="btn-green">去微信</a></div>
 </div>
 <!--/page-index-->
+<script>
+var videoLen = $('.video-box').find('video');
+// console.log(videoLen);
+$(window).scroll(function(){		
+var thisTop=$(this).scrollTop();
+//console.log(thisTop);
+
+//video-1
+if (thisTop >= 10) {
+  videoLen[0].play();
+  //console.log('play')
+}; 
+if(thisTop >= 700){
+  videoLen[0].pause();
+  //console.log('pause')
+};
+
+//video-2
+if (thisTop >= 6200) {
+  videoLen[1].play();
+}; 
+if(thisTop >= 6800){
+  videoLen[1].pause();
+};
+  
+//video-3
+if (thisTop >= 7400) {
+  videoLen[2].play();
+}; 
+if(thisTop >= 8100){
+  videoLen[2].pause();
+};
+  
+});
+</script>
 </body>
 </html>
