@@ -59,15 +59,15 @@ body{ height: 100%;}
 .page-nav{background: url('../images/bg-nav.png') repeat-x left bottom; width: 150px; position: fixed; z-index: 12; height: 100%;
   .logo{ background:url('../images/logo.png') no-repeat center center #192fdd; height: 60px; }
   .nav-list{ padding: 0 13px;
-    .nav{ display: block; height: 40px; position: relative; color: #fff; line-height: 40px;
+    .nav{ display: block; height: 50px; position: relative; color: #fff; line-height: 50px;
       &:after{content: ''; display: block; position: absolute; width: 100%; height: 1px; background:linear-gradient(to right, rgba(#fff, .1), rgba(#fff, 1), rgba(#fff, .1)); bottom: 0; left: 0; opacity: .1;}
-      .icon{ margin-right: 10px; margin-left: 16px; margin-top: -3px;
-        &.icon-index{background-image: url('../images/icon-14.png'); width: 15px; height: 13px;}
-        &.icon-core{background-image: url('../images/icon-09.png'); width: 15px; height: 13px;}
-        &.icon-service{background-image: url('../images/icon-10.png'); width: 15px; height: 13px;}
-        &.icon-analysis{background-image: url('../images/icon-11.png'); width: 15px; height: 16px;}
-        &.icon-setup{background-image: url('../images/icon-12.png'); width: 15px; height: 12px;}
-        &.icon-contact{background-image: url('../images/icon-13.png'); width: 15px; height: 15px;}
+      .icon{ margin-right: 10px; margin-left: 16px; margin-top: -5px; width: 20px; 
+        &.icon-index{background-image: url('../images/icon-14.png'); height: 17px;}
+        &.icon-core{background-image: url('../images/icon-09.png'); height: 18px;}
+        &.icon-service{background-image: url('../images/icon-10.png'); height: 17px;}
+        &.icon-analysis{background-image: url('../images/icon-11.png'); height: 20px;}
+        &.icon-setup{background-image: url('../images/icon-12.png');  height: 16px;}
+        &.icon-contact{background-image: url('../images/icon-13.png'); height: 20px;}
       }
     }
   }
