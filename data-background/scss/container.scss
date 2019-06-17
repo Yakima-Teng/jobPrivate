@@ -20,18 +20,18 @@ $main-title:#595959;
 html,
 body{ height: 100%;}
 //page
-.page-index{ font-size: 14px; height: 100%; overflow-y: scroll; display: flex; color: $main-font;}
+.page-index{ font-size: 12px; height: 100%; overflow-y: scroll; display: flex; color: $main-font;}
 .page-contents{ width: 100%;
-  .contents-box{ display: flex; background-color: #e5e7eb; padding-left: 90px;}
-  .content{ background-color: #fff; margin:90px 20px 20px 182px; height: 1000px; width: 100%; box-sizing: border-box;}
+  .contents-box{ display: flex; background-color: #e5e7eb; padding-left: 54px;}
+  .content{ background-color: #fff; margin:52px 10px 10px 107px; height: 1200px; width: 100%; box-sizing: border-box;}
 }
-.page-header{ display: flex; justify-content:space-between; background-color: #fff; box-shadow: 0 3px 10px rgba($color: #000000, $alpha: .1); height: 70px; position: fixed; z-index: 10; width: 100%;
-  .slogan{ font-size: 20px; color: $main-title; margin-left: 35px + 90px; line-height: 70px; }
+.page-header{ display: flex; justify-content:space-between; background-color: #fff; box-shadow: 0 3px 10px rgba($color: #000000, $alpha: .1); height: 42px; position: fixed; z-index: 10; width: 100%;
+  .slogan{ font-size: 12px; color: $main-title; margin-left: 19px + 54px; line-height: 42px; }
   .menu{ display: flex; align-items:center;
-    .renew-info{ margin: 0 20px; position: relative; cursor: pointer;
-      .icon{ background-position-y: top; height: 31px; width: 30px; background-image: url('../images/icon-04.png'); }
-      .describe-box{ display: none; position: absolute; background-color: rgba($color: #121a2b, $alpha: .48); border-radius: 3px; color: #fff; width: 70px; height: 34px; line-height: 34px; text-align: center; bottom: -45px; left: 50%; margin-left: -35px;
-        &:before{content: ''; display: inline-block; position: absolute; width:0; height:0; border-width:0 6px 4px; border-style:solid; border-color:transparent transparent rgba($color: #121a2b, $alpha: .48); margin-top: -4px; left: 50%; margin-left: -6px;}
+    .renew-info{ margin: 0 13px; position: relative; cursor: pointer;
+      .icon{ background-position-y: top; height: 19px; width: 18px; background-image: url('../images/icon-04.png'); }
+      .describe-box{ display: none; position: absolute; background-color: rgba($color: #121a2b, $alpha: .48); border-radius: 3px; color: #fff; width: 60px; height: 20px; line-height: 20px; text-align: center; bottom: -24px; left: 50%; margin-left: -30px;
+        &:before{content: ''; display: inline-block; position: absolute; width:0; height:0; border-width:0 4px 3px; border-style:solid; border-color:transparent transparent rgba($color: #121a2b, $alpha: .48); margin-top: -3px; left: 50%; margin-left: -4px;}
       }
       &:hover{
         .describe-box{ display: block;}
@@ -39,39 +39,40 @@ body{ height: 100%;}
       }
     }
     .notice-info{@extend .renew-info;
-      .icon{ width: 27px; background-image: url('../images/icon-02.png');
+      .icon{ width: 16px; background-image: url('../images/icon-02.png');
       }
     }
     .problem-info{@extend .renew-info;
-      .icon{ width: 31px; background-image: url('../images/icon-03.png');
+      .icon{ width: 19px; background-image: url('../images/icon-03.png');
       }
     }
-    .user-info{ margin:0 20px; font-size: 16px; display: flex;
-      .icon-user{ background-image: url('../images/icon-user.png'); width: 43px; height: 43px; margin-right: 10px;}
+    .user-info{ margin:0 20px; display: flex;
+      .icon-user{ background-image: url('../images/icon-user.png'); width: 25px; height: 25px; margin-right: 10px;}
       .user-box{  display: block; }
-      .user-more{  display: flex; justify-content: space-between; margin-top: 5px;
-        .icon-vip{background-image: url('../images/icon-06.png'); width: 16px; height: 12px;}
-        .icon-more{ background-image: url('../images/icon-direction-t.png'); width: 11px; height: 6px; margin-top: 3px; cursor: pointer;}
+      .user-more{  display: flex; justify-content: space-between;
+        .icon-vip{background-image: url('../images/icon-06.png'); width: 10px; height: 8px;}
+        .icon-more{ background-image: url('../images/icon-direction-t.png'); width: 8px; height: 4px; margin-top: 3px; cursor: pointer;}
       }
     }
   }
 }
-.page-nav{background: url('../images/bg-nav.png') repeat-x left bottom; width: 255px; position: fixed; z-index: 12; height: 100%;
-  .logo{ background:url('../images/logo.png') no-repeat center center #192fdd; height: 100px; }
-  .nav-list{ padding: 0 3px; font-size: 18px; 
-    .nav{ display: block; height: 80px; border-bottom: 1px solid rgba($color: #fff, $alpha: .1); color: #fff; line-height: 80px;
-      .icon{ margin-right: 20px; margin-left: 42px; margin-top: -6px;
-        &.icon-index{background-image: url('../images/icon-14.png'); width: 25px; height: 22px;}
-        &.icon-core{background-image: url('../images/icon-09.png'); width: 25px; height: 22px;}
-        &.icon-service{background-image: url('../images/icon-10.png'); width: 25px; height: 21px;}
-        &.icon-analysis{background-image: url('../images/icon-11.png'); width: 25px; height: 26px;}
-        &.icon-setup{background-image: url('../images/icon-12.png'); width: 25px; height: 20px;}
-        &.icon-contact{background-image: url('../images/icon-13.png'); width: 25px; height: 25px;}
+.page-nav{background: url('../images/bg-nav.png') repeat-x left bottom; width: 150px; position: fixed; z-index: 12; height: 100%;
+  .logo{ background:url('../images/logo.png') no-repeat center center #192fdd; height: 60px; }
+  .nav-list{ padding: 0 13px;
+    .nav{ display: block; height: 40px; position: relative; color: #fff; line-height: 40px;
+      &:after{content: ''; display: block; position: absolute; width: 100%; height: 1px; background:linear-gradient(to right, rgba(#fff, .1), rgba(#fff, 1), rgba(#fff, .1)); bottom: 0; left: 0; opacity: .1;}
+      .icon{ margin-right: 10px; margin-left: 16px; margin-top: -3px;
+        &.icon-index{background-image: url('../images/icon-14.png'); width: 15px; height: 13px;}
+        &.icon-core{background-image: url('../images/icon-09.png'); width: 15px; height: 13px;}
+        &.icon-service{background-image: url('../images/icon-10.png'); width: 15px; height: 13px;}
+        &.icon-analysis{background-image: url('../images/icon-11.png'); width: 15px; height: 16px;}
+        &.icon-setup{background-image: url('../images/icon-12.png'); width: 15px; height: 12px;}
+        &.icon-contact{background-image: url('../images/icon-13.png'); width: 15px; height: 15px;}
       }
     }
   }
-  .btn-shrink{ position: absolute; bottom: 0; left: 0; background: url('../images/icon-17.png') no-repeat 90% center rgba($color: #274dfb, $alpha: .39); height: 60px; width: 100%; cursor: pointer;}
-  &.shrink{ width: 90px;
+  .btn-shrink{ position: absolute; bottom: 0; left: 0; background: url('../images/icon-17.png') no-repeat 90% center rgba($color: #274dfb, $alpha: .39); height: 35px; width: 100%; cursor: pointer;}
+  &.shrink{ width: 54px;
     .nav-list{ padding: 0 15px; font-size: 0;}
     .nav{ text-align: center;
       .icon{ margin: 0;}
@@ -80,10 +81,10 @@ body{ height: 100%;}
     .btn-shrink{ background-image: url('../images/icon-17-1.png'); background-position: center;}
   }
 }
-.contents-nav{ width: 162px; background-color: #f7f7f7; box-shadow: 4px 0 5px rgba($color: #000000, $alpha: .1); position: fixed; height: 100%; padding-top: 70px;
-  .grade-one{ border-bottom: 1px solid #d8d8d8; padding: 20px 0; margin:0 31px; text-align: center; font-size: 18px; line-height: 1; }
+.contents-nav{ width: 97px; background-color: #f7f7f7; box-shadow: 4px 0 5px rgba($color: #000000, $alpha: .05); position: fixed; height: 100%; padding-top: 42px;
+  .grade-one{ border-bottom: 1px solid #d8d8d8; padding: 23px 0 11px; margin:0 17px; text-align: center; font-size: 14px; line-height: 1; }
   .grade-two-nav-list{
-    .grade-two-nav{ display: block; text-align: center; position: relative; height: 46px; line-height: 46px; font-weight: 100; font-size: 16px;
+    .grade-two-nav{ display: block; text-align: center; position: relative; height: 32px; line-height: 32px; font-weight: 100;
       &:before{ content: ''; display: none; width:2px; background-color: $main-color; height: 100%; position: absolute; left: 0; top: 0;}
       &:hover,
       &.cur{ color: $main-color; background-color: #dce8fe; 
