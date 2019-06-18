@@ -23,7 +23,7 @@ body{ height: 100%;}
 .page-index{ font-size: 12px; height: 100%; overflow-y: scroll; display: flex; color: $main-font;}
 .page-contents{ width: 100%;
   .contents-box{ display: flex; background-color: #e5e7eb; padding-left: 54px;}
-  .content{ background-color: #fff; margin:52px 10px 10px 107px; height: 1200px; width: 100%; box-sizing: border-box;}
+  .content{ background-color: #fff; margin:52px 10px 10px 117px; height: 1200px; width: 100%; box-sizing: border-box;}
 }
 .page-header{ display: flex; justify-content:space-between; background-color: #fff; box-shadow: 0 3px 10px rgba($color: #000000, $alpha: .1); height: 42px; position: fixed; z-index: 10; width: 100%;
   .slogan{ font-size: 14px; color: $main-title; margin-left: 19px + 54px; line-height: 42px; }
