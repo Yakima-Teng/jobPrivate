@@ -26,7 +26,7 @@ body{ height: 100%;}
   .content{ background-color: #fff; margin:52px 10px 10px 107px; height: 1200px; width: 100%; box-sizing: border-box;}
 }
 .page-header{ display: flex; justify-content:space-between; background-color: #fff; box-shadow: 0 3px 10px rgba($color: #000000, $alpha: .1); height: 42px; position: fixed; z-index: 10; width: 100%;
-  .slogan{ font-size: 12px; color: $main-title; margin-left: 19px + 54px; line-height: 42px; }
+  .slogan{ font-size: 14px; color: $main-title; margin-left: 19px + 54px; line-height: 42px; }
   .menu{ display: flex; align-items:center;
     .renew-info{ margin: 0 13px; position: relative; cursor: pointer;
       .icon{ background-position-y: top; height: 19px; width: 18px; background-image: url('../images/icon-04.png'); }
@@ -81,10 +81,10 @@ body{ height: 100%;}
     .btn-shrink{ background-image: url('../images/icon-17-1.png'); background-position: center;}
   }
 }
-.contents-nav{ width: 97px; background-color: #f7f7f7; box-shadow: 4px 0 5px rgba($color: #000000, $alpha: .05); position: fixed; height: 100%; padding-top: 42px;
-  .grade-one{ border-bottom: 1px solid #d8d8d8; padding: 23px 0 11px; margin:0 17px; text-align: center; font-size: 14px; line-height: 1; }
+.contents-nav{ width: 107px; background-color: #f7f7f7; box-shadow: 4px 0 5px rgba($color: #000000, $alpha: .05); position: fixed; height: 100%; padding-top: 42px;
+  .grade-one{ border-bottom: 1px solid #d8d8d8; padding: 23px 0 11px; margin:0 17px; text-align: center; font-size: 16px; line-height: 1; }
   .grade-two-nav-list{
-    .grade-two-nav{ display: block; text-align: center; position: relative; height: 32px; line-height: 32px; 
+    .grade-two-nav{ display: block; text-align: center; position: relative; height: 32px; line-height: 32px; font-size: 14px;
       &:before{ content: ''; display: none; width:2px; background-color: $main-color; height: 100%; position: absolute; left: 0; top: 0;}
       &:hover,
       &.cur{ color: $main-color; background-color: #dce8fe; 
