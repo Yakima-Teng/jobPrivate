@@ -84,7 +84,7 @@ body{ height: 100%;}
 .contents-nav{ width: 97px; background-color: #f7f7f7; box-shadow: 4px 0 5px rgba($color: #000000, $alpha: .05); position: fixed; height: 100%; padding-top: 42px;
   .grade-one{ border-bottom: 1px solid #d8d8d8; padding: 23px 0 11px; margin:0 17px; text-align: center; font-size: 14px; line-height: 1; }
   .grade-two-nav-list{
-    .grade-two-nav{ display: block; text-align: center; position: relative; height: 32px; line-height: 32px; font-weight: 100;
+    .grade-two-nav{ display: block; text-align: center; position: relative; height: 32px; line-height: 32px; 
       &:before{ content: ''; display: none; width:2px; background-color: $main-color; height: 100%; position: absolute; left: 0; top: 0;}
       &:hover,
       &.cur{ color: $main-color; background-color: #dce8fe; 
