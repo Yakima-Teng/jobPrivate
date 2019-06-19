@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="Description" content=" " />
+<meta name="Keywords" content="" />
+<link rel="stylesheet" href="css/container.css" />
+<!-- <script src="js/jquery-1.9.1.min.js"></script> -->
+<script src="js/jquery.min-1.7.2.js"></script>
+<script src="js/laydate/laydate.js"></script>
+<title>数据服务</title>
+</head>
+<body>
+<!--page-index-->
+<div class="page-index">
+<section class="page-nav shrink">
+  <h1 class="logo"></h1>
+  <nav class="nav-list">
+    <a href="#" class="nav"><i class="icon icon-index"></i><span class="info"><span>首  页</span></a>
+    <a href="#" class="nav"><i class="icon icon-core"></i><span class="info"><span>数据中心</span></a>
+    <a href="#" class="nav cur"><i class="icon icon-service"></i><span class="info"><span>数据服务</span></a>
+    <a href="#" class="nav"><i class="icon icon-analysis"></i><span class="info"><span>智能分析</span></a>
+    <a href="#" class="nav"><i class="icon icon-setup"></i><span class="info"><span>服务设置</span></a>
+    <a href="#" class="nav"><i class="icon icon-contact"></i><span class="info"><span>联系我们</span></a>
+  </nav>
+  <div class="btn-shrink"></div>
+</section>
+<section class="page-contents">
+  <header class="page-header">
+    <h2 class="slogan">为您提供全国最全、最快、最准的商机信息</h2>
+    <nav class="menu">
+      <div class="notice-info"><i class="icon icon-notice"></i></div>
+      <div class="problem-info"><i class="icon icon-problem"></i></div>
+      <div class="renew-info"><i class="icon icon-renew"></i><span class="describe-box">续费中心</span></div>
+      <div class="user-info">
+        <i class="icon icon-user"></i>
+        <span class="user-box">
+          <em class="user-id">ID：123456</em>
+          <em class="user-more"><i class="icon icon-vip"></i><i class="icon icon-more"></i></em> 
+        </span>
+      </div>
+    </nav>
+  </header>
+  <div class="contents-box">
+  <div class="contents-nav">
+    <h2 class="grade-one">数据服务</h2>
+    <nav class="grade-two-nav-list">
+      <a href="#" class="grade-two-nav">数据接口</a>
+      <a href="#" class="grade-two-nav cur">接口授权</a>
+      <a href="#" class="grade-two-nav">接口审批</a>
+    </nav>
+  </div>
+  
+  <div class="content content-service-api">
+    <h2 class="content-title">
+      <span class="title">服务接口授权</span>
+    </h2>
+    <div class="service-api-main">
+      <div class="operating-area"><a href="javascript:void(0);" class="btn">申请授权</a><a href="javascript:void(0);" class="btn">API测试工具</a></div>
+      <h3 class="content-title-01"><span>接口说明</span></h3>
+      <div class="table-01">
+        <table cellpadding="0" cellspacing="0" border="1" bordercolor="#e4e6ea" width="100%">
+          <tr>
+            <th>接口地址</th>
+            <td>http://op.juhe.cn/idcard/query</td>
+          </tr>
+          <tr>
+            <th>返回格式</th>
+            <td>json</td>
+          </tr>
+          <tr>
+            <th>请求方式</th>
+            <td>http get/post</td>
+          </tr>
+          <tr>
+            <th>请求示例</th>
+            <td>http://op.juhe.cn/idcard/query?key=您申请的KEY&idcard=&realname=</td>
+          </tr>
+          <tr>
+            <th>接口备注</th>
+            <td>error_code为0或者210301时计费</td>
+          </tr>
+        </table>
+      </div>
+      <h3 class="content-title-01"><span>请求参数说明</span></h3>
+      <div class="table-02">
+        <table cellpadding="0" cellspacing="0" border="1" bordercolor="#e4e6ea" width="100%">
+          <tr>
+            <th width="160">名 称</th>
+            <th width="100">必 填</th>
+            <th width="138">类 型</th>
+            <th>说 明</th>
+          </tr>
+          <tr>
+            <td>start_time</td>
+            <td align="center">否</td>
+            <td align="center">string</td>
+            <td>开始时间</td>
+          </tr>
+          <tr>
+            <td>end_time</td>
+            <td align="center">否</td>
+            <td align="center">string</td>
+            <td>结束时间</td>
+          </tr>
+          <tr>
+            <td>co_name</td>
+            <td align="center">否</td>
+            <td align="center">string</td>
+            <td>企业名称（需utf8编码的urlencode）</td>
+          </tr>
+          <tr>
+            <td>key</td>
+            <td align="center">是</td>
+            <td align="center">string</td>
+            <td>在个人中心->我的数据，接口名称上方查看</td>
+          </tr>
+        </table>
+      </div>
+      <h3 class="content-title-01"><span>返回参数说明</span></h3>
+      <div class="table-02">
+        <table cellpadding="0" cellspacing="0" border="1" bordercolor="#e4e6ea" width="100%">
+          <tr>
+            <th width="110">名 称</th>
+            <th width="140">类 型</th>
+            <th>说 明</th>
+          </tr>
+          <tr>
+            <td>error_code</td>
+            <td align="center">int</td>
+            <td>返回码</td>
+          </tr>
+          <tr>
+            <td>reason</td>
+            <td align="center">string</td>
+            <td>返回说明</td>
+          </tr>
+          <tr>
+            <td>result</td>
+            <td align="center">object</td>
+            <td>返回结果集</td>
+          </tr>
+        </table>
+      </div>
+      <h3 class="content-title-01"><span>JSON返回示例</span></h3>
+      <div class="json-box">
+        {
+          <ul class="json-list">
+            <li class="json-main">
+              <div class="json-info">
+                <span class="json-attribute">"reason"</span>: 
+                <span class="json-value">"成功"</span>,
+              </div>
+            </li>
+            <li class="json-main">
+              <div class="json-info">
+                  <span class="json-attribute">"result"</span>: 
+                  {
+                    <ul class="json-list">
+                      <li class="json-main">
+                        <div class="json-info">
+                          <span class="json-attribute">"qymc"</span>:
+                          <span class="json-value">"***"</span>,
+                          <span class="note">/*企业名称*/</span>
+                        </div>
+                      </li>
+                      <li class="json-main">
+                        <div class="json-info">
+                          <span class="json-attribute">"ggsj"</span>:
+                          <span class="json-value">"******************"</span>,
+                          <span class="note">/*公告时间*/</span>
+                        </div>
+                      </li>
+                      <li class="json-main">
+                        <div class="json-info">
+                          <span class="json-attribute">"ysje"</span>:
+                          <span class="json-value">"********"</span>,
+                          <span class="note">/*预算金额*/</span>
+                        </div>
+                      </li>
+                      <li class="json-more">......................</li>
+                    </ul>
+                  },
+              </div>
+            </li>
+            <li class="json-main">
+              <div class="json-info">
+                  <span class="json-attribute">"error_code"</span>: 
+                  <span class="json-value">"0"</span>,
+              </div>
+            </li>
+          </ul>
+        }
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+</div>
+<!--/page-index-->
+<script src="js/base.js"></script>
+</body>
+</html>
