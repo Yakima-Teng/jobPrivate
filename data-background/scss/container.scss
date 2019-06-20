@@ -150,14 +150,14 @@ body{ height: 100%;background-color: #e5e7eb;}
         &.btn-next:hover{background-color: #e2e5ec; }
       }
     }
-    .list-main{
+    .list-main{ padding:0 20px;
       table{table-layout:fixed;}
       th,
       td{ height: 38px; text-align: center;}
       th{ background-color: #f5f4f4; border-right: 2px solid #fff; font-weight: bold;
         &:last-child{ border: none;}
       }
-      td{ border-bottom:1px solid $main-border; padding: 0 20px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis; word-break:keep-all;
+      td{ border-bottom:1px solid $main-border; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; word-break:keep-all;
         >p{ text-align: left; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; word-break:keep-all; box-sizing: border-box; }
       }
     }
