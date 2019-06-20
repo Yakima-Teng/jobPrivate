@@ -30,7 +30,7 @@ body{ height: 100%;background-color: #e5e7eb;}
 .page-contents{ width: 100%; background-color: #e5e7eb;
   .contents-box{ display: flex; background-color: #e5e7eb; padding-left: 54px;}
   .content{ background-color: #fff; margin:52px 10px 10px 140px;  width: 100%; box-sizing: border-box;
-    .content-title{ font-size: 16px; display: flex; justify-content: space-between; align-items:center; border-bottom: 1px solid $main-color; padding: 9px 8px 9px 20px; 
+    .content-title{ font-size: 16px; display: flex; justify-content: space-between; align-items:center; border-bottom: 1px solid $main-color; padding: 9px 20px 9px 20px; 
       .notice{ color: $main-color; font-size: 14px;
         .icon-horn{ margin:-3px 11px 0 0;}
       }
@@ -157,7 +157,7 @@ body{ height: 100%;background-color: #e5e7eb;}
       th{ background-color: #f5f4f4; border-right: 2px solid #fff; font-weight: bold;
         &:last-child{ border: none;}
       }
-      td{ border-bottom:1px solid $main-border; padding: 0 20px;
+      td{ border-bottom:1px solid $main-border; padding: 0 20px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis; word-break:keep-all;
         >p{ text-align: left; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; word-break:keep-all; box-sizing: border-box; }
       }
     }
