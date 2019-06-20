@@ -29,8 +29,8 @@ body{ height: 100%;}
 .page-index{ font-size: 14px; height: 100%; overflow-y: scroll; display: flex; color: $main-font;}
 .page-contents{ width: 100%; background-color: #e5e7eb;
   .contents-box{ display: flex; background-color: #e5e7eb; padding-left: 54px;}
-  .content{ background-color: #fff; margin:52px 10px 10px 117px;  width: 100%; box-sizing: border-box;
-    .content-title{ font-size: 16px; display: flex; justify-content: space-between; align-items:center; border-bottom: 1px solid $main-color; padding: 19px 8px 10px 20px; 
+  .content{ background-color: #fff; margin:62px 20px 20px 150px;  width: 100%; box-sizing: border-box;
+    .content-title{ font-size: 16px; display: flex; justify-content: space-between; align-items:center; border-bottom: 1px solid $main-color; padding: 9px 8px 9px 20px; 
       .notice{ color: $main-color; font-size: 14px;
         .icon-horn{ margin:-3px 11px 0 0;}
       }
@@ -49,7 +49,7 @@ body{ height: 100%;}
   }
 }
 .page-header{ display: flex; justify-content:space-between; background-color: #fff; box-shadow: 0 3px 10px rgba($color: #000000, $alpha: .1); height: 42px; position: fixed; z-index: 20; width: 100%;
-  .slogan{ font-size: 14px; color: $main-title; margin-left: 19px + 54px; line-height: 42px; }
+  .slogan{ font-size: 14px; color: $main-title; margin-left: 19px + 54px; line-height: 42px; font-weight: bold;}
   .menu{ display: flex; align-items:center;
     .renew-info{ margin: 0 13px; position: relative; cursor: pointer;
       .icon{ background-position-y: top; height: 19px; width: 18px; background-image: url('../images/icon-04.png'); }
@@ -79,13 +79,13 @@ body{ height: 100%;}
     }
   }
 }
-.page-nav{  background: linear-gradient(to bottom, #2951ff, #0604b4 ); width: 150px; position: fixed; z-index: 22; height: 100%;
+.page-nav{  background: linear-gradient(to bottom, #2951ff, #0604b4 ); width: 130px; position: fixed; z-index: 22; height: 100%;
   .logo{ background:url('../images/logo.png') no-repeat center center #192fdd; height: 60px; }
   .nav-list{ 
     .nav{ display: block; height: 50px; position: relative; color: #fff; line-height: 50px; padding: 0 13px; margin-top: 1px;
       &:before{content: ''; display: block; position: absolute; width: 100%; height: 1px; background:linear-gradient(to right, rgba(#fff, .1), rgba(#fff, 1), rgba(#fff, .1)); bottom: -1px; left: 0; opacity: .1; z-index: 2;}
       &.cur{ background-color: #0232b9;}
-      .icon{ margin-right: 10px; margin-left: 16px; margin-top: -5px; width: 20px; 
+      .icon{ margin:-5px 10px 0 10px; width: 20px; 
         &.icon-index{background-image: url('../images/icon-14.png'); height: 17px;}
         &.icon-core{background-image: url('../images/icon-09.png'); height: 18px;}
         &.icon-service{background-image: url('../images/icon-10.png'); height: 17px;}
@@ -105,7 +105,7 @@ body{ height: 100%;}
     .btn-shrink{ background-image: url('../images/icon-17-1.png'); background-position: center;}
   }
 }
-.contents-nav{ width: 107px; background-color: #f7f7f7; box-shadow: 4px 0 5px rgba($color: #000000, $alpha: .05); position: fixed; height: 100%; padding-top: 42px;
+.contents-nav{ width: 130px; background-color: #f7f7f7; box-shadow: 4px 0 5px rgba($color: #000000, $alpha: .05); position: fixed; height: 100%; padding-top: 42px;
   .grade-one{ border-bottom: 1px solid #d8d8d8; padding: 23px 0 11px; margin:0 17px; text-align: center; font-size: 16px; line-height: 1; }
   .grade-two-nav-list{
     .grade-two-nav{ display: block; text-align: center; position: relative; height: 32px; line-height: 32px; font-size: 14px;
@@ -132,10 +132,12 @@ body{ height: 100%;}
   .content-list-module{
     .list-pages{ display: flex; justify-content: flex-end; align-items: center; padding: 20px; color: #8a8a8a; font-size: 12px;
       .select-page{ width: 70px; height: 33px; background-color: #dce8fe; position: relative; cursor: pointer; margin-left: 10px; position: relative;
-        .num{ color: $main-color; line-height: 33px; display: block; margin:0 19px 0 14px;}
-        .icon-more{ position: absolute; right: 12px; top: 13px; background-image: url('../images/icon-direction-b-t.png'); width: 11px; height: 7px;}
-        .num-list-box{ position: absolute;width: 100%; display: none;}
-        .num-list{ display: block; line-height: 33px; height: 33px;text-align: center;}
+        .num{ color: $main-color; line-height: 33px; display: block; padding:0 19px 0 14px;}
+        .icon-more{ position: absolute; right: 12px; top: 13px; background-image: url('../images/icon-direction-b-t.png'); width: 11px; height: 7px; z-index: 10;}
+        .num-list-box{ position: absolute; display: none; width: 100%; top:-1px; left: -1px; z-index: 1; background-color: #fff; border: 1px solid $main-border;}
+        .num-list{ display: block; line-height: 33px; height: 33px; padding-left: 14px; color: $main-color;
+          &:hover{ background-color: #e2effd;}
+        }
       }
     }
     .page-num{ margin-left: 10px;
@@ -151,7 +153,7 @@ body{ height: 100%;}
     .list-main{
       table{table-layout:fixed;}
       th,
-      td{ line-height: 48px; text-align: center;}
+      td{ height: 38px; text-align: center;}
       th{ background-color: #f5f4f4; border-right: 2px solid #fff;
         &:last-child{ border: none;}
       }
@@ -163,7 +165,7 @@ body{ height: 100%;}
 }
 .service-api-main{ padding: 20px;
   table{
-    th,td{ height: 36px;}
+    th,td{ height: 38px;}
     th{ font-weight: bold; background-color:#f4f4f5; }
     td{ padding-left: 20px;
       &[align='center']{ padding: 0;}
