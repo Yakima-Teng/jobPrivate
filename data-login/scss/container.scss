@@ -36,8 +36,8 @@ $main-title:#7e7e7e;
   }
 }
 #footer{ background-color: #fff; color: #000; font-size: 12px; text-align: center; line-height: 58px; height: 58px;}
-.contents-box{ background: url('../images/banner.png') no-repeat center #3f4efd;}
-.contents{  width: 1200px; margin: auto; height: 752px; position: relative;
+.contents-box{ background: url('../images/banner-01.jpg') no-repeat center #3f4efd;}
+.contents{ background: url('../images/banner.jpg') no-repeat center; width: 1200px; margin: auto; height: 752px; position: relative;
   &:before{ content: ''; display: block; width: 702px; height: 529px; background:url( '../images/banner-01.png') center no-repeat; position: absolute; left: 0; top: 50%; margin-top: -244px; z-index: 1;} 
 }
 
