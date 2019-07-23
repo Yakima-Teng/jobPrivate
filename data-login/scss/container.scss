@@ -28,14 +28,14 @@ $main-title:#7e7e7e;
 //page
 .page-index{ font-size: 14px; color: $main-font;}
 
-#header{ height: 74px; line-height: 74px; background-color: #fff; overflow: hidden; width: 1200px; margin: auto;
+#header{ height: 58px; line-height: 58px; background-color: #fff; overflow: hidden; width: 1200px; margin: auto;
   .logo{ background: url('../images/logo.png') no-repeat left center; width: 76px; height: 40px; @include inline-block; background-size: 100%; margin-left: 3px;}
   .slogn{ font-size: 16px; font-weight: bold; color: $main-title;  margin-left: 26px; @include inline-block;}
   .menu{ color: $main-color; float: right; 
     >a{ color:$main-color;}
   }
 }
-#footer{ background-color: #fff; color: #000; font-size: 12px; text-align: center; line-height: 75px; height: 75px;}
+#footer{ background-color: #fff; color: #000; font-size: 12px; text-align: center; line-height: 58px; height: 58px;}
 .contents-box{ background: url('../images/banner.png') no-repeat center #3f4efd;}
 .contents{  width: 1200px; margin: auto; height: 752px; position: relative;
   &:before{ content: ''; display: block; width: 702px; height: 529px; background:url( '../images/banner-01.png') center no-repeat; position: absolute; left: 0; top: 50%; margin-top: -244px; z-index: 1;} 
