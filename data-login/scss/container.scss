@@ -49,11 +49,11 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
 }
 #footer{ background-color: #fff; color: #000; font-size: 12px; text-align: center; line-height: 58px; height: 58px;}
 .contents-box{ background: url('../images/banner-01.jpg') no-repeat center #3f4efd;}
-.contents{ background: url('../images/banner.jpg') no-repeat center; width: 1126px; margin: auto; height: 655px; position: relative;
-  &:before{ content: ''; display: block; width: 588px; height: 443px; background:url( '../images/banner-01.png') center no-repeat; background-size: 100%; position: absolute; left: 0; top: 50%; margin-top: -177px; z-index: 1;} 
+.contents{ background: url('../images/banner.jpg') no-repeat center; width: 1126px; margin: auto; height: 583px; position: relative;
+  &:before{ content: ''; display: block; width: 588px; height: 443px; background:url( '../images/banner-01.png') center no-repeat; background-size: 100%; position: absolute; left: 0; top: 50%; margin-top: -213px; z-index: 1;} 
 }
 
-.login-content{ background-color: #fff; width: 390px; border-radius: 10px; position: absolute; top: 50%; right: 0%; margin-top: -181px; box-sizing: border-box; padding:30px 25px 25px; text-align: center; z-index: 10;
+.login-content{ background-color: #fff; width: 390px; border-radius: 10px; position: absolute; top: 50%; right: 0%; margin-top: -144px; box-sizing: border-box; padding:30px 25px 25px; text-align: center; z-index: 10;
   &:before{ content: ''; display: block; border-radius: 100%; width: 140px; height: 140px; background: url('../images/logo.png') no-repeat center 23px #fff;  margin:-98px 0 0 -70px; left: 50%; position: absolute;} 
   .title{ text-align: center; position: relative; z-index: 2; margin-bottom: 16px; font-size: 20px; color: #333; font-weight: normal;}
   .testcoed{ margin-bottom: 10px;
