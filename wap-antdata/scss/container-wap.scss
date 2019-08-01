@@ -1,0 +1,79 @@
+@charset "UTF-8";
+//---------------------------------------
+//导入页面集合样式
+//---------------------------------------
+//mixin
+@import "../../scss/hourglass/scss/mixins";
+//基础内容
+@import '../../scss/common/sass/reset_mobile';
+
+//组件
+//@import 'common/sass/config';
+//@import 'hourglass/scss/components/btn';
+
+//color
+$main-font:#b3b3b3;
+$main-title:#3c3c3c;
+$main-color:#2389f9;
+$main-border:#f6f5f5; 
+
+
+//default
+img{ width: 100%; }
+.icon{@include inline-block; background: no-repeat center; background-size: 100%;
+  &.icon-search{ background-image: url('../images/icon-09.png'); width: $_24; height: $_24;}
+  &.icon-tendering{ background-image: url('../images/icon-01.png'); width: $_36; height: $_43;}
+  &.icon-winbidding{ background-image: url('../images/icon-02.png'); width: $_37; height: $_43;}
+  &.icon-expert{ background-image: url('../images/icon-03.png'); width: $_36; height: $_43;}
+  &.icon-market{ background-image: url('../images/icon-04.png'); width: $_58; height: $_60;}
+  &.icon-dataapi{ background-image: url('../images/icon-05.png'); width: $_58; height: $_60;}
+}
+input::-webkit-input-placeholder{
+  color:lighten($color: $main-font, $amount: 10%);
+}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+  color:lighten($color: $main-font, $amount: 10%);
+}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+  color:lighten($color: $main-font, $amount: 10%);
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+  color:lighten($color: $main-font, $amount: 10%);
+}
+.title-index{ text-align: center; font-size: $_30; color: $main-title; height: $_88; line-height: $_88; border-bottom: $_1 solid $main-border;
+  >span{ color: $main-color;}
+}
+//la
+.page-index{ font-size: $_18; color: $main-font; line-height: 2em; overflow: hidden; background-color: #f7f7f7; }
+
+//module-index
+.banner-search-index{ background: url('../images/banner.png') no-repeat center bottom #fff; background-size: 100%; height: $_152; display: flex; justify-content: center; box-sizing: border-box; padding-top: $_31;
+  .search-box{ height: $_69; width: $_400 + $_274; font-size: $_24; background-color: #fff; border-radius: $_30; display: flex; align-items: center; justify-content: center;
+    .inp-search{ width: $_300; }
+    .icon-search{ margin-right: $_10;}
+  }
+}
+.synopsis-module-index{ background-color: #fff; display: flex; justify-content: space-around; text-align: center; padding: $_28 0; margin-bottom: $_20;
+  .synopsis-main-list{ 
+    .icon-box{ background-color: #fcbd10; width: $_85; height: $_85; text-align: center; line-height: $_85; border-radius: 100%; margin:0 auto $_15;}
+    .title{ font-size: $_30; color: $main-title; line-height: 1;}
+    &:first-child{ 
+      .icon-box{ background-color: #50b2ef;}
+    }
+    &:last-child{ 
+      .icon-box{ background-color: #80d846;}
+    }
+  }
+}
+.banner-ad{ margin-bottom: $_20;}
+.datamarket-module-index{ background-color: #fff; margin-bottom: $_20; 
+  .detamarket-synopsis-box{ padding: $_24 0 $_46; display: flex; justify-content: space-around;
+    .detamarket-synopsis-main{ background-color: #f7f7f7; border-radius: $_5; display: flex; align-items: center; justify-content: space-around; padding: $_30 $_23 $_24;
+      >.icon{ margin-right: $_16;}
+      .main{ line-height: 1.5; height: $_114; box-sizing: border-box; 
+        .title{ font-size: $_24; color: $main-title;}
+      }
+      
+    }
+  }
+}
