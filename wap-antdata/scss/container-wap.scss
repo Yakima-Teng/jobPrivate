@@ -68,12 +68,11 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
 .banner-ad{ margin-bottom: $_20;}
 .datamarket-module-index{ background-color: #fff; margin-bottom: $_20; 
   .detamarket-synopsis-box{ padding: $_24 0 $_46; display: flex; justify-content: space-around;
-    .detamarket-synopsis-main{ background-color: #f7f7f7; border-radius: $_5; display: flex; align-items: center; justify-content: space-around; padding: $_30 $_23 $_24;
+    .detamarket-synopsis-main{ background-color: #f7f7f7; border-radius: $_5; display: flex; align-items: center; justify-content: space-around; padding: $_30 $_23 $_24; box-sizing: border-box;
       >.icon{ margin-right: $_16;}
       .main{ line-height: 1.5; height: $_114; box-sizing: border-box; 
         .title{ font-size: $_24; color: $main-title;}
       }
-      
     }
   }
 }
