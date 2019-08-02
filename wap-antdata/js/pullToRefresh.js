@@ -32,8 +32,8 @@ function (container, option) {
     var defaultOption = {
         // 刷新相关
         noRefresh: false, // 关闭下拉刷新特性
-        pauseBound: 240,  // 触发刷新的位置(也是图标loading暂停的位置)
-        lowerBound: 280, // 最大下拉到多少px
+        pauseBound: 40,  // 触发刷新的位置(也是图标loading暂停的位置)
+        lowerBound: 80, // 最大下拉到多少px
         loadImg: "load.png", // loading图片
         pullImg: "pull.png", // 下拉图片
         onRefresh: function (refreshDone) { // 刷新数据回调

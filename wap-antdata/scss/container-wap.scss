@@ -60,10 +60,21 @@ a {
 html,
 body { height:100%; background-color: #f7f7f7; 
   &.subscribe-body{
-    #container{padding-top: $_150;}
+    #container{ 
+      height:calc(100% - 60px - 75px ); 
+      //padding-top: $_150; 
+      //margin-bottom: $_119;
+    }
+  }
+  &.search-body{
+    #container{ 
+      height:calc(100% - 60px - 185px ); 
+      //padding-top:$_370; 
+      //margin-bottom: $_119;
+    }
   }
 }
-#container { position:relative; height:100%; overflow:hidden; box-sizing: border-box; padding-top:$_370; background-color: #fff;
+#container { position:relative; overflow:hidden; box-sizing: border-box; background-color: #fff;
   #content{ background-color: #fff; }
 }
 .title-list-main{ border-bottom: $_1 solid #e5e5e5; padding: $_30 0 $_12; position: relative; margin: 0 $_34; 
@@ -134,7 +145,8 @@ body { height:100%; background-color: #f7f7f7;
     }
   }
 }
-.page-search{ @extend .page-index; margin-bottom: 0; padding-bottom: 0; position: absolute; width: 100%; z-index: 5; background-color: #f7f7f7;
+.page-search{ @extend .page-index; margin-bottom: 0; padding-bottom: 0; 
+  //position: absolute; width: 100%; z-index: 5; background-color: #f7f7f7;
   .banner-search-index{ height: $_202; flex-direction: column; align-items: center; background-color: #f7f7f7; margin-bottom: $_20; 
     .btn-add-screening{ display: block; color: #fff; text-decoration: underline; text-align: center; margin-top: $_5;}
   }
@@ -151,7 +163,8 @@ body { height:100%; background-color: #f7f7f7;
   .title-list-box{background-color: #fff; border: $_1 solid #e5e5e5; border-right: 0; border-left: 0; }
   
 }
-.page-subscribe{ @extend .page-search; position: absolute; width: 100%; z-index: 5; background-color: #f7f7f7;
+.page-subscribe{ @extend .page-search; 
+  //position: absolute; width: 100%; z-index: 5; background-color: #f7f7f7;
   .btm-search-box{ border-top: none; border-color: #ccc; background-color: #fff; height: $_72; line-height: $_72; margin-bottom: $_22;
     >a{ color: #1a1a1a; padding-bottom: $_4;
       &.cur{ background-color: #fff; color: $main-color; border-bottom: $_1 solid $main-color; position: relative;
