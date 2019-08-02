@@ -2,7 +2,7 @@ $(document).ready(function() {
   var pageSearch = $('.page-search').height();
   var bottomNav = $('.bottom-nav').height();
   $('#containe').height( pageSearch + bottomNav);
-
+  $('#containe').css('marginBottom',bottomNav + 5)
   // 测试用的数据下标
   var i = 1;
 
