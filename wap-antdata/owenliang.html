@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="js/iscroll.js"></script>
+    <script src="js/pullToRefresh.js?"></script>
+    <link rel='stylesheet' type='text/css' href = 'css/pullToRefresh.css'>
+    <link rel="stylesheet" type="text/css" href="css/container-wap.css">
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        html {
+            height:100%;
+        }
+        body {
+            height:100%;
+        }
+        #container {
+            position:relative;
+            height:100%;
+            overflow:hidden;
+            background-color:#f1f1f1;
+        }
+        .item {
+            height: 80px;
+            border-bottom: 1px solid black;
+            text-align: center;
+            line-height:80px;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            // 测试用的数据下标
+            var i = 1;
+
+            // 安装下拉刷新插件
+            var pullToRefresh = $.installPullToRefresh("#container", {
+                onRefresh: function(refreshDone) {
+                    setTimeout(function() {
+                        $("#content").html("");
+                        // 刷新后出现10个
+                        for (i = 1; i < 10; ++i) {
+                            $("#content").append(
+            '<dl class="title-list-main">'
+              + '<dt class="num">' + i + '.</dt>'
+              + '<dt class="title">山银桥山银桥山银桥控股集团有限公司关于昆新建智慧医院信息化建设项目的公开标公告</dt>'
+              + '<dd class="info"><span class="state"><i class="icon icon-state"></i>招标</span><span class="time"><i class="icon icon-time"></i>9小时以前</span><span class="city">苏州</span></dd>'
+            + '</dl>'
+          );
+                        }
+                        refreshDone();
+                    }, 2000)
+                },
+                onLoad: function(loadDone) {
+                    setTimeout(function() {
+                        // 每次加载增加5个
+                        for (var j = 0; j < 5; ++j) {
+                            $("#content").append(
+            '<dl class="title-list-main">'
+              + '<dt class="num">' + i++ + '.</dt>'
+              + '<dt class="title">山银桥山银桥山银桥控股集团有限公司关于昆新建智慧医院信息化建设项目的公开标公告</dt>'
+              + '<dd class="info"><span class="state"><i class="icon icon-state"></i>招标</span><span class="time"><i class="icon icon-time"></i>9小时以前</span><span class="city">苏州</span></dd>'
+            + '</dl>'
+          );
+                        }
+                        loadDone();
+                    }, 0);
+                },
+                // noRefresh: true,
+                // noLoad: true,
+            });
+
+            // 触发首屏渲染
+            pullToRefresh.triggerPull();
+        });
+    </script>
+
+</head>
+<body>
+    
+    <div id="container">
+        <div id="content"></div>
+    </div>
+</body>
+</html>
