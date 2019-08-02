@@ -49,6 +49,11 @@ input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
 input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
   color:lighten($color: $main-font, $amount: 10%);
 }
+a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
 .title-index{ text-align: center; font-size: $_30; color: $main-title; height: $_88; line-height: $_88; border-bottom: $_1 solid $main-border;
   >span{ color: $main-color;}
 }
