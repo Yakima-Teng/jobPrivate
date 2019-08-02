@@ -53,9 +53,22 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
   >span{ color: $main-color;}
 }
 html,
-body { height:100%; background-color: #f7f7f7; }
-#container { position:relative; height:100%; overflow:hidden;
+body { height:100%; background-color: #f7f7f7; 
+  &.subscribe-body{
+    #container{padding-top: $_150;}
+  }
+}
+#container { position:relative; height:100%; overflow:hidden; box-sizing: border-box; padding-top:$_370; 
   #content{ background-color: #fff; }
+}
+.title-list-main{ border-bottom: $_1 solid #e5e5e5; padding: $_30 0 $_12; position: relative; margin: 0 $_34; 
+  .info{ display: flex; justify-content: space-between; margin-left: $_34; font-size: $_22;
+    .icon{ margin-top: -$_6; margin-right: $_10;}
+    .city{ @include inline-block; padding: 0 $_20; background-color: $main-color; color: #fff; border-radius: $_10;}
+  }
+  .title{ color: #1a1a1a; font-size: $_28; margin-left: $_34;}
+  .num{ position: absolute; left: 0; top: $_35;font-size: $_26; color: #1a1a1a;}
+  &:last-child{ border:none;}
 }
 //la
 .page-index{ font-size: $_18; color: $main-font; line-height: 2em; overflow: hidden;  padding-bottom: $_20; margin-bottom: $_99; }
@@ -116,7 +129,7 @@ body { height:100%; background-color: #f7f7f7; }
     }
   }
 }
-.page-search{ @extend .page-index; margin-bottom: 0; padding-bottom: 0;
+.page-search{ @extend .page-index; margin-bottom: 0; padding-bottom: 0; position: absolute; width: 100%; z-index: 5; background-color: #f7f7f7;
   .banner-search-index{ height: $_202; flex-direction: column; align-items: center; background-color: #f7f7f7; margin-bottom: $_20; 
     .btn-add-screening{ display: block; color: #fff; text-decoration: underline; text-align: center; margin-top: $_5;}
   }
@@ -133,17 +146,7 @@ body { height:100%; background-color: #f7f7f7; }
   .title-list-box{background-color: #fff; border: $_1 solid #e5e5e5; border-right: 0; border-left: 0; }
   
 }
-.title-list-main{ border-bottom: $_1 solid #e5e5e5; padding: $_30 0 $_12; position: relative; margin: 0 $_34; 
-  .info{ display: flex; justify-content: space-between; margin-left: $_34; font-size: $_22;
-    .icon{ margin-top: -$_6; margin-right: $_10;}
-    .city{ @include inline-block; padding: 0 $_20; background-color: $main-color; color: #fff; border-radius: $_10;}
-  }
-  .title{ color: #1a1a1a; font-size: $_28; margin-left: $_34;}
-  .num{ position: absolute; left: 0; top: $_30;font-size: $_28; color: #1a1a1a;}
-  &:last-child{ border:none;}
-}
-
-.page-subscribe{ @extend .page-search;
+.page-subscribe{ @extend .page-search; position: absolute; width: 100%; z-index: 5; background-color: #f7f7f7;
   .btm-search-box{ border-top: none; border-color: #ccc; background-color: #fff; height: $_72; line-height: $_72; margin-bottom: $_22;
     >a{ color: #1a1a1a; padding-bottom: $_4;
       &.cur{ background-color: #fff; color: $main-color; border-bottom: $_1 solid $main-color; position: relative;

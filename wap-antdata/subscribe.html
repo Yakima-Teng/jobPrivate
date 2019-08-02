@@ -10,11 +10,15 @@
 <meta name="applicable" content="mobile">
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<link rel="stylesheet" type="text/css" href="css/container-wap.css">
 <script src="js/resize.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="js/iscroll.js"></script>
+<script src="js/pullToRefresh.js?"></script>
+<link rel='stylesheet' type='text/css' href = 'css/pullToRefresh.css'>
+<link rel="stylesheet" type="text/css" href="css/container-wap.css">
 <title>蚁群数据-招标搜索</title>
 </head>
-<body>
+<body class="subscribe-body">
 <!--page-index-->
 <section class="page-subscribe">
   <menu class="btm-search-box">
@@ -25,41 +29,15 @@
       <a href="javascript:void(0);" class="btn-tltle cur">标题搜索</a> | <a href="javascript:void(0);" class="btn-fullText">全文搜索</a>
     </menu>
     <div class="title-list-box">
-      <dl class="title-list-main">
-        <dt class="num">1.</dt>
-        <dt class="title">昆山银桥控股集团有限公司关于昆山市中西医结合医院异地新建智慧医院信息化建设项目的公开招标招标公告</dt>
-        <dd class="info"><span class="state"><i class="icon icon-state"></i>招标</span><span class="time"><i class="icon icon-time"></i>9小时以前</span><span class="city">苏州</span></dd>
-      </dl>
-      <dl class="title-list-main">
-        <dt class="num">2.</dt>
-        <dt class="title">限公司关于昆山市中西医结合医院异地新建智慧医院信息化建设项目的公开标公告</dt>
-        <dd class="info"><span class="state"><i class="icon icon-state"></i>招标</span><span class="time"><i class="icon icon-time"></i>9小时以前</span><span class="city">苏州</span></dd>
-      </dl>
-      <dl class="title-list-main">
-        <dt class="num">3.</dt>
-        <dt class="title">控股集团有限公司关于昆山市中西医结合医院异地新建智慧医院信息化建设项目的公开标公告</dt>
-        <dd class="info"><span class="state"><i class="icon icon-state"></i>招标</span><span class="time"><i class="icon icon-time"></i>9小时以前</span><span class="city">苏州</span></dd>
-      </dl>
-      <dl class="title-list-main">
-        <dt class="num">4.</dt>
-        <dt class="title">银桥控股银桥控股银桥控股集团有限公司关于昆山市中西医结合医院异地新目的公开标公告</dt>
-        <dd class="info"><span class="state"><i class="icon icon-state"></i>招标</span><span class="time"><i class="icon icon-time"></i>9小时以前</span><span class="city">苏州</span></dd>
-      </dl>
-      <dl class="title-list-main">
-        <dt class="num">5.</dt>
-        <dt class="title">昆山银桥控股集团有限公司关于昆山市中西医结合医院异地慧医院信息化建设项目的公开标公告</dt>
-        <dd class="info"><span class="state"><i class="icon icon-state"></i>招标</span><span class="time"><i class="icon icon-time"></i>9小时以前</span><span class="city">苏州</span></dd>
-      </dl>
-      <dl class="title-list-main">
-        <dt class="num">6.</dt>
-        <dt class="title">山银桥山银桥山银桥控股集团有限公司关于昆新建智慧医院信息化建设项目的公开标公告</dt>
-        <dd class="info"><span class="state"><i class="icon icon-state"></i>招标</span><span class="time"><i class="icon icon-time"></i>9小时以前</span><span class="city">苏州</span></dd>
-      </dl>
+     
     </div>
   </section>
 
 </section>
 <!--/page-index-->
+<div id="container">
+  <div id="content"></div>
+</div>
 <!--bottom-nav-->
 <menu class="bottom-nav">
   <a href="index.html" class="nav"><i class="icon icon-index"></i><span>首页</span></a>
@@ -69,5 +47,6 @@
 </menu>
 <!--/bottom-nav-->
 <a href="javascript:void(0);" class="btn-subscribe-settings">订阅<br>设置</a>
+<script src="js/base.js"></script>
 </body>
 </html>
