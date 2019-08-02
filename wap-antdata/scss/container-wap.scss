@@ -58,7 +58,7 @@ body { height:100%; background-color: #f7f7f7;
     #container{padding-top: $_150;}
   }
 }
-#container { position:relative; height:100%; overflow:hidden; box-sizing: border-box; padding-top:$_370; 
+#container { position:relative; height:100%; overflow:hidden; box-sizing: border-box; padding-top:$_370; background-color: #fff;
   #content{ background-color: #fff; }
 }
 .title-list-main{ border-bottom: $_1 solid #e5e5e5; padding: $_30 0 $_12; position: relative; margin: 0 $_34; 
@@ -71,7 +71,7 @@ body { height:100%; background-color: #f7f7f7;
   &:last-child{ border:none;}
 }
 //la
-.page-index{ font-size: $_18; color: $main-font; line-height: 2em; overflow: hidden;  padding-bottom: $_20; margin-bottom: $_99; }
+.page-index{ font-size: $_18; color: $main-font; line-height: 2em; overflow: hidden;  padding-bottom: $_119; }
 .bottom-nav{ background-color: #fff; border-top: $_1 solid #d6d7dc; display: flex; height: $_98; width: 100%; position: fixed; bottom: 0; left: 0;  justify-content: center; align-items: center;
   .nav{ width: 25%; box-sizing: border-box; display: block; text-align: center; font-size: $_24; color: #7f8699;
     .icon{ background-position-y: top; }
