@@ -112,10 +112,10 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
   }
 }
 .page-search{ @extend .page-index;
-  .banner-search-index{ height: $_202; flex-direction: column; align-items: center; background-color: transparent; margin-bottom: $_20;
+  .banner-search-index{ height: $_222; flex-direction: column; align-items: center; background-color: #f7f7f7; padding-bottom: $_20; position: absolute; width: 100%; z-index: 5; background-position-y: top;
     .btn-add-screening{ display: block; color: #fff; text-decoration: underline; text-align: center; margin-top: $_5;}
   }
-  .btm-search-box{ border: $_1 solid $main-color; border-right: 0; border-left: 0; margin-bottom: $_36; font-size: $_30;
+  .btm-search-box{ border: $_1 solid $main-color; border-right: 0; border-left: 0; margin-bottom: $_36; font-size: $_30; position: absolute; width: 100%; top: $_222; z-index: 5; background-color: #f7f7f7;
     >a{width: 50%; display: inline-block; text-align: center; height: $_58; line-height: $_58; color: $main-color;
       &.cur{ background-color: $main-color; color: #fff;}
     }
@@ -125,6 +125,7 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
       &.cur{ color: $main-color; border-color: $main-color;}
     }
   }
+  .tendering-box{ padding-top:$_316;}
   .title-list-box{background-color: #fff; border: $_1 solid #e5e5e5; border-right: 0; border-left: 0; padding: 0 $_34;
     .title-list-main{ border-bottom: $_1 solid #e5e5e5; padding: $_30 0 $_12; position: relative;
       .info{ display: flex; justify-content: space-between; margin-left: $_34; font-size: $_22;
