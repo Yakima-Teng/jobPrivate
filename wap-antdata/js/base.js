@@ -24,7 +24,7 @@ $(document).ready(function() {
         refreshDone();
       }, 2000)
     },
-    onLoad: function(loadDone) {
+    /*onLoad: function(loadDone) {
       setTimeout(function() {
         // 每次加载增加5个
         for (var j = 0; j < 5; ++j) {
@@ -38,7 +38,7 @@ $(document).ready(function() {
         }
         loadDone();
       }, 0);
-    },
+    },*/
     // noRefresh: true,
     // noLoad: true,
   });
