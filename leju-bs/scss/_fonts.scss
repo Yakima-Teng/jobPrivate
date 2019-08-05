@@ -1,0 +1,15 @@
+@font-face {
+	font-family: 'BoschSansCHS-Regular';
+	src: url('../fonts/BoschSansCHS-Regular.eot');
+	src: url('../fonts/BoschSansCHS-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/BoschSansCHS-Regular.woff') format('woff'), url('../fonts/BoschSansCHS-Regular.ttf') format('truetype'), url('../fonts/BoschSansCHS-Regular.svg#BoschSansCHS-Regular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.ft-regular {
+	font-family: 'BoschSansCHS-Regular';
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
