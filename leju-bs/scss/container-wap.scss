@@ -56,7 +56,9 @@ h2.title{ background: url('../images/bg-title.png') no-repeat center; background
 }
 
 //content
-.video-box{ width: 100%; height: $_400 + $_66; margin-bottom: $_60;}
+.video-box{ width: 100%; height: $_400 + $_66; margin-bottom: $_60;
+  iframe{ border: none 0;}
+}
 .story-list{ background-color: $main-color; border:$_3 solid $main-border; display: flex; @extend .ft-regular; margin-bottom: $_62; position: relative; justify-content:flex-end;width: 100%;
   .story-info{ padding-top: $_55; text-align: center; padding-bottom: $_25;  padding-right: $_24; width: $_400 + $_60; margin-top: -$_20; 
     .user-title{ font-size: $_40; color: rgba($color: #161717, $alpha: .6); margin-bottom: $_10;
