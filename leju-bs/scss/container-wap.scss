@@ -150,5 +150,8 @@ h2.title{ background: url('../images/bg-title.png') no-repeat center; background
 }
 
 @media screen and (min-width: 950px) {
-  .page-index{ width: 950px; margin: auto;}
+.page-index{ width: 950px; margin: auto;}
+.brand{ 
+  .brand-img{ flex-shrink: 0;}
+}
 }
