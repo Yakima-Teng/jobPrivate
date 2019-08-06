@@ -27,7 +27,9 @@ a {
 -webkit-user-select: none;
 }
 .page-index{ font-size: $_24; line-height: 1.5; overflow: hidden; background-color: #fff;}
-h2.title{ background: url('../images/bg-title.png') no-repeat center; background-size: 100%; @extend .ft-regular; font-size: $_40; color: $main-title; font-style: italic; text-align: center; width: 100%; padding: 0 $_30; box-sizing: border-box; margin-bottom: $_50; letter-spacing: $_5; }
+h2.title{ background: url('../images/bg-title.png') no-repeat center; background-size: 100%; @extend .ft-regular; font-size: $_40; color: $main-title;text-align: center; width: 100%; padding: 0 $_30; box-sizing: border-box; margin-bottom: $_50; letter-spacing: $_5;
+  em{ @include inline-block; font-style: italic; margin-top: -$_10; margin-right: $_5; }
+}
 .module-content{ padding:0 $_30; width: 100%; box-sizing: border-box;}
 
 //header
@@ -60,8 +62,8 @@ h2.title{ background: url('../images/bg-title.png') no-repeat center; background
     .user-title{ font-size: $_40; color: rgba($color: #161717, $alpha: .6); margin-bottom: $_10;
         >em{ font-size: $_30; margin: 0 $_15;}
       }
-    .brief-info{ font-size: $_30; background-color:#707070;  color: #fff; display: inline-block; padding: 0 $_33; line-height: $_40; height: $_40; margin-bottom: $_23; padding-top: $_2;}
-    .info{text-align: left; text-indent: 2em;}
+    .brief-info{ font-size: $_30; background-color:#707070;  color: #fff; display: inline-block; line-height: 1; margin-bottom: $_23; padding: $_12 $_33 $_8;}
+    .info{text-align: left; text-indent: 2em; padding: 0 $_30;}
   }
   .story-img{ position: absolute; bottom: 0; margin-top: -$_20; }
   &.story-KL{
@@ -73,6 +75,7 @@ h2.title{ background: url('../images/bg-title.png') no-repeat center; background
   }
   &.story-PS{
     .story-img{ width: $_400 + $_17; left: 0; }
+    .info{padding: 0 $_23 0 $_30;}
   }
 }
 .module-experience{
@@ -116,7 +119,7 @@ h2.title{ background: url('../images/bg-title.png') no-repeat center; background
     .arrow-left{ background: url('../images/btn-banner.png') no-repeat center; background-size: 100%; width: $_47; height: $_82; @include inline-block; position: absolute; left: $_30; top: 50%; margin-top: -$_41; cursor: pointer; z-index: 10;}
     .arrow-right{ @extend .arrow-left; right: $_30; left: auto; transform:rotate(-180deg); z-index: 11;}
     .swiper-slide{ position: relative;
-        h3{ width: 100%; position: absolute; z-index: 9; bottom: 0; left: 0; background-color: #000; height: $_60; line-height: $_60; color: #fff;text-align: center; font-size: $_40; @extend .ft-regular;}
+        h3{ width: 100%; position: absolute; z-index: 9; bottom: 0; left: 0; background-color: #000; height: $_60; line-height: $_60; color: #fff;text-align: center; font-size: $_30; @extend .ft-regular;}
     }
 }
 
