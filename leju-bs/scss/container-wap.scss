@@ -26,7 +26,7 @@ a {
 -webkit-touch-callout: none;
 -webkit-user-select: none;
 }
-.page-index{ font-size: $_24; line-height: 1.5; overflow: hidden; background-color: #fff;}
+.page-index{ font-size: $_24; line-height: 1.5; overflow: hidden; background-color: #fff; @extend .ft-regular;}
 h2.title{ background: url('../images/bg-title.png') no-repeat center; background-size: 100%; @extend .ft-regular; font-size: $_40; color: $main-title;text-align: center; width: 100%; padding: 0 $_30; box-sizing: border-box; margin-bottom: $_50; letter-spacing: $_5;
   em{ @include inline-block; font-style: italic; margin-top: -$_10; margin-right: $_5; }
 }
