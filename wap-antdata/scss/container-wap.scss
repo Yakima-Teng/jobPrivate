@@ -136,7 +136,7 @@ body { height:100%; background-color: #f7f7f7;
       .title{ color: $main-title; font-size: $_30;}
       >dd{ line-height: 1.5; font-size: $_20;}
     }
-    .contact-us{  font-size: $_30; text-decoration: underline; color: #046eb8;  width: $_125;}
+    .contact-us{  font-size: $_30; text-decoration: underline; color: #046eb8;  width: $_200; text-align: right;}
     &:nth-child(2){ 
       .contact-us{ color: #8cc51a;}
     }
