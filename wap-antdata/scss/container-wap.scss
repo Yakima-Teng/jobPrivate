@@ -34,8 +34,8 @@ img{ width: 100%; }
   &.icon-search{ background-image: url('../images/icon-nav-02.png'); width: $_36; height: $_36;}
   &.icon-subscribe{ background-image: url('../images/icon-nav-03.png'); width: $_40; height: $_37;}
   &.icon-user{ background-image: url('../images/icon-nav-04.png'); width: $_36; height: $_41;}
-  &.icon-state{ background-image: url('../images/icon-11.png'); width: $_19; height:$_22;}
-  &.icon-time{ background-image: url('../images/icon-12.png'); width: $_21; height: $_20;}
+  &.icon-state{ background-image: url('../images/icon-11.png'); width: $_23; height:$_28;}
+  &.icon-time{ background-image: url('../images/icon-12.png'); width: $_28; height: $_28;}
 }
 input::-webkit-input-placeholder{
   color:lighten($color: $main-font, $amount: 10%);
@@ -78,7 +78,7 @@ body { height:100%; background-color: #f7f7f7;
   #content{ background-color: #fff; }
 }
 .title-list-main{ border-bottom: $_1 solid #e5e5e5; padding: $_30 0 $_28; position: relative; margin: 0 $_34; 
-  .info{ display: flex; justify-content: space-between; margin-left: $_34; font-size: $_22;
+  .info{ display: flex; justify-content: space-between; margin-left: $_34; font-size: $_28;
     .icon{ margin-top: -$_6; margin-right: $_10;}
     .city{ @include inline-block; padding: 0 $_20; background-color: $main-color; color: #fff; border-radius: $_10;}
   }
