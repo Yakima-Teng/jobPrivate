@@ -130,13 +130,13 @@ body { height:100%; background-color: #f7f7f7;
   }
 }
 .tailor-module-index{ background-color: #fff;
-  .tailor-synopsis-main{ border-bottom: $_1 solid #edebeb; display: flex; padding: $_30; align-items: center; justify-content: space-between;
+  .tailor-synopsis-main{ border-bottom: $_1 solid #edebeb; padding: $_30; display: flex; align-items: center; justify-content: space-between;
     .icon-box{ width: $_93; height: $_93; text-align: center; line-height: $_93; border-radius: 100%; border: $_1 solid #edebeb; margin-right: $_37;}
     .main{ width: 65%;
       .title{ color: $main-title; font-size: $_30;}
       >dd{ line-height: 1.5; font-size: $_20;}
     }
-    .contact-us{  font-size: $_30; text-decoration: underline; color: #046eb8;}
+    .contact-us{  font-size: $_30; text-decoration: underline; color: #046eb8;  width: $_125;}
     &:nth-child(2){ 
       .contact-us{ color: #8cc51a;}
     }
