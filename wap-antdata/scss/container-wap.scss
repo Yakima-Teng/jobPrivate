@@ -77,12 +77,12 @@ body { height:100%; background-color: #f7f7f7;
 #container { position:relative; overflow:hidden; box-sizing: border-box; background-color: #fff;
   #content{ background-color: #fff; }
 }
-.title-list-main{ border-bottom: $_1 solid #e5e5e5; padding: $_30 0 $_12; position: relative; margin: 0 $_34; 
+.title-list-main{ border-bottom: $_1 solid #e5e5e5; padding: $_30 0 $_28; position: relative; margin: 0 $_34; 
   .info{ display: flex; justify-content: space-between; margin-left: $_34; font-size: $_22;
     .icon{ margin-top: -$_6; margin-right: $_10;}
     .city{ @include inline-block; padding: 0 $_20; background-color: $main-color; color: #fff; border-radius: $_10;}
   }
-  .title{ color: #1a1a1a; font-size: $_28; margin-left: $_34;}
+  .title{ color: #1a1a1a; font-size: $_28; margin-left: $_34; margin-bottom: $_24; height: 2em * 1.5; overflow: hidden;display: -webkit-box; -webkit-line-clamp:2; overflow: hidden; text-overflow: ellipsis; -webkit-box-orient: vertical;}
   .num{ position: absolute; left: 0; top: $_35;font-size: $_26; color: #1a1a1a;}
   &:last-child{ border:none;}
 }
@@ -124,19 +124,19 @@ body { height:100%; background-color: #f7f7f7;
     .detamarket-synopsis-main{ height: $_114; background-color: #f7f7f7; border-radius: $_15; display: flex; align-items: center; justify-content: space-around; padding: $_30 $_23 $_24; box-sizing: border-box; margin: 0 $_11;
       >.icon{ margin-right: $_16;}
       .main{ line-height: 1.5; 
-        .title{ font-size: $_24; color: $main-title;}
+        .title{ font-size: $_30; color: $main-title;}
       }
     }
   }
 }
 .tailor-module-index{ background-color: #fff;
-  .tailor-synopsis-main{ border-bottom: $_1 solid #edebeb; display: flex; padding: $_30 $_60 $_30 $_40; align-items: center; 
+  .tailor-synopsis-main{ border-bottom: $_1 solid #edebeb; display: flex; padding: $_30; align-items: center; justify-content: space-between;
     .icon-box{ width: $_93; height: $_93; text-align: center; line-height: $_93; border-radius: 100%; border: $_1 solid #edebeb; margin-right: $_37;}
     .main{ width: 65%;
-      .title{ color: $main-title; font-size: $_24;}
-      >dd{ line-height: 1.5;}
+      .title{ color: $main-title; font-size: $_30;}
+      >dd{ line-height: 1.5; font-size: $_20;}
     }
-    .contact-us{  font-size: $_22; text-decoration: underline; color: #046eb8;}
+    .contact-us{  font-size: $_30; text-decoration: underline; color: #046eb8;}
     &:nth-child(2){ 
       .contact-us{ color: #8cc51a;}
     }
@@ -165,8 +165,8 @@ body { height:100%; background-color: #f7f7f7;
 }
 .page-subscribe{ @extend .page-search; 
   //position: absolute; width: 100%; z-index: 5; background-color: #f7f7f7;
-  .btm-search-box{ border-top: none; border-color: #ccc; background-color: #fff; height: $_72; line-height: $_72; margin-bottom: $_22;
-    >a{ color: #1a1a1a; padding-bottom: $_4;
+  .btm-search-box{ border-top: none; border-color: #ccc; background-color: #fff; height: $_90; line-height: $_90; margin-bottom: $_22;
+    >a{ color: #1a1a1a; padding-bottom: $_15; font-size: $_30; 
       &.cur{ background-color: #fff; color: $main-color; border-bottom: $_1 solid $main-color; position: relative;
         &:after{content: ''; display: block; width: $_1; height: $_30; right: 0; top: 50%; margin-top: -$_15; position: absolute; background-color: #cccccc;}
       }
