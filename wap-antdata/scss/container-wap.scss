@@ -173,3 +173,27 @@ body { height:100%; background-color: #f7f7f7;
     }
   }
 }
+.user-avatar{ background: url('../images/banner-user.jpg') repeat-y center top; background-size: 100%; display: flex; flex-direction: column; justify-content: space-between; align-items: center; color: #fff;
+  .user-img-box{ margin-top: $_25; display: flex; flex-direction: column; justify-content: space-between; align-items: center;
+    >.img{ border: $_1 solid #fff; border-radius: 100%; background-color: rgba($color: #fff, $alpha: .2); padding: $_12; overflow: hidden; box-sizing: border-box; width: $_210; height: $_210;
+      >span{display: block; border: $_2 solid #fff; border-radius: 100%; background-color: rgba($color: #fff, $alpha: .2); padding: $_10; width: $_184; height: $_184; overflow: hidden;box-sizing: border-box;
+        >em{ display: block; width: $_159; height: $_159; overflow: hidden; border-radius: 100%;}
+      }
+    }
+    >.user-name{ font-size: $_32; line-height: 1; margin-top: $_13; width: 100%; text-align: center; box-sizing: border-box; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+  }
+  .user-main{ display: flex; font-size: $_28; width: 100%; margin-top: $_20; overflow: hidden;
+    .info{ background-color: rgba($color: #000000, $alpha: .11); text-align: center; width: 50%; padding: $_40 0 $_44; line-height: 1;
+      >a{ display: block; font-size: $_24; color: #fff; text-decoration: underline; line-height: 1; margin-top: $_25;
+        &.vip{ color: #ffad37;}
+      }
+      &:last-child{ margin-left: $_2;}
+    }
+  }
+}
+.user-info{ font-size: $_28; color: #1a1a1a;
+  .title{ font-size: $_30; line-height: 1;  padding: $_40 $_74 $_35; border-bottom: $_1 solid #e5e5e5;}
+  .info{ padding: $_30 $_74; display: flex; justify-content: space-between; border-bottom: $_1 solid #e5e5e5;
+    >span{ color: #c7c7cc;}
+  }
+}
