@@ -90,7 +90,11 @@ function (container, option) {
                                 iscroll.refresh();
                             }, 0);
                         });
+                        $('body .addmore').remove();
                     }
+                $('body').append(
+                    '<p class="addmore">加载更多</p>'
+                );
                 }
             }
         });
