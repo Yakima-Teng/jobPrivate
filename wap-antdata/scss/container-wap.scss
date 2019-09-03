@@ -54,6 +54,7 @@ a {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
 }
+.tendering-box{ display: none;}
 .title-index{ text-align: center; font-size: $_30; color: $main-title; height: $_88; line-height: $_88; border-bottom: $_1 solid $main-border;
   >span{ color: $main-color;}
 }
@@ -61,14 +62,14 @@ html,
 body { height:100%; background-color: #f7f7f7; 
   &.subscribe-body{
     #container{ 
-      height:calc(100% - 60px - 75px ); 
+      height:calc(100% - 60px - 45px ); 
       //padding-top: $_150; 
       //margin-bottom: $_119;
     }
   }
   &.search-body{
     #container{ 
-      height:calc(100% - 60px - 185px ); 
+      height:calc(100% - 60px - 145px ); 
       //padding-top:$_370; 
       //margin-bottom: $_119;
     }
@@ -101,8 +102,8 @@ body { height:100%; background-color: #f7f7f7;
 
 //module-index
 .banner-search-index{ background: url('../images/banner.png') no-repeat center bottom #fff; background-size: 100%; height: $_152; display: flex; justify-content: center; box-sizing: border-box; padding-top: $_31;
-  .search-box{ height: $_69; width: $_400 + $_274; font-size: $_24; background-color: #fff; border-radius: $_30; display: flex; align-items: center; justify-content: center;
-    .inp-search{ width: $_300; border: none 0;}
+  .search-box{ height: $_69; line-height: $_69; width: $_400 + $_274; font-size: $_24; background-color: #fff; border-radius: $_30;  padding: 0 $_30; margin-bottom: $_48;
+    .inp-search{ width: 95%; border: none 0;}
     .icon-search{ margin:$_8 $_10 0 0;}
   }
 }
@@ -148,7 +149,7 @@ body { height:100%; background-color: #f7f7f7;
 .page-search{ @extend .page-index; margin-bottom: 0; padding-bottom: 0; 
   //position: absolute; width: 100%; z-index: 5; background-color: #f7f7f7;
   .banner-search-index{ height: $_202; flex-direction: column; align-items: center; background-color: #f7f7f7; margin-bottom: $_20; 
-    .btn-add-screening{ display: block; color: #fff; text-decoration: underline; text-align: center; margin-top: $_5;}
+    .btn-add-screening{ display: none; color: #fff; text-decoration: underline; text-align: center; margin-top: $_5;}
   }
   .btm-search-box{ border: $_1 solid $main-color; border-right: 0; border-left: 0; margin-bottom: $_36; font-size: $_30;
     >a{width: 50%; display: inline-block; text-align: center; height: $_58; line-height: $_58; color: $main-color;
