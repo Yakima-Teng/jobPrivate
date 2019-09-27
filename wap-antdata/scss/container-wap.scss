@@ -199,3 +199,12 @@ body { height:100%; background-color: #f7f7f7;
   }
 }
 .addmore{ position: fixed; bottom: $_98; text-align: center; width: 100%; font-size: $_24; background-color: #fff;  }
+
+.page-article{padding: 0 $_35; background-color: #f7f7f7; color: #191919; font-size: $_26;
+  .article-title{ font-size: $_34; margin-top: $_50;}
+  .else{ display: flex; justify-content: space-between; border-bottom: $_1 solid #e5e5e5; padding: $_20 0; font-size: $_20; color: #999; align-items: center; margin-bottom: $_40;
+    .label{ display: inline-block; padding: $_6 $_14; background-color: #2389f9; color: #fff; border-radius: $_5;}
+
+  }
+  .article-box{ font-size: $_28; padding-bottom: $_40;}
+}
