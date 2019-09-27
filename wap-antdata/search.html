@@ -11,8 +11,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <script src="js/resize.min.js"></script>
-<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> -->
-<script src="https://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<!-- <script src="https://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script> -->
 <script src="js/iscroll.js"></script>
 <script src="js/pullToRefresh.js?"></script>
 <link rel='stylesheet' type='text/css' href = 'css/pullToRefresh.css'>
@@ -89,8 +89,8 @@
 <div class="maki"></div>
 <!--/page-index-->
 <script>
-$('.title-list-main').live('click',function(){
-  alert(1);
+$(document).on('click','.title-list-main',function(){
+  //alert(1);
   $('.page-article,.maki').show();
 });
 $('.maki').on('click',function(){
