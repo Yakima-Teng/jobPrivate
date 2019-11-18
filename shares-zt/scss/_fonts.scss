@@ -1,0 +1,15 @@
+@font-face {
+	font-family: 'trends';
+	src: url('../fonts/trends.eot');
+	src: url('../fonts/trends.eot?#iefix') format('embedded-opentype'), url('../fonts/trends.woff') format('woff'), url('../fonts/trends.ttf') format('truetype'), url('../fonts/trends.svg#trends') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.ft-regular {
+	font-family: 'trends';
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

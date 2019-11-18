@@ -11,7 +11,6 @@
 <link rel="stylesheet" href="css/container.css" />
 <!-- <script src="js/jquery-1.9.1.min.js"></script> -->
 <script src="js/jquery.min-1.7.2.js"></script>
-<script src="js/laydate/laydate.js"></script>
 <title>数据中心</title>
 </head>
 <body>
@@ -19,12 +18,12 @@
 <div class="page-index">
 <!--page-nav-->
 <section class="page-nav shrink">
-  <h1 class="logo"></h1>
+  <h1 class="logo"><a href="#"></a></h1>
   <!--page-nav-->
   <ul class="nav-list-first">
-    <li class="nav"><em class="sep"></em><i class="icon icon-cp"></i><span class="name">产品库</span></li>
-    <li class="nav"><em class="sep"></em><i class="icon icon-bb"></i><span class="name">报表中心</span></li>
-    <li class="nav"><em class="sep"></em><i class="icon icon-wbcp"></i><span class="name">外包产品查询</span>
+    <li class="nav"><em class="sep"></em><span class="name"><i class="icon icon-cp"></i>产品库</span></li>
+    <li class="nav"><em class="sep"></em><span class="name"><i class="icon icon-bb"></i>报表中心</span></li>
+    <li class="nav"><em class="sep"></em><span class="name"><i class="icon icon-wbcp"></i>外包产品查询</span>
       <ul class="nav-second">
         <li class="nav"><span class="name">外包产品查询</span></li>
         <li class="nav"><span class="name">沪深指数查询</span></li>
@@ -36,11 +35,18 @@
             <li class="nav"><span class="name">外包产品发行规模排名</span></li>
           </ul>
         </li>
-        <li class="nav"><em class="sep"></em><span class="name">外包产品统计</span></li>
+        <li class="nav"><em class="sep"></em><span class="name">外包产品统计</span>
+          <ul class="nav-third">
+            <li class="nav"><span class="name">外包产品份额排名</span></li>
+            <li class="nav"><span class="name">外包产品单位净值排名</span></li>
+            <li class="nav"><span class="name">外包产品资产净值排名</span></li>
+            <li class="nav"><span class="name">外包产品发行规模排名</span></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li class="nav"><em class="sep"></em><i class="icon icon-tgcp"></i><span class="name">左侧导航栏背景</span></li>
-    <li class="nav"><em class="sep"></em><i class="icon icon-yqxx"></i><span class="name">舆情信息异常</span></li>
+    <li class="nav"><em class="sep"></em><span class="name"><i class="icon icon-tgcp"></i>左侧导航栏背景</span></li>
+    <li class="nav"><em class="sep"></em><span class="name"><i class="icon icon-yqxx"></i>舆情信息异常</span></li>
   </ul>
   <!--/page-nav-->
 </section>
@@ -81,31 +87,104 @@
   <!--/page-menu-->
   <!--module-contents-->
   <div class="module-contents">
-    <span class="btn-shrink"><i class="icon icon-shrink"></i></span>
+    <span class="btn-shrink-date"><i class="icon icon-shrink"></i></span>
+    <!--module-menu-->
     <header class="module-menu">
       <span class="btn-home"><i class="icon icon-home"></i></span>
       <div class="module-menu-list-box">
         <span class="btn-menu-tab menu-left"></span>
         <ul class="module-menu-list">
-          <li class="menu"><i class="icon"></i>采集网站配置</li>
-          <li class="menu"><i class="icon"></i>角色管理</li>
-          <li class="menu"><i class="icon"></i>用户管理</li>
-          <li class="menu"><i class="icon"></i>菜单管理</li>
-          <li class="menu"><i class="icon"></i>业务日志</li>
-          <li class="menu"><i class="icon"></i>登录日志</li>
-          <li class="menu"><i class="icon"></i>字典管理</li>
-          <li class="menu"><i class="icon"></i>监控管理</li>
-          <li class="menu"><i class="icon"></i>通知管理</li>
-          <li class="menu"><i class="icon"></i>代码生成</li>
-          <li class="menu"><i class="icon"></i>字典管理</li>
-          <li class="menu"><i class="icon"></i>字典管理</li>
-          <li class="menu"><i class="icon"></i>字典管理</li>
-          <li class="menu"><i class="icon"></i>字典管理</li>
+          <li class="menu">采集网站配置<i class="icon"></i></li>
+          <li class="menu">角色管理<i class="icon"></i></li>
+          <li class="menu">用户管理<i class="icon"></i></li>
+          <li class="menu">菜单管理<i class="icon"></i></li>
+          <li class="menu cur">业务日志<i class="icon"></i></li>
+          <li class="menu">登录日志<i class="icon"></i></li>
+          <li class="menu">字典管理<i class="icon"></i></li>
+          <li class="menu">监控管理<i class="icon"></i></li>
+          <li class="menu">通知管理<i class="icon"></i></li>
+          <li class="menu">代码生成<i class="icon"></i></li>
+          <li class="menu">字典管理<i class="icon"></i></li>
+          <li class="menu">字典管理<i class="icon"></i></li>
+          <li class="menu">字典管理<i class="icon"></i></li>
+          <li class="menu">字典管理<i class="icon"></i></li>
         </ul>
         <span class="btn-menu-tab menu-right"></span>
       </div>
-      <div class="btn"></div>
+      <div class="btn-close-current-box">
+        <span class="btn-close-current">关闭操作<i class="sep"></i></span>
+        <ul class="choice-list">
+          <li class="choice">定位当前操作</li>
+          <li class="choice">定位当前操作</li>
+          <li class="choice">定位当前操作</li>
+        </ul>
+      </div>
     </header>
+    <!--/module-menu-->
+    <!--module-content-->
+    <div class="module-content module-calendar">
+      <header class="content-header">
+        <span class="date"><em class="day">11</em><em>November</em><em>2019</em></span>
+        <em class="else">日期块左上角图标代表当天到期产品数量</em>
+      </header>
+      <dl class="main">
+        <dt class="th">
+          <span>SUN 日</span>
+          <span>MON 一</span>
+          <span>TUE 二</span>
+          <span>WED 三</span>
+          <span>THU 四</span>
+          <span>FRI 五</span>
+          <span>SAT 六</span>
+        </dt>
+        <dd class="td">
+          <span><em class="num"></em></span>
+          <span><em class="num"></em></span>
+          <span><em class="num"></em></span>
+          <span><em class="num"></em></span>
+          <span><em class="num"></em></span>
+          <span><em class="num">1</em></span>
+          <span><em class="num">2</em></span>
+        </dd>
+        <dd class="td">
+          <span><em class="num">3</em><em class="jiao"><i>26</i></em></span>
+          <span><em class="num">4</em></span>
+          <span><em class="num">5</em></span>
+          <span><em class="num">6</em></span>
+          <span><em class="num">7</em></span>
+          <span><em class="num">8</em></span>
+          <span><em class="num">9</em></span>
+        </dd>
+        <dd class="td">
+          <span><em class="num">10</em></span>
+          <span><em class="num">11</em></span>
+          <span><em class="num">12</em></span>
+          <span><em class="num">13</em></span>
+          <span><em class="num">14</em></span>
+          <span><em class="num">15</em></span>
+          <span><em class="num">16</em></span>
+        </dd>
+        <dd class="td">
+          <span><em class="num">17</em></span>
+          <span><em class="num">18</em></span>
+          <span><em class="num">19</em></span>
+          <span><em class="num">20</em></span>
+          <span><em class="num">21</em></span>
+          <span><em class="num">22</em></span>
+          <span><em class="num">23</em></span>
+        </dd>
+        <dd class="td">
+          <span><em class="num">24</em></span>
+          <span><em class="num">25</em></span>
+          <span><em class="num">26</em></span>
+          <span><em class="num">27</em></span>
+          <span><em class="num">28</em></span>
+          <span><em class="num">29</em></span>
+          <span><em class="num">30</em></span>
+        </dd>
+      </dl>
+    </div>
+    <!--/module-content-->
   </div>
   <!--/module-contents-->
 </section>

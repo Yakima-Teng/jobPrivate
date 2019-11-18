@@ -1,21 +1,16 @@
 $(function(){
-!$('.inp-date').length > 0 || (function () {
-lay('.inp-date').each(function(){
-  laydate.render({
-    elem: this
-    ,trigger: 'click'
+!$('.nav').length > 0 || (function () {
+  $('.nav').toggle(function(){
+    console.log('1')
+    $(this).addClass('cur');
+  },function(){
+    console.log('2')
+    $(this).removeClass('cur');
   });
-}); 
+
 })();
 !$('.select-page').length > 0 || (function () {
-  $('.select-page .num').on('click',function(){
-    $('.num-list-box').show();
-  });
-  $('.num-list').on('click',function(){
-    $('.num-list-box').hide();
-    var numTxt = $(this).text();
-    $('.select-page').find('.num').text(numTxt);
-  });
+ 
 })();
 
 $('.btn-shrink').toggle(function(){
