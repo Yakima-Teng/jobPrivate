@@ -26,14 +26,14 @@ $(function(){
 
 //内容导航关闭操作
 !$('.btn-close-current-box').length > 0 || (function () {
-  $('.btn-close-current').bind('click',function(){
+  $('.btn-close-current').live('click',function(){
     if($(this).hasClass('cur')){
       $(this).removeClass('cur').next().hide();
     }else{
       $(this).addClass('cur').next().show();
     }
   });
-  $('.choice-list').find('.choice').bind('click',function(){
+  $('.choice-list').find('.choice').live('click',function(){
     $(this).parent().hide();
     $('.btn-close-current').removeClass('cur');
   })
@@ -43,29 +43,14 @@ $(function(){
 !$('.module-menu-list').length > 0 || (function () {
   var moduleMenu = $('.module-menu-list .menu');
   var moduleMenuLength = moduleMenu.length;
-  moduleMenu.bind('click',function(){
+  moduleMenu.live('click',function(){
     $(this).addClass('cur').siblings().removeClass('cur');
   });
-  moduleMenu.find('.icon').bind('click',function(){
+  moduleMenu.find('.icon').live('click',function(){
     $(this).parent().hide();
   })
   var menuALLWight = moduleMenuLength*100;
   $('.module-menu-list').width(menuALLWight);
-
-  // var cot=0;
-  // $('.module-menu-list-box').find('.menu-left').bind('click',function(){
-  //   if(cot>0){    
-  //     cot--;    
-  //     $('.module-menu-list .menu').eq(cot).animate({'margin-left':'0'},500);  
-  //    };  
-  // });
-
-  // $('.module-menu-list-box').find('.menu-right').bind('click',function(){
-  //   if(cot<= moduleMenuLength ){ 
-  //     $('.module-menu-list .menu').eq(cot).animate({'margin-left':'-100px'},500);    
-  //     cot++;  
-  //    };
-  // });
 
 })();
 
