@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="css/container.css" />
 <!-- <script src="js/jquery-1.9.1.min.js"></script> -->
 <script src="js/jquery.min-1.7.2.js"></script>
+<script src="js/Marquee.js"></script>
 <title>数据中心</title>
 </head>
 <body>
@@ -34,22 +35,36 @@
     </div>
     <div class="btn-shrink"></div>
     <div class="page-menu-list-box">
-      <span class="btn-menu-tab menu-left"></span>
-      <div class="page-menu-box">
+      <span class="btn-menu-tab menu-left" id="goL"></span>
+      <div class="page-menu-box" id="marquee">
         <ul class="page-menu-list">
-          <li class="menu cur">系统运维</li>
-          <li class="menu">公共查询</li>
-          <li class="menu">产品管理</li>
-          <li class="menu">清算交收</li>
-          <li class="menu">TA业务</li>
-          <li class="menu">估值核算</li>
-          <li class="menu">信披投监</li>
-          <li class="menu">基金管理人网站</li>
-          <li class="menu">基础数据文件</li>
-          <li class="menu">流程管控</li>
+          <li class="menu cur"><em class="txt">系统运维</em></li>
+          <li class="menu"><em class="txt">公共查询</em></li>
+          <li class="menu"><em class="txt">产品管理</em></li>
+          <li class="menu"><em class="txt">清算交收</em></li>
+          <li class="menu"><em class="txt">TA业务</em></li>
+          <li class="menu"><em class="txt">估值核算</em></li>
+          <li class="menu"><em class="txt">信披投监</em></li>
+          <li class="menu"><em class="txt">基金管理人网站</em></li>
+          <li class="menu"><em class="txt">基础数据文件</em></li>
+          <li class="menu"><em class="txt">流程管控</em></li>
+          <li class="menu"><em class="txt">产品管理</em></li>
+          <li class="menu"><em class="txt">清算交收</em></li>
+          <li class="menu"><em class="txt">TA业务</em></li>
+          <li class="menu"><em class="txt">估值核算</em></li>
+          <li class="menu"><em class="txt">信披投监</em></li>
+          <li class="menu"><em class="txt">基金管理人网站</em></li>
+          <li class="menu"><em class="txt">基础数据文件</em></li>
+          <li class="menu"><em class="txt">流程管控</em></li>
+          <li class="menu"><em class="txt">TA业务</em></li>
+          <li class="menu"><em class="txt">估值核算</em></li>
+          <li class="menu"><em class="txt">信披投监</em></li>
+          <li class="menu"><em class="txt">基金管理人网站</em></li>
+          <li class="menu"><em class="txt">基础数据文件</em></li>
+          <li class="menu"><em class="txt">流程管控</em></li>
         </ul>
       </div>
-      <span class="btn-menu-tab menu-right"></span>
+      <span class="btn-menu-tab menu-right" id="goR"></span>
     </div>
   </header>
   <!--/page-menu-->
@@ -99,24 +114,38 @@
     <header class="module-menu">
       <span class="btn-home"><i class="icon icon-home"></i></span>
       <div class="module-menu-list-box">
-        <span class="btn-menu-tab menu-left"></span>
-        <ul class="module-menu-list">
-          <li class="menu">采集网站配置<i class="icon"></i></li>
-          <li class="menu">角色管理<i class="icon"></i></li>
-          <li class="menu">用户管理<i class="icon"></i></li>
-          <li class="menu">菜单管理<i class="icon"></i></li>
-          <li class="menu cur">业务日志<i class="icon"></i></li>
-          <li class="menu">登录日志<i class="icon"></i></li>
-          <li class="menu">字典管理<i class="icon"></i></li>
-          <li class="menu">监控管理<i class="icon"></i></li>
-          <li class="menu">通知管理<i class="icon"></i></li>
-          <li class="menu">代码生成<i class="icon"></i></li>
-          <li class="menu">字典管理<i class="icon"></i></li>
-          <li class="menu">字典管理<i class="icon"></i></li>
-          <li class="menu">字典管理<i class="icon"></i></li>
-          <li class="menu">字典管理<i class="icon"></i></li>
-        </ul>
-        <span class="btn-menu-tab menu-right"></span>
+        <span class="btn-menu-tab menu-left" id="goL2"></span>
+        <div class="module-menu-box" id="marquee4">
+          <ul class="module-menu-list">
+            <li class="menu cur"><em class="txt">采集网站配置</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">角色管理</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">用户管理</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">菜单管理</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">业务日志</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">登录日志</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">字典管理</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">监控管理</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">通知管理</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">代码生成</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">字典管理</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">字典管理</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">字典管理</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">字典管理</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">用户管理</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">菜单管理</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">业务日志</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">登录日志</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">字典管理</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">监控管理</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">通知管理</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">代码生成</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">字典管理</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">字典管理</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">字典管理</em><i class="icon"></i></li>
+            <li class="menu"><em class="txt">字典管理</em><i class="icon"></i></li>
+          </ul>
+        </div>
+        <span class="btn-menu-tab menu-right" id="goR2"></span>
       </div>
       <div class="btn-close-current-box">
         <span class="btn-close-current">关闭操作<i class="sep"></i></span>
@@ -200,5 +229,4 @@
 </div>
 <!--/page-index-->
 <script src="js/base.js"></script>
-</body>
 </html>

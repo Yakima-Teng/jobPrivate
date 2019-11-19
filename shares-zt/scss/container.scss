@@ -77,9 +77,11 @@ body{ height: 100%;background-color: #f1f3f5;}
     .btn-menu-tab{ background: url('../images/btn-nav-tab.png') no-repeat center; width: 7px; height: 12px; margin-top: 24px; cursor: pointer;
     &.menu-right{ transform: rotate(-180deg);}
     }
-    .page-menu-list{ display: flex; padding: 0 10px; max-width: 1200px; overflow: hidden;
-      .menu{ padding:0 18px; cursor: pointer; 
+    .page-menu-box{ width: 1000px; overflow: hidden;}
+    .page-menu-list{ padding: 0 10px; overflow: hidden;
+      .menu{ padding:0 5px; cursor: pointer; text-align: center; float: left;
         &.cur{ background: url('../images/bg-nav.png') repeat-x left top;}
+        .txt{ @include singleline-truncate; @include inline-block; width: 90px;}
       }
     }
   }
@@ -88,12 +90,14 @@ body{ height: 100%;background-color: #f1f3f5;}
   .btn-shrink-date{ position: absolute; right: 22px; top: 33px; cursor: pointer;}
   .module-menu{ overflow: hidden;
     .btn-home{ float: left; background-color: $main-color; border-radius: 5px; border-bottom-right-radius: 0; border-bottom-left-radius: 0; width: 60px; height: 44px; text-align: center; line-height: 44px;}
-    .module-menu-list-box{ float: left; display: flex; height: 44px; line-height: 44px;
+    .module-menu-list-box{ float: left; display: flex; height: 44px; line-height: 44px; 
       .btn-menu-tab{ background: url('../images/btn-sumnav-tab.png') no-repeat center; width: 15px; height: 14px; margin: 0 5px; margin-top: 15px; cursor: pointer;
         &.menu-right{ transform: rotate(-180deg);}
       }
-      .module-menu-list{ display: flex; background-color: #dde5eb; 
+      .module-menu-box{ width: 1400px; overflow: hidden;}
+      .module-menu-list{ display: flex; background-color: #dde5eb;
         .menu{ padding: 0 10px; height: 40px; line-height: 40px; margin-top: 4px; display: flex; align-items: center; cursor: pointer; position: relative;
+          .txt{ @include singleline-truncate; @include inline-block; width: 60px;}
           &:after{ content: ''; @include inline-block; position: absolute; right: 0; width: 1px; height: 14px; top:13px; background-color: #fff;}
           .icon{ background: url('../images/btn-close.png') no-repeat center; width: 10px; height: 10px; margin-left: 10px; }
           &.cur{ background-color: #fff;}

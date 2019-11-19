@@ -43,22 +43,30 @@ $(function(){
 !$('.module-menu-list').length > 0 || (function () {
   var moduleMenu = $('.module-menu-list .menu');
   var moduleMenuLength = moduleMenu.length;
- 
   moduleMenu.bind('click',function(){
-    // var moduleMenuIndex = $(this).index();
-    // console.log(moduleMenuIndex);
     $(this).addClass('cur').siblings().removeClass('cur');
   });
   moduleMenu.find('.icon').bind('click',function(){
-    //console.log('1')
     $(this).parent().hide();
   })
+  var menuALLWight = moduleMenuLength*100;
+  $('.module-menu-list').width(menuALLWight);
 
-  //console.log(moduleMenuLength);
-  $('.module-menu-list-box').find('.menu-left').bind('click',function(){
+  // var cot=0;
+  // $('.module-menu-list-box').find('.menu-left').bind('click',function(){
+  //   if(cot>0){    
+  //     cot--;    
+  //     $('.module-menu-list .menu').eq(cot).animate({'margin-left':'0'},500);  
+  //    };  
+  // });
 
-  });
-  
+  // $('.module-menu-list-box').find('.menu-right').bind('click',function(){
+  //   if(cot<= moduleMenuLength ){ 
+  //     $('.module-menu-list .menu').eq(cot).animate({'margin-left':'-100px'},500);    
+  //     cot++;  
+  //    };
+  // });
+
 })();
 
 //左侧导航收缩
@@ -70,6 +78,28 @@ $('.btn-shrink').toggle(function(){
   $(this).removeAttr('style');
   $('.page-nav').show();
   $('.page-contents').removeAttr('style');
+})
+
+!$('.page-menu-list-box').length > 0 || (function () {
+  var pageMenu = $('.page-menu-list .menu');
+  var pageMenuLength = pageMenu.length;
+  var pageALLWight = pageMenuLength*100;
+  $('.page-menu-list').width(pageALLWight);
+  console.log(pageMenuLength);
+})();
+
+$('#marquee4').kxbdSuperMarquee({
+  isAuto:false,
+  distance:300,
+  btnGo:{left:'#goL2',right:'#goR2'},
+  direction:'left'
+})
+
+$('#marquee').kxbdSuperMarquee({
+  isAuto:false,
+  distance:300,
+  btnGo:{left:'#goL',right:'#goR'},
+  direction:'left'
 })
 
 });
