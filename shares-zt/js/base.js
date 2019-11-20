@@ -16,7 +16,7 @@ var moduleMenu = $('.module-menu-list .menu');
 var moduleMenuLength = moduleMenu.length;
 
 if( moduleMenuLength == Math.floor(newModuleWidth)){
-  $('.module-menu-list-box').find('.btn-menu-tab').hide().end().css('margin','0 25px');
+  $('.module-menu-list-box').find('.btn-menu-tab').hide();
 };
 if( pageMenuLength == Math.floor(newPageWidth)){
   $('.page-menu-list-box').find('.btn-menu-tab').hide();
@@ -78,7 +78,7 @@ if( moduleMenuLength == 0){
       $('.module-menu-list-box,.btn-close-current-box').hide()
     };
     if( moduleMenuLength1 == Math.floor(newModuleWidth)){
-      $('.module-menu-list-box').find('.btn-menu-tab').hide().end().css('margin','0 25px');
+      $('.module-menu-list-box').find('.btn-menu-tab').hide();
     };
   })
   var menuALLWight = moduleMenuLength*100;
