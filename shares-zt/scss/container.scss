@@ -81,8 +81,8 @@ body{ height: 100%;background-color: #f1f3f5;}
     .btn-menu-tab{ background: url('../images/btn-nav-tab.png') no-repeat center; width: 7px; height: 12px; margin-top: 24px; cursor: pointer;
     &.menu-right{ transform: rotate(-180deg);}
     }
-    .page-menu-box{ width: 1000px; overflow: hidden; margin: 0 10px;}
-    .page-menu-list{ overflow: hidden;
+    .page-menu-box{ width: 1000px; overflow: hidden; margin: 0 10px; position: relative;}
+    .page-menu-list{ overflow: hidden; position: absolute;
       .menu{ padding:0 5px; cursor: pointer; text-align: center; float: left;
         &.cur{ background: url('../images/bg-nav.png') repeat-x left top;}
         .txt{ @include singleline-truncate; @include inline-block; width: 90px;}
@@ -98,9 +98,9 @@ body{ height: 100%;background-color: #f1f3f5;}
       .btn-menu-tab{ background: url('../images/btn-sumnav-tab.png') no-repeat center; width: 15px; height: 14px; margin: 0 5px; margin-top: 15px; cursor: pointer;
         &.menu-right{ transform: rotate(-180deg);}
       }
-      .module-menu-box{ width: 1400px; overflow: hidden;}
-      .module-menu-list{ display: flex; background-color: #dde5eb;
-        .menu{ padding: 0 10px; height: 40px; line-height: 40px; margin-top: 4px; display: flex; align-items: center; cursor: pointer; position: relative;
+      .module-menu-box{ width: 1400px; overflow: hidden;position: relative;}
+      .module-menu-list{ display: flex; position: absolute;
+        .menu{ padding: 0 10px; height: 40px; line-height: 40px; background-color: #dde5eb; border-top: 4px solid #dde5eb; display: flex; align-items: center; cursor: pointer; position: relative;
           .txt{ @include singleline-truncate; @include inline-block; width: 60px;}
           &:after{ content: ''; @include inline-block; position: absolute; right: 0; width: 1px; height: 14px; top:13px; background-color: #fff;}
           .icon{ background: url('../images/btn-close.png') no-repeat center; width: 10px; height: 10px; margin-left: 10px; }
