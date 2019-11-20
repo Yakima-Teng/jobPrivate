@@ -81,8 +81,8 @@ body{ height: 100%;background-color: #f1f3f5;}
     .btn-menu-tab{ background: url('../images/btn-nav-tab.png') no-repeat center; width: 7px; height: 12px; margin-top: 24px; cursor: pointer;
     &.menu-right{ transform: rotate(-180deg);}
     }
-    .page-menu-box{ width: 1000px; overflow: hidden;}
-    .page-menu-list{ padding: 0 10px; overflow: hidden;
+    .page-menu-box{ width: 1000px; overflow: hidden; margin: 0 10px;}
+    .page-menu-list{ overflow: hidden;
       .menu{ padding:0 5px; cursor: pointer; text-align: center; float: left;
         &.cur{ background: url('../images/bg-nav.png') repeat-x left top;}
         .txt{ @include singleline-truncate; @include inline-block; width: 90px;}

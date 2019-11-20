@@ -5,10 +5,13 @@ var pageALLWight = pageMenuLength*100;
 $('.page-menu-list').width(pageALLWight);
 
 var moduleMenuWidth = $('.module-menu').width();
-$('.module-menu-box').width( moduleMenuWidth - 60 - 112 -19 - 50 -20);
+var newModuleWidth = (moduleMenuWidth - 60 - 112 -19 - 50 -20)/100;
+$('.module-menu-box').width( Math.floor(newModuleWidth) *100 );
 
 var pageMenuWidth = $('.page-menu').width();
-$('.page-menu-box').width( pageMenuWidth - 380 - 65 - 20 - 14 - 20);
+var newPageWidth = (pageMenuWidth - 380 - 65 - 20 - 14 - 20)/100;
+console.log(Math.floor(newPageWidth) *100);
+$('.page-menu-box').width( Math.floor(newPageWidth) *100);
 //左侧导航 
 !$('.nav').length > 0 || (function () {
   $('.nav').toggle(function(){
