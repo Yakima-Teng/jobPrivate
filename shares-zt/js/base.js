@@ -11,6 +11,20 @@ $('.module-menu-box').width( Math.floor(newModuleWidth) *100 );
 var pageMenuWidth = $('.page-menu').width();
 var newPageWidth = (pageMenuWidth - 380 - 65 - 20 - 14 - 20)/100;
 $('.page-menu-box').width( Math.floor(newPageWidth) *100);
+
+var moduleMenu = $('.module-menu-list .menu');
+var moduleMenuLength = moduleMenu.length;
+
+if( moduleMenuLength == Math.floor(newModuleWidth)){
+  $('.module-menu-list-box').find('.btn-menu-tab').hide().end().css('margin','0 25px');
+};
+if( pageMenuLength == Math.floor(newPageWidth)){
+  $('.page-menu-list-box').find('.btn-menu-tab').hide();
+};
+if( moduleMenuLength == 0){
+  $('.module-menu-list-box,.btn-close-current-box').hide()
+};
+
 //左侧导航 
 !$('.nav').length > 0 || (function () {
   $('.nav').toggle(function(){
@@ -53,23 +67,19 @@ $('.page-menu-box').width( Math.floor(newPageWidth) *100);
 
 //内容导航关闭
 !$('.module-menu-list').length > 0 || (function () {
-  var moduleMenu = $('.module-menu-list .menu');
-  var moduleMenuLength = moduleMenu.length;
-  if( moduleMenuLength == 0){
-    $('.module-menu-list-box,.btn-close-current-box').hide()
-  }
-
   moduleMenu.live('click',function(){
     $(this).addClass('cur').siblings().removeClass('cur');
   });
   moduleMenu.find('.icon').live('click',function(){
     $(this).parent().remove();
-    var moduleMenuLength1 = $('.module-menu-list .menu').length ;
-    //console.log(moduleMenuLength1);
+    var moduleMenuLength1 = $('.module-menu-list .menu').length;
     if( moduleMenuLength1 == 0){
       console.log('1');
       $('.module-menu-list-box,.btn-close-current-box').hide()
-    }
+    };
+    if( moduleMenuLength1 == Math.floor(newModuleWidth)){
+      $('.module-menu-list-box').find('.btn-menu-tab').hide().end().css('margin','0 25px');
+    };
   })
   var menuALLWight = moduleMenuLength*100;
   $('.module-menu-list').width(menuALLWight);
