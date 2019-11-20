@@ -10,7 +10,6 @@ $('.module-menu-box').width( Math.floor(newModuleWidth) *100 );
 
 var pageMenuWidth = $('.page-menu').width();
 var newPageWidth = (pageMenuWidth - 380 - 65 - 20 - 14 - 20)/100;
-console.log(Math.floor(newPageWidth) *100);
 $('.page-menu-box').width( Math.floor(newPageWidth) *100);
 //左侧导航 
 !$('.nav').length > 0 || (function () {
@@ -56,11 +55,21 @@ $('.page-menu-box').width( Math.floor(newPageWidth) *100);
 !$('.module-menu-list').length > 0 || (function () {
   var moduleMenu = $('.module-menu-list .menu');
   var moduleMenuLength = moduleMenu.length;
+  if( moduleMenuLength == 0){
+    $('.module-menu-list-box,.btn-close-current-box').hide()
+  }
+
   moduleMenu.live('click',function(){
     $(this).addClass('cur').siblings().removeClass('cur');
   });
   moduleMenu.find('.icon').live('click',function(){
-    $(this).parent().hide();
+    $(this).parent().remove();
+    var moduleMenuLength1 = $('.module-menu-list .menu').length ;
+    //console.log(moduleMenuLength1);
+    if( moduleMenuLength1 == 0){
+      console.log('1');
+      $('.module-menu-list-box,.btn-close-current-box').hide()
+    }
   })
   var menuALLWight = moduleMenuLength*100;
   $('.module-menu-list').width(menuALLWight);
@@ -75,11 +84,13 @@ $('.btn-shrink').live('click',function(){
     $('.page-nav').hide();
     $('.page-contents').css('width','100%');
     $('.shrink-logo').show();
-    $('.module-menu-box').width( moduleMenuWidth - 60 - 112 -19 - 50 -20 + 200);
-    $('.page-menu-box').width( pageMenuWidth - 380 - 65 - 20 - 14 - 20 + 100);
+    var newModuleWidth1 = (moduleMenuWidth - 60 - 112 -19 - 50 -20 +200)/100;
+    var newPageWidth1 = (pageMenuWidth - 380 - 65 - 20 - 14 - 20 + 100)/100;
+    $('.module-menu-box').width( Math.floor(newModuleWidth1) *100);
+    $('.page-menu-box').width( Math.floor(newPageWidth1) *100 );
   }else{
-    $('.module-menu-box').width( moduleMenuWidth - 60 - 112 -19 - 50 -20);
-    $('.page-menu-box').width( pageMenuWidth - 380 - 65 - 20 - 14 - 20);
+    $('.module-menu-box').width( Math.floor(newModuleWidth) *100 );
+    $('.page-menu-box').width( Math.floor(newPageWidth) *100);
     $(this).removeClass('cur');
     $('.page-nav').show();
     $('.shrink-logo').hide();
