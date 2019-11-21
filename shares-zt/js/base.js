@@ -107,6 +107,7 @@ moduleMenu.live('click',function(){
 moduleMenu.find('.icon').live('click',function(){
   $(this).parent().remove();
   var moduleMenuLength = $('.module-menu-list .menu').length;
+  rc1 = moduleMenuLength - Math.floor(newModuleWidth);
   if( moduleMenuLength == 0){
     $('.module-menu-list-box,.btn-close-current-box').hide()
   };
@@ -114,6 +115,11 @@ moduleMenu.find('.icon').live('click',function(){
     $('.module-menu-list-box').find('.btn-menu-tab').hide();
     $('.module-menu-box').width(moduleMenuLength*100);
   };
+  var left = parseInt($(".module-menu-list").css("left"));
+  var liWidth = $(".module-menu-list").find('.menu').width();
+  if (left <= -(parseInt(liWidth) + 20)) {
+      $('.module-menu-list').animate({'left': "+=" + (parseInt(liWidth)+ 20) + "px"}, 500);
+  }
 })
 
 var menuALLWight = moduleMenuLength*100;
