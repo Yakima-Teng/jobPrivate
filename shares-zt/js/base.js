@@ -26,34 +26,6 @@ if( moduleMenuLength == 0){
   $('.module-menu-list-box,.btn-close-current-box').hide()
 };
 
-$li1 = $(".module-menu-list .menu");
-$window1 = $(".module-menu-list");
-$left1 = $(".module-menu-list-box .menu-left");
-$right1 = $(".module-menu-list-box .menu-right");
-
-$window1.css("width", $li1.length*100);
-var lc1 = 0;
-var rc1 = $li1.length-Math.floor(newModuleWidth);
-
-$left1.click(function(){
-  if (lc1 < 1) {
-    return;
-  }
-  lc1--;
-  rc1++;
-  $window1.animate({left:'+=100px'}, 300);
-});
-
-$right1.click(function(){
-  if (rc1 < 1){
-    return;
-  }
-  lc1++;
-  rc1--;
-  $window1.animate({left:'-=100px'}, 300);
-});
-
-
 $li = $(".page-menu-list .menu");
 $window = $(".page-menu-list");
 $left = $(".page-menu-list-box .menu-left");
@@ -121,22 +93,50 @@ $right.click(function(){
 
 //内容导航关闭
 !$('.module-menu-list').length > 0 || (function () {
-  moduleMenu.live('click',function(){
-    $(this).addClass('cur').siblings().removeClass('cur');
-  });
-  moduleMenu.find('.icon').live('click',function(){
-    $(this).parent().remove();
-    var moduleMenuLength = $('.module-menu-list .menu').length;
-    if( moduleMenuLength == 0){
-      $('.module-menu-list-box,.btn-close-current-box').hide()
-    };
-    if( moduleMenuLength <= Math.floor(newModuleWidth)){
-      $('.module-menu-list-box').find('.btn-menu-tab').hide();
-      $('.module-menu-box').width(moduleMenuLength*100);
-    };
-  })
-  var menuALLWight = moduleMenuLength*100;
-  $('.module-menu-list').width(menuALLWight);
+$window1 = $(".module-menu-list");
+$left1 = $(".module-menu-list-box .menu-left");
+$right1 = $(".module-menu-list-box .menu-right");
+
+$window1.css("width", menuALLWight);
+var lc1 = 0;
+var rc1 = moduleMenuLength - Math.floor(newModuleWidth);
+
+moduleMenu.live('click',function(){
+  $(this).addClass('cur').siblings().removeClass('cur');
+});
+moduleMenu.find('.icon').live('click',function(){
+  $(this).parent().remove();
+  var moduleMenuLength = $('.module-menu-list .menu').length;
+  if( moduleMenuLength == 0){
+    $('.module-menu-list-box,.btn-close-current-box').hide()
+  };
+  if( moduleMenuLength <= Math.floor(newModuleWidth)){
+    $('.module-menu-list-box').find('.btn-menu-tab').hide();
+    $('.module-menu-box').width(moduleMenuLength*100);
+  };
+})
+
+var menuALLWight = moduleMenuLength*100;
+$('.module-menu-list').width(menuALLWight);
+
+$left1.click(function(){
+  if (lc1 < 1) {
+    return;
+  }
+  lc1--;
+  rc1++;
+  $window1.animate({left:'+=100px'}, 300);
+});
+
+$right1.click(function(){
+  if (rc1 < 1){
+    return;
+  }
+  lc1++;
+  rc1--;
+  $window1.animate({left:'-=100px'}, 300);
+});
+
 
 })();
 
