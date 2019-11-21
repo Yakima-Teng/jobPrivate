@@ -77,7 +77,7 @@ body{ height: 100%;background-color: #f1f3f5;}
   .btn-shrink{ float: left; @include inline-block; background: url('../images/btn-nav-ss.png') no-repeat center; width: 29px; height: 17px; margin-top: 21px; margin-right: 36px; cursor: pointer; margin-left: 20px;
     &.cur{transform: rotate(-180deg)}
   }
-  .page-menu-list-box{ float: left; display: flex; height: 60px; line-height: 60px; 
+  .page-menu-list-box{ float: left; display: flex; height: 60px; line-height: 60px; margin-left: 23px;
     .btn-menu-tab{ background: url('../images/btn-nav-tab.png') no-repeat center; width: 7px; height: 12px; margin-top: 24px; cursor: pointer;
     &.menu-right{ transform: rotate(-180deg);}
     }
