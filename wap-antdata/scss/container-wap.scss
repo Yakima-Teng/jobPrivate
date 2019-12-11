@@ -36,6 +36,7 @@ img{ width: 100%; }
   &.icon-user{ background-image: url('../images/icon-nav-04.png'); width: $_36; height: $_41;}
   &.icon-state{ background-image: url('../images/icon-11.png'); width: $_23; height:$_28;}
   &.icon-time{ background-image: url('../images/icon-12.png'); width: $_28; height: $_28;}
+  &.icon-close{ background-image: url('../images/icon-close.png'); width: $_17; height: $_17;}
 }
 input::-webkit-input-placeholder{
   color:lighten($color: $main-font, $amount: 10%);
@@ -207,6 +208,54 @@ body { height:100%; background-color: #f7f7f7;
 
   }
   .article-box{ font-size: $_28; padding-bottom: $_40;}
+}
+.subscribe-inp-body{ background-color: #fff;
+  .subscribe-banner{ background: url('../images/banner-subscribe.png') no-repeat center top; background-size: 100%; height: $_180;}
+  .subscribe-content{ padding:$_35 $_28 $_118; ; position: relative;
+    .area-select{ padding-left: $_30; margin-left: $_43; padding-bottom: $_20; border-left: solid $_2 $main-color; 
+      &:before{ content: ''; width: $_26; height: $_26; border-radius: 100%;position: absolute; background-color: $main-color; margin-left: -$_44; }
+      .title{ @include inline-block; margin-bottom: $_8; margin-top: -$_8;
+        h2{ font-size: $_30; color: #454545; font-weight: normal; margin-bottom: $_10;}
+        p{ color: #999; font-size: $_22;
+          >em{ color: $main-color;}
+        }
+      }
+      .select{ border-radius: $_10; @include inline-block; background-color: #f2f2f2; color: #454545; font-size: $_26; padding: $_16 $_20; margin: 0 $_20 $_20 0;
+        .icon{ margin-left: $_26;}
+      }
+      .area{ min-height: $_200;
+        .btn-add{ color: $main-color; @include inline-block; border-radius: $_10; border: solid $main-color $_1; font-size: $_24; width: $_164; height: $_62; text-align: center; line-height: $_62; margin-bottom: $_20;}
+      }
+    }
+    .industry-select{ @extend .area-select; 
+      .title{ margin-bottom: $_26;
+        h2>span{ font-size: $_26; color: $main-color;}
+        p>em{ color: #d70000;}
+      }
+      .industry{ min-height: $_200; padding-right: $_28;
+        .add-industry{ height: $_66;border: $_1 solid #e5e5e5; padding-left: $_20; display: flex; justify-content: space-between; margin-bottom: $_20;
+          input[type='text']{ background-color: transparent; border: none; height: $_66; line-height: $_66; width: calc( 100% - 3.5rem );}
+          .btn-add{ @include inline-block; background-color: $main-color; color: #fff; font-size: $_24; text-align: center;  width: $_140; height: 100%; line-height: $_66;}
+        }
+      }
+    }
+    .else{@extend .area-select; font-size: $_30; border: none; margin-bottom: $_20; line-height: 1;
+      &:before{ margin-left: -$_42; }
+    }
+  }
+  .btn-save{ width: 100%; height: $_88; line-height: $_88; color: #fff; background-color: $main-color; font-size: $_36; text-align: center; display: block; border-radius: $_10;}
+}
+
+.city-body{ 
+  .city-content{ background-color: #fff; padding: $_20 $_34 $_87; 
+    .city-list{ border-bottom: $_1 solid $main-border; padding: $_20 0; overflow: hidden;
+      .info{ font-size: $_30; width: $_90; text-align: center; float: left;}
+      .main{ font-size: $_26; float: left; width: calc( 100% - 2.25rem );
+        .city{ @include inline-block; text-align: center; margin: 0 $_10 $_10 0; width: $_100; height: $_50; line-height: $_50; overflow: hidden; background-color: #f2f2f2; border-radius: $_3;}
+      }
+    }
+  }
+  .btn-determine{ font-size: $_26; position: fixed; bottom: 0; width: 100%; background-color: $main-color; text-align: center; color: #fff; line-height: $_86; height: $_86; border-top: $_1 solid darken($color: $main-color, $amount: 10%);}
 }
 // .maki{ background-color: #000; width: 100%; height: 100%; position: absolute; left: 0; top:0; display: none; opacity: .5; z-index: 998;}
 // .page-article{ position: fixed; width: 80%; height: $_400 *2; top: 50%; left: 50%; display: none; background-color: #fff; z-index: 999; overflow-y: scroll; box-shadow: 0 0 10px rgba($color: #000000, $alpha: .3);

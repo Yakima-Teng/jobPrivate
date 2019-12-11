@@ -1,4 +1,5 @@
 $(document).ready(function() {
+!$('#container').length > 0 || (function () {
   // 测试用的数据下标
   var i = 1;
 
@@ -42,5 +43,26 @@ $(document).ready(function() {
 
   // 触发首屏渲染
   pullToRefresh.triggerPull();
+})();
 
+!$('.subscribe-inp-body').length > 0 || (function () {
+$('.industry-select').find('.btn-add').bind('click',function(){
+  var selectLength = $('.industry').find('.select').length;
+  if( selectLength <=4 || !$('.industry').find('input').val('')){
+    var inpVal = $(this).prev('input').val();
+    $('.industry').find('.select-box').append(
+      '<span class="select hy">'
+      + inpVal
+      + '<i class="icon icon-close"></i></span>'
+    );
+    $(this).prev('input').val('');
+    $('.industry-select .title p').find('i').text( 4 - selectLength);
+  };
+  console.log(selectLength);
+});
+
+$('.select-box').find('.icon-close').on('click', function(){
+  $(this).parent().remove();
+});
+})();
 });
