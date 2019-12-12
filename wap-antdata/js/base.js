@@ -82,6 +82,21 @@ $('.select-box').find('.icon-close').live('click', function(){
   $('.industry-select .title p').find('i').text( newI++ );
   console.log('2:' +selectLg);
 });
+
+var areaIndex = $('.area-select .area').find('.select').index();
+if(areaIndex>0){
+  $('.area-select .title').find('p').hide();
+}
+
+$('.area-select').find('.icon-close').bind('click',function(){
+  areaIndex = $('.area-select .area').find('.select').index();
+  
+  if(areaIndex<=1){
+    $('.area-select .title').find('p').show();
+  };
+  $(this).parent().remove();
+  console.log(areaIndex);
+});
 })();
 
 !$('.city-content').length > 0 || (function () {

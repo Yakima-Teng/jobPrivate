@@ -224,7 +224,7 @@ body { height:100%; background-color: #f7f7f7;
         .icon{ margin-left: $_26;}
       }
       .area{ min-height: $_200;
-        .btn-add{ color: $main-color; @include inline-block; border-radius: $_10; border: solid $main-color $_1; font-size: $_24; width: $_164; height: $_62; text-align: center; line-height: $_62; margin-bottom: $_20;}
+        .btn-add{ color: $main-color; @include inline-block; border-radius: $_10; border: solid $main-color $_2; font-size: $_24; width: $_164; height: $_62; text-align: center; line-height: $_62; margin-bottom: $_20;}
       }
     }
     .industry-select{ @extend .area-select; 
