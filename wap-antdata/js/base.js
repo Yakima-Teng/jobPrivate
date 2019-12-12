@@ -48,7 +48,7 @@ $(document).ready(function() {
 !$('.subscribe-inp-body').length > 0 || (function () {
 $('.industry-select').find('.btn-add').bind('click',function(){
   var selectLength = $('.industry').find('.select').length;
-  if( selectLength <=4 || !$('.industry').find('input').val('')){
+  if( selectLength <= 4 && !$('.industry input[type=text]').val()==""){
     var inpVal = $(this).prev('input').val();
     $('.industry').find('.select-box').append(
       '<span class="select hy">'
@@ -57,12 +57,29 @@ $('.industry-select').find('.btn-add').bind('click',function(){
     );
     $(this).prev('input').val('');
     $('.industry-select .title p').find('i').text( 4 - selectLength);
+    $('.industry-select .title h2').find('em').text( 1 + selectLength);
+   
   };
-  console.log(selectLength);
+  if ( selectLength >= 4 ) {
+    $(this).attr('disabled','disabled');
+    $('.industry-select').find('input').attr('disabled','disabled');
+  };
+  
+  //console.log('1:' + selectLength);
 });
 
-$('.select-box').find('.icon-close').on('click', function(){
+$('.select-box').find('.icon-close').live('click', function(){
+  var selectIndex = $('.industry').find('.select').index();
+  var selectLg = $('.industry').find('.select').length;
+  var newEm = selectIndex--;
+
+  var newI = 6 - selectLg;
   $(this).parent().remove();
+  $('.industry-select').find('.btn-add').removeAttr('disabled');
+  $('.industry-select').find('input').removeAttr('disabled');
+  $('.industry-select .title h2').find('em').text( newEm );
+  $('.industry-select .title p').find('i').text( newI++ );
+  console.log('2:' +selectLg);
 });
 })();
 });

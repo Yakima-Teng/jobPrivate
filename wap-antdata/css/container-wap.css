@@ -696,8 +696,10 @@ body {
           *display: inline;
           background-color: #2389f9;
           color: #fff;
+          border: none;
           font-size: 0.6rem;
           text-align: center;
+          outline: none;
           width: 3.5rem;
           height: 100%;
           line-height: 1.65rem; }

@@ -235,7 +235,7 @@ body { height:100%; background-color: #f7f7f7;
       .industry{ min-height: $_200; padding-right: $_28;
         .add-industry{ height: $_66;border: $_1 solid #e5e5e5; padding-left: $_20; display: flex; justify-content: space-between; margin-bottom: $_20;
           input[type='text']{ background-color: transparent; border: none; height: $_66; line-height: $_66; width: calc( 100% - 3.5rem );}
-          .btn-add{ @include inline-block; background-color: $main-color; color: #fff; font-size: $_24; text-align: center;  width: $_140; height: 100%; line-height: $_66;}
+          .btn-add{ @include inline-block; background-color: $main-color; color: #fff; border: none; font-size: $_24; text-align: center; outline:none; width: $_140; height: 100%; line-height: $_66;}
         }
       }
     }
