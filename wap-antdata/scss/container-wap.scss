@@ -251,7 +251,9 @@ body { height:100%; background-color: #f7f7f7;
     .city-list{ border-bottom: $_1 solid $main-border; padding: $_20 0; overflow: hidden;
       .info{ font-size: $_30; width: $_90; text-align: center; float: left;}
       .main{ font-size: $_26; float: left; width: calc( 100% - 2.25rem );
-        .city{ @include inline-block; text-align: center; margin: 0 $_10 $_10 0; width: $_100; height: $_50; line-height: $_50; overflow: hidden; background-color: #f2f2f2; border-radius: $_3;}
+        .city{ @include inline-block; text-align: center; margin: 0 $_10 $_10 0; width: $_100; height: $_50; line-height: $_50; overflow: hidden; background-color: #f2f2f2; border-radius: $_3;
+          &.cur{ background-color: $main-color; color: #fff;}
+        }
       }
     }
   }
