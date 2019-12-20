@@ -7,13 +7,13 @@ img{width: 100%;}
 background-color: #803f23;
 box-sizing: border-box;
 overflow: hidden;}
-.video-img>iframe {
+.video-img>video {
 height: 13rem;
 }
 @media screen and (min-width: 750px) {
 .pages-index{ width: 750px; margin: auto;}
 .video-img{ margin: 0 25px; border: 5px solid #f4b836; width: 700px; background-color: #f4b836; border-bottom-width: 2px;}
-.video-img>iframe {
+.video-img>video {
 height:388px;
 }
 }
