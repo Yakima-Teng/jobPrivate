@@ -7,15 +7,15 @@ img{width: 100%;}
 background-color: #803f23;
 box-sizing: border-box;
 overflow: hidden;}
-.video-box{ border: 5px solid #f4b836; box-sizing: border-box;border-bottom-width: 2px; background-color: #f4b836;}
+.video-box{ border: 5px solid #f4b836; box-sizing: border-box; overflow: hidden; height: 12rem; }
 video {
 width: 100%;
-height: 12rem;
+height: 11.9rem;
 }
 @media screen and (min-width: 750px) {
 .pages-index{ width: 750px; margin: auto;}
-.video-img{ padding: 0 25px; border-bottom-width: 2px; }
-.video-box{ background-color: #f4b836;}
+.video-img{ padding: 0 25px; height: 388px;}
+.video-box{height: 388px; }
 video {
 height:388px;
 }
