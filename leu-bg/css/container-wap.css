@@ -3,18 +3,18 @@ body,button,input,select,textarea{font-family:Tahoma,Helvetica,'\5FAE\8F6F\96C5\
 .pages-index{ text-align: center; margin: auto; background-color: #803f23;  width: 100%;}
 .module-list{ width: 100%;}
 img{width: 100%;}
-.video-img{cursor: pointer;  padding: 0 14px; box-sizing: border-box;
+.video-img{cursor: pointer;  padding: 0 12px; box-sizing: border-box;
 background-color: #803f23;
 box-sizing: border-box;
 overflow: hidden;}
 .video-box{ box-sizing: border-box; overflow: hidden;  }
-video { border: 5px solid #f4b836;
+video { 
 width: calc(100% - 10px);
 height: 13.2rem;
 }
 @media screen and (min-width: 750px) {
 .pages-index{ width: 750px; margin: auto;}
-.video-img{ padding: 0 25px; }
+.video-img{ padding: 0 23px; }
 video {
 height:388px;
 }
