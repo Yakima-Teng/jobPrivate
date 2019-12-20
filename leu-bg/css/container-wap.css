@@ -1,0 +1,19 @@
+body,button,input,select,textarea{font-family:Tahoma,Helvetica,'\5FAE\8F6F\96C5\9ED1',Arial,sans-serif;color:#666}body,div,h1,h2,h3,h4,h5,h6,dl,dt,dd,ul,ol,li,th,td,p,blockquote,pre,form,fieldset,legend,input,button,textarea,article,aside,footer,header,hgroup,nav,section,menu,figure,figcaption,dialog{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}h1,h2,h3,h4,h5,h6{font-weight:normal}li{list-style:none}fieldset,img,dialog{border:0;vertical-align:middle}input,textarea{outline-style:none}textarea{resize:none}article,aside,footer,header,hgroup,nav,section,menu{display:block}address,caption,cite,code,dfn,em,i,th,var{font-style:normal;font-weight:400}a{text-decoration:none;outline:none;color:#666}a:hover{text-decoration:none}.clearfix:after{content:"";display:block;height:0;clear:both;visibility:hidden}.clearfix{zoom:1}.clear{overflow:hidden;zoom:1}.clr{clear:both !important}
+/*# sourceMappingURL=container-wap.css.map */
+.pages-index{ text-align: center; margin: auto; background-color: #803f23;  width: 100%;}
+.module-list{ width: 100%;}
+img{width: 100%;}
+.video-img{     cursor: pointer;
+background-color: #803f23;
+box-sizing: border-box;
+overflow: hidden;}
+.video-img>iframe {
+height: 13rem;
+}
+@media screen and (min-width: 750px) {
+.pages-index{ width: 750px; margin: auto;}
+.video-img{ margin: 0 25px; border: 5px solid #f4b836; width: 700px; background-color: #f4b836; border-bottom-width: 2px;}
+.video-img>iframe {
+height:388px;
+}
+}
