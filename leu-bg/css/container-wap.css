@@ -14,8 +14,9 @@ height: 12rem;
 }
 @media screen and (min-width: 750px) {
 .pages-index{ width: 750px; margin: auto;}
-.video-img{ margin: 0 25px; border: 5px solid #f4b836; width: 700px;  border-bottom-width: 2px;}
-.video-img>video {
+.video-img{ padding: 0 25px; border-bottom-width: 2px; }
+.video-box{ background-color: #f4b836;}
+video {
 height:388px;
 }
 }
