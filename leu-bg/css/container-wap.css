@@ -3,7 +3,7 @@ body,button,input,select,textarea{font-family:Tahoma,Helvetica,'\5FAE\8F6F\96C5\
 .pages-index{ text-align: center; margin: auto; background-color: #803f23;  width: 100%;}
 .module-list{ width: 100%;}
 img{width: 100%;}
-.video-img{cursor: pointer;  padding: 0 14px; box-sizing: border-box;background-color: #f4b836;
+.video-img{cursor: pointer;  padding: 0 14px; box-sizing: border-box;
 background-color: #803f23;
 box-sizing: border-box;
 overflow: hidden;}
