@@ -10,7 +10,7 @@ overflow: hidden;}
 .video-box{ box-sizing: border-box; overflow: hidden;  }
 video { border: 5px solid #f4b836;
 width: calc(100% - 10px);
-height: 13.3rem;
+height: 13.2rem;
 }
 @media screen and (min-width: 750px) {
 .pages-index{ width: 750px; margin: auto;}
