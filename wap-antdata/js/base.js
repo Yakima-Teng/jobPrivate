@@ -43,7 +43,7 @@ function getScrollHeight() {
 //滚动事件触发
 window.onscroll = function () {
   if (getScrollTop() + getClientHeight() === getScrollHeight()) {
-    // $('.addmore').remove();
+    $('.addmore').remove();
     for (let j = 0; j < 5; j++) {
           //console.log(data[i]);
           $('#content').append(
