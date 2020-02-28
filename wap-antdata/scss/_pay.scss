@@ -1,0 +1,52 @@
+.icon{
+  &.icon-pay-mon{ background-image: url('../images/icon-pay-mon.png'); width: $_25; height: $_30;}
+  &.icon-pay-year{ background-image: url('../images/icon-pay-year.png'); width: $_25; height: $_30;}
+  &.icon-pay-free{ background-image: url('../images/icon-pay.png');}
+  &.icon-pay-gold{ background-image: url('../images/icon-pay-04.png'); }
+  &.icon-pay-platinum{ background-image: url('../images/icon-pay-05.png'); }
+  &.icon-pay-diamond{ background-image: url('../images/icon-pay-06.png'); }
+}
+.page-pay{padding: 0 $_15 $_6; background-color: #f9f9f9; margin-bottom: $_100;}
+.pay-header{background: url('../images/banner-pay.png') no-repeat center bottom; background-size: 100%; color: #011768; font-weight: bold; font-size: $_28; width: 100%; height: $_346; position: relative;
+  .info{ position: absolute; left: $_92; top: 42%;}
+  h2.title{ position: absolute; bottom: 0; font-size: $_33; color: $main-title; left: $_50;}
+}
+.pay-content{ background-color: #e7eff8; padding: $_30 $_50; 
+  .time-tab{border-bottom: dashed 1px $main-color; padding-bottom: $_10; margin-bottom: $_30;
+    .condition{ @include inline-block; width: 50%; text-align: center; font-size: $_26; color: $main-title;
+      .icon{ background-position-y: top; margin: -$_8 $_10 0 0;}
+      &.cur{ color: $main-color;
+        .icon{ background-position: bottom;}
+      }
+    }
+  }
+  .member-list{ display: none; justify-content: space-between; margin-bottom: $_30;
+    &.cur{display: flex; }
+    .member-box{border: 1px solid $main-color; text-align: center; width: $_190; height: $_166; box-sizing: border-box; background-color: #fff; padding-top: $_30; border-radius: $_10;
+      .name{ color: $main-title; font-size: $_26; margin-bottom: $_15;}
+      .time{ color: $main-color; font-size: $_24;
+        .num{ font-size: $_33; font-family: Arial, Helvetica, sans-serif; font-weight: bold;
+          >i{font-size: $_57; }
+        }
+      }
+      &.cur{ background-color: $main-color;
+        .time{ color: #fff; text-shadow: 0 -1.5px 1px #011768;}
+      }
+    }
+  }
+  .introduction-main{ background-color: #fff; padding: $_30 $_20 0; overflow: hidden;
+    >h3,
+    h4{ text-align: center; font-size: $_26; line-height: 1; margin-bottom: $_20;}
+    >h3{ font-size: $_33;}
+    .introduction-list{border-radius: $_10; border: 1px solid $main-color; display: flex; margin-bottom: $_20; align-items: center; padding:0 $_14 0 $_20; height: $_124; box-sizing: border-box;
+      .icon{ width: $_95; height: $_90; margin-right: $_34;}
+      .info{ font-size: $_22;}
+    }
+  }
+}
+.bottom-nav-pay{position: fixed; left: 0; bottom: 0; height: $_100; background-color: #fff; width: 100%; line-height: $_100; display: flex; justify-content: space-between; 
+  .money-num{ padding-left: $_23; font-family: Arial, Helvetica, sans-serif; color: $main-color; font-size: $_30;
+    .num{ font-size: $_38; margin-left: $_10;}
+  }
+  .btn-pay{ border: none; background-color: $main-color; color: #fff; font-size: $_33; text-align: center; width: $_300;}
+}
