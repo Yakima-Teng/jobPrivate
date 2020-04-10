@@ -43,7 +43,6 @@ function getScrollHeight() {
 //滚动事件触发
 window.onscroll = function () {
   if (getScrollTop() + getClientHeight() === getScrollHeight()) {
-    $('#pull-down').hide();
     for (let j = 0; j < 5; j++) {
           //console.log(data[i]);
           $('#content').append(
