@@ -1,59 +1,44 @@
 var imgNum = 0;
-var imgNumId = 0;
-$(".application-form .upload_img_wrap .upload_img").bind("click", function(ev) {
+var imgNumId =0
+$(".application-form .upload_img").bind("click", function(ev) {
+  console.log(ev.currentTarget.dataset.id)
   var index = ev.currentTarget.dataset.id;
   var that = this;
   if(index == 1) {
     $("#file1").click();
     $("#file1").unbind().change(function(e) {
       var index = e.currentTarget.dataset.id;
-      if($('#file').val() == '') {
-        return false;
-      }
       $(that).hide();
       var filePath = $(this).val();
       changeImg(e, filePath, index);
-      
-      imgNum++;
-      if(imgNum<3){
-        $(".upload_img").eq(1).show();
-      }
-      $(".upload_img_length").html(imgNum);
     })
-  }
+  } 
 })
-$(".application-id .upload_img_wrap .upload_img").bind("click", function(ev) {
+
+$(".application-id .upload_img").bind("click", function(ev) {
+  console.log(ev.currentTarget.dataset.id)
   var index = ev.currentTarget.dataset.id;
   var that = this;
   if(index == 2) {
     $("#file2").click();
     $("#file2").unbind().change(function(e) {
       var index = e.currentTarget.dataset.id;
-      if($('#file').val() == '') {
-        return false;
-      }
       $(that).hide();
       var filePath = $(this).val();
       changeImgId(e, filePath, index);
       
       imgNumId++;
       if(imgNumId<3){
-        $(".upload_img").eq(2).show();
+        $(".application-id .upload_img").eq(1).show();
       }
-      $(".upload_img_length").html(imgNumId);
     })
   } else if(index == 3) {
     $("#file3").click();
     $("#file3").unbind().change(function(e) {
       var index = e.currentTarget.dataset.id;
-      if($('#file').val() == '') {
-        return false;
-      }
       var filePath = $(this).val();
       changeImgId(e, filePath, index);
       $(that).hide();
-      imgNumId++;
-      $(".upload_img_length").html(imgNumId);
     })
   }
 })
@@ -75,7 +60,26 @@ function changeImg(e, filePath, index) {
     // 显示图片
     $("#imgBox").html($("#imgBox").html() + '<div class="imgContainer" data-index=' + index + '><img   src=' + dataURL + ' onclick="imgDisplay(this)"><img onclick="removeImg(this,' + index + ')"  class="imgDelete" src="images/icon-delete.png" /></div>');
   };
+
 }
+
+function removeImg(obj, index) {
+  for(var i = 0; i < $(".application-form .imgContainer").length; i++) {
+    if($(".application-form .imgContainer").eq(i).attr("data-index") == index) {
+      $(".application-form .imgContainer").eq(i).remove();
+    }
+  }
+  for(var i = 0; i < $(".application-form .upload_img").length; i++) {
+    $(".application-form .upload_img").eq(i).hide();
+    if($(".application-form .upload_img").eq(i).attr("data-id") == index) {
+      console.log($(".application-form .upload_img").eq(i).attr("data-id"))
+      $(".application-form .upload_img").eq(i).show();
+    }
+  }
+  imgNum--;
+}
+
+
 
 function changeImgId(e, filePath, index) {
   fileFormat = filePath.substring(filePath.lastIndexOf(".")).toLowerCase();
@@ -94,42 +98,25 @@ function changeImgId(e, filePath, index) {
     // 显示图片
     $("#imgBox-id").html($("#imgBox-id").html() + '<div class="imgContainer" data-index=' + index + '><img   src=' + dataURL + ' onclick="imgDisplay(this)"><img onclick="removeImgId(this,' + index + ')"  class="imgDelete" src="images/icon-delete.png" /></div>');
   };
-}
 
-function removeImg(obj, index) {
-  for(var i = 0; i < $(".imgContainer").length; i++) {
-    if($(".imgContainer").eq(i).attr("data-index") == index) {
-      $(".imgContainer").eq(i).remove();
-    }
-  }
-  for(var i = 0; i < $(".upload_img").length; i++) {
-    $(".upload_img").eq(i).hide();
-    if($(".upload_img").eq(i).attr("data-id") == index) {
-      console.log($(".upload_img").eq(i).attr("data-id"))
-      $(".upload_img").eq(i).show();
-    }
-  }
-  imgNum--;
-  $(".upload_img_length").html(imgNum);
 }
-
 
 function removeImgId(obj, index) {
-  for(var i = 0; i < $(".imgContainer").length; i++) {
-    if($(".imgContainer").eq(i).attr("data-index") == index) {
-      $(".imgContainer").eq(i).remove();
+  for(var i = 0; i < $(".application-id .imgContainer").length; i++) {
+    if($(".application-id .imgContainer").eq(i).attr("data-index") == index) {
+      $(".application-id .imgContainer").eq(i).remove();
     }
   }
-  for(var i = 0; i < $(".upload_img").length; i++) {
-    $(".upload_img").eq(i).hide();
-    if($(".upload_img").eq(i).attr("data-id") == index) {
-      console.log($(".upload_img").eq(i).attr("data-id"))
-      $(".upload_img").eq(i).show();
+  for(var i = 0; i < $(".application-id .upload_img").length; i++) {
+    $(".application-id .upload_img").eq(i).hide();
+    if($(".application-id .upload_img").eq(i).attr("data-id") == index) {
+      console.log($(".application-id .upload_img").eq(i).attr("data-id"))
+      $(".application-id .upload_img").eq(i).show();
     }
   }
   imgNumId--;
-  $(".upload_img_length").html(imgNumId);
 }
+
 
 
 function imgDisplay(obj) {
