@@ -1,0 +1,63 @@
+<!DOCTYPE html class="upimg-body">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="format-detection" content="telphone=no, email=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="ML-Config" content="fullscreen=yes,preventMove=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="applicable" content="mobile">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="stylesheet" type="text/css" href="css/container-wap.css">
+<script src="js/resize.min.js"></script>
+<script src="js/jquery-1.7.2.min.js"></script>
+<title>低保申请</title>
+</head>
+<body class="upimg-body">
+<!--page-application-->
+<section class="page-application">
+	<!--application-form-->
+	<section class="application-form">
+		<h2>上传申请表</h2>
+		<div class="upload_img_wrap">
+			<div id="imgBox"></div>
+			<img class="upload_img" data-id="1" src="images/bg-upimg.png">
+		</div>
+		<div style="display: none;width: 100%;height: 100vh;position: relative;">
+			<form class="upload_form" action="" method="post" enctype="multipart/form-data">
+				<div style="display: none;" class="inputBox">
+					<input type="file" name="image[]" data-id="1" title="请选择图片" id="file1" accept="image/png,image/jpg,image/gif,image/JPEG" />
+				</div>
+				<input style="display:none" type="submit" class="sub" />
+			</form>
+		</div>
+	</section>
+	<!--/application-form-->
+	<!--application-id-->
+	<section class="application-id">
+		<h2>上传身份证<em>（申请人及家庭成员身份证）</em></h2>
+		<div class="upload_img_wrap">
+			<div id="imgBox-id"></div>
+			<img class="upload_img" data-id="2" src="images/bg-upimg.png" />
+			<img style="display:none" class="upload_img" data-id="3" src="images/bg-upimg.png" />
+		</div>
+		<div style="display: none;width: 100%;height: 100vh;position: relative;">
+			<form class="upload_form" action="" method="post" enctype="multipart/form-data">
+				<div style="display: none;" class="inputBox">
+					<input type="file" name="image[]" data-id="2" title="请选择图片" id="file2" accept="image/png,image/jpg,image/gif,image/JPEG" />
+					<input type="file" name="image[]" data-id="3" title="请选择图片" id="file3" accept="image/png,image/jpg,image/gif,image/JPEG" />
+				</div>
+				<input style="display:none" type="submit" class="sub" />
+			</form>
+		</div>
+	</section>
+	<!--/application-id-->
+	<a href="submitted.html" class="btn-submitted">提交申请</a>
+</section>
+<!--/page-application-->
+<script src="js/upimg.js"></script>
+<script src="js/base.js"></script>
+</body>
+</html>
