@@ -24,8 +24,12 @@ $('.search-box').find('.icon-close').on('click',function(){
 
 !$('.main-allclassification').length > 0 || (function () {
 $('.nav-bar').find('a').on('click',function(){
-	$(this).addClass('cur').siblings().removeClass('cur')
+	$(this).addClass('cur').siblings().removeClass('cur');
 });
+
+var obj = new floor('','.nav-bar>a','.classification-list-box>.classification-list','');
+obj.init();
+
 })();
 
 !$('.department-list').length > 0 || (function () {
