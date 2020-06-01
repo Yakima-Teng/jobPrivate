@@ -85,7 +85,7 @@ body { height:100%; background-color: #f7f7f7;
     .city{ @include inline-block; padding: 0 $_20; background-color: $main-color; color: #fff; border-radius: $_10;}
   }
   .title{ color: #1a1a1a; font-size: $_32; margin-left: $_34; margin-bottom: $_24; height: 2em * 1.5; overflow: hidden;display: -webkit-box; -webkit-line-clamp:2; overflow: hidden; text-overflow: ellipsis; -webkit-box-orient: vertical;}
-  .num{ position: absolute; left:-$_35; top: $_35;font-size: $_26; color: #1a1a1a; text-align: right; width: $_70;}
+  .num{ position: absolute; left:-$_35; margin-top: $_10;font-size: $_26; color: #1a1a1a; text-align: right; width: $_70;}
   &:last-child{ border:none;}
 }
 //la
