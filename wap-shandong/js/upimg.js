@@ -17,7 +17,7 @@ function changeImg(e, filePath, index) {
 	fileFormat = filePath.substring(filePath.lastIndexOf(".")).toLowerCase();
 	//检查后缀名
 	if(!fileFormat.match(/.png|.jpg|.jpeg/)) {
-		showError('文件格式必须为：png/jpg/jpeg');
+		alert('文件格式必须为：png/jpg/jpeg');
 		return;
 	}
 	//获取并记录图片的base64编码
@@ -93,7 +93,7 @@ function changeImgId(e, filePath, index) {
 	fileFormat = filePath.substring(filePath.lastIndexOf(".")).toLowerCase();
 	//检查后缀名
 	if(!fileFormat.match(/.png|.jpg|.jpeg/)) {
-		showError('文件格式必须为：png/jpg/jpeg');
+		alert('文件格式必须为：png/jpg/jpeg');
 		return;
 	}
 	//获取并记录图片的base64编码
