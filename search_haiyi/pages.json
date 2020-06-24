@@ -1,0 +1,50 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/search/index",
+			"style": {
+				"navigationBarTitleText": "信息检索"
+			}
+		},{
+				"path" : "pages/crew/index",
+				"style" : {
+					"navigationBarTitleText": "船员详情" 
+				}
+		},{
+				"path" : "pages/crew/info-basic",
+				"style" : {
+					"navigationBarTitleText": "基本信息" 
+				}
+		},{
+				"path" : "pages/crew/info-exam",
+				"style" : {
+					"navigationBarTitleText": "考试信息" 
+				}
+		},{
+        "path" : "pages/crew/info-seniority",
+        "style" : {
+          "navigationBarTitleText": "资历信息" 
+        }
+    },{
+        "path" : "pages/crew/proxy-handle",
+        "style" : {
+          "navigationBarTitleText": "委托代办" 
+        }
+    },{
+        "path" : "pages/crew/info-illegal",
+        "style" : {
+          "navigationBarTitleText": "违法信息" 
+        }
+      }
+        ,{
+            "path" : "components/layer-maker",
+            "style" : {}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#fff",
+		"backgroundColor": "#fff"
+	}
+}
