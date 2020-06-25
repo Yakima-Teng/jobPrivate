@@ -110,7 +110,7 @@ methods: {
 </script>
 
 <style lang="scss">
-.search-tab{ background-color: #3882f9; color:#fff; display: flex; justify-content: space-around; height: 107rpx; align-items:center; line-height: 1; position: fixed; width: 100%; top: 80rpx;
+.search-tab{ background-color: #3882f9; color:#fff; display: flex; justify-content: space-around; height: 107rpx; align-items:center; line-height: 1; position: fixed; width: 100%; padding:80rpx 0 20rpx; top:0;
   .tab-bar{ display: none; height:5rpx; border-radius:3rpx; background-color: #fff; margin-top: 15rpx; position: absolute; width: 75rpx; left:50%; margin-left: -37.5rpx;}
   .tab{ width: 33.33%; text-align: center; position: relative; opacity: .8; font-size:32rpx;
     &:last-child>.tab-bar{ width: 150rpx; margin-left: -75rpx;}
@@ -119,7 +119,7 @@ methods: {
     }
   }
 }
-.search-box{background-color: #3882f9; position: fixed;width: 100%; top: 106rpx + 80rpx; z-index: 10;
+.search-box{background-color: #3882f9; position: fixed;width: 100%; z-index: 10; top:0; margin-top: 106rpx + 80rpx;
   .search-bg{ background-color: #fff; border-radius:20rpx 20rpx 0 0; padding: 30rpx 40rpx; display: flex; align-items: center; box-shadow: 0 5rpx 10rpx rgba(#0a3752,.1); position: relative; z-index: 10;
     .uni-input{ background-color: #f0eff4; border-radius: 10rpx; height:56rpx; line-height:56rpx; padding-left: 80rpx; font-size: 28rpx; width: 100%;}
   }
@@ -129,5 +129,10 @@ methods: {
   }
   .icon-close{ @extend .icon-search; margin-left: 0; right:0; margin-right: 12rpx + 40rpx; margin-top: 4rpx;}
 }
-.search-list{ margin-top: 200rpx + 25rpx; padding-top: 25rpx;}
+.search-list{ margin-top: 106rpx  + 126rpx; }
+@media screen and (max-width: 320px) {
+.search-tab{padding-top:100rpx;}
+.search-box{margin-top:106rpx + 100rpx;}
+
+}
 </style>

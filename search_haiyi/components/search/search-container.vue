@@ -50,6 +50,18 @@
 				<text class="info">现居地：江苏省连云港市某区某路</text>
 			</view>
 		</view>
+		<view class="containe-info">
+			<view class="containe-status">员</view>
+			<view class="containe-main">
+				<text class="info-name">李伟健（LiWeiJian）</text>
+				<view class="label-list">
+					<text class="label">航海学校</text>
+					<text class="label">二副</text>
+				</view>
+				<text class="info">身份证号：510522711209037</text>
+				<text class="info">现居地：江苏省连云港市某区某路</text>
+			</view>
+		</view>
 	</view>
 	<view class="containe-list" v-if="infoTabIndex == 2">
 		<view class="containe-info" @click="goToCrewInfo()">
@@ -104,11 +116,11 @@
 </script>
 
 <style lang="scss">
-.search-introduction{ font-size:24rpx; color:#999; background-color: #fff; position: fixed; width: 100%; margin-top:-33rpx; left:0; padding:25rpx 40rpx;
+.search-introduction{ font-size:24rpx; color:#999; background-color: #fff; position: fixed; width: 100%; margin-top:-30rpx; left:0; padding:40rpx 40rpx 25rpx;
 	>text{ margin:0 10rpx; }
 	.search-val{ color:#3882f9;}
 	.search-number{ color:#e23232;}
 }
 @import '@/components/search/list';
-.containe-info{ padding-top:93rpx;}
+.containe-list{ padding-top: 54rpx; }
 </style>

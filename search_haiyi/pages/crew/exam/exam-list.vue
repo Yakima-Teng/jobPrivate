@@ -28,6 +28,84 @@
 					</view>
 				</view>
 			</view>
+			<view class="containe-info">
+				<view class="containe-status">考</view>
+				<view class="containe-main">
+					<view class="info-name">
+						<text class="name">11规则机工/水手/G证/技工合适任证考试</text>
+						<text class="status fail">通过</text>
+					</view>
+					<view class="info">
+						<text class="number">J0511070720017</text>
+						<text class="time">有效期：2018/11/22</text>
+					</view>
+				</view>
+			</view>
+			<view class="containe-info">
+				<view class="containe-status">考</view>
+				<view class="containe-main">
+					<view class="info-name">
+						<text class="name">11规则机工/水手/G证/技工合适任证考试</text>
+						<text class="status fail">通过</text>
+					</view>
+					<view class="info">
+						<text class="number">J0511070720017</text>
+						<text class="time">有效期：2018/11/22</text>
+					</view>
+				</view>
+			</view>
+			<view class="containe-info">
+				<view class="containe-status">考</view>
+				<view class="containe-main">
+					<view class="info-name">
+						<text class="name">11规则机工/水手/G证/技工合适任证考试</text>
+						<text class="status fail">通过</text>
+					</view>
+					<view class="info">
+						<text class="number">J0511070720017</text>
+						<text class="time">有效期：2018/11/22</text>
+					</view>
+				</view>
+			</view>
+			<view class="containe-info">
+				<view class="containe-status">考</view>
+				<view class="containe-main">
+					<view class="info-name">
+						<text class="name">11规则机工/水手/G证/技工合适任证考试</text>
+						<text class="status fail">通过</text>
+					</view>
+					<view class="info">
+						<text class="number">J0511070720017</text>
+						<text class="time">有效期：2018/11/22</text>
+					</view>
+				</view>
+			</view>
+			<view class="containe-info">
+				<view class="containe-status">考</view>
+				<view class="containe-main">
+					<view class="info-name">
+						<text class="name">11规则机工/水手/G证/技工合适任证考试</text>
+						<text class="status fail">通过</text>
+					</view>
+					<view class="info">
+						<text class="number">J0511070720017</text>
+						<text class="time">有效期：2018/11/22</text>
+					</view>
+				</view>
+			</view>
+			<view class="containe-info">
+				<view class="containe-status">考</view>
+				<view class="containe-main">
+					<view class="info-name">
+						<text class="name">11规则机工/水手/G证/技工合适任证考试</text>
+						<text class="status fail">通过</text>
+					</view>
+					<view class="info">
+						<text class="number">J0511070720017</text>
+						<text class="time">有效期：2018/11/22</text>
+					</view>
+				</view>
+			</view>
 		</view>
 	</view>
 </template>

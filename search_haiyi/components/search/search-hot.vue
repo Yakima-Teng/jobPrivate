@@ -29,7 +29,7 @@
 </script>
 
 <style lang="scss">
-.search-hot{ padding:0 40rpx; 
+.search-hot{ padding:43rpx 40rpx 0; 
   .hot-header{ display: flex; justify-content: space-between; align-items: center;
     .hot-header-box{ display: flex; font-size:40rpx;}
     .icon-hot{ margin-right: 10rpx;
