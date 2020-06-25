@@ -1,5 +1,5 @@
 <template>
-	<view class="page-crew-exam">
+	<view class="page-crew-exam" @click="goToExamList()">
 		<view class="title">适认证考试</view>
 		<view class="exam-box">
 			<view class="exam-bg">
@@ -32,7 +32,11 @@
 			}
 		},
 		methods: {
-			
+			goToExamList() {
+				uni.navigateTo({
+				    url: '/pages/crew/exam/exam-list'
+				});
+			}
 		}
 	}
 </script>

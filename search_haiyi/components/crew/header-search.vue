@@ -15,16 +15,16 @@
 			</view>
 		</view>
 	</view>
-	<HeaderFilter v-if="headerFilterVisible" @toggleFilterHide = "toggleFilterHide"></HeaderFilter>
+	<HeaderFilter v-if="headerFilterVisible" @toggleFilterHide="toggleFilterHide"></HeaderFilter>
 	<SearchTime v-if="searchTimeVisible" @toggleTime="toggleTime"></SearchTime>
 	<LayerMaker v-if="layerMakerVisible"></LayerMaker>
 </view>
 </template>
 
 <script>
-import SearchTime from './search-time';
-import LayerMaker from '../layer-maker';
-import HeaderFilter from './header-filter';
+import SearchTime from '@/components/crew/search-time';
+import LayerMaker from '@/components/layer-maker';
+import HeaderFilter from '@/components/crew/header-filter';
 export default {
 	components: {
 	  SearchTime,

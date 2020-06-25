@@ -35,24 +35,30 @@
 	      </view>
 	    </view>
 	  </view>
+		<LayerMaker></LayerMaker>
 	</view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				
-			}
-		},
-		methods: {
+import LayerMaker from '@/components/layer-maker';
+export default {
+	components: {
+		LayerMaker
+	},
+	data() {
+		return {
 			
 		}
+	},
+	methods: {
+		
 	}
+}
 </script>
 
 <style lang="scss">
-.search-approximate{ padding: 0 40rpx; 
+.search-approximate{
+	.approximate-list{ padding: 0 40rpx; position: fixed; width: 100%; left:0; box-sizing: border-box; background-color: #fff; z-index:9; margin-top: -28rpx;}
   .approximate-info{ display: flex; align-items: center; justify-content: space-between; font-size:28rpx; padding: 35rpx 8rpx 35rpx 20rpx; border-bottom: 1rpx solid #e5e5e5;
     .info-box{ display: flex; align-items: center;
       text{ color:#3882f9;}

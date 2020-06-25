@@ -24,7 +24,7 @@
 	</view>
 </template>
 <script>
-import HeaderSearch from '../../components/crew/header-search.vue';
+import HeaderSearch from '@/components/crew/header-search';
 export default {
   components: {
     HeaderSearch
@@ -60,7 +60,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import './info.scss';
+@import '@/pages/crew/info';
 .seniority-time{ display: flex; justify-content: space-between; align-items: center;
   text{ width: 110rpx; height:48rpx; border-radius:20rpx; background-color: #ebf2fe; color:#3882f9; line-height:48rpx; text-align: center; font-size:24rpx;
     &.null{ background-color: #c4c4c4; color:#fff;}

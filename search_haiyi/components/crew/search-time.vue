@@ -1,8 +1,6 @@
 <template>
 	<view class="search-more-list">
-    <view class="time cur" @click="toggleTimeSubset()">取得时间倒序<text class="icon"></text></view>
-    <view class="time" @click="toggleTimeSubset()">取得时间正序<text class="icon"></text></view>
-    <view class="time" @click="toggleTimeSubset()">取得时间正序<text class="icon"></text></view>
+    <view class="time" v-for="(item,index) in timeSearch" :key='index' @click="toggleTimeSubset(index)" :class="{'cur': tabIndex == index}" >{{item}}<text class="icon"></text></view>
 	</view>
 </template>
 
@@ -10,11 +8,13 @@
 export default {
 	data() {
 		return {
-			
+			tabIndex: 0,
+			timeSearch:['取得时间倒序','取得时间正序','取得时间随便序']
 		};
 	},
 	methods: {
-		toggleTimeSubset() {
+		toggleTimeSubset(index) {
+			this.tabIndex = index;
 			this.$emit('toggleTime');
 		}
 	}

@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import HeaderSearch from '../../components/crew/header-search.vue';
+import HeaderSearch from '@/components/crew/header-search';
 export default {
   components: {
     HeaderSearch
@@ -73,5 +73,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import './info.scss';
+@import '@/pages/crew/info';
 </style>

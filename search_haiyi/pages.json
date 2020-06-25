@@ -6,41 +6,52 @@
 				"navigationBarTitleText": "信息检索"
 			}
 		},{
-				"path" : "pages/crew/index",
-				"style" : {
-					"navigationBarTitleText": "船员详情" 
-				}
+			"path" : "pages/crew/index",
+			"style" : {
+				"navigationBarTitleText": "船员详情" 
+			}
 		},{
-				"path" : "pages/crew/info-basic",
-				"style" : {
-					"navigationBarTitleText": "基本信息" 
-				}
+			"path" : "pages/crew/info-basic",
+			"style" : {
+				"navigationBarTitleText": "基本信息" 
+			}
 		},{
-				"path" : "pages/crew/info-exam",
-				"style" : {
-					"navigationBarTitleText": "考试信息" 
-				}
+			"path" : "pages/crew/info-exam",
+			"style" : {
+				"navigationBarTitleText": "考试信息" 
+			}
 		},{
-        "path" : "pages/crew/info-seniority",
-        "style" : {
-          "navigationBarTitleText": "资历信息" 
-        }
+			"path" : "pages/crew/info-seniority",
+			"style" : {
+				"navigationBarTitleText": "资历信息" 
+			}
     },{
-        "path" : "pages/crew/proxy-handle",
-        "style" : {
-          "navigationBarTitleText": "委托代办" 
-        }
+			"path" : "pages/crew/proxy-handle",
+			"style" : {
+				"navigationBarTitleText": "委托代办" 
+			}
     },{
-        "path" : "pages/crew/info-illegal",
-        "style" : {
-          "navigationBarTitleText": "违法信息" 
-        }
-      }
-        ,{
-            "path" : "components/layer-maker",
-            "style" : {}
-        }
-    ],
+			"path" : "pages/crew/info-illegal",
+			"style" : {
+				"navigationBarTitleText": "违法信息" 
+		}
+		},{
+			"path" : "pages/crew/exam/exam-list",
+			"style" : {
+				"navigationBarTitleText": "适考证考试" 
+			}
+		},{
+			"path" : "pages/crew/exam/exam-info",
+			"style" : {
+				"navigationBarTitleText": "适考证考试详情" 
+			}
+		},{
+			"path" : "pages/danger/info-danger",
+			"style" : {
+				"navigationBarTitleText": "危险货物详情" 
+			}
+		}
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
