@@ -129,7 +129,7 @@ export default {
 </script>
 
 <style lang="scss">
-.page-danger-info{ height:274rpx; margin-top: 324rpx;}
+.page-danger-info{ margin-top: 324rpx;}
 .danger-info-header{padding: 30rpx 40rpx; position: fixed; width: 100%; background-color: #fff; top:80rpx; box-sizing: border-box;
 	.title{ font-size:36rpx; line-height: 48rpx; margin-bottom: 12rpx; font-weight: 600;
 		&::before{ content:'危'; display: inline-block; color:#e23232; border-radius:100%; text-align: center; background-color: #fdeeee; font-size:30rpx; margin-right: 20rpx; width: 48rpx; height:48rpx; font-weight: normal;}
@@ -159,4 +159,8 @@ export default {
 		}
 	}
 }
+/* #ifdef  MP-WEIXIN */
+.danger-info-header{ top:0rpx; }
+.danger-info-tab{ top:180rpx; }
+/* #endif */
 </style>

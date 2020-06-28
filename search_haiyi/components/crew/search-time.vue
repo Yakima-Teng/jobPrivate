@@ -30,4 +30,7 @@ export default {
     }
   }
 }
+/* #ifdef  MP-WEIXIN */
+.search-more-list{ top:80rpx;}
+/* #endif */
 </style>

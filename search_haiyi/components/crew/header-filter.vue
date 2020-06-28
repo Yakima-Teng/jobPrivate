@@ -92,7 +92,7 @@ export default {
 </script>
 
 <style lang="scss">
-.filter-content{ top:0; width: 88%; height:calc(100% - 100rpx); padding-top: 100rpx; right:0; position: fixed; background-color: #fff; z-index: 11;
+.filter-content{ top:0; width: 88%; height:calc(100% - 100rpx); padding-top: 100rpx; right:0; position: fixed; background-color: #fff; z-index: 11; box-sizing: border-box; height:100%;
 	.title{ font-size:36rpx; margin-bottom: 28rpx; line-height: 1;}
 }
 .header-status{ display: flex; justify-content: space-between; padding: 35rpx 40rpx; border-bottom: 10rpx solid #f0eff4; align-items: center;
@@ -116,7 +116,7 @@ export default {
 	.type-list{display: flex; flex-wrap: wrap;
 		.type{ width: 180rpx; height:76rpx; text-align: center; font-size:28rpx; background-color: #f0eff4; margin: 0 20rpx 14rpx 0; box-sizing: border-box; padding: 0 19rpx; line-height:76rpx; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; position: relative; border-radius:10rpx; overflow: hidden;
 			&:nth-child(3n){ margin-right: 0;}
-			&::after{ font: normal normal normal 22rpx/1 uni; content: "\EA08"; color:#fff; position: absolute; right:0; bottom: 0; display: none;}
+			&::after{ content: ''; position: absolute; right:6rpx; bottom: 5rpx; display: inline-block; width: 4px;height: 8px; border-color: #fff; border-style: solid; border-width: 0 1px 1px 0; transform: rotate(45deg); display: none;}
 			&::before{ content:''; display: none; position: absolute; width: 0; height: 0; border-width: 18rpx; border-style: solid; border-color:transparent #3882f9 #3882f9 transparent; right:0; bottom:0;}
 			&.cur{ background-color: #eff4fb; color:#3882f9;
 				&::after,
@@ -135,4 +135,10 @@ export default {
 		&[form-type="submit"]{color: #fff; background-color: #3882f9;}
 	}
 }
+/* #ifdef  MP-WEIXIN */
+.filter-content{ padding-top: 20rpx; }
+.btn-box{ 
+	>button{width: 269rpx;}
+}
+/* #endif */
 </style>

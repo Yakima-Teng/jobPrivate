@@ -26,9 +26,9 @@
       </view>
     </view>
 		<view class="search-list">
-      <SearchHot v-show="hotVisible"></SearchHot>
+      <SearchHot v-if="hotVisible"></SearchHot>
       <SearchApproximate v-if="approximateVisible"></SearchApproximate>
-      <SearchNull v-show="nullVisible"></SearchNull>
+      <SearchNull v-if="nullVisible"></SearchNull>
       <SearchContainer v-if="containerVisible" :infoTabIndex = "infoTabIndex"></SearchContainer>
 		</view>
 	</view>
@@ -133,6 +133,9 @@ methods: {
 @media screen and (max-width: 320px) {
 .search-tab{padding-top:100rpx;}
 .search-box{margin-top:106rpx + 100rpx;}
-
 }
+/* #ifdef  MP-WEIXIN */
+.search-tab{  padding:0; }
+.search-box{ margin-top: 106rpx;}
+/* #endif */
 </style>
