@@ -51,7 +51,7 @@
 				"navigationBarTitleText": "危险货物详情" 
 			}
 		}
-	],
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

@@ -4,15 +4,14 @@
 			<view class="title">1,2,3,6-四氢化苯甲醛</view>
 			<text>1,2,3,6-四氢化苯甲醛(1,2,3,6-tetrahydrobenzaldehyde, C7H10O)是一种 无色液体,</text>
 		</view>
-    <!-- #ifndef MP-WEIXIN -->
 		<view class="danger-info-tab">
 			<view class="nav-list">
-				<view class="nav" v-for="(item,index) in title" :key='item.id' :class="{'active': tabIndex == index}" @tap="toggleTab(index)">{{item.name}}</view>
+				<view class="nav" v-for="(item,index) in title" :key='item.id' :class="{'active': tabIndex == index}" @tap="toggleTab(index)">{{item.region}}</view>
 			</view>
 		</view>
-    <!-- #endif -->
 		<view class="danger-info-box">
-			<view class="danger-info-list">
+      <scroll-view :scroll-into-view="toView" scroll-y="true" scroll-with-animation="true"  class="scroll-Y" :style="'height:'+scrollHeight+'px'">
+			<view class="danger-info-list" id="inToView00">
 				<view class="danger-title">基本信息</view>
 				<view class="danger-info">
 					<view class="info"><text class="title">货物名称（中文）：</text>1,2,3,6-四氢化苯甲醛</view>
@@ -25,7 +24,7 @@
 					<view class="info"><text class="title">分子量：</text> C7H10O 110.15</view>
 				</view>
 			</view>
-			<view class="danger-info-list">
+			<view class="danger-info-list" id="inToView01">
 				<view class="danger-title">成分识别</view>
 				<view class="danger-info">
 					<view class="info">
@@ -45,7 +44,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="danger-info-list">
+			<view class="danger-info-list" id="inToView02">
 				<view class="danger-title">物化特性和化学特性</view>
 				<view class="danger-info">
 					<view class="info"><text class="title">货物名称（中文）：</text>1,2,3,6-四氢化苯甲醛</view>
@@ -58,13 +57,13 @@
 					<view class="info"><text class="title">分子量：</text> C7H10O 110.15</view>
 				</view>
 			</view>
-			<view class="danger-info-list">
+			<view class="danger-info-list" id="inToView03">
 				<view class="danger-title">反应性与稳定性</view>
 				<view class="danger-info">
 					---略---
 				</view>
 			</view>
-			<view class="danger-info-list">
+			<view class="danger-info-list" id="inToView04">
 				<view class="danger-title">船舶运载条件</view>
 				<view class="danger-info">
 					<view class="info-title" :class="[brandFold ? 'cur' : '']" @click="toggleMore()" >国际海运危险货物规则(IMDG-CODE) </view>
@@ -76,6 +75,7 @@
 					</view>
 				</view>
 			</view>
+       </scroll-view>
 		</view>
 	</view>
 </template>
@@ -85,64 +85,46 @@ export default {
 	data() {
 		return {
 			title:[
-				{id:1,name:'基本信息'},
-				{id:2,name:'成分识别'},
-				{id:3,name:'物化特性和化学特性'},
-				{id:4,name:'反应性与稳定性'},
-				{id:5,name:'船舶运载条件'},
+				{id:'01',region:'基本信息'},
+				{id:'02',region:'成分识别'},
+				{id:'03',region:'物化特性和化学特性'},
+				{id:'04',region:'反应性与稳定性'},
+				{id:'05',region:'船舶运载条件'},
 			],
 			brandFold: true, //判断brandFold是否展示
-			tabIndex: 0
+			tabIndex: 0, //当前类目的索引值
+      toView: '', //scroll-view当前处于的位置
+      scrollHeight: '' //scroll-view的高度
 		};
 	},
-
-	mounted: function() {	
-    // #ifndef  MP-WEIXIN
-		window.addEventListener('scroll', this.navScroll,true);
-    // #endif
-	},
-
+  mounted: function () {
+    let systemInfo = uni.getSystemInfoSync();
+    this.scrollHeight = systemInfo.windowHeight;
+  },
 	methods: {
 		toggleMore() {
 		  this.brandFold = !this.brandFold;
 		},
-    // #ifndef  MP-WEIXIN
-		toggleTab(index){
-			this.tabIndex = index;
-			let floor = document.querySelectorAll(".danger-info-list");
-			let offsetTop = floor[index].offsetTop;
-			console.log(floor[index]);
-			let lastDomIndex = floor.length -1;
-			window.scrollTo(0,offsetTop)
-			if(index == 0){
-				window.scrollTo(0,0);
-				return false;
-			}
-		},
-		navScroll(e){
-			let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-			let floor = document.querySelectorAll(".danger-info-list");
-			var headers = document.querySelector(".page-danger-info").offsetTop;
-			floor.forEach((item,index) =>{
-				if(scrollTop >= item.offsetTop){
-					this.tabIndex = index;
-				}
-			});			
-		}
-    // #endif
+    toggleTab(index) {
+      this.tabIndex = index;
+      this.$nextTick(()=> {
+        this.toView = 'inToView0' + index;
+        console.log( this.toView );
+      });
+      this.toView='';
+    }
 	}
 }
 </script>
 
 <style lang="scss">
-.page-danger-info{ margin-top: 324rpx;}
-.danger-info-header{padding: 30rpx 40rpx; position: fixed; width: 100%; background-color: #fff; top:80rpx; box-sizing: border-box;
+.danger-info-header{padding: 30rpx 40rpx; position: sticky; width: 100%; background-color: #fff; top:80rpx; box-sizing: border-box; z-index: 10;
 	.title{ font-size:36rpx; line-height: 48rpx; margin-bottom: 12rpx; font-weight: 600;
 		&::before{ content:'危'; display: inline-block; color:#e23232; border-radius:100%; text-align: center; background-color: #fdeeee; font-size:30rpx; margin-right: 20rpx; width: 48rpx; height:48rpx; font-weight: normal;}
 	}
 	>text{ font-size:24rpx; color:#999; display:block;}
 }
-.danger-info-tab{ background-color: #ebf2fe; height:98rpx; line-height:98rpx; font-size:32rpx; padding:0 40rpx;  position: fixed; width: 100%; top:80rpx + 180rpx; box-sizing: border-box;
+.danger-info-tab{ background-color: #ebf2fe; height:98rpx; line-height:98rpx; font-size:32rpx; padding:0 40rpx;  position: sticky; width: 100%; top:80rpx + 180rpx; box-sizing: border-box; z-index: 10;
 	.nav-list{ overflow-x: scroll; display:flex; }
 	.nav{ display: inline-block; float: left; margin-right:40rpx; white-space:nowrap; position: relative;
 		&::after{content: ''; position: absolute; bottom: 0; left: 50%; margin-left: -24rpx; width: 48rpx; height:5rpx; border-radius:3rpx; background-color: #3882f9; display: none;}
