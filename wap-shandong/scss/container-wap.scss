@@ -216,13 +216,14 @@ body { background-color: #f5f5f5; box-sizing: border-box;
   .add-member{ border:$_1 solid #d0d0d0; background-color: #f5f5f5; text-align: center; font-size: $_32; height: $_100; box-sizing: border-box; line-height: $_100; display: block; margin-bottom: $_25; color: #909493; margin-top: $_115;}
   .application-form{@extend .address-guide; border-bottom: $_1 solid $main-border; margin-bottom: $_54;
     .upload_img_wrap{  padding: $_45 0; display: flex;
-      .upload_img{ width: $_95; height: $_94;}
+      input[type="file"]{ display: none;}
+      .upload_img{ width: $_95; height: $_94; }
       .imgDelete{ width: $_34; height: $_34; position: absolute; top: -$_17; right: -$_14; 
         img{ width: 100%; height: 100%;}
       }
       .imgBox-id{display: flex; }
     }
-    .imgContainer { display: inline-block; width: $_95; height: $_94; position: relative; box-sizing: border-box;  margin-right: $_30;
+    .imgContainer { display: inline-block; width: $_95; height: $_94; position: relative; box-sizing: border-box;  margin:0 $_30 $_20 0;
       img { width: 100%; height: 100%; cursor: pointer; }
     }
   }

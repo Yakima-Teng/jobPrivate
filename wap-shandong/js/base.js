@@ -102,3 +102,15 @@ $('.applicant-info').find('.street').on('click',function(){
 	});
 })();
 
+$('#fileBtnId').on('click',function(){
+	$('#file').click();
+});
+
+imgUpload({
+	inputId: 'file', //input框id
+	imgBox: 'imgBox', //图片容器id
+	buttonId: 'btn', //提交按钮id
+	upUrl: 'php/imgFile.php',  //提交地址
+	data: 'file1', //参数名
+	num: "5"//上传个数
+});
