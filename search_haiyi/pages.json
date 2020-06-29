@@ -1,11 +1,6 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path" : "pages/danger/info-danger",
-			"style" : {
-				"navigationBarTitleText": "危险货物详情" 
-			}
-		},{
 			"path": "pages/search/index",
 			"style": {
 				"navigationBarTitleText": "信息检索"
@@ -55,7 +50,15 @@
 			"style" : {
 				"navigationBarTitleText": "危险货物详情" 
 			}
-		}
+		},{
+			"path" : "pages/danger/info-danger",
+			"style" : {
+				"navigationBarTitleText": "危险货物详情" 
+			}
+		},{
+					"path" : "pages/danger/info-danger-h5",
+					"style" : {}
+			}
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
