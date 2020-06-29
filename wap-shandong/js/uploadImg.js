@@ -16,6 +16,7 @@ function imgUpload(obj) {
 			imgFile.push(fileList[i]);
 		}
 		addNewContent(imgBox);
+		$('input[type="file"]').val(""); 
 	})
 	$(btn).on('click', function() {
 		if(!limitNum(obj.num)){
