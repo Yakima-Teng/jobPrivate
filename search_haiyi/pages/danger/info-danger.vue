@@ -5,9 +5,11 @@
 			<text>1,2,3,6-四氢化苯甲醛(1,2,3,6-tetrahydrobenzaldehyde, C7H10O)是一种 无色液体,</text>
 		</view>
 		<view class="danger-info-tab">
-			<view class="nav-list">
-				<view class="nav" v-for="(item,index) in title" :key='item.id' :class="{'active': tabIndex == index}" @tap="toggleTab(index)">{{item.region}}</view>
-			</view>
+      <scroll-view scroll-x="true" class="nav-list" :scroll-left="navScrollLeft" scroll-with-animation="true">
+        <view class="nav-list-box">
+           <view class="nav" v-for="(item,index) in title" :key='item.id' :class="{'active': tabIndex == index}" @tap="toggleTab(index)">{{item.region}}</view>
+        </view>
+      </scroll-view>
 		</view>
 		<view class="danger-info-box">
       <scroll-view :scroll-into-view="toView" scroll-y="true" scroll-with-animation="true"  class="scroll-Y" :style="'height:'+scrollHeight+'px'">
@@ -93,13 +95,16 @@ export default {
 			],
 			brandFold: true, //判断brandFold是否展示
 			tabIndex: 0, //当前类目的索引值
-      toView: '', //scroll-view当前处于的位置
-      scrollHeight: '' //scroll-view的高度
+      toView: '', //详情部分scroll-view当前处于的位置
+      scrollHeight: '' ,//详情部分scroll-view的高度
+      scrollWidth: '' ,//页面宽度
+      navScrollLeft: 0, //导航横向滚动条的位置
 		};
 	},
   mounted: function () {
     let systemInfo = uni.getSystemInfoSync();
     this.scrollHeight = systemInfo.windowHeight;
+    this.scrollWidth = systemInfo.windowWidth;
   },
 	methods: {
 		toggleMore() {
@@ -112,6 +117,7 @@ export default {
         console.log( this.toView );
       });
       this.toView='';
+      let singleNavWidth = this.scrollWidth / 5;
     }
 	}
 }
@@ -124,9 +130,10 @@ export default {
 	}
 	>text{ font-size:24rpx; color:#999; display:block;}
 }
-.danger-info-tab{ background-color: #ebf2fe; height:98rpx; line-height:98rpx; font-size:32rpx; padding:0 40rpx;  position: sticky; width: 100%; top:80rpx + 180rpx; box-sizing: border-box; z-index: 10;
-	.nav-list{ overflow-x: scroll; display:flex; }
-	.nav{ display: inline-block; float: left; margin-right:40rpx; white-space:nowrap; position: relative;
+.danger-info-tab{  position: sticky; top:80rpx + 180rpx; width: 100%; 
+  .nav-list-box{ display:flex; }
+	.nav-list{ width: 100vw; box-sizing: border-box; z-index: 10; background-color: #ebf2fe; height:98rpx; line-height:98rpx; font-size:32rpx; padding:0 40rpx;  }
+	.nav{ display: inline-block; margin-right:40rpx; white-space:nowrap; position: relative;
 		&::after{content: ''; position: absolute; bottom: 0; left: 50%; margin-left: -24rpx; width: 48rpx; height:5rpx; border-radius:3rpx; background-color: #3882f9; display: none;}
 		&.active{ color:#3882f9;
 			&::after{display: block;}
@@ -149,7 +156,7 @@ export default {
 }
 /* #ifdef  MP-WEIXIN */
 .danger-info-header{ top:0rpx; }
-.page-danger-info{ margin-top:200rpx; }
+.page-danger-info{ margin-top:0rpx; }
 .danger-info-tab{ top:180rpx; }
 /* #endif */
 </style>
