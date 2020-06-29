@@ -31,7 +31,7 @@
         <view class="else">记分警示：<text>2</text>条<text class="icon-more" :class="[containerVisible ? 'cur' : '']" @click="toggleMost()"></text></view>
       </view>
     </view>
-    <view class="seniority-container" v-show="containerVisible">
+    <view class="seniority-container" v-if="containerVisible">
       <view class="seniority-list">
         <view class="seniority-time">2013年06月02日-11月03日<text>有效</text></view>
         <view class="seniority-content">
@@ -85,8 +85,7 @@ export default {
   },
   data() {
     return {
-      brandFold: true,
-      containerVisible: false,
+      containerVisible: false, //containerVisible模块展示
       items:[{
         message:'代办单位',
         info:'青岛远航源丰润国际劳务有限公司'

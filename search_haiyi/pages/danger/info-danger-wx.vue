@@ -4,13 +4,11 @@
 			<view class="title">1,2,3,6-四氢化苯甲醛</view>
 			<text>1,2,3,6-四氢化苯甲醛(1,2,3,6-tetrahydrobenzaldehyde, C7H10O)是一种 无色液体,</text>
 		</view>
-    <!-- #ifndef MP-WEIXIN -->
 		<view class="danger-info-tab">
 			<view class="nav-list">
 				<view class="nav" v-for="(item,index) in title" :key='item.id' :class="{'active': tabIndex == index}" @tap="toggleTab(index)">{{item.name}}</view>
 			</view>
 		</view>
-    <!-- #endif -->
 		<view class="danger-info-box">
 			<view class="danger-info-list">
 				<view class="danger-title">基本信息</view>
@@ -97,16 +95,18 @@ export default {
 	},
 
 	mounted: function() {	
-    // #ifndef  MP-WEIXIN
+    // #ifdef  H5
 		window.addEventListener('scroll', this.navScroll,true);
     // #endif
+    
+    
 	},
 
 	methods: {
 		toggleMore() {
 		  this.brandFold = !this.brandFold;
 		},
-    // #ifndef  MP-WEIXIN
+    // #ifdef  H5
 		toggleTab(index){
 			this.tabIndex = index;
 			let floor = document.querySelectorAll(".danger-info-list");

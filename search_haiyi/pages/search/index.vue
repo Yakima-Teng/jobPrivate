@@ -49,14 +49,14 @@ components: {
 data() {
   return {
     inputVal: "",
-    tabIndex: 1,
-    closeVisible: false,
-    hotVisible: true,
-    approximateVisible: false,
-    nullVisible: false,
-    containerVisible: false,
-    isSearch: false,
-		infoTabIndex:{}
+    tabIndex: 1, //当前检索ID
+    closeVisible: false, //清空表单按钮是否展示
+    hotVisible: true, //热门推荐模块展示
+    approximateVisible: false, //搜索近似搜索框展示
+    nullVisible: false, //无搜索信息模块展示
+    containerVisible: false, //搜索列表模块展示
+    isSearch: false, //
+		infoTabIndex:{} //当前搜索ID子模块传值
   }
 },
 onLoad() {
@@ -119,7 +119,7 @@ methods: {
     }
   }
 }
-.search-box{background-color: #3882f9; position: fixed;width: 100%; z-index: 10; top:0; margin-top: 106rpx + 80rpx;
+.search-box{background-color: #3882f9; position: fixed; width: 100%; z-index: 10; top:0; margin-top: 106rpx + 80rpx;
   .search-bg{ background-color: #fff; border-radius:20rpx 20rpx 0 0; padding: 30rpx 40rpx; display: flex; align-items: center; box-shadow: 0 5rpx 10rpx rgba(#0a3752,.1); position: relative; z-index: 10;
     .uni-input{ background-color: #f0eff4; border-radius: 10rpx; height:56rpx; line-height:56rpx; padding-left: 80rpx; font-size: 28rpx; width: 100%;}
   }

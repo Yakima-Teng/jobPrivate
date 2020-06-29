@@ -31,7 +31,6 @@ export default {
   },
   data() {
     return {
-      brandFold: true,
       items:[{
         message:'代办单位',
         info:'青岛远航源丰润国际劳务有限公司'

@@ -136,9 +136,12 @@ export default {
 	}
 }
 /* #ifdef  MP-WEIXIN */
-.filter-content{ padding-top: 20rpx; }
+.filter-content{ padding-top: 0rpx; }
 .btn-box{ 
 	>button{width: 269rpx;}
 }
+.issuer-box{ 
+  .issuer-list .radio{margin-bottom: 36rpx;}
+ }
 /* #endif */
 </style>
