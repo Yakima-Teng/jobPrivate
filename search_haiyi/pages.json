@@ -50,15 +50,7 @@
 			"style" : {
 				"navigationBarTitleText": "危险货物详情" 
 			}
-		},{
-			"path" : "pages/danger/info-danger",
-			"style" : {
-				"navigationBarTitleText": "危险货物详情" 
-			}
-		},{
-					"path" : "pages/danger/info-danger-h5",
-					"style" : {}
-			}
+		}
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
