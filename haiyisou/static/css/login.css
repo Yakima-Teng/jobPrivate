@@ -1,0 +1,178 @@
+page {
+	padding-bottom: 30rpx;
+	font-size: 30rpx;
+	font-weight: normal;
+	line-height: 38rpx;
+}
+
+input {
+	font-size: 36rpx;
+	line-height: 48rpx;
+	height: 48rpx;
+	min-height: 48rpx;
+	max-height: 48rpx;
+	flex: 1;
+	display: inline-block;
+}
+
+.container {
+	background-color: #FFFFFF;
+	position: absolute;
+	width: 100%;
+}
+
+
+swiper {
+	display: block;
+	height: 650rpx;
+}
+
+.swiper-box {
+	flex: 1;
+}
+
+.swiper-item {
+	flex: 1;
+	flex-direction: row;
+}
+
+.link-section {
+	font-size: 30rpx;
+	color: #4293f4;
+	font-weight: normal;
+}
+
+/* 页面头 */
+.header {
+	margin-bottom: 60rpx;
+}
+
+.header-title {
+	display: flex;
+	flex-direction: column;
+	font-size: 50rpx;
+	padding: 48rpx 48rpx 30rpx;
+}
+
+.header-content {
+	display: flex;
+	font-size: 30rpx;
+	color: #666666;
+	padding: 0rpx 48rpx 10rpx;
+}
+
+/********tab页面**************/
+.tabs {
+	text-align: center;
+	color: #fffFFF;
+	font-size: 32rpx;
+}
+
+.font-title {
+	width: 190rpx;
+	margin: 10px 20px 10rpx 30rpx;
+	font-size: 38rpx;
+	color: #999999;
+	height: 70rpx;
+}
+
+.font-title-crude {
+	width: 190rpx;
+	margin: 10px 20px 10rpx 30rpx;
+	font-size: 38rpx;
+	color: #000000;
+	height: 70rpx;
+}
+
+.font-title-crude::after {
+	content: '';
+	position: absolute;
+	top: auto;
+	height: 7rpx;
+	width: 140rpx;
+	background-color: #3882f9;
+	margin-top: 55rpx;
+	margin-left: -150rpx;
+}
+
+
+
+/* content 身体 */
+.content {
+	padding: 10rpx;
+}
+
+.content .apent-content {
+	color: #4698ea;
+	padding: 0px 3px;
+}
+
+.content .agree {
+	color: #989898;
+	font-size: 28rpx;
+	padding-bottom: 29rpx;
+}
+
+.content .agree .note {
+	color: #4698ea;
+	font-family: Microsoft YaHei;
+	font-weight: 400;
+}
+
+radio-group {
+	display: flex;
+	justify-content: space-between;
+}
+
+.content-radio {
+	width: 85%;
+	margin: 10rpx;
+}
+
+.flex-row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.bigTitle {
+	font-size: 35rpx;
+	font-weight: bold;
+}
+
+.smallTitle {
+	font-size: 35rpx;
+	color: #4698ea;
+}
+
+.uni-row {
+	margin-left: 40rpx;
+	margin-right: 40rpx;
+	padding-top: 36rpx;
+	padding-bottom: 36rpx;
+	position: relative;
+	border-bottom: 1px solid #f5f5f5;
+}
+
+.uni-title {
+	font-size: 34rpx;
+	line-height: 40rpx;
+	margin-bottom: 6rpx;
+}
+
+.uni-border-none {
+	border-bottom: none;
+}
+
+button {
+	background: #4293f4;
+	color: #fff;
+}
+
+.button-shade {
+	opacity: 0.3;
+}
+
+.popup-view {
+	text-align: center;
+	background-color: #FFFFFF;
+}

@@ -1,0 +1,177 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path" : "pages/login/login",
+			"style" : {
+				"navigationBarTitleText": "登录"
+			}
+		},{
+			"path" : "pages/index/index",
+			"style" : {
+				"navigationBarTitleText": "首页",
+				"navigationStyle":"custom"
+			}
+		},{
+			"path" : "pages/crew/index",
+			"style" : {
+				"navigationBarTitleText": "船员详情" 
+			}
+		},{
+			"path" : "pages/crew/cert/cert",
+			"style" : {
+				"navigationBarTitleText": "船员证书" 
+			}
+		},{
+			"path" : "pages/crew/cert/certinfo",
+			"style" : {
+				"navigationBarTitleText": "船员证书详情" 
+			}
+		},{
+			"path" : "pages/crew/train/train",
+			"style" : {
+				"navigationBarTitleText": "船员培训" 
+			}
+		},{
+			"path" : "pages/crew/train/traininfo",
+			"style" : {
+				"navigationBarTitleText": "船员培训详情" 
+			}
+		},{
+			"path" : "pages/ship/basic/basic",
+			"style" : {
+				"navigationBarTitleText": "船舶信息"
+			}
+		},{
+			"path" : "pages/ship/info/info",
+			"style" : {
+				"navigationBarTitleText": "船舶基础信息"
+			}
+		},{
+			"path" : "pages/ship/cert/cert",
+			"style" : {
+				"navigationBarTitleText": "证书信息"
+			}
+		},{
+			"path" : "pages/ship/cert/certinfo",
+			"style" : {
+				"navigationBarTitleText": "证书详情"
+			}
+		},{
+			"path": "pages/search/index",
+			"style": {
+				"navigationBarTitleText": "信息检索"
+			}
+		},{
+			"path" : "pages/crew/info-basic",
+			"style" : {
+				"navigationBarTitleText": "基本信息" 
+			}
+		},{
+			"path" : "pages/crew/info-exam",
+			"style" : {
+				"navigationBarTitleText": "考试信息" 
+			}
+		},{
+			"path" : "pages/crew/info-seniority",
+			"style" : {
+				"navigationBarTitleText": "资历信息" 
+			}
+    },{
+			"path" : "pages/crew/proxy-handle",
+			"style" : {
+				"navigationBarTitleText": "委托代办" 
+			}
+    },{
+			"path" : "pages/crew/info-illegal",
+			"style" : {
+				"navigationBarTitleText": "违法信息" 
+		}
+		},{
+			"path" : "pages/crew/exam/exam-list",
+			"style" : {
+				"navigationBarTitleText": "适考证考试" 
+			}
+		},{
+			"path" : "pages/crew/exam/exam-info",
+			"style" : {
+				"navigationBarTitleText": "适考证考试详情" 
+			}
+		},{
+			"path" : "pages/danger/info-danger",
+			"style" : {
+				"navigationBarTitleText": "危险货物详情" 
+			}
+		},{
+			"path" : "pages/ship/postReport/postReport",
+			"style" : {
+				"navigationBarTitleText": "进出港报告" 
+			}
+		},{
+			"path" : "pages/ship/staffing/staffing",
+			"style" : {
+				"navigationBarTitleText": "配员信息" 
+			}
+		},{
+			"path" : "pages/ship/staffing/staffinginfo",
+			"style" : {
+				"navigationBarTitleText": "配员详情" 
+			}
+		},{
+			"path" : "pages/crew/info-handle",
+			"style" : {
+				"navigationBarTitleText": "委托代办详情" 
+			}
+		},{
+			"path" : "pages/ship/dangerousGoodsList/sxlist",
+			"style" : {
+				"navigationBarTitleText": "危险货物申报" 
+			}
+		},{
+			"path" : "pages/ship/dangerousGoodsList/whsblist",
+			"style" : {
+				"navigationBarTitleText": "危险货物申报列表" 
+			}
+		},{
+			"path" : "pages/ship/dangerousGoodsList/wh-info",
+			"style" : {
+				"navigationBarTitleText": "危险货物申报详情" 
+			}
+		},{
+			"path" : "pages/ship/dangerousGoodsList/wh-sbinfo",
+			"style" : {
+				"navigationBarTitleText": "危险货物申报详情" 
+			}
+		},{
+			"path" : "pages/ship/postReport/postReport",
+			"style" : {
+				"navigationBarTitleText": "进出港报告" 
+			}
+		},{
+			"path" : "pages/ship/staffing/staffinginfo",
+			"style" : {
+				"navigationBarTitleText": "配员信息" 
+			}
+		},{
+			"path" : "pages/ship/securityCheck/securitylist",
+			"style" : {
+				"navigationBarTitleText": "安全检查" 
+			}
+		},{
+			"path" : "pages/ship/securityCheck/securityDeallist",
+			"style" : {
+				"navigationBarTitleText": "安全检查列表" 
+			}
+		},{
+			"path" : "pages/ship/securityCheck/securityInfo",
+			"style" : {
+				"navigationBarTitleText": "安全检查详情" 
+			}
+		}
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#fff",
+		"backgroundColor": "#fff"
+	}
+}
