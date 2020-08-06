@@ -9,9 +9,11 @@
 		<view class='index__container'>
 			<view class="scrolltabs">
 			    <scroll-view class="tabs" id="tab-bar" style="-webkit-flex-wrap: nowrap;flex-wrap: nowrap;" :scroll-x="true" :show-scrollbar="false" :scroll-into-view="scrollInto">
-					<view v-for="(item, index) in itemTabs" :key="index" :class="tabsType == index?'font-title-crude':'font-title'" :data-index='index' @click="ontabtap" >
-						{{item.title}}
-					</view>
+          <view class="font-title-box">
+            <view v-for="(item, index) in itemTabs" :key="index" :class="tabsType == index?'font-title-crude':'font-title'" :data-index='index' @click="ontabtap" >
+              {{item.title}}
+            </view>
+          </view>
 			    </scroll-view>
 				<swiper :current="tabsType" class="swiper-box" style="flex: 1;" :duration="300" @change="ontabchange">
 				    <swiper-item class="swiper-item">
@@ -236,5 +238,184 @@
 </script>
 
 <style lang="scss">
-	@import url("@/static/css/index.css");
+	swiper-item {
+		display: block;
+		overflow: hidden;
+		will-change: transform;
+		border-radius: 5px;
+	}
+	
+	.index__container {
+		position: relative;
+		margin-top: -180rpx;
+		padding-right: 40rpx;
+		padding-left: 40rpx;
+	}
+	
+	.access-box {
+		margin: 20rpx 0rpx;
+	}
+	
+	swiper {
+		display: block;
+		height: 130rpx;
+	}
+	
+	.swiper-box {
+		flex: 1;
+	}
+	
+	.swiper-item {
+		flex: 1;
+		flex-direction: row;
+	}
+	
+	.access-box {
+		display: flex;
+		background: #ffffff;
+		box-shadow: 0 12rpx 18rpx 0 rgba(10, 55, 82, 0.1);
+		border-radius: 10rpx;
+		margin: 20rpx 3rpx 3rpx;
+	}
+.font-title-box{display: flex; justify-content: space-around; align-items:center; padding: 0 50rpx; color: #fffFFF; text-align: center;
+  .font-title {	font-size: 32rpx;  padding-bottom: 12px; }
+  .font-title-crude { position: relative; font-size: 36rpx; padding-bottom: 12rpx;
+    &::after {
+      content: ''; display: block; position: absolute; bottom: 0; margin-top: 12rpx; height: 5rpx; width: 48rpx; background-color: #FFFFFF;border-radius: 3rpx; left: 50%; margin-left: -25rpx;
+    }
+  }
+}
+
+	
+	
+
+	
+	.data-total {
+		margin-top: 50rpx;
+	}
+	
+	.data-total-title {
+		font-size: 40rpx;
+		font-weight: bold;
+	}
+	
+	.data-total-time {
+		font-size: 22rpx;
+		color: #707070;
+	}
+	
+	.data-stats {}
+	
+	.data-stats-title {
+		font-size: 40rpx;
+		font-weight: bold;
+		height: 100rpx;
+	}
+	
+	/**************布局样式设置***********************/
+	.flex-row {
+		display: flex;
+	}
+	
+	.flex-row-between {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	.flex-row-section {
+		-webkit-flex: 1;
+		flex: 1;
+		text-align: center;
+	}
+	
+	.flex-column {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.section-title {
+		font-weight: 28rpx;
+		color: #000000;
+		margin: 14rpx 0rpx;
+	}
+	
+	.section-rightborder::after {
+		content: '';
+		position: absolute;
+		top: auto;
+		height: 80rpx;
+		width: 4rpx;
+		background-color: #e5e5e5;
+		margin-left: 110rpx;
+		margin-top: -140rpx;
+	}
+	
+	.section-content {
+		font-weight: 30rpx;
+		margin: 14rpx 0rpx;
+	}
+	
+	.section-remark {
+		font-size: 22rpx;
+		color: #8f8f8f;
+		margin: 14rpx 0rpx;
+	}
+	
+	.section-twenty {
+		width: 20%;
+	}
+	
+	.section-eighty {
+		width: 80%;
+		text-align: left;
+	}
+	
+	.section-item {
+		height: 200rpx;
+		border: 1rpx solid #f2f2f2;
+		box-shadow: #ccc 1px 5px 5px 0rpx;
+		border-radius: 15rpx;
+		margin: 5rpx;
+		align-items: flex-start;
+		margin-bottom: 20px;
+	}
+	
+	.section-item-title {
+		font-size: 32rpx;
+		font-weight: bold;
+		margin: 16rpx 0rpx;
+		margin-top: 40rpx;
+	}
+	
+	.section-item-content {
+		font-size: 25rpx;
+		color: #b8b8b8;
+	}
+	
+	/**************字体颜色设置***********************/
+	.font-red {
+		color: #cd2c2c;
+	}
+	
+	.font-orange {
+		color: #d9831f;
+	}
+	
+	.font-violet {
+		color: #5a5af1;
+	}
+	
+	.font-blue {
+		color: #3882f9;
+	}
+	
+	.font-green {
+		color: #389c86;
+	}
+	
+	.font-pink {
+		color: #ff6969;
+	}
+	
 </style>

@@ -32,13 +32,6 @@ swiper {
 	flex-direction: row;
 }
 
-.tabs {
-	text-align: center;
-	color: #fffFFF;
-	font-weight: bold;
-	font-size: 32rpx;
-}
-
 .access-box {
 	display: flex;
 	background: #ffffff;
@@ -46,32 +39,21 @@ swiper {
 	border-radius: 10rpx;
 	margin: 20rpx 3rpx 3rpx;
 }
-
-.font-title {
-	-webkit-flex: 1;
-	flex: 1;
-	display: inline-block;
-	margin: 10px 30px;
-	height: 50rpx;
-}
-
-.font-title-crude {
-	-webkit-flex: 1;
-	flex: 1;
-	display: inline-block;
-	margin: 10px 30px;
-	height: 50rpx;
-}
+.font-title-box{display: flex; justify-content: space-around; padding: 0 50rpx; color: #fffFFF; text-align: center;}
+.font-title {	font-size: 32rpx; }
+.font-title-crude { position: relative; font-size: 36rpx; }
 
 .font-title-crude::after {
 	content: '';
+  display: block;
 	position: absolute;
-	top: auto;
-	height: 7rpx;
-	width: 50rpx;
+  bottom: -12rpx;
+	height: 5rpx;
+	width: 48rpx;
 	background-color: #FFFFFF;
-	margin-top: 55rpx;
-	margin-left: -60rpx;
+  border-radius: 3rpx;
+  left: 50%;
+	margin-left: -25rpx;
 
 }
 
