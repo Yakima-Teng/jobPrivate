@@ -76,8 +76,8 @@
 </script>
 
 <style lang="scss">
-.page-crew-exam{ padding: 0 40rpx;
-	.title{ font-size:36rpx; margin: 48rpx 0 27rpx;}
+.page-crew-exam{ padding: 20rpx 40rpx;
+	.title{ font-size:36rpx; margin-bottom: 27rpx;}
 	.exam-box{ position: relative; height: 200rpx;  display: flex; justify-content: center; align-items: center; 
 		.exam-bg{ height: 200rpx; width: 100%; position: absolute; left:0; top:0;
 			>image{width: 100%; height:100%;}

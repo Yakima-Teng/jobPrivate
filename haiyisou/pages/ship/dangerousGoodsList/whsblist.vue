@@ -114,7 +114,8 @@ export default {
 <style lang="scss">
 @import '@/components/search/list';
 .search-container{ padding-top: 110rpx + 20rpx;
-	.containe-main{
+  .containe-status{width:48rpx;height:48rpx; line-height:48rpx; text-align: center; background:rgba(253,238,238,1);border-radius:50%; border: none;font-size:24rpx; color:rgba(226,50,50,1);}
+	.containe-main{ width: calc( 100% - 48px);
 		.info-name{ display: flex; justify-content: space-between; font-size:36rpx; line-height: 48rpx;
 			.status{ font-size: 28rpx; width: 150rpx; height:48rpx; line-height: 48rpx; text-align: center; border-radius: 20rpx;
 				&.fail{ background-color: #eaf7f7; color:#30adb5;}

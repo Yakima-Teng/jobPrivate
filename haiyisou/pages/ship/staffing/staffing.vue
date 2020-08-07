@@ -66,61 +66,9 @@
 </script>
 
 <style lang="scss">
+  @import '@/static/css/common';
 	.cert-list {
 		padding-top: 130rpx;
-		padding-left: 30rpx;
-		padding-right: 30rpx;
 
-		.cert-item {
-			padding-bottom: 30rpx;
-			border-bottom: 0.5px solid #ddd;
-
-			.cert-title {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				padding: 20rpx 0rpx;
-
-				.cert-title-image {
-					margin-right: 18rpx;
-					border: 1rpx solid #519DEB;
-					border-radius: 40rpx;
-					background-color: #519DEB;
-					width: 60rpx;
-					height: 60rpx;
-					font-size: 30rpx;
-					text-align: center;
-					line-height: 60rpx;
-					color: #FFFFFF;
-					flex-direction: row;
-					justify-content: center;
-					align-items: center;
-				}
-
-				.cert-title-title {
-					display: flex;
-					align-items: center;
-					font-size: 38rpx;
-					font-weight: bold;
-				}
-
-				.cert-title-icon {
-					padding: 10rpx 30rpx;
-					background-color: #E4EBFD;
-					border-radius: 25rpx;
-					color: #519DEB;
-				}
-			}
-
-			.cert-content {
-				display: flex;
-				color: #666666;
-				padding: 5rpx 0rpx;
-
-				.cert-content-title {}
-
-				.cert-content-content {}
-			}
-		}
 	}
 </style>

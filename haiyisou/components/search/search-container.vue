@@ -3,22 +3,23 @@
 	<view class="search-introduction">为您找到<text class="search-val">&#35;{{searchKey}}</text>相关结果<text class="search-number">{{resultList.length}}</text>条</view>
 	<view class="containe-list" v-if="infoTabIndex == 1">
 		<view v-for="(item, index) in resultList" class="containe-info" @click="goToShipInfo(item.shipRegNo)">
-			<view class="containe-status">船</view>
+			<view class="containe-status"><image src="../../static/img-bead.png" mode=""></image></view>
 			<view class="containe-main">
 				<text class="info-name">{{item.shipNameCn}}</text>
 				<view class="label-list">
-					<text v-for="(labelItem, index) in item.labels.split('|')"  v-if="labelItem!='' && labelItem.split(':').length>1" class="label">
-						{{labelItem.split(':')[1]}}
-					</text>
+					<view class="label-list">
+						<text class="label">航海学校</text>
+						<text class="label">二副</text>
+					</view>
 				</view>
 				<text class="info">英文名：{{item.shipNameEn}}</text>
-				<text class="info">船舶标示：{{item.shipId}}</text>
+				<text class="info">船舶识别号：{{item.shipId}}</text>
 			</view>
 		</view>
 	</view>
 	<view class="containe-list" v-if="infoTabIndex == 2">
 		<view v-for="(item, index) in resultList" class="containe-info" @click="goToCrewInfo(item.idCardNo)">
-			<view class="containe-status">船</view>
+			<view class="containe-status"><image src="../../static/img-user.png" mode=""></image></view>
 			<view class="containe-main">
 				<text class="info-name">{{item.name}}</text>
 				<view class="label-list">
@@ -79,7 +80,7 @@
 </script>
 
 <style lang="scss">
-.search-introduction{ font-size:24rpx; color:#999; background-color: #fff; position: fixed; width: 100%; margin-top:-30rpx; left:0; padding:40rpx 40rpx 25rpx;
+.search-introduction{ font-size:24rpx; color:#999; background-color: #fff; position: fixed; width: 100%; margin-top:-30rpx; left:0; padding:40rpx 40rpx 25rpx; z-index: 5;
 	>text{ margin:0 10rpx; }
 	.search-val{ color:#3882f9;}
 	.search-number{ color:#e23232;}

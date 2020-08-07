@@ -2,8 +2,8 @@
 	<view >
 		<uni-nav-bar backgroundColor="#FFFFFF" fixed="false" color="#000000" status-bar="true" title="连云港微海事" />
 
-		<view style="margin-top: -10px;">
-			<image src="../../static/images/index/header.jpg" mode="widthFix" style="width: 100%;" alt="" class="back-image"></image>
+		<view>
+			<image src="../../static/images/index/header.png" mode="widthFix" style="width: 100%;" alt="" class="back-image"></image>
 		</view>
 		
 		<view class='index__container'>
@@ -36,10 +36,10 @@
 			<view class="data-total">
 				<view class="flex-row-between">
 					<view class="data-total-title">数据总览</view>
-					<view class="data-total-time">截止：2020-02-26 14:30</view>
+					<view class="data-total-time">截至：2020-02-26 14:30</view>
 				</view>
-				<view class="flex-column" style="margin-top: 20rpx;padding: 0rpx 10rpx;">
-					<view class="flex-row" style="margin-top: 10rpx;">
+				<view class="flex-column" style="margin-top: 20rpx; padding: 0rpx 10rpx;">
+					<view class="flex-row">
 						<view class="flex-row-section section-rightborder">
 							<view class="section-title">入港船舶/艘</view>
 							<view class="section-content font-red">52</view>
@@ -56,7 +56,7 @@
 							<view class="section-remark">较昨日<text class="font-violet" >+2</text></view>
 						</view>
 					</view>
-					<view class="flex-row" style="margin-top: 10rpx;">
+					<view class="flex-row">
 						<view class="flex-row-section section-rightborder">
 							<view class="section-title">发送货物/吨</view>
 							<view class="section-content font-blue">24828</view>
@@ -86,7 +86,7 @@
 				<view class="flex-column" >
 					<view class="flex-row-between section-item" >
 						<view class="section-twenty">
-							<image mode="aspectFit" src="../../static/images/index/index-icon-01.png" style="width: 80rpx;height: 80rpx;margin: 30rpx;"></image>
+							<image mode="aspectFit" src="../../static/images/index/index-icon-01.png" style="width: 80rpx;height: 80rpx;"></image>
 						</view>
 						<view class="flex-column section-tighty">
 							<view class="section-item-title">进出港业务分析</view>
@@ -95,7 +95,7 @@
 					</view>
 					<view class="flex-row-between section-item">
 						<view class="section-twenty">
-							<image mode="aspectFit" src="../../static/images/index/index-icon-02.png" style="width: 80rpx;height: 80rpx;margin: 30rpx;"></image>
+							<image mode="aspectFit" src="../../static/images/index/index-icon-02.png" style="width: 80rpx;height: 80rpx;"></image>
 						</view>
 						<view class="flex-column section-tighty">
 							<view class="section-item-title">危防业务分析</view>
@@ -104,7 +104,7 @@
 					</view>
 					<view class="flex-row-between section-item">
 						<view class="section-twenty">
-							<image mode="aspectFit" src="../../static/images/index/index-icon-03.png" style="width: 80rpx;height: 80rpx;margin: 30rpx;"></image>
+							<image mode="aspectFit" src="../../static/images/index/index-icon-03.png" style="width: 80rpx;height: 80rpx;"></image>
 						</view>
 						<view class="flex-column section-tighty">
 							<view class="section-item-title">船旗国安全检查分析</view>
@@ -113,7 +113,7 @@
 					</view>
 					<view class="flex-row-between section-item">
 						<view class="section-twenty">
-							<image mode="aspectFit" src="../../static/images/index/index-icon-04.png" style="width: 80rpx;height: 80rpx;margin: 30rpx;"></image>
+							<image mode="aspectFit" src="../../static/images/index/index-icon-04.png" style="width: 80rpx;height: 80rpx;"></image>
 						</view>
 						<view class="flex-column section-tighty">
 							<view class="section-item-title">行政处罚管理</view>
@@ -125,6 +125,7 @@
 		</view>	
 		
 		<uni-footer sponsor="连云港微海事"></uni-footer>
+ 
 	</view>
 </template>
 
@@ -245,12 +246,7 @@
 		border-radius: 5px;
 	}
 	
-	.index__container {
-		position: relative;
-		margin-top: -180rpx;
-		padding-right: 40rpx;
-		padding-left: 40rpx;
-	}
+	.index__container {position: relative;margin-top: -140rpx;padding:0 40rpx;}
 	
 	.access-box {
 		margin: 20rpx 0rpx;
@@ -268,130 +264,86 @@
 	.swiper-item {
 		flex: 1;
 		flex-direction: row;
+    
 	}
 	
 	.access-box {
 		display: flex;
 		background: #ffffff;
-		box-shadow: 0 12rpx 18rpx 0 rgba(10, 55, 82, 0.1);
+    height: 88rpx;
+		box-shadow:0rpx 6rpx 10rpx 0rpx rgba(0, 0, 0, 0.1);
 		border-radius: 10rpx;
 		margin: 20rpx 3rpx 3rpx;
 	}
-.font-title-box{display: flex; justify-content: space-around; align-items:center; padding: 0 50rpx; color: #fffFFF; text-align: center;
-  .font-title {	font-size: 32rpx;  padding-bottom: 12px; }
+.font-title-box{display: flex; justify-content: space-around; align-items:center; padding: 0 50rpx; color: #fffFFF; text-align: center; line-height: 44rpx; 
+  .font-title {	font-size: 32rpx;  padding-bottom: 12rpx; position: relative; opacity: .6; font-weight:400;}
   .font-title-crude { position: relative; font-size: 36rpx; padding-bottom: 12rpx;
-    &::after {
-      content: ''; display: block; position: absolute; bottom: 0; margin-top: 12rpx; height: 5rpx; width: 48rpx; background-color: #FFFFFF;border-radius: 3rpx; left: 50%; margin-left: -25rpx;
-    }
+    &::after { content: ''; position: absolute; bottom: 0; margin-top: 12rpx; height: 5rpx; width: 48rpx; background-color: #FFFFFF;border-radius: 3rpx; left: 50%; margin-left: -25rpx; font-weight:600;}
   }
 }
 
 	
-	
 
 	
 	.data-total {
-		margin-top: 50rpx;
+		margin-top: 40rpx;
 	}
 	
 	.data-total-title {
-		font-size: 40rpx;
-		font-weight: bold;
+		font-size:40rpx;
+		font-weight:500;
+		color:rgba(0,0,1,1);
+		line-height:56rpx;
 	}
 	
 	.data-total-time {
-		font-size: 22rpx;
-		color: #707070;
+    font-size:24rpx;
+    font-weight:400;
+    color:rgba(102,102,102,1);
+    line-height:33rpx;
+    opacity: .6;
 	}
 	
 	.data-stats {}
 	
-	.data-stats-title {
-		font-size: 40rpx;
-		font-weight: bold;
-		height: 100rpx;
-	}
+
 	
 	/**************布局样式设置***********************/
 	.flex-row {
-		display: flex;
+
+    display: flex;
+      flex-wrap: wrap;
+      align-content: space-between;
+      justify-content: space-between;
 	}
 	
 	.flex-row-between {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+    .data-stats-title{ margin-bottom: 30rpx;}
 	}
 	
-	.flex-row-section {
-		-webkit-flex: 1;
-		flex: 1;
-		text-align: center;
-	}
+.flex-row-section { width:207rpx; height:199rpx; background:rgba(255,255,255,1); box-shadow:0rpx 8rpx 18rpx 0rpx rgba(10,55,82,0.1); border-radius:4rpx; text-align: center; margin-bottom: 8rpx; display: flex; flex-direction: column; justify-content: center; align-items: center;
+  .section-title {font-size:28rpx;font-weight:500; color:rgba(25,25,25,1); line-height:38rpx; }
+  .section-content {font-size:40rpx; margin: 15rpx 0;}
+  .section-remark {font-size: 24rpx;color:rgba(102,102,102,.6); }
+}
 	
 	.flex-column {
 		display: flex;
 		flex-direction: column;
 	}
+		
+.section-item { box-shadow:0rpx 8rpx 18rpx 0rpx rgba(10,55,82,0.1);border-radius:16rpx; align-items: flex-start; margin-bottom: 20rpx; padding: 30rpx;
+  .section-item-title {font-size:36rpx;font-weight:500;color:rgba(0,0,0,1); margin-bottom: 10rpx;}
+  .section-twenty { margin-right: 30rpx;  }
+  .section-item-content { font-size:26rpx;font-weight:400;color:rgba(102,102,102,.6);line-height:38rpx; }
+}
 	
-	.section-title {
-		font-weight: 28rpx;
-		color: #000000;
-		margin: 14rpx 0rpx;
-	}
 	
-	.section-rightborder::after {
-		content: '';
-		position: absolute;
-		top: auto;
-		height: 80rpx;
-		width: 4rpx;
-		background-color: #e5e5e5;
-		margin-left: 110rpx;
-		margin-top: -140rpx;
-	}
 	
-	.section-content {
-		font-weight: 30rpx;
-		margin: 14rpx 0rpx;
-	}
 	
-	.section-remark {
-		font-size: 22rpx;
-		color: #8f8f8f;
-		margin: 14rpx 0rpx;
-	}
-	
-	.section-twenty {
-		width: 20%;
-	}
-	
-	.section-eighty {
-		width: 80%;
-		text-align: left;
-	}
-	
-	.section-item {
-		height: 200rpx;
-		border: 1rpx solid #f2f2f2;
-		box-shadow: #ccc 1px 5px 5px 0rpx;
-		border-radius: 15rpx;
-		margin: 5rpx;
-		align-items: flex-start;
-		margin-bottom: 20px;
-	}
-	
-	.section-item-title {
-		font-size: 32rpx;
-		font-weight: bold;
-		margin: 16rpx 0rpx;
-		margin-top: 40rpx;
-	}
-	
-	.section-item-content {
-		font-size: 25rpx;
-		color: #b8b8b8;
-	}
 	
 	/**************字体颜色设置***********************/
 	.font-red {

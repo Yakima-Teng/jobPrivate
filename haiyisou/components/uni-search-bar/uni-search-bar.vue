@@ -3,11 +3,11 @@
 		<view :style="{borderRadius:radius+'px',backgroundColor: bgColor+';'}" class="uni-searchbar__box" @click="searchClick">
 			<!-- #ifdef MP-ALIPAY -->
 			<view class="uni-searchbar__box-icon-search">
-				<uni-icons color="#999999" size="18" type="search" />
+				<uni-icons color="#ccc" size="18" type="search" />
 			</view> 
 			<!-- #endif -->
 			<!-- #ifndef MP-ALIPAY -->
-			<uni-icons color="#999999" class="uni-searchbar__box-icon-search" size="18" type="search" />
+			<uni-icons color="#ccc" class="uni-searchbar__box-icon-search" size="18" type="search" />
 			<!-- #endif -->
 			<input :disabled="isDisable==true" v-if="show" :focus="showSync" ref="searchInput" :placeholder="placeholder" :maxlength="maxlength" @confirm="confirm" class="uni-searchbar__box-search-input" confirm-type="search" type="text" v-model="searchVal" />
 			<text v-else class="uni-searchbar__text-placeholder">{{ placeholder }}</text>
@@ -160,7 +160,7 @@
 		/* #endif */
 		flex-direction: row;
 		position: relative;
-		padding: 16rpx;
+		
 		/* background-color: #ffffff; */
 	}
 
@@ -174,14 +174,16 @@
 		flex: 1;
 		flex-direction: row;
 		align-items: center;
-		height: 36px;
+		height: 88rpx;
 		padding: 5px 8px 5px 0px;
 		border-width: 0.5px;
 		/* border: 1rpx solid #e5e5e5; */
 		border-radius: 15rpx;
+    padding-left: 10rpx;
 	}
 
 	.uni-searchbar__box-icon-search {
+    
 		/* #ifndef APP-NVUE */
 		display: flex;
 		/* #endif */
@@ -206,8 +208,10 @@
 
 	.uni-searchbar__text-placeholder {
 		font-size: 28rpx;
-		color: #808080;
+		color:rgba(153,153,153,1);
 		margin-left: 0px;
+    font-weight:400;
+    opacity: .6;
 	}
 
 	.uni-searchbar__cancel {

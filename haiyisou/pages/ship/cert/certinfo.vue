@@ -963,10 +963,5 @@
 </script>
 
 <style lang="scss">
-.page-crew-basic{padding: 0 40rpx;
-	.info-title{font-size: 40rpx; font-weight: bold; margin:44rpx 0 70rpx;}
-	.info-list{ padding-left: 4rpx; font-size:32rpx; border-bottom: 1rpx solid #e5e5e5; padding-bottom: 38rpx; margin-bottom: 36rpx; display: flex; justify-content: space-between; font-weight: 600;
-		.left{font-weight: normal;}
-	}
-}
+@import '@/static/css/common';
 </style>

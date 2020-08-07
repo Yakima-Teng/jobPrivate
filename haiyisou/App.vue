@@ -13,7 +13,8 @@
 </script>
 
 <style lang="scss">
-.uni-body{font-family:Tahoma,Helvetica,'\5FAE\8F6F\96C5\9ED1',Arial,sans-serif;}
+.uni-body{font-family:Tahoma,Helvetica,'\5FAE\8F6F\96C5\9ED1',Arial,sans-serif; -webkit-font-smoothing: subpixel-antialiased;}
+uni-page-head .uni-page-head__title{ font-size: 37rpx!important;}
 uni-image{ z-index: -1;}
 uni-page{ height:auto;}
 uni-radio .uni-radio-input {width: 40rpx; height:40rpx;border-color:#e5e5e5; background-color: #fafafa; margin: -7rpx 20rpx 0 0;

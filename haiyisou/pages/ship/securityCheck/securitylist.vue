@@ -1,10 +1,56 @@
 <template>
-	<view>
-
-		<view class="page-crew-exam" v-for="(item, index) in goodsList" :key="index" @click="goToExamList(item.type)">
-			<view class="title">{{item.goodsTitle}}</view>
-		</view>
-	</view>
+  <view class="page-securitylist">
+    <view class="crew-exam-aq-title">
+      <!-- 当前页签直接在 page-crew-exam 上添加cur即可-->
+      <view class="page-crew-exam" v-for="(item, index) in goodsList" :key="index" @click="goToExamList(item.type)">
+        <view class="title">{{item.goodsTitle}}</view>
+      </view>
+    </view>
+    <view class="sep"></view>
+    <view class="securitylist-module">
+      <view class="securitylist">
+        <view class="security-title">
+          <view class="icon-num">01</view>
+          <view class="name">检查港口：漳州</view>
+        </view>
+        <view class="security-main">
+          <view class="info">缺陷数：
+            <view class="txt">1 </view>
+          </view>
+         
+          <view class="info">是否滞留：
+            <view class="txt">否 </view>
+          </view>
+          <view class="info">初查复查标志：
+            <view class="txt green">初查 </view>
+          </view>
+          <view class="info">检查日期：
+            <view class="txt">2017-01-11</view>
+          </view>
+        </view>
+      </view>
+      <view class="securitylist">
+        <view class="security-title">
+          <view class="icon-num">02</view>
+          <view class="name">检查港口：漳州</view>
+        </view>
+        <view class="security-main">
+          <view class="info">缺陷数：
+            <view class="txt">1 </view>
+          </view>
+          <view class="info">是否滞留：
+            <view class="txt">否 </view>
+          </view>
+          <view class="info">初查复查标志：
+            <view class="txt blue">复查 </view>
+          </view>
+          <view class="info">检查日期：
+            <view class="txt">2017-01-11</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
 </template>
 
 <script>
@@ -41,15 +87,28 @@
 </script>
 
 <style lang="scss">
-.page-crew-exam{ padding: 0 40rpx;
-	.title{ font-size:36rpx; margin: 48rpx 0 27rpx;}
-	.exam-box{ position: relative; height: 200rpx;  display: flex; justify-content: center; align-items: center; 
-		.exam-bg{ height: 200rpx; width: 100%; position: absolute; left:0; top:0;
-			>image{width: 100%; height:100%;}
-		}
-		.exam-btn{ position: relative; z-index:10; background-color: #fff; width: 266rpx; height:60rpx; line-height:60rpx; font-size:34rpx; text-align: center;
-			&::before{ content:''; box-sizing: border-box; border:1rpx solid #fff; background-color: transparent; position: absolute; width: 282rpx; height:76rpx; left:-8rpx; top:-8rpx;}
-		}
-	}
+.page-securitylist{
+  .sep{height:20rpx;background:rgba(240,239,244,1);}
+}
+.crew-exam-aq-title{ padding: 30rpx 40rpx; font-size: 28rpx; display: flex; justify-content: space-between; align-items: center;
+  .page-crew-exam{ height: 70rpx; line-height: 70rpx; border:1px solid rgba(136,136,136,.6); border-radius:8px 0px 0px 8px; color:#191919; width: 50%; float: left; text-align: center;
+    &:first-child{ border-right: 0;}
+    &:last-child{ background-color:rgba(255,255,255,1); border:1px solid rgba(136,136,136,.6); border-left: 0; border-radius:0px 8px 8px 0px;}
+    &.cur{ background-color: #3882F9; color:#fff; border-color: #3882F9;}
+  }
+}
+.securitylist{ border-bottom: 10rpx solid rgba(240,239,244,1); padding: 30rpx 40rpx;
+  .security-title{ border-bottom: 1rpx solid rgba(229,229,229,1); overflow: hidden; padding-bottom: 20rpx; margin-bottom: 26rpx;
+    .icon-num{ float: left; height:48rpx; line-height:48rpx; text-align: center; width: 48rpx; background-color: rgba($color: #3882F9, $alpha: 0.1); border-radius:8px; font-size:24rpx; color:rgba(56,130,249,1); margin-right: 20rpx;}
+    .name{font-size:36rpx; line-height: 48rpx;}
+  }
+  .security-main{ display: flex; flex-wrap: wrap;
+    .info{ width: 50%; font-size: 28rpx; color:#666; display: flex; flex-wrap: wrap;line-height:1.5; opacity: .6; box-sizing: border-box;
+      .green{ color:#30ADB5;}
+      .blue{ color:#3882F9;}
+      &:nth-child(odd){ border-right: 1rpx solid #E5E5E5;}
+      &:nth-child(even){ padding-left: 22rpx;}
+    }
+  }
 }
 </style>

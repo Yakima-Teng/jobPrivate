@@ -269,8 +269,8 @@
 
 <style lang="scss">
 	.search-tab {
-		background-color: #3882f9;
-		color: #fff;
+    background-color: #fff;
+		color: #000000;
 		display: flex;
 		justify-content: space-around;
 		height: 107rpx;
@@ -281,12 +281,11 @@
 		padding: 80rpx 0 20rpx;
 		top: 0;
 		z-index: 9;
-
 		.tab-bar {
 			display: none;
 			height: 5rpx;
 			border-radius: 3rpx;
-			background-color: #fff;
+			background-color: #3882F9;
 			margin-top: 15rpx;
 			position: absolute;
 			width: 75rpx;
@@ -298,9 +297,9 @@
 			width: 33.33%;
 			text-align: center;
 			position: relative;
-			opacity: .8;
+			opacity: .7;
 			font-size: 32rpx;
-
+      font-weight: 400;
 			&:last-child>.tab-bar {
 				width: 150rpx;
 				margin-left: -75rpx;
@@ -308,7 +307,9 @@
 
 			&.tab-cur {
 				opacity: 1;
-
+        font-size: 36rpx;
+        color: #3882F9;
+        font-weight: 600;
 				>.tab-bar {
 					display: block;
 				}
@@ -317,12 +318,12 @@
 	}
 
 	.search-box {
-		background-color: #3882f9;
+	   border-top: 1rpx solid rgba(204,204,204,.6);
 		position: fixed;
 		width: 100%;
 		z-index: 10;
 		top: 0;
-		margin-top: 106rpx + 80rpx;
+		margin-top: 106rpx + 64rpx;
 
 		.search-bg {
 			background-color: #fff;
@@ -330,18 +331,19 @@
 			padding: 30rpx 40rpx;
 			display: flex;
 			align-items: center;
-			box-shadow: 0 5rpx 10rpx rgba(#0a3752, .1);
+			box-shadow:0px 8rpx 12rpx 0px rgba(10,55,82,0.1);
 			position: relative;
 			z-index: 10;
 
 			.uni-input {
 				background-color: #f0eff4;
 				border-radius: 10rpx;
-				height: 56rpx;
-				line-height: 56rpx;
+				height: 72rpx;
+				line-height: 72rpx;
 				padding-left: 80rpx;
 				font-size: 28rpx;
 				width: 100%;
+        .uni-input-placeholder{ color:#aaa;}
 			}
 		}
 
@@ -379,7 +381,7 @@
 		}
 
 		.search-box {
-			margin-top: 106rpx + 100rpx;
+			margin-top: 106rpx + 82rpx;
 		}
 	}
 
