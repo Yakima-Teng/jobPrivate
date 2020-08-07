@@ -34,9 +34,8 @@
 	</view>
 	<view class="containe-list" v-if="infoTabIndex == 3">
 		<view v-for="(item, index) in resultList" class="containe-info-1"  @click="goToDangerInfo(item.goodsCode)">
-			<view class="containe-status">危</view>
 			<view class="containe-main">
-				<text class="info-name">{{item.goodsNameCn}}</text>
+				<view class="info-name"><view class="containe-status-wei">危</view>{{item.goodsNameCn}}</view>
 				<text class="info">{{item.goodsDes}}</text>
 				<view class="info-link">
 					<text>基本信息</text>|<text>成分识别</text>|<text>物理化学特性</text>|<text>物理化学特性</text>|<text>物理化学特性</text>
@@ -66,6 +65,7 @@
 				});
 			},
 			goToCrewInfo(idCardNo) {
+				console.log(idCardNo)
 				uni.navigateTo({
 				    url: '/pages/crew/index?idCardNo='+idCardNo
 				});

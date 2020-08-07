@@ -6,7 +6,7 @@
 			</view>
 			<view class="crew-img">
 				<view class="crew-avatar">
-					<image src="../../../static/_temp/img-bead.jpg" />
+					<image src="../../../static/img-bead.png" />
 				</view>
 				<!-- <view class="crew-sex">
 					<view class="icon-sex">

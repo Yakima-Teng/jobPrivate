@@ -13,7 +13,7 @@
 </script>
 
 <style lang="scss">
-.uni-body{font-family:Tahoma,Helvetica,'\5FAE\8F6F\96C5\9ED1',Arial,sans-serif; -webkit-font-smoothing: subpixel-antialiased;}
+.uni-body{ font-family: Arial, Helvetica, sans-serif; -webkit-font-smoothing: subpixel-antialiased;}
 uni-page-head .uni-page-head__title{ font-size: 37rpx!important;}
 uni-image{ z-index: -1;}
 uni-page{ height:auto;}

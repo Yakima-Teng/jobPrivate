@@ -6,7 +6,7 @@
 			</view>
 			<view class="crew-img">
 				<view class="crew-avatar">
-					<image src="../../static/_temp/img-user.png" />
+					<image src="../../static/img-bead.png" />
 				</view>
 				<view class="crew-sex">
 					<view class="icon-sex" v-if="baseInfo.sex=='1'">
@@ -25,17 +25,37 @@
 				<view class="info info-phone"><text>居住地址：</text>{{baseInfo.homeAddr}}</view>
 				<view class="info info-address"><text>注册机构：</text>{{baseInfo.issuOrgCode}}152号</view>
 			</view>
+
+		</view>
+		<view class="crew-else">
+			<view class="else-info">
+				<text class="number green">3</text>
+				<view class="name">船龄</view>
+			</view>
+			<view class="else-info">
+				<text class="number blue">2</text>
+				<view class="name">协查次数</view>
+			</view>
+			<view class="else-info">
+				<text class="number orange">2</text>
+				<view class="name">滞留次数</view>
+			</view>
+			<view class="else-info">
+				<text class="number red">1</text>
+				<view class="name">重点跟踪次数</view>
+			</view>
 		</view>
 		<view class="crew-lable">
 
-			<view class="lable" v-for="(item, index) in baseInfo.labels.split('|')" v-if="item.split(':').length>1">
+			<view class="lable  lable-gray" v-for="(item, index) in baseInfo.labels.split('|')" v-if="item.split(':').length>1">
 				{{item.split(':')[1]}}
 			</view>
-			<!-- <view class="lable lable-gray">认证过期</view>
+			<view class="lable lable-gray-1">认证过期</view>
 			<view class="lable lable-blue">特免</view>
 			<view class="lable lable-green">在船</view>
-			<view class="lable lable-red">限制出境</view> -->
+			<view class="lable lable-red">限制出境</view>
 		</view>
+			<view class="sep"></view>
 		<view class="crew-menu">
 			<view class="menu" @click="goToBasic()">
 				<view class="icon">
@@ -172,179 +192,22 @@
 </script>
 
 <style lang="scss">
-	.page-crew {
-		padding: 30rpx 40rpx;
+
+@import '@/static/css/common';
+.crew-info{ height:268rpx; 
+	.crew-img-bg{height:268rpx; }
+}
+.crew-lable{ margin-top: 30rpx;
+	.lable-gray-1{ color:#fff; background-color: #C4C4C4;}
+}
+.crew-else{ margin: 0 40rpx; padding: 35rpx 0; background-color: #fff;overflow: hidden; position: relative; margin-top: -10rpx; box-shadow:0px 8rpx 12rpx 0px rgba(46,70,88,0.15); font-size: 24rpx; text-align: center; border-radius:0px 0px 14rpx 14rpx; flex-grow:1;
+	.else-info{ float: left; width: 25%;}
+	.number{ font-size: 40rpx; font-weight: bold;
+		&.green{ color:#30ADB5;}
+		&.blue{ color:#3882F9;}
+		&.orange{ color:#F74D11}
+		&.red{ color:#D43333}
 	}
-
-	.crew-info {
-		position: relative;
-		display: flex;
-		padding: 30rpx;
-		margin-bottom: 40rpx;
-
-		.crew-img-bg {
-			width: 100%;
-			height: 268rpx;
-			box-shadow: 0 8rpx 15rpx rgba($color: #2e4658, $alpha: .15);
-			border-radius: 20rpx;
-			position: absolute;
-			top: 0;
-			left: 0;
-
-			>image {
-				width: 100%;
-				height: 100%;
-			}
-		}
-
-		.crew-img {
-			width: 120rpx;
-			margin-right: 30rpx;
-			position: relative;
-			z-index: 10;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-
-			uni-image {
-				position: relative;
-				z-index: 10;
-			}
-
-			.crew-avatar {
-				width: 120rpx;
-				height: 120rpx;
-				overflow: hidden;
-				box-sizing: border-box;
-				background-color: #fff;
-				border: 2rpx solid #f0eff4;
-				border-radius: 50%;
-
-				>image {
-					width: 100%;
-					height: 100%;
-				}
-			}
-
-			.crew-sex {
-				display: flex;
-				background-color: #30adb5;
-				color: #fff;
-				justify-content: center;
-				width: 100rpx;
-				height: 40rpx;
-				border-radius: 20rpx;
-				align-items: center;
-				font-size: 24rpx;
-				margin-top: 20rpx;
-
-				.icon-sex {
-					margin-right: 7rpx;
-
-					>image {
-						width: 24rpx;
-						height: 24rpx;
-					}
-				}
-			}
-		}
-
-		.crew-main {
-			position: relative;
-			z-index: 10;
-			color: #fff;
-			font-size: 24rpx;
-			width: calc(100% - 120rpx);
-
-			.crew-name {
-				font-size: 40rpx;
-				margin-bottom: 30rpx;
-			}
-
-			.info {
-				line-height: 33rpx;
-				white-space: nowrap;
-				text-overflow: ellipsis;
-				overflow: hidden;
-
-				>text {
-					color: #aecdff;
-				}
-			}
-		}
-	}
-
-	.crew-lable {
-		display: flex;
-		flex-wrap: wrap;
-
-		.lable {
-			width: 160rpx;
-			text-align: center;
-			height: 40rpx;
-			line-height: 40rpx;
-			margin: 0 10rpx 10rpx 0;
-			background-color: #ebf2fe;
-			color: #3882f9;
-			font-size: 24rpx;
-			border-radius: 10rpx;
-
-			&:nth-child(4n) {
-				margin-right: 0;
-			}
-
-			&.lable-gray {
-				background-color: #ebebeb;
-				color: rgba($color: #000000, $alpha: .3);
-			}
-
-			&.lable-blue {
-				background-color: #3882f9;
-				color: #fff;
-			}
-
-			&.lable-green {
-				background-color: #30adb5;
-				color: #fff;
-			}
-
-			&.lable-red {
-				background-color: #d43333;
-				color: #fff;
-			}
-		}
-	}
-
-	.crew-menu {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		margin-top: 50rpx;
-
-		.menu {
-			box-sizing: border-box;
-			border: 1rpx solid #e5e5e5;
-			width: 210rpx;
-			height: 200rpx;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			border-radius: 15rpx;
-			margin-bottom: 20rpx;
-
-			>text {
-				font-size: 28rpx;
-				line-height: 1;
-				margin-top: 25rpx;
-			}
-
-			.icon {
-				>image {
-					width: 82rpx;
-					height: 82rpx;
-				}
-			}
-		}
-	}
+	.name{ margin-top: 15rpx;}
+}
 </style>

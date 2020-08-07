@@ -137,8 +137,8 @@ export default {
         &::after{ display: none; }
       }
     }
-    .txt{ opacity: .7; line-height: 33rpx; font-size:24rpx; height:60rpx; margin-bottom: 20rpx;}
-    
+    .txt{ opacity: .6; line-height: 33rpx; font-size:24rpx; height:60rpx; margin-bottom: 20rpx;}
+    .number{ font-weight: 400; opacity: .8; font-size: 36rpx;}
   }
   .illgal-else{ font-size:28rpx; color:#666; line-height: 38rpx;
     text{ color:#3882f9;}

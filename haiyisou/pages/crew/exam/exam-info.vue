@@ -78,8 +78,8 @@ export default {
 .exam-info-title{ background-color: #ebf2fe; color:#3882f9; padding: 0 40rpx; height:98rpx; line-height: 98rpx; font-size:28rpx; border-bottom: 1rpx solid #e5e5e5;}
 .exam-info{ padding: 34rpx 40rpx 40rpx; font-size:32rpx;
 	.info{ display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 34rpx; padding-bottom: 10rpx; border-bottom: 1rpx solid #e5e5e5;
-		>text{ display: block; margin-bottom: 25rpx;}
-		.main{@extend text; font-weight: 600;}
+		>text{ display: block; margin-bottom: 25rpx; opacity: .6;}
+		.main{@extend text; opacity: 1;}
 		&.info-exam-subject{ flex-direction: column; justify-content: space-between; align-content: flex-start; 
 			.main{ margin-top: 10rpx;}
 		}
@@ -87,7 +87,7 @@ export default {
 	.subject-list{ width: 100%; background-color: #fff; box-shadow: 0 2rpx 20rpx rgba($color: #0a3752, $alpha: .15); margin-bottom: 10rpx; border-radius:15rpx 0 0 0; padding: 32rpx 0 22rpx; display: flex; flex-wrap: wrap;
 		.subject-num{ width: 64rpx; height:48rpx; line-height: 48rpx; color:#fff; font-size:24rpx; background-color: #3882f9; text-align: center; border-radius:0 20rpx 20rpx 0; margin-right: 29rpx; }
 		.subject-info{ width: calc(100% - 64rpx -29rpx); overflow: hidden; font-weight: normal;
-			.name{ font-size: 36rpx; margin-bottom: 20rpx; font-weight: 600; line-height: 48rpx;}
+			.name{ font-size: 36rpx; margin-bottom: 20rpx; opacity: 1; line-height: 48rpx;}
 			.lable{ margin-bottom: 27rpx; font-size:24rpx;
 				>text{ display: inline-block; padding: 8rpx 17rpx; border-radius:5rpx; margin-right: 10rpx;
 					&.green{ background-color: #e4f3f0; color:#2cab91; }
@@ -95,8 +95,9 @@ export default {
 					&.gray{ background-color: #f0eff4; color:#666; }
 				}
 			}
-			.text{ width: 578rpx; color:#666; margin-bottom: 10rpx; font-weight: 300;}
+			.text{ width: 578rpx; color:#666; margin-bottom: 10rpx; font-size: 24rpx; opacity: .6;}
 		}
 	}
 }
+
 </style>

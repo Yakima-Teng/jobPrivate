@@ -166,6 +166,11 @@
 			"style" : {
 				"navigationBarTitleText": "安全检查详情" 
 			}
+		},{
+				"path" : "pages/ship/postReport/postReportInfo",
+				"style" : {
+					"navigationBarTitleText": "进出港报告详情" 
+				}
 		}
     ],
 	"globalStyle": {
