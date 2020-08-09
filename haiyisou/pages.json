@@ -142,16 +142,6 @@
 				"navigationBarTitleText": "危险货物申报详情" 
 			}
 		},{
-			"path" : "pages/ship/postReport/postReport",
-			"style" : {
-				"navigationBarTitleText": "进出港报告" 
-			}
-		},{
-			"path" : "pages/ship/staffing/staffinginfo",
-			"style" : {
-				"navigationBarTitleText": "配员信息" 
-			}
-		},{
 			"path" : "pages/ship/securityCheck/securitylist",
 			"style" : {
 				"navigationBarTitleText": "安全检查" 
