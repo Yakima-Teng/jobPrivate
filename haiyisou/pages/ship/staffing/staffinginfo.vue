@@ -1,6 +1,6 @@
 <template>
 	<view class="page-crew-basic">
-		<view class="info-title">证书信息</view>
+		<view class="info-title">配员信息</view>
 		<view class="info-list-box">
 			<view class="info-list" >
 			        <text class="left">船舶登记号</text>
@@ -232,11 +232,12 @@
 			        {{baseInfo.acceptTime}}
 			</view>
 			
-			<view class="info-list" >
-			        <text class="left">适用范围中文</text>
-			        {{baseInfo.applyScopeCn}}
+			<view class="info" >
+				<text  class="left" style="font-size: 16px;opacity: .6;">适用范围中文：</text><view class="main">{{baseInfo.applyScopeCn}}</view>
+			    <!-- <text class="left">适用范围中文</text> -->
+			        
 			</view>
-			
+			<view class="info-list" ></view>
 			<view class="info-list" >
 			        <text class="left">证书版本</text>
 			        {{baseInfo.certVersion}}

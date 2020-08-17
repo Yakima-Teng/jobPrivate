@@ -157,15 +157,15 @@
 					'parentId': ''
 				};
 				//请求后台数据
-				that.api.requestNoLoading('/sys/login?username='+this.formData.username+'&password='+this.formData.password)
+				that.api.request('/sys/login?username='+this.formData.username+'&password='+this.formData.password)
 					.then(res => {
 						if(res.code!=401){
 							console.log(res);
 							wx.setStorageSync("successToken",res.access_token);
 							uni.redirectTo({
-								url: '../index/index'
+								url: '/pages/index/index'
 							})
-							return;
+							// return;
 						}else{
 							uni.showToast({
 								title:res.error_description,

@@ -36,41 +36,42 @@
 			<view class="data-total">
 				<view class="flex-row-between">
 					<view class="data-total-title">数据总览</view>
-					<view class="data-total-time">截至：2020-02-26 14:30</view>
+					<!-- 接口没返回 让去掉 -->
+					<!-- <view class="data-total-time">截至：{{nowDate}}</view> -->
 				</view>
 				<view class="flex-column" style="margin-top: 20rpx; padding: 0rpx 10rpx;">
 					<view class="flex-row">
 						<view class="flex-row-section section-rightborder">
 							<view class="section-title">入港船舶/艘</view>
-							<view class="section-content font-red">52</view>
-							<view class="section-remark">较昨日<text class="font-red" >+24</text></view>
+							<view class="section-content font-blue">{{shipInOutData.length>0 ? shipInOutData[0].shipCnt :'--'}}</view>
+							<view class="section-remark">较昨日<text class="font-blue" >{{shipInOutData.length>0 ? '+'+shipInOutData[0].shipCntRatio :'--'}}</text></view>
+						</view>
+						<view class="flex-row-section ">
+							<view class="section-title">到达货物/吨</view>
+							<view class="section-content font-red">{{cargoData.length>0 ? cargoData[0].portcargoCnt :'--'}}</view>
+							<view class="section-remark">较昨日<text class="font-red" >{{cargoData.length>0&&cargoData[1].portcargoCntRatio!=null ? '+'+cargoData[0].portcargoCntRatio :'--'}}</text></view>
 						</view>
 						<view class="flex-row-section section-rightborder">
-							<view class="section-title">出港船舶/艘</view>
-							<view class="section-content font-orange">31</view>
-							<view class="section-remark">较昨日<text class="font-orange" >+2</text></view>
-						</view>
-						<view class="flex-row-section">
-							<view class="section-title">到达货物/吨</view>
-							<view class="section-content font-violet">35502</view>
-							<view class="section-remark">较昨日<text class="font-violet" >+2</text></view>
+							<view class="section-title">到达旅客/人</view>
+							<view class="section-content font-green">{{passengerData.length>0 ? passengerData[0].portpassengerCnt :'--'}}</view>
+							<view class="section-remark">较昨日<text class="font-green" >{{passengerData.length>0&&passengerData[0].portpassengerCntRatio!=null ? '+'+passengerData[0].portpassengerCntRatio :'--'}}</text></view>
 						</view>
 					</view>
 					<view class="flex-row">
 						<view class="flex-row-section section-rightborder">
-							<view class="section-title">发送货物/吨</view>
-							<view class="section-content font-blue">24828</view>
-							<view class="section-remark">较昨日<text class="font-blue" >+24</text></view>
+							<view class="section-title">出港船舶/艘</view>
+							<view class="section-content font-blue">{{shipInOutData.length>=2 ? shipInOutData[1].shipCnt:'--'}}</view>
+							<view class="section-remark">较昨日<text class="font-blue" >{{shipInOutData.length>=2 ? '+'+shipInOutData[1].shipCntRatio :'--'}}</text></view>
 						</view>
 						<view class="flex-row-section section-rightborder">
-							<view class="section-title">到达旅客/人</view>
-							<view class="section-content font-green">8256</view>
-							<view class="section-remark">较昨日<text class="font-green" >+262</text></view>
+							<view class="section-title">发送货物/吨</view>
+							<view class="section-content font-red">{{cargoData.length>=2 ? cargoData[1].portcargoCnt :'--'}}</view>
+							<view class="section-remark">较昨日<text class="font-red" >{{cargoData.length>=2 &&cargoData[1].portcargoCntRatio!=null ? '+'+cargoData[1].portcargoCntRatio :'--'}}</text></view>
 						</view>
 						<view class="flex-row-section">
-							<view class="section-title">发送旅客/吨</view>
-							<view class="section-content font-pink">7256</view>
-							<view class="section-remark">较昨日<text class="font-pink" >+162</text></view>
+							<view class="section-title">发送旅客/人</view>
+							<view class="section-content font-green">{{passengerData.length>=2 ? passengerData[1].portpassengerCnt :'--'}}</view>
+							<view class="section-remark">较昨日<text class="font-green" >{{passengerData.length>=2&&passengerData[1].portpassengerCntRatio!=null ? '+'+passengerData[1].portpassengerCntRatio :'--'}}</text></view>
 						</view>
 					</view>
 				</view>
@@ -163,6 +164,14 @@
 				}],
 				//待办任务数量
 				taskNum:0,
+				nowDate:'',
+				//数据总览船舶进出港
+				shipInOutData:[],
+				//货物进出港
+				cargoData:[],
+				//旅客进出港
+				passengerData:[]
+				
 			}
 	    },	
 	    //监听页面滑动事件
@@ -170,20 +179,11 @@
 			
 	    },
 	    onLoad(options) {
-			console.log('App Show Index.VUE');
-			// const _this = this;
-			// wx.showLoading({
-			// 	title: '正在加载...' // 数据请求前loading
-			// })
-			// //获取选择区域
-			// //获取token
-			// Promise.all([ 
-				
-			// ]).then(res=>{
-							
-			// }).then(res=>{
-			// 	wx.hideLoading();
-			// })
+			uni.setNavigationBarTitle({
+				title:'连云港微海事'
+			})
+			this.getTime();
+			this.getZLXX();
 	    },
 		methods: {
 			ontabtap(e) {
@@ -221,19 +221,40 @@
 				//组装参数
 				let params = {'parentId': ''};
 				//请求后台数据
-				that.api.requestNoLoading('/sea/s/b?ship_reg_no='+ship_reg_no)
+				that.api.request('/das/view/getShipPort?type=today&tabFlag=comprehensive&searchFlag=0&startTime=&endTime=',{},'GET')
 				.then(res => {
 					console.log('>>'+JSON.stringify(res));
-					if(res.code!=200){
+					//没有封装统一参数返回格式
+					/* if(res.code!=200){
 						uni.showToast({
 							title: res.message,
 							icon:'none'
 						});
 						return;
-					}
-					that.baseInfo = res.result[0];
+					} */
+					that.shipInOutData = res.shipInOutData;
+					that.cargoData = res.cargoData;
+					that.passengerData = res.passengerData;
 				});	
-			}
+			},
+			  getTime(){
+			  var date=new Date();
+			  var year=date.getFullYear();//得到当前年份
+			  var month=this.editTime(date.getMonth()+1);//得到当前月份
+			  var day=this.editTime(date.getDate());//得到当前几号
+			  var hour=this.editTime(date.getHours());//得到当前小时
+			  var min=this.editTime(date.getMinutes());//得到当前分钟
+			  var seconds=this.editTime(date.getSeconds());//得到当前秒
+			  
+			  this.nowDate=year+"-"+month+"-"+day+" "+hour+":"+min;
+				 
+			  },
+			  editTime(i){
+			  if(i<10){
+			  i="0"+i;
+			  }
+			  return i;
+			  }
 		}
 	}
 </script>
@@ -326,8 +347,8 @@
 	
 .flex-row-section { width:207rpx; height:199rpx; background:rgba(255,255,255,1); box-shadow:0rpx 8rpx 18rpx 0rpx rgba(10,55,82,0.1); border-radius:4rpx; text-align: center; margin-bottom: 8rpx; display: flex; flex-direction: column; justify-content: center; align-items: center;
   .section-title {font-size:28rpx;font-weight:500; color:rgba(25,25,25,1); line-height:38rpx; }
-  .section-content {font-size:40rpx; margin: 15rpx 0;}
-  .section-remark {font-size: 24rpx;color:rgba(102,102,102,.6); }
+  .section-content {font-size:40rpx; margin: 15rpx 0; font-weight: bold;}
+  .section-remark {font-size: 28rpx;color:rgba(102,102,102,.6); }
 }
 	
 	.flex-column {
@@ -347,7 +368,7 @@
 	
 	/**************字体颜色设置***********************/
 	.font-red {
-		color: #cd2c2c;
+		color:#E04040;
 	}
 	
 	.font-orange {
@@ -359,11 +380,11 @@
 	}
 	
 	.font-blue {
-		color: #3882f9;
+		color: #4294F4;
 	}
 	
 	.font-green {
-		color: #389c86;
+		color: #389C86;
 	}
 	
 	.font-pink {

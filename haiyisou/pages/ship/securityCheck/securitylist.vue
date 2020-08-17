@@ -2,13 +2,53 @@
   <view class="page-securitylist">
     <view class="crew-exam-aq-title">
       <!-- 当前页签直接在 page-crew-exam 上添加cur即可-->
-      <view class="page-crew-exam" v-for="(item, index) in goodsList" :key="index" @click="goToExamList(item.type)">
+      <view :class="tabsType == item.type?'page-crew-exam cur':'page-crew-exam'"  v-for="(item, index) in goodsList" :key="index" @click="getList(item.type)" >
         <view class="title">{{item.goodsTitle}}</view>
       </view>
     </view>
     <view class="sep"></view>
     <view class="securitylist-module">
-      <view class="securitylist">
+		<view class="securitylist" v-for="(item, index) in tableTilefsc" :key="index" @click="examInfo(item.domesticSecurityNumber,type)">
+			<view class="security-title">
+			  <view class="icon-num">{{index+1}}</view>
+			  <view class="name">检查港口：{{item.portCode}}</view>
+			</view>
+			<view class="security-main">
+			  <view class="info">缺陷数：
+			    <view class="txt">{{item.numberOfDefects}} </view>
+			  </view>
+			  <view class="info">是否滞留：
+			    <view class="txt">{{item.detentionMark}} </view>
+			  </view>
+			  <view class="info">初查复查标志：
+			    <view class="txt green">{{item.preliminaryReviewSign}} </view>
+			  </view>
+			  <view class="info">检查日期：
+			    <view class="txt">{{item.inspectDate}}</view>
+			  </view>
+			</view>
+		</view>
+		<view class="securitylist" v-for="(item, index) in tableTile" :key="index" @click="examInfo(item.inspectNo,type)">
+			<view class="security-title">
+			  <view class="icon-num">{{index+1}}</view>
+			  <view class="name">检查港口：{{item.inspectOrg}}</view>
+			</view>
+			<view class="security-main">
+			  <view class="info">缺陷数：
+			    <view class="txt">{{item.numberOfDefects}} </view>
+			  </view>
+			  <view class="info">是否滞留：
+			    <view class="txt">{{item.detentionMark}} </view>
+			  </view>
+			  <view class="info">初查复查标志：
+			    <view class="txt green">{{item.preliminaryReviewSign}} </view>
+			  </view>
+			  <view class="info">检查日期：
+			    <view class="txt">{{item.inspectDate}}</view>
+			  </view>
+			</view>
+		</view>
+      <!-- <view class="securitylist">
         <view class="security-title">
           <view class="icon-num">01</view>
           <view class="name">检查港口：漳州</view>
@@ -48,7 +88,7 @@
             <view class="txt">2017-01-11</view>
           </view>
         </view>
-      </view>
+      </view> -->
     </view>
   </view>
 </template>
@@ -65,23 +105,62 @@
 					type:'xcjc'
 					
 				}],
-				shipId:''
+				shipId:'',
+				tabsType:'fsc',
+				tableTile:[],
+				tableTilefsc:[],
 				
 			};
 			}
 		,
 		onLoad(options){
 			this.shipId=options.shipId;
+			this.getList(this.tabsType);
 		},
 		methods: {
-			goToExamList(type) {
+			examInfo(id,type) {
+				// console.log(declareId);
+				type=this.tabsType;
+				let url='';
+				if(type==='fsc'){
+					console.log('船舶fsc');
+					url='/pages/ship/securityCheck/securityInfo?type='+type+'&id='+id+'&title=船旗国安全检查'
+				}else{
+					url='/pages/ship/securityCheck/securityInfo?type='+type+'&id='+id+'&title=现场监督检查'
+				}
 				uni.navigateTo({
-				     url:'/pages/ship/securityCheck/securityDeallist?shipId='+this.shipId+'&type='+type,
-					 fail:function(){
-						 console.info("跳转失败")
-					 }
+					//url:'wh-info'
+					url: url
 				});
+			},
+			getList(type){
+				this.tabsType=type;
+				if(type==='fsc'){
+					this.api.request('/sea/Secure/ShipflagState?shipId='+this.shipId,{},'GET').then(res=>{
+						 console.log('>>'+JSON.stringify(res));
+						console.log('>>'+JSON.stringify(res.result));
+						this.tableTilefsc=res.result;
+						
+					})
+				}else{
+					this.api.request('/sea/Secure/getSiteSupervision?shipId='+this.shipId,{},'GET').then(res=>{
+						// console.log('>>'+JSON.stringify(res));
+						console.log('>>'+JSON.stringify(res.result));
+						this.tableTilefsc=[];
+						this.tableTile=res.result;
+						
+					})
+				}
+				
 			}
+			// goToExamList(type) {
+			// 	uni.navigateTo({
+			// 	     url:'/pages/ship/securityCheck/securityDeallist?shipId='+this.shipId+'&type='+type,
+			// 		 fail:function(){
+			// 			 console.info("跳转失败")
+			// 		 }
+			// 	});
+			// }
 		}
 	}
 </script>

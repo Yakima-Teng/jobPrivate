@@ -1,14 +1,8 @@
 <template>
-	<view>
+	<view class="page-exam-list">
 
-		<view class="page-crew-exam" v-for="(item, index) in goodsList" :key="index" @click="goToExamList(item.type)">
-			<view class="title">{{item.goodsTitle}}</view>
-			<view class="exam-box">
-				<view class="exam-bg">
-					<image src="../../../static/img-01.png" />
-				</view>
-				<view class="exam-btn">立即查看</view>
-			</view>
+		<view class="exam-list" v-for="(item, index) in goodsList" :key="index" @click="goToExamList(item.type)">
+			<view class="icon-num">申</view><view class="title">{{item.goodsTitle}}</view>
 		</view>
 	</view>
 </template>
@@ -18,37 +12,37 @@
 		data() {
 			return {
 				goodsList:[{
-					goodsTitle:"危险/污染危害性货物申报（散装液体)",
+					goodsTitle:"散装液体货物申报",
 					goodsNum:"J0511070720017",
 					goodsSbTime:"2018/11/22",
 					goodsSbStatus:"通过",
 					type:'szytsb'
 				},{
-					goodsTitle:"危险/污染危害性货物申报（包装货物）",
+					goodsTitle:"包装货物申报",
 					goodsNum:"J0511070720017",
 					goodsSbTime:"2018/11/22",
 					goodsSbStatus:"不通过",
 					type:'bzhwsb'
 				},{
-					goodsTitle:"危险货物申报（固体散装）",
+					goodsTitle:"固体散装货物申报",
 					goodsNum:"J0511070720017",
 					goodsSbTime:"2018/11/22",
 					goodsSbStatus:"通过",
 					type:'gtszhw'
 				},{
-					goodsTitle:"危险货物适运申报（散装液体）",
+					goodsTitle:"散装液体适运申报",
 					goodsNum:"J0511070720017",
 					goodsSbTime:"2018/11/22",
 					goodsSbStatus:"不通过",
 					type:'szythy'
 				},{
-					goodsTitle:"危险货物适运申报（包装货物）",
+					goodsTitle:"包装货物适运申报",
 					goodsNum:"J0511070720017",
 					goodsSbTime:"2018/11/22",
 					goodsSbStatus:"通过",
 					type:'bzhwhy'
 				},{
-					goodsTitle:"危险货物适运申报（固体散装）",
+					goodsTitle:"固体散装适运申报",
 					goodsNum:"J0511070720017",
 					goodsSbTime:"2018/11/22",
 					goodsSbStatus:"不通过",
@@ -76,14 +70,10 @@
 </script>
 
 <style lang="scss">
-.page-crew-exam{ padding: 20rpx 40rpx;
-	.title{ font-size:36rpx; margin-bottom: 27rpx;}
-	.exam-box{ position: relative; height: 200rpx;  display: flex; justify-content: center; align-items: center; 
-		.exam-bg{ height: 200rpx; width: 100%; position: absolute; left:0; top:0;
-			>image{width: 100%; height:100%;}
-		}
-		.exam-btn{ position: relative; z-index:10; background-color: #fff; width: 266rpx; height:60rpx; line-height:60rpx; font-size:34rpx; text-align: center;
-			&::before{ content:''; box-sizing: border-box; border:1rpx solid #fff; background-color: transparent; position: absolute; width: 282rpx; height:76rpx; left:-8rpx; top:-8rpx;}
+.page-exam-list{ padding: 20rpx 40rpx;
+	.exam-list{font-size: 32rpx; border-bottom: 1rpx solid #E5E5E5; line-height: 48rpx;  padding: 45rpx 0; display: flex; width: 100%; box-sizing: border-box; position: relative; align-content:center;
+		.icon-num{ width: 48rpx; height:48rpx;text-align: center; background:rgba(56,130,249,.1);border-radius:8px; font-size:24rpx;font-weight:500;color:#3882F9; margin-right: 20rpx;}
+		&:after{ content:''; display: inline-block; width: 9px; height: 9px; border-color: #ccc; border-style: solid; border-width: 0 0.5px 0.5px 0; transform: rotate(-45deg); position: absolute; right: 6rpx; top:50%; margin-top: -4rpx;
 		}
 	}
 }

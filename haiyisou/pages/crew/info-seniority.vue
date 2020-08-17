@@ -2,7 +2,7 @@
 	<view class="page-crew-seniority">
 		<HeaderSearch></HeaderSearch>
 		<view class="seniority-container">
-			<SunuiGrand v-for="(item,index) in senList" :key="index" :baseInfo="item" :sTime="item.offiDate+'-'+item.dismissDate" :proList="properties"/>
+			<SunuiGrand v-for="(item,index) in senList" :key="index" :baseInfo="item" :sTime="item.offiOperTime+'-'+item.dismOperTime" :proList="properties"/>
 		</view>
 	</view>
 </template>
@@ -66,17 +66,15 @@ export default {
 			senList:[],//资历列表
 		}
 	},
-	onLoad() {
-		this.loadData();
+	onLoad(options) {
+		this.loadData(options.idCardNo);
 	},
 	methods: {
-		loadData(){
-			//获取当前登录人身份证号
-			let currUser = this.api.getCurrUser();
-			let url = "/sea/q/s?id_card_no="+currUser.idCard;
+		loadData(idcard){
+			let url = "/sea/q/s?id_card_no="+idcard;
 			this.api.request(url,{},'get')
 			.then(res=>{
-				console.log(res);
+				console.log('>>>'+JSON.stringify(res));
 				if(res.code!=200){
 					uni.showToast({
 						title: res.message,

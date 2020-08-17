@@ -27,7 +27,7 @@
 			</view>
 
 		</view>
-		<view class="crew-else">
+	<!-- 	<view class="crew-else">
 			<view class="else-info">
 				<text class="number green">3</text>
 				<view class="name">船龄</view>
@@ -44,7 +44,7 @@
 				<text class="number red">1</text>
 				<view class="name">重点跟踪次数</view>
 			</view>
-		</view>
+		</view> -->
 		<view class="crew-lable">
 
 			<view class="lable  lable-gray" v-for="(item, index) in baseInfo.labels.split('|')" v-if="item.split(':').length>1">
@@ -125,6 +125,9 @@
 			}
 		},
 		onLoad(options) {
+			uni.setNavigationBarTitle({
+			title:options.name
+			})
 			this.idCardNo = options.idCardNo;
 			this.getBaseInfo(options.idCardNo);
 		},
@@ -154,7 +157,7 @@
 			},
 			goToBasic() {
 				uni.navigateTo({
-					url: '/pages/crew/info-basic?idCardNo=' + this.idCardNo
+					url: '/pages/crew/info-basic?idCardNo=' + this.idCardNo+"&name="+this.baseInfo.name
 				});
 			},
 			goToCert() {

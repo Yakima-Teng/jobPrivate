@@ -3,7 +3,7 @@
 		<!-- <HeaderSearch></HeaderSearch> -->
 		<!-- <listNull v-if="resultNull"></listNull> -->
 		<view class="cert-list">
-			<view class="cert-item" v-for="(item, index) in gjList" :key="index" @click="toCertInfo('gj')">
+			<view class="cert-item" v-for="(item, index) in gjList" :key="index" @click="toCertInfo('gj',item.certName)">
 				<view class="cert-title">
 					<view class="cert-title-title">
 						<view class="cert-title-image">证</view>
@@ -24,7 +24,7 @@
 					<view class="cert-content-content">{{(item.expireDate)==null ? '--':(item.expireDate).substring(0,10)}}</view>
 				</view>
 			</view>
-			<view class="cert-item" v-for="(item, index) in syqList" :key="index" @click="toCertInfo('syq')">
+			<view class="cert-item" v-for="(item, index) in syqList" :key="index" @click="toCertInfo('syq',item.certName)">
 				<view class="cert-title">
 					<view class="cert-title-title">
 						<view class="cert-title-image">证</view>
@@ -45,7 +45,7 @@
 					<view class="cert-content-content">{{item.expireDate==null ? '--':(item.expireDate).substring(0,10)}}</view>
 				</view>
 			</view>
-			<view class="cert-item" v-for="(item, index) in gzcList" :key="index" @click="toCertInfo('gzc')">
+			<view class="cert-item" v-for="(item, index) in gzcList" :key="index" @click="toCertInfo('gzc',item.certName)">
 				<view class="cert-title">
 					<view class="cert-title-title">
 						<view class="cert-title-image">证</view>
@@ -66,7 +66,7 @@
 					<view class="cert-content-content">{{item.expireDate==null ? '--':(item.expireDate).substring(0,10)}}</view>
 				</view>
 			</view>
-			<view class="cert-item" v-for="(item, index) in gscList" :key="index" @click="toCertInfo('gsc')">
+			<view class="cert-item" v-for="(item, index) in gscList" :key="index" @click="toCertInfo('gsc',item.certName)">
 				<view class="cert-title">
 					<view class="cert-title-title">
 						<view class="cert-title-image">证</view>
@@ -87,7 +87,7 @@
 					<view class="cert-content-content">{{item.expireDate==null ? '--':(item.expireDate).substring(0,10)}}</view>
 				</view>
 			</view>
-			<view class="cert-item" v-for="(item, index) in fgcList" :key="index" @click="toCertInfo('fgc')">
+			<view class="cert-item" v-for="(item, index) in fgcList" :key="index" @click="toCertInfo('fgc',item.certName)">
 				<view class="cert-title">
 					<view class="cert-title-title">
 						<view class="cert-title-image">证</view>
@@ -108,7 +108,7 @@
 					<view class="cert-content-content">{{item.expireDate==null ? '--':(item.expireDate).substring(0,10)}}</view>
 				</view>
 			</view>
-			<view class="cert-item" v-for="(item, index) in dyqList" :key="index" @click="toCertInfo('dyq')">
+			<view class="cert-item" v-for="(item, index) in dyqList" :key="index" @click="toCertInfo('dyq',item.certName)">
 				<view class="cert-title">
 					<view class="cert-title-title">
 						<view class="cert-title-image">证</view>
@@ -129,7 +129,7 @@
 					<view class="cert-content-content">{{item.expireDate==null ? '--':(item.expireDate).substring(0,10)}}</view>
 				</view>
 			</view>
-			<view class="cert-item" v-for="(item, index) in jyqList" :key="index" @click="toCertInfo('cbjy',index)">
+			<view class="cert-item" v-for="(item, index) in jyqList" :key="index" @click="toCertInfo('cbjy',item.certName,index)">
 				<view class="cert-title">
 					<view class="cert-title-title">
 						<view class="cert-title-image">证</view>
@@ -219,7 +219,7 @@
 				    this.jyqList=res.result;
 				})
 			},
-			toCertInfo(zstype,index) {
+			toCertInfo(zstype,name,index) {
 				// //缓存船舶校验详情
 				// if(zstype==='cbjy'){
 				// 	console.log('>>缓存'+JSON.stringify(this.jyqList[index]));
@@ -227,7 +227,7 @@
 				// 	wx.setStorageSync('index',index);
 				// }
 				uni.navigateTo({
-					url: './certinfo?zstype='+zstype+'&shipRegNo='+this.shipRegNo+'&index='+index+'&ship_id='+this.shipId
+					url: './certinfo?zstype='+zstype+'&shipRegNo='+this.shipRegNo+'&index='+index+'&ship_id='+this.shipId+'&name='+name
 				})
 			}
 		}

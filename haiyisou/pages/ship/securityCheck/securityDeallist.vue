@@ -94,7 +94,7 @@ export default {
 		getList(shipId,type){
 			if(type==='fsc'){
 				this.api.request('/sea/Secure/ShipflagState?shipId='+shipId,{},'GET').then(res=>{
-					// console.log('>>'+JSON.stringify(res));
+					 console.log('>>'+JSON.stringify(res));
 					console.log('>>'+JSON.stringify(res.result));
 					this.tableTilefsc=res.result;
 					

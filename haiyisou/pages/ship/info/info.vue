@@ -1,6 +1,6 @@
 <template>
 	<view class="page-crew-basic">
-		<view class="info-title">简介信息</view>
+		<view class="info-title">基本信息</view>
 		<view class="info-list-box">
 			<view class="info-list" >
 				<text class="left">船舶登记号</text>
@@ -210,7 +210,7 @@
 				<text class="left">创建日期</text>
 				{{baseInfo.createDate}}
 			</view>
-			<view class="info-list" >
+			<!-- <view class="info-list" >
 				<text class="left">创建记录的用户或进程</text>
 				{{baseInfo.creator}}
 			</view>
@@ -221,15 +221,15 @@
 			<view class="info-list" >
 				<text class="left">最近更新的用户或进程</text>
 				{{baseInfo.updateBy}}
-			</view>
-			<view class="info-list" >
+			</view> -->
+		<!-- 	<view class="info-list" >
 				<text class="left">删除标志1是0否</text>
 				{{baseInfo.deleteFlag}}
-			</view>
-			<view class="info-list" >
+			</view> -->
+			<!-- <view class="info-list" >
 				<text class="left">LANDING 到 共享库的同步状态</text>
 				{{baseInfo.processStatus}}
-			</view>
+			</view> -->
 			<view class="info-list" >
 				<text class="left">识别号标示符</text>
 				{{baseInfo.shipIdFlag}}
@@ -278,14 +278,14 @@
 				<text class="left">机构代码</text>
 				{{baseInfo.orgCode}}
 			</view>
-			<view class="info-list" >
+			<!-- <view class="info-list" >
 				<text class="left">创建员代码</text>
 				{{baseInfo.creatorCode}}
 			</view>
 			<view class="info-list" >
 				<text class="left">创建时间</text>
 				{{baseInfo.createTime}}
-			</view>
+			</view> -->
 			<!-- <view class="info-list" >
 				<text class="left">操作员代码</text>
 				{{baseInfo.operatorCode}}
@@ -314,6 +314,9 @@
 			}
 		},
 		onLoad(options) {
+			uni.setNavigationBarTitle({
+			title:options.shipNameCn
+			})
 			this.getBaseInfo(options.shipRegNo);
 		},
 		methods: {

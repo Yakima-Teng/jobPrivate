@@ -3,164 +3,300 @@
 		{
 			"path" : "pages/login/login",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "登录"
 			}
 		},{
 			"path" : "pages/index/index",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "首页",
 				"navigationStyle":"custom"
 			}
 		},{
 			"path" : "pages/crew/index",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "船员详情" 
 			}
 		},{
 			"path" : "pages/crew/cert/cert",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "船员证书" 
 			}
 		},{
 			"path" : "pages/crew/cert/certinfo",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "船员证书详情" 
 			}
 		},{
 			"path" : "pages/crew/train/train",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "船员培训" 
 			}
 		},{
 			"path" : "pages/crew/train/traininfo",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "船员培训详情" 
 			}
 		},{
 			"path" : "pages/ship/basic/basic",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "船舶信息"
 			}
 		},{
 			"path" : "pages/ship/info/info",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "船舶基础信息"
 			}
 		},{
 			"path" : "pages/ship/cert/cert",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "证书信息"
 			}
 		},{
 			"path" : "pages/ship/cert/certinfo",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "证书详情"
 			}
 		},{
 			"path": "pages/search/index",
 			"style": {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "信息检索"
 			}
 		},{
 			"path" : "pages/crew/info-basic",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "基本信息" 
 			}
 		},{
 			"path" : "pages/crew/info-exam",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "考试信息" 
 			}
 		},{
 			"path" : "pages/crew/info-seniority",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "资历信息" 
 			}
     },{
 			"path" : "pages/crew/proxy-handle",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "委托代办" 
 			}
     },{
 			"path" : "pages/crew/info-illegal",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "违法信息" 
 		}
 		},{
 			"path" : "pages/crew/exam/exam-list",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "适考证考试" 
 			}
 		},{
 			"path" : "pages/crew/exam/exam-info",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "适考证考试详情" 
 			}
 		},{
 			"path" : "pages/danger/info-danger",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "危险货物详情" 
+			}
+		},{
+			"path" : "pages/danger/info-yj",
+			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
+				"navigationBarTitleText": "事故应急处置详情" 
+			}
+		},{
+			"path" : "pages/danger/info-yl",
+			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
+				"navigationBarTitleText": "医疗急救指南详情" 
+			}
+		},{
+			"path" : "pages/danger/info-hz",
+			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
+				"navigationBarTitleText": "详情" 
+			}
+		},{
+			"path" : "pages/danger/info-ml",
+			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
+				"navigationBarTitleText": "名录详情" 
 			}
 		},{
 			"path" : "pages/ship/postReport/postReport",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "进出港报告" 
 			}
 		},{
 			"path" : "pages/ship/staffing/staffing",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "配员信息" 
 			}
 		},{
 			"path" : "pages/ship/staffing/staffinginfo",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "配员详情" 
 			}
 		},{
 			"path" : "pages/crew/info-handle",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "委托代办详情" 
 			}
 		},{
 			"path" : "pages/ship/dangerousGoodsList/sxlist",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "危险货物申报" 
 			}
 		},{
 			"path" : "pages/ship/dangerousGoodsList/whsblist",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "危险货物申报列表" 
 			}
 		},{
 			"path" : "pages/ship/dangerousGoodsList/wh-info",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "危险货物申报详情" 
 			}
 		},{
 			"path" : "pages/ship/dangerousGoodsList/wh-sbinfo",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "危险货物申报详情" 
+			}
+		},{
+			"path" : "pages/ship/postReport/postReport",
+			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
+				"navigationBarTitleText": "进出港报告" 
+			}
+		},{
+			"path" : "pages/ship/staffing/staffinginfo",
+			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
+				"navigationBarTitleText": "配员信息" 
 			}
 		},{
 			"path" : "pages/ship/securityCheck/securitylist",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "安全检查" 
 			}
 		},{
 			"path" : "pages/ship/securityCheck/securityDeallist",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "安全检查列表" 
 			}
 		},{
 			"path" : "pages/ship/securityCheck/securityInfo",
 			"style" : {
+				"app-plus":{
+					"titleNView":false
+				},
 				"navigationBarTitleText": "安全检查详情" 
 			}
-		},{
-				"path" : "pages/ship/postReport/postReportInfo",
-				"style" : {
-					"navigationBarTitleText": "进出港报告详情" 
-				}
 		}
     ],
 	"globalStyle": {
@@ -168,23 +304,5 @@
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#fff",
 		"backgroundColor": "#fff"
-	},
-  "tabBar": {
-  	"color": "#344356",
-  	"selectedColor": "#4293F4",
-  	"backgroundColor": "#ffffff",
-  	"list": [{
-  			"pagePath": "pages/index/index",
-  			"iconPath": "static/home.png",
-  			"selectedIconPath": "static/home-selected.png",
-  			"text": "首页"
-  	},
-  	{
-  			"pagePath": "pages/crew/index",
-  			"iconPath": "static/me.png",
-  			"selectedIconPath": "static/me-selected.png",
-  			"text": "我的"
-  		}
-  	]
-  }
+	}
 }

@@ -1,6 +1,6 @@
 <template>
 	<view class="page-crew-basic">
-		<view class="info-title">简介信息</view>
+		<view class="info-title">基本信息</view>
 		<view class="info-list-box">
 			<view class="info-list">
 				<text class="left">姓名（英文）：</text>{{baseInfo.name}}{{baseInfo.nameSpell!=null?"（"+baseInfo.nameSpell+"）":""}}
@@ -78,6 +78,9 @@
 			}
 		},
 		onLoad(options) {
+			uni.setNavigationBarTitle({
+				title:options.name
+			})
 			this.idCardNo = options.idCardNo;
 			this.getBaseInfo(options.idCardNo);
 		},

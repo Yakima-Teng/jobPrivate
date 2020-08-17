@@ -1,47 +1,8 @@
 <template>
 	<view class="page-crew-seniority">
 		<HeaderSearch></HeaderSearch>
-		<view class="postReport-box">
-			<view class="postReport-list postReport-goin">
-				<view class="postReport-header">
-					<view class="icon">进</view>
-					<view class="info">
-						<text>青岛港</text>
-						<view class="sep"><image src="../../../static/icon-huan.png" mode=""></image></view>
-						<text>连云港</text>
-					</view>
-				</view>
-				<view class="postReport-main">
-					<view class="title">
-						<text>报告时间：2020-01-01 03:30:03</text>
-						<view class="status">已撤销</view>
-					</view>
-					<view class="info">申办人：李明宇</view>
-					<view class="info">报告机构：连云港海事局</view>
-					<view class="info">报告编号：CBBG202001010</view>
-					<view class="info">预抵时间：2020-01-01 03:30:03</view>
-				</view>
-			</view>
-			<view class="postReport-list postReport-out">
-				<view class="postReport-header">
-					<view class="icon">出</view>
-					<view class="info">
-						<text>连云港</text>
-						<view class="sep"><image src="../../../static/icon-chu.png" mode=""></image></view>
-						<text>上海港</text>
-					</view>
-				</view>
-				<view class="postReport-main">
-					<view class="title">
-						<text>2020-01-01 03:30:03</text>
-						<view class="status">未撤销</view>
-					</view>
-					<view class="info">申办人：李明宇</view>
-					<view class="info">报告机构：连云港海事局</view>
-					<view class="info">报告编号：CBBG202001010</view>
-					<view class="info">预抵时间：2020-01-01 03:30:03</view>
-				</view>
-			</view>
+		<view class="seniority-container">
+		  <SunuiGrand v-for="(item,index) in portList" :key="index" :baseInfo="item" :sTime="item.reportTime" :proList="properties"/>
 		</view>
 	</view>
 </template>
@@ -346,41 +307,4 @@ export default {
 
 <style lang="scss">
 @import '@/pages/crew/info';
-.postReport-box{ padding-top: 120rpx;}
-.postReport-list{ border-bottom: 10rpx solid rgba(240,239,244,1); padding: 38rpx 40rpx;
-	.postReport-header{border-bottom: 1rpx solid rgba(229,229,229,1); display: flex; padding-bottom: 26rpx; margin-bottom: 24rpx;
-		.icon{ width: 48rpx; height:48rpx; border-radius:8px;font-size:24rpx; text-align: center; line-height: 49rpx; margin-right: 20rpx;}
-		.info{ display: flex; align-items: center; font-size: 36rpx;
-			.sep{ border:1rpx dashed #000; width: 74rpx; height:27rpx; line-height:27rpx; text-align: center; margin: 0 10rpx;
-				>image{ width: 72rpx; height:25rpx;}
-			}
-		}
-	}
-	.postReport-main{ font-size: 28rpx;
-		.title{ display: flex; justify-content: space-between; margin-bottom: 10rpx;
-			.status{ font-size: 24rpx;}
-		}
-		.info{ opacity: .6;}
-	}
-	&.postReport-goin{
-		.postReport-header{
-			.icon{ background-color:rgba(19,195,127,.1);color:rgba(19,195,127,1);}
-		}
-		.postReport-main{ 
-			.title{ 
-				.status{ color: rgba(212,51,51,1);}
-			}
-		}
-	}
-	&.postReport-out{
-		.postReport-header{
-			.icon{ background-color:rgba(229,78,71,.1);color:rgba(229,78,71,1);}
-		}
-		.postReport-main{ 
-			.title{ 
-				.status{ color: rgba(48,173,181,1);}
-			}
-		}
-	}
-}
 </style>

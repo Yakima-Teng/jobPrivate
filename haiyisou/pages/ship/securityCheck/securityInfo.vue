@@ -1,5 +1,5 @@
 <template>
-	<view class="page-crew-basic">
+	<view class="page-crew-basic" v-if="gqjc">
 		<view class="info-title">安检基本信息</view>
 		<view class="info-list-box">
 			<view class="info-list" >
@@ -75,6 +75,89 @@
 		</view>
 		</view>
 	</view>
+	<view class="page-crew-basic" v-else-if="xcjc">
+		<view class="info-title">安检基本信息</view>
+		<view class="info-list-box">
+			<view class="info-list" >
+				<text class="left"> 检查类型</text>
+				{{baseInfo.preliminaryReviewSign}}
+			</view>
+			<view class="info-list" >
+				<text class="left"> 船长姓名</text>
+				{{baseInfo.captainName}}
+			</view>
+			<view class="info-list" >
+				<text class="left"> 检查机构 </text>
+				{{baseInfo.inspectOrg}}
+			</view>
+			<view class="info-list" >
+				<text class="left"> 检查地点 </text>
+				{{baseInfo.inspectionSite}}
+			</view>
+			<view class="info-list" >
+				<text class="left"> 检查日期</text>
+				{{baseInfo.inspectDate}}
+			</view>
+			<view class="info-list" >
+				<text class="left"> 检查员 </text>
+				{{baseInfo.inspectorName}}
+			</view>
+			
+			<view class="info-list" >
+				<text class="left"> 实习安检员 </text>
+				{{baseInfo.praticeInspectorName}}
+			</view>
+			<view class="info-list" >
+				<text class="left"> 是否符合检查时限要求 </text>
+				{{baseInfo.inspectTimeLimit}}
+			</view>
+			
+			<view class="info-list" >
+				<text class="left"> 是否专项检查 </text>
+				{{baseInfo.isSpecialInspect}}
+			</view>
+			<view class="info-list" >
+				<text class="left"> 专项检查名称	</text>
+				{{baseInfo.inspectType}}
+			</view>
+			<view class="info-list" >
+				<text class="left"> 是否启用安全检查 </text>
+				{{baseInfo.ifSafeinspect}}
+			</view>
+			<view class="info-list" >
+				<text class="left"> 发现问题或违章 </text>
+				{{baseInfo.problemOrViolation}}
+			</view>
+			<view class="info-list" >
+				<text class="left"> 备注 </text>
+				{{baseInfo.remark}}
+			</view>
+		</view>
+		<view class="exam-info" v-if="qxxx.length>0">
+			<view class="info-title">缺陷信息</view>
+			<view class="info info-exam-subject">
+				<view class="main">
+					<view class="subject-list" v-for="(item,index) in qxxx" :key="index">
+						<view class="subject-num">{{index+1}}</view>
+						<view class="subject-info">
+							<view class="text">检查代码：{{item.contentCode}}</view>
+							<view class="text">检查内容：</view>
+							<view class="text">{{item.contentDesc}}</view>
+							<view class="text">检查结果：{{item.result}}</view>
+							<view class="text">处理意见代码：{{item.commentCode}}</view>
+							<view class="text">处理意见说明：</view>
+							<view class="text">{{item.commentDesc}}</view>
+							<view class="text">是否发现问题或违章：{{item.ifProblem}}</view>
+							<view class="text">违章或问题说明：</view>
+							<view class="text">{{item.description}}</view>
+							<view class="text">操作：{{item.deleteFlag}}</view>
+						</view>
+					</view>
+			</view>
+		</view>
+		</view>
+	</view>
+	
 </template>
 
 <script>
@@ -87,18 +170,23 @@ export default {
 			szyt:false,
 			bzhw:false,
 			gtsz:false,
+			gqjc:false,
+			xcjc:false,
 			qxxx:[]
 		};
 	},
 	onLoad(options){
+		uni.setNavigationBarTitle({
+			title:options.title
+		})
 		this.id=options.id;
 		this.type=options.type;
 		this.getXQByid(options.type,options.id);
-		// this.getHwzjxx(options.type,options.declareId);
 	},
 	methods:{
 		getXQByid(str,id){
 			if(str==='fsc'){
+				this.gqjc=true;
 				this.api.request('/sea/Secure/ShipAndflagState?domesticSecurityNumber='+id,{},'GET').then(res=>{
 					console.log('>>>>>'+JSON.stringify(res));
 					if(res.code!=200){
@@ -129,7 +217,36 @@ export default {
 					
 				})
 			}else{
-				console.log('》》》》》》》》暂无现场安全检查的详情接口！！！！！！！！！！！');
+				this.xcjc=true;
+				this.api.request('/sea/Secure/getSiteSupervisionDetail?inspectNo='+this.id,{},'GET').then(res=>{
+					console.log('>>>>>'+JSON.stringify(res));
+					if(res.code!=200){
+						uni.showToast({
+							title: res.message,
+							icon:'none'
+						});
+						return;
+					}
+					// console.log(res.result[0].szyt);
+					this.baseInfo=res.result[0];
+					// this.szyt=true;
+					
+				});
+				//获取缺陷信息
+				this.api.request('/sea/Secure/getSiteSuperDetail?inspectNo='+this.id,{},'GET').then(res=>{
+					console.log('>>>>>'+JSON.stringify(res));
+					if(res.code!=200){
+						uni.showToast({
+							title: res.message,
+							icon:'none'
+						});
+						return;
+					}
+					// console.log(res.result[0].szyt);
+					this.qxxx=res.result;
+					// this.szyt=true;
+					
+				})
 			}
 			
 		},

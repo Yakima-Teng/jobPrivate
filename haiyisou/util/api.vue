@@ -1,5 +1,6 @@
 <script type="text/javascript">
 	let baseUrl = "http://58.56.27.54:38136";
+	let baseUrlImg = "http://58.56.27.54:38136/dg/img/";
 	
 	function request (purl,  params, method, contentType) {
 		let successToken = wx.getStorageSync("successToken");
@@ -19,19 +20,19 @@
 				},
 				success: function (res) {
 					if(res.data.error&&res.data.error=='invalid_token'){
-						let openid = uni.getStorageSync("currManageUser").openid;
+/* 						let openid = uni.getStorageSync("currManageUser").openid;
 						uni.removeStorageSync("currManageUser");
-						uni.setStorageSync("currManageUser", { openid: openid })
+						uni.setStorageSync("currManageUser", { openid: openid }) */
 						wx.hideLoading();
 						uni.showToast({
 							title:'登录超时,请重新登录！',
 							icon:'none'
 						});
-						// setTimeout(function(){
-						// 	uni.redirectTo({
-						// 		url:'/pages/index/index'
-						// 	})
-						// },1000)
+						setTimeout(function(){
+							uni.redirectTo({
+								url:'/pages/login/login'
+							})
+						},1000)
 						
 						
 					}else{
@@ -65,19 +66,19 @@
 				},
 				success: function (res) {
 					if(res.data.error&&res.data.error=='invalid_token'){
-						let openid = uni.getStorageSync("currManageUser").openid;
+						/* let openid = uni.getStorageSync("currManageUser").openid;
 						uni.removeStorageSync("currManageUser");
-						uni.setStorageSync("currManageUser", { openid: openid })
+						uni.setStorageSync("currManageUser", { openid: openid }) */
 						wx.hideLoading();
 						uni.showToast({
 							title:'登录超时,请重新登录！',
 							icon:'none'
 						});
-						// setTimeout(function(){
-						// 	uni.redirectTo({
-						// 		url:'/pages/index/index'
-						// 	})
-						// },1000)
+						setTimeout(function(){
+							uni.redirectTo({
+								url:'/pages/login/login'
+							})
+						},1000)
 						
 						
 					}else{
@@ -189,6 +190,7 @@
 	}
 	export default {
 	    baseUrl,
+	    baseUrlImg,
 		request,
 		requestNoLoading,
 		uuid,

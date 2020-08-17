@@ -1,6 +1,6 @@
 <template>
 	<view class="page-crew-basic">
-		<view class="info-title">证书信息</view>
+		<view class="info-title"></view><!-- 证书信息 -->
 		<view v-if="gj">
 			<view class="info-list-box">
 				<view class="info-list" >
@@ -890,6 +890,9 @@
 			}
 		},
 		onLoad(options){
+			uni.setNavigationBarTitle({
+			title:options.name
+			})
 			this.zstype=options.zstype;
 			this.getCreatDetails(options.zstype,options.shipRegNo,options.index,options.ship_id);
 		},

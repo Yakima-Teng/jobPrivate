@@ -23,12 +23,33 @@
           <view class="info info-id"><text>IMO：</text>{{baseInfo.shipImo!=null?baseInfo.shipImo:"--"}}</view>
           <view class="info info-id"><text>MMSI码：</text>{{baseInfo.mmsi!=null?baseInfo.mmsi:"--"}}</view>
           <view class="info info-age"><text>船舶呼号：</text>{{baseInfo.shipCallsign!=null?baseInfo.shipCallsign:"--"}}</view>
-          <view class="info info-phone"><text>登记机构：</text>{{baseInfo.orgCode!=null?baseInfo.orgCode:"--"}}</view>
-          <view class="info info-address"><text>船龄：</text>{{shipAge}}</view>
+          <!-- <view class="info info-phone"><text>登记机构：</text>{{baseInfo.orgCode!=null?baseInfo.orgCode:"--"}}</view> -->
+          <!-- <view class="info info-address"><text>船龄：</text>{{shipAge}}</view> -->
         </view>
 			</view>
 		</view>
+		<view class="crew-else">
+			<view class="else-info">
+				<text class="number green">{{shipAge}}</text>
+				<view class="name">船龄</view>
+			</view>
+			<view class="else-info">
+				<text class="number blue">2</text>
+				<view class="name">协查次数</view>
+			</view>
+			<view class="else-info">
+				<text class="number orange">2</text>
+				<view class="name">滞留次数</view>
+			</view>
+			<view class="else-info">
+				<text class="number red">1</text>
+				<view class="name">重点跟踪次数</view>
+			</view>
+		</view>
 		<view class="crew-lable">
+			<!-- <view class="lable lable-gray" v-for="(it, index) in item.labels.split('|')" v-if="it.split(':').length>1">
+				{{it.split(':')[1]}}
+			</view> -->
 			<view class="lable lable-gray">集装箱船</view>
 			<view class="lable lable-gray">内河CJ</view>
 			<view class="lable lable-gray">非试航</view>
@@ -93,6 +114,9 @@
 		onLoad(options) {
 			this.shipRegNo = options.shipRegNo
 			this.getBaseInfo(options.shipRegNo);
+			uni.setNavigationBarTitle({
+			title:options.shipNameCn
+			})
 		},
 		methods: {
 			getBaseInfo(ship_reg_no){
@@ -115,7 +139,7 @@
 				});	
 			},
 			goToBasic(){
-				let url = '/pages/ship/info/info?shipRegNo='+this.shipRegNo;
+				let url = '/pages/ship/info/info?shipRegNo='+this.shipRegNo+'&shipNameCn='+this.baseInfo.shipNameCn;
 				uni.navigateTo({
 				    url: url
 				});
@@ -207,4 +231,14 @@
 
 <style lang="scss">
 @import '@/static/css/common';
+.crew-else{ margin: 0 40rpx; padding: 35rpx 0; background-color: #fff;overflow: hidden; position: relative; margin-top: -10rpx; box-shadow:0px 8rpx 12rpx 0px rgba(46,70,88,0.15); font-size: 24rpx; text-align: center; border-radius:0px 0px 14rpx 14rpx; flex-grow:1;
+	.else-info{ float: left; width: 25%;}
+	.number{ font-size: 40rpx; font-weight: bold;
+		&.green{ color:#30ADB5;}
+		&.blue{ color:#3882F9;}
+		&.orange{ color:#F74D11}
+		&.red{ color:#D43333}
+	}
+	.name{ margin-top: 15rpx;}
+}
 </style>

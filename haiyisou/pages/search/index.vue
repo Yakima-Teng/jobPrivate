@@ -1,5 +1,6 @@
 <template>
 	<view class="page-search">
+		
 		<view class="search-tab">
 			<view class="tab" :class="{'tab-cur' : tabIndex == 1}" @click="tabCutHandle(1)">
 				<view class="tab-name">船舶</view>
@@ -21,9 +22,14 @@
 					<image src="../../static/icon-search.png" />
 				</view>
 				<input class="uni-input" confirm-type="search" v-model="inputVal" placeholder="请输入关键字搜索" placeholder-class="place"
-				 @input="searchHandle" @confirm="searchConfirm" />
+				 @input="searchHandle" @confirm="searchConfirm"/>
 				<view class="icon-close" @click="closeInputVal" v-show="closeVisible">
 					<image src="../../static/icon-close.png" />
+				</view>
+			</view>
+			<view class="filter-btn">筛选
+				<view class="icon-more-else">
+					<image src="../../static/icon-filter.png" />
 				</view>
 			</view>
 		</view>
@@ -65,7 +71,7 @@
 				searchKey: "",
 				//分页
 				page:1,
-				length:5,
+				length:10,
 				start:0
 			}
 		},
@@ -75,12 +81,12 @@
 		methods: {
 			onReachScollBottom(){
 				this.page=this.page+1;
-				this.start=this.start+5;
 				console.log(">>>>>触底了");
 				this.search();
 				
 			},
 			tabCutHandle(index) {
+				this.resultList=[];
 				this.tabIndex = parseInt(index);
 				this.infoTabIndex = parseInt(index);
 			},
@@ -92,8 +98,8 @@
 				this.containerVisible = false;
 			},
 			searchConfirm(event) {
-				this.page=1;
-				this.start=0;
+				// this.page=1;
+				// this.length=0;
 				this.resultList=[];
 				let val = event.detail.value.trim();
 				this.searchKey = val;
@@ -119,21 +125,29 @@
 				this.infoTabIndex = parseInt(this.tabIndex);
 			},
 			searchHandle(event) {
-				let val = event.detail.value.trim();
-				if (val.length) {
-					this.isSearch = true;
-					this.approximateVisible = true;
-					this.hotVisible = false;
-					this.closeVisible = true;
-					this.nullVisible = false;
-				} else {
-					this.isSearch = false;
-					this.introductionVisible = false;
-					this.hotVisible = true;
-					this.approximateVisible = false;
-					this.closeVisible = false;
-					this.containerVisible = false;
-				}
+			this.resultList=[];
+			let val = event.detail.value.trim();
+			this.searchKey = val;
+			if (this.tabIndex == '1') {
+				//船舶
+				this.getcblist();
+			} else if (this.tabIndex == '2') {
+				//船员
+				this.getcrlist();
+			} else if (this.tabIndex == '3') {
+				//危货
+				this.getwhlist();
+			}
+			if (val.length) {
+				this.containerVisible = true;
+				this.approximateVisible = false;
+				this.closeVisible = true;
+				this.nullVisible = false;
+			} else {
+				this.hotVisible = false;
+				this.nullVisible = true;
+			}
+			this.infoTabIndex = parseInt(this.tabIndex);
 			},
 			search() {
 				let val =this.searchKey;
@@ -165,9 +179,9 @@
 					'parentId': ''
 				};
 				//请求后台数据
-				that.api.requestNoLoading('/sea/crewList?keyword=' + this.searchKey + '&page='+this.page+'&length='+this.length+'&start='+this.start, {}, "get")
+				that.api.request('/sea/crewList?keyword=' + this.searchKey + '&page='+this.page+'&length='+this.length, {}, "get")
 					.then(res => {
-						// console.log(JSON.stringify(res.result));
+						 console.log(JSON.stringify(res.result));
 						if(res.code!=200){
 							uni.showToast({
 								title: res.msg,
@@ -176,7 +190,7 @@
 							return;
 						}
 						if(res.result[0].crewList.length>0){
-							that.resultList = res.result[0].crewList; //变量名称参照更新后的文档
+							that.resultList=[...that.resultList, ...res.result[0].crewList];
 						}else{
 							uni.showToast({
 								title: '没有更多数据了',
@@ -199,9 +213,9 @@
 					'parentId': ''
 				};
 				//请求后台数据
-				that.api.requestNoLoading('/sea/shipList?keyword=' + this.searchKey + '&page='+this.page+'&length='+this.length+'&start='+this.start, {}, "get")
+				that.api.request('/sea/shipList?keyword=' + this.searchKey + '&page='+this.page+'&length='+this.length, {}, "get")
 					.then(res => {
-						// console.log(JSON.stringify(res));
+						 console.log(JSON.stringify(res));
 						 //变量名称参照更新后的文档
 						if(res.code!=200){
 							uni.showToast({
@@ -235,7 +249,7 @@
 					'parentId': ''
 				};
 				//请求后台数据
-				that.api.requestNoLoading('/dg/query/goods?keyword=' + this.searchKey + '&page='+this.page+'&length='+this.length+'&start='+this.start, {}, "get")
+				that.api.request('/dg/query/goods?keyword=' + this.searchKey + '&page='+this.page+'&length='+this.length, {}, "get")
 					.then(res => {
 						// console.log('>>'+JSON.stringify(res));
 						if(res.code!=200){
@@ -246,7 +260,8 @@
 							return;
 						}
 						if(res.result.length>0){
-							that.resultList = res.result; //变量名称参照更新后的文档
+							that.resultList=[...that.resultList, ...res.result];
+							// that.resultList = res.result; //变量名称参照更新后的文档
 						}else{
 							uni.showToast({
 								title: '没有更多数据了',
@@ -268,6 +283,8 @@
 </script>
 
 <style lang="scss">
+	@import '@/static/css/common';
+	
 	.search-tab {
     background-color: #fff;
 		color: #000000;
@@ -318,23 +335,25 @@
 	}
 
 	.search-box {
-	   border-top: 1rpx solid rgba(204,204,204,.6);
+	  border-top: 1rpx solid rgba(204,204,204,.6); background-color: #fff;	box-shadow:0px 8rpx 12rpx 0px rgba(10,55,82,0.1);padding: 30rpx 40rpx; box-sizing: border-box;
 		position: fixed;
+		display: flex;
+		justify-content: space-between;	align-items: center; 
 		width: 100%;
 		z-index: 10;
 		top: 0;
 		margin-top: 106rpx + 64rpx;
-
+    .filter-btn{ display: flex; align-items: center; border-left: 1rpx solid #ccc; margin-left: 30rpx; padding-left: 30rpx; font-size: 32rpx;
+      .icon-more-else{ margin: 12rpx 0 0 14rpx;
+        >image{width: 30rpx; height:30rpx;}
+      }
+    }
 		.search-bg {
-			background-color: #fff;
+			width: calc( 100% - 180rpx );
 			border-radius: 20rpx 20rpx 0 0;
-			padding: 30rpx 40rpx;
 			display: flex;
-			align-items: center;
-			box-shadow:0px 8rpx 12rpx 0px rgba(10,55,82,0.1);
-			position: relative;
+			align-items: center; position: relative;
 			z-index: 10;
-
 			.uni-input {
 				background-color: #f0eff4;
 				border-radius: 10rpx;

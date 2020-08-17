@@ -2,18 +2,18 @@
 	<view class="page-crew-proxy">
 		<HeaderSearch></HeaderSearch>
 		<view class="cert-list">
-			<block v-for="(cItem, cIndex) in Object.keys(certList)" :key="cIndex">
-				<view class="cert-item" v-for="(item, index) in certList[cItem]" :key="index" @click="toCertInfo">
+			<!-- block v-for="(cItem, cIndex) in Object.keys(certList)" :key="cIndex" -->
+				<view class="cert-item" v-for="(item, index) in newzsList" :key="index" @click="toCertInfo(item.serialNo,item.certType,item.name)">
 					<view class="cert-title">
 						<view class="cert-title-title">
 							<view class="cert-title-image" >证</view>
-							{{getTitle(cItem)}}
+							{{item.name}}
 						</view>
 						<view class="cert-title-icon"  :class="{'cert-title-icon-disabled':(item.certStatus=='无效')}" >{{item.certStatus}}</view>
 					</view>
 					<view class="cert-content">
 						<view class="cert-content-title">证书编号：</view>
-						<view class="cert-content-content">{{item.certIdcardNo}}</view>
+						<view class="cert-content-content">{{item.serialNo}}</view>
 					</view>
 					<view class="cert-content">
 						<view class="cert-content-title">发放单位：</view>
@@ -23,12 +23,12 @@
 						<view class="cert-content-title">有效时间：</view>
 						<view class="cert-content-content">
 						{{item.issuDate.substring(0, 10)}}
-						-
-						{{item.expiryDate==null?'永久':item.expiryDate.substring(0, 10)}}
+						—
+						{{item.invaDate==null?'永久':item.invaDate.substring(0, 10)}}
 						</view>
 					</view>
 				</view>
-			</block>
+			<!-- </block> -->
 		</view>
 	</view>
 </template>
@@ -55,16 +55,19 @@
 					jszgzList: [],
 					nhgzList: [],
 					nsrzList: [],
-				}
+				},
+				newzsList:[],
+				idCardNo:''
 			}
 		},
-		onLoad() {
-			this.getBaseInfo('520102199502022400');
+		onLoad(options) {
+			this.idCardNo=options.idCardNo;
+			this.getBaseInfo();
 		},
 		methods: {
-			toCertInfo() {
+			toCertInfo(serial_no,type,name) {
 				uni.navigateTo({
-					url: './certinfo'
+					url: './certinfo?serial_no='+serial_no+'&type='+type+'&name='+name
 				})
 			},
 			/**
@@ -74,8 +77,25 @@
 			 * @param {Object} issuOrg		签发机构
 			 */
 			getBaseInfo(idCard, orderType, statusType, issuOrg){
+				//请求后台数据
 				const that = this;
-				//组装参数
+				that.api.requestNoLoading('/sea/q/cNew?id_card_no=' + this.idCardNo)
+					.then(res => {
+						console.log('>>>'+JSON.stringify(res));
+						if(res.code!=200){
+							uni.showToast({
+								title: res.message,
+								icon:'none'
+							});
+							return;
+						}
+						that.newzsList = res.result; //变量名称参照更新后的文档
+					
+						// that.baseInfo = res.result;//变量名称参照更新后的文档
+				
+					});
+				/*const that = this;
+				 //组装参数  改接口了
 				let params = {'parentId': ''};
 				let url ='/sea/q/c?id_card_no='+idCard+'&certType=0';
 				if(orderType!=null){
@@ -116,7 +136,7 @@
 					that.certList.jszgzList = result.jszgzList;
 					that.certList.nhgzList = result.nhgzList;
 					that.certList.nsrzList = result.nsrzList;
-				});	
+				});	 */
 			},
 			getTitle(type){
 				// fwbList	服务簿
