@@ -6,7 +6,15 @@
         <view class="title">{{item.goodsTitle}}</view>
       </view>
     </view>
-    <view class="sep"></view>
+    <view class="securitylist-filter-box">
+      <text>安全检查列表</text>
+      <view class="filter-btn">筛选
+        <view class="icon-more-else">
+          <image src="../../../static/icon-filter.png" />
+        </view>
+      </view>
+    </view>
+
     <view class="securitylist-module">
 		<view class="securitylist" v-for="(item, index) in tableTilefsc" :key="index" @click="examInfo(item.domesticSecurityNumber,type)">
 			<view class="security-title">
@@ -169,7 +177,7 @@
 .page-securitylist{
   .sep{height:20rpx;background:rgba(240,239,244,1);}
 }
-.crew-exam-aq-title{ padding: 30rpx 40rpx; font-size: 28rpx; display: flex; justify-content: space-between; align-items: center;
+.crew-exam-aq-title{ padding: 30rpx 40rpx; font-size: 28rpx; display: flex; justify-content: space-between; align-items: center; background-color: #F0EFF4;
   .page-crew-exam{ height: 70rpx; line-height: 70rpx; border:1px solid rgba(136,136,136,.6); border-radius:8px 0px 0px 8px; color:#191919; width: 50%; float: left; text-align: center;
     &:first-child{ border-right: 0;}
     &:last-child{ background-color:rgba(255,255,255,1); border:1px solid rgba(136,136,136,.6); border-left: 0; border-radius:0px 8px 8px 0px;}
@@ -187,6 +195,13 @@
       .blue{ color:#3882F9;}
       &:nth-child(odd){ border-right: 1rpx solid #E5E5E5;}
       &:nth-child(even){ padding-left: 22rpx;}
+    }
+  }
+}
+.securitylist-filter-box{ background-color: #F0EFF4; padding: 8rpx 40rpx 30rpx; display: flex; justify-content: space-between; font-size: 28rpx; color:#999; align-items: center;
+  .filter-btn{ display: flex; align-items: center; font-size: 32rpx; color:#000;
+    .icon-more-else{ width:28rpx;height:30rpx; margin-left: 15rpx; position: relative; z-index: 1;
+      >image{ width: 100%; height:100%;}
     }
   }
 }
