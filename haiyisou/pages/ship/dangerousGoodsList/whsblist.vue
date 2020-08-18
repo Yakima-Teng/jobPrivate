@@ -1,6 +1,6 @@
 <template>
 	<view class="page-exam-list">
-		<HeaderSearch></HeaderSearch>
+		<HeaderSearch @getParmes="getParmes"></HeaderSearch>
 		<view class="search-container">
 			<listNull v-if="tableTile.length==0"></listNull>
 			<view class="containe-info" v-for="(item, index) in tableTile" :key="index" @click="examInfo(item.declareId)">
@@ -55,7 +55,8 @@ export default {
 	data() {
 		return {
 			tableTile:[],
-			title:""
+			title:"",
+			range:['','']
 		};
 		
 	},
@@ -65,6 +66,11 @@ export default {
 		this.getWhListByType(this.type);
 	},
 	methods: {
+		getParmes(e){
+			  this.range=e.range;
+			  console.log(this.range);
+			  this.getWhListByType(this.type);
+		},
 		examInfo(declareId) {
 			console.log(declareId);
 			let url='';
@@ -80,7 +86,7 @@ export default {
 			});
 		},
 		getWhListByType(str){
-			this.api.request('/sea/view/getGoodsDeclaration?type='+this.cbsbnum+'&begin_time=2019-01-01&end_time=2020-07-13',{},'GET').then(res=>{
+			this.api.request('/sea/view/getGoodsDeclarationCondition?type='+this.cbsbnum+'&begin_time='+this.range[0].replace("/", "-").replace("/", "-")+'&end_time='+this.range[1].replace("/", "-").replace("/", "-"),{},'GET').then(res=>{
 				console.log('>>'+JSON.stringify(res));
 				if(str==='szytsb'){
 					console.log(res.result[0].szytsb);

@@ -1,7 +1,13 @@
 <template>
 	<view class="page-crew-basic" v-if="gqjc">
-		<view class="info-title">安检基本信息</view>
-		<view class="info-list-box">
+		<view class="crew-exam-aq-title">
+		  <!-- 当前页签直接在 page-crew-exam 上添加cur即可-->
+		  <view :class="tabsType == item.type?'page-crew-exam cur':'page-crew-exam'"  v-for="(item, index) in goodsList" :key="index" @click="getList(item.type)" >
+		    <view class="title">{{item.goodsTitle}}</view>
+		  </view>
+		</view>
+		<!-- <view class="info-title">安检基本信息</view> -->
+		<view class="info-list-box" v-if="tabsType=='jbxx'">
 			<view class="info-list" >
 				<text class="left"> 检查类型</text>
 				{{baseInfo.inspectType}}
@@ -51,7 +57,7 @@
 				{{baseInfo.remark}}
 			</view>
 		</view>
-		<view class="exam-info" v-if="qxxx.length>0">
+		<view class="exam-info" v-if="tabsType=='qxxx'">
 			<view class="info-title">缺陷信息</view>
 			<view class="info info-exam-subject">
 				<view class="main">
@@ -76,8 +82,14 @@
 		</view>
 	</view>
 	<view class="page-crew-basic" v-else-if="xcjc">
-		<view class="info-title">安检基本信息</view>
-		<view class="info-list-box">
+		<view class="crew-exam-aq-title">
+		  <!-- 当前页签直接在 page-crew-exam 上添加cur即可-->
+		  <view :class="tabsType == item.type?'page-crew-exam cur':'page-crew-exam'"  v-for="(item, index) in goodsList" :key="index" @click="getList(item.type)" >
+		    <view class="title">{{item.goodsTitle}}</view>
+		  </view>
+		</view>
+		<!-- <view class="info-title">安检基本信息</view> -->
+		<view class="info-list-box" v-if="tabsType=='jbxx'">
 			<view class="info-list" >
 				<text class="left"> 检查类型</text>
 				{{baseInfo.preliminaryReviewSign}}
@@ -133,7 +145,7 @@
 				{{baseInfo.remark}}
 			</view>
 		</view>
-		<view class="exam-info" v-if="qxxx.length>0">
+		<view class="exam-info" v-if="tabsType=='qxxx'">
 			<view class="info-title">缺陷信息</view>
 			<view class="info info-exam-subject">
 				<view class="main">
@@ -164,6 +176,14 @@
 export default {
 	data() {
 		return {
+			goodsList:[{
+				goodsTitle:"安检基本信息",
+				type:'jbxx'
+			},{
+				goodsTitle:"缺陷信息",
+				type:'qxxx'
+				
+			}],
 			baseInfo: {},
 			id:'',
 			type:'',
@@ -172,7 +192,8 @@ export default {
 			gtsz:false,
 			gqjc:false,
 			xcjc:false,
-			qxxx:[]
+			qxxx:[],
+			tabsType:'jbxx'
 		};
 	},
 	onLoad(options){
@@ -184,6 +205,11 @@ export default {
 		this.getXQByid(options.type,options.id);
 	},
 	methods:{
+		getList(type){
+			this.tabsType=type;
+			console.log(type);
+			
+		},
 		getXQByid(str,id){
 			if(str==='fsc'){
 				this.gqjc=true;
@@ -277,5 +303,11 @@ export default {
 <style lang="scss">
 
 @import '@/static/css/common';
-
+.crew-exam-aq-title{ padding: 30rpx 40rpx; font-size: 28rpx; display: flex; justify-content: space-between; align-items: center;
+	  .page-crew-exam{ height: 70rpx; line-height: 70rpx; border:1px solid rgba(136,136,136,.6); border-radius:8px 0px 0px 8px; color:#191919; width: 50%; float: left; text-align: center;
+	    &:first-child{ border-right: 0;}
+	    &:last-child{ background-color:rgba(255,255,255,1); border:1px solid rgba(136,136,136,.6); border-left: 0; border-radius:0px 8px 8px 0px;}
+	    &.cur{ background-color: #3882F9; color:#fff; border-color: #3882F9;}
+	  }
+	}
 </style>

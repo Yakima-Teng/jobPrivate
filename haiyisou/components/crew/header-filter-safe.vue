@@ -2,53 +2,38 @@
 	<view class="filter-content-box">
 	<view class="filter-content">
     <form @submit="" @reset="">
-      <view class="header-status">
-        <view class="title">状态</view>
-				<view class="status-radio">
-					<label class="radio"><radio value="status" />全部</label>
-					<label class="radio"><radio value="status" />仅看有效</label>
-				</view>
-      </view>
-      <view class="time-obtain">
-				<view class="title">取得时间</view>
-				<view class="time-select">
-					<text>{{range[0]}}</text> - <text>{{range[1]}}</text>
-					<button type="primary" @click="onShowDatePicker('range')" class="btn-time">选择日期范围</button>
-					<mx-date-picker :show="showPicker" :type="type" :value="value" :show-tips="true" :begin-text="'开始时间'" :end-text="'终止时间'" :show-seconds="true" @confirm="onSelected" @cancel="onSelected" />
-				</view>
-			</view>
-      <view class="type-certificate">
-				<view class="title">证书类型</view>
-				<view class="type-list">
-					<view class="type">船员注册船员注册</view>
-					<view class="type cur">海船适任证</view>
-					<view class="type cur">海船适任证</view>
-					<view class="type cur">海船合格证</view>
-					<view class="type">海船</view>
-				</view>
-			</view>
       <view class="issuer-box">
-				<view class="title">发放单位</view>
-				<view class="issuer-list">
-					<label class="radio">
-						<radio value="issuer" />徐圩海事局
-					</label>
-					<label class="radio">
-						<radio value="issuer" />盐城海事局
-					</label>
-					<label class="radio">
-						<radio value="issuer" />墟沟海事局
-					</label>
-					<label class="radio">
-						<radio value="issuer" />连云海事局
-					</label>
-					<label class="radio">
-						<radio value="issuer" />赣榆海事局
-					</label>
-				</view>
-			</view>
+      				<view class="title">检查时间</view>
+      				<view class="issuer-list">
+      						<radio-group @change="selectTimes">
+      						<label class="radio">
+      							<radio value="0" :checked="rvalue==='0'"/>不限
+      						</label>
+      					<label class="radio">
+      						<radio value="week" :checked="rvalue==='week'"/>近一周
+      					</label>
+      					<label class="radio">
+      						<radio value="mont" :checked="rvalue==='mont'"/>近一月
+      					</label>
+      					<label class="radio">
+      						<radio value="hyear" :checked="rvalue==='hyear'"/>近半年
+      					</label>
+      					<label class="radio">
+      						<radio value="oyerar" :checked="rvalue==='oyerar'"/>近一年
+      					</label>
+      					<label class="radio">
+      						<radio value="aotu" :checked="rvalue==='aotu'"/>自定义时间
+      					</label>
+      						</radio-group>
+      				</view>
+      					<view class="time-select">
+      						<text>{{range[0]}}</text> - <text>{{range[1]}}</text>
+      						<button :disabled="read" type="primary" @click="onShowDatePicker('range')" class="btn-time">选择日期范围</button>
+      						<mx-date-picker :show="showPicker" :type="type" :value="value" :show-tips="true" :begin-text="'开始时间'" :end-text="'终止时间'" :show-seconds="true" @confirm="onSelected" @cancel="onSelected" />
+      					</view>
+      			</view>
       <view class="btn-box">
-        <button form-type="reset">重置</button>
+        <button @click="reset">重置</button>
         <button form-type="submit" type="primary" @click="submitBtn()">确定</button>
       </view>
     </form>
@@ -67,10 +52,61 @@ export default {
 			showPicker: false,
 			range: ['2019/01/11','2019/01/22'],
 			type: 'rangetime',
-			value: ''
+			value: '',
+			rvalue: '0',
+			tchecked:'0',
+			read:true
 		}
 	},
 	methods: {
+		selectTimes(event){
+			const that=this;
+			// console.log(event.detail.value);
+			this.rvalue=event.detail.value
+			if(event.detail.value==='week'){
+				that.$set(that.range, 0, this.getTime(-7));
+				that.$set(that.range, 1, this.getTime(0));
+				this.read=true
+			}else if(event.detail.value==='mont'){
+				that.$set(that.range, 0, this.getTime(-31));
+				that.$set(that.range, 1, this.getTime(0));
+				this.read=true
+			}else if(event.detail.value==='hyear'){
+				that.$set(that.range, 0, this.getTime(-180));
+				that.$set(that.range, 1, this.getTime(0));
+				this.read=true
+			}else if(event.detail.value==='oyerar'){
+				that.$set(that.range, 0, this.getTime(-365));
+				that.$set(that.range, 1, this.getTime(0));
+				this.read=true
+			}else if(event.detail.value==='0'){
+				that.$set(that.range, 0, '');
+				that.$set(that.range, 1, '');
+				this.read=true
+			}else{
+				that.$set(that.range, 0, this.getTime(-1));
+				that.$set(that.range, 1, this.getTime(0));
+				this.read=false
+			}
+		},
+		getTime(day){
+			　　var today = new Date();
+			　　var targetday_milliseconds=today.getTime() + 1000*60*60*24*day;
+			　　today.setTime(targetday_milliseconds); //注意，这行是关键代码
+			　　var tYear = today.getFullYear();
+			　　var tMonth = today.getMonth();
+			　　var tDate = today.getDate();
+			　　tMonth = this.doHandleMonth(tMonth + 1);
+			　　tDate = this.doHandleMonth(tDate);
+			　　return tYear+"/"+tMonth+"/"+tDate;
+			},
+			doHandleMonth(month){
+			　　var m = month;
+			　　if(month.toString().length == 1){
+			　　　　m = "0" + month;
+			　　}
+			　　return m;
+			},
 		onShowDatePicker(type){//显示
 			this.type = type;
 			this.showPicker = true;
@@ -80,14 +116,15 @@ export default {
 			this.showPicker = false;
 			if(e) {
 				this[this.type] = e.value; 
-				//选择的值
-				console.log('value => '+ e.value);
-				//原始的Date对象
-				console.log('date => ' + e.date);
+				this.range=e.value;
 			}
 		},
 		submitBtn() {
-			this.$emit('toggleFilterHide');
+			this.$emit('toggleFilterHide',this);
+		},
+		reset(){
+			this.rvalue='0';
+			this.range=['','']
 		}
 	}
 }
@@ -105,7 +142,7 @@ export default {
 	}
 }
 .time-obtain{ padding: 37rpx 40rpx 30rpx; border-bottom: 10rpx solid #f0eff4;
-	.time-select{ color: #e5e5e5; display: flex; justify-content: space-between; line-height:76rpx; 
+	.time-select{ color: #e5e5e5; display: flex; justify-content: space-between; line-height:76rpx; margin-bottom: 20rpx; 
 		>text{ display: flex; justify-content: space-between; align-items: center; color:#000; border:1rpx solid #e5e5e5; background-color: #fafafa; box-sizing: border-box; width: 260rpx; height:76rpx; font-size: 28rpx; border-radius:10rpx; padding: 0 20rpx;
 			&::after{ content: ''; display:block; width: 12rpx; height: 12rpx; border-color: #000; border-style: solid; border-width: 0 1rpx 1rpx 0; transform: rotate(45deg);}
 		}

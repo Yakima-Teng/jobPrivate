@@ -8,13 +8,14 @@
     </view>
     <view class="securitylist-filter-box">
       <text>安全检查列表</text>
-      <view class="filter-btn">筛选
+      <view class="filter-btn" @click="headerFilterVisible = true, layerMakerVisible = false, searchTimeVisible = false">筛选
         <view class="icon-more-else">
           <image src="../../../static/icon-filter.png" />
         </view>
       </view>
     </view>
-
+	<HeaderFilter :range="range" v-show="headerFilterVisible" @toggleFilterHide="toggleFilterHide"></HeaderFilter>
+	<LayerMaker v-if="layerMakerVisible"></LayerMaker>
     <view class="securitylist-module">
 		<view class="securitylist" v-for="(item, index) in tableTilefsc" :key="index" @click="examInfo(item.domesticSecurityNumber,type)">
 			<view class="security-title">
@@ -102,7 +103,15 @@
 </template>
 
 <script>
+	import SearchTime from '@/components/crew/search-time';
+	import LayerMaker from '@/components/layer-maker';
+	import HeaderFilter from '@/components/crew/header-filter-safe';
 	export default {
+		components: {
+			SearchTime,
+			LayerMaker,
+			HeaderFilter
+		},
 		data() {
 			return {
 				goodsList:[{
@@ -117,6 +126,10 @@
 				tabsType:'fsc',
 				tableTile:[],
 				tableTilefsc:[],
+				searchTimeVisible: false,
+				layerMakerVisible: false,
+				headerFilterVisible: false,
+				range:['','']
 				
 			};
 			}
@@ -144,14 +157,14 @@
 			getList(type){
 				this.tabsType=type;
 				if(type==='fsc'){
-					this.api.request('/sea/Secure/ShipflagState?shipId='+this.shipId,{},'GET').then(res=>{
+					this.api.request('/sea/Secure/ShipflagState?shipId='+this.shipId+'&begintime='+this.range[0].replace('/','-').replace('/','-')+'&endtime='+this.range[1].replace('/','-').replace('/','-'),{},'GET').then(res=>{
 						 console.log('>>'+JSON.stringify(res));
 						console.log('>>'+JSON.stringify(res.result));
 						this.tableTilefsc=res.result;
 						
 					})
 				}else{
-					this.api.request('/sea/Secure/getSiteSupervision?shipId='+this.shipId,{},'GET').then(res=>{
+					this.api.request('/sea/Secure/getSiteSupervision?shipId='+this.shipId+'&begintime='+this.range[0].replace('/','-').replace('/','-')+'&endtime='+this.range[1].replace('/','-').replace('/','-'),{},'GET').then(res=>{
 						// console.log('>>'+JSON.stringify(res));
 						console.log('>>'+JSON.stringify(res.result));
 						this.tableTilefsc=[];
@@ -160,7 +173,13 @@
 					})
 				}
 				
-			}
+			},
+			toggleFilterHide(e){
+				console.log(">>"+e.range);
+				this.range=e.range;
+				this.headerFilterVisible = false;
+				this.getList(this.tabsType);
+			},
 			// goToExamList(type) {
 			// 	uni.navigateTo({
 			// 	     url:'/pages/ship/securityCheck/securityDeallist?shipId='+this.shipId+'&type='+type,

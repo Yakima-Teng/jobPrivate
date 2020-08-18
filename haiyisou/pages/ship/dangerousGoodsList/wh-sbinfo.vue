@@ -1,8 +1,15 @@
 
 <template>
 	<view class="page-crew-basic">
-		<view class="info-title">基本信息</view>
+		<view class="crew-exam-aq-title">
+		  <!-- 当前页签直接在 page-crew-exam 上添加cur即可-->
+		  <view :class="tabsType == item.type?'page-crew-exam cur':'page-crew-exam'"  v-for="(item, index) in goodsList" :key="index" @click="getList(item.type)" >
+		    <view class="title">{{item.goodsTitle}}</view>
+		  </view>
+		</view>
+		<!-- <view class="info-title">基本信息</view> -->
 		<view class="info-list-box">
+			<view v-if="tabsType =='jb'">
 			<view class="info-list" >
 				<text class="left"> 申报单号</text>
 				{{baseInfo.declareId}}
@@ -103,7 +110,9 @@
 				<text class="left"> 提交海事机构 </text>
 				{{baseInfo.orgCode}}
 			</view>
-			<view class="info-title">申报信息</view>
+			</view>
+			<view v-if="tabsType=='sbxx'">
+			<!-- <view class="info-title">申报信息</view> -->
 			<view class="info-list" >
 				<text class="left"> 航次 </text>
 				{{baseInfo.voyageNo}}
@@ -208,6 +217,7 @@
 				<text class="left"> 备注 </text>
 				{{baseInfo.remark}}
 			</view>
+			</view>
 				<view class="exam-info" v-if="hwxx.length>0">
 					<view class="info-title">货物信息</view>
 					<view class="info info-exam-subject">
@@ -254,11 +264,20 @@
 export default {
 	data() {
 		return {
+			goodsList:[{
+				goodsTitle:"基本信息",
+				type:'jb'
+			},{
+				goodsTitle:"申报信息",
+				type:'sbxx'
+				
+			}],
 			baseInfo: {},
 			declareId:'',
 			type:'',
 			hwxx:[],
-			zjxx:[]
+			zjxx:[],
+			tabsType:'jb',
 		};
 	},
 	onLoad(options){
@@ -270,6 +289,11 @@ export default {
 		this.getHwzjxx(options.type,options.declareId);//货物组件
 	},
 	methods:{
+		getList(type){
+			this.tabsType=type;
+			console.log(type);
+			
+		},
 		getWhXQByType(str,declareId){
 			this.api.request('/sea/view/getGoodsDeclarationDetails?type='+declareId,{},'GET').then(res=>{
 				if(res.code!=200){
@@ -363,6 +387,13 @@ export default {
 			.text{ width: 578rpx; color:#666; margin-bottom: 10rpx; font-weight: 300;}
 		}
 	}
+}
+.crew-exam-aq-title{ padding: 30rpx 40rpx; font-size: 28rpx; display: flex; justify-content: space-between; align-items: center;
+  .page-crew-exam{ height: 70rpx; line-height: 70rpx; border:1px solid rgba(136,136,136,.6); border-radius:8px 0px 0px 8px; color:#191919; width: 50%; float: left; text-align: center;
+	&:first-child{ border-right: 0;}
+	&:last-child{ background-color:rgba(255,255,255,1); border:1px solid rgba(136,136,136,.6); border-left: 0; border-radius:0px 8px 8px 0px;}
+	&.cur{ background-color: #3882F9; color:#fff; border-color: #3882F9;}
+  }
 }
 @import '@/static/css/common';
 </style>

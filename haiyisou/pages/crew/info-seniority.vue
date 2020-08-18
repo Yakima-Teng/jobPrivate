@@ -1,6 +1,6 @@
 <template>
 	<view class="page-crew-seniority">
-		<HeaderSearch></HeaderSearch>
+		<!-- <HeaderSearch></HeaderSearch> -->
 		<view class="seniority-container">
 			<SunuiGrand v-for="(item,index) in senList" :key="index" :baseInfo="item" :sTime="item.offiOperTime+'-'+item.dismOperTime" :proList="properties"/>
 		</view>

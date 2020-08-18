@@ -83,11 +83,11 @@
 </script>
 
 <style lang="scss">
-.search-introduction{ font-size:24rpx; color:#999; background-color: #fff; position: fixed; width: 100%; margin-top:-30rpx; left:0; padding:40rpx 40rpx 25rpx; z-index: 5;
+.search-introduction{ font-size:24rpx; color:#999; background-color: #fff; position: absolute; width: 100%; margin-top:0; left:0; padding:40rpx 40rpx 25rpx; z-index: 5;
 	>text{ margin:0 10rpx; }
 	.search-val{ color:#3882f9;}
 	.search-number{ color:#e23232;}
 }
 @import '@/components/search/list';
-.containe-list{ padding-top: 54rpx; }
+.containe-list{ padding-top: 84rpx; }
 </style>

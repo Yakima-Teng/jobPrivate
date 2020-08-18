@@ -17,17 +17,17 @@
 			</view>
 		</view>
 		<view class="search-box">
-			<view class="search-bg">
+			<view class="search-bg" :class="{'search-bg-all':tabIndex!=1}">
 				<view class="icon-search">
 					<image src="../../static/icon-search.png" />
 				</view>
-				<input class="uni-input" confirm-type="search" v-model="inputVal" placeholder="请输入关键字搜索" placeholder-class="place"
+				<input class="uni-input"  confirm-type="search" v-model="inputVal" placeholder="请输入关键字搜索" placeholder-class="place"
 				 @input="searchHandle" @confirm="searchConfirm"/>
 				<view class="icon-close" @click="closeInputVal" v-show="closeVisible">
 					<image src="../../static/icon-close.png" />
 				</view>
 			</view>
-			<view class="filter-btn">筛选
+			<view class="filter-btn" v-if="tabIndex==1" @click="headerFilterVisible = true, layerMakerVisible = false, searchTimeVisible = false">筛选
 				<view class="icon-more-else">
 					<image src="../../static/icon-filter.png" />
 				</view>
@@ -40,10 +40,15 @@
 			<SearchNull v-if="nullVisible"></SearchNull>
 			<SearchContainer v-if="containerVisible" :infoTabIndex="infoTabIndex" :searchKey="searchKey" :resultList="resultList"></SearchContainer>
 		</scroll-view>
+		<HeaderFilter  :shipTypeCode="shipTypeCode" :shipTypeList="shipTypeList"  v-show="headerFilterVisible" @toggleFilterHide="toggleFilterHide"></HeaderFilter>
+		<LayerMaker v-if="layerMakerVisible"></LayerMaker>
 	</view>
 </template>
 
 <script>
+	import SearchTime from '@/components/crew/search-time';
+	import LayerMaker from '@/components/layer-maker';
+	import HeaderFilter from '@/components/crew/header-index';
 	import SearchHot from '@/components/search/search-hot.vue';
 	import SearchApproximate from '@/components/search/search-approximate.vue';
 	import SearchNull from '@/components/search/search-null.vue';
@@ -53,7 +58,10 @@
 			SearchHot,
 			SearchApproximate,
 			SearchNull,
-			SearchContainer
+			SearchContainer,
+			SearchTime,
+			LayerMaker,
+			HeaderFilter
 		},
 		data() {
 			return {
@@ -72,13 +80,51 @@
 				//分页
 				page:1,
 				length:10,
-				start:0
+				start:0,
+				searchTimeVisible: false,
+				layerMakerVisible: false,
+				headerFilterVisible: false,
+				range:['',''],
+				tchecked:'0',
+				shipTypeList:[],
+				shipTypeCode:''
 			}
 		},
 		onLoad(options) {
 			this.tabIndex = options.searchType;
+			// if(this.tchecked=='0'){
+			// 	this.range[0]=this.getTime(0);
+			// 	this.range[1]='';
+			// }
+			this.getShipType();
+			
 		},
 		methods: {
+			getTime(day){
+			　　var today = new Date();
+			　　var targetday_milliseconds=today.getTime() + 1000*60*60*24*day;
+			　　today.setTime(targetday_milliseconds); //注意，这行是关键代码
+			　　var tYear = today.getFullYear();
+			　　var tMonth = today.getMonth();
+			　　var tDate = today.getDate();
+			　　tMonth = this.doHandleMonth(tMonth + 1);
+			　　tDate = this.doHandleMonth(tDate);
+			　　return tYear+"/"+tMonth+"/"+tDate;
+			},
+			doHandleMonth(month){
+			　　var m = month;
+			　　if(month.toString().length == 1){
+			　　　　m = "0" + month;
+			　　}
+			　　return m;
+			},
+			toggleFilterHide(e){
+				console.log(">>"+e.range);
+				this.range=e.range;
+				this.shipTypeCode=e.shipTypeCode;
+				this.headerFilterVisible = false;
+				this.searchs();
+			},
 			onReachScollBottom(){
 				this.page=this.page+1;
 				console.log(">>>>>触底了");
@@ -128,6 +174,31 @@
 			this.resultList=[];
 			let val = event.detail.value.trim();
 			this.searchKey = val;
+			if (this.tabIndex == '1') {
+				//船舶
+				this.getcblist();
+			} else if (this.tabIndex == '2') {
+				//船员
+				this.getcrlist();
+			} else if (this.tabIndex == '3') {
+				//危货
+				this.getwhlist();
+			}
+			if (val.length) {
+				this.containerVisible = true;
+				this.approximateVisible = false;
+				this.closeVisible = true;
+				this.nullVisible = false;
+			} else {
+				this.hotVisible = false;
+				this.nullVisible = true;
+			}
+			this.infoTabIndex = parseInt(this.tabIndex);
+			},
+			//筛选回调
+			searchs() {
+			let val =this.searchKey;
+			this.resultList=[];
 			if (this.tabIndex == '1') {
 				//船舶
 				this.getcblist();
@@ -213,9 +284,9 @@
 					'parentId': ''
 				};
 				//请求后台数据
-				that.api.request('/sea/shipList?keyword=' + this.searchKey + '&page='+this.page+'&length='+this.length, {}, "get")
+				that.api.request('/sea/shipList?keyword=' + this.searchKey + '&page='+this.page+'&length='+this.length+'&ship_type_code='+this.shipTypeCode+'&starttime='+this.range[0].replace("/", "-").replace("/", "-")+'&endtime='+this.range[1].replace("/", "-").replace("/", "-"), {}, "get")
 					.then(res => {
-						 console.log(JSON.stringify(res));
+						 // console.log(JSON.stringify(res));
 						 //变量名称参照更新后的文档
 						if(res.code!=200){
 							uni.showToast({
@@ -277,6 +348,27 @@
 						}
 					});
 			},
+			getShipType(){
+				const that = this;
+				//组装参数
+				let params = {
+					'parentId': ''
+				};
+				//请求后台数据
+				that.api.request('/sea/shipType', {}, "get")
+					.then(res => {
+						 console.log('>>'+JSON.stringify(res));
+						if(res.code!=200){
+							uni.showToast({
+								title: res.msg,
+								icon:'none'
+							});
+							return;
+						}
+						that.shipTypeList=res.result;
+						
+					});
+			}
 			
 		}
 	}
@@ -295,7 +387,7 @@
 		line-height: 1;
 		position: fixed;
 		width: 100%;
-		padding: 80rpx 0 20rpx;
+		padding:20rpx 0;
 		top: 0;
 		z-index: 9;
 		.tab-bar {
@@ -342,12 +434,13 @@
 		width: 100%;
 		z-index: 10;
 		top: 0;
-		margin-top: 106rpx + 64rpx;
+		margin-top: 106rpx + 4rpx;
     .filter-btn{ display: flex; align-items: center; border-left: 1rpx solid #ccc; margin-left: 30rpx; padding-left: 30rpx; font-size: 32rpx;
       .icon-more-else{ margin: 12rpx 0 0 14rpx;
         >image{width: 30rpx; height:30rpx;}
       }
     }
+	
 		.search-bg {
 			width: calc( 100% - 180rpx );
 			border-radius: 20rpx 20rpx 0 0;
@@ -365,7 +458,25 @@
         .uni-input-placeholder{ color:#aaa;}
 			}
 		}
-
+		
+		.search-bg-all {
+			width: calc( 100%);
+			border-radius: 20rpx 20rpx 0 0;
+			display: flex;
+			align-items: center; position: relative;
+			z-index: 10;
+			.uni-input {
+				background-color: #f0eff4;
+				border-radius: 10rpx;
+				height: 72rpx;
+				line-height: 72rpx;
+				padding-left: 80rpx;
+				font-size: 28rpx;
+				width: 100%;
+		.uni-input-placeholder{ color:#aaa;}
+			}
+		}
+		
 		.icon-search {
 			position: absolute;
 			margin-left: 20rpx;
@@ -390,13 +501,13 @@
 	}
 
 	.search-list {
-		margin-top: 106rpx + 126rpx;
+		margin-top: 106rpx + 136rpx;
 		height: calc(100vh);
 	}
 
 	@media screen and (max-width: 320px) {
 		.search-tab {
-			padding-top: 100rpx;
+			padding-top: 40rpx;
 		}
 
 		.search-box {

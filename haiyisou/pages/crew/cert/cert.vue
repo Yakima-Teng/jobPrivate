@@ -1,6 +1,6 @@
 <template>
 	<view class="page-crew-proxy">
-		<HeaderSearch></HeaderSearch>
+		<HeaderSearch @getparams="getparams"></HeaderSearch>
 		<view class="cert-list">
 			<!-- block v-for="(cItem, cIndex) in Object.keys(certList)" :key="cIndex" -->
 				<view class="cert-item" v-for="(item, index) in newzsList" :key="index" @click="toCertInfo(item.serialNo,item.certType,item.name)">
@@ -33,7 +33,7 @@
 	</view>
 </template>
 <script>
-	import HeaderSearch from '@/components/crew/header-search';
+	import HeaderSearch from '@/components/crew/header-cert';
 	export default {
 		components: {
 			HeaderSearch
@@ -57,7 +57,8 @@
 					nsrzList: [],
 				},
 				newzsList:[],
-				idCardNo:''
+				idCardNo:'',
+				cert_status:'',
 			}
 		},
 		onLoad(options) {
@@ -65,6 +66,13 @@
 			this.getBaseInfo();
 		},
 		methods: {
+			getparams(e){
+				this.cert_status=e.zszt;
+				this.getBaseInfo()
+			},
+			toggleFilterHide(){
+				this.headerFilterVisible = false;
+			},
 			toCertInfo(serial_no,type,name) {
 				uni.navigateTo({
 					url: './certinfo?serial_no='+serial_no+'&type='+type+'&name='+name
@@ -79,7 +87,7 @@
 			getBaseInfo(idCard, orderType, statusType, issuOrg){
 				//请求后台数据
 				const that = this;
-				that.api.requestNoLoading('/sea/q/cNew?id_card_no=' + this.idCardNo)
+				that.api.requestNoLoading('/sea/q/cNew?id_card_no=' + this.idCardNo+'&cert_status='+this.cert_status)
 					.then(res => {
 						console.log('>>>'+JSON.stringify(res));
 						if(res.code!=200){

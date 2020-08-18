@@ -1,6 +1,6 @@
 <template>
 	<view class="page-crew-seniority">
-		<HeaderSearch></HeaderSearch>
+		<HeaderSearch @getParmes="getParmes"></HeaderSearch>
 		<view class="seniority-container">
 		  <SunuiGrand v-for="(item,index) in portList" :key="index" :baseInfo="item" :sTime="item.reportTime" :proList="properties"/>
 		</view>
@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import HeaderSearch from '@/components/crew/header-search';
+import HeaderSearch from '@/components/crew/header-search-report';
 import SunuiGrand from '@/components/crew/sunui-grand';
 
 export default {
@@ -273,7 +273,8 @@ export default {
 			import_time:"自动生成",
 		  }
 	  ],
-	  shipId:''
+	  shipId:'',
+	  range:['','']
     }
   },
   onLoad(options){
@@ -281,13 +282,18 @@ export default {
 	  this.getReportListByshipId(options.shipId);
   },
   methods: {
+	  getParmes(e){
+		  this.range=e.range;
+		  console.log(this.range);
+		  this.getReportListByshipId(this.shipId);
+	  },
 	  //获取进出港列表详情
 	  getReportListByshipId(shipId){
 		  const that = this;
 		  //组装参数
 		  let params = {'parentId': ''};
 		  //请求后台数据
-		  that.api.requestNoLoading('/sea/s/sr/c?ship_id='+shipId+'&begin_time=&end_time=',{},'GET')
+		  that.api.requestNoLoading('/sea/s/sr/c?ship_id='+shipId+'&begin_time='+this.range[0].replace("/", "-").replace("/", "-")+'&end_time='+this.range[1].replace("/", "-").replace("/", "-"),{},'GET')
 		  .then(res => {
 		  	console.log('>>进出港报告'+JSON.stringify(res));
 		  	that.portList = res.result;//变量名称参照更新后的文档

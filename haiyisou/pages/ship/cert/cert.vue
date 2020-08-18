@@ -1,8 +1,8 @@
 <template>
 	<view class="page-crew-proxy">
-		<!-- <HeaderSearch></HeaderSearch> -->
+		<HeaderSearch @getparams="getparams"></HeaderSearch>
 		<!-- <listNull v-if="resultNull"></listNull> -->
-		<view class="cert-list">
+		<view class="cert-list" style="padding: 110rpx 40rpx 40rpx;">
 			<view class="cert-item" v-for="(item, index) in gjList" :key="index" @click="toCertInfo('gj',item.certName)">
 				<view class="cert-title">
 					<view class="cert-title-title">
@@ -154,7 +154,7 @@
 	</view>
 </template>
 <script>
-	import HeaderSearch from '@/components/crew/header-search';
+	import HeaderSearch from '@/components/crew/header-cert';
 	import listNull from '@/components/search/list-null.vue';
 	export default {
 		components: {
@@ -163,13 +163,7 @@
 		},
 		data() {
 			return {
-				gjList: [{
-					title: '船舶国籍证书',
-					isuse: true,
-					certPrintNo: '32010219850526321X',
-					orgCode: '山东海事局',
-					expireDate: '2013/01/01-永久'
-				}],
+				gjList: [],
 				syqList:[],
 				gzcList:[],
 				gscList:[],
@@ -178,7 +172,8 @@
 				jyqList:[],
 				shipRegNo:'',
 				shipId:'',
-				resultNull:false
+				resultNull:false,
+				certStatus:''
 			}
 		},
 		onLoad(options) {
@@ -188,8 +183,14 @@
 			this.getjyZsList();
 		},
 		methods: {
+			getparams(e){
+				console.log('>>??'+e.zszt);
+				this.certStatus=e.zszt;
+				this.getZsList();
+				this.getjyZsList()
+			},
 			getZsList(){
-				this.api.request('/sea/s/c?ship_reg_no='+this.shipRegNo).then(res=>{
+				this.api.request('/sea/s/c?ship_reg_no='+this.shipRegNo+'&certStatus='+this.certStatus).then(res=>{
 					if(res.code!=200){
 						uni.showToast({
 							title: res.message,
@@ -207,7 +208,7 @@
 				})
 			},
 			getjyZsList(){
-				this.api.request('/sea/cj/cjCertificated?ship_id='+this.shipId).then(res=>{
+				this.api.request('/sea/cj/cjCertificated?ship_id='+this.shipId+'&cert_status='+this.certStatus).then(res=>{
 					console.log(JSON.stringify(res.result));
 					if(res.code!=200){
 						uni.showToast({
