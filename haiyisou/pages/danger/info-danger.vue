@@ -603,7 +603,7 @@ export default {
 
 <style lang="scss">
 
-.danger-info-header{padding: 30rpx 40rpx; position: sticky; width: 100%; background-color: #fff; top:80rpx; box-sizing: border-box; z-index: 10;
+.danger-info-header{padding: 30rpx 40rpx; position: sticky; width: 100%; background-color: #fff; top:0; box-sizing: border-box; z-index: 10;
 	.title{ font-size:36rpx; line-height: 48rpx; margin-bottom: 12rpx; font-weight: 400;
 		&::before{ content:'危'; display: inline-block; color:#e23232; border-radius:100%; text-align: center; background-color: #fdeeee; font-size:30rpx; margin-right: 20rpx; width: 48rpx; height:48rpx; font-weight: normal;}
 	}
@@ -642,7 +642,7 @@ export default {
 }
 
 @media screen and (max-width: 320px) {
-.danger-info-header{ top:105rpx;}
+
 }
 /* #ifdef  MP-WEIXIN */
 .danger-info-header{ top:0rpx; }

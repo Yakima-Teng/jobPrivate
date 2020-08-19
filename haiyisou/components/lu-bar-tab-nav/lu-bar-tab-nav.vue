@@ -259,7 +259,7 @@
 
 <style lang="scss">
 .lu-bar-tab-nav {	position: relative; width: 100%; background-color: #fff; 
-	.lu-tab-box { background-color: #ebf2fe; padding:0 40rpx;  position: sticky; width: 100%; top:80rpx + 180rpx; box-sizing: border-box;  z-index: 5;}
+	.lu-tab-box { background-color: #ebf2fe; padding:0 40rpx;  position: sticky; width: 100%; top:15rpx + 180rpx; box-sizing: border-box;  z-index: 5;}
 	.lu-bar-tab { overflow-x: scroll; display:flex; height:auto!important;
 		.lu-tab-item { display: inline-block; margin-right:40rpx; font-size:28rpx; white-space:nowrap; position: relative; height:98rpx; line-height:98rpx; 
 			&::after{content: ''; position: absolute; bottom: 0; left: 50%; margin-left: -24rpx; width: 48rpx; height:5rpx; border-radius:3rpx; background-color: #3882f9; display: none;}
@@ -277,7 +277,7 @@
   
 @media screen and (max-width: 320px) {
 .lu-bar-tab-nav {	
-	.lu-tab-box { top:80rpx + 216rpx; }
+	.lu-tab-box { top:190rpx; }
   }
 }
 /* #ifdef  MP-WEIXIN */

@@ -10,7 +10,7 @@
 			<view class="scrolltabs"  style="height: 300px;">
 				<scroll-view class="tabs" id="tab-bar" :scroll-x="true"
 				 :show-scrollbar="false" :scroll-into-view="scrollInto">
-					<view style="-webkit-flex-wrap: nowrap;flex-wrap: nowrap;display: flex;justify-content: flex-start;">
+					<view style="-webkit-flex-wrap: nowrap;flex-wrap: nowrap;display: flex;justify-content: center;">
 						<view v-for="(item, index) in itemTabs" :key="index" :class="tabsType == index?'font-title-crude':'font-title'"
 						 :data-index='index' @click="ontabtap">
 							{{item.title}}
@@ -65,10 +65,10 @@
 					</swiper-item> -->
 				</swiper>
 			</view>
-			<view class="uni-btn-v uni-row uni-border-none">
+			<view class="uni-btn-v uni-row uni-border-none" style="margin-top: -50rpx;">
 				<button form-type="submit" @click="toConfirmLogin" style="height: 96rpx;line-height: 96rpx;">确认登录</button>
 			</view>
-			<view class="header-content" style="color: #999999;justify-content: center;">
+			<view class="header-content" style="color: #999999;justify-content: center; margin-top: 10rpx;">
 				若你未有账号，请进入网页端进行<view class="link-section">注册</view>
 			</view>
 		</view>

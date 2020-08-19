@@ -84,16 +84,6 @@ swiper {
 	height: 70rpx;
 }
 
-.font-title-crude::after {
-	content: '';
-	position: absolute;
-	top: auto;
-	height: 7rpx;
-	width: 140rpx;
-	background-color: #3882f9;
-	margin-top: 55rpx;
-	margin-left: -150rpx;
-}
 
 
 

@@ -506,12 +506,8 @@
 	}
 
 	@media screen and (max-width: 320px) {
-		.search-tab {
-			padding-top: 40rpx;
-		}
-
 		.search-box {
-			margin-top: 106rpx + 82rpx;
+			margin-top: 106rpx + 2rpx;
 		}
 	}
 
