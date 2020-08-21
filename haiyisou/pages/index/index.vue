@@ -118,7 +118,7 @@
 						</view>
 						<view class="flex-column section-tighty">
 							<view class="section-item-title">行政处罚管理</view>
-							<view class="section-item-content">我是业务分析描述，我是业务分析描述，我是业务分析描述，我是业务分析描述</view>
+							<view class="section-item-content">我是业务分析描，我是业务分析描述</view>
 						</view>
 					</view>
 				</view>
@@ -340,7 +340,7 @@
 	
 	.flex-row-between {
 		display: flex;
-		justify-content: space-between;
+	
 		align-items: center;
     .data-stats-title{ margin-bottom: 30rpx;}
 	}

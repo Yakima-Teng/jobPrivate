@@ -110,7 +110,7 @@
  		.radio{ margin-left: 65rpx;}
  	}
 }
-.time-obtain{ padding: 37rpx 40rpx 30rpx; border-bottom: 10rpx solid #f0eff4;
+.time-obtain{ padding: 37rpx 40rpx 30rpx; 
  	.time-select{ color: #e5e5e5; display: flex; justify-content: space-between; line-height:76rpx; 
  		>text{ display: flex; justify-content: space-between; align-items: center; color:#000; border:1rpx solid #e5e5e5; background-color: #fafafa; box-sizing: border-box; width: 260rpx; height:76rpx; font-size: 28rpx; border-radius:10rpx; padding: 0 20rpx;
  			&::after{ content: ''; display:block; width: 12rpx; height: 12rpx; border-color: #000; border-style: solid; border-width: 0 1rpx 1rpx 0; transform: rotate(45deg);}
@@ -152,7 +152,7 @@
 		.radio{ width: 50%; display: inline-block; margin-bottom: 56rpx;}
 	}
 }
-.btn-box{ display: flex; padding: 30rpx 40rpx; position: fixed; bottom: 0; width: 88%; box-sizing: border-box; background-color: #fff;
+.btn-box{ display: flex; padding: 30rpx 40rpx; position: fixed; bottom: 0; width: 88%; box-sizing: border-box; background-color: #fff; border-top: 10rpx solid #f0eff4;
 	>button{width: 270rpx;
 		&[form-type="submit"]{color: #fff; background-color: #3882f9;}
 	}

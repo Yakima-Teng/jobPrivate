@@ -7,7 +7,7 @@
 				<view class="header-content">赶快登录办公吧！</view>
 			</view>
 
-			<view class="scrolltabs"  style="height: 300px;">
+			<view class="scrolltabs" >
 				<scroll-view class="tabs" id="tab-bar" :scroll-x="true"
 				 :show-scrollbar="false" :scroll-into-view="scrollInto">
 					<view style="-webkit-flex-wrap: nowrap;flex-wrap: nowrap;display: flex;justify-content: center;">
@@ -65,7 +65,7 @@
 					</swiper-item> -->
 				</swiper>
 			</view>
-			<view class="uni-btn-v uni-row uni-border-none" style="margin-top: -50rpx;">
+			<view class="uni-btn-v uni-row uni-border-none" >
 				<button form-type="submit" @click="toConfirmLogin" style="height: 96rpx;line-height: 96rpx;">确认登录</button>
 			</view>
 			<view class="header-content" style="color: #999999;justify-content: center; margin-top: 10rpx;">

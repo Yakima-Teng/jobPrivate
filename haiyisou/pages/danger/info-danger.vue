@@ -602,7 +602,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 .danger-info-header{padding: 30rpx 40rpx; position: sticky; width: 100%; background-color: #fff; top:0; box-sizing: border-box; z-index: 10;
 	.title{ font-size:36rpx; line-height: 48rpx; margin-bottom: 12rpx; font-weight: 400;
 		&::before{ content:'危'; display: inline-block; color:#e23232; border-radius:100%; text-align: center; background-color: #fdeeee; font-size:30rpx; margin-right: 20rpx; width: 48rpx; height:48rpx; font-weight: normal;}
@@ -611,7 +610,7 @@ export default {
 }
 .danger-info-list{ padding: 0 40rpx; font-size:32rpx; 
 	
-	.danger-title{ font-size:40rpx; font-weight: bold; margin: 60rpx 0;}
+	.danger-title{ font-size:40rpx; font-weight: bold; padding: 60rpx 0;}
 	.danger-info{ 
 		.info{ display: flex; justify-content: space-between; padding-bottom: 36rpx; margin-bottom: 36rpx; border-bottom:1rpx solid #e5e5e5; font-size: 32rpx;
 			.title{  opacity: .6;}
@@ -642,7 +641,9 @@ export default {
 }
 
 @media screen and (max-width: 320px) {
-
+.danger-info-list{
+	.danger-title{ padding: 0; margin: 80rpx 0 60rpx;}
+}
 }
 /* #ifdef  MP-WEIXIN */
 .danger-info-header{ top:0rpx; }
