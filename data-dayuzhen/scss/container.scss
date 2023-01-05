@@ -340,6 +340,14 @@ $main-title:#329df0;
     .second-list{ padding-left: 20px; color: $main-title; cursor: pointer; display: none;}
   }
   .module-center{ background: url('../images/bg-cctv-c.png') no-repeat center top; width: 1357px; height: 846px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; box-sizing: border-box; padding: 20px 0 0 20px;
-    .video-box{ width: 1144px; height: 737px; overflow: hidden;}
+    .main-video{ width: 1144px; height: 737px; overflow: hidden; position: relative;
+      .video-box{ width: 100%;}
+      .btn-close{ width: 30px; height: 30px; display: inline-block; background-color: rgba($color: #000000, $alpha: .4); position: absolute; right: 0; top: 0; cursor: pointer; z-index: 3;
+        &::before,
+        &::after{ content: '';display: inline-block; width: 16px; height: 2px; background-color: #fff; transform: rotate(45deg); position: absolute;left: 7px;
+          top: 14px;}
+          &::after{ transform: rotate(-45deg); }
+      }
+    }
   }
 }
