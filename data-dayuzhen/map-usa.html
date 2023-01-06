@@ -1,0 +1,113 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=map-usa
+-->
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%;  width: 300px;"></div>
+
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/jquery"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.1/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/china.js"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.1/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+var dom = document.getElementById('container');
+var myChart = echarts.init(dom, null, {
+  renderer: 'canvas',
+  useDirtyRect: false
+});
+var app = {};
+var ROOT_PATH = 'http://localhost:96/data-dayuzhen/';
+var option;
+
+myChart.showLoading();
+$.get(ROOT_PATH + 'map.json', function (usaJson) {
+  myChart.hideLoading();
+  echarts.registerMap('dyz', usaJson, {});
+  option = {
+    // geo:{
+    //   map:'dyz',
+      
+    // },
+    tooltip: {
+      trigger: 'item',
+      showDelay: 0,
+      transitionDuration: 0.2
+    },
+    series: [
+      {
+        name: '',
+        type: 'map',
+        roam: true,
+        map: 'dyz',
+        emphasis: {
+          label: {
+            show: true
+          }
+        },
+        data: [
+          { name: '桥沟', value: '桥沟桥沟桥沟桥沟桥沟桥沟桥沟桥沟桥沟' },
+          { name: '方山', value: 731449 },
+          { name: '上寨', value: 6553255 },
+          { name: '冢崮堆', value: 2949131 },
+          { name: '王拐', value: 38041430 },
+          { name: '寺郎腰', value: 5187582 },
+          { name: '林仙', value: 3590347 },
+          { name: '小横岭', value: 917092 },
+          { name: '陡岩沟', value: 632323 },
+          { name: '堂岭', value: 19317568 },
+          { name: '鹿岭', value: 9919945 },
+          { name: '曾庄', value: 1392313 },
+          { name: '反头岭', value: 1595728 },
+          { name: '大奎岭', value: 12875255 },
+          { name: '黄河小浪底水库', value: '所在地:槐荫 名称：雄白坪塘坝提灌站 容积(方): 500立方 修建单位: 国土局性质灌溉 建设时期: 2020年以后  状态:正常使用  灌面积: 160  备注:为雄白坪3座蓄水池的水源坝' },
+          { name: '草沟', value: 3074186 },
+          { name: '乱石', value: 2885905 },
+          { name: '仙口', value: 4380415 },
+          { name: '偏看', value: 4601893 },
+          { name: '槐姻', value: 1329192 },
+          { name: '王庄', value: 5884563 },
+          { name: '王坑', value: 6646144 },
+          { name: '栗园', value: 9883360 },
+          { name: '砚瓦河', value: 5379139 },
+          { name: '董岭', value: 2984926 },
+          { name: '东沟', value: 6021988 },
+          { name: '薛寨', value: 1005141 },
+          { name: '朝村', value: 1855525 },
+          { name: '陡沟', value: 2758931 },
+          { name: '三岔河', value: 1320718 },
+          { name: '', value: '1231231312' }
+        ]
+      }
+    ]
+  };
+  myChart.setOption(option);
+});
+
+if (option && typeof option === 'object') {
+  myChart.setOption(option);
+}
+
+window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>
