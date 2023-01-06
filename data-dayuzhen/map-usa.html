@@ -7,7 +7,7 @@
   <meta charset="utf-8">
 </head>
 <body style="height: 100%; margin: 0">
-  <div id="container" style="height: 100%; "></div>
+  <div id="container" style="height: 100%;  "></div>
 
   <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/jquery"></script>
   <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
@@ -36,11 +36,12 @@ var myChart = echarts.init(dom, null, {
   useDirtyRect: false
 });
 var app = {};
-var ROOT_PATH = 'http://seekav.xyz:96/data-dayuzhen/';
+var ROOT_PATH = 'http://localhost:96/data-dayuzhen/';
+// var ROOT_PATH = 'http://seekav.xyz:96/data-dayuzhen/';
 var option;
 
 myChart.showLoading();
-$.get(ROOT_PATH + 'map.json', function (usaJson) {
+$.get(ROOT_PATH + 'map-geo.geojson', function (usaJson) {
   myChart.hideLoading();
   echarts.registerMap('dyz', usaJson, {});
   option = {
