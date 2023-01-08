@@ -20,6 +20,27 @@ $main-color:#14bbee;
 $main-white:$color_f;
 $main-title:#329df0;
 
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px #031849;
+  border-radius: 8px;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #026be1;
+  -webkit-box-shadow: inset 0 0 6px #026be1;
+}
+/* 非激活窗口 */
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #0034a3;
+}
+
 // common
 .icon{ display: inline-block; background: no-repeat center; box-sizing: border-box;
   &.icon-ym{ 
@@ -50,7 +71,7 @@ $main-title:#329df0;
     &::after{ transform: rotate(-45deg); }
 }
 //page
-.page-index{ background: url('../images/bg-page.png') left top; width: 1920px; box-sizing: border-box; color: $main-font;}
+.page-index{ background: url('../images/bg-page.png') repeat left top; width: 1920px; box-sizing: border-box; color: $main-font; margin: auto;}
 .page-header{ background: url('../images/bg-head.png') no-repeat center top; width: 1877px; height: 93px; box-sizing: border-box; color: #dbefff; margin: auto; position: relative;
   h1{ text-align: center; font-size: 40px; padding-top: 30px; line-height: 1; text-shadow: 0 0 20px rgba($color: #259df1, $alpha: .6);}
   .btn-right-head{ position: absolute; right: 37px; bottom: 0; display: inline-block; background: url('../images/btn-header.png') no-repeat center; width: 300px; height: 39px; font-size: 20px; color: #329df0; text-align: center; line-height: 39px;
@@ -100,7 +121,7 @@ $main-title:#329df0;
       }
     }
   }
-  .list-cctv{ overflow-y: scroll; padding: 5px 18px 5px; text-align: left; 
+  .list-cctv{ padding: 5px 18px 5px; text-align: left; 
     .list{ position: relative; cursor: pointer;
       &::before{ display: none;}
       .frist-list,
@@ -237,7 +258,7 @@ $main-title:#329df0;
     }
   }
   .module-right{ @extend .module-left;
-    .main-hq{ padding: 15px; }
+    .main-hq{ padding: 15px; box-sizing: border-box; height: 820px; overflow-y: scroll; }
     .list-cctv{height: 780px;}
   }
 }
