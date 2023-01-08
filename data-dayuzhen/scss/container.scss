@@ -104,6 +104,7 @@ $main-title:#329df0;
     .info-box{ padding: 0 10px;
       .list{ background-color: #001d58; line-height: 33px; height: 33px; margin-bottom: 4px; box-sizing: border-box; display: flex; align-items: center;
         >p{ display: inline-block; line-height: 1; font-size: 16px; opacity: .8; width: 33.33%; @include singleline-truncate;
+         
           &.orange{ color: #ed9a0a;}
           &.green{ color: #17af1b;}
         }
@@ -116,9 +117,8 @@ $main-title:#329df0;
       >p{ width: 25%;}
     }
     .info-box{ 
-      .list{ background-color: rgba($color: #0134c1, $alpha: .4); height: 41px; margin-bottom: 3px; border:1px solid rgba($color: #1459e7, $alpha: .6);
-        >p{ width: 25%; vertical-align: middle; }
-      }
+      .list{ background-color: rgba($color: #0134c1, $alpha: .4); height: 41px; margin-bottom: 3px; border:1px solid rgba($color: #1459e7, $alpha: .6); }
+      p{ width: 25%; vertical-align: middle; }
     }
   }
   .list-cctv{ padding: 5px 18px 5px; text-align: left; 
@@ -176,6 +176,11 @@ $main-title:#329df0;
   .module-right-03{ @extend .module-left-02;
     .main{ margin:-14px 0 0 0;
       .main-info{ height: 181px; overflow: hidden;}
+      .list{ 
+        >p{ 
+          &:first-child{ text-align: left;}
+        }
+      }
     }
   }
   .module-center{ background: url('../images/map.png') no-repeat center; width: 1120px; height:814px; position: relative;
@@ -217,8 +222,10 @@ $main-title:#329df0;
     .info-huoqing{ margin-left: 5px; overflow: hidden;}
     .sep{ margin: 32px 0 22px;}
     .new-hq{ 
+      .list-title>p{ width: 33.33%;}
       >h3{  margin-bottom: 10px;}
       .main-info{ height: 173px; overflow: hidden;
+        >p{width: 33.33%;}
         p:first-child{ font-size: 14px; line-height: 1.2; margin-top: 2px;}
         p:last-child{ color: #ff5050;}
       }
@@ -271,6 +278,7 @@ $main-title:#329df0;
     .main-info{ height: 145px; overflow: hidden;}
     .info-box{ padding: 0;
       .list{ height: 34px; line-height: 26px;
+        >p:nth-child(2){ text-align: left;}
         >p:nth-last-child(2){ color: #00b544;}
       }
     }
