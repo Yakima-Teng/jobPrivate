@@ -26,13 +26,13 @@
 			<section class="list-box">
 				<dl class="list">
 					<dt class="frist-list">大峪镇疫情防控隔离点(13)</dt>
-					<dd class="second-list">一楼东</dd>
-					<dd class="second-list">二楼东</dd>
-					<dd class="second-list">一楼东</dd>
+					<dd class="second-list" onclick="cctvShow(0)">一楼东</dd>
+					<dd class="second-list" onclick="cctvShow(1)">二楼东</dd>
+					<dd class="second-list" onclick="cctvShow(2)">一楼东</dd>
 				</dl>
 				<dl class="list">
 					<dt class="frist-list">桥沟村民委员会(13)</dt>
-					<dd class="second-list">一楼东</dd>
+					<dd class="second-list" onclick="cctvShow(3)">一楼东</dd>
 					<dd class="second-list">二楼东</dd>
 					<dd class="second-list">一楼东</dd>
 				</dl>
@@ -94,6 +94,40 @@
 <!--/page-index-->
 
 <script src="js/base.js"></script>
+<script>
+function cctvShow(num){
+$(this).addClass('cur');
+$('.video-box')
+	.eq(num)
+	.addClass('show')
+	.show();
+// let listCurNum = $(this).parents('.list-box').find('cur').length;
+let videoLenght = $('.video-box.show').length;
+// console.log(listCurNum);
+/* if( videoLenght > 4, videoLenght < 10){
+	$('.video-box.show')
+		.css({
+			width:'356px'
 
+		}).parent().addClass('threelist').removeClass('twolist');
+}else*/
+if( videoLenght == 1 ){
+	$('.video-box.show')
+		.css({
+			width:'100%',
+			margin:'0'
+		});
+}
+if( videoLenght >= 2 ){
+	$('.video-box.show')
+		.css({
+			width:'550px',
+		})
+}
+
+
+}
+
+</script>
 </body>
 </html>
