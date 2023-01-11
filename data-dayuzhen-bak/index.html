@@ -24,15 +24,46 @@
 		<section class="module-left">
 			<div class="module-left-01">
 				<h2 class="module-title">综治事件上报</h2>
-				<div class="main"><img src="./images/img-01.png" alt=""></div>
+				<section class="main-toyear-sb">
+					<header class="module-title-01">今年上报数</header>
+					<div class="num-info" id="dataNums-01"></div>
+					<section class="bili-box">
+						<div id="container-sb"></div>
+						<footer><span class="title">治安类</span><span class="title">环境类</span><span class="title">道路类</span><span class="title">其他类</span></footer>
+					</section>
+				</section>
 			</div>
 			<div class="module-left-02">
 				<h2 class="module-title">矛盾调解事件</h2>
-				<div class="main"><img src="./images/img-02.png" alt=""></div>
+				<section class="main-event-tj">
+					<div class="baifenlv"></div>
+					<div class="info">
+						<dl>
+							<dt>今年上报数量</dt>
+							<dd class="orange">3505</dd>
+						</dl>
+						<dl>
+							<dt>已处理数量</dt>
+							<dd class="green">3168</dd>
+						</dl>
+					</div>
+				</section>
 			</div>
 			<div class="module-left-03">
 				<h2 class="module-title">火情告警信息</h2>
-				<div class="main"><img src="./images/img-03.png" alt=""></div>
+				<h3 class="module-son-title">今年</h3>
+				<div class="main-fire-info">
+					<dl class="fire-info-box">
+						<dt class="info">
+							<P>告警次数<br/><span>324</span>次</P>
+							<P>研判处置<br/><span>310</span>次</P>
+							<P>真实火情<br/><span>13</span>次</P>
+						</dt>
+						<dd class="echarts-box">
+							<div id="container-hq"></div>
+						</dd>
+					</dl>
+				</div>
 			</div>
 		</section>
 		<!--/module-left-->
@@ -153,8 +184,458 @@
 	<!--/page-footer-->
 </section>
 <!--/page-index-->
-
+<script src="js/num.js"></script>
+<script src="js/num-gun.js"></script>
+<script src="./js/echarts.js"></script>
 <script src="js/base.js"></script>
+<!--上报数字滚动-->
+<script>
+$("#dataNums-01").rollNumDaq({
+  deVal:671200,
+  className:'dataNums'
+});
+</script>
+<!--上报数饼图-->
+<script type="text/javascript">
+	var dom = document.getElementById('container-sb');
+	var myChart = echarts.init(dom, null, {
+		renderer: 'canvas',
+		useDirtyRect: false
+	});
+	var app = {};
+	
+	var option;
 
+	option = {
+	title: [{
+			text: '{a|' + 26 + '%}',
+			x: '17',
+			y: 'center',
+			textStyle: {
+					rich: {
+							a: {
+									fontSize:16,
+									color: '#fff',
+							}
+					},
+			},
+	},{
+			text: '{a|' + 42 + '%}',
+			x: '97',
+			y: 'center',
+			textStyle: {
+					rich: {
+							a: {
+									fontSize:16,
+									color: '#fff',
+							},
+							b: {
+									fontSize: 32,
+									color: '#fff',
+							},
+					},
+			},
+	},{
+			text: '{a|' + 18 + '%}',
+			x: '182',
+			y: 'center',
+			textStyle: {
+					rich: {
+							a: {
+									fontSize:16,
+									color: '#fff',
+							},
+							b: {
+									fontSize: 32,
+									color: '#fff',
+							},
+					},
+			},
+	},{
+			text: '{a|' + 14 + '%}',
+			x: '259',
+			y: 'center',
+			textStyle: {
+					rich: {
+							a: {
+									fontSize:16,
+									color: '#fff',
+							},
+							b: {
+									fontSize: 32,
+									color: '#fff',
+							},
+					},
+			},
+	},],
+	series: [
+			{
+					type: 'pie',
+					radius: [21, 30],
+					center:[38,'50%'],
+					silent: true,
+					clockwise: false,
+					z: 1,
+					zlevel: 0,
+					label: {
+							show: false,
+					},
+					itemStyle: {
+							color: '#1459e7',
+					},
+					data: [100],
+			},
+			{
+					type: 'pie',
+					radius: [21, 35],
+					center:[38,'50%'],
+					silent: true,
+					clockwise: false,
+					z: 1,
+					zlevel: 0,
+					label: {
+							show: false,
+					},
+					data: [
+							{
+									value: 26.6,
+									name: '',
+									itemStyle: {
+											normal: {
+													color: '#ff6161',
+											},
+									},
+							},
+							{
+									value: 100 - 26.6,
+									name: '',
+									itemStyle: {
+											normal: {
+													color: 'rgba(0,0,0,0)',
+											},
+									},
+							},
+					],
+			},{
+				type: 'pie',
+				radius: [21, 30],
+				center:[118,'50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				itemStyle: {
+						color: '#1459e7',
+				},
+				data: [100],
+			},
+			{
+				type: 'pie',
+				radius: [21, 35],
+				center:[118,'50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				data: [
+						{
+								value: 42,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: '#2acc6f',
+										},
+								},
+						},
+						{
+								value: 100 - 42,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: 'rgba(0,0,0,0)',
+										},
+								},
+						},
+				],
+			},{
+				type: 'pie',
+				radius: [21, 30],
+				center:[200,'50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				itemStyle: {
+						color: '#1459e7',
+				},
+				data: [100],
+			},
+			{
+				type: 'pie',
+				radius: [21, 35],
+				center:[200,'50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				data: [
+						{
+								value: 18,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: '#fcae49',
+										},
+								},
+						},
+						{
+								value: 100 - 18,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: 'rgba(0,0,0,0)',
+										},
+								},
+						},
+				],
+			},{
+				type: 'pie',
+				radius: [21, 30],
+				center:[278,'50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				itemStyle: {
+						color: '#1459e7',
+				},
+				data: [100],
+			},
+			{
+				type: 'pie',
+				radius: [21, 35],
+				center:[278,'50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				data: [
+						{
+								value: 14,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: '#00d2dd',
+										},
+								},
+						},
+						{
+								value: 100 - 14,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: 'rgba(0,0,0,0)',
+										},
+								},
+						},
+				],
+			}
+			
+
+	],
+};
+
+
+	if (option && typeof option === 'object') {
+		myChart.setOption(option);
+	}
+
+	window.addEventListener('resize', myChart.resize);
+</script>
+<!--火情告警信息-->
+<script type="text/javascript">
+	var dom = document.getElementById('container-hq');
+	var myChart = echarts.init(dom, 'dark', {
+		renderer: 'canvas',
+		useDirtyRect: false
+	});
+	var app = {};
+	
+	var option;
+
+	option = {
+backgroundColor:'rgba(255,255,255,0)',
+series: [
+		{
+				type: 'pie',
+				radius: [21, 30],
+				center:['50%','50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				itemStyle: {
+						color: '#0d2249',
+				},
+				data: [100],
+		},
+		{
+				type: 'pie',
+				radius: [21, 30],
+				center:['50%','50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				data: [
+						{
+								value: 26.6,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: '#ff6161',
+										},
+								},
+						},
+						{
+								value: 100 - 26.6,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: 'rgba(0,0,0,0)',
+										},
+								},
+						},
+				],
+		},{
+			type: 'pie',
+			radius: [36, 45],
+			center:['50%','50%'],
+			silent: true,
+			clockwise: false,
+			z: 1,
+			zlevel: 0,
+			label: {
+					show: false,
+			},
+			itemStyle: {
+					color: '#0d2249',
+			},
+			data: [100],
+		},
+		{
+			type: 'pie',
+			radius: [36, 45],
+			center:['50%','50%'],
+			silent: true,
+			clockwise: false,
+			z: 1,
+			zlevel: 0,
+			label: {
+					show: false,
+			},
+			data: [
+					{
+							value: 42,
+							name: '',
+							itemStyle: {
+									normal: {
+											color: '#1459e7',
+									},
+							},
+					},
+					{
+							value: 100 - 42,
+							name: '',
+							itemStyle: {
+									normal: {
+											color: 'rgba(0,0,0,0)',
+									},
+							},
+					},
+			],
+		},{
+			type: 'pie',
+			radius: [51, 60],
+			center:['50%','50%'],
+			silent: true,
+			clockwise: false,
+			z: 1,
+			zlevel: 0,
+			label: {
+					show: false,
+			},
+			itemStyle: {
+					color: '#0d2249',
+			},
+			data: [100],
+		},
+		{
+			type: 'pie',
+			radius: [51, 60],
+			center:['50%','50%'],
+			silent: true,
+			clockwise: false,
+			z: 1,
+			zlevel: 0,
+			label: {
+					show: false,
+			},
+			data: [
+					{
+							value: 18,
+							name: '',
+							itemStyle: {
+									normal: {
+											color: '#fcae49',
+									},
+							},
+					},
+					{
+							value: 100 - 18,
+							name: '',
+							itemStyle: {
+									normal: {
+											color: 'rgba(0,0,0,0)',
+									},
+							},
+					},
+			],
+		}
+		
+
+],
+};
+
+	if (option && typeof option === 'object') {
+		myChart.setOption(option);
+	}
+
+	window.addEventListener('resize', myChart.resize);
+</script>
 </body>
 </html>
