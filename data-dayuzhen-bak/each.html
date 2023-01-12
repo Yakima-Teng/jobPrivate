@@ -28,7 +28,20 @@
 			</section>
 			<section class="module-left-02">
 				<h2 class="module-title-02">人口总体情况</h2>
-				<div class="main"><img src="./images/img-21.png" alt=""></div>
+				<section class="main-pople-info">
+					<dl class="pople-list">
+						<dt class="bing"><div id="container-rkbl"></div></dt>
+						<dd class="txt">人口比例</dd>
+					</dl>
+					<dl class="pople-list">
+						<dt class="bing"><div id="container-nlbl"></div></dt>
+						<dd class="txt">男女比例</dd>
+					</dl>
+					<dl class="pople-list">
+						<dt class="bing"><div id="container-wgbl"></div></dt>
+						<dd class="txt">外出务工</dd>
+					</dl>
+				</section>
 			</section>
 			<section class="module-left-03">
 				<h2 class="module-title-02">平安乡村</h2>
@@ -154,8 +167,267 @@
 	<!--/page-footer-->
 </section>
 <!--/page-index-->
-
+<script src="js/num.js"></script>
+<script src="js/num-gun.js"></script>
+<script src="./js/echarts.min.js"></script>
 <script src="js/base.js"></script>
+<!--人口总体情况-人口比例-->
+<script type="text/javascript">
+	var dom = document.getElementById('container-rkbl');
+	var myChart = echarts.init(dom, null, {
+		renderer: 'canvas',
+		useDirtyRect: false
+	});
+	var app = {};
+	
+	var option;
 
+	 option = {
+
+			color: [
+				"#4887fe",
+				"#fcae49",
+				"#ff6161"
+			],
+			series: [
+				{
+					name: "Nightingale Chart",
+					type: "pie",
+					radius: ["30", "50"],
+					center: ["50%", "50%"],
+					clockwise: false,
+					roseType: "area",
+					itemStyle: {
+						borderRadius: 0
+					},
+					data: [
+						{
+							value: 30,
+							name: "0-18岁",
+							label: {
+								color: "#4887fe"
+							}
+						},
+						{
+							value: 40,
+							name: "18-60岁",
+							label: {
+								color: "#fcae49"
+							},
+							color: "#fcae49"
+						},
+						{
+							value: 48,
+							name: "60岁以上",
+							label: {
+								color: "#ff6161"
+							},
+							color: "#ff6161"
+						}
+					],
+					labelLine: {
+				normal: {
+						length: 10,
+						length2: 10,
+						lineStyle: {
+						}
+				}
+		},
+					label: {
+						formatter: function(params) {
+							return `${params.percent}%\n{normal|${params.name}}`
+						},
+						rich: {
+							normal: {
+								//   color: "#8A8A8A",
+								fontSize: 10,
+								align: "left"
+							},
+							value: {
+								fontSize: 10,
+								//   color: "#8A8A8A",
+							}
+						}
+					}
+				}
+			]
+		}
+
+	if (option && typeof option === 'object') {
+		myChart.setOption(option);
+	}
+
+	window.addEventListener('resize', myChart.resize);
+</script>
+<!--人口总体情况-男女比例-->
+<script type="text/javascript">
+	var dom = document.getElementById('container-nlbl');
+	var myChart = echarts.init(dom, null, {
+		renderer: 'canvas',
+		useDirtyRect: false
+	});
+	var app = {};
+	
+	var option;
+
+	option = {
+	title: [{
+			text: '{b|男}\n{a|' + 53.6 + '%}',
+			x: 'center',
+			y: 'center',
+			textStyle: {
+					rich: {
+							a: {
+									fontSize:20,
+									color: '#fff',
+							},
+							b: {
+									fontSize:16,
+									color: '#2acc6f',
+							}
+					},
+			},
+	}],
+	series: [
+			{
+					type: 'pie',
+					radius: [40, 58],
+					center:['50%','50%'],
+					silent: true,
+					
+					z: 1,
+					zlevel: 0,
+					label: {
+							show: false,
+					},
+					itemStyle: {
+							color: '#215a85',
+					},
+					data: [100],
+			},
+			{
+					type: 'pie',
+					radius: [40, 58],
+					center:['50%','50%'],
+					silent: true,
+					
+					z: 1,
+					zlevel: 0,
+					label: {
+							show: false,
+					},
+					data: [
+							{
+									value:53.6,
+									name: '',
+									itemStyle: {
+											normal: {
+													color: '#2acc6f',
+											},
+									},
+							},
+							{
+									value: 100 - 53.6,
+									name: '',
+									itemStyle: {
+											normal: {
+													color: 'rgba(0,0,0,0)',
+											},
+									},
+							},
+					],
+			}],
+};
+
+
+	if (option && typeof option === 'object') {
+		myChart.setOption(option);
+	}
+
+	window.addEventListener('resize', myChart.resize);
+</script>
+<!--人口总体情况-外出务工-->
+<script type="text/javascript">
+	var dom = document.getElementById('container-wgbl');
+	var myChart = echarts.init(dom, null, {
+		renderer: 'canvas',
+		useDirtyRect: false
+	});
+	var app = {};
+	
+	var option;
+
+	option = {
+	title: [{
+			text: '{a|' + 26 + '%}',
+			x: 'center',
+			y: 'center',
+			textStyle: {
+					rich: {
+							a: {
+									fontSize:22,
+									color: '#fff',
+							}
+					},
+			},
+	}],
+	series: [
+			{
+					type: 'pie',
+					radius: [40, 58],
+					center:['50%','50%'],
+					silent: true,
+					
+					z: 1,
+					zlevel: 0,
+					label: {
+							show: false,
+					},
+					itemStyle: {
+							color: '#215a85',
+					},
+					data: [100],
+			},
+			{
+					type: 'pie',
+					radius: [40, 58],
+					center:['50%','50%'],
+					silent: true,
+					
+					z: 1,
+					zlevel: 0,
+					label: {
+							show: false,
+					},
+					data: [
+							{
+									value: 26.6,
+									name: '',
+									itemStyle: {
+											normal: {
+													color: '#ff6161',
+											},
+									},
+							},
+							{
+									value: 100 - 26.6,
+									name: '',
+									itemStyle: {
+											normal: {
+													color: 'rgba(0,0,0,0)',
+											},
+									},
+							},
+					],
+			}],
+};
+
+
+	if (option && typeof option === 'object') {
+		myChart.setOption(option);
+	}
+
+	window.addEventListener('resize', myChart.resize);
+</script>
 </body>
 </html>

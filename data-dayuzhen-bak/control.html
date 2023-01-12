@@ -24,7 +24,13 @@
 		<section class="module-left">
 			<section class="module-left-01">
 				<h2 class="module-title">综治执法统计</h2>
-				<div class="main"><img src="./images/img-09.png" alt=""></div>
+				<section class="main-complex">
+					<div class="complex-echert">
+						<div id="container-zftj"></div>
+					</div>
+					<div class="complex-num"></div>
+					<div class="complex-info"></div>
+				</section>
 			</section>
 			<section class="module-left-02">
 				<h2 class="module-title">随手拍事件</h2>
@@ -222,7 +228,13 @@
 		<section class="module-right">
 			<section class="module-right-01">
 				<h2 class="module-title">综治事件上报</h2>
-				<div class="main"><img src="./images/img-12.png" alt=""></div>
+				<section class="main-toyear-sb">
+					<div class="num-info" id="dataNums-01"></div>
+					<section class="bili-box">
+						<div id="container-sb"></div>
+						<footer><span class="title">治安类</span><span class="title">环境类</span><span class="title">道路类</span><span class="title">其他类</span></footer>
+					</section>
+				</section>
 			</section>
 			<section class="module-right-02">
 				<h2 class="module-title">平安乡镇</h2>
@@ -292,7 +304,459 @@
 </section>
 <!--/page-index-->
 
+<script src="js/num.js"></script>
+<script src="js/num-gun.js"></script>
+<script src="js/echarts.min.js"></script>
 <script src="js/base.js"></script>
+<!--上报数字滚动-->
+<script>
+$("#dataNums-01").rollNumDaq({
+	deVal:671200,
+	className:'dataNums'
+});
+</script>
+<!--上报数饼图-->
+<script type="text/javascript">
+	var dom = document.getElementById('container-sb');
+	var myChart = echarts.init(dom, null, {
+		renderer: 'canvas',
+		useDirtyRect: false
+	});
+	var app = {};
+	
+	var option;
 
+	option = {
+	title: [{
+			text: '{a|' + 26 + '%}',
+			x: '17',
+			y: 'center',
+			textStyle: {
+					rich: {
+							a: {
+									fontSize:16,
+									color: '#fff',
+							}
+					},
+			},
+	},{
+			text: '{a|' + 42 + '%}',
+			x: '97',
+			y: 'center',
+			textStyle: {
+					rich: {
+							a: {
+									fontSize:16,
+									color: '#fff',
+							},
+							b: {
+									fontSize: 32,
+									color: '#fff',
+							},
+					},
+			},
+	},{
+			text: '{a|' + 18 + '%}',
+			x: '182',
+			y: 'center',
+			textStyle: {
+					rich: {
+							a: {
+									fontSize:16,
+									color: '#fff',
+							},
+							b: {
+									fontSize: 32,
+									color: '#fff',
+							},
+					},
+			},
+	},{
+			text: '{a|' + 14 + '%}',
+			x: '259',
+			y: 'center',
+			textStyle: {
+					rich: {
+							a: {
+									fontSize:16,
+									color: '#fff',
+							},
+							b: {
+									fontSize: 32,
+									color: '#fff',
+							},
+					},
+			},
+	},],
+	series: [
+			{
+					type: 'pie',
+					radius: [21, 30],
+					center:[38,'50%'],
+					silent: true,
+					clockwise: false,
+					z: 1,
+					zlevel: 0,
+					label: {
+							show: false,
+					},
+					itemStyle: {
+							color: '#1459e7',
+					},
+					data: [100],
+			},
+			{
+					type: 'pie',
+					radius: [21, 35],
+					center:[38,'50%'],
+					silent: true,
+					clockwise: false,
+					z: 1,
+					zlevel: 0,
+					label: {
+							show: false,
+					},
+					data: [
+							{
+									value: 26.6,
+									name: '',
+									itemStyle: {
+											normal: {
+													color: '#ff6161',
+											},
+									},
+							},
+							{
+									value: 100 - 26.6,
+									name: '',
+									itemStyle: {
+											normal: {
+													color: 'rgba(0,0,0,0)',
+											},
+									},
+							},
+					],
+			},{
+				type: 'pie',
+				radius: [21, 30],
+				center:[118,'50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				itemStyle: {
+						color: '#1459e7',
+				},
+				data: [100],
+			},
+			{
+				type: 'pie',
+				radius: [21, 35],
+				center:[118,'50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				data: [
+						{
+								value: 42,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: '#2acc6f',
+										},
+								},
+						},
+						{
+								value: 100 - 42,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: 'rgba(0,0,0,0)',
+										},
+								},
+						},
+				],
+			},{
+				type: 'pie',
+				radius: [21, 30],
+				center:[200,'50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				itemStyle: {
+						color: '#1459e7',
+				},
+				data: [100],
+			},
+			{
+				type: 'pie',
+				radius: [21, 35],
+				center:[200,'50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				data: [
+						{
+								value: 18,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: '#fcae49',
+										},
+								},
+						},
+						{
+								value: 100 - 18,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: 'rgba(0,0,0,0)',
+										},
+								},
+						},
+				],
+			},{
+				type: 'pie',
+				radius: [21, 30],
+				center:[278,'50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				itemStyle: {
+						color: '#1459e7',
+				},
+				data: [100],
+			},
+			{
+				type: 'pie',
+				radius: [21, 35],
+				center:[278,'50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				data: [
+						{
+								value: 14,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: '#00d2dd',
+										},
+								},
+						},
+						{
+								value: 100 - 14,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: 'rgba(0,0,0,0)',
+										},
+								},
+						},
+				],
+			}
+			
+
+	],
+};
+
+
+	if (option && typeof option === 'object') {
+		myChart.setOption(option);
+	}
+
+	window.addEventListener('resize', myChart.resize);
+</script>
+<!--综治执法统计-->
+<script type="text/javascript">
+	var dom = document.getElementById('container-zftj');
+	var myChart = echarts.init(dom, null, {
+		renderer: 'canvas',
+		useDirtyRect: false
+	});
+	var app = {};
+	let config = {
+    color: ['#00b8f4', '#00335b'],
+    data: [
+        {
+            name: '',
+            value: 77,
+        },
+        {
+            name: '',
+            value: 23,
+        },
+    ],
+
+};
+let num = config.data[0].value;;
+let unit = '%';
+let title = '处置率';
+option = {
+
+    color: [
+        {
+            type: 'linear',
+            x: 0,
+            y: 0,
+            x2: 1,
+            y2: 1,
+            colorStops: [
+                {
+                    offset: 0,
+                    color: config.color[0],
+                },
+                {
+                    offset: 1,
+                    color: config.color[1],
+                },
+            ],
+            global: false,
+        },
+        '#00335b',
+    ],
+    title: Object.assign(
+        {
+            text: '{a|' + num + '}{b|' + unit + '}\n{c|' + title + '}',
+
+            x: 'center',
+            y: 'center',
+            textStyle: {
+                rich: {
+                    a: {
+                        fontSize:35,
+                        color: '#00ffcc',
+                        fontWeight: '900',
+                       
+                    },
+                    b: {
+                        fontSize: 35,
+                        color: '#00ffcc',
+                        fontWeight: '500',
+                    },
+                    c: {
+                        fontSize: 14,
+                        color: 'rgba(255,255,255,1)',
+                        padding: [10, 0],
+                    },
+                },
+            },
+            subtext: '',
+            top: '70',
+            left: '49.5%',
+            textAlign: 'center',
+        },
+        config.title
+    ),
+    series: [
+        //环形
+        {
+            name: '',
+            type: 'pie',
+            radius: [70, 98],
+            center: ['50%', '50%'],
+            clockwise: false,
+            // hoverAnimation: false,//4.x版本使用取消悬浮放大
+            emphasis: {
+                //5.x版本使用取消悬浮放大
+                scale: false,
+                label: {
+                    show: false /* 5.x版本是label.emphasis */,
+                },
+            },
+            // label: { 4.x版本是label.emphasis
+            //     // normal: {
+            //         show: false,
+            //     // },
+            //     emphasis: {
+            //         show: false,
+            //     },
+            // },
+            zlevel: 1,
+            labelLine: {
+                // normal: {/* 5.x版本中去掉了normal */
+                show: false,
+                // },
+            },
+            data: config.data,
+        },
+        //环形分割线
+        {
+            name: '分割线',
+            type: 'gauge',
+            radius: '108', //配合splitLine里的length一起调
+            clockwise: true,
+            startAngle: '90',
+            center: ['50%', '50%'],
+            endAngle: '-269.9999',
+            splitNumber: 80,
+            zlevel: 5,
+            
+            detail: {
+                offsetCenter: [10, 20],
+                formatter: ' ',
+            },
+            axisLine: {
+                lineStyle: {
+                    width: 0,
+                    opacity: 0,
+                },
+            },
+            axisTick: {
+                show: false,
+            },
+            markArea: {
+                itemStyle: {
+                    color: '#006666',
+                },
+            },
+            splitLine: {
+                show: true,
+                length: 28, //配合radius一起调
+                padding: [0, 0, 0],
+                clockwise: false,
+                lineStyle: {
+                    color: '#121d43',
+                    width: 2,
+                },
+            },
+            axisLabel: {
+                show: false,
+            },
+        },
+    ],
+};
+
+
+
+	if (option && typeof option === 'object') {
+		myChart.setOption(option);
+	}
+
+	window.addEventListener('resize', myChart.resize);
+</script>
 </body>
 </html>

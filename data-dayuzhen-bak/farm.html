@@ -23,7 +23,21 @@
 		<!--module-left-->
 		<section class="module-left">
 			<h2 class="module-title">火情告警</h2>
-			<div class="info-huoqing"><img src="./images/img-06.png" alt=""></div>
+			<section class="info-huoqing">
+				<header class="module-title-01">今年火情告警</header>
+				<dl class="fire-info-box">
+					
+					<dd class="echarts-box">
+						<div id="container-hq"></div>
+					</dd>
+					<dt class="info">
+						<P>告警次数<br/><span>324</span>次</P>
+						<P>研判处置<br/><span>310</span>次</P>
+						<P>真实火情<br/><span>13</span>次</P>
+					</dt>
+				</dl>
+				<div id="container-zx"></div>
+			</section>
 			<div class="sep"></div>
 			<section class="new-hq list-common-style">
 				<h3>最新火情</h3>
@@ -355,7 +369,176 @@
 	<div class="video-box"><img src="./images/img-cctv.jpg" alt="" width="100%"></div>
 </section>
 <!--/mask-->
+<script src="js/num.js"></script>
+<script src="js/num-gun.js"></script>
+<script src="./js/echarts.min.js"></script>
 <script src="js/base.js"></script>
+<!--火情告警信息-->
+<script type="text/javascript">
+	var dom = document.getElementById('container-hq');
+	var myChart = echarts.init(dom, 'dark', {
+		renderer: 'canvas',
+		useDirtyRect: false
+	});
+	var app = {};
+	
+	var option;
 
+	option = {
+backgroundColor:'rgba(255,255,255,0)',
+series: [
+		{
+				type: 'pie',
+				radius: [21, 30],
+				center:['50%','50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				itemStyle: {
+						color: '#0d2249',
+				},
+				data: [100],
+		},
+		{
+				type: 'pie',
+				radius: [21, 30],
+				center:['50%','50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				data: [
+						{
+								value: 26.6,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: '#ff6161',
+										},
+								},
+						},
+						{
+								value: 100 - 26.6,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: 'rgba(0,0,0,0)',
+										},
+								},
+						},
+				],
+		},{
+			type: 'pie',
+			radius: [36, 45],
+			center:['50%','50%'],
+			silent: true,
+			clockwise: false,
+			z: 1,
+			zlevel: 0,
+			label: {
+					show: false,
+			},
+			itemStyle: {
+					color: '#0d2249',
+			},
+			data: [100],
+		},
+		{
+			type: 'pie',
+			radius: [36, 45],
+			center:['50%','50%'],
+			silent: true,
+			clockwise: false,
+			z: 1,
+			zlevel: 0,
+			label: {
+					show: false,
+			},
+			data: [
+					{
+							value: 42,
+							name: '',
+							itemStyle: {
+									normal: {
+											color: '#1459e7',
+									},
+							},
+					},
+					{
+							value: 100 - 42,
+							name: '',
+							itemStyle: {
+									normal: {
+											color: 'rgba(0,0,0,0)',
+									},
+							},
+					},
+			],
+		},{
+			type: 'pie',
+			radius: [51, 60],
+			center:['50%','50%'],
+			silent: true,
+			clockwise: false,
+			z: 1,
+			zlevel: 0,
+			label: {
+					show: false,
+			},
+			itemStyle: {
+					color: '#0d2249',
+			},
+			data: [100],
+		},
+		{
+			type: 'pie',
+			radius: [51, 60],
+			center:['50%','50%'],
+			silent: true,
+			clockwise: false,
+			z: 1,
+			zlevel: 0,
+			label: {
+					show: false,
+			},
+			data: [
+					{
+							value: 18,
+							name: '',
+							itemStyle: {
+									normal: {
+											color: '#fcae49',
+									},
+							},
+					},
+					{
+							value: 100 - 18,
+							name: '',
+							itemStyle: {
+									normal: {
+											color: 'rgba(0,0,0,0)',
+									},
+							},
+					},
+			],
+		}
+		
+
+],
+};
+
+	if (option && typeof option === 'object') {
+		myChart.setOption(option);
+	}
+
+	window.addEventListener('resize', myChart.resize);
+</script>
 </body>
 </html>

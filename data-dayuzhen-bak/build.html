@@ -24,7 +24,9 @@
 		<section class="module-left">
 			<section class="module-left-01">
 				<h2 class="module-title">党组织基础数据</h2>
-				<div class="main"><img src="./images/img-14.png" alt=""></div>
+				<section class="main-jcsj">
+					<div id="container-jcsj"></div>
+				</section>
 			</section>
 			<section class="module-left-02">
 				<h2 class="module-title">党员信息</h2>
@@ -125,8 +127,118 @@
 	<!--/page-footer-->
 </section>
 <!--/page-index-->
-
+<script src="js/num.js"></script>
+<script src="js/num-gun.js"></script>
+<script src="js/echarts.min.js"></script>
 <script src="js/base.js"></script>
+<!--党组织基础数据-->
+<script type="text/javascript">
+	var dom = document.getElementById('container-jcsj');
+	var myChart = echarts.init(dom, null, {
+		renderer: 'canvas',
+		useDirtyRect: false
+	});
+	var app = {};
+	
+	var option;
 
+	let bgColor = 'rgba(0,0,0,0)';
+let title = '党组织';
+let color =['#f25d5f','#1355dc','#fcad49'];
+let echartData = [{
+			name: "支部数",
+			value: "30"
+	},
+	{
+			name: "党委数",
+			value: "5"
+	},
+	{
+			name: "总支数",
+			value: "1"
+	}
+];
+
+let formatNumber = function(num) {
+	let reg = /(?=(\B)(\d{3})+$)/g;
+	return num.toString().replace(reg, ',');
+}
+let total = echartData.reduce((a, b) => {
+	return a + b.value * 1
+}, 0);
+
+option = {
+backgroundColor: bgColor,
+color: color,
+tooltip: {
+		trigger: 'item'
+},
+title: [{
+		text: '{val|' + formatNumber(total) + '}\n{name|' + title + '}',
+		top: 'center',
+		left: 'center',
+		textStyle: {
+				rich: {
+						name: {
+								fontSize: 22,
+								fontWeight: 'normal',
+								color: '#fff',
+								padding: [10, 0]
+						},
+						val: {
+								fontSize: 60,
+								fontWeight: 'bolder',
+								color: '#fff',
+						}
+				}
+		}
+}],
+series: [{
+		type: 'pie',
+	clockwise: false,
+		radius: ['85', '130'],
+		center: ['50%', '50%'],
+		data: echartData,
+		hoverAnimation: false,
+		labelLine: {
+				normal: {
+						length: 20,
+						length2: 60,
+						lineStyle: {
+						}
+				}
+		},
+		label: {
+				normal: {
+						formatter: params => {
+								return (
+									'{value|' +
+										formatNumber(params.value) + '}\n{name|' + params.name + '}'
+								);
+						},
+						rich: {
+
+								name: {
+										fontSize: 18,
+										color: 'inherit'
+								},
+								value: {
+										fontSize: 18,
+										color: 'inherit'
+								}
+						}
+				}
+		},
+}]
+};
+
+
+
+	if (option && typeof option === 'object') {
+		myChart.setOption(option);
+	}
+
+	window.addEventListener('resize', myChart.resize);
+</script>
 </body>
 </html>
