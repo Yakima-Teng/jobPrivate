@@ -30,7 +30,24 @@
 			</section>
 			<section class="module-left-02">
 				<h2 class="module-title">党员信息</h2>
-				<div class="main"><img src="./images/img-15.png" alt=""></div>
+				<section class="main-info-user">
+					<div class="user-number-box">
+						<dl class="user-list">
+							<dt>正式党员</dt>
+							<dd class="timer count-number" data-to="312" data-speed="1500">312</dd>
+						</dl>
+						<dl class="user-list">
+							<dt>预备党员</dt> 
+							<dd class="timer count-number" data-to="34" data-speed="1500">34</dd>
+						</dl>
+						<dl class="user-list">
+							<dt>党员领导干部</dt>
+							<dd class="timer count-number" data-to="97" data-speed="1500">97</dd>
+						</dl>
+					</div>
+					<h3>【党员年龄分布】</h3>
+					<div id="container-dyxx"></div>
+				</section>
 			</section>
 		
 		</section>
@@ -40,7 +57,9 @@
 			<section class="banner-build"><img src="./images/img-16.png" alt=""></section>
 			<section class="module-content-01">
 				<h2 class="module-title">党员职业</h2>
-				<div class="main"><img src="./images/img-17.png" alt=""></div>
+				<section class="main-profession">
+					<div id="container-dyzy"></div>
+				</section>
 			</section>
 		</section>
 		<!--/module-center-->
@@ -130,6 +149,7 @@
 <script src="js/num.js"></script>
 <script src="js/num-gun.js"></script>
 <script src="js/echarts.min.js"></script>
+<script src="js/echarts-liquidfill.js"></script>
 <script src="js/base.js"></script>
 <!--党组织基础数据-->
 <script type="text/javascript">
@@ -233,6 +253,244 @@ series: [{
 };
 
 
+
+	if (option && typeof option === 'object') {
+		myChart.setOption(option);
+	}
+
+	window.addEventListener('resize', myChart.resize);
+</script>
+<!--党员职业-->
+<script type="text/javascript">
+	var dom = document.getElementById('container-dyzy');
+	var myChart = echarts.init(dom, null, {
+		renderer: 'canvas',
+		useDirtyRect: false
+	});
+	var app = {};
+	
+	var option;
+
+	var dataAxis = ['解放军', '公务员', '学生', '自由职业者', '小中型企业', '其他'];
+	var data = [27, 18, 8, 4, 15, 12];
+
+	option = {
+		grid: {
+			right: 0,
+			top: 20,
+			bottom: 20,
+			width:'95%'
+		},
+		xAxis: {
+			data: dataAxis,
+			type: 'category',
+			axisLabel: {
+				color: '#fff'
+			},
+			axisTick: {
+				show: false
+			},
+			axisLine: {
+				show: true,
+				lineStyle: {
+					color: '#fff'
+				}
+			}
+		},
+		yAxis: {
+			type: 'value',
+			axisLabel: {
+				color: '#fff'
+			},
+			splitLine: {
+				show: true,
+				lineStyle: {
+					type: 'dashed',
+					color: 'rgba(5, 123, 187,0)'
+				}
+			}
+		},
+		series: [
+			{
+				type: 'bar',
+				name: '999',
+				barWidth: 41,
+				itemStyle: {
+					borderColor: 'rgba(5, 123, 187,0)',
+					color: new echarts.graphic.LinearGradient(
+						0, 0, 0, 1,
+						[
+							{ offset: 0, color: '#024be1' },
+							{ offset: 0.6, color: '#024be1' },
+							{ offset: 1, color: '#01143f' }
+						]
+					)
+				},
+				emphasis: {},
+				data: data
+			}
+		]
+	};
+
+
+	if (option && typeof option === 'object') {
+		myChart.setOption(option);
+	}
+
+	window.addEventListener('resize', myChart.resize);
+</script>
+<!--党员信息-->
+<script type="text/javascript">
+	var dom = document.getElementById('container-dyxx');
+	var myChart = echarts.init(dom, null, {
+		renderer: 'canvas',
+		useDirtyRect: false
+	});
+var app = {};
+	
+var option = {
+	title: [
+        {
+            text: '0-26岁',
+            x: '8%',
+						bottom:0,
+            textStyle: {
+                fontSize: 18,
+                fontWeight: '400',
+                color: '#fff',
+                lineHeight: 16,
+                textAlign: 'center',
+            },
+        },
+        {
+            text: '26-50岁',
+            x: '42%',
+						bottom:0,
+            textStyle: {
+                fontSize: 18,
+                fontWeight: '400',
+                color: '#fff',
+                lineHeight: 16,
+                textAlign: 'center',
+            },
+        },
+        {
+            text: '50-80岁',
+            x: '77%',
+						bottom:0,
+            textStyle: {
+                fontSize: 18,
+                fontWeight: '400',
+                color: '#fff',
+                lineHeight: 16,
+                textAlign: 'center',
+            },
+        },
+    ],
+    series: [{
+        type: 'liquidFill',
+        center: ['15%', '40%'],
+        radius: '60%',
+        color: ['#1470f0', '#1470f0'], //水波颜色
+        data: [0.6],
+        itemStyle: {
+            normal: {
+                shadowBlur: 0
+            }
+        },
+        label: {
+            normal: {
+                formatter: function(item) {
+                    return (item.value * 100).toFixed(1) + '%'
+                },
+                color: '#fff',
+                insideColor: '#fff',
+                fontSize: 24
+            }
+        },
+        backgroundStyle: {
+            borderWidth: 2,
+            borderColor: 'rgb(255,0,255,0)',
+            color: 'rgb(255,0,255,0)'
+        },
+        outline: {
+            borderDistance: 3,
+            itemStyle: {
+                borderWidth: 4,
+                borderColor: '#2acc6f',
+                borderType: 'solid',
+            }
+        },
+    }, {
+        type: 'liquidFill',
+        center: ['50%', '40%'],
+        radius: '60%',
+        color: ['#1470f0', '#1470f0'], //水波颜色
+        data: [0.4],
+        itemStyle: {
+            normal: {
+                shadowBlur: 0
+            }
+        },
+        label: {
+            normal: {
+                formatter: function(item) {
+                    return (item.value * 100).toFixed(1) + '%'
+                },
+                color: '#fff',
+                insideColor: '#fff',
+                fontSize: 24
+            }
+        },
+        backgroundStyle: {
+            borderWidth: 2,
+            borderColor: 'rgb(255,0,255,0)',
+            color: 'rgb(255,0,255,0)'
+        },
+        outline: {
+            borderDistance: 3,
+            itemStyle: {
+                borderWidth: 4,
+                borderColor: '#2acc6f',
+                borderType: 'solid',
+            }
+        },
+    }, {
+        type: 'liquidFill',
+        center: ['85%', '40%'],
+        radius: '60%',
+        color: ['#1470f0', '#1470f0'], //水波颜色
+        data: [0.4],
+        itemStyle: {
+            normal: {
+                shadowBlur: 0
+            }
+        },
+        label: {
+            normal: {
+                formatter: function(item) {
+                    return (item.value * 100).toFixed(1) + '%'
+                },
+                color: '#fff',
+                insideColor: '#fff',
+                fontSize: 24
+            }
+        },
+        backgroundStyle: {
+            borderWidth: 2,
+            borderColor: 'rgb(255,0,255,0)',
+            color: 'rgb(255,0,255,0)'
+        },
+        outline: {
+            borderDistance: 3,
+            itemStyle: {
+                borderWidth: 4,
+                borderColor: '#2acc6f',
+                borderType: 'solid',
+            }
+        },
+    }]
+}
 
 	if (option && typeof option === 'object') {
 		myChart.setOption(option);

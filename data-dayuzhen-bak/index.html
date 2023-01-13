@@ -42,11 +42,11 @@
 					<div class="info">
 						<dl>
 							<dt>今年上报数量</dt>
-							<dd class="orange">3505</dd>
+							<dd class="orange timer count-number" data-to="3505" data-speed="1500">3505</dd>
 						</dl>
 						<dl>
 							<dt>已处理数量</dt>
-							<dd class="green">3168</dd>
+							<dd class="green timer count-number" data-to="3168" data-speed="1500">3168</dd>
 						</dl>
 					</div>
 				</section>
@@ -57,9 +57,9 @@
 				<div class="main-fire-info">
 					<dl class="fire-info-box">
 						<dt class="info">
-							<P>告警次数<br/><span>324</span>次</P>
-							<P>研判处置<br/><span>310</span>次</P>
-							<P>真实火情<br/><span>13</span>次</P>
+							<P>告警次数<br/><span class="timer count-number" data-to="324" data-speed="1500">324</span>次</P>
+							<P>研判处置<br/><span class="timer count-number" data-to="310" data-speed="1500">310</span>次</P>
+							<P>真实火情<br/><span class="timer count-number" data-to="13" data-speed="1500">13</span>次</P>
 						</dt>
 						<dd class="echarts-box">
 							<div id="container-hq"></div>
@@ -87,8 +87,12 @@
 		<section class="module-right">
 			<div class="module-right-01">
 				<h2 class="module-title">实时天气</h2>
-				<section class="main-weather">
-					<div class="main-weather"></div>
+				<section class="main-weather-box">
+					<div class="main-weather">
+						<header><img src="./images/img-weather.png" alt=""></header>
+						<p>多云<span>-2°</span></p>
+						<p>偏北风3-4级</p>
+					</div>
 					<div class="main-air">
 						<div id="container-kqzl"></div>
 					</div>
@@ -96,7 +100,14 @@
 			</div>
 			<div class="module-right-02">
 				<h2 class="module-title">随手拍</h2>
-				<section class="main"><img src="./images/img-05.png" alt=""></section>
+				<h3 class="module-son-title">今年</h3>
+				<section class="main-photograph">
+					<div class="info">
+						<p class="timer count-number" data-to="5688" data-speed="1500">5688</p>
+						<p>上报事件</p>
+					</div>
+				</section>
+				<header class="module-title-01">转入综治：<em class="timer count-number" data-to="456" data-speed="1500">456</em>件</header>
 			</div>
 			<div class="module-right-03">
 				<h2 class="module-title">随手拍列表</h2>
@@ -679,7 +690,7 @@ var dataStyle = {
 			position: 'center',
 			show: true,
 			textStyle: {
-					fontSize: '28',
+					fontSize: '36',
 					fontWeight: 'bold',
 					color: '#05ce8e'
 			}

@@ -1,0 +1,91 @@
+@font-face {
+    font-family: '';
+    src: url('SourceHanSansCN-ExtraLight-Alphabetic.eot');
+    src: url('SourceHanSansCN-ExtraLight-Alphabetic.eot?#iefix') format('embedded-opentype'),
+        url('SourceHanSansCN-ExtraLight-Alphabetic.woff2') format('woff2'),
+        url('SourceHanSansCN-ExtraLight-Alphabetic.woff') format('woff'),
+        url('SourceHanSansCN-ExtraLight-Alphabetic.ttf') format('truetype'),
+        url('SourceHanSansCN-ExtraLight-Alphabetic.svg#SourceHanSansCN-ExtraLight-Alphabetic') format('svg');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: '';
+    src: url('SourceHanSansCN-Heavy-Alphabetic.eot');
+    src: url('SourceHanSansCN-Heavy-Alphabetic.eot?#iefix') format('embedded-opentype'),
+        url('SourceHanSansCN-Heavy-Alphabetic.woff2') format('woff2'),
+        url('SourceHanSansCN-Heavy-Alphabetic.woff') format('woff'),
+        url('SourceHanSansCN-Heavy-Alphabetic.ttf') format('truetype'),
+        url('SourceHanSansCN-Heavy-Alphabetic.svg#SourceHanSansCN-Heavy-Alphabetic') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: '';
+    src: url('SourceHanSansCN-Bold-Alphabetic.eot');
+    src: url('SourceHanSansCN-Bold-Alphabetic.eot?#iefix') format('embedded-opentype'),
+        url('SourceHanSansCN-Bold-Alphabetic.woff2') format('woff2'),
+        url('SourceHanSansCN-Bold-Alphabetic.woff') format('woff'),
+        url('SourceHanSansCN-Bold-Alphabetic.ttf') format('truetype'),
+        url('SourceHanSansCN-Bold-Alphabetic.svg#SourceHanSansCN-Bold-Alphabetic') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: '';
+    src: url('SourceHanSansCN-Light-Alphabetic.eot');
+    src: url('SourceHanSansCN-Light-Alphabetic.eot?#iefix') format('embedded-opentype'),
+        url('SourceHanSansCN-Light-Alphabetic.woff2') format('woff2'),
+        url('SourceHanSansCN-Light-Alphabetic.woff') format('woff'),
+        url('SourceHanSansCN-Light-Alphabetic.ttf') format('truetype'),
+        url('SourceHanSansCN-Light-Alphabetic.svg#SourceHanSansCN-Light-Alphabetic') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: '';
+    src: url('SourceHanSansCN-Medium-Alphabetic.eot');
+    src: url('SourceHanSansCN-Medium-Alphabetic.eot?#iefix') format('embedded-opentype'),
+        url('SourceHanSansCN-Medium-Alphabetic.woff2') format('woff2'),
+        url('SourceHanSansCN-Medium-Alphabetic.woff') format('woff'),
+        url('SourceHanSansCN-Medium-Alphabetic.ttf') format('truetype'),
+        url('SourceHanSansCN-Medium-Alphabetic.svg#SourceHanSansCN-Medium-Alphabetic') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: '';
+    src: url('SourceHanSansCN-Normal-Alphabetic.eot');
+    src: url('SourceHanSansCN-Normal-Alphabetic.eot?#iefix') format('embedded-opentype'),
+        url('SourceHanSansCN-Normal-Alphabetic.woff2') format('woff2'),
+        url('SourceHanSansCN-Normal-Alphabetic.woff') format('woff'),
+        url('SourceHanSansCN-Normal-Alphabetic.ttf') format('truetype'),
+        url('SourceHanSansCN-Normal-Alphabetic.svg#SourceHanSansCN-Normal-Alphabetic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: '';
+    src: url('SourceHanSansCN-Regular-Alphabetic.eot');
+    src: url('SourceHanSansCN-Regular-Alphabetic.eot?#iefix') format('embedded-opentype'),
+        url('SourceHanSansCN-Regular-Alphabetic.woff2') format('woff2'),
+        url('SourceHanSansCN-Regular-Alphabetic.woff') format('woff'),
+        url('SourceHanSansCN-Regular-Alphabetic.ttf') format('truetype'),
+        url('SourceHanSansCN-Regular-Alphabetic.svg#SourceHanSansCN-Regular-Alphabetic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

@@ -1,0 +1,16 @@
+@charset "UTF-8";
+@font-face {
+	font-family: 'SLBT-L';
+	src: url('../fonts/SLBT-L/SLBT-L.eot');
+	src: url('../fonts/SLBT-L/SLBT-L.eot?#iefix') format('embedded-opentype'), url('../fonts/SLBT-L/SLBT-L.woff') format('woff'), url('../fonts/SLBT-L/SLBT-L.ttf') format('truetype'), url('../fonts/SLBT-L/SLBT-L.svg#SLBT-L') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.ft-sl {
+	font-family: 'SLBT-L';
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
