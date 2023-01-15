@@ -25,33 +25,33 @@
 			<section class="module-left-01">
 				<h2 class="module-title-02">村情简介</h2>
 				<section class="main-each-cun">
-					<section class="each-cun-box">
-						<div class="cun-map"><img src="./images/map-small.png" alt=""></div>
-						<dl class="cun-info">
+					<div class="cun-map"><img src="./images/map-small.png" alt=""></div>
+					<div class="cun-info">
+						<dl class="info">
 							<dt class="num">
 								<em class=" timer count-number" data-to="175" data-speed="1500">175</em>户
 							</dt>
 							<dd class="title">村庄户数</dd>
 						</dl>
-						<dl class="cun-info">
+						<dl class="info">
 							<dt class="num">
 								<em class=" timer count-number" data-to="620" data-speed="1500">620</em>人
 							</dt>
 							<dd class="title">村庄人数</dd>
 						</dl>
-						<dl class="cun-info">
+						<dl class="info">
 							<dt class="num">
 								<em class=" timer count-number" data-to="576" data-speed="1500">576</em>亩
 							</dt>
 							<dd class="title">耕地面积</dd>
 						</dl>
-						<dl class="cun-info">
+						<dl class="info">
 							<dt class="num">
 								<em>0.93</em>亩
 							</dt>
 							<dd class="title">人均耕地</dd>
 						</dl>
-					</section>
+					</div>
 				</section>
 			</section>
 			<section class="module-left-02">
@@ -92,7 +92,15 @@
 		<section class="module-center">
 			<section class="module-content-01">
 				<h2 class="module-title-02">美丽乡村</h2>
-				<div class="main"><img src="./images/img-22.png" alt=""></div>
+				<section class="banner-each">
+					<div id="featured-area"> 
+						<ul> 
+							<li><a href="javascript:;"><img src="./images/banner-01.jpg"/></a></li>
+							<li><a href="javascript:;"><img src="./images/banner-02.jpg"/></a></li>  
+							<li><a href="javascript:;"><img src="./images/banner-01.jpg" /></a></li>  
+						</ul> 
+					</div>
+				</section>
 			</section>
 			<section class="module-content-02">
 				<h2 class="module-title-02">党员联户信息</h2>
@@ -198,6 +206,8 @@
 <script src="js/num.js"></script>
 <script src="js/num-gun.js"></script>
 <script src="./js/echarts.min.js"></script>
+<script src="./js/jquery.roundabout.min.js"></script>
+<script src="./js/jquery.easing.1.3.js"></script>
 <script src="js/base.js"></script>
 <!--人口总体情况-人口比例-->
 <script type="text/javascript">
@@ -456,6 +466,18 @@
 	}
 
 	window.addEventListener('resize', myChart.resize);
+</script>
+<!--3Dbanner图切换-->
+<script>
+$('#featured-area ul').roundabout({
+	easing: 'easeOutInCirc',
+	duration: 600,
+	enableDrag: true,
+	autoplay: true,
+	autoplayDuration: 3000,
+	autoplayInitialDelay: 3000, 
+	autoplayPauseOnHover: true,
+});
 </script>
 </body>
 </html>

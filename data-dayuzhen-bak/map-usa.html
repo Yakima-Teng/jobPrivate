@@ -4,13 +4,23 @@
 <!DOCTYPE html>
 <html lang="zh-CN" style="height: 100%">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8">  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/jquery"></script>
 </head>
 <body style="height: 100%; margin: 0">
-  <div id="container" style="height: 100%;  "></div>
+  <!-- <div id="container" style="height: 100%;  "></div> -->
+  <audio id="audio"	controls src="./audio/test.mp3">
+    <a href="./audio/test.mp3"> Download audio </a>
+  </audio>
+  <button class="btn">播放</button>
+<script>
+// let audio = Document.getElementById('audio');
+$('.btn').click(function(){
+  $('#audio').src="./audio/test.mp3"
+  $('#audio')[0].play();
+});
+</script>
 
-  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/jquery"></script>
-  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+  <!-- <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script> -->
   <!-- Uncomment this line if you want to dataTool extension
   <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.1/dist/extension/dataTool.min.js"></script>
   -->
@@ -28,7 +38,7 @@
   <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
   <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.1/dist/extension/bmap.min.js"></script>
   -->
-
+<!-- 
   <script type="text/javascript">
 var dom = document.getElementById('container');
 var myChart = echarts.init(dom, null, {
@@ -109,6 +119,6 @@ if (option && typeof option === 'object') {
 }
 
 window.addEventListener('resize', myChart.resize);
-  </script>
+  </script> -->
 </body>
 </html>

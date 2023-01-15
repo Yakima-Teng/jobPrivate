@@ -1,120 +1,236 @@
 $(function() {
-	gundongTxt($(".contanted-index .main-info"), 1000, 5);
-	gundongTxt($(".contanted-control .module-left .main-info"), 2000, 4);
-	gundongTxt($(".contanted-control .module-center .main-info"), 3000, 5);
-	gundongTxt($(".contanted-farm .module-left .main-info"), 2000, 4);
-	gundongTxt($(".contanted-farm .module-center .main-info"), 3000, 5);
-	gundongTxt($(".contanted-each .info-list-box"), 3000, 5 );
+gundongTxt($(".contanted-index .main-info"), 1000, 5);
+gundongTxt($(".contanted-control .module-left .main-info"), 2000, 4);
+gundongTxt($(".contanted-control .module-center .main-info"), 3000, 5);
+gundongTxt($(".contanted-farm .module-left .main-info"), 2000, 4);
+gundongTxt($(".contanted-farm .module-center .main-info"), 3000, 5);
+gundongTxt($(".contanted-each .info-list-box"), 3000, 5 );
 
-	// cctv
-	// $('.contanted-cctv .list-box')
-	// 	.find('.second-list')
-	// 	.on('click', 
-	// 	function(){
-	// 		let videoLenght = $('.video-box.show').length;
+!$('.banner-build').length > 0 || (function () {
+// 党建banner
+let timejg=3000;//轮播间隔时间
+let size = $('.banner-img ul li').size();
+for(let i=1;i<=size; i++){
+	$('.banner-btn').append('<a href="javascript:(void)"></a>')
+}
+
+$('.banner-img ul li').eq(0).show();
+$('.banner-btn a').eq(0).addClass('active')
+$('.banner-btn a').mouseover(function(){
+	$(this).addClass('active').siblings().removeClass('active');
+	let index = $(this).index();
+	i=index;
+	$('.banner-img ul li').eq(index).stop().fadeIn(300).siblings().stop().fadeOut(300);
+});
+
+let i = 0;
+let time = setInterval(move,timejg);
+
+function move(){
+	i++;
+	if(i==size){
+		i=0;
+	}
+	$('.banner-btn a').eq(i).addClass('active').siblings().removeClass('active');
+	$('.banner-img ul li').eq(i).fadeIn(300).siblings().fadeOut(300);
+}
+
+$('.banner-build').hover(function(){
+	clearInterval(time);
+},function(){
+	time = setInterval(move,timejg);
+});
+})();
 
 
-	// 		$('.video-box')
-	// 			.eq(0)
-	// 			.addClass('show')
-	// 			.show();
-	// 		// console.log(videoLenght);
-	// 	});
-	$('.contanted-cctv .main-video')
-		.find('.btn-close')
-		.on('click', 
-		function(){
-			$(this)
-				.parent()
-				.hide()
-				.removeClass('show');
-			let videoLenght = $('.video-box.show').length;
-			if( videoLenght == 1 ){
-				$('.video-box.show')
-					.css({
-						width:'100%',
-						margin:'0'
-					});
-			}
-		});
+// cloud audio
+// $('.main-cloud-audio .audio-box')
+// 	.find('.btn')
+// 	.on('click',
+// 	function(){
+// 		if ($(this).is('.stop')){
+// 			$(this)
+// 				.find('.icon')
+// 				.removeClass('icon-audio')
+// 				.addClass('icon-stop')
+// 				.end()
+// 				.find('.txt')
+// 				.text('点击停止')
+// 				.end()
+// 				.removeClass('stop');
+// 			$('#audio-cloud')[0].play();
+// 		}else{
+// 			$(this)
+// 				.find('.icon')
+// 				.addClass('icon-audio')
+// 				.removeClass('icon-stop')
+// 				.end()
+// 				.find('.txt')
+// 				.text('点击开始')
+// 				.end()
+// 				.addClass('stop');
+// 			$('#audio-cloud')[0].pause();
+// 		}
+// 	}
+// );
+
+// $('.main-cloud-audio .audio-box')
+// 	.find('.icon-sound')
+// 	.on('click',
+// 	function(){
+// 		$('#audio-cloud').prop('volume', 0)
+// 		// if( $('#audio-cloud').is('.jingyin') ){
+// 		// 	$('#audio-cloud').prop('volume', 100).removeClass('jingyin');
+// 		// }else{
+// 		// 	$('#audio-cloud').prop('volume', 0)
+// 		// 	$('#audio-cloud').addClass('jingyin');
+// 		// }
+// 	}
+// );
+// cloud right
+$('.main-cloud-audio .audio-checkbox-box')
+	.find('.qu-checkbox')
+	.on('click',
+	function(){
+		let checkboxCur = $('.audio-checkbox-box .cun-checkbox').find('.checkbox.cur').length;
+		$('.audio-box .title').find('.num').text(checkboxCur);
+		if ($(this).parent().is('.more')){
+			$(this).parent().find('.checkbox').addClass('cur');
+			$(this).nextAll('.cun-checkbox').show();
+			$(this).parent().removeClass('more');
+		}else{
+			$(this).parent().addClass('more');
+			$(this).parent().find('.checkbox').removeClass('cur');
+			$(this).parent().find('.cun-checkbox').hide();
+		};
+	}
+);
+$('.main-cloud-audio .audio-checkbox-box')
+	.find('.cun-checkbox')
+	.on('click',
+	function(){
+		let checkboxNum =  $(this).parent().find('.cun-checkbox').length;
+		let checkboxCur = $(this).parent().find('.cur').length;
+		// console.log( 'checkbox: ' + checkboxNum);
+		// console.log( 'cur: ' + checkboxCur);
+		// if( checkboxNum <= checkboxCur ){
+		// 	$(this).prevAll('.qu-checkbox').find('.checkbox').addClass('cur');
+		// }
+		if( $(this).find('.checkbox').is('.cur')){
+			$(this).find('.checkbox').removeClass('cur');
+			$(this).prevAll('.qu-checkbox').find('.checkbox').removeClass('cur');
+		}else{
+			$(this).find('.checkbox').addClass('cur');
+		}
+	}
+);
+// cctv
+// $('.contanted-cctv .list-box')
+// 	.find('.second-list')
+// 	.on('click', 
+// 	function(){
+// 		let videoLenght = $('.video-box.show').length;
 
 
-
-	// 二级菜单
-	$('.page-contanted').find('.frist-list').on('click', function(){
-		if( $(this).parent().is('.show') ){
-			$(this)
-			.nextAll('.second-list')
+// 		$('.video-box')
+// 			.eq(0)
+// 			.addClass('show')
+// 			.show();
+// 		// console.log(videoLenght);
+// 	});
+$('.contanted-cctv .main-video')
+	.find('.btn-close')
+	.on('click', 
+	function(){
+		$(this)
+			.parent()
 			.hide()
-			.end()
-			.parent().removeClass('show');
-		}else{
-			$(this)
-			.nextAll('.second-list')
-			.show()
-			.end()
-			.parent().addClass('show');
+			.removeClass('show');
+		let videoLenght = $('.video-box.show').length;
+		if( videoLenght == 1 ){
+			$('.video-box.show')
+				.css({
+					width:'100%',
+					margin:'0'
+				});
 		}
-	});
-	// link
-	$('.btn-back-head').on('click', function(){
-		window.history.go(-1);
-	});
-	$('.contanted-control .list-cctv, .list-aqxc').find('.list').on('click', function(){
-		window.location.href='/data-dayuzhen/cctv.html'
-	});
-	// video-layer
-	$('.contanted-farm .list-cctv')
-		.find('.list')
-		.on('click', 
-			function(){
-				if( !$(this).is('.more') ){
-					$('.page-mask,.layer-video')
-						.show();
-				}
-			});
-	$('.list-cctv')
-		.find('.second-list')
-			.on('click', 
-			function(){
-				$('.page-mask,.layer-video')
-					.show();
-			});
-	// layer
-	$('.layer-video').find('.btn-close').on('click', function(){
-		$(this).parents('.layer-video').hide();
-		$('.page-mask').hide();
-	});
-	// map-nav
-	$('.map-nav').find('.nav').on('click', function(){
-		let index = $(this).index();
-		$(this).addClass('cur').siblings().removeClass('cur');
-		if ( index == 0 ){
-			$(this).parents('.module-center').find('.a_link').show()
-			$('.module-center-map').find('img').hide();
-		}else{
-			$('.module-center-map').find('img').show().attr({src:'./images/img-08-'+ index++ +'.png'});
-			$(this).parents('.module-center').find('.a_link').hide()
-		}
-		
+	}
+);
 
+
+
+// 二级菜单
+$('.page-contanted').find('.frist-list').on('click', function(){
+	if( $(this).parent().is('.show') ){
+		$(this)
+		.nextAll('.second-list')
+		.hide()
+		.end()
+		.parent().removeClass('show');
+	}else{
+		$(this)
+		.nextAll('.second-list')
+		.show()
+		.end()
+		.parent().addClass('show');
+	}
+});
+// link
+$('.btn-back-head').on('click', function(){
+	window.history.go(-1);
+});
+$('.contanted-control .list-cctv, .list-aqxc').find('.list').on('click', function(){
+	window.location.href='/data-dayuzhen/cctv.html'
+});
+	// video-layer
+$('.contanted-farm .list-cctv')
+	.find('.list')
+	.on('click', 
+	function(){
+		if( !$(this).is('.more') ){
+			$('.page-mask,.layer-video')
+				.show();
+		}
 	});
-	// $('.map-nav').find('.nav').eq(1).on('click', function(){
-	// 	$('.module-center-map').show().find('img').attr({src:'./images/img-08-1.png'});
-	// });
-	// $('.map-nav').find('.nav').eq(2).on('click', function(){
-	// 	$('.module-center-map').show().find('img').attr({src:'./images/img-08-2.png'});
-	// });
-	// $('.map-nav').find('.nav').eq(3).on('click', function(){
-	// 	$('.module-center-map').show().find('img').attr({src:'./images/img-08-3.png'});
-	// });
-	// $('.map-nav').find('.nav').eq(4).on('click', function(){
-	// 	$('.module-center-map').show().find('img').attr({src:'./images/img-08-4.png'});
-	// });
-	// temp
-	$('.contanted-index .module-center').on('click', function(){
-		// window.location.href='/data-dayuzhen/each.html'
-	});
+$('.list-cctv')
+	.find('.second-list')
+	.on('click', 
+	function(){
+		$('.page-mask,.layer-video')
+			.show();
+	}
+);
+// layer
+$('.layer-video').find('.btn-close').on('click', function(){
+	$(this).parents('.layer-video').hide();
+	$('.page-mask').hide();
+});
+// map-nav
+$('.map-nav').find('.nav').on('click', function(){
+	let index = $(this).index();
+	$(this).addClass('cur').siblings().removeClass('cur');
+	if ( index == 0 ){
+		$(this).parents('.module-center').find('.a_link').show()
+		$('.module-center-map').find('img').hide();
+	}else{
+		$('.module-center-map').find('img').show().attr({src:'./images/img-08-'+ index++ +'.png'});
+		$(this).parents('.module-center').find('.a_link').hide()
+	}
+	
+
+});
+// $('.map-nav').find('.nav').eq(1).on('click', function(){
+// 	$('.module-center-map').show().find('img').attr({src:'./images/img-08-1.png'});
+// });
+// $('.map-nav').find('.nav').eq(2).on('click', function(){
+// 	$('.module-center-map').show().find('img').attr({src:'./images/img-08-2.png'});
+// });
+// $('.map-nav').find('.nav').eq(3).on('click', function(){
+// 	$('.module-center-map').show().find('img').attr({src:'./images/img-08-3.png'});
+// });
+// $('.map-nav').find('.nav').eq(4).on('click', function(){
+// 	$('.module-center-map').show().find('img').attr({src:'./images/img-08-4.png'});
+// });
 	
 });
 
