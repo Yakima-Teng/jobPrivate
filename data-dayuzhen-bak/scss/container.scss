@@ -421,20 +421,22 @@ $main-title:#329df0;
       .btn-sound{ display: inline-block; width: 150px; height: 8px; border-radius: 4px; background-color: #083494; margin-left: 12px; vertical-align: middle; margin-top: -3px;}
     }
     .audio-checkbox-box{ height: 180px; overflow-y: scroll; margin: 20px 20px 0 0;
-      dt,
-      dd{ margin-bottom: 8px; cursor: pointer; display: flex; align-items: center; }
-      em.checkbox{ display: inline-block; margin-right: 14px; position: relative; background-color: $main-white; width: 14px; height: 14px; border-radius: 2px;
-        &::before,
-        &::after{content: ''; background-color: #002c84; position: absolute; height: 1px; display: none;}
-        &::before{width: 6px; transform: rotate(45deg); margin: 8px 0 0 1px;}
-        &::after{width: 10px; transform: rotate(-45deg); margin: 7px 0 0 4px;}
-        &.cur{
-          &::before,
-          &::after{ display: block;}
-        }
-      }
+      .qu-checkbox,
+      .cun-checkbox{ margin-bottom: 8px; cursor: pointer; display: flex; align-items: center; }
+      // em.checkbox{ display: inline-block; margin-right: 14px; position: relative; background-color: $main-white; width: 14px; height: 14px; border-radius: 2px;
+      //   &::before,
+      //   &::after{content: ''; background-color: #002c84; position: absolute; height: 1px; display: none;}
+      //   &::before{width: 6px; transform: rotate(45deg); margin: 8px 0 0 1px;}
+      //   &::after{width: 10px; transform: rotate(-45deg); margin: 7px 0 0 4px;}
+      //   &.cur{
+      //     &::before,
+      //     &::after{ display: block;}
+      //   }
+      // }
+      input[type="checkbox"]{ margin-right: 14px; }
       .checkbox-list{ width: 180px; text-align: left; padding-bottom: 5px;}
-      .cun-checkbox{ padding-left: 28px; display: none;
+      .cun-checkbox-main{ display: none;}
+      .cun-checkbox{ padding-left: 28px;
         input[type="checkbox"]{ margin-right: 5px; }
       }
     }
@@ -448,7 +450,6 @@ $main-title:#329df0;
    
   }
   .module-left-02{ @extend .module-left-01; background-image: url('../images/bg-kuang-17.png'); height: 446px; margin-bottom: 0;
-    .main-info-user{}
     .user-number-box{ display: flex; justify-content: space-between; align-items: center; padding: 0 48px;  margin:24px 0 70px; box-sizing: border-box;
       .user-list{ position: relative; width: 110px;
         &::before{ content: ''; display: block; position: absolute; left: 50%; top: 50%; background: url('../images/bg-build-02.png') no-repeat center bottom; width: 167px; height: 121px; transform: translate(-50%, -29%);}

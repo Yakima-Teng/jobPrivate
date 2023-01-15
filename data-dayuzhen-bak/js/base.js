@@ -92,38 +92,40 @@ $('.main-cloud-audio .audio-checkbox-box')
 	.find('.qu-checkbox')
 	.on('click',
 	function(){
-		let checkboxCur = $('.audio-checkbox-box .cun-checkbox').find('.checkbox.cur').length;
-		$('.audio-box .title').find('.num').text(checkboxCur);
 		if ($(this).parent().is('.more')){
 			$(this).parent().find('.checkbox').addClass('cur');
-			$(this).nextAll('.cun-checkbox').show();
+			$(this).next('.cun-checkbox-main').show();
 			$(this).parent().removeClass('more');
 		}else{
 			$(this).parent().addClass('more');
 			$(this).parent().find('.checkbox').removeClass('cur');
-			$(this).parent().find('.cun-checkbox').hide();
+			$(this).parent().find('.cun-checkbox-main').hide();
 		};
 	}
 );
-$('.main-cloud-audio .audio-checkbox-box')
-	.find('.cun-checkbox')
-	.on('click',
-	function(){
-		let checkboxNum =  $(this).parent().find('.cun-checkbox').length;
-		let checkboxCur = $(this).parent().find('.cur').length;
-		// console.log( 'checkbox: ' + checkboxNum);
-		// console.log( 'cur: ' + checkboxCur);
-		// if( checkboxNum <= checkboxCur ){
-		// 	$(this).prevAll('.qu-checkbox').find('.checkbox').addClass('cur');
-		// }
-		if( $(this).find('.checkbox').is('.cur')){
-			$(this).find('.checkbox').removeClass('cur');
-			$(this).prevAll('.qu-checkbox').find('.checkbox').removeClass('cur');
-		}else{
-			$(this).find('.checkbox').addClass('cur');
-		}
+
+
+// 全选反选
+$(".audio-checkbox-box .checkbox-list .qu-checkbox").find('input[type=checkbox]').on("change", function () {
+	if (this.checked) {
+			$(this).parent().next().find("input[type='checkbox']").prop("checked", true);
+	} else {
+			$(this).parent().next().find("input[type='checkbox']").prop("checked", false);
 	}
-);
+});
+// 控制全选按钮是否被选中
+$(".audio-checkbox-box .checkbox-list .cun-checkbox").find('input[type=checkbox]').on("change", function () {
+	let inputLength = $(this).parents('.cun-checkbox-main').find('input').length;
+	let checkedLength = $(this).parents('.cun-checkbox-main').find('input[type=checkbox]:checked').length;
+	// var checkedLengthAll = $('.audio-checkbox-box').find('input[type=checkbox]:checked').length;
+	// $('.audio-box .title').find('.num').text(checkedLengthAll);
+
+	if (checkedLength == inputLength) {
+		$(this).prevAll('.qu-checkbox').find('input').prop("checked", true);
+	} else {
+		$(this).prevAll('.qu-checkbox').find('input').prop("checked", false);
+	}
+});
 // cctv
 // $('.contanted-cctv .list-box')
 // 	.find('.second-list')
