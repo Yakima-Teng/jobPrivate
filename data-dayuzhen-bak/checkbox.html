@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="./css/container.css">
+    <style> label{ display: inline-block; width: 100px; cursor: pointer; margin-right: 10px;}</style>
+</head>
+<body>
+    <input type="checkbox" name="choose1" id="checkboxInput" />
+    <label for="checkboxInput">全选</label>
+    <div class="" id="main">
+        <label for=""><input type="checkbox" name="choose" value="" />1</label>
+        <label for=""><input type="checkbox" name="choose" value="" />2</label>
+        <label for=""><input type="checkbox" name="choose" value="" />3</label>
+    </div>
+    <script type="text/javascript">
+        // 全选反选
+        $("#checkboxInput").on("change", function () {
+            if (this.checked) {
+                $("#main").find("input[name='choose']").prop("checked", true);
+            } else {
+                $("#main").find("input[name='choose']").prop("checked", false);
+            }
+        });
+        // 控制全选按钮是否被选中
+        $("#main input").on("change", function () {
+            var inputLength = $("#main input").length;
+            var checkedLength = $('[name=choose]:checked').length;
+            if (checkedLength == inputLength) {
+                $("#checkboxInput").prop("checked", true);
+            } else {
+                $("#checkboxInput").prop("checked", false);
+            }
+        });
+    </script>
+</body>
+</html>
