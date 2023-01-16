@@ -1,4 +1,5 @@
 $(function() {
+gundongTxt($(".contanted-build .profession-list-box"), 3000, 5 );
 gundongTxt($(".contanted-index .main-info"), 1000, 5);
 gundongTxt($(".contanted-control .module-left .main-info"), 2000, 4);
 gundongTxt($(".contanted-control .module-center .main-info"), 3000, 5);
@@ -6,7 +7,8 @@ gundongTxt($(".contanted-farm .module-left .main-info"), 2000, 4);
 gundongTxt($(".contanted-farm .module-center .main-info"), 3000, 5);
 gundongTxt($(".contanted-each .info-list-box"), 3000, 5 );
 
-!$('.banner-build').length > 0 || (function () {
+
+!$('.banner-common').length > 0 || (function () {
 // 党建banner
 let timejg=3000;//轮播间隔时间
 let size = $('.banner-img ul li').size();
