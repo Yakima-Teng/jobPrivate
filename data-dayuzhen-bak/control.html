@@ -140,7 +140,7 @@
 		<!--/module-left-->
 		<!--module-center-->
 		<section class="module-center">
-			<h2 class="module-title">矛盾调解</h2>
+			<h2 class="module-title">雪亮工程</h2>
 			<section class="main-mediate">
 				<div id="container-mdtj"></div>
 			</section>
@@ -241,8 +241,11 @@
 			<section class="module-right-01">
 				<h2 class="module-title">综治事件上报</h2>
 				<section class="main-toyear-sb">
-					<header class="module-title-01">本月上报数</header>
-					<div class="num-info" id="dataNums-01"></div>
+					<section class="handle-info">
+						<p>本月上报数<em class="timer count-number" data-to="3576" data-speed="1500">3576</em></p>
+						<div class="handle-box"><div id="container-zjsb"></div></div>
+						<p>已办结<em class="timer count-number" data-to="3216" data-speed="1500">3216</em></p>
+					</section>
 					<section class="bili-box">
 						<div id="container-sb"></div>
 						<footer><span class="title">治安类</span><span class="title">环境类</span><span class="title">道路类</span><span class="title">其他类</span></footer>
@@ -296,7 +299,7 @@
 				</section>
 			</section>
 			<section class="module-right-03">
-				<h2 class="module-title">云广播</h2>
+				<h2 class="module-title">峪见·好声音</h2>
 				<a href="http://cucc.aicloudav.com/login" target="_blank" class="module-son-title">进入</a>
 				<section class="main-cloud-audio">
 					<div class="audio-box">
@@ -389,11 +392,117 @@
 <script src="js/echarts.min.js"></script>
 <script src="js/base.js"></script>
 <!--上报数字滚动-->
-<script>
-$("#dataNums-01").rollNumDaq({
-	deVal:671200,
-	className:'dataNums'
+<script type="text/javascript">
+var dom = document.getElementById('container-zjsb');
+var myChart = echarts.init(dom, null, {
+	renderer: 'canvas',
+	useDirtyRect: false
 });
+var app = {};
+	
+let configZJSB = {
+  color: ['#00ffcc', '#00ffcc'],
+  data: [
+      {
+          name: '',
+          value: 88,
+      },
+      {
+          name: '',
+          value: 12,
+      },
+  ],
+
+};
+let numZJSB = configZJSB.data[0].value;;
+let unitZJSB = '%';
+let titleZJSB = '办结率';
+option = {
+    color: [
+        {
+            type: 'linear',
+            x: 0,
+            y: 0,
+            x2: 1,
+            y2: 1,
+            colorStops: [
+                {
+                    offset: 0,
+                    color: configZJSB.color[0],
+                },
+                {
+                    offset: 1,
+                    color: configZJSB.color[1],
+                },
+            ],
+            global: false,
+        },
+        'rgba(0,0,0,0)',
+    ],
+    title: Object.assign(
+        {
+            text: '{a|' + numZJSB + '}{b|' + unitZJSB + '}\n{c|' + titleZJSB + '}',
+            x: 'center',
+            y: 'center',
+            textStyle: {
+                rich: {
+                    a: {
+                        fontSize:26,
+                        color: '#00ffcc',
+                        fontWeight: '900',
+                       
+                    },
+                    b: {
+                        fontSize: 26,
+                        color: '#00ffcc',
+                        fontWeight: '500',
+                    },
+                    c: {
+                        fontSize: 14,
+                        color: 'rgba(255,255,255,1)',
+                        padding: [5, 0, 0, -4],
+                    },
+                },
+            },
+            subtext: '',
+            top: '35',
+            left: '50%',
+            textAlign: 'center',
+        },
+        configZJSB.titleZJSB
+    ),
+    series: [
+        {
+            name: '',
+            type: 'pie',
+            radius: [46, 58],
+            center: ['50%', '50%'],
+            clockwise: false,
+            emphasis: {
+                scale: false,
+                label: {
+                    show: false 
+                },
+            },
+            zlevel: 1,
+            labelLine: {
+                // normal: {/* 5.x版本中去掉了normal */
+                show: false,
+                // },
+            },
+            data: configZJSB.data,
+        },
+       
+    ],
+};
+
+
+
+	if (option && typeof option === 'object') {
+		myChart.setOption(option);
+	}
+
+	window.addEventListener('resize', myChart.resize);
 </script>
 <!--上报数饼图-->
 <script type="text/javascript">
@@ -678,6 +787,7 @@ $("#dataNums-01").rollNumDaq({
 		useDirtyRect: false
 	});
 	var app = {};
+
 	let config = {
     color: ['#00b8f4', '#00335b'],
     data: [
@@ -740,13 +850,13 @@ option = {
                     c: {
                         fontSize: 14,
                         color: 'rgba(255,255,255,1)',
-                        padding: [10, 0],
+                        padding: [10, 0, 0, -8],
                     },
                 },
             },
             subtext: '',
             top: '70',
-            left: '49.5%',
+            left: '50%',
             textAlign: 'center',
         },
         config.title
@@ -849,77 +959,134 @@ option = {
 	
 	var option;
 
-	// Generate data
-var category = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
-var lineData = [150,70,80,110,100,120,150,70,80,110,100,120];
-var barData = [100,20,30,60,50,70,100,20,30,60,50,70];
 // option
 option = {
 
-	tooltip: {
-			trigger: 'axis',
-			axisPointer: {
-					type: 'shadow'
-			}
-	},
-	legend: {
-			align: 'right',
-			left:0,
-			textStyle: {
-					color: "#fff"
-			},
-
-	},
-	grid: {
-			left: 30,
-		
-			bottom: 20,
-			width:'95%'
+tooltip: {
+		trigger: 'axis',
+		axisPointer: {
+				type: 'shadow'
+		}
+},
+legend: {
+		align: 'right',
+		left:0,
+		textStyle: {
+				color: "#fff"
 		},
-	xAxis: {
-			data: category,
-			axisTick: { //坐标轴刻度相关设置。
-                show: false,
-            },
-			axisLine: {
-					lineStyle: {
-							color: '#28c0ff',
-							fontSize:22
-					}
-			}
-			
-	},
-	yAxis: {
-			splitLine: {show: false},
-			axisLine: {
-				 show: true,
-					lineStyle: {
-							color: '#28c0ff',
-							fontSize:22
-					}
-			}
-	},
-	series: [ {
-			name: '矛盾总数',
-			type: 'bar',
-			barGap: '-134%',
-			barWidth: 21,
-			itemStyle: {
-					color: '#157eff'
-			},
-			z: -12,
-			data: lineData
-	},{
-			name: '已调解',
-			type: 'bar',
-			barWidth: 34,
-			itemStyle: {
-					color: 'rgba(255,197,21,0.76)'
-			},
-			data: barData
-	}]
-};
 
+},
+grid: {
+		left: 30,
+	
+		bottom: 20,
+		width:'95%'
+	},
+xAxis: {
+		data: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+		axisTick: { //坐标轴刻度相关设置。
+							show: false,
+					},
+		axisLine: {
+				lineStyle: {
+						color: '#28c0ff',
+						fontSize:22
+				}
+		}
+		
+},
+yAxis: {
+		splitLine: {show: false},
+		axisLine: {
+			 show: true,
+				lineStyle: {
+						color: '#28c0ff',
+						fontSize:22
+				}
+		}
+},
+series: [ {
+		name: '矛盾总数',
+		type: 'bar',
+		barGap: '-134%',
+		barWidth: 21,
+		itemStyle: {
+				color: '#157eff'
+		},
+		z: -12,
+		label: {
+					normal: {
+							show: true,
+							position: 'top',
+							formatter: function(value) {
+									// return '↓' + ((value.data.all - value.data.value) * 100 / value.data.all).toFixed(2) + '%';
+								return  ( value.data.sunValue * 100 / value.data.value).toFixed(0) + '%';
+							},
+							textStyle: {
+									color:'rgba(255,197,21,1)',
+									fontSize: 16
+							}
+					}
+			},
+	data: [{
+					"value": 150,
+					"sunValue": 75
+			}, {
+				
+					"value": 70,
+					"sunValue": 63
+			},{
+				
+					"value": 80,
+					"sunValue": 35
+			}, {
+				
+					"value": 110,
+					"sunValue": 23
+			},{
+				
+					"value": 100,
+					"sunValue": 95
+			}, {
+				
+					"value": 120,
+					"sunValue": 33
+			},{
+				
+					"value": 130,
+					"sunValue": 25
+			}, {
+				
+					"value": 160,
+					"sunValue": 43
+			},{
+				
+					"value": 80,
+					"sunValue": 65
+			}, {
+				
+					"value": 60,
+					"sunValue": 33
+			},{
+				
+					"value": 30,
+					"sunValue": 25
+			}, {
+				
+					"value": 90,
+					"sunValue": 33
+			}]
+},{
+		name: '已调解',
+		type: 'bar',
+		barWidth: 34,
+		 
+		itemStyle: {
+				color: 'rgba(255,197,21,0.76)'
+		},
+	 data: [75,63,35,23,95,33,25,43,65,33,25,33]
+}]
+};
 	if (option && typeof option === 'object') {
 		myChart.setOption(option);
 	}

@@ -96,11 +96,12 @@ $('.main-cloud-audio .audio-checkbox-box')
 			$(this).parent().find('.checkbox').addClass('cur');
 			$(this).next('.cun-checkbox-main').show();
 			$(this).parent().removeClass('more');
-		}else{
-			$(this).parent().addClass('more');
-			$(this).parent().find('.checkbox').removeClass('cur');
-			$(this).parent().find('.cun-checkbox-main').hide();
-		};
+		}
+		// else{
+		// 	$(this).parent().addClass('more');
+		// 	$(this).parent().find('.checkbox').removeClass('cur');
+		// 	$(this).parent().find('.cun-checkbox-main').hide();
+		// };
 	}
 );
 
@@ -112,18 +113,18 @@ $(".audio-checkbox-box .checkbox-list .qu-checkbox").find('input[type=checkbox]'
 	} else {
 			$(this).parent().next().find("input[type='checkbox']").prop("checked", false);
 	}
+	let checkedLengthAll = $('.audio-checkbox-box .cun-checkbox').find('input[type=checkbox]:checked').length;
+	$('.audio-box .title').find('.num').text(checkedLengthAll);
 });
-// 控制全选按钮是否被选中
-$(".audio-checkbox-box .checkbox-list .cun-checkbox").find('input[type=checkbox]').on("change", function () {
+$(".audio-checkbox-box .checkbox-list .cun-checkbox input").on("change", function () {
 	let inputLength = $(this).parents('.cun-checkbox-main').find('input').length;
 	let checkedLength = $(this).parents('.cun-checkbox-main').find('input[type=checkbox]:checked').length;
-	// var checkedLengthAll = $('.audio-checkbox-box').find('input[type=checkbox]:checked').length;
-	// $('.audio-box .title').find('.num').text(checkedLengthAll);
-
+	let checkedLengthAll = $('.audio-checkbox-box .cun-checkbox').find('input[type=checkbox]:checked').length;
+	 $('.audio-box .title').find('.num').text(checkedLengthAll);
 	if (checkedLength == inputLength) {
-		$(this).prevAll('.qu-checkbox').find('input').prop("checked", true);
+			$(this).parents('.cun-checkbox-main').siblings('.qu-checkbox').find("input[type='checkbox']").prop("checked", true);
 	} else {
-		$(this).prevAll('.qu-checkbox').find('input').prop("checked", false);
+			$(this).parents('.cun-checkbox-main').siblings('.qu-checkbox').find("input[type='checkbox']").prop("checked", false);
 	}
 });
 // cctv

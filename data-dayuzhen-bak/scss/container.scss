@@ -394,7 +394,19 @@ $main-title:#329df0;
    
   }
   .module-right-01{ background: url('../images/bg-kuang-13.png') no-repeat center top; width: 508px; height: 343px; text-align: center; margin-bottom: 14px;
-    .main-toyear-sb .num-info{ padding: 0 108px; transform: scale(1.2); margin: 30px auto;}
+    .module-title{ margin-bottom: 0;}
+    .main-toyear-sb { overflow: hidden; width: 508px; height: 285px;
+      .handle-info{ position: relative; padding-top: 30px; box-sizing: border-box; display: flex; justify-content: center; align-items: center;
+        &::before{ content: ''; display: inline-block; background: url('../images/bg-control-02.png') no-repeat center; width: 156px; height: 150px; position: absolute; left: 50%; transform: translateX(-50%); top: 11px;}
+        >p{ color: #2e92e3; font-size: 20px; width: 100px;
+          >em{ display: block; font-size: 36px; color: $main-white;}
+        }
+      }
+      .handle-box{ display: flex; justify-content: center; align-items: center; width: 156px + 44px; margin: 0 20px; 
+        &::before,
+        &::after{ content: ''; display: inline-block; width: 2px; height: 66px; background: linear-gradient(rgba(14, 90, 255,.2) 5%, rgb(14, 90, 255) 20%, rgb(14, 90, 255) 80%, rgba(14, 90, 255,.2)); }
+      }
+    }
     .bili-box{ transform: scale(1.2); }
   }
   .module-right-02{ @extend .module-right-01; background-image: url('../images/bg-kuang-14.png'); height: 237px;
@@ -644,3 +656,4 @@ $main-title:#329df0;
 #container-ssp{width: 480px; height: 160px; margin: auto;}
 #container-mdtj{ width: 740px; height: 416px; margin: auto;}
 #container-dyxx{ width: 480px; height: 180px; margin: auto;}
+#container-zjsb{ width: 116px; height: 116px; margin: auto;}
