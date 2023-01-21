@@ -529,9 +529,11 @@ $main-title:#329df0;
 // each
 .contanted-each{ padding: 25px 46px;
   .module-left-01{ background: url('../images/bg-kuang-e-01.png') no-repeat center top; width: 509px; height: 488px; margin-bottom: 18px;
-    >.main-each-cun{  padding: 15px 48px 0;}
-    .cun-info{display: flex; 
-      .info{ background: url('../images/bg-each-02.png') no-repeat center top; width: 99px; height: 85px; margin:0 48px 48px 0; text-align: center;
+    >.main-each-cun{  padding: 15px 22px 0;
+      .cun-map{ text-align: center; margin-bottom: 20px;}
+    }
+    .cun-info{display: flex; align-items: center; justify-content: center;
+      .info{ background: url('../images/bg-each-02.png') no-repeat center top; height: 85px; text-align: center; width: 25%;
         >dt{ margin-bottom: 54px;
           >em{ font-size: 32px; display: inline-block; margin-right: 10px; font-weight: bold; font-family: Arial, Helvetica, sans-serif;}
         }
@@ -559,7 +561,7 @@ $main-title:#329df0;
    .main-aqxc{ padding: 10px 19px 12px;
       .title{ display: flex; justify-content: space-between; padding: 0 23px 10px 18px;}
     }
-   .list-aqxc{ height: 41px * 4; overflow-y: scroll; 
+   .list-aqxc{ height: 41px * 6; overflow-y: scroll; 
     .list{ padding: 8px 23px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid; border-image-source: linear-gradient(to right, rgba(39, 120, 255,.2) 5%, rgb(39, 120, 255) 20%, rgb(39, 120, 255) 80%, rgba(39, 120, 255,.2)); line-height: 1; border-image-slice: 1; color: #3ea1fe;}
    }
   }
@@ -587,29 +589,65 @@ $main-title:#329df0;
         }
       }
     }
-    .info-list-box{ height: 381px; overflow: hidden;
-      .list{ display: flex; align-items: center; background-image: linear-gradient(to right, rgba(2, 33, 119,.2) 5%, rgb(2, 33, 119) 20%, rgb(2, 33, 119) 80%, rgba(2, 33, 119,.2)); margin-bottom: 4px; border-radius: 10px; height: 73px; box-sizing: border-box; padding: 7px 30px 7px 0;
-        .name{ width: 35%; box-sizing: border-box; text-align: center; border-right: 1px solid $main-white; line-height: 1.5;}
-        .name-list{ box-sizing: border-box; padding-left: 40px;
-          >span{ display: inline-block; margin-left: 10px; line-height: 1.2;}
-        }
+    .info-list-box{ height: 250px; overflow: hidden; padding: 29px 25px 0; 
+      // .list{ display: flex; align-items: center; background-image: linear-gradient(to right, rgba(2, 33, 119,.2) 5%, rgb(2, 33, 119) 20%, rgb(2, 33, 119) 80%, rgba(2, 33, 119,.2)); margin-bottom: 4px; border-radius: 10px; height: 73px; box-sizing: border-box; padding: 7px 30px 7px 0;
+      //   .name{ width: 35%; box-sizing: border-box; text-align: center; border-right: 1px solid $main-white; line-height: 1.5;}
+      //   .name-list{ box-sizing: border-box; padding-left: 40px;
+      //     >span{ display: inline-block; margin-left: 10px; line-height: 1.2;}
+      //   }
+      // }
+      .list{  margin-bottom: 17px; border-bottom: 1px solid rgba($color: #e6f0fc, $alpha: .5); padding-bottom: 17px; line-height: 1;
+        >a{ color: $main-white; display: flex; align-items: center; justify-content: space-between;}
       }
     }
   }
   .module-right-01{ background: url('../images/bg-kuang-e-05.png') no-repeat center top; width: 503px; height: 487px; margin-bottom: 29px;
-    .main-user-info{ display: flex; flex-wrap: wrap; width: 503px;}
-    .list-box{ padding: 8px; display: flex; flex-wrap: wrap; 
-      .info{ display: none;}
+    .main-user-info{ display: flex; flex-wrap: wrap; padding: 40px 19px 0; box-sizing: border-box;}
+    .list-box{ display: flex; flex-direction: column; text-align: center; margin: 0 20px 22px 0; cursor: pointer; position: relative;
+      &:nth-child(4n){ margin-right: 0;}
+      &:nth-child(n + 5){ margin-bottom: 0;}
+      .img{ width: 101px; height: 121px; overflow: hidden;
+        >img{ width: 100%;}
+       
+      }
+      .name{ font-size: 20px; color: $main-white; font-weight: bold; margin-top: 10px;}
+      .postion{ font-size: 20px; color: #fcae49; line-height: 1; margin-top: 5px;}
+      .info { display: none; z-index: 1; position: absolute; right: 88px; top: -16px; padding: 23px 20px 30px 30px; box-sizing: border-box; text-align: left; line-height: 1.43; width: 338px; background:  rgba($color: #00109a, $alpha: .84); border: 1px solid rgba($color: #0073e9, $alpha: .85); border-radius: 20px;
+          >h4{ text-align: center; font-weight: bold; margin-bottom: 10px; font-size: 20px;}
+          &::after, 
+          &::before { position: absolute; left: 100%; top: 75px; border: solid transparent; content: ""; height: 0; width: 0; pointer-events: none;}
+        &::after { border-color: transparent; border-left-color:  rgba($color: #00109a, $alpha: .84); border-width: 12px; margin-top: -12px; }
+        &::before { border-color: transparent; border-left-color:  rgba($color: #0073e9, $alpha: .85); border-width: 13px; margin-top: -13px;}
+      }
+      .img:hover,
+      .name:hover,
+      .postion:hover{
+        & ~ .info{ display: block;}
+      }
     }
   }
   .module-right-02{ @extend .module-right-01; background-image: url('../images/bg-kuang-e-06.png'); height: 344px; margin-bottom: 0;
-    .main-txt{ margin: 40px 60px 40px 44px; font-size: 18px;
-      .icon{ vertical-align: middle; margin: -12px 15px 0 0; opacity: .23;
-        &:first-child{ margin-left: 20px;}
+    .module-title-01{width: 170px;  margin: 37px auto; font-size: 24px; font-weight: bold; text-align: center; display: flex; align-items: center; justify-content: center;
+      &::before,
+      &::after{ top: auto;}
+    }
+    .star-box{ text-align: center; margin-bottom: 48px;
+      >.icon{ margin: 0 13px; width: 52px; height: 48px; background-size: 100%; opacity: .23;
         &.cur{ opacity: 1;}
       }
-      >p{line-height: 32px;}
     }
+    .info{ text-align: center;
+      .son-sep{ width: 1px; height: 20px; background-color: #fff; margin: 0 10px;  @include inline-block; line-height:1.6;}
+      .name:last-child{ display: block;}
+    }
+    // .main-txt{ margin: 40px 60px 40px 44px; font-size: 18px;
+    //   .icon{ vertical-align: middle; margin: -12px 15px 0 0; opacity: .23;
+    //     &:first-child{ margin-left: 20px;}
+    //     &.cur{ opacity: 1;}
+    //   }
+    //   >p{line-height: 32px;}
+    // }
+
   }
 }
 // cctv

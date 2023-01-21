@@ -46,35 +46,35 @@ $('.banner-build').hover(function(){
 
 
 // cloud audio
-// $('.main-cloud-audio .audio-box')
-// 	.find('.btn')
-// 	.on('click',
-// 	function(){
-// 		if ($(this).is('.stop')){
-// 			$(this)
-// 				.find('.icon')
-// 				.removeClass('icon-audio')
-// 				.addClass('icon-stop')
-// 				.end()
-// 				.find('.txt')
-// 				.text('点击停止')
-// 				.end()
-// 				.removeClass('stop');
-// 			$('#audio-cloud')[0].play();
-// 		}else{
-// 			$(this)
-// 				.find('.icon')
-// 				.addClass('icon-audio')
-// 				.removeClass('icon-stop')
-// 				.end()
-// 				.find('.txt')
-// 				.text('点击开始')
-// 				.end()
-// 				.addClass('stop');
-// 			$('#audio-cloud')[0].pause();
-// 		}
-// 	}
-// );
+$('.main-cloud-audio .audio-box')
+	.find('.btn')
+	.on('click',
+	function(){
+		if ($(this).is('.stop')){
+			$(this)
+				.find('.icon')
+				.removeClass('icon-audio')
+				.addClass('icon-stop')
+				.end()
+				.find('.txt')
+				.text('点击停止')
+				.end()
+				.removeClass('stop');
+			$('#audio-cloud')[0].play();
+		}else{
+			$(this)
+				.find('.icon')
+				.addClass('icon-audio')
+				.removeClass('icon-stop')
+				.end()
+				.find('.txt')
+				.text('点击开始')
+				.end()
+				.addClass('stop');
+			$('#audio-cloud')[0].pause();
+		}
+	}
+);
 
 // $('.main-cloud-audio .audio-box')
 // 	.find('.icon-sound')
