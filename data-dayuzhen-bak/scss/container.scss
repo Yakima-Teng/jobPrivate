@@ -490,8 +490,9 @@ $main-title:#329df0;
     }
   }
   .module-content-01{ background: url('../images/bg-kuang-18.png') no-repeat center top; width: 926px; height: 300px; text-align: center; margin-top: 26px;
-    .main-profession{ padding: 0 30px; height: 225px; overflow: hidden; box-sizing: border-box;
-      .list{ color: $main-white; display: flex; justify-content: space-between; align-items: center; text-align: left; font-size: 20px; border-bottom: 1px solid rgba($color: #e6f0fc, $alpha: .45); padding:0 0 12px 6px; margin-bottom: 15px; line-height: 1; position: relative;
+    .module-title{ margin-bottom: 0px;}
+    .main-profession{ padding: 0 30px; height: 250px; overflow: hidden; box-sizing: border-box;
+      .list{ color: $main-white; display: flex; justify-content: space-between; align-items: center; text-align: left; font-size: 20px; border-bottom: 1px solid rgba($color: #e6f0fc, $alpha: .45); height: 50px; padding-left: 6px;  box-sizing: border-box; line-height: 1; position: relative;
         >span{ font-size: 18px;}
         >em{ display: block; width: 750px;}
          &::before{ content: ''; display: inline-block; width: 5px; height: 5px; margin-right: 10px; background-color: $main-white; border-radius: 100%; }
@@ -528,7 +529,7 @@ $main-title:#329df0;
 }
 // each
 .contanted-each{ padding: 25px 46px;
-  .module-left-01{ background: url('../images/bg-kuang-e-01.png') no-repeat center top; width: 509px; height: 488px; margin-bottom: 18px;
+  .module-left-01{ background: url('../images/bg-kuang-e-01.png') no-repeat center top; width: 509px; height: 488px; margin-bottom: 20px;
     >.main-each-cun{  padding: 15px 22px 0;
       .cun-map{ text-align: center; margin-bottom: 20px;}
     }
@@ -589,19 +590,19 @@ $main-title:#329df0;
         }
       }
     }
-    .info-list-box{ height: 250px; overflow: hidden; padding: 29px 25px 0; 
+    .info-list-box{ height: 272px; overflow: hidden; margin-top: 20px; padding: 0 25px; box-sizing: border-box;
       // .list{ display: flex; align-items: center; background-image: linear-gradient(to right, rgba(2, 33, 119,.2) 5%, rgb(2, 33, 119) 20%, rgb(2, 33, 119) 80%, rgba(2, 33, 119,.2)); margin-bottom: 4px; border-radius: 10px; height: 73px; box-sizing: border-box; padding: 7px 30px 7px 0;
       //   .name{ width: 35%; box-sizing: border-box; text-align: center; border-right: 1px solid $main-white; line-height: 1.5;}
       //   .name-list{ box-sizing: border-box; padding-left: 40px;
       //     >span{ display: inline-block; margin-left: 10px; line-height: 1.2;}
       //   }
       // }
-      .list{  margin-bottom: 17px; border-bottom: 1px solid rgba($color: #e6f0fc, $alpha: .5); padding-bottom: 17px; line-height: 1;
+      .list{ height: 53px; border-bottom: 1px solid rgba($color: #e6f0fc, $alpha: .5); line-height: 1; box-sizing: border-box; padding-top: 17px;
         >a{ color: $main-white; display: flex; align-items: center; justify-content: space-between;}
       }
     }
   }
-  .module-right-01{ background: url('../images/bg-kuang-e-05.png') no-repeat center top; width: 503px; height: 487px; margin-bottom: 29px;
+  .module-right-01{ background: url('../images/bg-kuang-e-05.png') no-repeat center top; width: 503px; height: 487px; margin-bottom: 21px;
     .main-user-info{ display: flex; flex-wrap: wrap; padding: 40px 19px 0; box-sizing: border-box;}
     .list-box{ display: flex; flex-direction: column; text-align: center; margin: 0 20px 22px 0; cursor: pointer; position: relative;
       &:nth-child(4n){ margin-right: 0;}
