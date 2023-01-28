@@ -186,7 +186,7 @@ $('.btn-back-head').on('click', function(){
 	window.history.go(-1);
 });
 $('.contanted-control .list-cctv, .list-aqxc').find('.list').on('click', function(){
-	window.location.href='/data-dayuzhen/cctv.html'
+	window.location.href='/cctv.html'
 });
 	// video-layer
 $('.contanted-farm .list-cctv')
