@@ -196,23 +196,17 @@
 <!--/page-index-->
 
 <script src="js/base.js"></script>
-<script>
+<!--视频显示多个尺寸切换-->
+<script type="text/javascript">
 function cctvShow(num){
 $(this).addClass('cur');
 $('.video-box')
 	.eq(num)
 	.addClass('show')
 	.show();
-// let listCurNum = $(this).parents('.list-box').find('cur').length;
-let videoLenght = $('.video-box.show').length;
-// console.log(listCurNum);
-/* if( videoLenght > 4, videoLenght < 10){
-	$('.video-box.show')
-		.css({
-			width:'356px'
 
-		}).parent().addClass('threelist').removeClass('twolist');
-}else*/
+let videoLenght = $('.video-box.show').length;
+
 if( videoLenght == 1 ){
 	$('.video-box.show')
 		.css({
@@ -226,10 +220,8 @@ if( videoLenght >= 2 ){
 			width:'550px',
 		})
 }
-
-
 }
-
 </script>
+<!--/视频显示多个尺寸切换-->
 </body>
 </html>

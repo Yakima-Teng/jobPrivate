@@ -1,16 +1,7 @@
 $(function() {
-gundongTxt($(".contanted-build .main-profession"), 3000, 5 );
-gundongTxt($(".contanted-index .main-info"), 1000, 5);
-gundongTxt($(".contanted-control .module-left .main-info"), 2000, 4);
-gundongTxt($(".contanted-control .module-center .main-info"), 3000, 5);
-gundongTxt($(".contanted-farm .module-left .main-info"), 2000, 4);
-gundongTxt($(".contanted-farm .module-center .main-info"), 3000, 5);
-gundongTxt($(".contanted-each .info-list-box"), 5000, 5 );
 
-
-
+// 党建banner图切换
 !$('.banner-common').length > 0 || (function () {
-// 党建banner
 let timejg=3000;//轮播间隔时间
 let size = $('.banner-img ul li').size();
 for(let i=1;i<=size; i++){
@@ -46,7 +37,7 @@ $('.banner-build').hover(function(){
 })();
 
 
-// cloud audio
+// 声音效果控制
 $('.main-cloud-audio .audio-box')
 	.find('.btn')
 	.on('click',
@@ -77,20 +68,22 @@ $('.main-cloud-audio .audio-box')
 	}
 );
 
-// $('.main-cloud-audio .audio-box')
-// 	.find('.icon-sound')
-// 	.on('click',
-// 	function(){
-// 		$('#audio-cloud').prop('volume', 0)
-// 		// if( $('#audio-cloud').is('.jingyin') ){
-// 		// 	$('#audio-cloud').prop('volume', 100).removeClass('jingyin');
-// 		// }else{
-// 		// 	$('#audio-cloud').prop('volume', 0)
-// 		// 	$('#audio-cloud').addClass('jingyin');
-// 		// }
-// 	}
-// );
-// cloud right
+$('.main-cloud-audio .audio-box')
+	.find('.icon-sound')
+	.on('click',
+	function(){
+		$('#audio-cloud').prop('volume', 0)
+		// if( $('#audio-cloud').is('.jingyin') ){
+		// 	$('#audio-cloud').prop('volume', 100).removeClass('jingyin');
+		// }else{
+		// 	$('#audio-cloud').prop('volume', 0)
+		// 	$('#audio-cloud').addClass('jingyin');
+		// }
+	}
+);
+
+
+// 村镇列表展示
 $('.main-cloud-audio .audio-checkbox-box')
 	.find('.qu-checkbox')
 	.on('click',
@@ -100,16 +93,11 @@ $('.main-cloud-audio .audio-checkbox-box')
 			$(this).next('.cun-checkbox-main').show();
 			$(this).parent().removeClass('more');
 		}
-		// else{
-		// 	$(this).parent().addClass('more');
-		// 	$(this).parent().find('.checkbox').removeClass('cur');
-		// 	$(this).parent().find('.cun-checkbox-main').hide();
-		// };
 	}
 );
 
 
-// 全选反选
+// 村镇选择
 $(".audio-checkbox-box .checkbox-list .qu-checkbox").find('input[type=checkbox]').on("change", function () {
 	if (this.checked) {
 			$(this).parent().next().find("input[type='checkbox']").prop("checked", true);
@@ -130,20 +118,8 @@ $(".audio-checkbox-box .checkbox-list .cun-checkbox input").on("change", functio
 			$(this).parents('.cun-checkbox-main').siblings('.qu-checkbox').find("input[type='checkbox']").prop("checked", false);
 	}
 });
-// cctv
-// $('.contanted-cctv .list-box')
-// 	.find('.second-list')
-// 	.on('click', 
-// 	function(){
-// 		let videoLenght = $('.video-box.show').length;
 
-
-// 		$('.video-box')
-// 			.eq(0)
-// 			.addClass('show')
-// 			.show();
-// 		// console.log(videoLenght);
-// 	});
+// 视频页面关闭按钮
 $('.contanted-cctv .main-video')
 	.find('.btn-close')
 	.on('click', 
@@ -165,7 +141,7 @@ $('.contanted-cctv .main-video')
 
 
 
-// 二级菜单
+// 菜单列表展示
 $('.page-contanted').find('.frist-list').on('click', function(){
 	if( $(this).parent().is('.show') ){
 		$(this)
@@ -181,14 +157,15 @@ $('.page-contanted').find('.frist-list').on('click', function(){
 		.parent().addClass('show');
 	}
 });
-// link
+// 返回按钮
 $('.btn-back-head').on('click', function(){
 	window.history.go(-1);
 });
+// 跳转视频页
 $('.contanted-control .list-cctv, .list-aqxc').find('.list').on('click', function(){
 	window.location.href='/cctv.html'
 });
-	// video-layer
+// video弹层打开
 $('.contanted-farm .list-cctv')
 	.find('.list')
 	.on('click', 
@@ -206,12 +183,12 @@ $('.list-cctv')
 			.show();
 	}
 );
-// layer
+// 弹层关闭
 $('.layer-video').find('.btn-close').on('click', function(){
 	$(this).parents('.layer-video').hide();
 	$('.page-mask').hide();
 });
-// map-nav
+// 首页二级导航效果
 $('.map-nav').find('.nav').on('click', function(){
 	let index = $(this).index();
 	$(this).addClass('cur').siblings().removeClass('cur');
@@ -222,24 +199,17 @@ $('.map-nav').find('.nav').on('click', function(){
 		$('.module-center-map').find('img').show().attr({src:'./images/img-08-'+ index++ +'.png'});
 		$(this).parents('.module-center').find('.a_link').hide()
 	}
-	
-
 });
-// $('.map-nav').find('.nav').eq(1).on('click', function(){
-// 	$('.module-center-map').show().find('img').attr({src:'./images/img-08-1.png'});
-// });
-// $('.map-nav').find('.nav').eq(2).on('click', function(){
-// 	$('.module-center-map').show().find('img').attr({src:'./images/img-08-2.png'});
-// });
-// $('.map-nav').find('.nav').eq(3).on('click', function(){
-// 	$('.module-center-map').show().find('img').attr({src:'./images/img-08-3.png'});
-// });
-// $('.map-nav').find('.nav').eq(4).on('click', function(){
-// 	$('.module-center-map').show().find('img').attr({src:'./images/img-08-4.png'});
-// });
-	
 });
 
+// 文字滚动效果设置
+gundongTxt($(".contanted-build .main-profession"), 3000, 5 );
+gundongTxt($(".contanted-index .main-info"), 1000, 5);
+gundongTxt($(".contanted-control .module-left .main-info"), 2000, 4);
+gundongTxt($(".contanted-control .module-center .main-info"), 3000, 5);
+gundongTxt($(".contanted-farm .module-left .main-info"), 2000, 4);
+gundongTxt($(".contanted-farm .module-center .main-info"), 3000, 5);
+gundongTxt($(".contanted-each .info-list-box"), 5000, 5 );
 function gundongTxt (divBox, time, listNum) {
 	let listLength = $(divBox).find('li').length;
 	if (listLength > listNum){

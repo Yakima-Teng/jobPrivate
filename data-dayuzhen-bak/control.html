@@ -486,9 +486,9 @@ option = {
             },
             zlevel: 1,
             labelLine: {
-                // normal: {/* 5.x版本中去掉了normal */
+
                 show: false,
-                // },
+
             },
             data: configZJSB.data,
         },
@@ -504,6 +504,7 @@ option = {
 
 	window.addEventListener('resize', myChart.resize);
 </script>
+<!--/上报数字滚动-->
 <!--上报数饼图-->
 <script type="text/javascript">
 	var dom = document.getElementById('container-sb');
@@ -779,6 +780,7 @@ option = {
 
 	window.addEventListener('resize', myChart.resize);
 </script>
+<!--/上报数饼图-->
 <!--综治执法统计-->
 <script type="text/javascript">
 	var dom = document.getElementById('container-zftj');
@@ -862,38 +864,31 @@ option = {
         config.title
     ),
     series: [
-        //环形
+
         {
             name: '',
             type: 'pie',
             radius: [70, 98],
             center: ['50%', '50%'],
             clockwise: false,
-            // hoverAnimation: false,//4.x版本使用取消悬浮放大
+
             emphasis: {
-                //5.x版本使用取消悬浮放大
+          
                 scale: false,
                 label: {
-                    show: false /* 5.x版本是label.emphasis */,
+                    show: false ,
                 },
             },
-            // label: { 4.x版本是label.emphasis
-            //     // normal: {
-            //         show: false,
-            //     // },
-            //     emphasis: {
-            //         show: false,
-            //     },
-            // },
+
             zlevel: 1,
             labelLine: {
-                // normal: {/* 5.x版本中去掉了normal */
+                
                 show: false,
-                // },
+              
             },
             data: config.data,
         },
-        //环形分割线
+
         {
             name: '分割线',
             type: 'gauge',
@@ -948,6 +943,7 @@ option = {
 
 	window.addEventListener('resize', myChart.resize);
 </script>
+<!--/综治执法统计-->
 <!--矛盾调解-->
 <script type="text/javascript">
 	var dom = document.getElementById('container-mdtj');
@@ -959,7 +955,7 @@ option = {
 	
 	var option;
 
-// option
+
 option = {
 
 tooltip: {
@@ -984,7 +980,7 @@ grid: {
 	},
 xAxis: {
 		data: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
-		axisTick: { //坐标轴刻度相关设置。
+		axisTick: { 
 							show: false,
 					},
 		axisLine: {
@@ -1019,7 +1015,6 @@ series: [ {
 							show: true,
 							position: 'top',
 							formatter: function(value) {
-									// return '↓' + ((value.data.all - value.data.value) * 100 / value.data.all).toFixed(2) + '%';
 								return  ( value.data.sunValue * 100 / value.data.value).toFixed(0) + '%';
 							},
 							textStyle: {
@@ -1093,6 +1088,7 @@ series: [ {
 
 	window.addEventListener('resize', myChart.resize);
 </script>
+<!--/矛盾调解-->
 <!--随手拍事件-->
 <script type="text/javascript">
 	var dom = document.getElementById('container-ssp');
@@ -1157,9 +1153,9 @@ option = {
 					textStyle: {
 							color: '#ade1ff'
 					},
-					// 默认x轴字体大小
+				
 					fontSize: 12,
-					// margin:文字到x轴的距离
+				
 					margin: 15,
 					align:'center'
 			},
@@ -1182,7 +1178,7 @@ option = {
 							color: '#ade1ff'
 					}
 			},
-			 // 分割线
+
 			splitLine: {
 					lineStyle: {
 							type: "dashed",
@@ -1262,5 +1258,6 @@ option = {
 
 	window.addEventListener('resize', myChart.resize);
 </script>
+<!--随手拍事件-->
 </body>
 </html>

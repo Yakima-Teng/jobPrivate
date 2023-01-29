@@ -204,7 +204,7 @@
 <!--/page-index-->
 <script src="js/num.js"></script>
 <script src="js/num-gun.js"></script>
-<script src="./js/echarts.min.js"></script>
+<script src="js/echarts.min.js"></script>
 <script src="js/base.js"></script>
 <!--上报数字滚动-->
 <script>
@@ -213,6 +213,7 @@ $("#dataNums-01").rollNumDaq({
   className:'dataNums'
 });
 </script>
+<!--/上报数字滚动-->
 <!--上报数饼图-->
 <script type="text/javascript">
 	var dom = document.getElementById('container-sb');
@@ -488,6 +489,7 @@ $("#dataNums-01").rollNumDaq({
 
 	window.addEventListener('resize', myChart.resize);
 </script>
+<!--/上报数饼图-->
 <!--火情告警信息-->
 <script type="text/javascript">
 	var dom = document.getElementById('container-hq');
@@ -655,6 +657,7 @@ series: [
 
 	window.addEventListener('resize', myChart.resize);
 </script>
+<!--/火情告警信息-->
 <!--矛盾调解事件-->
 <script type="text/javascript">
 	var dom = document.getElementById('container-tjsj');
@@ -700,12 +703,10 @@ var dataStyle = {
 
 option = {
 	backgroundColor: "rgba(0,0,0,0)",
-	//第一个图表
 	series: [
-			//上层环形配置
 			{
 					type: 'pie',
-					hoverAnimation: false, //鼠标经过的特效
+					hoverAnimation: false, 
 					radius: [59, 63],
 					center: ['50%', '50%'],
 					startAngle: 240,
@@ -749,6 +750,7 @@ option = {
 
 	window.addEventListener('resize', myChart.resize);
 </script>
+<!--/矛盾调解事件-->
 <!--实时天气-空气质量-->
 <script type="text/javascript">
 	var dom = document.getElementById('container-kqzl');
@@ -801,7 +803,6 @@ option = {
     ],
     title: Object.assign(
         {
-            // text: '{a|' + num + '}{b|' + unit + '}\n{c|' + title + '}',
             text: '{c|' + title + '}\n{a|' + num + '}',
             x: 'center',
             y: 'center',
@@ -840,33 +841,24 @@ option = {
         config.title
     ),
     series: [
-        //环形
         {
             name: '',
             type: 'pie',
             radius: [40, 60],
             center: ['50%', '50%'],
-            // hoverAnimation: false,//4.x版本使用取消悬浮放大
+
             emphasis: {
-                //5.x版本使用取消悬浮放大
+             
                 scale: false,
                 label: {
-                    show: false /* 5.x版本是label.emphasis */,
+                    show: false ,
                 },
             },
-            // label: { 4.x版本是label.emphasis
-            //     // normal: {
-            //         show: false,
-            //     // },
-            //     emphasis: {
-            //         show: false,
-            //     },
-            // },
+
             zlevel: 1,
             labelLine: {
-                // normal: {/* 5.x版本中去掉了normal */
                 show: false,
-                // },
+
             },
             data: config.data,
         },
@@ -922,5 +914,6 @@ option = {
 
 	window.addEventListener('resize', myChart.resize);
 </script>
+<!--/实时天气-空气质量-->
 </body>
 </html>

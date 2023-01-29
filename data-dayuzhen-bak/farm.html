@@ -374,7 +374,7 @@
 <!--/mask-->
 <script src="js/num.js"></script>
 <script src="js/num-gun.js"></script>
-<script src="./js/echarts.min.js"></script>
+<script src="js/echarts.min.js"></script>
 <script src="js/base.js"></script>
 <!--火情告警信息-->
 <script type="text/javascript">
@@ -543,6 +543,7 @@ series: [
 
 	window.addEventListener('resize', myChart.resize);
 </script>
+<!--/火情告警信息-->
 <!--火情告警折线-->
 <script type="text/javascript">
 	var dom = document.getElementById('container-hqgj-zx');
@@ -561,7 +562,7 @@ series: [
 					trigger: 'axis',
 					backgroundColor:'transparent',
 					borderColor:'rgba(31, 109, 247,1)',
-					textStyle: { // 提示框浮层的文本样式。
+					textStyle: { 
 							color: '#fff',
 							fontStyle: 'normal',
 							fontSize: 14,
@@ -612,9 +613,9 @@ series: [
 					type: 'category',
 			 
 					data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
-					axisLabel: { //坐标轴刻度标签的相关设置。
-							interval: 0, //设置为 1，表示『隔一个标签显示一个标签』
-							//	margin:15,
+					axisLabel: { 
+							interval: 0, 
+
 							textStyle: {
 									color: 'rgba(193,226,250,.5)',
 									fontStyle: 'normal',
@@ -624,7 +625,7 @@ series: [
 							formatter: function (params) {
 									var newParamsName = "";
 									var paramsNameNumber = params.length;
-									var provideNumber = 4; //一行显示几个字
+									var provideNumber = 4; 
 									var rowNumber = Math.ceil(paramsNameNumber / provideNumber);
 									if (paramsNameNumber > provideNumber) {
 											for (var p = 0; p < rowNumber; p++) {
@@ -644,22 +645,21 @@ series: [
 									}
 									return newParamsName
 							},
-							//rotate:50,
+
 					},
-					axisTick: { //坐标轴刻度相关设置。
+					axisTick: {
 							show: false,
 					},
-					axisLine: { //坐标轴轴线相关设置
+					axisLine: { 
 							lineStyle: {
 									color: '#CAFFFD',
 									opacity: 0.3
 							}
 					},
-					splitLine: { //坐标轴在 grid 区域中的分隔线。
+					splitLine: { 
 							show: false,
 							lineStyle: {
 									color: '#E5E9ED',
-									// 	opacity:0.1
 							}
 					}
 			},
@@ -691,7 +691,7 @@ series: [
 							lineStyle: {
 									type: 'solid',
 									color: 'rgba(13,72,146,.3)',
-									// 	opacity:0.1
+
 							}
 					}
 
@@ -738,5 +738,6 @@ series: [
 
 	window.addEventListener('resize', myChart.resize);
 </script>
+<!--/火情告警折线-->
 </body>
 </html>
