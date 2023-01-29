@@ -48,16 +48,14 @@ class UiAudio extends HTMLElement {
             :host(:not([controls])) .container {
                 display: none;
             }
-            .container {
-                display: grid;
-                border-radius: .5em;
-                background: var(--ui-audio-background, #333);
-                color: var(--ui-audio-color, #ddd);
-                padding: var(--1rem);
-                gap: .5em;
-                font-size: var(--1rem);
+            .container { display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 18px 0 0 24px;
+            
             }
             .label {
+                display:none;
                 font-size: calc(.875 * var(--1rem));
                 color: #999;
                 padding-left: calc(.75 * var(--1rem));
@@ -70,9 +68,11 @@ class UiAudio extends HTMLElement {
                 display: none;
             }
             .operate {
-                display: flex;
+               
                 align-items: center;
             }
+
+          
             .operate-time,
             .time-range {
                 flex: 1;
@@ -100,13 +100,13 @@ class UiAudio extends HTMLElement {
                     filter: brightness(1.1);
                 }
             }
-            .operate-seq {
-                flex: none;
+            .operate-seq { display: flex; width: 100px; height: 100px; justify-content:center; align-items: center; margin-bottom: 15px; cursor: pointer;  background-color: rgba(14,90,255,0.16); border-radius: 100%;
             }
             .operate-time {
                 display: flex;
                 align-items: center;
                 margin: 0 1em;
+                display:none;
             }
             .operate-time output {
                 flex: 0 0 5ch;
@@ -123,22 +123,24 @@ class UiAudio extends HTMLElement {
                 --ui-audio-mask-image: var(--ui-audio-icon-next);
             }
             .play {
-                --ui-audio-mask-image: var(--ui-audio-icon-play);
-                -webkit-mask-size: calc(2 * var(--1rem));
-                mask-size: calc(2 * var(--1rem));
+                display: inline-block; background: no-repeat center; 
+                box-sizing: border-box; background-image: url('images/icon-microphone.png'); width: 50px; height: 79px; 
+                
             }
             .pause {
-                --ui-audio-mask-image: var(--ui-audio-icon-pause);
+                display: inline-block; background: no-repeat center; 
+                box-sizing: border-box; background-image: url('images/icon-stop.png'); background-position: 1px 9px; width: 58px; height: 79px; 
             }
-            .muted {
-                --ui-audio-mask-image: var(--ui-audio-icon-unmuted);
+            .muted { margin-right:12px;
+                display: inline-block; background: no-repeat center; box-sizing: border-box; 
+                background-image: url('images/icon-sound.png'); width: 19px; height: 15px; 
             }
             .more {
                 --ui-audio-mask-image: var(--ui-audio-icon-more);
             }
-            :host([muted]) .muted {
-                --ui-audio-mask-image: var(--ui-audio-icon-muted);
-            }
+            // :host([muted]) .muted {
+            //     --ui-audio-mask-image: var(--ui-audio-icon-muted);
+            // }
             [type="range"] {
                 -webkit-appearance: none;
                 appearance: none;
@@ -160,11 +162,11 @@ class UiAudio extends HTMLElement {
                 height: .75em;
                 border-radius: 50%;
                 margin-top: -.25em;
-                border-image: linear-gradient(#f44336, #f44336) 0 fill / .25em .75em .25em 0 / 0 0 0 2000px;
+                border-image: linear-gradient(#fff, #fff) 0 fill / .25em .75em .25em 0 / 0 0 0 2000px;
             }
             ::-webkit-slider-runnable-track {
                 height: .25em;
-                background: #ccc;
+                background: #083494;
             }
             ::-moz-range-track {
                 background: #ccc;
@@ -185,7 +187,7 @@ class UiAudio extends HTMLElement {
 
             .time-range {  margin: 0 .25em; }
             .time-total { text-align: right; }
-            .operate-volume { display: flex; align-items: center; }
+            .operate-volume { display: flex; align-items: center; margin-left:-28px;}
             .volume-range { width: 7.5em; }
             select { position: absolute; }
             .rate {
@@ -233,29 +235,33 @@ class UiAudio extends HTMLElement {
             }
             .operate-more { display: none; }
             @media (max-width: 640px) {
-                .container { padding: calc(.5 * var(--1rem)); }
-                .volume-range, .operate-loop, .operate-rate { display: none; position: absolute; }
-                .icon { width: calc(1.75 * var(--1rem)) }
-                .operate-more { display: block; }
+            
+                 .operate-loop, .operate-rate { display: none; position: absolute; }
+                // .icon { width: calc(1.75 * var(--1rem)) }
+               
                 .operate-volume, .operate-more, .operate { position: relative; }
                 .operate-time { margin: 0 .5em; }
                 .label { padding-left: calc(.5 * var(--1rem)); }
                 .time-range { width: 60px; }
-                [active] + .volume-range { display: block; right: calc(1.75 * var(--1rem)); background: var(--ui-audio-background, #333); box-shadow: -8px 0 var(--ui-audio-background, #333);}
+                // [active] + .volume-range { display: block; right: calc(1.75 * var(--1rem)); background: var(--ui-audio-background, #333); box-shadow: -8px 0 var(--ui-audio-background, #333);}
                 .operate-more[active] ~ .operate-loop, .operate-more[active] ~ .operate-rate { display: block; bottom: 100%; }
                 .operate-more[active]::before { content: ''; position: absolute; height: calc(3 * var(--1rem)); width: calc(6 * var(--1rem)); border: 1px solid #000; background: var(--ui-audio-background, #333); bottom: 100%; right: 0; }
                 .operate-more[active] ~ .operate-loop { right: calc(.5 * var(--1rem));}
                 .operate-more[active] ~ .operate-rate { right: calc(2.5 * var(--1rem)); margin-bottom: calc(.75 * var(--1rem)); }
             }
+
+            
+               
+     
         </style>
 
         <div class="container" part="container">
             <div part="label" class="label">${this.label || ''}</div>
             <div part="operate" class="operate">
                 <div class="operate-seq">
-                    <button class="icon prev" title="上一个">上一个</button>
+                    <button class="icon prev" title="上一个" style="display:none;">上一个</button>
                     <button class="icon play" title="播放">播放</button>
-                    <button class="icon next" title="下一个">下一个</button>
+                    <button class="icon next" title="下一个" style="display:none;">下一个</button>
                 </div>
                 <div class="operate-time">
                     <output class="time-current">00:00</output>
@@ -269,7 +275,7 @@ class UiAudio extends HTMLElement {
                 <div class="operate-more">
                     <button class="icon more">更多</button>
                 </div>
-                <div class="operate-rate">
+                <div class="operate-rate" style="display:none;">
                     <select class="select-rate">
                         <option value="0.5">0.5x</option>
                         <option value="0.75">0.75x</option>
@@ -281,7 +287,7 @@ class UiAudio extends HTMLElement {
                     </select>
                     <button class="rate">倍速</button>
                 </div>
-                <div class="operate-loop">
+                <div class="operate-loop" style="display:none;">
                     <select class="select-loop" title="顺序播放">
                         <option value="0" selected>顺序播放</option>
                         <option value="1">随机播放</option>
