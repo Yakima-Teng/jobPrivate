@@ -160,7 +160,7 @@ $main-title:#329df0;
   .fire-info-box{ display: flex; justify-content: space-between; align-items: center; padding: 0 25px;
     >.info{ color: #cde7ff; font-size: 16px; width: 96px;
       >p{ text-align: right; margin-bottom: 10px; line-height: 1.7;
-        >span{ display: inline-block; font-weight: bold; font-size: 20px; margin-right: 10px; color: #fcae49;}
+        >span{ display: inline-block;  font-size: 20px; margin-right: 10px; color: #fcae49;}
         &::before{ content: ''; display: inline-block; width: 23px; height: 17px; background-color: #fcae49; margin-right: 9px; vertical-align: middle; margin-top: -1px;}
         &:nth-child(2){
           >span{ color: #1459e7;}
@@ -200,7 +200,7 @@ $main-title:#329df0;
 
       >a{ color: #5db1ff; font-size: 20px; width: 100px; display: block; text-align: center;
         &:hover,
-        &.cur{ font-size: 24px; color: $main-font; font-weight: bold; text-shadow: 0 0 20px rgba($color: #dff2ff, $alpha: .5);}
+        &.cur{ font-size: 24px; color: $main-font;  text-shadow: 0 0 20px rgba($color: #dff2ff, $alpha: .5);}
       }
     }
   }
@@ -213,7 +213,7 @@ $main-title:#329df0;
   .module-left-02{ @extend .module-left-01; background-image: url('../images/bg-kuang-01.png'); height: 256px;
     .main-event-tj{ display: flex; justify-content: space-between; align-items: center; padding:20px 19px 0;
       .info dl{ background: url('../images/bg-index-03.png') no-repeat center; width: 120px; height: 59px; margin-bottom: 25px; font-size: 16px; padding-top: 8px; box-sizing: border-box;
-        >dd{ font-size: 20px; font-weight: bold;
+        >dd{ font-size: 20px; 
           &.orange{ color: #f7aa23;}
           &.green{ color: #2acc6f;}
         }
@@ -247,13 +247,13 @@ $main-title:#329df0;
     .main-photograph{ display: flex; justify-content: center; align-items: center;
       >.info{background: url('../images/bg-index-06.png') no-repeat center; width: 200px; height: 200px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: relative;
         &::before{content: '件'; color: #fff; position: absolute; right: 35px; margin-top: -15px;}
-        .timer{ font-size: 38px; font-weight: bold;}
+        .timer{ font-size: 38px; }
       }
     }
     .module-title-01{
       &::before,
       &::after{ top: 17px;}
-      >.timer{ font-size: 24px; font-weight: bold;}
+      >.timer{ font-size: 24px; }
     }
   }
   .module-right-03{ @extend .module-left-02;
@@ -377,7 +377,7 @@ $main-title:#329df0;
       .complex-info{ width: 100%; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; margin-top: 20px;
         >p{ background: url('../images/bg-control-01.png') no-repeat center; width: 129px; height: 67px; display: flex; justify-content: center; align-items: center; color: #5188ff;
           >span{ display: block;}
-          >em{ font-size: 32px; font-weight: bold; display: inline-block; margin: 0 5px; color: $main-white;}
+          >em{ font-size: 32px;  display: inline-block; margin: 0 5px; color: $main-white;}
         }
       }
       .complex-num{ margin-left: 50px;
@@ -478,7 +478,7 @@ $main-title:#329df0;
     .user-number-box{ display: flex; justify-content: space-between; align-items: center; padding: 0 48px;  margin:24px 0 70px; box-sizing: border-box;
       .user-list{ position: relative; width: 110px; font-size: 18px;
         &::before{ content: ''; display: block; position: absolute; left: 50%; top: 50%; background: url('../images/bg-build-02.png') no-repeat center bottom; width: 195px; height: 133px; transform: translate(-50%, -24%);}
-        >dd{ font-size: 55px; font-weight: bold; margin-top: 22px; line-height: 1; position: relative; z-index: 1;}
+        >dd{ font-size: 55px;  margin-top: 22px; line-height: 1; position: relative; z-index: 1;}
       }
     }
   }
@@ -536,7 +536,7 @@ $main-title:#329df0;
     .cun-info{display: flex; align-items: center; justify-content: center;
       .info{ background: url('../images/bg-each-02.png') no-repeat center top; height: 85px; text-align: center; width: 25%;
         >dt{ margin-bottom: 54px;
-          >em{ font-size: 32px; display: inline-block; margin-right: 10px; font-weight: bold; font-family: Arial, Helvetica, sans-serif;}
+          >em{ font-size: 32px; display: inline-block; margin-right: 10px;  font-family: Arial, Helvetica, sans-serif;}
         }
         >dd{ color: #018afe;}
         &:last-child{ margin-right: 0;}
@@ -611,10 +611,10 @@ $main-title:#329df0;
         >img{ width: 100%;}
        
       }
-      .name{ font-size: 20px; color: $main-white; font-weight: bold; margin-top: 10px;}
+      .name{ font-size: 20px; color: $main-white;  margin-top: 10px;}
       .postion{ font-size: 20px; color: #fcae49; line-height: 1; margin-top: 5px;}
       .info { display: none; z-index: 1; position: absolute; right: 88px; top: -16px; padding: 23px 20px 30px 30px; box-sizing: border-box; text-align: left; line-height: 1.43; width: 338px; background:  rgba($color: #00109a, $alpha: .84); border: 1px solid rgba($color: #0073e9, $alpha: .85); border-radius: 20px;
-          >h4{ text-align: center; font-weight: bold; margin-bottom: 10px; font-size: 20px;}
+          >h4{ text-align: center;  margin-bottom: 10px; font-size: 20px;}
           &::after, 
           &::before { position: absolute; left: 100%; top: 75px; border: solid transparent; content: ""; height: 0; width: 0; pointer-events: none;}
         &::after { border-color: transparent; border-left-color:  rgba($color: #00109a, $alpha: .84); border-width: 12px; margin-top: -12px; }
@@ -628,7 +628,7 @@ $main-title:#329df0;
     }
   }
   .module-right-02{ @extend .module-right-01; background-image: url('../images/bg-kuang-e-06.png'); height: 344px; margin-bottom: 0;
-    .module-title-01{width: 170px;  margin: 37px auto; font-size: 24px; font-weight: bold; text-align: center; display: flex; align-items: center; justify-content: center;
+    .module-title-01{width: 170px;  margin: 37px auto; font-size: 24px;  text-align: center; display: flex; align-items: center; justify-content: center;
       &::before,
       &::after{ top: auto;}
     }
