@@ -24,15 +24,48 @@
 		<section class="module-left">
 			<div class="module-left-01">
 				<h2 class="module-title">综治事件上报</h2>
-				<div class="main"><img src="./images/img-01.png" alt=""></div>
+				<section class="main-toyear-sb">
+					<header class="module-title-01">今年上报数</header>
+					<div class="num-info" id="dataNums-01"></div>
+					<section class="bili-box">
+						<div id="container-sb"></div>
+						<footer><span class="title">治安类</span><span class="title">环境类</span><span class="title">道路类</span><span class="title">其他类</span></footer>
+					</section>
+				</section>
 			</div>
 			<div class="module-left-02">
 				<h2 class="module-title">矛盾调解事件</h2>
-				<div class="main"><img src="./images/img-02.png" alt=""></div>
+				<section class="main-event-tj">
+					<section class="baifenlv">
+						<div id="container-tjsj"></div>
+					</section>
+					<div class="info">
+						<dl>
+							<dt>今年上报数量</dt>
+							<dd class="orange timer count-number" data-to="3505" data-speed="1500">3505</dd>
+						</dl>
+						<dl>
+							<dt>已处理数量</dt>
+							<dd class="green timer count-number" data-to="3168" data-speed="1500">3168</dd>
+						</dl>
+					</div>
+				</section>
 			</div>
 			<div class="module-left-03">
 				<h2 class="module-title">火情告警信息</h2>
-				<div class="main"><img src="./images/img-03.png" alt=""></div>
+				<h3 class="module-son-title">今年</h3>
+				<div class="main-fire-info">
+					<dl class="fire-info-box">
+						<dt class="info">
+							<P>告警次数<br/><span class="timer count-number" data-to="324" data-speed="1500">324</span>次</P>
+							<P>研判处置<br/><span class="timer count-number" data-to="310" data-speed="1500">310</span>次</P>
+							<P>真实火情<br/><span class="timer count-number" data-to="13" data-speed="1500">13</span>次</P>
+						</dt>
+						<dd class="echarts-box">
+							<div id="container-hq"></div>
+						</dd>
+					</dl>
+				</div>
 			</div>
 		</section>
 		<!--/module-left-->
@@ -54,11 +87,27 @@
 		<section class="module-right">
 			<div class="module-right-01">
 				<h2 class="module-title">实时天气</h2>
-				<div class="main"><img src="./images/img-04.png" alt=""></div>
+				<section class="main-weather-box">
+					<div class="main-weather">
+						<header><img src="./images/img-weather.png" alt=""></header>
+						<p>多云<span>-2°</span></p>
+						<p>偏北风3-4级</p>
+					</div>
+					<div class="main-air">
+						<div id="container-kqzl"></div>
+					</div>
+				</section>
 			</div>
 			<div class="module-right-02">
 				<h2 class="module-title">随手拍</h2>
-				<div class="main"><img src="./images/img-05.png" alt=""></div>
+				<h3 class="module-son-title">今年</h3>
+				<section class="main-photograph">
+					<div class="info">
+						<p class="timer count-number" data-to="5688" data-speed="1500">5688</p>
+						<p>上报事件</p>
+					</div>
+				</section>
+				<header class="module-title-01">转入综治：<em class="timer count-number" data-to="456" data-speed="1500">456</em>件</header>
 			</div>
 			<div class="module-right-03">
 				<h2 class="module-title">随手拍列表</h2>
@@ -153,8 +202,718 @@
 	<!--/page-footer-->
 </section>
 <!--/page-index-->
-
+<script src="js/num.js"></script>
+<script src="js/num-gun.js"></script>
+<script src="js/echarts.min.js"></script>
 <script src="js/base.js"></script>
+<!--上报数字滚动-->
+<script>
+$("#dataNums-01").rollNumDaq({
+  deVal:671200,
+  className:'dataNums'
+});
+</script>
+<!--/上报数字滚动-->
+<!--上报数饼图-->
+<script type="text/javascript">
+	var dom = document.getElementById('container-sb');
+	var myChart = echarts.init(dom, null, {
+		renderer: 'canvas',
+		useDirtyRect: false
+	});
+	var app = {};
+	
+	var option;
 
+	option = {
+	title: [{
+			text: '{a|' + 26 + '%}',
+			x: '17',
+			y: 'center',
+			textStyle: {
+					rich: {
+							a: {
+									fontSize:16,
+									color: '#fff',
+							}
+					},
+			},
+	},{
+			text: '{a|' + 42 + '%}',
+			x: '97',
+			y: 'center',
+			textStyle: {
+					rich: {
+							a: {
+									fontSize:16,
+									color: '#fff',
+							},
+							b: {
+									fontSize: 32,
+									color: '#fff',
+							},
+					},
+			},
+	},{
+			text: '{a|' + 18 + '%}',
+			x: '182',
+			y: 'center',
+			textStyle: {
+					rich: {
+							a: {
+									fontSize:16,
+									color: '#fff',
+							},
+							b: {
+									fontSize: 32,
+									color: '#fff',
+							},
+					},
+			},
+	},{
+			text: '{a|' + 14 + '%}',
+			x: '259',
+			y: 'center',
+			textStyle: {
+					rich: {
+							a: {
+									fontSize:16,
+									color: '#fff',
+							},
+							b: {
+									fontSize: 32,
+									color: '#fff',
+							},
+					},
+			},
+	},],
+	series: [
+			{
+					type: 'pie',
+					radius: [21, 30],
+					center:[38,'50%'],
+					silent: true,
+					clockwise: false,
+					z: 1,
+					zlevel: 0,
+					label: {
+							show: false,
+					},
+					itemStyle: {
+							color: '#1459e7',
+					},
+					data: [100],
+			},
+			{
+					type: 'pie',
+					radius: [21, 35],
+					center:[38,'50%'],
+					silent: true,
+					clockwise: false,
+					z: 1,
+					zlevel: 0,
+					label: {
+							show: false,
+					},
+					data: [
+							{
+									value: 26.6,
+									name: '',
+									itemStyle: {
+											normal: {
+													color: '#ff6161',
+											},
+									},
+							},
+							{
+									value: 100 - 26.6,
+									name: '',
+									itemStyle: {
+											normal: {
+													color: 'rgba(0,0,0,0)',
+											},
+									},
+							},
+					],
+			},{
+				type: 'pie',
+				radius: [21, 30],
+				center:[118,'50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				itemStyle: {
+						color: '#1459e7',
+				},
+				data: [100],
+			},
+			{
+				type: 'pie',
+				radius: [21, 35],
+				center:[118,'50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				data: [
+						{
+								value: 42,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: '#2acc6f',
+										},
+								},
+						},
+						{
+								value: 100 - 42,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: 'rgba(0,0,0,0)',
+										},
+								},
+						},
+				],
+			},{
+				type: 'pie',
+				radius: [21, 30],
+				center:[200,'50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				itemStyle: {
+						color: '#1459e7',
+				},
+				data: [100],
+			},
+			{
+				type: 'pie',
+				radius: [21, 35],
+				center:[200,'50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				data: [
+						{
+								value: 18,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: '#fcae49',
+										},
+								},
+						},
+						{
+								value: 100 - 18,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: 'rgba(0,0,0,0)',
+										},
+								},
+						},
+				],
+			},{
+				type: 'pie',
+				radius: [21, 30],
+				center:[278,'50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				itemStyle: {
+						color: '#1459e7',
+				},
+				data: [100],
+			},
+			{
+				type: 'pie',
+				radius: [21, 35],
+				center:[278,'50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				data: [
+						{
+								value: 14,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: '#00d2dd',
+										},
+								},
+						},
+						{
+								value: 100 - 14,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: 'rgba(0,0,0,0)',
+										},
+								},
+						},
+				],
+			}
+			
+
+	],
+};
+
+
+	if (option && typeof option === 'object') {
+		myChart.setOption(option);
+	}
+
+	window.addEventListener('resize', myChart.resize);
+</script>
+<!--/上报数饼图-->
+<!--火情告警信息-->
+<script type="text/javascript">
+	var dom = document.getElementById('container-hq');
+	var myChart = echarts.init(dom, 'dark', {
+		renderer: 'canvas',
+		useDirtyRect: false
+	});
+	var app = {};
+	
+	var option;
+
+	option = {
+backgroundColor:'rgba(255,255,255,0)',
+series: [
+		{
+				type: 'pie',
+				radius: [21, 30],
+				center:['50%','50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				itemStyle: {
+						color: '#0d2249',
+				},
+				data: [100],
+		},
+		{
+				type: 'pie',
+				radius: [21, 30],
+				center:['50%','50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				data: [
+						{
+								value: 26.6,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: '#ff6161',
+										},
+								},
+						},
+						{
+								value: 100 - 26.6,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: 'rgba(0,0,0,0)',
+										},
+								},
+						},
+				],
+		},{
+			type: 'pie',
+			radius: [36, 45],
+			center:['50%','50%'],
+			silent: true,
+			clockwise: false,
+			z: 1,
+			zlevel: 0,
+			label: {
+					show: false,
+			},
+			itemStyle: {
+					color: '#0d2249',
+			},
+			data: [100],
+		},
+		{
+			type: 'pie',
+			radius: [36, 45],
+			center:['50%','50%'],
+			silent: true,
+			clockwise: false,
+			z: 1,
+			zlevel: 0,
+			label: {
+					show: false,
+			},
+			data: [
+					{
+							value: 42,
+							name: '',
+							itemStyle: {
+									normal: {
+											color: '#1459e7',
+									},
+							},
+					},
+					{
+							value: 100 - 42,
+							name: '',
+							itemStyle: {
+									normal: {
+											color: 'rgba(0,0,0,0)',
+									},
+							},
+					},
+			],
+		},{
+			type: 'pie',
+			radius: [51, 60],
+			center:['50%','50%'],
+			silent: true,
+			clockwise: false,
+			z: 1,
+			zlevel: 0,
+			label: {
+					show: false,
+			},
+			itemStyle: {
+					color: '#0d2249',
+			},
+			data: [100],
+		},
+		{
+			type: 'pie',
+			radius: [51, 60],
+			center:['50%','50%'],
+			silent: true,
+			clockwise: false,
+			z: 1,
+			zlevel: 0,
+			label: {
+					show: false,
+			},
+			data: [
+					{
+							value: 18,
+							name: '',
+							itemStyle: {
+									normal: {
+											color: '#fcae49',
+									},
+							},
+					},
+					{
+							value: 100 - 18,
+							name: '',
+							itemStyle: {
+									normal: {
+											color: 'rgba(0,0,0,0)',
+									},
+							},
+					},
+			],
+		}
+		
+
+],
+};
+
+	if (option && typeof option === 'object') {
+		myChart.setOption(option);
+	}
+
+	window.addEventListener('resize', myChart.resize);
+</script>
+<!--/火情告警信息-->
+<!--矛盾调解事件-->
+<script type="text/javascript">
+	var dom = document.getElementById('container-tjsj');
+	var myChart = echarts.init(dom, null, {
+		renderer: 'canvas',
+		useDirtyRect: false
+	});
+	var app = {};
+	
+	var option;
+
+	var placeHolderStyle = {
+	normal: {
+			label: {
+					show: false
+			},
+			labelLine: {
+					show: false
+			},
+			color: "rgba(0,0,0,0)",
+			borderWidth: 0
+	},
+	emphasis: {
+			color: "rgba(0,0,0,0)",
+			borderWidth: 0
+	}
+};
+
+
+var dataStyle = {
+	normal: {
+			formatter: '{c}%',
+			position: 'center',
+			show: true,
+			textStyle: {
+					fontSize: '36',
+					fontWeight: 'bold',
+					color: '#05ce8e'
+			}
+	}
+};
+
+
+option = {
+	backgroundColor: "rgba(0,0,0,0)",
+	series: [
+			{
+					type: 'pie',
+					hoverAnimation: false, 
+					radius: [59, 63],
+					center: ['50%', '50%'],
+					startAngle: 240,
+					labelLine: {
+							normal: {
+									show: false
+							}
+					},
+					label: {
+							normal: {
+									position: 'center'
+							}
+					},
+					data: [{
+									value: 90,
+									"itemStyle": {
+											"normal": {
+													"color": new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+															"offset": 0,
+															"color": '#05ce8e'
+													}, {
+															"offset": 1,
+															"color": '#05ce8e'
+													}]),
+											},
+									},
+									label: dataStyle,
+							}, {
+									value: 20,
+									itemStyle: placeHolderStyle,
+							},
+
+					]
+			},
+	]
+};
+
+	if (option && typeof option === 'object') {
+		myChart.setOption(option);
+	}
+
+	window.addEventListener('resize', myChart.resize);
+</script>
+<!--/矛盾调解事件-->
+<!--实时天气-空气质量-->
+<script type="text/javascript">
+	var dom = document.getElementById('container-kqzl');
+	var myChart = echarts.init(dom, null, {
+		renderer: 'canvas',
+		useDirtyRect: false
+	});
+	var app = {};
+	let config = {
+    color: ['#00FF94', '#006666'],
+    data: [
+        {
+            name: '',
+            value: 77,
+        },
+        {
+            name: '',
+            value: 23,
+        },
+    ],
+    title: {
+        subtext: '空气质量',
+    },
+};
+let num = 165;
+let unit = '%';
+let title = '良好';
+option = {
+
+    color: [
+        {
+            type: 'linear',
+            x: 0,
+            y: 0,
+            x2: 1,
+            y2: 1,
+            colorStops: [
+                {
+                    offset: 0,
+                    color: config.color[0],
+                },
+                {
+                    offset: 1,
+                    color: config.color[1],
+                },
+            ],
+            global: false,
+        },
+        '#006666',
+    ],
+    title: Object.assign(
+        {
+            text: '{c|' + title + '}\n{a|' + num + '}',
+            x: 'center',
+            y: 'center',
+            textStyle: {
+                rich: {
+                    a: {
+                        fontSize:18,
+                        color: '#00ffcc',
+                        fontWeight: 'bold',
+                        margin: '0 5px 0 0',
+                    },
+                    b: {
+                        fontSize: 14,
+                        color: '#fff',
+                        padding: [0, 0, -10, 0],
+                        fontWeight: '500',
+                    },
+                    c: {
+                        fontSize: 20,
+                        color: '#00ffcc',
+                        padding: [5, 0],
+                    },
+                },
+            },
+            subtext: '',
+            top: '67',
+            left: '47%',
+            textAlign: 'center',
+            itemGap:55,
+            subtextStyle: {
+                color: '#fff',
+                fontSize: 14,
+                align: 'center',
+            },
+        },
+        config.title
+    ),
+    series: [
+        {
+            name: '',
+            type: 'pie',
+            radius: [40, 60],
+            center: ['50%', '50%'],
+
+            emphasis: {
+             
+                scale: false,
+                label: {
+                    show: false ,
+                },
+            },
+
+            zlevel: 1,
+            labelLine: {
+                show: false,
+
+            },
+            data: config.data,
+        },
+        //环形分割线
+        {
+            name: '分割线',
+            type: 'gauge',
+            radius: '71', //配合splitLine里的length一起调
+            clockwise: true,
+            startAngle: '90',
+            center: ['50%', '50%'],
+            endAngle: '-269.9999',
+            splitNumber: 80,
+            zlevel: 5,
+            detail: {
+                offsetCenter: [10, 20],
+                formatter: ' ',
+            },
+            axisLine: {
+                lineStyle: {
+                    width: 0,
+                    opacity: 0,
+                },
+            },
+            axisTick: {
+                show: false,
+            },
+            markArea: {
+                itemStyle: {
+                    color: '#006666',
+                },
+            },
+            splitLine: {
+                show: true,
+                length: 21, //配合radius一起调
+                padding: [0, 0, 0],
+                lineStyle: {
+                    color: '#121d43',
+                    width: 2,
+                },
+            },
+            axisLabel: {
+                show: false,
+            },
+        },
+    ],
+};
+
+
+	if (option && typeof option === 'object') {
+		myChart.setOption(option);
+	}
+
+	window.addEventListener('resize', myChart.resize);
+</script>
+<!--/实时天气-空气质量-->
 </body>
 </html>

@@ -23,7 +23,24 @@
 		<!--module-left-->
 		<section class="module-left">
 			<h2 class="module-title">火情告警</h2>
-			<div class="info-huoqing"><img src="./images/img-06.png" alt=""></div>
+			<section class="info-huoqing">
+				<header class="module-title-01">今年火情告警</header>
+				<dl class="fire-info-box">
+					
+					<dd class="echarts-box">
+						<div id="container-hq"></div>
+					</dd>
+					<dt class="info">
+						<P>告警次数<br/><span>324</span>次</P>
+						<P>研判处置<br/><span>310</span>次</P>
+						<P>真实火情<br/><span>13</span>次</P>
+					</dt>
+				</dl>
+				<div id="container-zx"></div>
+			</section>
+			<section class="info-huoqing-zx">
+				<div id="container-hqgj-zx"></div>
+			</section>
 			<div class="sep"></div>
 			<section class="new-hq list-common-style">
 				<h3>最新火情</h3>
@@ -80,21 +97,21 @@
 							<dl class="list">
 								<dt class="num">
 									<i class="icon icon-xsc"></i>
-									<p>184</p>
+									<p class="timer count-number" data-to="184" data-speed="1500">184</p>
 								</dt>
 								<dd class="txt">蓄水池</dd>
 							</dl>
 							<dl class="list">
 								<dt class="num">
 									<i class="icon icon-tb"></i>
-									<p>106</p>
+									<p class="timer count-number" data-to="106" data-speed="1500">106</p>
 								</dt>
 								<dd class="txt">塘坝、拦水坝</dd>
 							</dl>
 							<dl class="list">
 								<dt class="num">
 									<i class="icon icon-hj"></i>
-									<p>97</p>
+									<p class="timer count-number" data-to="97" data-speed="1500">97</p>
 								</dt>
 								<dd class="txt">投河井、提灌站</dd>
 							</dl>
@@ -123,7 +140,7 @@
 			<section class="module-center-02"> 
 				<h2 class="module-title">大棚信息</h2>
 				<section class="content">
-					<h3 class="info-num">256</h3>
+					<h3 class="info-num timer count-number" data-to="256" data-speed="1500">256</h3>
 					<section class="main-dp">
 						<dl class="main-list">
 							<dt class="list-title">
@@ -355,7 +372,372 @@
 	<div class="video-box"><img src="./images/img-cctv.jpg" alt="" width="100%"></div>
 </section>
 <!--/mask-->
+<script src="js/num.js"></script>
+<script src="js/num-gun.js"></script>
+<script src="js/echarts.min.js"></script>
 <script src="js/base.js"></script>
+<!--火情告警信息-->
+<script type="text/javascript">
+	var dom = document.getElementById('container-hq');
+	var myChart = echarts.init(dom, 'dark', {
+		renderer: 'canvas',
+		useDirtyRect: false
+	});
+	var app = {};
+	
+	var option;
 
+	option = {
+backgroundColor:'rgba(255,255,255,0)',
+series: [
+		{
+				type: 'pie',
+				radius: [21, 30],
+				center:['50%','50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				itemStyle: {
+						color: '#0d2249',
+				},
+				data: [100],
+		},
+		{
+				type: 'pie',
+				radius: [21, 30],
+				center:['50%','50%'],
+				silent: true,
+				clockwise: false,
+				z: 1,
+				zlevel: 0,
+				label: {
+						show: false,
+				},
+				data: [
+						{
+								value: 26.6,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: '#ff6161',
+										},
+								},
+						},
+						{
+								value: 100 - 26.6,
+								name: '',
+								itemStyle: {
+										normal: {
+												color: 'rgba(0,0,0,0)',
+										},
+								},
+						},
+				],
+		},{
+			type: 'pie',
+			radius: [36, 45],
+			center:['50%','50%'],
+			silent: true,
+			clockwise: false,
+			z: 1,
+			zlevel: 0,
+			label: {
+					show: false,
+			},
+			itemStyle: {
+					color: '#0d2249',
+			},
+			data: [100],
+		},
+		{
+			type: 'pie',
+			radius: [36, 45],
+			center:['50%','50%'],
+			silent: true,
+			clockwise: false,
+			z: 1,
+			zlevel: 0,
+			label: {
+					show: false,
+			},
+			data: [
+					{
+							value: 42,
+							name: '',
+							itemStyle: {
+									normal: {
+											color: '#1459e7',
+									},
+							},
+					},
+					{
+							value: 100 - 42,
+							name: '',
+							itemStyle: {
+									normal: {
+											color: 'rgba(0,0,0,0)',
+									},
+							},
+					},
+			],
+		},{
+			type: 'pie',
+			radius: [51, 60],
+			center:['50%','50%'],
+			silent: true,
+			clockwise: false,
+			z: 1,
+			zlevel: 0,
+			label: {
+					show: false,
+			},
+			itemStyle: {
+					color: '#0d2249',
+			},
+			data: [100],
+		},
+		{
+			type: 'pie',
+			radius: [51, 60],
+			center:['50%','50%'],
+			silent: true,
+			clockwise: false,
+			z: 1,
+			zlevel: 0,
+			label: {
+					show: false,
+			},
+			data: [
+					{
+							value: 18,
+							name: '',
+							itemStyle: {
+									normal: {
+											color: '#fcae49',
+									},
+							},
+					},
+					{
+							value: 100 - 18,
+							name: '',
+							itemStyle: {
+									normal: {
+											color: 'rgba(0,0,0,0)',
+									},
+							},
+					},
+			],
+		}
+		
+
+],
+};
+
+	if (option && typeof option === 'object') {
+		myChart.setOption(option);
+	}
+
+	window.addEventListener('resize', myChart.resize);
+</script>
+<!--/火情告警信息-->
+<!--火情告警折线-->
+<script type="text/javascript">
+	var dom = document.getElementById('container-hqgj-zx');
+	var myChart = echarts.init(dom, null, {
+		renderer: 'canvas',
+		useDirtyRect: false
+	});
+	var app = {};
+	
+	var option;
+
+	option = {
+		
+			backgroundColor:'#010f30',
+			tooltip: {
+					trigger: 'axis',
+					backgroundColor:'transparent',
+					borderColor:'rgba(31, 109, 247,1)',
+					textStyle: { 
+							color: '#fff',
+							fontStyle: 'normal',
+							fontSize: 14,
+					},
+					 axisPointer: {
+							lineStyle: {
+									color: {
+											type: 'linear',
+											x: 0,
+											y: 0,
+											x2: 0,
+											y2: 1,
+											colorStops: [
+													{
+															offset: 0,
+															color: 'rgba(31, 109, 247,0)',
+													},
+													{
+															offset: 0.5,
+															color: 'rgba(31, 109, 247,1)',
+													},
+													{
+															offset: 1,
+															color: 'rgba(31, 109, 247,0)',
+													},
+											],
+											global: false,
+									},
+							},
+					},
+					formatter: function (params) {
+            var result ='2020年' + params[0].name + '<br>';
+            params.forEach(function (item) {
+             result +=  '<span style="font-size:14px;color:#00f9df;">' + item.seriesName  + item.data + '起</span><br>';
+            });
+            return result;
+        }
+			},
+			grid: {
+					left: '0',
+					right: '0',
+					bottom: '0',
+					height: '90%',
+					containLabel: true
+			},
+
+			xAxis: {
+					type: 'category',
+			 
+					data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+					axisLabel: { 
+							interval: 0, 
+
+							textStyle: {
+									color: 'rgba(193,226,250,.5)',
+									fontStyle: 'normal',
+									fontFamily: '微软雅黑',
+									fontSize: 12,
+							},
+							formatter: function (params) {
+									var newParamsName = "";
+									var paramsNameNumber = params.length;
+									var provideNumber = 4; 
+									var rowNumber = Math.ceil(paramsNameNumber / provideNumber);
+									if (paramsNameNumber > provideNumber) {
+											for (var p = 0; p < rowNumber; p++) {
+													var tempStr = "";
+													var start = p * provideNumber;
+													var end = start + provideNumber;
+													if (p == rowNumber - 1) {
+															tempStr = params.substring(start, paramsNameNumber);
+													} else {
+															tempStr = params.substring(start, end) + "\n";
+													}
+													newParamsName += tempStr;
+											}
+
+									} else {
+											newParamsName = params;
+									}
+									return newParamsName
+							},
+
+					},
+					axisTick: {
+							show: false,
+					},
+					axisLine: { 
+							lineStyle: {
+									color: '#CAFFFD',
+									opacity: 0.3
+							}
+					},
+					splitLine: { 
+							show: false,
+							lineStyle: {
+									color: '#E5E9ED',
+							}
+					}
+			},
+			yAxis: [{
+					type: 'value',
+					min: 0,
+					max: 25,
+					splitNumber: 5,
+					axisLabel: {
+							textStyle: {
+									color: 'rgba(193,226,250,.5)',
+									fontStyle: 'normal',
+									fontFamily: '微软雅黑',
+									fontSize: 12,
+							}
+					},
+					axisLine: {
+							show: false,
+							lineStyle: {
+									color: '#CAFFFD',
+									opacity: 0.3
+							}
+					},
+					axisTick: {
+							show: false
+					},
+					splitLine: {
+							show: true,
+							lineStyle: {
+									type: 'solid',
+									color: 'rgba(13,72,146,.3)',
+
+							}
+					}
+
+			}],
+			series: [{
+					name: '检测',
+					type: 'line',
+					
+					symbol: 'circle',
+					symbolSize: 10,
+					itemStyle: {
+							normal: {
+									color: 'rgba(0, 249, 223, 1)',
+									shadowColor: 'rgba(0, 249, 223, 1)',
+									shadowBlur: 20,
+									borderColor: 'rgba(0, 249, 223, .2)',
+									borderWidth: 10,
+									lineStyle: {
+											color: "rgba(0, 249, 223, 1)",
+											width: 1
+									},
+									areaStyle: {
+											color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+													offset: 0,
+													color: 'rgba(0, 249, 223,0)'
+											}, {
+													offset: .2,
+													color: 'rgba(0, 249, 223, .1)'
+											}, {
+													offset: 1,
+													color: 'rgba(0, 249, 223, .4)'
+											}]),
+									}
+							}
+					},
+					data: [15, 10, 20, 9, 13, 16, 10, 7, 19, 16, 12, 16]
+			}, ]
+	};
+
+
+	if (option && typeof option === 'object') {
+		myChart.setOption(option);
+	}
+
+	window.addEventListener('resize', myChart.resize);
+</script>
+<!--/火情告警折线-->
 </body>
 </html>
