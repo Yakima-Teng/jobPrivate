@@ -202,10 +202,15 @@
 	<!--/page-footer-->
 </section>
 <!--/page-index-->
+<script>
+	var numTime = 10000
+	$('.module-left-02 .info .timer').eq(0).attr('data-to',numTime);
+</script>
 <script src="js/num.js"></script>
 <script src="js/num-gun.js"></script>
 <script src="js/echarts.min.js"></script>
 <script src="js/base.js"></script>
+
 <!--上报数字滚动-->
 <script>
 $("#dataNums-01").rollNumDaq({
@@ -668,81 +673,83 @@ series: [
 	var app = {};
 	
 	var option;
-
-	var placeHolderStyle = {
-	normal: {
-			label: {
-					show: false
-			},
-			labelLine: {
-					show: false
-			},
-			color: "rgba(0,0,0,0)",
-			borderWidth: 0
+	
+	const dataArr = [
+	{
+			value: 60
 	},
-	emphasis: {
-			color: "rgba(0,0,0,0)",
-			borderWidth: 0
-	}
+];
+const color = '#05ce8e';
+const colorSet = [
+	[0.6, color],
+	[1, 'rgba(0,0,0,0)'],
+];
+const rich = {
+	white: {
+			fontSize: 36,
+			color: '#05ce8e',
+			fontWeight: '500',
+	},
+	bule: {
+			fontSize: 36,
+			fontFamily: 'DINBold',
+			color: '#05ce8e',
+			fontWeight: '700',
+	},
+
 };
-
-
-var dataStyle = {
-	normal: {
-			formatter: '{c}%',
-			position: 'center',
-			show: true,
-			textStyle: {
-					fontSize: '36',
-					fontWeight: 'bold',
-					color: '#05ce8e'
-			}
-	}
-};
-
-
 option = {
-	backgroundColor: "rgba(0,0,0,0)",
+
+
 	series: [
 			{
-					type: 'pie',
-					hoverAnimation: false, 
-					radius: [59, 63],
-					center: ['50%', '50%'],
-					startAngle: 240,
-					labelLine: {
-							normal: {
-									show: false
-							}
+					type: 'gauge',
+					progress: {
+						show: true,
+						width:5
 					},
-					label: {
-							normal: {
-									position: 'center'
-							}
+		
+					itemStyle: {
+              color: color,
+          },
+					radius: '94%',
+					startAngle: '240',
+					endAngle: '-60',
+					pointer: {
+							show: false,
 					},
-					data: [{
-									value: 90,
-									"itemStyle": {
-											"normal": {
-													"color": new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-															"offset": 0,
-															"color": '#05ce8e'
-													}, {
-															"offset": 1,
-															"color": '#05ce8e'
-													}]),
-											},
-									},
-									label: dataStyle,
-							}, {
-									value: 20,
-									itemStyle: placeHolderStyle,
+					detail: {
+							formatter: function (value) {
+									var num = Math.round(value);
+									return '{bule|' + num + '}{white|%}';
 							},
-
-					]
+							rich: rich,
+							offsetCenter: ['0%', '0%'],
+					},
+					data: dataArr,
+					axisLine: {
+						show: false,
+						lineStyle: {
+							color: colorSet,
+							width:5,
+							shadowOffsetX: 0,
+							shadowOffsetY: 0,
+							opacity: 1,
+						},
+					},
+					axisTick: {
+							show: false,
+					},
+					splitLine: {
+							show: false,
+					},
+					axisLabel: {
+							show: false,
+					},
 			},
-	]
+	],
 };
+
 
 	if (option && typeof option === 'object') {
 		myChart.setOption(option);
