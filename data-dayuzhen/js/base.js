@@ -1,5 +1,18 @@
 $(function() {
 
+// 录音打开暂停按钮切换
+!$('.audio').length > 0 || (function () {
+$('.audio .btn').on('click', function(){
+	if ($(this).find('.icon').hasClass('icon-audio')){
+		$(this).find('.icon').addClass('icon-stop').removeClass('icon-audio');
+		$(this).find('.txt').text('点击停止');
+	}else{
+		$(this).find('.icon').addClass('icon-audio').removeClass('icon-stop');
+		$(this).find('.txt').text('点击开始');
+	}
+});
+})();
+
 // 党建banner图切换
 !$('.banner-common').length > 0 || (function () {
 let timejg=3000;//轮播间隔时间

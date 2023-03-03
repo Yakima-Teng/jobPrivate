@@ -443,9 +443,34 @@ $main-title:#329df0;
         &::after{ content: ''; display: inline-block; width: 100px; height: 100px; position: absolute; left: 50%; top: 0; margin-left: -51px; background-color: rgba($color: #0e5aff, $alpha: .16); border-radius: 100%;}
         &::after{ width: 74px; height: 74px; margin: 14px 0 0 -38px;}
       }
-      .btn-sound{ display: inline-block; width: 150px; height: 8px; border-radius: 4px; background-color: #083494; margin-left: 12px; vertical-align: middle; margin-top: -3px; position: relative; overflow: hidden;
-        >em{ height: 100%; border-radius: 4px; background-color: $main-white; display: inline-block; width: 100%; position: absolute; left: 0; top: 0;}
-        >.btn-s{ position: absolute; left:100px; top: 0; display: inline-block; height: 100%; width: 2px; background-color: #f00; cursor: pointer;} 
+      .btn-sound{ 
+        .icon-sound{ margin:-3px 12px 0 0;}
+        .volume-range{ width: 150px; -webkit-appearance: none;
+          appearance: none;
+          margin: 0;
+          outline: 0;
+          background-color: transparent;
+          &::-webkit-slider-container {
+            display: flex;
+            height: 1em;
+            overflow: hidden;
+          }
+          &::-webkit-slider-thumb {
+              -webkit-appearance: none;
+              appearance: none;
+              background-color: #fff;
+              width: .75em;
+              height: .75em;
+              border-radius: 50%;
+              margin-top: -.25em;
+              border-image: linear-gradient(#fff, #fff) 0 fill / .25em .75em .25em 0 / 0 0 0 2000px;
+          }
+          &::-webkit-slider-runnable-track {
+              height: .25em;
+              background: #083494;
+          }
+        
+        }
       }
     }
     .audio-checkbox-box{ height: 180px; overflow-y: scroll; margin: 20px 20px 0 0;
