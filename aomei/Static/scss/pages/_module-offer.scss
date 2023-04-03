@@ -1,0 +1,7 @@
+@charset "UTF-8";
+.offer-type-list{ display: flex; flex-wrap: wrap;  width: $page-size; margin:60px auto 0; 
+  .offer-list{ margin-bottom: 70px; margin-right: 30px; 
+    &:nth-child(3n){ margin-right: 0;}
+  }
+}
+.module-offer{ @extend .module-notice;}

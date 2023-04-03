@@ -1,0 +1,41 @@
+@charset "UTF-8";
+.page-login{ background: url('/aomei/Static/images/bg-login.jpg') no-repeat center bottom; min-height: 984px; justify-content: center; align-items: center; display: flex; position: relative;
+  .common-bottom{ position: absolute; left: 0; bottom: 40px; background-color: rgba($color: #030f74, $alpha: .42); width: 100%; color: $white;}
+}
+.login-content{ display: flex; justify-content: center; align-items: center;
+  .login-img{ margin-right: 80px;}
+}
+.login-main{ display: flex; flex-direction: column;  align-items: center; position: relative;
+  .main{ background: url('/aomei/Static/images/bg-logo.png') no-repeat center; width: 565px; height: 550px;box-sizing: border-box; display: flex; justify-content: center; flex-direction: column; align-items: center;}
+  .login-form{ width: 400px;}
+  .login-logo{color: $white; align-items: center; display: flex; font-size: 35px; font-weight: bold; margin-bottom: 23px; margin-left: -25px;
+    &::before{ content: ''; display: inline-block; background: url('/aomei/Static/images/logo-login.png') no-repeat center; width: 96px; height: 50px; margin-right: 11px;}
+  }
+  .inp{ border: 1px solid transparent; background-color: rgba($color: $white, $alpha: .07); border-radius: 5px; height: 56px; margin-bottom: 33px; display: flex; align-items: center; padding: 0 21px; overflow: hidden;
+    >.icon{ margin-right: 20px;}
+    input[type='text']{ background-color: transparent; border: none 0; color: $white; font-size: 20px;}
+    &.focus,
+    &:hover{ border-color: rgba($color: #00d2ff, $alpha: .6);}
+    &:nth-child(2n){ margin-bottom: 20px;}
+  }
+  .inp-phone{ display: none;}
+  .inp-code{ padding: 0; justify-content: space-between; display: none;
+    >.icon{ margin-left: 21px;}
+    input[type='text']{ width: calc(100% - 21px - 120px - 42px);}
+    .btn-code{ background-color: #008aff; color: $white; text-align: center; width: 120px; font-size: 18px; display: inline-block; height: 100%; cursor: pointer; line-height: 56px;
+      .time{ display: none;}
+    }
+  }
+  .contact{ color: $white; font-size: 14px; margin-bottom: 53px;
+    >a{ color: #3ce0f2;}
+  }
+  .btn-box{ display: flex; justify-content: space-between; 
+    .btn{ border:1px solid #008aff; background-color: #1440b1; box-sizing: border-box; text-align: center; font-size: 26px; line-height: 56px; height: 56px; color: $white;  width: 200px; border-radius: 5px;
+      &.btn-submit{ width: 180px; cursor: pointer;}
+      &:hover{ background-color: #008aff;}
+    }
+  }
+  .login-err{display: none; height: 56px; bottom:-22px; position: absolute; line-height: 56px; text-align: center; color: $white; width: 500px; background-color: rgba($color: $white, $alpha: .32);
+    >.icon{ margin-right: 13px;}
+  }
+}

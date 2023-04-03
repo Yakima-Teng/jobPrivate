@@ -1,0 +1,22 @@
+@charset "UTF-8";
+.contact-info{  width: $page-size; margin:62px auto 0;
+  .main{ display: flex; justify-content: space-between; }
+  .info-map{ border: 1px solid #e6e6e6; padding: 1px; box-sizing: border-box; width: 638px; height: 402px; margin-right: 53px; 
+    >iframe{ border: none 0;}
+  }
+  .info{ color: black; width: calc(100% - 733px); font-size: 18px;
+    >h4{ margin-left: -16px; margin-bottom: 15px;}
+    >p{ margin-bottom: 21px; display: flex; flex-wrap: wrap;
+      >.icon{ margin-right: 20px;}
+      >b{ font-weight: normal;}
+      >span{ display: block;
+        >em{ display: inline-block; margin-right: 25px;}
+        >a{ margin-left: 5px; display: inline-block; color: $title;}
+      }
+      &:last-child{
+        >span:nth-child(n + 4){ margin:21px 0 0 131px;}
+      }
+    }
+  }
+}
+.module-contact{ @extend .module-notice;}

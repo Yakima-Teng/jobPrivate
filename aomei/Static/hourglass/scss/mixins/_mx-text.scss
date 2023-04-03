@@ -1,0 +1,22 @@
+@mixin singleline-truncate($substract:0){
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100% - $substract;
+}
+
+%singleline-truncate {
+    @include singleline-truncate;
+}
+
+@mixin multiline-truncate ($row:2){
+    overflow: hidden; 
+    display: -webkit-box; 
+    text-overflow: ellipsis; 
+    -webkit-box-orient: vertical; 
+    -webkit-line-clamp: $row; 
+}
+
+%singleline-truncate {
+    @include multiline-truncate;
+}

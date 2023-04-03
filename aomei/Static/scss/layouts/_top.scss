@@ -1,0 +1,6 @@
+@charset "UTF-8";
+.common-top{ background-color: #eeecec;
+  >.top{ width: $page-size; margin: auto; font-size: 14px; color: $font; height: 32px;
+    >p{ line-height: 32px; }
+  }
+}

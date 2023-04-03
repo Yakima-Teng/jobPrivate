@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit" />
+	<meta name="force-rendering" content="webkit" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="stylesheet" href="/aomei/Static/css/container.css">
+	<title>登录</title>
+	<script type="text/javascript">
+		var __funcList = [];
+		var _run = function(fn) {
+				__funcList.push(fn);
+		};
+	</script>
+</head>
+
+<body>
+<section class="page-login">
+<!--import'../module/login.html'#page#-->
+<!--import'../common/footer.html'#bottom#-->
+</section>
+<script type="text/javascript" src="/aomei/Static/common/js/require.min.js" data-main="/aomei/Static/js/init"></script>
+<script>
+_run(function() {
+require(['jquery'], function (t) {
+$('.btn-login-tab').on('click', function(){
+	if($('.inp-username').hasClass('hide')){
+		$('.inp-username,.inp-password').css('display','flex').removeClass('hide');
+		$('.inp-phone,.inp-code').removeAttr('style');
+		$(this).text('游客登录');
+	}else{
+		$('.inp-username,.inp-password').hide().addClass('hide');
+		$('.inp-phone,.inp-code').css('display','flex');
+		$(this).text('用户登录');
+	}
+});
+
+$('.login-form input').on('click', function(){
+	$('.login-form').find('.inp').removeClass('focus');
+	$(this).parent().addClass('focus');
+});
+
+
+let timer = null;
+$('.btn-submit').on('click', function(){
+	let inpPhone = $('.inp-phone');
+	let inpCode = $('.inp-code');
+	let inpUser = $('.inp-username');
+	let inpPw = $('.inp-password');
+	if( $('.inp-username').hasClass('hide') ){
+		if(!saixuan( inpPhone.find('input') )){
+			$('.login-form').find('.inp').removeClass('focus');
+			inpPhone.addClass('focus').find('input').focus();
+			$('.login-err').find('span').text('请输入正确的手机号');
+			$('.login-err').show();
+			return false;
+		}else{
+			$('.login-err').hide();
+			if (inpCode.find('input').val().replace(/(^s*)|(s*$)/g, "").length == 0) {
+				$('.login-form').find('.inp').removeClass('focus');
+				inpCode.addClass('focus').find('input').focus();
+				$('.login-err').find('span').text('请输入正确的验证码');
+				$('.login-err').show();
+				return false;
+			}else{
+				$('.login-err').hide();
+				$('.login-form').find('.inp').removeClass('focus');
+				inpPhone.find('input').val('');
+				inpCode.find('input').val('');
+				$('.btn-code .code').show().siblings('.time').hide();
+				window.clearInterval(timer);
+			}
+		}
+	}else{
+		if(inpUser.find('input').val() == '' ) {
+			$('.login-form').find('.inp').removeClass('focus');
+			inpUser.addClass('focus').find('input').focus();
+			$('.login-err').find('span').text('账号错误！');
+			$('.login-err').show();
+			return false;
+		}else{
+			$('.login-err').hide();
+			if( inpPw.find('input').val() == '' ){
+				$('.login-form').find('.inp').removeClass('focus');
+				inpPw.addClass('focus').find('input').focus();
+				$('.login-err').find('span').text('密码错误！');
+				$('.login-err').show();
+				return false;
+			}else{
+				$('.login-err').hide();
+				$('.login-form').find('.inp').removeClass('focus');
+				inpUser.find('input').val('');
+				inpPw.find('input').val('');
+			}
+		}
+	};
+});
+
+$('.btn-code .code').on('click',function(){ 
+	let inpPhone = $('.inp-phone');
+	if(!saixuan( inpPhone.find('input') )){
+		$('.login-form').find('.inp').removeClass('focus');
+		inpPhone.addClass('focus').find('input').focus();
+		$('.login-err').find('span').text('请输入正确的手机号');
+		$('.login-err').show();
+		return false;
+	}else{
+		$('.login-err').hide();
+		window.clearInterval(timer);
+		cutDown($(this));
+	};
+});
+
+
+});
+});
+</script>
+</body>
+
+</html>

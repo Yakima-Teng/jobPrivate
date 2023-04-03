@@ -1,0 +1,43 @@
+@charset "utf-8";
+$font:#666;
+$web:#0366ff !default;
+$white:#fff;
+$red: #f5101b;
+$blue: #0366ff;
+$border:#999;
+$title:#333;
+$page-size:1300px;
+
+
+@mixin flex($site:center, $item:center) {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @if($site==left) {
+        justify-content: flex-start;
+    }
+    @if ($site==right) {
+        justify-content: flex-end;
+    }
+    @if ($site==center) {
+        justify-content: center;
+    }
+    @if ($site==both) {
+        justify-content: space-between;
+    }
+    @if ($item==top) {
+        align-items: flex-start;
+    }
+    @if ($item==bottom) {
+        align-items: flex-end;
+    }
+    @if ($item==center) {
+        align-items: center;
+    }
+    @if ($item==text) {
+        align-items: baseline;
+    }
+    @if ($item==all) {
+        align-items: stretch;
+    }
+}

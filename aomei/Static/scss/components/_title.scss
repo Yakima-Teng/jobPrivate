@@ -1,0 +1,21 @@
+@charset "UTF-8";
+.index-header{ text-align: center;
+  >h3{ text-transform: uppercase; color: #b6bcc4; font-weight: bold; font-size: 26px; margin-bottom: 15px;}
+  >h2{ font-size: 26px; color: $title; position: relative; display: inline-block; margin-bottom: 11px;
+    >em{ display: inline-block; padding: 0 20px; background-color: $white; position: relative; font-weight: bold; z-index: 1; letter-spacing: 6px;
+      >span{ color: $web;}
+    }
+    &::after{ content: ''; display: inline-block; width: 100%; padding:0 30px; height: 3px; background-color: #e7ebf0; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+  }
+  >p{ font-size: 16px; color: lighten($color: $font, $amount: 20%); }
+}
+.about-header{@extend .index-header;
+  >h3{font-size: 14px; font-weight: normal; margin-bottom: 0;}
+  >h2{ font-size: 30px;
+    >em{ letter-spacing: 0; }
+    &::after{ height: 1px; }
+  }
+}
+.notice-header,
+.contact-header,
+.offer-header{ @extend .about-header;}

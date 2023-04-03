@@ -1,0 +1,36 @@
+@charset "UTF-8";
+//---------------------------------------
+//导入页面集合样式
+//---------------------------------------
+
+//mixin
+@import "../hourglass/scss/mixins";
+//基础内容
+@import'../common/reset';
+@import 'helpers/colors';
+@import 'base/global';
+
+
+//组件
+@import 'components/list';
+@import 'components/title';
+@import 'components/banner';
+// @import 'components/page-turn';
+@import 'components/icon';
+
+//布局定义
+@import 'layouts/header';
+@import 'layouts/footer';
+@import 'layouts/top';
+@import 'layouts/pages';
+
+
+//页面特定样式
+@import 'pages/module-index';
+@import 'pages/module-about';
+@import 'pages/module-notice';
+@import 'pages/module-offer';
+@import 'pages/module-contact';
+@import 'pages/module-login';
+
+//插件样式

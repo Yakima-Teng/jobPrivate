@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit" />
+	<meta name="force-rendering" content="webkit" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="stylesheet" href="/aomei/Static/css/container.css">
+	<title>首页</title>
+	<script type="text/javascript">
+		var __funcList = [];
+		var _run = function(fn) {
+				__funcList.push(fn);
+		};
+	</script>
+</head>
+
+<body>
+<section class="page-index page-channel-index">
+<!--import'../common/header.html'#header#-->
+<section class="module-index">
+<!--import'../module/index.html'#banner#-->
+<!--import'../module/index.html'#page#-->
+</section>
+<!--import'../common/footer.html'#footer#-->
+</section>
+<script type="text/javascript" src="/aomei/Static/common/js/require.min.js" data-main="/aomei/Static/js/init"></script>
+<script>
+_run(function() {
+require(['jquery'], function(s) {
+var iconbox = $('.expert-list .list-box');
+var iWidth = iconbox.children().outerWidth();
+var iAll = iconbox.children().length;
+iconbox.append(iconbox.children().clone());
+iconbox.children().eq(0).addClass('cur').siblings().removeClass('cur');
+function moveLeft() {
+	var iLeft = parseInt(iconbox.css('left'));
+	var iCode = iconbox.find('.cur').index();
+	console.log(iCode );
+	iconbox.stop(true).animate({
+			'left': iLeft - iWidth
+		},
+		100,
+		function() {
+			if (Math.abs(iLeft - iWidth) < iWidth * iAll) {
+					iconbox.children().eq(iCode + 1).addClass('cur').siblings().removeClass('cur');
+			} else {
+					iconbox.css('left', '0').children().eq(0).addClass('cur').siblings().removeClass('cur');
+			}
+		}
+	)
+
+}
+
+function moveRight() {
+	if (parseInt(iconbox.css('left')) == 0) {
+		iconbox.css('left', iWidth * iAll * -1).children().eq(iAll).addClass('cur').siblings().removeClass('cur');
+	}
+	var iLeft = parseInt(iconbox.css('left'));
+	var iCode = iconbox.find('.cur').index();
+	console.log(iCode );
+	iconbox.stop(true).animate({
+			'left': iLeft + iWidth
+		},
+		100,
+		function() {
+				iconbox.children('').eq(iCode - 1).addClass('cur').siblings().removeClass('cur');
+		}
+	)
+
+}
+
+$('.index-expert .btn-left').on('click', function() {
+	moveLeft();
+})
+
+$('.index-expert .btn-right').on('click', function() {
+	moveRight();
+})
+
+});
+});
+
+</script>
+</body>
+
+</html>

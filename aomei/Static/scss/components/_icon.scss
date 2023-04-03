@@ -1,0 +1,22 @@
+@charset "UTF-8";
+.icon{ @include inline-block; background: no-repeat center; margin-top: -3px;
+  &.icon-earehousing{background-image: url('/aomei/Static/images/icon-common.png'); background-position:0 -128px; width: 40px; height: 38px;}
+  &.icon-box{background-image: url('/aomei/Static/images/icon-common.png'); background-position:-64px -128px; width: 48px; height: 40px;}
+  &.icon-reinforce{background-image: url('/aomei/Static/images/icon-common.png'); background-position:-192px -64px; width: 40px; height: 40px;}
+  &.icon-unboxing{background-image: url('/aomei/Static/images/icon-common.png'); background-position:-128px -64px; width: 41px; height: 43px;}
+  &.icon-transportation{background-image: url('/aomei/Static/images/icon-common.png'); background-position:-192px -128px; width: 63px; height: 37px;}
+  &.icon-supervision{background-image: url('/aomei/Static/images/icon-common.png'); background-position:-128px -128px; width: 43px; height: 43px;}
+  &.icon-address{ background-image: url('/aomei/Static/images/icon-common.png'); background-position:2px 0; width: 22px; height: 21px;}
+  &.icon-tel{ background-image: url('/aomei/Static/images/icon-common.png'); background-position:-125px 0; width: 22px; height: 21px;}
+  &.icon-account{ background-image: url('/aomei/Static/images/icon-common.png'); background-position:-63px 0; width: 22px; height: 20px;}
+  &.icon-hotline{ background-image: url('/aomei/Static/images/icon-common.png'); background-position:-192px 0; width: 22px; height: 21px;}
+  &.icon-user{ background-image: url('/aomei/Static/images/icon-common.png'); background-position:0 -64px; width: 22px; height: 23px;}
+  &.icon-password{ background-image: url('/aomei/Static/images/icon-common.png'); background-position:-64px -64px; width: 22px; height: 26px;}
+  &.icon-err{ background-image: url('/aomei/Static/images/icon-common.png'); background-position:0 -192px; width: 25px; height: 25px;}
+  &.icon-phone{ background-image: url('/aomei/Static/images/icon-common.png'); background-position:-62px -192px; width: 22px; height: 28px;}
+  &.icon-code{ background-image: url('/aomei/Static/images/icon-common.png'); background-position:-127px -192px; width: 22px; height: 25px;}
+}
+.icon-more{  transform: rotate( -90deg);
+  &::before{content: ''; display: block; background-color: $web; position: absolute; right: 6px; top: 18px; width: 10px; height: 2px; transform: rotate(45deg);}
+  &::after{content: ''; display: block; background-color: $web; position: absolute; right: 0px; top: 18px; width: 10px; height: 2px; transform: rotate(-45deg);}
+}

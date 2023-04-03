@@ -1,0 +1,23 @@
+@charset "UTF-8";
+.common-footer{ background-color: #212121; color: lighten($color: $font, $amount: 20%);
+  .footer{ display: flex; justify-content: space-between; align-items: center; width: $page-size; margin: auto; padding: 70px;}
+  .footer-link{ display: flex; position: relative;
+    .link-list{ margin-right: 120px;
+      a{ color: lighten($color: $font, $amount: 20%);}
+      .title{ font-size: 18px; margin-bottom: 40px;}
+      >dd{ margin-bottom: 20px;}
+      .tel{ display: inline-block; vertical-align: top;
+        >a{ display: block; margin-bottom: 20px;}
+      }
+      &:last-child{ margin-right: 0;}
+    }
+  }
+  .footer-code{ text-align: center;
+    .info{ line-height: 30px; margin-top: 10px;}
+  }
+  .user-number{ position: absolute; bottom: 20px; font-size: 16px; color: $font; 
+    &::before{ content: ''; @include inline-block; margin-top: -6px; margin-right: 21px; background: url('/aomei/Static/images/icon-common.png') no-repeat -192px -192px; width: 24px; height: 24px; }
+    >span{ display: inline-block; color: #31ade8; font-size: 30px; font-weight: bold; font-family: Arial; font-style: italic; margin: 0 5px;}
+  }
+}
+.common-bottom{ background-color: #151515; height: 56px; line-height: 56px; color: lighten($color: $font, $amount: 20%); text-align: center;}

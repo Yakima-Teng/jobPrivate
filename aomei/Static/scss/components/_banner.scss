@@ -1,0 +1,17 @@
+@charset "UTF-8";
+.index-banner{ background: url('/aomei/Static/images/index/banner-index.jpg') no-repeat center top; height: 590px; margin-bottom: 70px;
+  .banner{ width: $page-size; margin: auto; position: relative; height: 100%;}
+  .banner-title{ width: 583px; left: -60px; padding-left: 100px;}
+}
+.banner-title{ background-image: linear-gradient(to right, transparent, rgba(0,0,0,.5), transparent); height: 126px; color: $white; position: absolute; top: 50%; transform: translateY(-50%); box-sizing: border-box; padding-top: 34px;
+  >h2{ font-size: 36px; font-weight: bold; margin-bottom: 17px; 
+    >span{ display: inline-block; margin-right: 22px; text-shadow: 3px 4px 0 #002c6f;}
+  }
+  >h3{ font-size: 14px; text-transform: uppercase; text-shadow: 2px 2px 0 #002c6f;}
+}
+.about-banner{ @extend .index-banner; background-image: url('/aomei/Static/images/about/banner-about.jpg'); height: 411px;
+  .banner-title{ width: 462px; left: -24px; padding-left: 96px;}
+}
+.notice-banner{ @extend .about-banner; background-image: url('/aomei/Static/images/banner-bulletin.jpg');}
+.offer-banner{ @extend .about-banner; background-image: url('/aomei/Static/images/banner-consult.jpg');}
+.contact-banner{ @extend .about-banner; background-image: url('/aomei/Static/images/banner-contact.jpg');}

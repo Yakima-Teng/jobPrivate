@@ -1,0 +1,30 @@
+@charset "UTF-8";
+.common-header{ background-color: rgba($color: $white, $alpha: .27); height: 86px; overflow: hidden;
+  .header{ display: flex; justify-content: space-between; align-items: center; width: $page-size; margin: auto;
+    .logo{ background: url('/aomei/Static/images/logo-header.png') no-repeat center; width: 444px; height: 83px; margin-left: -17px;}
+    .common-nav{ display: flex; align-items: center;}
+  }
+  .btn-login{ display: inline-block; margin-left: 15px; border: 1px solid $border; color: $border; font-size: 16px; text-align: center; width: 82px; height: 30px; box-sizing: border-box; line-height: 28px; border-radius: 3px;}
+  .nav-list{ display: flex; align-items: center;
+    .a-link{ color: $title; padding: 0 8px; z-index: 3; position: relative; }
+    .nav{ line-height: 86px; font-size: 16px; margin: 0 12px; position: relative; text-align: center;
+      &:hover,
+      &.cur{ background-color: rgba($color: $white, $alpha: .55);
+        .a-link{ color: $web;}
+        &::after{ content: ''; display: inline-block; position: absolute; width: 100%; background-color: $web; height: 3px; bottom: 22px; left: 50%; transform: translateX(-50%);}
+      }
+      &:first-child{ margin: 0 10px; padding: 0 20px; 
+        &::after{ width: calc( 100% - 40px ); }
+      }
+    }
+  }
+}
+.page-channel-index{
+  .nav-list .nav{ 
+    &:hover,
+    &.cur{ 
+      &::after{ display: none;}
+    }
+  }
+  .btn-login{ border-color: darken($color: $border, $amount: 40%); color: $title; }
+}
